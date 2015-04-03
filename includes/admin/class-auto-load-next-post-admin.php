@@ -42,7 +42,7 @@ class Auto_Load_Next_Post_Admin {
 		include( 'auto-load-next-post-admin-functions.php' );
 
 		// Classes we only need if the ajax is not-ajax
-		if ( ! is_ajax() ) {
+		if ( ! auto_load_next_post_is_ajax() ) {
 			// Main Plugin
 			include( 'class-auto-load-next-post-admin-menus.php' );
 

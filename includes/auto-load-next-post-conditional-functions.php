@@ -13,7 +13,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! function_exists( 'is_ajax' ) ) {
+if ( ! function_exists( 'auto_load_next_post_is_ajax' ) ) {
 	/**
 	 * Returns true when the page is loaded via ajax.
 	 *
@@ -21,12 +21,12 @@ if ( ! function_exists( 'is_ajax' ) ) {
 	 * @access public
 	 * @return bool
 	 */
-	function is_ajax() {
+	function auto_load_next_post_is_ajax() {
 		if ( defined( 'DOING_AJAX' ) ) {
 			return true;
 		}
 		return ( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest' ) ? true : false;
-	} // END is_ajax
+	} // END auto_load_next_post_is_ajax
 }
 
 ?>

@@ -305,9 +305,7 @@ final class Auto_Load_Next_Post {
 	 */
 	public function autoload( $class ) {
 		$path  = null;
-		$class = strtolower( $class );
-		$file  = 'class-' . str_replace( '_', '-', $class ) . '.php';
-		$class = strtolower( $class );
+		$file  = strtolower( 'class-' . str_replace( '_', '-', $class ) ) . '.php';
 
 		if ( strpos( $class, 'auto_load_next_post_admin' ) === 0 ) {
 			$path = $this->plugin_path() . '/includes/admin/';

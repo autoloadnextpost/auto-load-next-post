@@ -34,9 +34,4 @@ function auto_load_next_post_template_redirect() {
 }
 add_action( 'template_redirect', 'auto_load_next_post_template_redirect' );
 
-// This function is called on deactivating the plugin.
-function deactivate() {
-  flush_rewrite_rules();
-}
-register_deactivation_hook( __FILE__, 'deactivate' );
 ?>

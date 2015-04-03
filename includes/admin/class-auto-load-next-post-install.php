@@ -25,7 +25,9 @@ class Auto_Load_Next_Post_Install {
 	 * @access public
 	 */
 	public function __construct() {
-		register_activation_hook( AUTO_LOAD_NEXT_POST_FILE, array( $this, 'install' ) );
+		register_activation_hook(   AUTO_LOAD_NEXT_POST_FILE, array( $this, 'install' ) );
+		register_deactivation_hook( AUTO_LOAD_NEXT_POST_FILE, array( $this, 'deactivate' ) );
+
 	} // END __construct()
 
 	/**
@@ -40,6 +42,16 @@ class Auto_Load_Next_Post_Install {
 		// Add plugin version
 		update_option( 'auto_load_next_post_version', Auto_Load_Next_Post()->version );
 	} // END install()
+
+	/**
+	 * Refresh the permalinks on deactivating the plugin.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 */
+	public function deactivate() {
+		flush_rewrite_rules();
+	}
 
 	/**
 	 * Default Options
