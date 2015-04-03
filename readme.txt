@@ -29,7 +29,7 @@ Use the WordPress.org forums for [community support](https://wordpress.org/suppo
 
 If you need help with customisation. Please consider [hiring me](http:) to apply your website's customizations for this plugin.
 
-= Demo Store =
+= Demo Site =
 Want to try it out? [View the demo site](http://demos.sebastiendumont.com/auto-load-next-post/)
 
 = Donations and Reviews =
