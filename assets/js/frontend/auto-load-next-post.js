@@ -7,18 +7,16 @@ var curr_url            = window.location.href;
 
 jQuery.noConflict();
 
-jQuery(document).ready(function() {
+jQuery( document ).ready(function() {
 	// Don't do this if looking for comments
 	if ( window.location.href.indexOf( '#comments' ) > -1 ) {
 		return;
 	}
 
-	jQuery(comments_container).hide(); // Hide Comments
-
-	jQuery(content_container).addClass('first-post'); // Add this class to the first post loaded.
+	jQuery( comments_container ).remove(); // Remove Comments
 
 	// Add divider
-	jQuery(content_container).prepend('<hr style="height: 0" class="post-divider" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>');
+	jQuery( content_container ).prepend( '<hr style="height: 0" class="post-divider" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
 
 	initialise_Scrollspy();
 
@@ -91,21 +89,20 @@ function auto_load_next_post() {
 	}
 
 	// Remove the post navigation HTML once the next post has loaded.
-	jQuery(nav_container).remove();
+	jQuery( nav_container ).remove();
 
 	jQuery.get( np_url , function( data ) { 
-		var post         = jQuery("<div>" + data + "</div>");
-		var num_articles = jQuery('article').length; // Count how many posts have loaded in the DOM.
+		var post = jQuery("<div>" + data + "</div>");
 
 		data = post.html(); // Return the HTML data of the next post that was loaded.
 
 		var post_html  = jQuery( '<hr class="post-divider" data-url="' + post_url + '"/>' + data );
 		var post_title = post_html.find( post_title_selector );
 
-		jQuery( 'div.new-content' ).replaceWith( post_html ); // Add next post
+		jQuery( content_container ).append( post_html ); // Add next post
 
 		// get the HR element and add the data-title
-		jQuery('hr[data-url="' + post_url + '"]').attr( 'data-title' , post_title.text() );
+		jQuery( 'hr[data-url="' + post_url + '"]').attr( 'data-title' , post_title.text() ).css( 'display', 'inline-block' );
 
 		// need to set up ScrollSpy on new content
 		initialise_Scrollspy();
