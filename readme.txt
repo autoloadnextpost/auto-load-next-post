@@ -11,9 +11,9 @@ License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Simply auto loads the next post as you scroll down the page. Also replaces the URL address and the page title with the next post.
 
 == Description ==
-Auto Load Next Post is a lightweight plugin that simply loads the next post after one another as you scroll down the page. To do this it reads the post navigation in your theme at the end of each post and collects the post url. With this it asks WordPress to do a partial content load and the javascript places the content of the next post underneith the parent post.
+Auto Load Next Post is a lightweight plugin that simply loads the next post after one another as you scroll down the page. To do this, it reads the post navigation in your theme at the end of each post and collects the post URL. With this, it asks WordPress to do a partial content load and the javascript places the content of the next post underneath the parent post.
 
-It also updates your web history by manpipulating the web address and page title so if you were to hit refresh, you will be taken to the post you were viewing last. You will find that when pressing the previous button in your browser to go back you will be taken to the previous post.
+It also updates your web history by manipulating the web address and page title so if you were to hit refresh, you will be taken to the post you were viewing last. You will find that when pressing the previous button in your browser to go back you will be taken to the previous post.
 
 = Features =
 * Track each post load with Google Anayltics. ( Requires Google Analytics to be applied for this to work. )
