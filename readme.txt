@@ -25,7 +25,7 @@ Documentation for this plugin can be found on the GitHub repository [Wiki](https
 You can contribute code to this plugin via GitHub: https://github.com/seb86/auto-load-next-post and localizations via Transifex: https://www.transifex.com/projects/p/auto-load-next-post/
 
 = Support =
-Use the WordPress.org forums for community support. If you spot a bug, you can of course log it on [Github](https://github.com/seb86/auto-load-next-post) instead where I can act upon it more efficiently.
+Use the WordPress.org forums for [community support](https://wordpress.org/support/plugin/auto-load-next-post). If you spot a bug, you can of course log it on [Github](https://github.com/seb86/auto-load-next-post) instead where I can act upon it more efficiently.
 
 If you need help with customisation. Please consider [hiring me](http:) to apply your website's customizations for this plugin.
 
