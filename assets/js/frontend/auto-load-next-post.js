@@ -17,9 +17,6 @@ jQuery(document).ready(function() {
 
 	jQuery(content_container).addClass('first-post'); // Add this class to the first post loaded.
 
-	jQuery("p.single__category a").addClass('partner-link');
-	jQuery("p.single__category a img").addClass('partner-button');
-
 	// Add divider
 	jQuery(content_container).prepend('<hr style="height: 0" class="post-divider" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>');
 
@@ -100,23 +97,6 @@ function auto_load_next_post() {
 		var post         = jQuery("<div>" + data + "</div>");
 		var num_articles = jQuery('article').length; // Count how many posts have loaded in the DOM.
 
-		// Add Google Ads if article number is reached.
-		if ( num_articles == 1 ) {
-			post.find('.single__body').before('<aside class="widget-bar"><div class="advr__skyscraper"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8098211232650010" data-ad-slot="4038539686" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></aside>');
-			post.find('.single__body').attr('style', null);
-		}
-		else if( num_articles == 3 ) {
-			post.find('.single__body').before('<aside class="widget-bar"><div class="advr__skyscraper"><div id="div-gpt-ad-1423110015755-0"><script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1423110015755-0"); });</script></div></div></aside>');
-			post.find('.single__body').attr('style', null);
-		}
-		else if( num_articles == 4 ) {
-			post.find('.single__body').before('<aside class="widget-bar"><div class="advr__skyscraper"><div id="div-gpt-ad-1423241757252-0"><script type="text/javascript">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1423241757252-0"); });</script></div></div></aside>');
-			post.find('.single__body').attr('style', null);
-		}
-		else if( num_articles == 2 || num_articles > 4 ) {
-			post.find('.single__container').addClass('full__width');
-		}
-
 		data = post.html(); // Return the HTML data of the next post that was loaded.
 
 		var post_html  = jQuery( '<hr class="post-divider" data-url="' + post_url + '"/>' + data );
@@ -129,21 +109,6 @@ function auto_load_next_post() {
 
 		// need to set up ScrollSpy on new content
 		initialise_Scrollspy();
-
-		// Social Buzz
-		/*jQuery(".sbTip").tipr({
-			speed: 300,
-			mode: "top"
-		}), sbp_b0cbfa0(), sbp_c7ef48();
-
-		var e = 1500;
-
-		if ( window.sbSettings.counterup == 1 ) {
-			jQuery(".sbcountup").counterUp({
-				delay: 10,
-				time: e
-			})
-		}*/
 	});
 
 }
