@@ -118,7 +118,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 			),
 
 			array(
-				'title'   => __( 'Remove all data on uninstall?', MY_YOUTUBE_VIDEOS_TEXT_DOMAIN ),
+				'title'   => __( 'Remove all data on uninstall?', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
 				'desc'    => __( 'If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete.', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
 				'id'      => 'auto_load_next_post_uninstall_data',
 				'default' => 'no',
