@@ -16,21 +16,23 @@ Auto Load Next Post is a lightweight plugin that simply loads the next post afte
 It also updates your web history by manipulating the web address and page title so if you were to hit refresh, you will be taken to the post you were viewing last. You will find that when pressing the previous button in your browser to go back you will be taken to the previous post.
 
 = Features =
-* Track each post load with Google Anayltics. ( Requires Google Analytics to be applied for this to work. )
+* Track each post load with Google Analytics. ( Requires Google Analytics to be applied for this to work. )
 
 = Documentation =
-Documentation for this plugin can be found on the GitHub repository [Wiki](https://github.com/seb86/Auto-Load-Next-Post/wiki).
+Documentation, for this plugin, can be found at the GitHub repository [Wiki](https://github.com/seb86/Auto-Load-Next-Post/wiki).
 
 = Contributing and reporting bugs =
 You can contribute code to this plugin via GitHub: https://github.com/seb86/auto-load-next-post and localizations via Transifex: https://www.transifex.com/projects/p/auto-load-next-post/
 
 = Support =
-Use the WordPress.org forums for [community support](https://wordpress.org/support/plugin/auto-load-next-post). If you spot a bug, you can of course log it on [Github](https://github.com/seb86/auto-load-next-post) instead where I can act upon it more efficiently.
+Use the WordPress.org forums for [community support](https://wordpress.org/support/plugin/auto-load-next-post). If you spot a bug, you can of course log it on [Github](https://github.com/seb86/Auto-Load-Next-Post/issues) instead where I can act upon it more efficiently.
 
-If you need help with customisation. Please consider [hiring me](http://www.sebastiendumont.com/hire-me/) to apply your website's customizations for this plugin.
+If you need help with customization. Please consider [hiring me](http://www.sebastiendumont.com/hire-me/) to apply your website's customizations for this plugin.
 
 = Demo Site =
 Want to try it out? [Go to the demo site](http://demos.sebastiendumont.com/auto-load-next-post/) and view a post. Scroll down and see the plugin in action.
+
+The demo uses a child theme that includes the required support for the plugin to work. [Download the child theme source from GitHub](https://github.com/seb86/Auto-Load-Next-Post-Twenty-Fifteen-Support).
 
 = Donations and Reviews =
 To keep this plugin working and support many themes as possible, please consider making a [donation](http://www.sebastiendumont.com/donation/) or [write a review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform).
@@ -47,16 +49,16 @@ Installing "Auto Load Next Post" can be done either by searching for "Auto Load 
 2. Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard.
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 4. Go to the plugin settings page 'Settings > Auto Load Next Post'.
-5. Enter each of the containers specified to the theme you are using and press "Save".
+5. Enter each of the containers specified in the theme you are using and press "Save".
 
 == Screenshots ==
 1. Admin Settings Page
 
 == Changelog ==
 
-= 1.0.0 : 3rd April 2015 =
+= 1.0.0 : 4th April 2015 =
 * Initial version
 
 == Upgrade Notice ==
-= 1.0.0 : 3rd April 2015 =
+= 1.0.0 : 4th April 2015 =
 * Initial version
