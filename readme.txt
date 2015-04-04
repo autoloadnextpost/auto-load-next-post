@@ -27,10 +27,10 @@ You can contribute code to this plugin via GitHub: https://github.com/seb86/auto
 = Support =
 Use the WordPress.org forums for [community support](https://wordpress.org/support/plugin/auto-load-next-post). If you spot a bug, you can of course log it on [Github](https://github.com/seb86/auto-load-next-post) instead where I can act upon it more efficiently.
 
-If you need help with customisation. Please consider [hiring me](http:) to apply your website's customizations for this plugin.
+If you need help with customisation. Please consider [hiring me](http://www.sebastiendumont.com/hire-me/) to apply your website's customizations for this plugin.
 
-= Demo Store =
-Want to try it out? [View the demo site](http://demos.sebastiendumont.com/auto-load-next-post/)
+= Demo Site =
+Want to try it out? [Go to the demo site](http://demos.sebastiendumont.com/auto-load-next-post/) and view a post. Scroll down and see the plugin in action.
 
 = Donations and Reviews =
 To keep this plugin working and support many themes as possible, please consider making a [donation](http://www.sebastiendumont.com/donation/) or [write a review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform).
