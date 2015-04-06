@@ -15,6 +15,12 @@ Auto Load Next Post is a lightweight plugin that simply loads the next post afte
 
 It also updates your web history by manipulating the web address and page title so if you were to hit refresh, you will be taken to the post you were viewing last. You will find that when pressing the previous button in your browser to go back you will be taken to the previous post.
 
+[youtube https://www.youtube.com/watch?v=EvBCPXVe2U4]
+
+After installing the plugin and completing the settings page, you will need to provide a little theme support should your theme require it.
+
+See Documentation for more information.
+
 = Features =
 * Track each post load with Google Analytics. ( Requires Google Analytics to be applied for this to work. )
 
