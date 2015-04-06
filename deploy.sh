@@ -2,32 +2,44 @@
 PLUGINSLUG="auto-load-next-post" # returns basename of current directory
 CURRENTDIR=`pwd`
 MAINFILE="auto-load-next-post.php" # this should be the name of your main php file in the wordpress plugin
-SVNUSER="sebd86" # your svn username (case sensitive)
 
 # git config
-GITPATH="$CURRENTDIR/" # this file should be in the base of your git repository
+GITPATH="$CURRENTDIR" # this file should be in the base of your git repository
+
+# plugin name
+PLUGINNAME=`grep "Plugin Name:" "$GITPATH/$MAINFILE" | awk -F' ' '{print $4$5$6$7}' | sed 's/[[:space:]]//g'`
 
 # svn config
 SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
 SVNURL="http://plugins.svn.wordpress.org/$PLUGINSLUG" # Remote SVN repo on wordpress.org, with no trailing slash
+SVNUSER="sebd86" # your svn username (case sensitive)
 
 # Let's begin...
-echo ".........................................."
+echo "....................................................."
 echo 
-echo "Preparing to deploy WordPress plugin"
+echo "Preparing to deploy $PLUGINNAME to WordPress.org"
 echo 
-echo ".........................................."
-echo 
+echo "....................................................."
 
 # Check version in readme.txt is the same as plugin file
-NEWVERSION1=`grep "^Stable tag" "$GITPATH/readme.txt" | awk -F' ' '{print $3}' | sed 's/[[:space:]]//g'`
-echo "readme version: $NEWVERSION1"
-NEWVERSION2=`grep "^Version" "$GITPATH/$MAINFILE" | awk -F' ' '{print $2}' | sed 's/[[:space:]]//g'`
+NEWVERSION1=`grep "^Stable tag:" "$GITPATH/readme.txt" | awk -F' ' '{print $3}' | sed 's/[[:space:]]//g'`
+echo "readme.txt version: $NEWVERSION1"
+NEWVERSION2=`grep "Version:" "$GITPATH/$MAINFILE" | awk -F' ' '{print $3}' | sed 's/[[:space:]]//g'`
 echo "$MAINFILE version: $NEWVERSION2"
 
-if [ "$NEWVERSION1" != "$NEWVERSION2" ]; then echo "Versions don't match. Exiting...."; exit 1; fi
+if [ "$NEWVERSION1" != "$NEWVERSION2" ]; then echo "Both versions don't match. Exiting...."; exit 1; fi
 
-echo "Versions match in readme.txt and PHP file. Let's proceed..."
+echo "Versions match in readme.txt and $MAINFILE file. Let's proceed..."
+
+if git show-ref --tags --quiet --verify -- "refs/tags/$NEWVERSION1"
+	then
+		echo 
+		echo "Version $NEWVERSION1 already exists as git tag. Exiting....";
+		exit 1;
+	else
+		echo
+		echo "Git version does not exist. Let's proceed..."
+fi
 
 cd "$GITPATH"
 echo -e "Enter a commit message for this new version: \c"
