@@ -4,7 +4,7 @@ Donate link:       http://www.sebastiendumont.com/donation/
 Tags:              auto load, posts, scrolling, history
 Requires at least: 4.0
 Tested up to:      4.1.1
-Stable tag:        Trunk
+Stable tag:        1.0.0
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
