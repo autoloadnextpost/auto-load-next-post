@@ -56,7 +56,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 *
 	 * This returns a list of public registered post types.
 	 *
-	 * @since  1.1.1
+	 * @since  1.3.2
 	 * @access public
 	 * @return array
 	 */
@@ -109,7 +109,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 				'autoload' => false
 			),
 
-			array(
+			/*array(
 				'title'    => __( 'Post ID Selector', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
 				'desc'     => __( 'Example: <code>article</code>', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
 				'desc_tip' => true,
@@ -118,7 +118,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 				'type'     => 'text',
 				'css'      => 'min-width:300px;',
 				'autoload' => false
-			),
+			),*/
 
 			array(
 				'title'    => __( 'Post Title Selector', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
