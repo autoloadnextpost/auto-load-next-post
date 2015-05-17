@@ -14,7 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 
 /**
- * Auto_Load_Next_Post_Install Class
+ * Class - Auto_Load_Next_Post_Install
+ *
+ * @since 1.0.0
  */
 class Auto_Load_Next_Post_Install {
 
@@ -98,4 +100,3 @@ class Auto_Load_Next_Post_Install {
 } // END if class exists.
 
 return new Auto_Load_Next_Post_Install();
-?>

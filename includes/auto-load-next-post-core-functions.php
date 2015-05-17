@@ -27,11 +27,18 @@ function auto_load_next_post_template_redirect() {
   if ( ! isset( $wp_query->query_vars['partial'] ) || ! is_singular() )
     return;
 
-  // include custom template
-  include( get_stylesheet_directory() . '/content-partial.php' );
+  // Load file from theme if one exists.
+  $template_path = get_stylesheet_directory() . '/' . Auto_Load_Next_Post()->template_path();
+  if ( file_exists ( $template_path . 'content-partial.php' ) ) {
+    include ( $template_path . 'content-partial.php' );
+  }
+
+  // If theme does not have the file, load default from plugin.
+  $default_path = Auto_Load_Next_Post()->plugin_path();
+  if ( file_exists ( $default_path . '/template/content-partial.php' ) ) {
+    include ( $default_path . '/template/content-partial.php' );
+  }
 
   exit;
 }
 add_action( 'template_redirect', 'auto_load_next_post_template_redirect' );
-
-?>

@@ -14,7 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 
 /**
- * Auto_Load_Next_Post_Settings_Page
+ * Class - Auto_Load_Next_Post_Settings_Page
+ *
+ * @since 1.0.0
  */
 class Auto_Load_Next_Post_Settings_Page {
 
@@ -93,7 +95,7 @@ class Auto_Load_Next_Post_Settings_Page {
 			$section_link = admin_url( 'options-general.php?page=auto-load-next-post-settings&tab=' . $this->id . '&section=' . sanitize_title( $id ) );
 
 			// If this section is default then remove the variable from this link.
-			if( $id == '' ) {
+			if ( $id == '' ) {
 				$section_link = remove_query_arg( 'section', $section_link );
 			}
 
@@ -142,4 +144,3 @@ class Auto_Load_Next_Post_Settings_Page {
 } // END class
 
 } // END if class exists.
-?>

@@ -13,7 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 
 /**
- * Auto_Load_Next_Post_Settings_General_Tab
+ * Class - Auto_Load_Next_Post_Settings_General_Tab
+ *
+ * @extends Auto_Load_Next_Post_Settings_Page
+ * @since   1.0.0
  */
 class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Settings_Page {
 
@@ -49,6 +52,23 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	}
 
 	/**
+	 * Get post types
+	 *
+	 * This returns a list of public registered post types.
+	 *
+	 * @since  1.1.1
+	 * @access public
+	 * @return array
+	 */
+	public function get_post_types() {
+		$post_types = get_post_types( array( 'public' => true ), 'names' );
+
+		
+
+		return $post_types;
+	}
+
+	/**
 	 * Get settings array
 	 *
 	 * @since  1.0.0
@@ -66,11 +86,35 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 			),
 
 			array(
+				'title'    => __( 'Restrict Post Types', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'desc'     => __( 'Select which post types you wish to load automatically.', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'desc_tip' => true,
+				'id'       => 'auto_load_next_post_get_post_types',
+				'class'    => 'chosen-select',
+				'css'      => 'min-width:300px;',
+				'default'  => array( 'post' ),
+				'type'     => 'multiselect',
+				'options'  => $this->get_post_types(),
+				'autoload' => false
+			),
+
+			array(
 				'title'    => __( 'Content Container', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
 				'desc'     => __( 'Example: <code>div.single</code>', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_content_container',
-				'default'  => '',
+				'default'  => 'div.single',
+				'type'     => 'text',
+				'css'      => 'min-width:300px;',
+				'autoload' => false
+			),
+
+			array(
+				'title'    => __( 'Post ID Selector', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'desc'     => __( 'Example: <code>article</code>', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'desc_tip' => true,
+				'id'       => 'auto_load_next_post_id_selector',
+				'default'  => 'article',
 				'type'     => 'text',
 				'css'      => 'min-width:300px;',
 				'autoload' => false
@@ -81,7 +125,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 				'desc'     => __( 'Example: <code>h1.entry-title</code>', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_title_selector',
-				'default'  => '',
+				'default'  => 'h1.entry-title',
 				'type'     => 'text',
 				'css'      => 'min-width:300px;',
 				'autoload' => false
@@ -92,7 +136,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 				'desc'     => __( 'Example: <code>nav.post-navigation</code>', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_navigation_container',
-				'default'  => '',
+				'default'  => 'nav.post-navigation',
 				'type'     => 'text',
 				'css'      => 'min-width:300px;',
 				'autoload' => false
@@ -103,10 +147,18 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 				'desc'     => __( 'Example: <code>div#comments</code>', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_comments_container',
-				'default'  => '',
+				'default'  => 'div#comments',
 				'type'     => 'text',
 				'css'      => 'min-width:300px;',
 				'autoload' => false
+			),
+
+			array(
+				'title'   => __( 'Remove Comments', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'desc'    => __( 'Enable to remove comments when each post loads.', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'id'      => 'auto_load_next_post_remove_comments',
+				'default' => 'yes',
+				'type'    => 'checkbox'
 			),
 
 			array(
@@ -134,4 +186,3 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 } // end if class exists
 
 return new Auto_Load_Next_Post_Settings_General_Tab();
-?>

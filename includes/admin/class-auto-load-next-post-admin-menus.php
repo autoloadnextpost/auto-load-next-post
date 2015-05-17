@@ -64,4 +64,3 @@ class Auto_Load_Next_Post_Admin_Menus {
 } // END if class exists.
 
 return new Auto_Load_Next_Post_Admin_Menus();
-?>

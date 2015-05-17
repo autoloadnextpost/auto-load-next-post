@@ -25,5 +25,3 @@ function auto_load_next_post_get_screen_ids() {
 		'settings_page_' . $auto_load_next_post_screen_id,
 	) );
 } // END auto_load_next_post_get_screen_ids()
-
-?>

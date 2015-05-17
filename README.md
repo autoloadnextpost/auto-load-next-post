@@ -1,10 +1,14 @@
 ## Auto Load Next Post
 
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png?style=flat)](http://gruntjs.com/) [![GitHub version](https://badge.fury.io/gh/seb86%2FAuto-Load-Next-Post.svg?style=flat)](http://badge.fury.io/gh/seb86%2FWordPress-Plugin-Boilerplate) [![GPL license](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat)
+
 Auto Load Next Post is a lightweight plugin that simply loads the next post after one another as you scroll down the page. To do this, it reads the post navigation in your theme at the end of each post and collects the post URL. With this, it asks WordPress to do a partial content load and the javascript places the content of the next post underneath the parent post.
 
 It also updates your web history by manipulating the web address and page title so if you were to hit refresh, you will be taken to the post you were viewing last. You will find that when pressing the previous button in your browser to go back you will be taken to the previous post.
 
 ### Features
+* Can restrict it to load only on specific post types. - NEW in v1.3.2
+* You now have the option to hide the comments if you wish. - NEW in v1.3.2
 * Track each post load with Google Analytics. ( Requires Google Analytics to be applied for this to work. )
 
 ### Documentation

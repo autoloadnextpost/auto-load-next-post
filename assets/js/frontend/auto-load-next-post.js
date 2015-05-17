@@ -13,7 +13,11 @@ jQuery( document ).ready(function() {
 		return;
 	}
 
-	jQuery( comments_container ).remove(); // Remove Comments
+  // It's up to you if you want to hide the comments. If the anwser is yes then the comments will be gone.
+	console.log( 'Remove Comments: ' + auto_load_next_post_params.alnp_remove_comments );
+	if ( auto_load_next_post_params.alnp_remove_comments === 'yes' ) {
+		jQuery( comments_container ).remove(); // Remove Comments
+	}
 
 	// Add divider
 	jQuery( content_container ).prepend( '<hr style="height: 0" class="post-divider" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
@@ -54,7 +58,8 @@ function changeURL() {
 		History.pushState(null, null, this_url);
 		window.document.title = this_title;
 
-		if( auto_load_next_post_params.google_analytics == 'yes' ) {
+		if( auto_load_next_post_params.alnp_google_analytics == 'yes' ) {
+			console.log( 'Google Analytics Tracked' );
 			update_google_analytics();
 		}
 	}
@@ -74,6 +79,8 @@ function auto_load_next_post() {
 	// Grab the url for the next post
 	var post_url = jQuery('a[rel="prev"]').attr('href');
 
+	console.log( 'Next Post URL: ' + post_url );
+
 	if ( !post_url ) return;
 
 	// Check to see if pretty permalinks, if not then add partial=1
@@ -90,6 +97,7 @@ function auto_load_next_post() {
 
 	// Remove the post navigation HTML once the next post has loaded.
 	jQuery( nav_container ).remove();
+	console.log( 'Post Navigation Removed!' );
 
 	jQuery.get( np_url , function( data ) { 
 		var post = jQuery("<div>" + data + "</div>");
@@ -98,6 +106,8 @@ function auto_load_next_post() {
 
 		var post_html  = jQuery( '<hr class="post-divider" data-url="' + post_url + '"/>' + data );
 		var post_title = post_html.find( post_title_selector );
+
+		console.log( 'Post Title: ' + post_title.text() ); // Console Log Post Title
 
 		jQuery( content_container ).append( post_html ); // Add next post
 

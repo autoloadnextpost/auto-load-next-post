@@ -67,14 +67,12 @@ class Auto_Load_Next_Post_Admin_Help {
 				'<p><a href="' . AUTO_LOAD_NEXT_POST_GITHUB_REPO_URI . 'issues?state=open" class="button button-primary">' . __( 'Report a bug', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ) . '</a></p>'
 		) );
 
-		if ( !empty( Auto_Load_Next_Post()->web_url ) || !empty( Auto_Load_Next_Post()->wp_plugin_url ) || defined( AUTO_LOAD_NEXT_POST_GITHUB_REPO_URI ) ) {
-			$screen->set_help_sidebar(
-				'<p><strong>' . __( 'For more information:', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ) . '</strong></p>' .
-				'<p><a href="' . Auto_Load_Next_Post()->web_url . '" target="_blank">' . sprintf( __( 'About %s', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ), Auto_Load_Next_Post()->name ) . '</a></p>' .
-				'<p><a href="' . Auto_Load_Next_Post()->wp_plugin_url . '" target="_blank">' . __( 'Project on WordPress.org', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ) . '</a></p>' .
-				'<p><a href="' . AUTO_LOAD_NEXT_POST_GITHUB_REPO_URI . '" target="_blank">' . __( 'Project on Github', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ) . '</a></p>'
-			);
-		}
+		$screen->set_help_sidebar(
+			'<p><strong>' . __( 'For more information:', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ) . '</strong></p>' .
+			'<p><a href="' . Auto_Load_Next_Post()->web_url . '" target="_blank">' . sprintf( __( 'About %s', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ), Auto_Load_Next_Post()->name ) . '</a></p>' .
+			'<p><a href="' . Auto_Load_Next_Post()->wp_plugin_url . '" target="_blank">' . __( 'Project on WordPress.org', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ) . '</a></p>' .
+			'<p><a href="' . AUTO_LOAD_NEXT_POST_GITHUB_REPO_URI . '" target="_blank">' . __( 'Project on Github', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ) . '</a></p>'
+		);
 
 	} // END add_help_tabs()
 
@@ -83,4 +81,3 @@ class Auto_Load_Next_Post_Admin_Help {
 } // END if class exists.
 
 return new Auto_Load_Next_Post_Admin_Help();
-?>

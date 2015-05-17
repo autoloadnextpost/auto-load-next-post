@@ -1,0 +1,34 @@
+.auto-load-next-post-message {
+  position: relative;
+  border-left-color: #EC8642 !important;
+  overflow: hidden;
+}
+
+.auto-load-next-post-message a.button-primary,
+p.auto-load-next-post-actions a.button-primary {
+  background: #EC8642;
+  border-color: #EB6D19;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.25),0 1px 0 rgba(0,0,0,.15);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.25),0 1px 0 rgba(0,0,0,.15);
+  color: #fff;
+  text-decoration: none;
+}
+
+.auto-load-next-post-message a.button-primary:hover,
+p.auto-load-next-post-actions a.button-primary:hover {
+  background: #EB6D19;
+  border-color: #EB6D19;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.25),0 1px 0 rgba(0,0,0,.15);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.25),0 1px 0 rgba(0,0,0,.15);
+}
+
+.auto-load-next-post-message a.button-primary:active,
+p.auto-load-next-post-actions a.button-primary:active {
+  background: #fac75a;
+  border-color: #EC8642;
+}
+
+.auto-load-next-post-message a.docs,
+p.auto-load-next-post-actions a.docs {
+  opacity: .7;
+}

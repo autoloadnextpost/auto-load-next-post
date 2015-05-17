@@ -28,5 +28,3 @@ if ( ! function_exists( 'auto_load_next_post_is_ajax' ) ) {
 		return ( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest' ) ? true : false;
 	} // END auto_load_next_post_is_ajax
 }
-
-?>
