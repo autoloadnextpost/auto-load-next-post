@@ -27,5 +27,3 @@ while ( have_posts() ) : the_post();
 
 // End the loop.
 endwhile;
-
-?>
