@@ -1,6 +1,6 @@
 ## Auto Load Next Post
 
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png?style=flat)](http://gruntjs.com/) [![GitHub version](https://badge.fury.io/gh/seb86%2FAuto-Load-Next-Post.svg?style=flat)](http://badge.fury.io/gh/seb86%2FAuto-Load-Next-Post) [![GPL license](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png?style=flat)](http://gruntjs.com/)  [![GitHub forks](https://img.shields.io/github/forks/seb86/Auto-Load-Next-Post.svg?style=flat)](https://github.com/seb86/Auto-Load-Next-Post/network) [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat)](https://raw.githubusercontent.com/seb86/Auto-Load-Next-Post/master/license.txt) [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/auto-load-next-post.svg?style=flat)](https://wordpress.org/plugins/auto-load-next-post/) [![WordPress](https://img.shields.io/wordpress/plugin/dt/auto-load-next-post.svg?style=flat)](https://wordpress.org/plugins/auto-load-next-post/) [![WordPress](https://img.shields.io/wordpress/v/auto-load-next-post.svg?style=flat)](https://wordpress.org/plugins/auto-load-next-post/)
 
 Auto Load Next Post is a lightweight plugin that simply loads the next post after one another as you scroll down the page. To do this, it reads the post navigation in your theme at the end of each post and collects the post URL. With this, it asks WordPress to do a partial content load and the javascript places the content of the next post underneath the parent post.
 
