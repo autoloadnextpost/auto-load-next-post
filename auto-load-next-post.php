@@ -3,12 +3,12 @@
  * Plugin Name:       Auto Load Next Post
  * Plugin URI:        https://github.com/seb86/Auto-Load-Next-Post
  * Description:       Auto loads the next post as you scroll down the post. Also replaces the URL address and the page title with the next post.
- * Version:           1.0.0
+ * Version:           1.3.2
  * Author:            Sébastien Dumont
  * Author URI:        http://www.sebastiendumont.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       wordpress-plugin-boilerplate-light
+ * Text Domain:       auto-load-next-post
  * Domain Path:       languages
  * Network:           false
  * GitHub Plugin URI: https://github.com/seb86/Auto-Load-Next-Post
@@ -83,7 +83,7 @@ final class Auto_Load_Next_Post {
 	 * @access public
 	 * @var    string
 	 */
-	public $version = "1.0.0";
+	public $version = "1.3.2";
 
 	/**
 	 * The WordPress version the plugin requires minumum.
@@ -245,6 +245,7 @@ final class Auto_Load_Next_Post {
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'action_links' ) );
 		add_filter( 'plugin_row_meta',                                    array( $this, 'plugin_row_meta' ), 10, 2 );
 		add_action( 'init',                                               array( $this, 'init_auto_load_next_post' ), 0 );
+		add_action( 'wp_enqueue_scripts',                                 array( $this, 'front_scripts_and_styles' ) );
 
 		// Loaded action
 		do_action( 'auto_load_next_post_loaded' );
@@ -416,13 +417,11 @@ final class Auto_Load_Next_Post {
 	public function init_auto_load_next_post() {
 		add_rewrite_endpoint( 'partial', EP_PERMALINK );
 
+		// Refresh permalinks
 		flush_rewrite_rules();
 
 		// Set up localisation
 		$this->load_plugin_textdomain();
-
-		// Load JavaScript and stylesheets
-		$this->register_scripts_and_styles();
 	} // END init_auto_load_next_post()
 
 	/**
@@ -489,54 +488,52 @@ final class Auto_Load_Next_Post {
 	} // END plugin_path()
 
 	/**
-	 * Registers and enqueues stylesheets and javascripts
-	 * for the administration panel and the front of the site.
+	 * Get the plugin template path.
 	 *
-	 * @since  1.0.0
-	 * @access private
-	 * @filter auto_load_next_post_admin_params
+	 * @since  1.3.2
+	 * @access public
+	 * @return string
+	 */
+	public function template_path() {
+		return 'auto-load-next-post/';
+	} // END template_path()
+
+	/**
+	 * Registers and enqueues stylesheets and javascripts
+	 * for the front of the site.
+	 *
+	 * @since  1.3.2
+	 * @access public
 	 * @filter auto_load_next_post_params
 	 */
-	private function register_scripts_and_styles() {
-		if ( is_admin() ) {
-			$this->load_file( $this->plugin_slug . '_admin_script', '/assets/js/admin/auto-load-next-post' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array('jquery'), $this->version );
+	public function front_scripts_and_styles() {
+		/**
+		 * Load Javascript if found as a singluar post either, 
+		 * single or page and is one of the selected post types.
+		 */
+		if ( is_singular() && in_array( get_post_type(), get_option( 'auto_load_next_post_get_post_types' ) ) ) {
+			$this->load_file( $this->plugin_slug . '-scrollspy', '/assets/js/frontend/scrollspy' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array('jquery'), $this->version );
+			$this->load_file( $this->plugin_slug . '-history', '/assets/js/frontend/jquery.history.js', true, array('jquery'), $this->version );
+			$this->load_file( $this->plugin_slug . '-script', '/assets/js/frontend/auto-load-next-post' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( $this->plugin_slug . '-scrollspy' ), $this->version );
 
-			// TipTip
-			$this->load_file( 'jquery-tiptip', '/assets/js/jquery-tiptip/jquery.tipTip' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array('jquery'), $this->version );
-
-			// Variables for Admin JavaScripts
-			wp_localize_script( $this->plugin_slug . '_admin_script', 'auto_load_next_post_admin_params', apply_filters( 'auto_load_next_post_admin_params', array(
-				'plugin_url'       => $this->plugin_url(),
-				'i18n_nav_warning' => __( 'The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post' ),
-				'plugin_screen_id' => AUTO_LOAD_NEXT_POST_SCREEN_ID,
+			// Variables for JS scripts
+			wp_localize_script( $this->plugin_slug . '-script', 'auto_load_next_post_params', apply_filters( 'auto_load_next_post_params', array(
+				'alnp_content_container'      => get_option( 'auto_load_next_post_content_container' ),
+				'alnp_post_id_selector'       => get_option( 'auto_load_next_post_id_selector' ),
+				'alnp_title_selector'         => get_option( 'auto_load_next_post_title_selector' ),
+				'alnp_navigation_container'   => get_option( 'auto_load_next_post_navigation_container' ),
+				'alnp_comments_container'     => get_option( 'auto_load_next_post_comments_container' ),
+				'alnp_remove_comments'        => get_option( 'auto_load_next_post_remove_comments' ),
+				'alnp_google_analytics'       => get_option( 'auto_load_next_post_google_analytics' ),
 			) ) );
-
-			// Stylesheets
-			$this->load_file( $this->plugin_slug . '_admin_style', '/assets/css/admin/auto-load-next-post' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
-		}
-		else {
-			//if ( is_singular() ) {
-				$this->load_file( $this->plugin_slug . '-scrollspy', '/assets/js/frontend/scrollspy' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array('jquery'), $this->version );
-				$this->load_file( $this->plugin_slug . '-history', '/assets/js/frontend/jquery.history.js', true, array('jquery'), $this->version );
-				$this->load_file( $this->plugin_slug . '-script', '/assets/js/frontend/auto-load-next-post' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( $this->plugin_slug . '-scrollspy' ), $this->version );
-
-				// Variables for JS scripts
-				wp_localize_script( $this->plugin_slug . '-script', 'auto_load_next_post_params', apply_filters( 'auto_load_next_post_params', array(
-					'alnp_content_container'      => get_option( 'auto_load_next_post_content_container' ),
-					'alnp_title_selector'         => get_option( 'auto_load_next_post_title_selector' ),
-					'alnp_navigation_container'   => get_option( 'auto_load_next_post_navigation_container' ),
-					'alnp_comments_container'     => get_option( 'auto_load_next_post_comments_container' ),
-					'alnp_google_analytics'       => get_option( 'auto_load_next_post_google_analytics' ),
-				) ) );
-			//} // END if is_singular()
-		} // end if/else
+		} // END if is_singular() && get_post_type()
 	} // END register_scripts_and_styles()
 
 	/**
 	 * Helper function for registering and enqueueing scripts and styles.
 	 *
 	 * @since  1.0.0
-	 * @access private
+	 * @access public
 	 * @param  string  $name      The ID to register with WordPress.
 	 * @param  string  $file_path The path to the actual file.
 	 * @param  bool    $is_script Optional, argument for if the incoming file_path is a JavaScript source file.
@@ -544,7 +541,7 @@ final class Auto_Load_Next_Post {
 	 * @param  string  $version   Optional, can match the version of the plugin or version of the source file.
 	 * @global string  $wp_version
 	 */
-	private function load_file( $name, $file_path, $is_script = false, $support = array(), $version = '' ) {
+	public function load_file( $name, $file_path, $is_script = false, $support = array(), $version = '' ) {
 		global $wp_version;
 
 		$url  = $this->plugin_url() . $file_path;
@@ -577,6 +574,6 @@ function Auto_Load_Next_Post() {
 	return Auto_Load_Next_Post::instance();
 }
 
-// Global for backwards compatibility.
-$GLOBALS["auto_load_next_post"] = Auto_Load_Next_Post();
+// Run Plugin
+Auto_Load_Next_Post();
 ?>

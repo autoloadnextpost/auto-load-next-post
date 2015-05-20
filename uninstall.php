@@ -14,7 +14,7 @@ global $wpdb;
 
 // For a single site
 if ( ! is_multisite() ) {
-	$uninstall = $settings->get_option( 'auto_load_next_post_uninstall_data' );
+	$uninstall = get_option( 'auto_load_next_post_uninstall_data' );
 
 	if ( ! empty( $uninstall ) ) {
 		// Delete options

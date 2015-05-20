@@ -1,0 +1,36 @@
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac crap
+.DS_Store
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# PhpStorm
+.idea/
+
+# Bin
+bin/
+
+# Screenshots
+screenshots/
+
+# Wiki
+wiki/
+
+# Grunt
+node_modules/
+build/
+npm-debug.log
+
+# Transifex
+tx.exe

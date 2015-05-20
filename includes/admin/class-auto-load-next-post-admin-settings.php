@@ -672,10 +672,10 @@ class Auto_Load_Next_Post_Admin_Settings {
 		}
 
 		// Save all options as an array. Ready for export.
-		if( empty( $current_section ) ) {
+		if ( empty( $current_section ) ) {
 			update_option( 'auto_load_next_post_options_' . $current_tab, $update_options );
 		}
-		else{
+		else {
 			update_option( 'auto_load_next_post_options_' . $current_tab . '_' . $current_section, $update_options );
 		}
 
@@ -685,4 +685,3 @@ class Auto_Load_Next_Post_Admin_Settings {
 } // END class.
 
 } // end if class exists.
-?>

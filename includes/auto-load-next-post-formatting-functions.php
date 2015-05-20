@@ -22,5 +22,3 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function auto_load_next_post_clean( $var ) {
 	return sanitize_text_field( $var );
 } // END auto_load_next_post_clean()
-
-?>
