@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: Auto Load Next Post 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/seb86/WordPress-Plugin-Boilerplate/"
 "issues\n"
-"POT-Creation-Date: 2015-05-17 18:45+0100\n"
-"PO-Revision-Date: 2015-05-17 18:45+0100\n"
+"POT-Creation-Date: 2015-05-20 17:15+0100\n"
+"PO-Revision-Date: 2015-05-20 17:15+0100\n"
 "Last-Translator: Auto Load Next Post <mailme@sebastiendumont.com>\n"
 "Language-Team: WP-Translations <wpt@wp-translations.org>\n"
 "Language: en_US\n"
@@ -181,14 +181,6 @@ msgstr ""
 msgid "Example: <code>div.single</code>"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:113
-msgid "Post ID Selector"
-msgstr ""
-
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:114
-msgid "Example: <code>article</code>"
-msgstr ""
-
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:124
 msgid "Post Title Selector"
 msgstr ""
@@ -253,16 +245,16 @@ msgstr ""
 msgid "Hide this notice"
 msgstr ""
 
-#: template/content-partial.php:23
+#: template/content-partial.php:21
 msgid "Post navigation"
 msgstr ""
 
-#: template/content-partial.php:25
+#: template/content-partial.php:23
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: template/content-partial.php:26
+#: template/content-partial.php:24
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr ""

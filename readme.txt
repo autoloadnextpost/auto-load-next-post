@@ -8,22 +8,21 @@ Stable tag:        1.3.2
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-Simply auto loads the next post as you scroll down the page. Also replaces the URL address and the page title with the next post.
+Simply auto loads the previous post as you scroll down the page. Also changes the URL address and the page title from that post.
 
 == Description ==
-Auto Load Next Post is a lightweight plugin that simply loads the next post after one another as you scroll down the page. To do this, it reads the post navigation in your theme at the end of each post and collects the post URL. With this, it asks WordPress to do a partial content load and the javascript places the content of the next post underneath the parent post.
-
-It also updates your web history by manipulating the web address and page title so if you were to hit refresh, you will be taken to the post you were viewing last. You will find that when pressing the previous button in your browser to go back you will be taken to the previous post.
+Have you ever felt tired of going back and forth between blog posts? I know I have so I decided to develop a solution. One where you would need to do very little coding and require very little to set up on your blog.
 
 [youtube https://www.youtube.com/watch?v=EvBCPXVe2U4]
 
-After installing the plugin and completing the settings page, you will need to provide a little theme support should your theme require it.
+= What is it? =
+Auto Load Next Post is a lightweight plugin that simply loads the previous post, one after another as you scroll down the page. It simply reads the post navigation in your theme at the end of each post and collects the post URL for the previous post. WordPress will then do a partial load and place the content of the previous post underneath the parent post.
 
-See Documentation for more information.
+Not only that, it updates your web history by manipulating the web address and page title. This allows you to return to any post you have looked at in your browser history. When you refresh the page, the page will take you to the post you were viewing last.
 
 = Features =
 * Can restrict it to load only on specific post types. - NEW in v1.3.2
-* You now have the option to hide the comments if you wish. - NEW in v1.3.2
+* Have the option to hide the comments if you wish. - NEW in v1.3.2
 * Track each post load with Google Analytics. ( Requires Google Analytics to be applied for this to work. )
 
 = Documentation =
@@ -39,8 +38,6 @@ If you need help with customization. Please consider [hiring me](http://www.seba
 
 = Demo Site =
 Want to try it out? [Go to the demo site](http://demos.sebastiendumont.com/auto-load-next-post/) and view a post. Scroll down and see the plugin in action.
-
-The demo uses a child theme that includes the required support for the plugin to work. [Download the child theme source from GitHub](https://github.com/seb86/Auto-Load-Next-Post-Twenty-Fifteen-Support).
 
 = Donations and Reviews =
 To keep this plugin working and support many themes as possible, please consider making a [donation](http://www.sebastiendumont.com/donation/) or [write a review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform).
@@ -59,13 +56,17 @@ Installing "Auto Load Next Post" can be done either by searching for "Auto Load 
 4. Go to the plugin settings page 'Settings > Auto Load Next Post'.
 5. Enter each of the containers specified in the theme you are using and press "Save".
 
+Once you have activated the plugin, you may get an admin notice telling you that you have not declared support for the plugin. This is perfectly normal and with a little setting up, the notification will remove automatically. There are two buttons. The first leads you to documentation to help you support the plugin. The second allows you to force hide the admin notice.
+
+See [documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki) for more information.
+
 == Screenshots ==
 1. Admin Settings Page
-2. Theme support admin notification
+2. Theme Support Admin Notification
 
 == Changelog ==
 
-= 1.3.2 : 17th May 2015 =
+= 1.3.2 : 20th May 2015 =
 * Added more theme support with compatible theme template file which can be overrided.
 * Added option to enable auto loading posts for specific post types.
 * Added option for comments. Now you can choose to show or hide rather than forcing it to hide automatically.
@@ -77,12 +78,12 @@ Installing "Auto Load Next Post" can be done either by searching for "Auto Load 
 * Corrected error with uninstall.php file
 * Moved function register_scripts_and_styles() to class-auto-load-next-post-admin.php
 * Filtered the Javascript to load only on singular posts and the enabled post types.
-* Removed security issue by accessing $GLOBALS directly.
+* Removed security issue in the main plugin file by accessing $GLOBALS directly.
 * Removed all closing PHP tags omitting at the end of each file.
 
 = 1.0.0 : 4th April 2015 =
 * Initial version
 
 == Upgrade Notice ==
-= 1.1.1 : 11th May 2015 =
+= 1.3.2 : 20th May 2015 =
 * Please upgrade for better theme support and security fix.
