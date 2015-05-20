@@ -42,7 +42,7 @@ Want to try it out? [Go to the demo site](http://demos.sebastiendumont.com/auto-
 = Donations and Reviews =
 To keep this plugin working and support many themes as possible, please consider making a [donation](http://www.sebastiendumont.com/donation/) or [write a review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform).
 
-** More information **
+**More information**
 - Other [WordPress plugins](http://profiles.wordpress.org/sebd86/) by [Sébastien Dumont](http://www.sebastiendumont.com/)
 - Contact Sebastien on Twitter: [@sebd86](http://twitter.com/sebd86)
 - If you're a developer yourself, follow or contribute to the [Auto Load Next Post plugin on GitHub](https://github.com/seb86/auto-load-next-post)
