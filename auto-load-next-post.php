@@ -3,7 +3,7 @@
  * Plugin Name:       Auto Load Next Post
  * Plugin URI:        https://github.com/seb86/Auto-Load-Next-Post
  * Description:       Auto loads the next post as you scroll down the post. Also replaces the URL address and the page title with the next post.
- * Version:           1.3.2
+ * Version:           1.4.1
  * Author:            Sébastien Dumont
  * Author URI:        http://www.sebastiendumont.com
  * License:           GPL-2.0+
@@ -83,7 +83,7 @@ final class Auto_Load_Next_Post {
 	 * @access public
 	 * @var    string
 	 */
-	public $version = "1.3.2";
+	public $version = "1.4.1";
 
 	/**
 	 * The WordPress version the plugin requires minumum.
@@ -311,6 +311,7 @@ final class Auto_Load_Next_Post {
 		if ( strpos( $class, 'auto_load_next_post_admin' ) === 0 ) {
 			$path = $this->plugin_path() . '/includes/admin/';
 		}
+
 		if ( $path && is_readable( $path . $file ) ) {
 			include_once( $path . $file );
 			return;
@@ -508,7 +509,7 @@ final class Auto_Load_Next_Post {
 	 */
 	public function front_scripts_and_styles() {
 		/**
-		 * Load Javascript if found as a singluar post either, 
+		 * Load Javascript if found as a singluar post either,
 		 * single or page and is one of the selected post types.
 		 */
 		if ( is_singular() && in_array( get_post_type(), get_option( 'auto_load_next_post_get_post_types' ) ) ) {
@@ -576,4 +577,3 @@ function Auto_Load_Next_Post() {
 
 // Run Plugin
 Auto_Load_Next_Post();
-?>

@@ -12,8 +12,9 @@ Auto Load Next Post is a lightweight plugin that simply loads the previous post,
 Not only that, it updates your web history by manipulating the web address and page title. This allows you to return to any post you have looked at in your browser history. When you refresh the page, the page will take you to the post you were viewing last.
 
 ### Features
-* Can restrict it to load only on specific post types. - NEW in v1.3.2
-* You now have the option to hide the comments if you wish. - NEW in v1.3.2
+* Can use action hooks to load content before and after the next post has loaded. - NEW in v1.4
+* Can restrict it to load only on specific post types.
+* You now have the option to hide the comments if you wish.
 * Track each post load with Google Analytics. ( Requires Google Analytics to be applied for this to work. )
 
 ### Documentation

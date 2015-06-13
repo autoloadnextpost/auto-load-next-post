@@ -2,8 +2,8 @@
 /**
  * Display notices in the WordPress admin.
  *
- * @since    1.1.1
- * @author   Sébastien Dumont
+ * @since    1.3.2
+ * @author   SÃ©bastien Dumont
  * @category Admin
  * @package  Auto Load Next Post
  * @license  GPL-2.0+
@@ -16,14 +16,14 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 /**
  * Class - Auto_Load_Next_Post_Admin_Notices
  *
- * @since 1.1.1
+ * @since 1.3.2
  */
 class Auto_Load_Next_Post_Admin_Notices {
 
 	/**
 	 * Constructor
 	 *
-	 * @since  1.1.1
+	 * @since  1.3.2
 	 * @access public
 	 * @return void
 	 */
@@ -34,13 +34,11 @@ class Auto_Load_Next_Post_Admin_Notices {
 	/**
 	 * Add admin notices and styles when needed.
 	 *
-	 * @since  1.1.1
+	 * @since  1.3.2
 	 * @access public
 	 */
 	public function add_notices() {
 		$template = get_option( 'template' );
-
-		include( 'auto-load-next-post-theme-support.php' );
 
 		if ( ! current_theme_supports( 'auto-load-next-post' ) ) {
 
@@ -60,7 +58,7 @@ class Auto_Load_Next_Post_Admin_Notices {
 	/**
 	 * Show the Theme Check notice.
 	 *
-	 * @since  1.1.1
+	 * @since  1.3.2
 	 * @access public
 	 */
 	public function theme_check_notice() {
