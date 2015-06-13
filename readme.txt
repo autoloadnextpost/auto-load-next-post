@@ -84,6 +84,7 @@ A.3 I am working on it! :)
 
 = 1.4.1 : 13th June 2015 =
 * Added many action hooks in template file 'content-partial.php' - See documentation for a list of hooks.
+* Removed an error from the admin side when debug is enabled.
 
 = 1.3.2 : 20th May 2015 =
 * Added more theme support with compatible theme template file which can be overrided.
