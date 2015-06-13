@@ -21,5 +21,3 @@ if ( ! is_multisite() ) {
 		$wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE 'auto_load_next_post_%';");
 	}
 }
-
-?>

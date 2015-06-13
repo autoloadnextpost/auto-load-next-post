@@ -63,8 +63,6 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	public function get_post_types() {
 		$post_types = get_post_types( array( 'public' => true ), 'names' );
 
-		
-
 		return $post_types;
 	}
 
