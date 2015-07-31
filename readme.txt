@@ -1,10 +1,10 @@
 === Auto Load Next Post ===
 Contributors:      sebd86
-Donate link:       http://www.sebastiendumont.com/donation/
-Tags:              auto load, posts, scrolling, history
+Donate link:       https://www.sebastiendumont.com/donation/
+Tags:              auto load posts, scroll, scroll posts, post scroller, scrolling, infinite scroll, AJAX, endless, history, post history, browsing history
 Requires at least: 4.0
-Tested up to:      4.2.2
-Stable tag:        1.4.1
+Tested up to:      4.2.3
+Stable tag:        1.4.2
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,7 +21,7 @@ Auto Load Next Post is a lightweight plugin that simply loads the previous post,
 Not only that, it updates your web history by manipulating the web address and page title. This allows you to return to any post you have looked at in your browser history. When you refresh the page, the page will take you to the post you were viewing last.
 
 = Features =
-* Can use action hooks to load content before and after the next post has loaded. - NEW in v1.4.1
+* Can use action hooks to load content before and after the next post has loaded.
 * Can restrict it to load only on specific post types.
 * Have the option to hide the comments if you wish.
 * Track each post load with Google Analytics. ( Requires Google Analytics to be applied for this to work. )
@@ -30,23 +30,32 @@ Not only that, it updates your web history by manipulating the web address and p
 Documentation, for this plugin, can be found at the GitHub repository [Wiki](https://github.com/seb86/Auto-Load-Next-Post/wiki).
 
 = Contributing and reporting bugs =
-You can contribute code to this plugin via GitHub: https://github.com/seb86/auto-load-next-post and localizations via Transifex: https://www.transifex.com/projects/p/auto-load-next-post/
+You can [contribute code](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) to this plugin via the [GitHub](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) repository and localizations via [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/)
 
-= Support =
-Use the WordPress.org forums for [community support](https://wordpress.org/support/plugin/auto-load-next-post). If you spot a bug, you can of course log it on [Github](https://github.com/seb86/Auto-Load-Next-Post/issues) instead where I can act upon it more efficiently.
+= Forum Support and Issue Reporting =
+Use the WordPress.org forums for [community support](https://wordpress.org/support/plugin/auto-load-next-post). I will do my best to respond. You may get or see a response from someone who has a similar issue already posted. If you spot a bug within the plugin, you can of course log it as an [issue](https://github.com/seb86/Auto-Load-Next-Post/issues) on [Github](https://github.com/seb86/Auto-Load-Next-Post/issues) instead where I can act upon it more efficiently.
 
-If you need help with customization. Please consider [hiring me](http://www.sebastiendumont.com/hire-me/) to apply your website's customizations for this plugin.
+If you need help with any customizations for this plugin. Please consider [hiring me](http://www.sebastiendumont.com/hire-me/) to apply them.
 
 = Demo Site =
 Want to try it out? [Go to the demo site](http://demos.sebastiendumont.com/auto-load-next-post/) and view a post. Scroll down and see the plugin in action.
 
-= Donations and Reviews =
-To keep this plugin working and support many themes as possible, please consider making a [donation](http://www.sebastiendumont.com/donation/) or [write a review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform).
+= Support the plugin by Donations and Reviews =
+To keep this plugin working and support as many themes as possible, please consider making a [donation](https://www.sebastiendumont.com/donation/) or [write a review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform) about it.
+
+= Languages =
+Auto Load Next Post is currently available in 3 languages with more on the way. The folks over at WP Translations handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
+
+**Current Translations Available**
+
+- English (US)
+- Français (French)(France)
+- Română (Romanian)
 
 **More information**
 
 - Other [WordPress plugins](http://profiles.wordpress.org/sebd86/) by [Sébastien Dumont](http://www.sebastiendumont.com/)
-- Contact Sebastien on Twitter: [@sebd86](http://twitter.com/sebd86)
+- Contact Sébastien on Twitter: [@sebd86](http://twitter.com/sebd86)
 - If you're a developer yourself, follow or contribute to the [Auto Load Next Post plugin on GitHub](https://github.com/seb86/auto-load-next-post)
 
 == Installation ==
@@ -76,11 +85,18 @@ A.2 Yes you can. Simply create a new folder in your theme like so, ```your-theme
 
 A.3 I am working on it! :)
 
+= Q.4 After the first post has loaded, all I get is the same post over and over again. Why is that?
+
+A.4 This is because when you created your own `content-partial.php` file, you placed the post navigation outside of the post query. You need to place it inside the loop. This will solve the problem.
+
 == Screenshots ==
 1. Admin Settings Page
 2. Theme Support Admin Notification
 
 == Changelog ==
+
+= 1.4.2 : 31st July 2015 =
+* Added two languages for localizing the plugin settings page. Français (French)(France) and Română (Romanian).
 
 = 1.4.1 : 13th June 2015 =
 * Added many action hooks in template file 'content-partial.php' - See documentation for a list of hooks.
@@ -105,5 +121,5 @@ A.3 I am working on it! :)
 * Initial version
 
 == Upgrade Notice ==
-= 1.4.1 : 13th June 2015 =
-* Added many action hooks in template file 'content-partial.php'
+= 1.4.2 : 31st July 2015 =
+* Added two languages for localizing the plugin settings page. Français (French)(France) and Română (Romanian).
