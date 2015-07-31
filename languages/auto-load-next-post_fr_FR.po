@@ -1,0 +1,250 @@
+# Auto Load Next Post Copyright (c) {2014}
+# Translators:
+# Franck, 2015
+# FxB <fxb@wp-translations.org>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Auto Load Next Post\n"
+"Report-Msgid-Bugs-To: https://github.com/seb86/WordPress-Plugin-Boilerplate/issues\n"
+"POT-Creation-Date: 2015-05-17 18:45+0100\n"
+"PO-Revision-Date: 2015-07-31 17:58+0200\n"
+"Last-Translator: Franck\n"
+"Language-Team: French (France) (http://www.transifex.com/projects/p/auto-load-next-post/language/fr_FR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: auto-load-next-post.php:206 auto-load-next-post.php:218
+msgid "Cheatin&#8217; huh?"
+msgstr "Alors on essaye de tricher ?"
+
+#: auto-load-next-post.php:265
+msgid "Settings"
+msgstr "Réglages"
+
+#: auto-load-next-post.php:266 includes/admin/class-auto-load-next-post-admin-help.php:56
+msgid "Support"
+msgstr "Aide"
+
+#: auto-load-next-post.php:291 includes/admin/class-auto-load-next-post-admin-help.php:48 includes/admin/class-auto-load-next-post-admin.php:112
+msgid "Documentation"
+msgstr "Documentation"
+
+#: auto-load-next-post.php:379
+#, php-format
+msgid "Sorry, %s requires WordPress "
+msgstr "Sorry, %s requires WordPress "
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:50
+#, php-format
+msgid "Thank you for using <strong>%s</strong> :) Should you need help using or extending %s please read the documentation."
+msgstr "Merci d'utiliser <strong>%s</strong> :) Si vous avez besoin d'aide pour utiliser ou modifier %s veuillez lire la documentation."
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:51
+#, php-format
+msgid "%s Documentation"
+msgstr "Documentation de %s"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:58
+#, php-format
+msgid "After <a href=\"%s\">reading the documentation</a>, for further assistance you can use the <a href=\"%s\">community forum</a>."
+msgstr "Après la <a href=\"%s\">lecture de la documentation</a>, pour plus d'aide, vous pouvez utiliser le <a href=\"%s\"> forum de la communauté</a>."
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:59
+msgid "Community Support"
+msgstr "Forum de la communauté"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:64
+msgid "Found a bug?"
+msgstr "Un bug à signaler ?"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:66
+#, php-format
+msgid "If you find a bug within <strong>%s</strong> you can create a ticket via <a href=\"%s\">Github issues</a>. Ensure you read the <a href=\"%s\">contribution guide</a> prior to submitting your report. Be as descriptive as possible. Thank you."
+msgstr "Si vous trouvez un a bug dans <strong>%s</strong> vous pouvez créer un ticket via les <a href=\"%s\">problèmes Github</a>. Assurez-vous d'avoir lu le <a href=\"%s\">guide de contribution</a> avant d'envoyer votre rapport. Soyez aussi descriptif que possible."
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:67
+msgid "Report a bug"
+msgstr "Signaler un bug"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:71
+msgid "For more information:"
+msgstr "Pour plus d'informations :"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:72
+#, php-format
+msgid "About %s"
+msgstr "À propos de %s"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:73
+msgid "Project on WordPress.org"
+msgstr "Projet sur WordPress.org"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:74
+msgid "Project on Github"
+msgstr "Projet sur GitHub"
+
+#: includes/admin/class-auto-load-next-post-admin-menus.php:47
+#, php-format
+msgid "%s Settings"
+msgstr "Réglages de %s"
+
+#: includes/admin/class-auto-load-next-post-admin-settings.php:60
+msgid "Action failed. Please refresh the page and retry."
+msgstr "Échec. Veuillez rafraîchir la page et réessayer."
+
+#: includes/admin/class-auto-load-next-post-admin-settings.php:68
+msgid "Your settings have been saved."
+msgstr "Vos réglages ont bien été enregistrés."
+
+#: includes/admin/class-auto-load-next-post-admin-settings.php:138 includes/admin/class-auto-load-next-post-admin.php:83
+msgid "The changes you made will be lost if you navigate away from this page."
+msgstr "Les modifications que vous avez faites seront perdues si vous quittez cette page."
+
+#: includes/admin/class-auto-load-next-post-admin-settings.php:489
+msgid "Hard Crop?"
+msgstr "Recadrage ?"
+
+#: includes/admin/class-auto-load-next-post-admin-settings.php:511
+msgid "Select a page&hellip;"
+msgstr "Sélectionner une page&hellip;"
+
+#: includes/admin/class-auto-load-next-post-admin.php:111
+msgid "Website"
+msgstr "Site Web"
+
+#: includes/admin/class-auto-load-next-post-admin.php:129
+#, php-format
+msgid "If you like <strong>%1$s</strong> please leave a <a href=\"%2$s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating on <a href=\"%2$s\" target=\"_blank\">WordPress.org</a>. A huge thank you in advance!"
+msgstr "Si vous aimez <strong>%1$s</strong> veuillez laisser une évaluation <a href=\"%2$s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> sur <a href=\"%2$s\" target=\"_blank\">WordPress.org</a>. Un grand merci d'avance&nbsp;!"
+
+#: includes/admin/class-auto-load-next-post-admin.php:158
+msgid "Contribute"
+msgstr "Contribuer"
+
+#: includes/admin/class-auto-load-next-post-admin.php:159
+msgid "Report Bugs"
+msgstr "Signaler un bug"
+
+#: includes/admin/class-auto-load-next-post-admin.php:168
+#, php-format
+msgid "%s Version"
+msgstr "Version %s"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:31
+msgid "General"
+msgstr "Réglages généraux"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:82
+msgid "Information"
+msgstr "Information"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:84
+msgid "For the plugin to work you need to set the variables below."
+msgstr "Pour que l'extension fonctionne, vous devez configurer les variables ci-dessous."
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:89
+msgid "Restrict Post Types"
+msgstr "Restreindre les types d'articles"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:90
+msgid "Select which post types you wish to load automatically."
+msgstr "Sélectionner les types d'articles que vous souhaitez charger automatiquement"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:102
+msgid "Content Container"
+msgstr "Conteneur de contenu"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:103
+msgid "Example: <code>div.single</code>"
+msgstr "Exemple&nbsp;: <code>div.single</code>"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:113
+msgid "Post ID Selector"
+msgstr "Sélecteur d'identifiant d'article"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:114
+msgid "Example: <code>article</code>"
+msgstr "Exemple&nbsp;: <code>article</code>"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:124
+msgid "Post Title Selector"
+msgstr "Sélecteur du titre d'article"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:125
+msgid "Example: <code>h1.entry-title</code>"
+msgstr "Exemple&nbsp;: <code>h1.entry-title</code>"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:135
+msgid "Post Navigation Container"
+msgstr "Conteneur de navigation d'article"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:136
+msgid "Example: <code>nav.post-navigation</code>"
+msgstr "Exemple&nbsp;: <code>nav.post-navigation</code>"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:146
+msgid "Comments Container"
+msgstr "Conteneur de commentaires"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:147
+msgid "Example: <code>div#comments</code>"
+msgstr "Exemple&nbsp;: <code>div#comments</code>"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:157
+msgid "Remove Comments"
+msgstr "Supprimer les commentaires"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:158
+msgid "Enable to remove comments when each post loads."
+msgstr "Activer la suppression des commentaires lorsque chaque article se charge."
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:165
+msgid "Update Google Analytics"
+msgstr "Mettre à jour Google Analytics"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:166
+msgid "Enable to update your Google Analytics each time a post is automatically loaded."
+msgstr "Activer la mise à jour votre Google Analytics chaque fois qu'un arcticle est automatiquement chargé."
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:173
+msgid "Remove all data on uninstall?"
+msgstr "Supprimer toutes les données lors de la désinstallation ?"
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:174
+msgid "If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete."
+msgstr "Si activée, tous les réglages pour cette extension seront tous supprimés lors de la désinstallation via Extensions > Supprimer."
+
+#: includes/admin/views/html-admin-settings.php:24
+msgid "Save changes"
+msgstr "Enregistrer les modifications"
+
+#: includes/admin/views/html-notice-theme-support.php:10
+msgid "Supporting your theme"
+msgstr "Prends en charge votre thème"
+
+#: includes/admin/views/html-notice-theme-support.php:10
+msgid "Hide this notice"
+msgstr "Masquer cette notification"
+
+#: template/content-partial.php:23
+msgid "Post navigation"
+msgstr "Navigation de l&rsquo;article"
+
+#: template/content-partial.php:25
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: template/content-partial.php:26
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
