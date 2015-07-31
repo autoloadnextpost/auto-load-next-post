@@ -1,3 +1,6 @@
+## 1.4.2 (31st July 2015)
+* Added two languages for localizing the plugin settings page. Français (French)(France) and Româna (Romanian).
+
 ## 1.4.1 (13th June 2015)
 * Added many action hooks in template file 'content-partial.php' - See documentation for list of hooks.
 * Removed an error from the admin side when debug is enabled.
