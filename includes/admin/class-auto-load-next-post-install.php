@@ -9,9 +9,9 @@
  * @license  GPL-2.0+
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if(! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
+if(! class_exists('Auto_Load_Next_Post_Install')){
 
 /**
  * Class - Auto_Load_Next_Post_Install
@@ -27,7 +27,7 @@ class Auto_Load_Next_Post_Install {
 	 * @access public
 	 */
 	public function __construct() {
-		register_deactivation_hook( AUTO_LOAD_NEXT_POST_FILE, array( $this, 'deactivate' ) );
+		register_deactivation_hook( AUTO_LOAD_NEXT_POST_FILE, array($this, 'deactivate' ) );
 	} // END __construct()
 
 	/**
@@ -63,13 +63,13 @@ class Auto_Load_Next_Post_Install {
 	 */
 	public function create_options() {
 		// Include settings so that we can run through defaults
-		include_once( 'class-auto-load-next-post-admin-settings.php' );
+		include_once('class-auto-load-next-post-admin-settings.php');
 
 		$settings = Auto_Load_Next_Post_Admin_Settings::get_settings_pages();
 
 		foreach ( $settings as $section ) {
 			foreach ( $section->get_settings() as $value ) {
-				if ( isset( $value['default'] ) && isset( $value['id'] ) ) {
+				if(isset( $value['default'] ) && isset( $value['id'])){
 					$autoload = isset( $value['autoload'] ) ? (bool) $value['autoload'] : true;
 					add_option( $value['id'], $value['default'], '', ( $autoload ? 'yes' : 'no' ) );
 				}

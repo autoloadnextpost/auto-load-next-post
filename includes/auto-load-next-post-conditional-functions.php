@@ -11,9 +11,9 @@
  * @license  GPL-2.0+
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if(! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if ( ! function_exists( 'auto_load_next_post_is_ajax' ) ) {
+if(! function_exists( 'auto_load_next_post_is_ajax')){
 	/**
 	 * Returns true when the page is loaded via ajax.
 	 *
@@ -22,7 +22,7 @@ if ( ! function_exists( 'auto_load_next_post_is_ajax' ) ) {
 	 * @return bool
 	 */
 	function auto_load_next_post_is_ajax() {
-		if ( defined( 'DOING_AJAX' ) ) {
+		if(defined( 'DOING_AJAX')){
 			return true;
 		}
 
@@ -30,7 +30,7 @@ if ( ! function_exists( 'auto_load_next_post_is_ajax' ) ) {
 	} // END auto_load_next_post_is_ajax
 }
 
-if ( ! function_exists( 'supports_alnp' ) ) {
+if(! function_exists( 'supports_alnp')){
 	/**
 	 * Returns true or false if the plugin is supported by the theme.
 	 *
@@ -44,9 +44,9 @@ if ( ! function_exists( 'supports_alnp' ) ) {
 			'twentyfifteen', 'twentyfourteen', 'twentythirteen', 'twentytwelve', 'twentyten'
 		);
 
-		if ( in_array( get_option('template'), $core_themes ) ) {
+		if(in_array( get_option('template'), $core_themes)){
 			return true;
-		} else if ( current_theme_supports('auto-load-next-post') ) {
+		} else if(current_theme_supports('auto-load-next-post') ) {
 			return true;
 		}
 

@@ -16,7 +16,7 @@ class WPUpdatePhp {
 	 * @return bool
 	 */
 	public function does_it_meet_required_php_version( $version ) {
-		if ( $this->is_minimum_php_version( $version ) ) {
+		if($this->is_minimum_php_version( $version)){
 			return true;
 		}
 
@@ -30,21 +30,21 @@ class WPUpdatePhp {
 	 * @return boolean
 	 */
 	private function is_minimum_php_version( $version ) {
-		return version_compare( $this->minimum_version, $version, '<=' );
+		return version_compare( $this->minimum_version, $version, '<=');
 	}
 
 	/**
 	 * @return void
 	 */
 	private function load_minimum_required_version_notice() {
-		if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
-			add_action( 'admin_notices', array( $this, 'admin_notice' ) );
+		if(is_admin() && ! defined( 'DOING_AJAX')){
+			add_action('admin_notices', array($this, 'admin_notice' ) );
 		}
 	}
 
 	public function admin_notice() {
 		echo '<div class="error">';
-		echo '<p>'.sprintf( __( 'Unfortunately, <strong>%s</strong> can not run on PHP versions older than '. $this->minimum_version .'. Read more information about <a href="http://www.wpupdatephp.com/update/" target="_blank">how you can update</a>'), 'Auto Load Next Post').'.</p>';
+		echo '<p>'.sprintf( __('Unfortunately, <strong>%s</strong> can not run on PHP versions older than '. $this->minimum_version .'. Read more information about <a href="http://www.wpupdatephp.com/update/" target="_blank">how you can update</a>'), 'Auto Load Next Post').'.</p>';
 		echo '</div>';
 	}
 }

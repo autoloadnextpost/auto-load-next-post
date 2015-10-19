@@ -119,7 +119,7 @@ A.6 Well, WordPress loads posts in descending order by default so the next post 
 
 == Changelog ==
 
-= 1.4.3 : 20th October 2015 =
+= 1.4.3 : 19th October 2015 =
 * Corrected undefined function for Google Analytics tracking in the JavaScript.
 * Improved Google Analytics. Now detects old, classic, current and Yoast method of tracking pageviews.
 * Changed the default content container setting to match Twenty Fifteen.

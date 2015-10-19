@@ -9,9 +9,9 @@
  * @license  GPL-2.0+
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if(! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
+if(! class_exists('Auto_Load_Next_Post_Admin')){
 
 /**
  * Class - Auto_Load_Next_Post_Admin
@@ -28,14 +28,14 @@ class Auto_Load_Next_Post_Admin {
 	 */
 	public function __construct() {
 		// Actions
-		add_action( 'init',       array( $this, 'includes' ), 10 );
-		add_action( 'admin_init', array( $this, 'admin_scripts' ), 100 );
+		add_action('init',       array($this, 'includes' ), 10 );
+		add_action('admin_init', array($this, 'admin_scripts' ), 100 );
 
 		// Filters
-		add_filter( 'plugin_action_links_'.plugin_basename( AUTO_LOAD_NEXT_POST_FILE ), array( $this, 'action_links' ) );
-		add_filter( 'plugin_row_meta',                                                  array( $this, 'plugin_row_meta' ), 10, 2 );
-		add_filter( 'admin_footer_text',                                                array( $this, 'admin_footer_text' ) );
-		add_filter( 'update_footer',                                                    array( $this, 'update_footer' ), 15 );
+		add_filter('plugin_action_links_'.plugin_basename( AUTO_LOAD_NEXT_POST_FILE ), array($this, 'action_links' ) );
+		add_filter('plugin_row_meta',                                                  array($this, 'plugin_row_meta' ), 10, 2 );
+		add_filter('admin_footer_text',                                                array($this, 'admin_footer_text' ) );
+		add_filter('update_footer',                                                    array($this, 'update_footer' ), 15 );
 	} // END __construct()
 
 	/**
@@ -47,11 +47,11 @@ class Auto_Load_Next_Post_Admin {
 	 * @return void
 	 */
 	public function action_links( $links ) {
-		if ( current_user_can( 'manage_options' ) ) {
+		if(current_user_can( 'manage_options')){
 			$plugin_links = array(
-				'<a href="http://autoloadnextpost.com/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page" target="_blank" style="color:green; font-weight:bold;">'.__( 'Upgrade to Premium', 'auto-load-next-post' ).'</a>',
-				'<a href="'.admin_url( 'options-general.php?page=auto-load-next-post-settings' ).'">'.__( 'Settings', 'auto-load-next-post' ).'</a>',
-				'<a href="'.admin_url( 'options-general.php?page=auto-load-next-post-settings&tab=support' ).'">'.__( 'Support', 'auto-load-next-post' ).'</a>',
+				'<a href="http://autoloadnextpost.com/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page" target="_blank" style="color:green; font-weight:bold;">'.__('Upgrade to Premium', 'auto-load-next-post').'</a>',
+				'<a href="'.admin_url( 'options-general.php?page=auto-load-next-post-settings' ).'">'.__('Settings', 'auto-load-next-post').'</a>',
+				'<a href="'.admin_url( 'options-general.php?page=auto-load-next-post-settings&tab=support' ).'">'.__('Support', 'auto-load-next-post').'</a>',
 			);
 
 			return array_merge( $plugin_links, $links );
@@ -70,13 +70,13 @@ class Auto_Load_Next_Post_Admin {
 	 * @return array  $input
 	 */
 	public function plugin_row_meta( $input, $file ) {
-		if ( plugin_basename( AUTO_LOAD_NEXT_POST_FILE ) !== $file ) {
+		if(plugin_basename( AUTO_LOAD_NEXT_POST_FILE ) !== $file ) {
 			return $input;
 		}
 
 		$links = array(
-			'<a href="'.esc_url( 'https://github.com/seb86/Auto-Load-Next-Post/wiki/' ).'" target="_blank">'.__( 'Documentation', 'auto-load-next-post' ).'</a>',
-			'<a href="'.esc_url( 'https://wordpress.org/support/plugin/auto-load-next-post' ).'" target="_blank">'.__( 'Community Support', 'auto-load-next-post' ).'</a>'
+			'<a href="'.esc_url( 'https://github.com/seb86/Auto-Load-Next-Post/wiki/' ).'" target="_blank">'.__('Documentation', 'auto-load-next-post').'</a>',
+			'<a href="'.esc_url( 'https://wordpress.org/support/plugin/auto-load-next-post' ).'" target="_blank">'.__('Community Support', 'auto-load-next-post').'</a>'
 		);
 
 		$input = array_merge( $input, $links );
@@ -92,14 +92,14 @@ class Auto_Load_Next_Post_Admin {
 	 */
 	public function includes() {
 		// The plugin checks requirements on activation before it does other stuff.
-		include_once( 'class-auto-load-next-post-admin-activation.php' );
+		include_once('class-auto-load-next-post-admin-activation.php');
 
 		// Classes we only need if the ajax is not-ajax
-		if ( !auto_load_next_post_is_ajax() ) {
-			include( 'class-auto-load-next-post-install.php' ); // Install Plugin
-			include( 'class-auto-load-next-post-admin-menus.php' ); // Plugin Menu
-			include( 'class-auto-load-next-post-admin-notices.php' ); // Plugin Notices
-			include( 'class-auto-load-next-post-admin-help.php' ); // Plugin Help Tab
+		if(!auto_load_next_post_is_ajax() ) {
+			include('class-auto-load-next-post-install.php'); // Install Plugin
+			include('class-auto-load-next-post-admin-menus.php'); // Plugin Menu
+			include('class-auto-load-next-post-admin-notices.php'); // Plugin Notices
+			include('class-auto-load-next-post-admin-help.php'); // Plugin Help Tab
 		}
 	} // END includes()
 
@@ -119,14 +119,12 @@ class Auto_Load_Next_Post_Admin {
 		Auto_Load_Next_Post::load_file( 'jquery-tiptip', '/assets/js/libs/jquery-tiptip/jquery.tipTip'.AUTO_LOAD_NEXT_POST_SCRIPT_MODE.'.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION );
 		// Variables for Admin JavaScripts
 		wp_localize_script( AUTO_LOAD_NEXT_POST_SLUG.'_admin_script', 'auto_load_next_post_admin_params', array(
-			//'plugin_url'       => Auto_Load_Next_Post::plugin_url(),
-			'i18n_nav_warning' => __( 'The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post' ),
-			//'plugin_screen_id' => AUTO_LOAD_NEXT_POST_SCREEN_ID,
+			'i18n_nav_warning' => __('The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post'),
 		) );
 
 		// Stylesheets
-		Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG.'_admin_style', '/assets/css/admin/auto-load-next-post'.AUTO_LOAD_NEXT_POST_SCRIPT_MODE.'.css' );
-		Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG.'_chosen_style', '/assets/css/libs/chosen'.AUTO_LOAD_NEXT_POST_SCRIPT_MODE.'.css' );
+		Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG.'_admin_style', '/assets/css/admin/auto-load-next-post'.AUTO_LOAD_NEXT_POST_SCRIPT_MODE.'.css');
+		Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG.'_chosen_style', '/assets/css/libs/chosen'.AUTO_LOAD_NEXT_POST_SCRIPT_MODE.'.css');
 	} // END admin_scripts()
 
 	/**
@@ -142,11 +140,11 @@ class Auto_Load_Next_Post_Admin {
 	public function admin_footer_text( $text ) {
 		$screen = get_current_screen();
 
-		if ( $screen->id == 'settings_page_auto-load-next-post-settings' ) {
+		if($screen->id == 'settings_page_auto-load-next-post-settings' ) {
 
 			$links = array(
-				'http://autoloadnextpost.com/?utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __( 'Website', 'auto-load-next-post' ),
-				'https://github.com/seb86/Auto-Load-Next-Post/wiki/?utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __( 'Documentation', 'auto-load-next-post' ),
+				'http://autoloadnextpost.com/?utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __('Website', 'auto-load-next-post'),
+				'https://github.com/seb86/Auto-Load-Next-Post/wiki/?utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __('Documentation', 'auto-load-next-post'),
 			);
 
 			$text    = '';
@@ -162,7 +160,7 @@ class Auto_Load_Next_Post_Admin {
 			}
 
 			// Rating and Review
-			$text .= sprintf( __( 'If you like <strong>%1$s</strong> please leave a <a href="%2$s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating on <a href="%2$s" target="_blank">WordPress.org</a>. A huge thank you in advance!', 'auto-load-next-post' ), 'Auto Load Next Post', 'https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?filter=5#postform' );
+			$text .= sprintf( __('If you like <strong>%1$s</strong> please leave a <a href="%2$s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating on <a href="%2$s" target="_blank">WordPress.org</a>. A huge thank you in advance!', 'auto-load-next-post'), 'Auto Load Next Post', 'https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?filter=5#postform');
 
 			return $text;
 		}
@@ -184,13 +182,13 @@ class Auto_Load_Next_Post_Admin {
 	public function update_footer( $text ) {
 		$screen = get_current_screen();
 
-		if ( $screen->id == 'settings_page_auto-load-next-post-settings' ) {
+		if($screen->id == 'settings_page_auto-load-next-post-settings' ) {
 
 			$text = '<span class="wrap">';
 
 			$links = array(
-				'https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md?utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __( 'Contribute', 'auto-load-next-post' ),
-				'https://github.com/seb86/Auto-Load-Next-Post/issues?state=open&utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __( 'Report Bugs', 'auto-load-next-post' ),
+				'https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md?utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __('Contribute', 'auto-load-next-post'),
+				'https://github.com/seb86/Auto-Load-Next-Post/issues?state=open&utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __('Report Bugs', 'auto-load-next-post'),
 			);
 
 			foreach( $links as $key => $value ) {
@@ -199,7 +197,7 @@ class Auto_Load_Next_Post_Admin {
 
 			$text .= '</span>'.'</p>'.
 			'<p class="alignright">'.
-			sprintf( __( '%s Version', 'auto-load-next-post' ), 'Auto Load Next Post' ).
+			sprintf( __('%s Version', 'auto-load-next-post'), 'Auto Load Next Post' ).
 			' : '.esc_attr( AUTO_LOAD_NEXT_POST_VERSION ).'</p>';
 
 			return $text;

@@ -9,9 +9,9 @@
  * @license  GPL-2.0+
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if(! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
+if(! class_exists('Auto_Load_Next_Post_Admin_Notices')){
 
 /**
  * Class - Auto_Load_Next_Post_Admin_Notices
@@ -27,8 +27,8 @@ class Auto_Load_Next_Post_Admin_Notices {
 	 * @access public
 	 */
 	public function __construct() {
-		add_action( 'admin_init', array( $this, 'check_wp' ) );
-		add_action( 'admin_init', array( $this, 'add_notices' ) );
+		add_action('admin_init', array($this, 'check_wp' ) );
+		add_action('admin_init', array($this, 'add_notices' ) );
 	} // END __construct()
 
 	/**
@@ -39,17 +39,17 @@ class Auto_Load_Next_Post_Admin_Notices {
 	 * @access public
 	 */
 	public function add_notices() {
-		$template = get_option( 'template' );
+		$template = get_option( 'template');
 
-		if ( ! supports_alnp() ) {
+		if(! supports_alnp() ) {
 
-			if ( ! empty( $_GET['hide_auto_load_next_post_theme_support_check'] ) ) {
+			if(! empty( $_GET['hide_auto_load_next_post_theme_support_check'])){
 				update_option( 'auto_load_next_post_theme_support_check', $template );
 				return;
 			}
 
-			if ( get_option( 'auto_load_next_post_theme_support_check' ) !== $template ) {
-				add_action( 'admin_notices', array( $this, 'theme_check_notice' ) );
+			if(get_option( 'auto_load_next_post_theme_support_check' ) !== $template ) {
+				add_action('admin_notices', array($this, 'theme_check_notice' ) );
 			}
 
 		}
@@ -66,8 +66,8 @@ class Auto_Load_Next_Post_Admin_Notices {
 	public function check_wp() {
 		global $wp_version;
 
-		if ( ! version_compare( $wp_version, AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE, '>=' ) ) {
-			add_action( 'admin_notices', array( $this, 'requirement_wp_notice' ) );
+		if(! version_compare( $wp_version, AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE, '>=')){
+			add_action('admin_notices', array($this, 'requirement_wp_notice' ) );
 			return false;
 		}
 
@@ -81,7 +81,7 @@ class Auto_Load_Next_Post_Admin_Notices {
 	 * @access public
 	 */
 	public function requirement_wp_notice() {
-		include( 'views/html-notice-requirement-wp.php' );
+		include('views/html-notice-requirement-wp.php');
 	} // END display_req_notice()
 
 	/**
@@ -91,7 +91,7 @@ class Auto_Load_Next_Post_Admin_Notices {
 	 * @access public
 	 */
 	public function theme_check_notice() {
-		include( 'views/html-notice-theme-support.php' );
+		include('views/html-notice-theme-support.php');
 	} // END theme_check_notice()
 
 } // END Auto_Load_Next_Post_Admin_Notices class.

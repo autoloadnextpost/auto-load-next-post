@@ -9,9 +9,9 @@
  * @license  GPL-2.0+
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if(! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Menus' ) ) {
+if(! class_exists('Auto_Load_Next_Post_Admin_Menus')){
 
 /**
  * Class - Auto_Load_Next_Post_Admin_Menus
@@ -28,7 +28,7 @@ class Auto_Load_Next_Post_Admin_Menus {
 	 */
 	public function __construct() {
 		// Add admin menus
-		add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
+		add_action('admin_menu', array($this, 'admin_menu' ), 9 );
 	} // END __construct()
 
 	/**
@@ -43,7 +43,7 @@ class Auto_Load_Next_Post_Admin_Menus {
 	public function admin_menu() {
 		global $menu, $wp_version;
 
-		add_options_page( sprintf( __( '%s Settings', 'auto-load-next-post' ), 'Auto Load Next Post' ), 'Auto Load Next Post', 'manage_options', 'auto-load-next-post-settings', array( $this, 'settings_page' ) );
+		add_options_page( sprintf( __('%s Settings', 'auto-load-next-post'), 'Auto Load Next Post' ), 'Auto Load Next Post', 'manage_options', 'auto-load-next-post-settings', array($this, 'settings_page' ) );
 	} // END admin_menu()
 
 	/**
@@ -52,7 +52,7 @@ class Auto_Load_Next_Post_Admin_Menus {
 	 * @access public
 	 */
 	public function settings_page() {
-		include_once( 'class-auto-load-next-post-admin-settings.php' );
+		include_once('class-auto-load-next-post-admin-settings.php');
 
 		Auto_Load_Next_Post_Admin_Settings::output();
 	}
