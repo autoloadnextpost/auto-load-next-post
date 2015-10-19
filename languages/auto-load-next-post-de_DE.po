@@ -1,6 +1,7 @@
 # Auto Load Next Post Copyright (c) {2014}
 # Translators:
-# Moldovan Dragos Calin <dragosm92@gmail.com>, 2015
+# Bettina <info@easy-web-solutions.de>, 2015
+# Merlin Schumacher <merlin.schumacher@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Auto Load Next Post\n"
@@ -8,12 +9,12 @@ msgstr ""
 "POT-Creation-Date: 2015-10-19 16:22+0200\n"
 "PO-Revision-Date: 2015-10-19 18:57+0200\n"
 "Last-Translator: Sebastien D <mailme@sebastiendumont.com>\n"
-"Language-Team: Romanian (Romania) (http://www.transifex.com/wp-translations/auto-load-next-post/language/ro_RO/)\n"
+"Language-Team: German (Germany) (http://www.transifex.com/wp-translations/auto-load-next-post/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ro_RO\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
@@ -27,7 +28,7 @@ msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:47 includes/admin/class-auto-load-next-post-admin.php:78 includes/admin/class-auto-load-next-post-admin.php:149
 msgid "Documentation"
-msgstr "Documentație"
+msgstr "Dokumentation"
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:49
 #, php-format
@@ -37,62 +38,62 @@ msgstr ""
 #: includes/admin/class-auto-load-next-post-admin-help.php:50
 #, php-format
 msgid "%s Documentation"
-msgstr "%s Documentație"
+msgstr "%s Dokumentation"
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:55
 msgid "Found a bug?"
-msgstr "Ați găsit un bug ?"
+msgstr "Einen Fehler gefunden?"
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:57
 #, php-format
 msgid "If you find a bug within <strong>%s</strong> you can create a ticket via <a href=\"%s\">Github issues</a>. Ensure you read the <a href=\"%s\">contribution guide</a> prior to submitting your report. Be as descriptive as possible. Thank you."
-msgstr "Dacă descoperiți o eroare în <strong>%s</strong> puteți creea un ticket pe <a href=\"%s\">Github issues</a>. Asigurați-vă că ați citit <a href=\"%s\">ghidul contribuitorului</a> înainte să trimiteți raportul dumneavoastră. Fiți cât de descriptiv se poate. Vă mulțumim."
+msgstr "Wenn Sie einen Bug in <strong>%s</strong> finden können Sie ein Ticket bei unserem <a href=\"%s\">GitHub Bugtracker</a> einreichen. Bitte lesen Sie bevor Sie einen Bug einreichen unsere <a href=\"%s\">Anleitung zur Mitarbeit</a>. Bitte beschreiben Sie den Fehler so genau wie möglich. Vielen Dank!"
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:58
 msgid "Report a bug"
-msgstr "Raportați o eroare"
+msgstr "Einen Fehler melden."
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:62
 msgid "For more information:"
-msgstr "Pentru mai multe informații:"
+msgstr "Weitere Informationen:"
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:63
 #, php-format
 msgid "About %s"
-msgstr "Despre %s"
+msgstr "Über %s"
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:64
 msgid "Project on WordPress.org"
-msgstr "Proiect pe WordPress.org"
+msgstr "Projekt auf Wordpress.org"
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:65
 msgid "Project on Github"
-msgstr "Proiect pe Github"
+msgstr "Projekt auf Github"
 
 #: includes/admin/class-auto-load-next-post-admin-menus.php:46
 #, php-format
 msgid "%s Settings"
-msgstr "%s Setări"
+msgstr "%s Einstellungen"
 
 #: includes/admin/class-auto-load-next-post-admin-settings.php:58
 msgid "Action failed. Please refresh the page and retry."
-msgstr "Acțiune eșuată. Reîncăcați pagina și încercați din nou. "
+msgstr "Aktion fehlgeschlagen. Bitte aktualisieren Sie die Seite und versuchen es erneut."
 
 #: includes/admin/class-auto-load-next-post-admin-settings.php:66
 msgid "Your settings have been saved."
-msgstr "Setările dumneavoastră au fost salvate."
+msgstr "Ihre Einstellungen wurden gespeichert."
 
 #: includes/admin/class-auto-load-next-post-admin-settings.php:135 includes/admin/class-auto-load-next-post-admin.php:123
 msgid "The changes you made will be lost if you navigate away from this page."
-msgstr "Schimbările pe care le-ai făcut se vor pierde dacă părăsești această pagină."
+msgstr "Beim Verlassen der Seite werden deine Änderungen verworfen."
 
 #: includes/admin/class-auto-load-next-post-admin-settings.php:486
 msgid "Hard Crop?"
-msgstr "Decupare forțată?"
+msgstr "Harter Beschnitt?"
 
 #: includes/admin/class-auto-load-next-post-admin-settings.php:508
 msgid "Select a page&hellip;"
-msgstr "Selectați o pagină&hellip;"
+msgstr "Wählen Sie eine Seite &hellip;"
 
 #: includes/admin/class-auto-load-next-post-admin.php:52
 msgid "Upgrade to Premium"
@@ -100,61 +101,61 @@ msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin.php:53
 msgid "Settings"
-msgstr "Setări"
+msgstr "Einstellungen"
 
 #: includes/admin/class-auto-load-next-post-admin.php:54 includes/admin/settings/class-auto-load-next-post-settings-support.php:29 includes/admin/settings/class-auto-load-next-post-settings-support.php:75
 msgid "Support"
-msgstr "Asistenţă"
+msgstr "Support"
 
 #: includes/admin/class-auto-load-next-post-admin.php:79
 msgid "Community Support"
-msgstr "Asistență Comunitate"
+msgstr "Unterstützung durch die Community."
 
 #: includes/admin/class-auto-load-next-post-admin.php:148
 msgid "Website"
-msgstr "Pagină web"
+msgstr "Website"
 
 #: includes/admin/class-auto-load-next-post-admin.php:165
 #, php-format
 msgid "If you like <strong>%1$s</strong> please leave a <a href=\"%2$s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating on <a href=\"%2$s\" target=\"_blank\">WordPress.org</a>. A huge thank you in advance!"
-msgstr "Dacă iși place <strong>%1$s</strong> te rugăm să lași <a href=\"%2$s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> un vot pe <a href=\"%2$s\" target=\"_blank\">WordPress.org</a>. Un mare mulțumim în avans."
+msgstr "Wenn Sie <strong>%1$s</strong> mögen, hinterlassen Sie bitte eine <a href=\"%2$s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a>-Bewertung auf <a href=\"%2$s\" target=\"_blank\">WordPress.org</a>. Dafür herzlichen Dank im Voraus."
 
 #: includes/admin/class-auto-load-next-post-admin.php:192
 msgid "Contribute"
-msgstr "Contribuie"
+msgstr "Etwas beitragen"
 
 #: includes/admin/class-auto-load-next-post-admin.php:193
 msgid "Report Bugs"
-msgstr "Raportare erori"
+msgstr "Fehler melden"
 
 #: includes/admin/class-auto-load-next-post-admin.php:202
 #, php-format
 msgid "%s Version"
-msgstr "Versiunea %s"
+msgstr "Version %s"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:31
 msgid "General"
-msgstr "General"
+msgstr "Allgemein"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:80
 msgid "Information"
-msgstr "Informații"
+msgstr "Information"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:82
 msgid "For the plugin to work you need to set the variables below."
-msgstr "Pentru ca pluginul să funcționeze trebuie să setați variabilele de mai jos"
+msgstr "Damit das Plugin funktioniert müssen Sie die Variablen unten bestücken."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:87
 msgid "Restrict Post Types"
-msgstr "Restricționati Tipuri de Articol"
+msgstr "Beitragstypen einschränken."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:88
 msgid "Select which post types you wish to load automatically."
-msgstr "Selectati ce tipuri de articole doriți să se încarce automat."
+msgstr "Wählen Sie welche Arten von Posts automatisch geladen werden sollen."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:100
 msgid "Content Container"
-msgstr "Recipient conținut"
+msgstr "Container für Inhalte"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:101
 msgid "Example: <code>main.site-main</code>"
@@ -162,39 +163,39 @@ msgstr ""
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:111
 msgid "Post Title Selector"
-msgstr "Selector Titlu Articol"
+msgstr "Selektor für Beitragstitel"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:112
 msgid "Example: <code>h1.entry-title</code>"
-msgstr "Exemplu: <code>h1.entry-title</code>"
+msgstr "Beispiel: <code>h1.entry-title</code>"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:122
 msgid "Post Navigation Container"
-msgstr "Selector Navigare Articol"
+msgstr "Container für die Artikelnavigation"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:123
 msgid "Example: <code>nav.post-navigation</code>"
-msgstr "Exemplu: <code>nav.post-navigation</code>"
+msgstr "Beispiel: <code>nav.post-navigation</code>"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:133
 msgid "Comments Container"
-msgstr "Recipient Comentarii"
+msgstr "Container für die Kommentare"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:134
 msgid "Example: <code>div#comments</code>"
-msgstr "Exemplu: <code>div#comments</code>"
+msgstr "Beispiel: <code>div#comments</code>"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:144
 msgid "Remove Comments"
-msgstr "Stergeți Comentariile"
+msgstr "Kommentar entfernen"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:145
 msgid "Enable to remove comments when each post loads."
-msgstr "Activați pentru a șterge comentariile când fiecare articol se încarcă."
+msgstr "Das Entfernen von Kommentaren aktivieren beim Laden jedes Posts."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:152
 msgid "Update Google Analytics"
-msgstr "Actualizați Google Analytics"
+msgstr "Google Analytics aktualisieren"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:153
 msgid "Each time a post is loaded it will count as a pageview. You must have a reference to your Google Analytics tracking code on the page."
@@ -210,11 +211,11 @@ msgstr ""
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:168
 msgid "Remove all data on uninstall?"
-msgstr "Ștergeți toate datele la dezinstalare?"
+msgstr "Alle Daten bei einer Deinstallation löschen?"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:169
 msgid "If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete."
-msgstr "Dacă este activat , toate setările pentru acest plugin vor fi șterse la dezinstalare prin Pluginuri > Șterge ."
+msgstr "Wenn diese Option aktiviert wird, werden alle Einstellungen dieses Plugins beim deinstallieren gelöscht."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:56
 msgid "As this is a free plugin, I can not provide support."
@@ -241,7 +242,7 @@ msgstr ""
 
 #: includes/admin/views/html-admin-settings.php:23
 msgid "Save Changes"
-msgstr "Salvează modificările"
+msgstr "Änderungen speichern"
 
 #: includes/admin/views/html-notice-requirement-wp.php:9
 #, php-format
@@ -250,11 +251,11 @@ msgstr ""
 
 #: includes/admin/views/html-notice-theme-support.php:10
 msgid "Supporting your theme"
-msgstr "Suportă tema dumneavoastră"
+msgstr "Unterstützt ihr Theme"
 
 #: includes/admin/views/html-notice-theme-support.php:10
 msgid "Hide this notice"
-msgstr "Ascundeți această notificare"
+msgstr "Diesen Hinweis ausblenden"
 
 #: includes/admin/wp-update-php/WPUpdatePhp.php:47
 #, php-format
@@ -263,7 +264,7 @@ msgstr ""
 
 #: template/content-partial.php:53
 msgid "Post navigation"
-msgstr "Navigare articole"
+msgstr "Beitragsnavigation"
 
 #: template/content-partial.php:55
 msgctxt "Previous post link"

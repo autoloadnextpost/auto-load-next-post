@@ -25,14 +25,15 @@ class Auto_Load_Next_Post_Admin_Notices {
 	 *
 	 * @since  1.3.2
 	 * @access public
-	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'admin_print_styles', array( $this, 'add_notices' ) );
+		add_action( 'admin_init', array( $this, 'check_wp' ) );
+		add_action( 'admin_init', array( $this, 'add_notices' ) );
 	} // END __construct()
 
 	/**
-	 * Add admin notices and styles when needed.
+	 * Checks if the theme supports the plugin.
+	 * If not, then a notice is displayed explaining what to do next.
 	 *
 	 * @since  1.3.2
 	 * @access public
@@ -40,7 +41,7 @@ class Auto_Load_Next_Post_Admin_Notices {
 	public function add_notices() {
 		$template = get_option( 'template' );
 
-		if ( ! current_theme_supports( 'auto-load-next-post' ) ) {
+		if ( ! supports_alnp() ) {
 
 			if ( ! empty( $_GET['hide_auto_load_next_post_theme_support_check'] ) ) {
 				update_option( 'auto_load_next_post_theme_support_check', $template );
@@ -48,7 +49,6 @@ class Auto_Load_Next_Post_Admin_Notices {
 			}
 
 			if ( get_option( 'auto_load_next_post_theme_support_check' ) !== $template ) {
-				wp_enqueue_style( 'auto-load-next-post-activation', Auto_Load_Next_Post()->plugin_url() . '/assets/css/admin/activation.css' );
 				add_action( 'admin_notices', array( $this, 'theme_check_notice' ) );
 			}
 
@@ -56,7 +56,36 @@ class Auto_Load_Next_Post_Admin_Notices {
 	} // END add_notices()
 
 	/**
-	 * Show the Theme Check notice.
+	 * Checks that the WordPress version meets the plugin requirement.
+	 *
+	 * @since  1.0.0
+	 * @access prublic
+	 * @global string $wp_version
+	 * @return bool
+	 */
+	public function check_wp() {
+		global $wp_version;
+
+		if ( ! version_compare( $wp_version, AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE, '>=' ) ) {
+			add_action( 'admin_notices', array( $this, 'requirement_wp_notice' ) );
+			return false;
+		}
+
+		return true;
+	} // END check_requirements()
+
+	/**
+	 * Show the WordPress requirement notice.
+	 *
+	 * @since  1.4.3
+	 * @access public
+	 */
+	public function requirement_wp_notice() {
+		include( 'views/html-notice-requirement-wp.php' );
+	} // END display_req_notice()
+
+	/**
+	 * Show the theme check notice.
 	 *
 	 * @since  1.3.2
 	 * @access public

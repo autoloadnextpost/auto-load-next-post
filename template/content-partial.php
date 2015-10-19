@@ -1,8 +1,11 @@
 <?php
 /**
  * This file loads the content partially.
+ *
+ * @version 1.4.3
  */
 
+// Fetch plugin settings.
 $remove_comments = get_option( 'auto_load_next_post_remove_comments' );
 
 // Load content before the loop.
@@ -20,10 +23,20 @@ while ( have_posts() ) : the_post();
 	do_action( 'alnp_load_before_content' );
 
 	// Load content before the post content for a specific post format.
-	do_action( 'alnp_load_before_content_type_' . $post_format );
+	do_action( 'alnp_load_before_content_type_'.$post_format );
 
-	// Include the content
-	get_template_part( 'content', get_post_format() );
+	if ( $post_format == 'standard' ) {
+		// Include the content.
+		get_template_part( 'content' );
+	} else {
+		// Include the post format content.
+		if ( locate_template( 'format-'.$post_format.'.php') != '' ) {
+			get_template_part( 'format', $post_format );
+		} else {
+			// If no format-{post-format}.php file found then fallback to content-{post-format}.php
+			get_template_part( 'content', $post_format );
+		}
+	}
 
 	// If comments are open or we have at least one comment, load up the comment template.
 	if ( comments_open() || get_comments_number() ) :
@@ -31,7 +44,7 @@ while ( have_posts() ) : the_post();
 	endif;
 
 	// Load content after the post content for a specific post format.
-	do_action( 'alnp_load_after_content_type_' . $post_format );
+	do_action( 'alnp_load_after_content_type_'.$post_format );
 
 	// Load content after the post content.
 	do_action( 'alnp_load_after_content' );
@@ -39,8 +52,8 @@ while ( have_posts() ) : the_post();
 	<nav class="navigation post-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'auto-load-next-post' ); ?></h1>
 
-		<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'auto-load-next-post' ) . '</span> %title' ); ?></span>
-		<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'auto-load-next-post' ) . '</span>' ); ?></span>
+		<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">'._x( '&larr;', 'Previous post link', 'auto-load-next-post' ).'</span> %title' ); ?></span>
+		<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">'._x( '&rarr;', 'Next post link', 'auto-load-next-post' ).'</span>' ); ?></span>
 	</nav><!-- .post-navigation -->
 	<?php
 
