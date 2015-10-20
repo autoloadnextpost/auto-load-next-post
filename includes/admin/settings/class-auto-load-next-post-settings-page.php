@@ -9,9 +9,9 @@
  * @license  GPL-2.0+
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if(! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
+if(! class_exists('Auto_Load_Next_Post_Settings_Page')){
 
 /**
  * Class - Auto_Load_Next_Post_Settings_Page
@@ -83,7 +83,7 @@ class Auto_Load_Next_Post_Settings_Page {
 
 		$sections = $this->get_sections();
 
-		if ( empty( $sections ) )
+		if(empty( $sections ) )
 			return;
 
 		$output = '<ul class="subsubsub">';
@@ -92,16 +92,16 @@ class Auto_Load_Next_Post_Settings_Page {
 
 		foreach ( $sections as $id => $label ) {
 			$output .= '<li><a href="';
-			$section_link = admin_url( 'options-general.php?page=auto-load-next-post-settings&tab=' . $this->id . '&section=' . sanitize_title( $id ) );
+			$section_link = admin_url( 'options-general.php?page=auto-load-next-post-settings&tab='.$this->id.'&section='.sanitize_title( $id ) );
 
 			// If this section is default then remove the variable from this link.
-			if ( $id == '' ) {
+			if($id == '' ) {
 				$section_link = remove_query_arg( 'section', $section_link );
 			}
 
 			$output .= $section_link;
 
-			$output .= '" class="' . ( $current_section == $id ? 'current' : '' ) . '">' . $label . '</a> ' . ( end( $array_keys ) == $id ? '' : '|' ) . ' </li>';
+			$output .= '" class="'.( $current_section == $id ? 'current' : '' ).'">'.$label.'</a> '.( end( $array_keys ) == $id ? '' : '|' ).' </li>';
 		}
 
 		$output .= '</ul><br class="clear" />';
@@ -117,6 +117,7 @@ class Auto_Load_Next_Post_Settings_Page {
 	 */
 	public function output() {
 		$settings = $this->get_settings();
+
 		Auto_Load_Next_Post_Admin_Settings::output_fields( $settings );
 	} // END output()
 
@@ -135,8 +136,8 @@ class Auto_Load_Next_Post_Settings_Page {
 
 		Auto_Load_Next_Post_Admin_Settings::save_fields( $settings, $current_tab, $current_section );
 
-		if ( $current_section ) {
-			do_action( 'auto_load_next_post_update_options_' . $this->id . '_' . $current_section );
+		if($current_section ) {
+			do_action( 'auto_load_next_post_update_options_'.$this->id.'_'.$current_section );
 		}
 
 	} // END save()

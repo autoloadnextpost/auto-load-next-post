@@ -8,9 +8,9 @@
  * @package  Auto Load Next Post
  * @license  GPL-2.0+
  */
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if(! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
+if(! class_exists('Auto_Load_Next_Post_Settings_General_Tab')){
 
 /**
  * Class - Auto_Load_Next_Post_Settings_General_Tab
@@ -28,12 +28,12 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 */
 	public function __construct() {
 		$this->id    = 'general';
-		$this->label = __( 'General', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN );
+		$this->label = __('General', 'auto-load-next-post');
 
-		add_filter( 'auto_load_next_post_settings_submenu_array',           array( $this, 'add_menu_page' ),     20 );
-		add_filter( 'auto_load_next_post_settings_tabs_array',              array( $this, 'add_settings_page' ), 20 );
-		add_action( 'auto_load_next_post_settings_' . $this->id,            array( $this, 'output' ) );
-		add_action( 'auto_load_next_post_settings_save_' . $this->id,       array( $this, 'save' ) );
+		add_filter('auto_load_next_post_settings_submenu_array',   array($this, 'add_menu_page' ),     20 );
+		add_filter('auto_load_next_post_settings_tabs_array',      array($this, 'add_settings_page' ), 20 );
+		add_action('auto_load_next_post_settings_'.$this->id,      array($this, 'output' ) );
+		add_action('auto_load_next_post_settings_save_'.$this->id, array($this, 'save' ) );
 	} // END __construct()
 
 	/**
@@ -49,7 +49,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 		$settings = $this->get_settings();
 
 		Auto_Load_Next_Post_Admin_Settings::save_fields( $settings, $current_tab );
-	}
+	} // END save()
 
 	/**
 	 * Get post types
@@ -61,10 +61,10 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 * @return array
 	 */
 	public function get_post_types() {
-		$post_types = get_post_types( array( 'public' => true ), 'names' );
+		$post_types = get_post_types( array( 'public' => true ), 'names');
 
 		return $post_types;
-	}
+	} // END get_post_types()
 
 	/**
 	 * Get settings array
@@ -74,18 +74,18 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 * @return array
 	 */
 	public function get_settings() {
-		return apply_filters( 'auto_load_next_post_' . $this->id . '_settings', array(
+		return apply_filters( 'auto_load_next_post_'.$this->id.'_settings', array(
 
 			array(
-				'title' => __( 'Information', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'title' => __('Information', 'auto-load-next-post'),
 				'type'  => 'title',
-				'desc'  => __( 'For the plugin to work you need to set the variables below.', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
-				'id'    => $this->id . '_options'
+				'desc'  => __('For the plugin to work you need to set the variables below.', 'auto-load-next-post'),
+				'id'    => $this->id.'_options'
 			),
 
 			array(
-				'title'    => __( 'Restrict Post Types', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
-				'desc'     => __( 'Select which post types you wish to load automatically.', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'title'    => __('Restrict Post Types', 'auto-load-next-post'),
+				'desc'     => __('Select which post types you wish to load automatically.', 'auto-load-next-post'),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_get_post_types',
 				'class'    => 'chosen-select',
@@ -97,30 +97,19 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 			),
 
 			array(
-				'title'    => __( 'Content Container', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
-				'desc'     => __( 'Example: <code>div.single</code>', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'title'    => __('Content Container', 'auto-load-next-post'),
+				'desc'     => __('Example: <code>main.site-main</code>', 'auto-load-next-post'),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_content_container',
-				'default'  => 'div.single',
+				'default'  => 'main.site-main',
 				'type'     => 'text',
 				'css'      => 'min-width:300px;',
 				'autoload' => false
 			),
 
-			/*array(
-				'title'    => __( 'Post ID Selector', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
-				'desc'     => __( 'Example: <code>article</code>', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
-				'desc_tip' => true,
-				'id'       => 'auto_load_next_post_id_selector',
-				'default'  => 'article',
-				'type'     => 'text',
-				'css'      => 'min-width:300px;',
-				'autoload' => false
-			),*/
-
 			array(
-				'title'    => __( 'Post Title Selector', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
-				'desc'     => __( 'Example: <code>h1.entry-title</code>', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'title'    => __('Post Title Selector', 'auto-load-next-post'),
+				'desc'     => __('Example: <code>h1.entry-title</code>', 'auto-load-next-post'),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_title_selector',
 				'default'  => 'h1.entry-title',
@@ -130,8 +119,8 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 			),
 
 			array(
-				'title'    => __( 'Post Navigation Container', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
-				'desc'     => __( 'Example: <code>nav.post-navigation</code>', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'title'    => __('Post Navigation Container', 'auto-load-next-post'),
+				'desc'     => __('Example: <code>nav.post-navigation</code>', 'auto-load-next-post'),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_navigation_container',
 				'default'  => 'nav.post-navigation',
@@ -141,8 +130,8 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 			),
 
 			array(
-				'title'    => __( 'Comments Container', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
-				'desc'     => __( 'Example: <code>div#comments</code>', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'title'    => __('Comments Container', 'auto-load-next-post'),
+				'desc'     => __('Example: <code>div#comments</code>', 'auto-load-next-post'),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_comments_container',
 				'default'  => 'div#comments',
@@ -152,35 +141,43 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 			),
 
 			array(
-				'title'   => __( 'Remove Comments', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
-				'desc'    => __( 'Enable to remove comments when each post loads.', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'title'   => __('Remove Comments', 'auto-load-next-post'),
+				'desc'    => __('Enable to remove comments when each post loads.', 'auto-load-next-post'),
 				'id'      => 'auto_load_next_post_remove_comments',
 				'default' => 'yes',
 				'type'    => 'checkbox'
 			),
 
 			array(
-				'title'   => __( 'Update Google Analytics', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
-				'desc'    => __( 'Enable to update your Google Analytics each time a post is automatically loaded.', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'title'   => __('Update Google Analytics', 'auto-load-next-post'),
+				'desc'    => __('Each time a post is loaded it will count as a pageview. You must have a reference to your Google Analytics tracking code on the page.', 'auto-load-next-post'),
 				'id'      => 'auto_load_next_post_google_analytics',
 				'default' => 'no',
 				'type'    => 'checkbox'
 			),
 
 			array(
-				'title'   => __( 'Remove all data on uninstall?', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
-				'desc'    => __( 'If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete.', AUTO_LOAD_NEXT_POST_TEXT_DOMAIN ),
+				'title'   => __('Reset all data?', 'auto-load-next-post'),
+				'desc'    => __('Press the reset button to clear all settings for this plugin and re-install the default settings.', 'auto-load-next-post'),
+				'id'      => 'auto_load_next_post_uninstall_data',
+				'default' => 'no',
+				'type'    => 'reset_data'
+			),
+
+			array(
+				'title'   => __('Remove all data on uninstall?', 'auto-load-next-post'),
+				'desc'    => __('If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete.', 'auto-load-next-post'),
 				'id'      => 'auto_load_next_post_uninstall_data',
 				'default' => 'no',
 				'type'    => 'checkbox'
 			),
 
-			array( 'type' => 'sectionend', 'id' => $this->id . '_options'),
+			array( 'type' => 'sectionend', 'id' => $this->id.'_options'),
 		)); // End general settings
-	}
+	} // END get_settings()
 
 }
 
-} // end if class exists
+} // END if class exists
 
 return new Auto_Load_Next_Post_Settings_General_Tab();

@@ -1,56 +1,72 @@
-=== Auto Load Next Post ===
+﻿=== Auto Load Next Post ===
 Contributors:      sebd86
-Donate link:       https://www.sebastiendumont.com/donation/
+Donate link:       https://donorbox.org/auto-load-next-post
 Tags:              auto load posts, scroll, scroll posts, post scroller, scrolling, infinite scroll, AJAX, endless, history, post history, browsing history
 Requires at least: 4.0
-Tested up to:      4.2.3
-Stable tag:        1.4.2
+Tested up to:      4.3.1
+Stable tag:        1.4.3
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-Simply auto loads the previous post as you scroll down the page. Also changes the URL address and the page title from that post.
+Simply auto loads the next post as you scroll down the page. Also changes the browser URL address and page title from the next post.
 
 == Description ==
-Have you ever felt tired of going back and forth between blog posts? I know I have so I decided to develop a solution. One where you would need to do very little coding and require very little to set up on your blog.
+Have you ever felt tired of going back and forth between blog posts? I know I have so I developed a solution, one where you would need no coding or very little required to set up on your blog.
+
+= What is Auto Load Next Post? =
+Auto Load Next Post loads the next post once the bottom of the first post the user visits has been reached. The process is repeated until there are no more posts to load.
+
+It simply reads the post navigation in the theme at the end of each post and collects the post URL for the next post / page. WordPress will then do a partial load and place the content of the next post underneath the parent post / page.
+
+Not only that, it updates your web history by manipulating the web address and page title. This allows you to return to any post you have looked at in your browser history. When you refresh the browser, it will load the post / page the user was viewing last.
 
 [youtube https://www.youtube.com/watch?v=EvBCPXVe2U4]
 
-= What is it? =
-Auto Load Next Post is a lightweight plugin that simply loads the previous post, one after another as you scroll down the page. It simply reads the post navigation in your theme at the end of each post and collects the post URL for the previous post. WordPress will then do a partial load and place the content of the previous post underneath the parent post.
-
-Not only that, it updates your web history by manipulating the web address and page title. This allows you to return to any post you have looked at in your browser history. When you refresh the page, the page will take you to the post you were viewing last.
+= First Time Users =
+For new first time users I suggest reading [the documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki) to understand how to setup the plugin and see how it works. By default when the plugin is activated, the settings are ready to be used with the latest WordPress core theme, Twenty Fifteen.
 
 = Features =
-* Can use action hooks to load content before and after the next post has loaded.
-* Can restrict it to load only on specific post types.
+* Use action hooks to load content before and after the next post has loaded.
+* Restrict it to load only on specific post types.
 * Have the option to hide the comments if you wish.
 * Track each post load with Google Analytics. ( Requires Google Analytics to be applied for this to work. )
+* Over-writable template file.
 
-= Documentation =
-Documentation, for this plugin, can be found at the GitHub repository [Wiki](https://github.com/seb86/Auto-Load-Next-Post/wiki).
+> #### Auto Load Next Post Premium
+> There's an even better version of the plugin coming out soon with priority email support.<br />
+>
+> [More information](https://www.sebastiendumont.com/plugins/auto-load-next-post-premium/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
 
-= Contributing and reporting bugs =
-You can [contribute code](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) to this plugin via the [GitHub](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) repository and localizations via [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/)
+= Contributing =
+You can [contribute code](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) to this plugin via the [GitHub](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) repository and localizations via [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/).
 
 = Forum Support and Issue Reporting =
-Use the WordPress.org forums for [community support](https://wordpress.org/support/plugin/auto-load-next-post). I will do my best to respond. You may get or see a response from someone who has a similar issue already posted. If you spot a bug within the plugin, you can of course log it as an [issue](https://github.com/seb86/Auto-Load-Next-Post/issues) on [Github](https://github.com/seb86/Auto-Load-Next-Post/issues) instead where I can act upon it more efficiently.
+Use the WordPress.org forum for [community support](https://wordpress.org/support/plugin/auto-load-next-post). As this is a free plugin I can not provide support full time but I will do my best to respond. You are most likely to get a response from a none developer.
 
-If you need help with any customizations for this plugin. Please consider [hiring me](http://www.sebastiendumont.com/hire-me/) to apply them.
+You may also find that a topic similar to yours has already been posted so join in rather than creating a new support ticket with the same issue.
+
+If you spot a bug within the plugin, you can of course log it as an [issue](https://github.com/seb86/Auto-Load-Next-Post/issues) on Github where I can act upon it more efficiently.
+
+If you need help with any customizations for this plugin. Please [hire me](http://www.sebastiendumont.com/hire-me/) to apply them for you.
 
 = Demo Site =
-Want to try it out? [Go to the demo site](http://demos.sebastiendumont.com/auto-load-next-post/) and view a post. Scroll down and see the plugin in action.
+Want to try it out? [Go to the demo site](http://demo.autoloadnextpost.com) and view a post. Scroll down and see the plugin in action.
 
-= Support the plugin by Donations and Reviews =
-To keep this plugin working and support as many themes as possible, please consider making a [donation](https://www.sebastiendumont.com/donation/) or [write a review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform) about it.
+= Support by Donating =
+Donations of any sum help keep this plugin actively developed and supported. Your support goes along way in making this plugin better. (Make a Donation)[https://donorbox.org/auto-load-next-post]
 
-= Languages =
-Auto Load Next Post is currently available in 3 languages with more on the way. The folks over at WP Translations handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
+= Leave a Review =
+Reviews are helpful to other users and this plugin reputation. Please consider spending a minute or two leaving a [review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform) and tell me what you think about the plugin. It matters a lot and is most appreciated.
 
-**Current Translations Available**
+= Languages and Translation Support =
+Current languages available: English(US), Français (French)(France), German (Germany), Italian (Italy), Româna (Romanian)
 
-- English (US)
-- Français (French)(France)
-- Română (Romanian)
+Auto Load Next Post is currently available in 5 languages with more on the way. The folks over at WP Translations handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
+
+> #### PHP Requirement
+> This plugin requires PHP version 5.3 or higher.<br />
+> If you're still at PHP 5.2, it's time to update. [Read here why and how](http://www.wpupdatephp.com/update/)<br />
+> Updating to a newer PHP version is almost always done in minutes and free of charge!
 
 **More information**
 
@@ -65,9 +81,9 @@ Installing "Auto Load Next Post" can be done either by searching for "Auto Load 
 2. Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard.
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 4. Go to the plugin settings page 'Settings > Auto Load Next Post'.
-5. Enter each of the containers specified in the theme you are using and press "Save".
+5. Enter each of the containers specified for the theme you are using and press "Save Changes".
 
-Once you have activated the plugin, you may get an admin notice telling you that you have not declared support for the plugin. This is perfectly normal and with a little setting up, the notification will remove automatically. There are two buttons. The first leads you to documentation to help you support the plugin. The second allows you to force hide the admin notice.
+Once you have activated the plugin, you may get an admin notice telling you that you have not declared support for the plugin. This is perfectly normal and with a little setting up, the notification will remove automatically. There are two buttons. The first leads you to documentation to help you support the plugin. The second allows you to force hide the admin notice. - This notification does not show for any of WordPress core themes.
 
 See [documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki) for more information.
 
@@ -85,15 +101,46 @@ A.2 Yes you can. Simply create a new folder in your theme like so, ```your-theme
 
 A.3 I am working on it! :)
 
-= Q.4 After the first post has loaded, all I get is the same post over and over again. Why is that?
+= Q.4 After the first post has loaded, all I get is the same post over and over again. Why is that? =
 
-A.4 This is because when you created your own `content-partial.php` file, you placed the post navigation outside of the post query. You need to place it inside the loop. This will solve the problem.
+A.4 If you created your own `content-partial.php` file, you may have placed the post navigation outside of the post query. You need to place it inside the loop. This will solve the problem.
+
+= Q.5 Does the plugin detect my theme and insert the correct selectors for me? =
+
+A.5 No it does not, but this will be available in the premium version.
+
+= Q.6 I'm confused about the post order. Why is the plugin called "Auto Load Next Post"? =
+
+A.6 Well, WordPress loads posts in descending order by default so the next post is the previous post and a user reads content going down not up so it loads the next post, not previous.
 
 == Screenshots ==
 1. Admin Settings Page
 2. Theme Support Admin Notification
 
 == Changelog ==
+
+= 1.4.3 : 20th October 2015 =
+* Corrected undefined function for Google Analytics tracking in the JavaScript.
+* Improved Google Analytics. Now detects old, classic, current and Yoast method of tracking pageviews.
+* Changed the default content container setting to match Twenty Fifteen.
+* Core themes are supported except for Twenty Eleven. Theme notification only shows now if not a core theme.
+* Corrected a loading issue of the template file should the theme have one also.
+* Improved the partial content template file. Now has a fallback. Should be more compatible with themes.
+* Added a support tab to the plugin settings page.
+* Added a upgrade link on the plugins page.
+* Added a community support link on the plugins page.
+* Added the German translation.
+* Redefined the constants.
+* Moved admin functions under the directory 'includes/admin'
+* Moved library assets under a new folder for both CSS and JavaScript.
+* Added PHP detection.
+* Improved copy in the settings page and the help tab.
+* Updated the default localization file.
+* Updated the readme.txt file with better copy.
+* Removed public variables and hardcoded them into the plugin instead.
+* Removed whitespace.
+* Removed @return void on __construct() functions.
+* Cleaned up the code.
 
 = 1.4.2 : 31st July 2015 =
 * Added two languages for localizing the plugin settings page. Français (French)(France) and Română (Romanian).
@@ -121,5 +168,5 @@ A.4 This is because when you created your own `content-partial.php` file, you pl
 * Initial version
 
 == Upgrade Notice ==
-= 1.4.2 : 31st July 2015 =
-* Added two languages for localizing the plugin settings page. Français (French)(France) and Română (Romanian).
+= 1.4.3 : 18th August 2015 =
+* Corrected undefined function for Google Analytics tracking in the JavaScript.
