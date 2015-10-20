@@ -59,9 +59,9 @@ Donations of any sum help keep this plugin actively developed and supported. You
 Reviews are helpful to other users and this plugin reputation. Please consider spending a minute or two leaving a [review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform) and tell me what you think about the plugin. It matters a lot and is most appreciated.
 
 = Languages and Translation Support =
-Current languages available: English(US), Français (French)(France), German (Germany), Româna (Romanian)
+Current languages available: English(US), Français (French)(France), German (Germany), Italian (Italy), Româna (Romanian)
 
-Auto Load Next Post is currently available in 4 languages with more on the way. The folks over at WP Translations handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
+Auto Load Next Post is currently available in 5 languages with more on the way. The folks over at WP Translations handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
 
 > #### PHP Requirement
 > This plugin requires PHP version 5.3 or higher.<br />
@@ -119,7 +119,7 @@ A.6 Well, WordPress loads posts in descending order by default so the next post 
 
 == Changelog ==
 
-= 1.4.3 : 19th October 2015 =
+= 1.4.3 : 20th October 2015 =
 * Corrected undefined function for Google Analytics tracking in the JavaScript.
 * Improved Google Analytics. Now detects old, classic, current and Yoast method of tracking pageviews.
 * Changed the default content container setting to match Twenty Fifteen.
@@ -136,6 +136,7 @@ A.6 Well, WordPress loads posts in descending order by default so the next post 
 * Added PHP detection.
 * Improved copy in the settings page and the help tab.
 * Updated the default localization file.
+* Updated the readme.txt file with better copy.
 * Removed public variables and hardcoded them into the plugin instead.
 * Removed whitespace.
 * Removed @return void on __construct() functions.

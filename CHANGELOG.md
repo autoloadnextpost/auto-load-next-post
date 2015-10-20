@@ -1,3 +1,26 @@
+## 1.4.3 (20th October 2015)
+* Corrected undefined function for Google Analytics tracking in the JavaScript.
+* Improved Google Analytics. Now detects old, classic, current and Yoast method of tracking pageviews.
+* Changed the default content container setting to match Twenty Fifteen.
+* Core themes are supported except for Twenty Eleven. Theme notification only shows now if not a core theme.
+* Corrected a loading issue of the template file should the theme have one also.
+* Improved the partial content template file. Now has a fallback. Should be more compatible with themes.
+* Added a support tab to the plugin settings page.
+* Added a upgrade link on the plugins page.
+* Added a community support link on the plugins page.
+* Added the German translation.
+* Redefined the constants.
+* Moved admin functions under the directory 'includes/admin'
+* Moved library assets under a new folder for both CSS and JavaScript.
+* Added PHP detection.
+* Improved copy in the settings page and the help tab.
+* Updated the default localization file.
+* Updated the readme.txt file with better copy.
+* Removed public variables and hardcoded them into the plugin instead.
+* Removed whitespace.
+* Removed @return void on __construct() functions.
+* Cleaned up the code.
+
 ## 1.4.2 (31st July 2015)
 * Added two languages for localizing the plugin settings page. Français (French)(France) and Româna (Romanian).
 
