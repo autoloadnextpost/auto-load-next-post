@@ -11,20 +11,20 @@ jQuery.noConflict();
 
 jQuery( document ).ready( function() {
 	// Don't do this if looking for comments
-	if(window.location.href.indexOf( '#comments' ) > -1 ) {
+	if ( window.location.href.indexOf( '#comments' ) > -1 ) {
 		return;
 	}
 
   // It's up to you if you want to hide the comments. If the answer is yes then the comments will be gone.
-	if(remove_comments === 'yes' ) {
+	if ( remove_comments === 'yes' ) {
 		jQuery( comments_container ).remove(); // Remove Comments
-		if(jQuery( comments_container ).length <= 0 ) {
-			console.log( 'Comments Removed');
+		if ( jQuery( comments_container ).length <= 0 ) {
+			console.log( 'Comments Removed' );
 		}
 	}
 
 	// Add a divider
-	jQuery( content_container ).prepend( '<hr style="height: 0" class="post-divider" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>');
+	jQuery( content_container ).prepend( '<hr style="height: 0" class="post-divider" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
 
 	// Initialise Scrollspy
 	initialise_scrollspy();
@@ -43,17 +43,17 @@ function initialise_history() {
 
 function scrollspy() {
 	// Spy on post-divider - changes the URL in browser location, loads new post
-	jQuery('.post-divider').on('scrollSpy:exit', changeURL );
-	jQuery('.post-divider').on('scrollSpy:enter', changeURL );
-	jQuery('.post-divider').scrollSpy();
+	jQuery( '.post-divider').on( 'scrollSpy:exit', changeURL );
+	jQuery( '.post-divider').on( 'scrollSpy:enter', changeURL );
+	jQuery( '.post-divider').scrollSpy();
 } // END scrollspy()
 
 function history(){
 	// Bind to StateChange Event
-	History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+	History.Adapter.bind( window,'statechange', function() { // Note: We are using statechange instead of popstate
 		var State = History.getState(); // Note: We are using History.getState() instead of event.state
 
-		if(State.url != curr_url ) {
+		if ( State.url != curr_url ) {
 			window.location.reload(State.url);
 		}
 	});
@@ -61,19 +61,19 @@ function history(){
 
 function changeURL() {
 	var el         = jQuery(this);
-	var this_url   = el.attr('data-url');
-	var this_title = el.attr('data-title');
+	var this_url   = el.attr( 'data-url' );
+	var this_title = el.attr( 'data-title' );
 	var offset     = el.offset();
 	var scrollTop  = jQuery(document).scrollTop();
 
 	// If exiting or entering from top, change URL
-	if(( offset.top - scrollTop ) < 150 && curr_url != this_url ) {
+	if ( ( offset.top - scrollTop ) < 150 && curr_url != this_url ) {
 		curr_url = this_url;
 		History.pushState(null, null, this_url);
 		window.document.title = this_title;
 
-		if(track_pageviews == 'yes' ) {
-			console.log( 'Google Analytics Tracking Enabled');
+		if ( track_pageviews == 'yes' ) {
+			console.log( 'Google Analytics Tracking Enabled' );
 			update_google_analytics();
 		} // END if track_pageviews
 	}
@@ -93,8 +93,8 @@ function changeURL() {
  * Also supports Google Analytics by Yoast should it be used.
  */
 function update_google_analytics() {
-	if(typeof pageTracker === "undefined" || typeof _gaq === 'undefined' || typeof ga === 'undefined' || typeof __gaTracker === 'undefined' ) {
-		console.error( 'Google Analytics is not installed!');
+	if ( typeof pageTracker === "undefined" || typeof _gaq === 'undefined' || typeof ga === 'undefined' || typeof __gaTracker === 'undefined' ) {
+		console.error( 'Google Analytics is not installed!' );
 		return;
 	}
 
@@ -102,27 +102,27 @@ function update_google_analytics() {
 	console.log( 'Track: ' + track_page_url );
 
 	// This uses Asynchronous version of Google Analytics tracking method.
-	if(typeof pageTracker !== "undefined" && pageTracker !== null ) {
-		console.log( 'Google Analytics is installed, but old.');
+	if ( typeof pageTracker !== "undefined" && pageTracker !== null ) {
+		console.log( 'Google Analytics is installed, but old.' );
     pageTracker._trackPageview( track_page_url );
   }
 
 	// This uses Google's classic Google Analytics tracking method.
-	if(typeof _gaq !== 'undefined' && _gaq !== null ) {
-		console.log( 'Google Analytics is installed. Yahoo!');
+	if ( typeof _gaq !== 'undefined' && _gaq !== null ) {
+		console.log( 'Google Analytics is installed. Yahoo!' );
 		_gaq.push(['_trackPageview', track_page_url]);
 	}
 
 	// This uses Google Analytics Universal Analytics tracking method.
-	if(typeof ga !== 'undefined' && _ga !== null ) {
-		console.log( 'Google Analytics Universal Analytics is installed. Yahoo!');
-		ga('send', 'pageview', track_page_url);
+	if ( typeof ga !== 'undefined' && _ga !== null ) {
+		console.log( 'Google Analytics Universal Analytics is installed. Yahoo!' );
+		ga( 'send', 'pageview', track_page_url);
 	}
 
 	// This uses Yoast's method of tracking Google Analytics.
-	if(typeof __gaTracker !== 'undefined' && __gaTracker !== null ) {
-		console.log( 'Google Analytics by Yoast is installed. Awesome!');
-		__gaTracker('send', 'pageview', track_page_url);
+	if ( typeof __gaTracker !== 'undefined' && __gaTracker !== null ) {
+		console.log( 'Google Analytics by Yoast is installed. Awesome!' );
+		__gaTracker( 'send', 'pageview', track_page_url);
 	}
 } // END update_google_analytics()
 
@@ -131,26 +131,26 @@ function update_google_analytics() {
  */
 function auto_load_next_post() {
 	// Grab the url for the next post
-	var post_url = jQuery('a[rel="prev"]').attr('href');
+	var post_url = jQuery( 'a[rel="prev"]').attr( 'href' );
 
 	// For some browsers, `post_url` is undefined; for others,
 	// `post_url` is false. So we check for both possibilites.
-	if(typeof post_url !== typeof undefined && post_url !== false ) {
-		console.log( 'Post URL was defined. All is good.');
+	if ( typeof post_url !== typeof undefined && post_url !== false ) {
+		console.log( 'Post URL was defined. All is good.' );
 		console.log( 'Next Post URL: ' + post_url );
 	} else {
-		console.error( 'Post URL was not defined. Oh dear!');
+		console.error( 'Post URL was not defined. Oh dear!' );
 	}
 
-	if(!post_url ) return;
+	if ( !post_url ) return;
 
 	// Check to see if pretty permalinks, if not then add partial=1
-	if(post_url.indexOf( '?p=' ) > -1 ) {
+	if ( post_url.indexOf( '?p=' ) > -1 ) {
 		np_url = post_url + '&partial=1'
 	} else {
 		var partial_endpoint = 'partial/';
 
-		if(post_url.charAt(post_url.length - 1) != '/' )
+		if ( post_url.charAt(post_url.length - 1) != '/' )
 			partial_endpoint = '/' + partial_endpoint;
 
 		np_url = post_url + partial_endpoint;
@@ -158,8 +158,8 @@ function auto_load_next_post() {
 
 	// Remove the post navigation HTML once the next post has loaded.
 	jQuery( nav_container ).remove();
-	if(jQuery( nav_container ).length <= 0 ) {
-		console.log( 'Post Navigation Removed!');
+	if ( jQuery( nav_container ).length <= 0 ) {
+		console.log( 'Post Navigation Removed!' );
 	}
 
 	jQuery.get( np_url , function( data ) {
@@ -175,7 +175,7 @@ function auto_load_next_post() {
 		jQuery( content_container ).append( post_html ); // Add next post
 
 		// get the HR element and add the data-title
-		jQuery( 'hr[data-url="' + post_url + '"]').attr( 'data-title' , post_title.text() ).css( 'display', 'inline-block');
+		jQuery( 'hr[data-url="' + post_url + '"]').attr( 'data-title' , post_title.text() ).css( 'display', 'inline-block' );
 
 		// need to set up ScrollSpy on new content
 		scrollspy();
