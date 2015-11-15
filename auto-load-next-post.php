@@ -3,7 +3,7 @@
  * Plugin Name:       Auto Load Next Post
  * Plugin URI:        http://autoloadnextpost.com
  * Description:       Auto loads the next post as you scroll down to the end of a post. Replaces the URL in the address bar and the page title when viewing the next post.
- * Version:           1.4.3
+ * Version:           1.4.4
  * Author:            Sébastien Dumont
  * Author URI:        http://www.sebastiendumont.com
  * License:           GPL-2.0+
@@ -59,7 +59,7 @@ final class Auto_Load_Next_Post {
 	 * @see    Auto_Load_Next_Post()
 	 * @return Auto Load Next Post instance
 	 */
-	public static function instance() {
+	public static function instance(){
 		if(is_null(self::$_instance)){
 			self::$_instance = new Auto_Load_Next_Post;
 			self::$_instance->setup_constants();
@@ -79,7 +79,7 @@ final class Auto_Load_Next_Post {
 	 * @access public
 	 * @return void
 	 */
-	public function __clone() {
+	public function __clone(){
 		// Cloning instances of the class is forbidden
 		_doing_it_wrong(__FUNCTION__, __('Cheatin’ huh?', 'auto-load-next-post'), AUTO_LOAD_NEXT_POST_VERSION);
 	} // END __clone()
@@ -91,7 +91,7 @@ final class Auto_Load_Next_Post {
 	 * @access public
 	 * @return void
 	 */
-	public function __wakeup() {
+	public function __wakeup(){
 		// Unserializing instances of the class is forbidden
 		_doing_it_wrong(__FUNCTION__, __('Cheatin’ huh?', 'auto-load-next-post'), AUTO_LOAD_NEXT_POST_VERSION);
 	} // END __wakeup()
@@ -102,7 +102,7 @@ final class Auto_Load_Next_Post {
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function __construct() {
+	public function __construct(){
 		// Auto-load classes on demand
 		if(function_exists("__autoload"))
 			spl_autoload_register("__autoload");
@@ -122,7 +122,7 @@ final class Auto_Load_Next_Post {
 	 * @param  mixed $class
 	 * @return void
 	 */
-	public function autoload($class) {
+	public function autoload($class){
 		$path  = null;
 		$file  = strtolower('class-'.str_replace('_', '-', $class)).'.php';
 
@@ -144,8 +144,8 @@ final class Auto_Load_Next_Post {
 	 * @since  1.4.3
 	 * @access private
 	 */
-	private function setup_constants() {
-		$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.3');
+	private function setup_constants(){
+		$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.4');
 		$this->define('AUTO_LOAD_NEXT_POST_FILE', __FILE__);
 		$this->define('AUTO_LOAD_NEXT_POST_SLUG', 'auto-load-next-post');
 
@@ -168,7 +168,7 @@ final class Auto_Load_Next_Post {
 	 * @since  1.4.3
 	 */
 	private function define($name, $value){
-		if( ! defined($name)) {
+		if(!defined($name)){
 			define($name, $value);
 		}
 	}
@@ -180,7 +180,7 @@ final class Auto_Load_Next_Post {
 	 * @access public
 	 * @return void
 	 */
-	public function includes() {
+	public function includes(){
 		include_once('includes/auto-load-next-post-core-functions.php'); // Contains core functions for the front/back end.
 
 		if(is_admin()){
@@ -194,7 +194,7 @@ final class Auto_Load_Next_Post {
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function init_auto_load_next_post() {
+	public function init_auto_load_next_post(){
 		add_rewrite_endpoint('partial', EP_PERMALINK);
 
 		// Refresh permalinks
@@ -213,7 +213,7 @@ final class Auto_Load_Next_Post {
 	 * @filter plugin_locale
 	 * @return void
 	 */
-	public function load_plugin_textdomain() {
+	public function load_plugin_textdomain(){
 		// Set filter for plugin's languages directory
 		$lang_dir = dirname(plugin_basename(AUTO_LOAD_NEXT_POST_FILE)).'/languages/';
 		$lang_dir = apply_filters('auto_load_next_post_languages_directory', $lang_dir);
@@ -240,21 +240,18 @@ final class Auto_Load_Next_Post {
 		}
 	} // END load_plugin_textdomain()
 
-	/** Helper functions ******************************************************/
-
 	/**
-	 * Registers and enqueues stylesheets and javascripts
-	 * for the front of the site.
+	 * Registers and enqueues stylesheets and javascripts for the front of the site.
 	 *
 	 * @since  1.3.2
 	 * @access public
 	 */
-	public function front_scripts_and_styles() {
+	public function front_scripts_and_styles(){
 		/**
-		 * Load Javascript if found as a singluar post either,
-		 * single or page and is one of the selected post types.
+		 * Load the Javascript if found as a singluar post.
 		 */
-		if(supports_alnp() && is_singular() && in_array(get_post_type(), get_option('auto_load_next_post_get_post_types'))){
+		if(supports_alnp() && is_singular() && get_post_type() == 'post'){
+		//if(supports_alnp() && is_singular() && in_array(get_post_type(), get_option('auto_load_next_post_get_post_types'))){
 			$this->load_file('auto-load-next-post-scrollspy', '/assets/js/libs/scrollspy'.AUTO_LOAD_NEXT_POST_SCRIPT_MODE.'.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION);
 			$this->load_file('auto-load-next-post-history', '/assets/js/libs/jquery.history.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION);
 			$this->load_file('auto-load-next-post-script', '/assets/js/frontend/auto-load-next-post'.AUTO_LOAD_NEXT_POST_SCRIPT_MODE.'.js', true, array('auto-load-next-post-scrollspy'), AUTO_LOAD_NEXT_POST_VERSION);
@@ -283,7 +280,7 @@ final class Auto_Load_Next_Post {
 	 * @param  string  $version   Optional, can match the version of the plugin or version of the source file.
 	 * @global string  $wp_version
 	 */
-	public static function load_file($name, $file_path, $is_script = false, $support = array(), $version = '') {
+	public static function load_file($name, $file_path, $is_script = false, $support = array(), $version = ''){
 		global $wp_version;
 
 		$url = AUTO_LOAD_NEXT_POST_URL_PATH.$file_path; // URL to the file.
@@ -305,5 +302,18 @@ final class Auto_Load_Next_Post {
 
 } // END class exists 'Auto_Load_Next_Post'
 
-// Run the Plugin
-return Auto_Load_Next_Post::instance();
+/**
+ * This runs the plugin if the required PHP version has been met.
+ */
+function run_auto_load_next_post(){
+	return Auto_Load_Next_Post::instance();
+} // END run_auto_load_next_post()
+
+// Fetch the Php version checker.
+require_once('wp-update-php/WPUpdatePhp.php');
+$updatePhp = new WPUpdatePhp('5.3.0');
+
+// If the miniumum version of PHP required is available then run the plugin.
+if($updatePhp->does_it_meet_required_php_version(PHP_VERSION)){
+	add_action('plugins_loaded', 'run_auto_load_next_post', 20);
+}

@@ -26,9 +26,9 @@ class Auto_Load_Next_Post_Admin_Menus {
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function __construct() {
+	public function __construct(){
 		// Add admin menus
-		add_action('admin_menu', array($this, 'admin_menu' ), 9 );
+		add_action('admin_menu', array($this, 'admin_menu'), 9);
 	} // END __construct()
 
 	/**
@@ -40,10 +40,10 @@ class Auto_Load_Next_Post_Admin_Menus {
 	 * @global $auto_load_next_post
 	 * @global $wp_version
 	 */
-	public function admin_menu() {
+	public function admin_menu(){
 		global $menu, $wp_version;
 
-		add_options_page( sprintf( __('%s Settings', 'auto-load-next-post'), 'Auto Load Next Post' ), 'Auto Load Next Post', 'manage_options', 'auto-load-next-post-settings', array($this, 'settings_page' ) );
+		add_options_page(sprintf(__('%s Settings', 'auto-load-next-post'), 'Auto Load Next Post'), 'Auto Load Next Post', 'manage_options', 'auto-load-next-post-settings', array($this, 'settings_page'));
 	} // END admin_menu()
 
 	/**
@@ -51,7 +51,7 @@ class Auto_Load_Next_Post_Admin_Menus {
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function settings_page() {
+	public function settings_page(){
 		include_once('class-auto-load-next-post-admin-settings.php');
 
 		Auto_Load_Next_Post_Admin_Settings::output();

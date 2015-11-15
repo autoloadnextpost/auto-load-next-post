@@ -21,12 +21,12 @@ if(! function_exists( 'auto_load_next_post_is_ajax')){
 	 * @access public
 	 * @return bool
 	 */
-	function auto_load_next_post_is_ajax() {
+	function auto_load_next_post_is_ajax(){
 		if(defined( 'DOING_AJAX')){
 			return true;
 		}
 
-		return ( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest' ) ? true : false;
+		return(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') ? true : false;
 	} // END auto_load_next_post_is_ajax
 }
 
@@ -44,9 +44,9 @@ if(! function_exists( 'supports_alnp')){
 			'twentyfifteen', 'twentyfourteen', 'twentythirteen', 'twentytwelve', 'twentyten'
 		);
 
-		if(in_array( get_option('template'), $core_themes)){
+		if(in_array(get_option('template'), $core_themes)){
 			return true;
-		} else if(current_theme_supports('auto-load-next-post') ) {
+		} else if(current_theme_supports('auto-load-next-post')){
 			return true;
 		}
 

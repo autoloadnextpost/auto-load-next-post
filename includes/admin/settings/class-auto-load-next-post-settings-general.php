@@ -26,14 +26,14 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function __construct() {
+	public function __construct(){
 		$this->id    = 'general';
 		$this->label = __('General', 'auto-load-next-post');
 
-		add_filter('auto_load_next_post_settings_submenu_array',   array($this, 'add_menu_page' ),     20 );
-		add_filter('auto_load_next_post_settings_tabs_array',      array($this, 'add_settings_page' ), 20 );
-		add_action('auto_load_next_post_settings_'.$this->id,      array($this, 'output' ) );
-		add_action('auto_load_next_post_settings_save_'.$this->id, array($this, 'save' ) );
+		add_filter('auto_load_next_post_settings_submenu_array',   array($this, 'add_menu_page'),     20);
+		add_filter('auto_load_next_post_settings_tabs_array',      array($this, 'add_settings_page'), 20);
+		add_action('auto_load_next_post_settings_'.$this->id,      array($this, 'output'));
+		add_action('auto_load_next_post_settings_save_'.$this->id, array($this, 'save'));
 	} // END __construct()
 
 	/**
@@ -43,12 +43,12 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 * @access public
 	 * @global $current_tab
 	 */
-	public function save() {
+	public function save(){
 		global $current_tab;
 
 		$settings = $this->get_settings();
 
-		Auto_Load_Next_Post_Admin_Settings::save_fields( $settings, $current_tab );
+		Auto_Load_Next_Post_Admin_Settings::save_fields($settings, $current_tab);
 	} // END save()
 
 	/**
@@ -60,8 +60,8 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 * @access public
 	 * @return array
 	 */
-	public function get_post_types() {
-		$post_types = get_post_types( array( 'public' => true ), 'names');
+	public function get_post_types(){
+		$post_types = get_post_types(array('public' => true), 'names');
 
 		return $post_types;
 	} // END get_post_types()
@@ -73,8 +73,8 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 * @access public
 	 * @return array
 	 */
-	public function get_settings() {
-		return apply_filters( 'auto_load_next_post_'.$this->id.'_settings', array(
+	public function get_settings(){
+		return apply_filters('auto_load_next_post_'.$this->id.'_settings', array(
 
 			array(
 				'title' => __('Information', 'auto-load-next-post'),
@@ -83,7 +83,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 				'id'    => $this->id.'_options'
 			),
 
-			array(
+			/*array(
 				'title'    => __('Restrict Post Types', 'auto-load-next-post'),
 				'desc'     => __('Select which post types you wish to load automatically.', 'auto-load-next-post'),
 				'desc_tip' => true,
@@ -94,7 +94,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 				'type'     => 'multiselect',
 				'options'  => $this->get_post_types(),
 				'autoload' => false
-			),
+			),*/
 
 			array(
 				'title'    => __('Content Container', 'auto-load-next-post'),

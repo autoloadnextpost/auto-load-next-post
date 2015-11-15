@@ -4,7 +4,7 @@ Donate link:       https://donorbox.org/auto-load-next-post
 Tags:              auto load posts, scroll, scroll posts, post scroller, scrolling, infinite scroll, AJAX, endless, history, post history, browsing history
 Requires at least: 4.0
 Tested up to:      4.3.1
-Stable tag:        1.4.3
+Stable tag:        1.4.4
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,6 @@ For new first time users I suggest reading [the documentation](https://github.co
 
 = Features =
 * Use action hooks to load content before and after the next post has loaded.
-* Restrict it to load only on specific post types.
 * Have the option to hide the comments if you wish.
 * Track each post load with Google Analytics. ( Requires Google Analytics to be applied for this to work. )
 * Over-writable template file.
@@ -59,9 +58,9 @@ Donations of any sum help keep this plugin actively developed and supported. You
 Reviews are helpful to other users and this plugin reputation. Please consider spending a minute or two leaving a [review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform) and tell me what you think about the plugin. It matters a lot and is most appreciated.
 
 = Languages and Translation Support =
-Current languages available: English(US), Français (French)(France), German (Germany), Italian (Italy), Româna (Romanian)
+Current languages available: English(US), Français (French)(France), German (Germany), Româna (Romanian)
 
-Auto Load Next Post is currently available in 5 languages with more on the way. The folks over at WP Translations handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
+Auto Load Next Post is currently available in 4 languages with more on the way. The folks over at WP Translations handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
 
 > #### PHP Requirement
 > This plugin requires PHP version 5.3 or higher.<br />
@@ -114,12 +113,17 @@ A.5 No it does not, but this will be available in the premium version.
 A.6 Well, WordPress loads posts in descending order by default so the next post is the previous post and a user reads content going down not up so it loads the next post, not previous.
 
 == Screenshots ==
-1. Admin Settings Page
+1. PHP Warning Admin Notification
 2. Theme Support Admin Notification
+3. Admin Settings Page
 
 == Changelog ==
+= 1.4.4 : 15th November 2015 =
+* Fixed the activation of the plugin from the broken update in version 1.4.3
+* Removed code that is not needed and certain parts that are not for the free version of Auto Load Next Post.
+* Removed additional whitespace in the code making the plugin just a little bit lighter.
 
-= 1.4.3 : 20th October 2015 =
+= 1.4.3 : 19th October 2015 =
 * Corrected undefined function for Google Analytics tracking in the JavaScript.
 * Improved Google Analytics. Now detects old, classic, current and Yoast method of tracking pageviews.
 * Changed the default content container setting to match Twenty Fifteen.
@@ -136,7 +140,6 @@ A.6 Well, WordPress loads posts in descending order by default so the next post 
 * Added PHP detection.
 * Improved copy in the settings page and the help tab.
 * Updated the default localization file.
-* Updated the readme.txt file with better copy.
 * Removed public variables and hardcoded them into the plugin instead.
 * Removed whitespace.
 * Removed @return void on __construct() functions.
