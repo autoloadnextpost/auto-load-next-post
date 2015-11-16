@@ -40,7 +40,7 @@ function auto_load_next_post_template_redirect() {
 
   if (file_exists($template_path.'content-partial.php')) {
 	include($template_path.'content-partial.php');
-  } else if(file_exists($default_path.'/template/content-partial.php')) {
+  } else if (file_exists($default_path.'/template/content-partial.php')) {
 	include($default_path.'/template/content-partial.php');
   }
 
