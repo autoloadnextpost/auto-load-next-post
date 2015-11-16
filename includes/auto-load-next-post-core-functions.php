@@ -1,17 +1,20 @@
 <?php
 /**
- * Auto Load Next Post Core Functions
- *
- * General core functions available on both the front-end and admin.
- *
- * @since    1.0.0
- * @author   Sébastien Dumont
- * @category Core
- * @package  Auto Load Next Post
- * @license  GPL-2.0+
- */
+	 * Auto Load Next Post Core Functions
+	 *
+	 * General core functions available on both the front-end and admin.
+	 *
+	 * @since    1.0.0
+	 * @author   Sébastien Dumont
+	 * @category Core
+	 * @package  Auto Load Next Post
+	 * @license  GPL-2.0+
+	 */
 
-if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) {
+	exit;
+}
+// Exit if accessed directly
 
 // Include core functions
 include('auto-load-next-post-conditional-functions.php');
@@ -25,7 +28,7 @@ function auto_load_next_post_template_redirect() {
 
   // if this is not a request for partial or a singular object then bail
   if ( ! isset($wp_query->query_vars['partial']) || ! is_singular()) {
-    return;
+	return;
   }
 
   /**
@@ -36,9 +39,9 @@ function auto_load_next_post_template_redirect() {
   $default_path = AUTO_LOAD_NEXT_POST_FILE_PATH;
 
   if (file_exists($template_path.'content-partial.php')) {
-    include($template_path.'content-partial.php');
+	include($template_path.'content-partial.php');
   } else if(file_exists($default_path.'/template/content-partial.php')) {
-    include($default_path.'/template/content-partial.php');
+	include($default_path.'/template/content-partial.php');
   }
 
   exit;
