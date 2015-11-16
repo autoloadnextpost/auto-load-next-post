@@ -9,7 +9,10 @@
  * @license  GPL-2.0+
  */
 
-if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) {
+	exit;
+}
+// Exit if accessed directly
 
 if ( ! class_exists('Auto_Load_Next_Post_Settings_Page')) {
 
@@ -31,7 +34,7 @@ class Auto_Load_Next_Post_Settings_Page {
 	 * @param  array $pages
 	 * @return array $pages
 	 */
-	public function add_settings_page($pages){
+	public function add_settings_page($pages) {
 		$pages[$this->id] = $this->label;
 		return $pages;
 	} // END add_settings_page()
@@ -44,7 +47,7 @@ class Auto_Load_Next_Post_Settings_Page {
 	 * @param  array $pages
 	 * @return array $pages
 	 */
-	public function add_menu_page($pages){
+	public function add_menu_page($pages) {
 		$pages[$this->id] = $this->label;
 		return $pages;
 	} // END add_menu_page()

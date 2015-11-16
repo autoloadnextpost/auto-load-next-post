@@ -8,7 +8,10 @@
  * @package  Auto Load Next Post
  * @license  GPL-2.0+
  */
-if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) {
+	exit;
+}
+// Exit if accessed directly
 
 if ( ! class_exists('Auto_Load_Next_Post_Settings_General_Tab')) {
 
@@ -30,9 +33,9 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 		$this->id    = 'general';
 		$this->label = __('General', 'auto-load-next-post');
 
-		add_filter('auto_load_next_post_settings_submenu_array',   array($this, 'add_menu_page'),     20);
-		add_filter('auto_load_next_post_settings_tabs_array',      array($this, 'add_settings_page'), 20);
-		add_action('auto_load_next_post_settings_'.$this->id,      array($this, 'output'));
+		add_filter('auto_load_next_post_settings_submenu_array', array($this, 'add_menu_page'), 20);
+		add_filter('auto_load_next_post_settings_tabs_array', array($this, 'add_settings_page'), 20);
+		add_action('auto_load_next_post_settings_'.$this->id, array($this, 'output'));
 		add_action('auto_load_next_post_settings_save_'.$this->id, array($this, 'save'));
 	} // END __construct()
 
@@ -172,7 +175,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 				'type'    => 'checkbox'
 			),
 
-			array( 'type' => 'sectionend', 'id' => $this->id.'_options'),
+			array('type' => 'sectionend', 'id' => $this->id.'_options'),
 		)); // End general settings
 	} // END get_settings()
 

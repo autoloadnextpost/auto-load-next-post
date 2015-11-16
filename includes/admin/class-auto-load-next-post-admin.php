@@ -9,7 +9,10 @@
  * @license  GPL-2.0+
  */
 
-if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) {
+	exit;
+}
+// Exit if accessed directly
 
 if ( ! class_exists('Auto_Load_Next_Post_Admin')) {
 
@@ -92,7 +95,7 @@ class Auto_Load_Next_Post_Admin {
 	 */
 	public function includes() {
 		// Classes we only need if the ajax is not-ajax
-		if (! auto_load_next_post_is_ajax()) {
+		if ( ! auto_load_next_post_is_ajax()) {
 			include('class-auto-load-next-post-install.php'); // Install Plugin
 			include('class-auto-load-next-post-admin-menus.php'); // Plugin Menu
 			include('class-auto-load-next-post-admin-notices.php'); // Plugin Notices

@@ -104,8 +104,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 			foreach (self::$errors as $error) {
 				echo '<div id="message" class="error auto-load-next-post fade"><p><strong>'.esc_html($error).'</strong></p></div>';
 			}
-		}
-		elseif (sizeof(self::$messages) > 0) {
+		} elseif (sizeof(self::$messages) > 0) {
 			foreach (self::$messages as $message) {
 				echo '<div id="message" class="updated auto-load-next-post fade"><p><strong>'.esc_html($message).'</strong></p></div>';
 			}
@@ -193,8 +192,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 
 		if (is_array($option_value)) {
 			$option_value = array_map('stripslashes', $option_value);
-		}
-		elseif ( ! is_null($option_value)) {
+		} elseif ( ! is_null($option_value)) {
 			$option_value = stripslashes($option_value);
 		}
 
@@ -212,14 +210,30 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 */
 	public static function output_fields($options) {
 		foreach ($options as $value) {
-			if ( ! isset($value['type'])) continue;
-			if ( ! isset($value['id']))       $value['id'] = '';
-			if ( ! isset($value['title']))    $value['title'] = isset($value['name']) ? $value['name'] : '';
-			if ( ! isset($value['class']))    $value['class'] = '';
-			if ( ! isset($value['css']))      $value['css'] = '';
-			if ( ! isset($value['default']))  $value['default'] = '';
-			if ( ! isset($value['desc']))     $value['desc'] = '';
-			if ( ! isset($value['desc_tip'])) $value['desc_tip'] = false;
+			if ( ! isset($value['type'])) {
+				continue;
+			}
+			if ( ! isset($value['id'])) {
+				$value['id'] = '';
+			}
+			if ( ! isset($value['title'])) {
+				$value['title'] = isset($value['name']) ? $value['name'] : '';
+			}
+			if ( ! isset($value['class'])) {
+				$value['class'] = '';
+			}
+			if ( ! isset($value['css'])) {
+				$value['css'] = '';
+			}
+			if ( ! isset($value['default'])) {
+				$value['default'] = '';
+			}
+			if ( ! isset($value['desc'])) {
+				$value['desc'] = '';
+			}
+			if ( ! isset($value['desc_tip'])) {
+				$value['desc_tip'] = false;
+			}
 
 			// Custom attribute handling
 			$custom_attributes = array();
@@ -234,30 +248,25 @@ class Auto_Load_Next_Post_Admin_Settings {
 			if ($value['desc_tip'] === true) {
 				$description = '';
 				$tip = $value['desc'];
-			}
-			else if ( ! empty($value['desc_tip'])) {
+			} else if ( ! empty($value['desc_tip'])) {
 				$description = $value['desc'];
 				$tip = $value['desc_tip'];
-			}
-			else if ( ! empty($value['desc'])) {
+			} else if ( ! empty($value['desc'])) {
 				$description = $value['desc'];
 				$tip = '';
-			}
-			else {
+			} else {
 				$description = $tip = '';
 			}
 
 			if ($description && in_array($value['type'], array('textarea', 'radio'))) {
 				$description = '<p style="margin-top:0">'.wp_kses_post($description).'</p>';
-			}
-			else if ($description) {
+			} else if ($description) {
 				$description = '<span class="description">'.wp_kses_post($description).'</span>';
 			}
 
 			if ($tip && in_array($value['type'], array('checkbox'))) {
 				$tip = '<p class="description">'.$tip.'</p>';
-			}
-			else if ($tip) {
+			} else if ($tip) {
 				$tip = '<img class="help_tip" data-tip="'.esc_attr($tip).'" src="'.AUTO_LOAD_NEXT_POST_URL_PATH.'/assets/images/help.png" height="16" width="16" />';
 			}
 
@@ -355,18 +364,23 @@ class Auto_Load_Next_Post_Admin_Settings {
 						</th>
 						<td class="forminp forminp-<?php echo sanitize_title($value['type']); ?>">
 						<select
-								name="<?php echo esc_attr($value['id']); ?><?php if ($value['type'] == 'multiselect') echo '[]'; ?>"
+								name="<?php echo esc_attr($value['id']); ?><?php if ($value['type'] == 'multiselect') {
+	echo '[]';
+}
+?>"
 								id="<?php echo esc_attr($value['id']); ?>"
 								style="<?php echo esc_attr($value['css']); ?>"
 								class="<?php echo esc_attr($value['class']); ?>"
 								<?php echo implode(' ', $custom_attributes); ?>
-								<?php if ($value['type'] == 'multiselect') echo 'multiple="multiple"'; ?>>
+								<?php if ($value['type'] == 'multiselect') {
+	echo 'multiple="multiple"';
+}
+?>>
 								<?php foreach ($value['options'] as $key => $val) { ?>
 										<option value="<?php echo esc_attr($key); ?>" <?php
 											if (is_array($option_value)) {
 												selected(in_array($key, $option_value), true);
-											}
-											else {
+											} else {
 												selected($option_value, $key);
 											}
 										?>><?php echo $val ?></option>
@@ -414,26 +428,41 @@ class Auto_Load_Next_Post_Admin_Settings {
 				// Checkbox input
 				case 'checkbox':
 					$option_value = self::get_option($value['id'], $value['default']);
-					if ( ! isset($value['hide_if_checked'])) $value['hide_if_checked'] = false;
-					if ( ! isset($value['show_if_checked'])) $value['show_if_checked'] = false;
+					if ( ! isset($value['hide_if_checked'])) {
+						$value['hide_if_checked'] = false;
+					}
+					if ( ! isset($value['show_if_checked'])) {
+						$value['show_if_checked'] = false;
+					}
 					if ( ! isset($value['checkboxgroup']) || (isset($value['checkboxgroup']) && $value['checkboxgroup'] == 'start')) {
 					?>
 						<tr valign="top" class="<?php
-							if ($value['hide_if_checked'] == 'yes' || $value['show_if_checked'] == 'yes') echo 'hidden_option';
-							if ($value['hide_if_checked'] == 'option') echo 'hide_options_if_checked';
-							if ($value['show_if_checked'] == 'option') echo 'show_options_if_checked';
+							if ($value['hide_if_checked'] == 'yes' || $value['show_if_checked'] == 'yes') {
+								echo 'hidden_option';
+							}
+							if ($value['hide_if_checked'] == 'option') {
+								echo 'hide_options_if_checked';
+							}
+							if ($value['show_if_checked'] == 'option') {
+								echo 'show_options_if_checked';
+							}
 						?>">
 						<th scope="row" class="titledesc"><?php echo esc_html($value['title']); ?></th>
 						<td class="forminp forminp-checkbox">
 							<fieldset>
 						<?php
-					}
-					else {
+					} else {
 						?>
 						<fieldset class="<?php
-							if ($value['hide_if_checked'] == 'yes' || $value['show_if_checked'] == 'yes') echo 'hidden_option';
-							if ($value['hide_if_checked'] == 'option') echo 'hide_options_if_checked';
-							if ($value['show_if_checked'] == 'option') echo 'show_options_if_checked';
+							if ($value['hide_if_checked'] == 'yes' || $value['show_if_checked'] == 'yes') {
+								echo 'hidden_option';
+							}
+							if ($value['hide_if_checked'] == 'option') {
+								echo 'hide_options_if_checked';
+							}
+							if ($value['show_if_checked'] == 'option') {
+								echo 'show_options_if_checked';
+							}
 						?>">
 					<?php
 					}
@@ -455,8 +484,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 						</td>
 						</tr>
 						<?php
-					}
-					else {
+					} else {
 						?>
 						</fieldset>
 						<?php
@@ -486,8 +514,9 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * @return bool
 	 */
 	public static function save_fields($options, $current_tab) {
-		if (empty($_POST))
-			return false;
+		if (empty($_POST)) {
+					return false;
+		}
 
 		// Options to update will be stored here
 		$update_options = array();
@@ -495,8 +524,9 @@ class Auto_Load_Next_Post_Admin_Settings {
 		// Loop options and get values to save
 		foreach ($options as $value) {
 
-			if ( ! isset($value['id']))
-				continue;
+			if ( ! isset($value['id'])) {
+							continue;
+			}
 
 			$type = isset($value['type']) ? sanitize_title($value['type']) : '';
 
@@ -508,8 +538,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 				case "checkbox" :
 					if (isset($_POST[$value['id']])) {
 						$option_value = 'yes';
-					}
-					else {
+					} else {
 						$option_value = 'no';
 					}
 
@@ -518,8 +547,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 				case "textarea" :
 					if (isset($_POST[$value['id']])) {
 						$option_value = wp_kses_post(trim(stripslashes($_POST[$value['id']])));
-					}
-					else {
+					} else {
 						$option_value = '';
 					}
 
@@ -532,8 +560,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 				case "radio" :
 					if (isset($_POST[$value['id']])) {
 						$option_value = auto_load_next_post_clean(stripslashes($_POST[$value['id']]));
-					}
-					else {
+					} else {
 						$option_value = '';
 					}
 
@@ -544,8 +571,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 					// Get array
 					if (isset($_POST[$value['id']])) {
 						$selected_values = array_map('auto_load_next_post_clean', array_map('stripslashes', (array) $_POST[$value['id']]));
-					}
-					else {
+					} else {
 						$selected_values = array();
 					}
 					$option_value = $selected_values;
@@ -583,8 +609,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 					$update_options[$option_name][$key] = $option_value;
 
 				// Single value
-				}
-				else {
+				} else {
 					$update_options[$value['id']] = $option_value;
 				}
 
