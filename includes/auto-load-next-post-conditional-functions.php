@@ -1,15 +1,15 @@
 <?php
 /**
- * Auto Load Next Post Conditional Functions
- *
- * Functions for determining the current query/page.
- *
- * @since    1.0.0
- * @author   Sébastien Dumont
- * @category Core
- * @package  Auto Load Next Post
- * @license  GPL-2.0+
- */
+	 * Auto Load Next Post Conditional Functions
+	 *
+	 * Functions for determining the current query/page.
+	 *
+	 * @since    1.0.0
+	 * @author   Sébastien Dumont
+	 * @category Core
+	 * @package  Auto Load Next Post
+	 * @license  GPL-2.0+
+	 */
 
 if ( ! defined('ABSPATH')) {
 	exit;
