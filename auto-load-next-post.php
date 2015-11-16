@@ -29,7 +29,10 @@
  * @package Auto_Load_Next_Post
  * @author  Sébastien Dumont
  */
-if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) {
+	exit;
+}
+// Exit if accessed directly
 
 if ( ! class_exists('Auto_Load_Next_Post')) {
 
@@ -127,9 +130,9 @@ final class Auto_Load_Next_Post {
 		$path  = null;
 		$file  = strtolower('class-'.str_replace('_', '-', $class)).'.php';
 
-		if (strpos($class, 'auto_load_next_post_admin' ) === 0) {
+		if (strpos($class, 'auto_load_next_post_admin') === 0) {
 			$path = AUTO_LOAD_NEXT_POST_FILE_PATH.'/includes/admin/';
-		} else if(strpos( $class, 'auto_load_next_post_' ) === 0) {
+		} else if (strpos($class, 'auto_load_next_post_') === 0) {
 			$path = AUTO_LOAD_NEXT_POST_FILE_PATH.'/includes/';
 		}
 
@@ -168,7 +171,7 @@ final class Auto_Load_Next_Post {
 	 * @access private
 	 * @since  1.4.3
 	 */
-	private function define($name, $value){
+	private function define($name, $value) {
 		if ( ! defined($name)) {
 			define($name, $value);
 		}
@@ -227,10 +230,10 @@ final class Auto_Load_Next_Post {
 		$mofile_local  = $lang_dir.$mofile;
 		$mofile_global = WP_LANG_DIR.'/auto-load-next-post/'.$mofile;
 
-		if (file_exists( $mofile_global)) {
+		if (file_exists($mofile_global)) {
 			// Look in global /wp-content/languages/auto-load-next-post/ folder
 			load_textdomain('auto-load-next-post', $mofile_global);
-		} else if (file_exists( $mofile_local)) {
+		} else if (file_exists($mofile_local)) {
 			// Look in local /wp-content/plugins/auto-load-next-post/languages/ folder
 			load_textdomain('auto-load-next-post', $mofile_local);
 		} else {
@@ -262,7 +265,7 @@ final class Auto_Load_Next_Post {
 				'alnp_comments_container'   => get_option('auto_load_next_post_comments_container'),
 				'alnp_remove_comments'      => get_option('auto_load_next_post_remove_comments'),
 				'alnp_google_analytics'     => get_option('auto_load_next_post_google_analytics'),
-			) );
+			));
 		} // END if is_singular() && get_post_type()
 	} // END register_scripts_and_styles()
 

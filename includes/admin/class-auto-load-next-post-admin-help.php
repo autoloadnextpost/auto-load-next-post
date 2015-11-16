@@ -1,15 +1,18 @@
 <?php
 /**
-	* Help is provided for this plugin on the plugin pages.
-	*
-	* @since    1.0.0
-	* @author   Sébastien Dumont
-	* @category Admin
-	* @package  Auto Load Next Post
-	* @license  GPL-2.0+
-	*/
+	 * Help is provided for this plugin on the plugin pages.
+	 *
+	 * @since    1.0.0
+	 * @author   Sébastien Dumont
+	 * @category Admin
+	 * @package  Auto Load Next Post
+	 * @license  GPL-2.0+
+	 */
 
-if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) {
+	exit;
+}
+// Exit if accessed directly
 
 if ( ! class_exists('Auto_Load_Next_Post_Admin_Help')) {
 
@@ -60,7 +63,7 @@ class Auto_Load_Next_Post_Admin_Help {
 		));
 
 		$screen->set_help_sidebar(
-			'<p><strong>'.__('For more information:', 'auto-load-next-post').'</strong></p>' .
+			'<p><strong>'.__('For more information:', 'auto-load-next-post').'</strong></p>'.
 			'<p><a href="http://autoloadnextpost.com" target="_blank">'.sprintf(__('About %s', 'auto-load-next-post'), 'Auto Load Next Post').'</a></p>'.
 			'<p><a href="https://wordpress.org/plugins/auto-load-next-post" target="_blank">'.__('Project on WordPress.org', 'auto-load-next-post').'</a></p>'.
 			'<p><a href="https://github.com/seb86/Auto-Load-Next-Post/" target="_blank">'.__('Project on Github', 'auto-load-next-post').'</a></p>'
