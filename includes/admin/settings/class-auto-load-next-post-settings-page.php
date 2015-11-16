@@ -9,9 +9,9 @@
  * @license  GPL-2.0+
  */
 
-if(! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if(! class_exists('Auto_Load_Next_Post_Settings_Page')){
+if ( ! class_exists('Auto_Load_Next_Post_Settings_Page')) {
 
 /**
  * Class - Auto_Load_Next_Post_Settings_Page
@@ -56,7 +56,7 @@ class Auto_Load_Next_Post_Settings_Page {
 	 * @access public
 	 * @return array
 	 */
-	public function get_settings(){
+	public function get_settings() {
 		return array();
 	} // END get_settings()
 
@@ -66,7 +66,7 @@ class Auto_Load_Next_Post_Settings_Page {
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function output(){
+	public function output() {
 		$settings = $this->get_settings();
 
 		Auto_Load_Next_Post_Admin_Settings::output_fields($settings);
@@ -80,7 +80,7 @@ class Auto_Load_Next_Post_Settings_Page {
 	 * @global $current_tab
 	 * @global $current_section
 	 */
-	public function save(){
+	public function save() {
 		global $current_tab;
 
 		$settings = $this->get_settings();

@@ -8,9 +8,9 @@
  * @package  Auto Load Next Post
  * @license  GPL-2.0+
  */
-if(! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if(! class_exists('Auto_Load_Next_Post_Settings_General_Tab')){
+if ( ! class_exists('Auto_Load_Next_Post_Settings_General_Tab')) {
 
 /**
  * Class - Auto_Load_Next_Post_Settings_General_Tab
@@ -26,7 +26,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function __construct(){
+	public function __construct() {
 		$this->id    = 'general';
 		$this->label = __('General', 'auto-load-next-post');
 
@@ -43,7 +43,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 * @access public
 	 * @global $current_tab
 	 */
-	public function save(){
+	public function save() {
 		global $current_tab;
 
 		$settings = $this->get_settings();
@@ -60,7 +60,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 * @access public
 	 * @return array
 	 */
-	public function get_post_types(){
+	public function get_post_types() {
 		$post_types = get_post_types(array('public' => true), 'names');
 
 		return $post_types;
@@ -73,7 +73,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 	 * @access public
 	 * @return array
 	 */
-	public function get_settings(){
+	public function get_settings() {
 		return apply_filters('auto_load_next_post_'.$this->id.'_settings', array(
 
 			array(

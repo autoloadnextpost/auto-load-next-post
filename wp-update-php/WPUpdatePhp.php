@@ -37,7 +37,7 @@ class WPUpdatePhp {
 	 * @return void
 	 */
 	private function load_minimum_required_version_notice() {
-		if(is_admin() && ! defined( 'DOING_AJAX')){
+		if(is_admin() && ! defined( 'DOING_AJAX')) {
 			add_action('admin_notices', array($this, 'admin_notice' ) );
 		}
 	}

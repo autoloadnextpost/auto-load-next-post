@@ -9,9 +9,9 @@
  * @license  GPL-2.0+
  */
 
-if(! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if(! class_exists('Auto_Load_Next_Post_Install')){
+if ( ! class_exists('Auto_Load_Next_Post_Install')) {
 
 /**
  * Class - Auto_Load_Next_Post_Install
@@ -26,7 +26,7 @@ class Auto_Load_Next_Post_Install {
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function __construct(){
+	public function __construct() {
 		register_activation_hook(AUTO_LOAD_NEXT_POST_FILE, array($this, 'install'));
 		register_deactivation_hook(AUTO_LOAD_NEXT_POST_FILE, array($this, 'deactivate'));
 	} // END __construct()
@@ -37,7 +37,7 @@ class Auto_Load_Next_Post_Install {
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function install(){
+	public function install() {
 		$this->create_options();
 
 		// Add plugin version
@@ -50,7 +50,7 @@ class Auto_Load_Next_Post_Install {
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function deactivate(){
+	public function deactivate() {
 		flush_rewrite_rules();
 	}
 
@@ -62,21 +62,20 @@ class Auto_Load_Next_Post_Install {
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function create_options(){
+	public function create_options() {
 		// Include settings so that we can run through defaults
 		include_once('class-auto-load-next-post-admin-settings.php');
 
 		$settings = Auto_Load_Next_Post_Admin_Settings::get_settings_pages();
 
-		foreach($settings as $section){
-			foreach($section->get_settings() as $value){
-				if(isset($value['default']) && isset($value['id'])){
+		foreach ($settings as $section) {
+			foreach ($section->get_settings() as $value) {
+				if (isset($value['default']) && isset($value['id'])) {
 					$autoload = isset($value['autoload']) ? (bool) $value['autoload'] : true;
 					add_option($value['id'], $value['default'], '', ($autoload ? 'yes' : 'no'));
 				}
 			}
 		}
-
 	} // END create_options()
 
 	/**
@@ -87,7 +86,7 @@ class Auto_Load_Next_Post_Install {
 	 * @global $wpdb
 	 * @return void
 	 */
-	public function delete_options(){
+	public function delete_options() {
 		global $wpdb;
 
 		// Delete options

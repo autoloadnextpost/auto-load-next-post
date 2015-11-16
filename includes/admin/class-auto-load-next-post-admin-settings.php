@@ -9,9 +9,9 @@
  * @license  GPL-2.0+
  */
 
-if(! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if(! class_exists('Auto_Load_Next_Post_Admin_Settings')){
+if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings')) {
 
 /**
  * Auto_Load_Next_Post_Admin_Settings
@@ -31,7 +31,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * @access public static
 	 * @return $settings
 	 */
-	public static function get_settings_pages(){
+	public static function get_settings_pages() {
 		if(empty( self::$settings)){
 			$settings = array();
 
@@ -50,10 +50,10 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * @access public static
 	 * @global $current_tab
 	 */
-	public static function save(){
+	public static function save() {
 		global $current_tab;
 
-		if(empty($_REQUEST['_wpnonce']) || ! wp_verify_nonce($_REQUEST['_wpnonce'], 'auto-load-next-post-settings')){
+		if(empty($_REQUEST['_wpnonce']) || ! wp_verify_nonce($_REQUEST['_wpnonce'], 'auto-load-next-post-settings')) {
 			wp_die(__('Action failed. Please refresh the page and retry.', 'auto-load-next-post'));
 		}
 
@@ -96,7 +96,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * @access public static
 	 * @return string
 	 */
-	public static function show_messages(){
+	public static function show_messages() {
 		if(sizeof(self::$errors) > 0 ){
 			foreach(self::$errors as $error){
 				echo '<div id="message" class="error auto-load-next-post fade"><p><strong>'.esc_html($error).'</strong></p></div>';
@@ -120,7 +120,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * @global $current_tab
 	 * @return void
 	 */
-	public static function output(){
+	public static function output() {
 		global $current_tab;
 
 		// Get current tab
@@ -167,7 +167,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 */
 	public static function get_option($option_name, $default = ''){
 		// Array value
-		if(strstr($option_name, '[')){
+		if(strstr($option_name, '[')) {
 			parse_str($option_name, $option_array);
 
 			// Option name is first key
@@ -414,7 +414,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 					$option_value = self::get_option($value['id'], $value['default']);
 					if(!isset($value['hide_if_checked'])) $value['hide_if_checked'] = false;
 					if(!isset($value['show_if_checked'])) $value['show_if_checked'] = false;
-					if(!isset($value['checkboxgroup']) || (isset($value['checkboxgroup']) && $value['checkboxgroup'] == 'start')){
+					if(!isset($value['checkboxgroup']) || (isset($value['checkboxgroup']) && $value['checkboxgroup'] == 'start')) {
 					?>
 						<tr valign="top" class="<?php
 							if($value['hide_if_checked'] == 'yes' || $value['show_if_checked']=='yes') echo 'hidden_option';
@@ -447,7 +447,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 							<?php echo implode(' ', $custom_attributes); ?>
 						/> <?php echo wp_kses_post($value['desc']) ?></label> <?php echo $tip; ?>
 					<?php
-					if(!isset($value['checkboxgroup']) || (isset($value['checkboxgroup']) && $value['checkboxgroup'] == 'end')){
+					if(!isset($value['checkboxgroup']) || (isset($value['checkboxgroup']) && $value['checkboxgroup'] == 'end')) {
 						?>
 							</fieldset>
 						</td>
@@ -561,7 +561,7 @@ class Auto_Load_Next_Post_Admin_Settings {
 			if(!is_null($option_value)){
 
 				// Check if option is an array
-				if(strstr($value['id'], '[')){
+				if(strstr($value['id'], '[')) {
 					parse_str($value['id'], $option_array);
 
 					// Option name is first key

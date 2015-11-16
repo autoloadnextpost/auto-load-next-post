@@ -1,9 +1,9 @@
 <?php
 /**
- * This file loads the content partially.
- *
- * @version 1.4.4
- */
+	* This file loads the content partially.
+	*
+	* @version 1.4.4
+	*/
 
 // Fetch plugin settings.
 $remove_comments = get_option('auto_load_next_post_remove_comments');

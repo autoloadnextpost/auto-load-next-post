@@ -2,7 +2,7 @@
 /**
  * Admin View: Settings
  */
-if(! defined('ABSPATH')) exit; // Exit if accessed directly.
+if ( ! defined('ABSPATH')) exit; // Exit if accessed directly.
 ?>
 <div class="wrap auto-load-next-post <?php echo $current_tab; ?>">
 	<form method="post" id="mainform" action="" enctype="multipart/form-data">

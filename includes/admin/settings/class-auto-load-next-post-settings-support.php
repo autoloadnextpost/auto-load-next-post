@@ -9,9 +9,9 @@
  * @license  GPL-2.0+
  */
 
-if(! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
 
-if(! class_exists('Auto_Load_Next_Post_Settings_Support_Tab')){
+if ( ! class_exists('Auto_Load_Next_Post_Settings_Support_Tab')) {
 
 /**
  * Auto_Load_Next_Post_Settings_Support_Tab
@@ -24,7 +24,7 @@ class Auto_Load_Next_Post_Settings_Support_Tab extends Auto_Load_Next_Post_Setti
 	 * @since  1.4.3
 	 * @access public
 	 */
-	public function __construct(){
+	public function __construct() {
 		$this->id    = 'support';
 		$this->label = __('Support', 'auto-load-next-post');
 
@@ -39,7 +39,7 @@ class Auto_Load_Next_Post_Settings_Support_Tab extends Auto_Load_Next_Post_Setti
 	 * @since  1.4.3
 	 * @access public
 	 */
-	public function output(){
+	public function output() {
 		$settings = $this->get_settings();
 
  		Auto_Load_Next_Post_Admin_Settings::output_fields($settings);
@@ -52,7 +52,7 @@ class Auto_Load_Next_Post_Settings_Support_Tab extends Auto_Load_Next_Post_Setti
 	 * @access public
 	 * @return string
 	 */
-	public function callback(){
+	public function callback() {
 		return '<p>'.__('As this is a free plugin, I can not provide support.', 'auto-load-next-post').'</p>'.
 				'<p>'.sprintf(__('You may ask the WordPress community for help by posting to the <a href="%s" target="_blank">WordPress.org support forum</a>. Response time can range from a few days to a few weeks and will likely be from a non-developer.', 'auto-load-next-post'), 'https://wordpress.org/support/plugin/auto-load-next-post').'</p>'.
 				'<p>'.sprintf(__('If you want a <strong>timely response via email from me</strong>, <a href="%s" target="_blank">upgrade</a> and then send me an email.', 'auto-load-next-post'), 'http://autoloadnextpost.com/?utm_source=insideplugin&utm_medium=web&utm_content=support-tab&utm_campaign=freeplugin-alnp').'</p>'.
@@ -68,7 +68,7 @@ class Auto_Load_Next_Post_Settings_Support_Tab extends Auto_Load_Next_Post_Setti
 	 * @param  $current_section
 	 * @return array
 	 */
-	public function get_settings(){
+	public function get_settings() {
 		return array(
 
 			array(

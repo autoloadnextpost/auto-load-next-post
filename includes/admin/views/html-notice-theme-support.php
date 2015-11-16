@@ -3,7 +3,7 @@
 * Admin View: Admin Theme Notice
 */
 
-if(! defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined('ABSPATH')) exit; // Exit if accessed directly
 ?>
 <div id="message" class="updated auto-load-next-post-message">
 	<p><?php _e(sprintf('<strong>The theme you are using has not declared support for %s</strong> &#8211; please read the integration guide.', 'Auto Load Next Post'), 'auto-load-next-post'); ?></p>
