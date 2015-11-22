@@ -80,24 +80,11 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 		return apply_filters('auto_load_next_post_'.$this->id.'_settings', array(
 
 			array(
-				'title' => __('Information', 'auto-load-next-post'),
+				'title' => __('General', 'auto-load-next-post'),
 				'type'  => 'title',
-				'desc'  => __('For the plugin to work you need to set the variables below.', 'auto-load-next-post'),
+				'desc'  => sprintf(__('Set variables below according to your active theme. All are required for %s to work.', 'auto-load-next-post'), 'Auto Load Next Post'),
 				'id'    => $this->id.'_options'
 			),
-
-			/*array(
-				'title'    => __('Restrict Post Types', 'auto-load-next-post'),
-				'desc'     => __('Select which post types you wish to load automatically.', 'auto-load-next-post'),
-				'desc_tip' => true,
-				'id'       => 'auto_load_next_post_get_post_types',
-				'class'    => 'chosen-select',
-				'css'      => 'min-width:300px;',
-				'default'  => array( 'post' ),
-				'type'     => 'multiselect',
-				'options'  => $this->get_post_types(),
-				'autoload' => false
-			),*/
 
 			array(
 				'title'    => __('Content Container', 'auto-load-next-post'),

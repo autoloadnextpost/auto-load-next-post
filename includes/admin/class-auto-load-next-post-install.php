@@ -41,11 +41,31 @@ class Auto_Load_Next_Post_Install {
 	 * @access public
 	 */
 	public function install() {
+		// Add default options
 		$this->create_options();
+
+		// Add install date
+		$this->insert_install_date();
 
 		// Add plugin version
 		update_option('auto_load_next_post_version', AUTO_LOAD_NEXT_POST_VERSION);
 	} // END install()
+
+	/**
+	 * Insert the install date of the plugin.
+	 *
+	 * @since  1.4.4
+	 * @access public
+	 * @return string
+	 */
+	public static function insert_install_date() {
+		$datetime_now = new DateTime();
+		$date_string  = $datetime_now->format('Y-m-d');
+
+		add_site_option('auto_load_next_post_install_date', $date_string, '', 'no');
+
+		return $date_string;
+	}
 
 	/**
 	 * Refresh the permalinks on deactivating the plugin.
@@ -87,7 +107,6 @@ class Auto_Load_Next_Post_Install {
 	 * @since  1.0.0
 	 * @access public
 	 * @global $wpdb
-	 * @return void
 	 */
 	public function delete_options() {
 		global $wpdb;
