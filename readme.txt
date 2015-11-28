@@ -112,16 +112,25 @@ A.5 No it does not, but this will be available in the premium version.
 
 A.6 Well, WordPress loads posts in descending order by default so the next post is the previous post and a user reads content going down not up so it loads the next post, not previous.
 
+= Q.7 How can I get the Google Analytics option to work? =
+
+A.7 You simply need to have Google Analytics added to your site. Either by coding it into your theme or use Yoast's Google Analytics plugin.
+
 == Screenshots ==
 1. PHP Warning Admin Notification
 2. Theme Support Admin Notification
 3. Admin Settings Page
 
 == Changelog ==
-= 1.4.4 : 15th November 2015 =
+= 1.4.4 : 28th November 2015 =
 * Fixed the activation of the plugin from the broken update in version 1.4.3
 * Removed code that is not needed and certain parts that are not for the free version of Auto Load Next Post.
 * Removed additional whitespace in the code making the plugin just a little bit lighter.
+* Updated the copy in the settings page.
+* Improved the WP Update Php class originally created by Coen Jacobs. Also renamed the class a little so that it doesn't cause any conflicts with other plugins when activating.
+
+= 1.4.3.1 : 20th October 2015 =
+* Re-deployed v1.4.3 update as it failed using Ship by Big Bite Creative. Sorry about that. :(
 
 = 1.4.3 : 19th October 2015 =
 * Corrected undefined function for Google Analytics tracking in the JavaScript.
@@ -153,7 +162,7 @@ A.6 Well, WordPress loads posts in descending order by default so the next post 
 * Removed an error from the admin side when debug is enabled.
 
 = 1.3.2 : 20th May 2015 =
-* Added more theme support with compatible theme template file which can be overrided.
+* Added more theme support with compatible theme template file which can be overridden.
 * Added option to enable auto loading posts for specific post types.
 * Added option for comments. Now you can choose to show or hide rather than forcing it to hide automatically.
 * Added Chosen (v1.4.2) Javascript by [Harvest](http://harvesthq.github.io/chosen/)
@@ -171,5 +180,9 @@ A.6 Well, WordPress loads posts in descending order by default so the next post 
 * Initial version
 
 == Upgrade Notice ==
-= 1.4.3 : 18th August 2015 =
-* Corrected undefined function for Google Analytics tracking in the JavaScript.
+= 1.4.4 : 28th November 2015 =
+* Fixed the activation of the plugin from the broken update in version 1.4.3
+* Removed code that is not needed and certain parts that are not for the free version of Auto Load Next Post.
+* Removed additional whitespace in the code making the plugin just a little bit lighter.
+* Updated the copy in the settings page.
+* Improved the WP Update Php class originally created by Coen Jacobs. Also renamed the class a little so that it doesn't cause any conflicts with other plugins when activating.

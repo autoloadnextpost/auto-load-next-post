@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Auto Load Next Post 1.4.4\n"
 "Report-Msgid-Bugs-To: https://github.com/seb86/WordPress-Plugin-Boilerplate/"
 "issues\n"
-"POT-Creation-Date: 2015-11-22 19:08+0100\n"
+"POT-Creation-Date: 2015-11-28 16:47+0100\n"
 "PO-Revision-Date: 2015-05-20 17:15+0100\n"
 "Last-Translator: Auto Load Next Post <mailme@sebastiendumont.com>\n"
 "Language-Team: WP-Translations <wpt@wp-translations.org>\n"
@@ -106,7 +106,7 @@ msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin.php:57
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:32
-#: includes/admin/settings/class-auto-load-next-post-settings-support.php:78
+#: includes/admin/settings/class-auto-load-next-post-settings-support.php:83
 msgid "Support"
 msgstr ""
 
@@ -221,52 +221,68 @@ msgid ""
 "uninstalling via Plugins > Delete."
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-support.php:59
-msgid "As this is a free plugin, I can not provide support."
-msgstr ""
-
-#: includes/admin/settings/class-auto-load-next-post-settings-support.php:60
-#, php-format
-msgid ""
-"You may ask the WordPress community for help by posting to the <a href=\"%s"
-"\" target=\"_blank\">WordPress.org support forum</a>. Response time can "
-"range from a few days to a few weeks and will likely be from a non-developer."
-msgstr ""
-
-#: includes/admin/settings/class-auto-load-next-post-settings-support.php:61
-#, php-format
-msgid ""
-"If you want a <strong>timely response via email from me</strong>, <a href="
-"\"%s\" target=\"_blank\">upgrade</a> and then send me an email."
-msgstr ""
-
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:62
 #, php-format
-msgid ""
-"If you've found a bug, please <a href=\"%s\" target=\"_blank\">submit an "
-"issue on GitHub</a>."
+msgid "Hi <b>%s</b>,"
 msgstr ""
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:63
+#, php-format
+msgid ""
+"%1$s is <b>100&#37; free and open-sourced</b>, but I do rely on donations to "
+"facilitate further development of the free plugin. If %1$s has worked out "
+"for you well, please consider making a donation at %2$s"
+msgstr ""
+
+#: includes/admin/settings/class-auto-load-next-post-settings-support.php:64
+#, php-format
+msgid ""
+"As this is a free plugin, I can not provide support. You may ask the "
+"WordPress community for help by opening a thread on the <a href=\"%s\" "
+"target=\"_blank\">WordPress.org support forum</a>. Response time can range "
+"from a few days to a few weeks and will likely be from a non-developer."
+msgstr ""
+
+#: includes/admin/settings/class-auto-load-next-post-settings-support.php:66
+#, php-format
+msgid ""
+"If you've found a bug, please <a href=\"%s\" target=\"_blank\">submit an "
+"issue on GitHub</a> where I can act upon it more efficiently."
+msgstr ""
+
+#: includes/admin/settings/class-auto-load-next-post-settings-support.php:67
+msgid ""
+"Also if you can spare about 5 minutes to take a simple <a href=\"http://"
+"sebd86.polldaddy.com/s/auto-load-next-post\" target=\"_blank\">survey</a>, "
+"it would be a great help."
+msgstr ""
+
+#: includes/admin/settings/class-auto-load-next-post-settings-support.php:68
 msgid "Thank you."
+msgstr ""
+
+#: includes/admin/settings/class-auto-load-next-post-settings-support.php:68
+#, php-format
+msgid "regards,<br><br>%s"
 msgstr ""
 
 #: includes/admin/views/html-admin-settings.php:26
 msgid "Save Changes"
 msgstr ""
 
-#: includes/admin/views/html-notice-please-review.php:12
+#: includes/admin/views/html-notice-please-review.php:14
 #, php-format
 msgid ""
-"You have been using <b>%s</b> for some time now, could you please give it a "
-"review at wordpress.org?"
+"Hi <b>%s</b>, you've been using <b>%s</b> for some time now, and I hope "
+"you're happy with it. I've spent countless hours developing this free plugin "
+"for you, and I would really appreciate it if you gave it a quick review!"
 msgstr ""
 
-#: includes/admin/views/html-notice-please-review.php:13
+#: includes/admin/views/html-notice-please-review.php:15
 msgid "Yes, take me there!"
 msgstr ""
 
-#: includes/admin/views/html-notice-please-review.php:13
+#: includes/admin/views/html-notice-please-review.php:15
 msgid "Already have :)"
 msgstr ""
 
@@ -286,21 +302,35 @@ msgid "Hide this notice"
 msgstr ""
 
 #: template/content-partial.php:53
-msgid "Post navigation"
-msgstr ""
-
-#: template/content-partial.php:55
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: template/content-partial.php:56
-msgctxt "Next post link"
-msgid "&rarr;"
-msgstr ""
-
-#: wp-update-php/WPUpdatePhp.php:47
+#: wp-update-php/wp-update-php.php:151
 #, php-format
 msgid ""
-"Unfortunately, <strong>%s</strong> can not run on PHP versions older than "
+"%s recommends a PHP version higher than %s. Read more information about <a "
+"href=\"%s\" target=\"_blank\">how you can update</a>."
+msgstr ""
+
+#: wp-update-php/wp-update-php.php:153
+#, php-format
+msgid ""
+"This plugin recommends a PHP version higher than %s. Read more information "
+"about <a href=\"%s\" target=\"_blank\">how you can update</a>."
+msgstr ""
+
+#: wp-update-php/wp-update-php.php:158
+#, php-format
+msgid ""
+"Unfortunately, %s cannot run on PHP versions older than %s. Read more "
+"information about <a href=\"%s\" target=\"_blank\">how you can update</a>."
+msgstr ""
+
+#: wp-update-php/wp-update-php.php:160
+#, php-format
+msgid ""
+"Unfortunately, this plugin cannot run on PHP versions older than %s. Read "
+"more information about <a href=\"%s\" target=\"_blank\">how you can update</"
+"a>."
 msgstr ""

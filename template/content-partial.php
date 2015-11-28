@@ -50,11 +50,8 @@ while (have_posts()) : the_post();
 	do_action('alnp_load_after_content');
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e('Post navigation', 'auto-load-next-post'); ?></h1>
-
 		<span class="nav-previous"><?php previous_post_link('%link', '<span class="meta-nav">'._x('&larr;', 'Previous post link', 'auto-load-next-post').'</span> %title'); ?></span>
-		<span class="nav-next"><?php next_post_link('%link', '%title <span class="meta-nav">'._x('&rarr;', 'Next post link', 'auto-load-next-post').'</span>'); ?></span>
-	</nav><!-- .post-navigation -->
+	</nav>
 	<?php
 
 // End the loop.
