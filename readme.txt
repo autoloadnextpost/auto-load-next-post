@@ -58,9 +58,9 @@ Donations of any sum help keep this plugin actively developed and supported. You
 Reviews are helpful to other users and this plugin reputation. Please consider spending a minute or two leaving a [review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform) and tell me what you think about the plugin. It matters a lot and is most appreciated.
 
 = Languages and Translation Support =
-Current languages available: English(US), Français (French)(France), German (Germany), Româna (Romanian)
+Current languages available: English(US), Français (French)(France), German (Germany), Italian (Italy), Româna (Romanian)
 
-Auto Load Next Post is currently available in 4 languages with more on the way. The folks over at WP Translations handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
+Auto Load Next Post is currently available in 5 languages with more on the way. The folks over at WP Translations handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
 
 > #### PHP Requirement
 > This plugin requires PHP version 5.3 or higher.<br />
@@ -128,7 +128,7 @@ A.7 You simply need to have Google Analytics added to your site. Either by codin
 * Removed additional whitespace in the code making the plugin just a little bit lighter.
 * Improved the WP Update Php class originally created by Coen Jacobs. Also renamed the class a little so that it doesn't cause any conflicts with other plugins when activating.
 * Updated the copy in the settings page.
-* Updated the French translations.
+* Updated the French translation.
 
 = 1.4.3.1 : 20th October 2015 =
 * Re-deployed v1.4.3 update as it failed using Ship by Big Bite Creative. Sorry about that. :(
@@ -187,4 +187,4 @@ A.7 You simply need to have Google Analytics added to your site. Either by codin
 * Removed additional whitespace in the code making the plugin just a little bit lighter.
 * Improved the WP Update Php class originally created by Coen Jacobs. Also renamed the class a little so that it doesn't cause any conflicts with other plugins when activating.
 * Updated the copy in the settings page.
-* Updated the French translations.
+* Updated the French translation.
