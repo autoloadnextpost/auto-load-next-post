@@ -18,7 +18,6 @@ For new first time users I suggest reading [the documentation](https://github.co
 
 ### Features
 * Use action hooks to load content before and after the next post has loaded.
-* Restrict it to load only on specific post types.
 * Have the option to hide the comments if you wish.
 * Track each post load with Google Analytics. ( Requires Google Analytics to be applied for this to work. )
 * Over-writable template file.
@@ -62,3 +61,4 @@ Auto Load Next Post is currently available in 5 languages with more on the way. 
 ### More information
 * Other [WordPress plugins](http://profiles.wordpress.org/sebd86/) by [Sébastien Dumont](http://www.sebastiendumont.com/)
 * Contact Sébastien on Twitter: [@sebd86](http://twitter.com/sebd86)
+* This plugin uses a modified version of the [WP Update Php](https://github.com/seb86/wp-update-php) library class.

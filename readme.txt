@@ -122,12 +122,13 @@ A.7 You simply need to have Google Analytics added to your site. Either by codin
 3. Admin Settings Page
 
 == Changelog ==
-= 1.4.4 : 28th November 2015 =
+= 1.4.4 : 29th November 2015 =
 * Fixed the activation of the plugin from the broken update in version 1.4.3
 * Removed code that is not needed and certain parts that are not for the free version of Auto Load Next Post.
 * Removed additional whitespace in the code making the plugin just a little bit lighter.
-* Updated the copy in the settings page.
 * Improved the WP Update Php class originally created by Coen Jacobs. Also renamed the class a little so that it doesn't cause any conflicts with other plugins when activating.
+* Updated the copy in the settings page.
+* Updated the French translations.
 
 = 1.4.3.1 : 20th October 2015 =
 * Re-deployed v1.4.3 update as it failed using Ship by Big Bite Creative. Sorry about that. :(
@@ -180,9 +181,10 @@ A.7 You simply need to have Google Analytics added to your site. Either by codin
 * Initial version
 
 == Upgrade Notice ==
-= 1.4.4 : 28th November 2015 =
+= 1.4.4 : 29th November 2015 =
 * Fixed the activation of the plugin from the broken update in version 1.4.3
 * Removed code that is not needed and certain parts that are not for the free version of Auto Load Next Post.
 * Removed additional whitespace in the code making the plugin just a little bit lighter.
-* Updated the copy in the settings page.
 * Improved the WP Update Php class originally created by Coen Jacobs. Also renamed the class a little so that it doesn't cause any conflicts with other plugins when activating.
+* Updated the copy in the settings page.
+* Updated the French translations.
