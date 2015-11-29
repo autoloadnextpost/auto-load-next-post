@@ -34,7 +34,7 @@ For new first time users I suggest reading [the documentation](https://github.co
 > #### Auto Load Next Post Premium
 > There's an even better version of the plugin coming out soon with priority email support.<br />
 >
-> [More information](https://www.sebastiendumont.com/plugins/auto-load-next-post-premium/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
+> [More information](http://autoloadnextpost.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
 
 = Contributing =
 You can [contribute code](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) to this plugin via the [GitHub](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) repository and localizations via [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/).
