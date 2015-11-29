@@ -15,7 +15,7 @@ jQuery( document ).ready( function() {
 		return;
 	}
 
-  // It's up to you if you want to hide the comments. If the answer is yes then the comments will be gone.
+	// It's up to you if you want to hide the comments. If the answer is yes then the comments will be gone.
 	if ( remove_comments === 'yes' ) {
 		jQuery( comments_container ).remove(); // Remove Comments
 		if ( jQuery( comments_container ).length <= 0 ) {
@@ -48,7 +48,7 @@ function scrollspy() {
 	jQuery( '.post-divider').scrollSpy();
 } // END scrollspy()
 
-function history(){
+function history() {
 	// Bind to StateChange Event
 	History.Adapter.bind( window,'statechange', function() { // Note: We are using statechange instead of popstate
 		var State = History.getState(); // Note: We are using History.getState() instead of event.state
@@ -104,8 +104,8 @@ function update_google_analytics() {
 	// This uses Asynchronous version of Google Analytics tracking method.
 	if ( typeof pageTracker !== "undefined" && pageTracker !== null ) {
 		console.log( 'Google Analytics is installed, but old.' );
-    pageTracker._trackPageview( track_page_url );
-  }
+		pageTracker._trackPageview( track_page_url );
+	}
 
 	// This uses Google's classic Google Analytics tracking method.
 	if ( typeof _gaq !== 'undefined' && _gaq !== null ) {

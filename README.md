@@ -18,7 +18,6 @@ For new first time users I suggest reading [the documentation](https://github.co
 
 ### Features
 * Use action hooks to load content before and after the next post has loaded.
-* Restrict it to load only on specific post types.
 * Have the option to hide the comments if you wish.
 * Track each post load with Google Analytics. ( Requires Google Analytics to be applied for this to work. )
 * Over-writable template file.
@@ -26,7 +25,7 @@ For new first time users I suggest reading [the documentation](https://github.co
 > #### Auto Load Next Post Premium
 > There's an even better version of the plugin coming out soon with priority email support.<br />
 >
-> [More information](https://www.sebastiendumont.com/plugins/auto-load-next-post-premium/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
+> [More information](http://autoloadnextpost.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
 
 ### Contributing
 You can [contribute code](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) to this plugin via the [GitHub](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) repository and localizations via [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/).
@@ -62,3 +61,4 @@ Auto Load Next Post is currently available in 5 languages with more on the way. 
 ### More information
 * Other [WordPress plugins](http://profiles.wordpress.org/sebd86/) by [Sébastien Dumont](http://www.sebastiendumont.com/)
 * Contact Sébastien on Twitter: [@sebd86](http://twitter.com/sebd86)
+* This plugin uses a modified version of the [WP Update Php](https://github.com/seb86/wp-update-php) library class.

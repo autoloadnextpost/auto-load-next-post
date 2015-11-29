@@ -1,3 +1,11 @@
+## 1.4.4 (29th November 2015)
+* Fixed the activation of the plugin from the broken update in version 1.4.3
+* Removed code that is not needed and certain parts that are not for the free version of Auto Load Next Post.
+* Removed additional whitespace in the code making the plugin just a little bit lighter.
+* Improved the WP Update Php class originally created by Coen Jacobs. Also renamed the class a little so that it doesn't cause any conflicts with other plugins when activating.
+* Updated the copy in the settings page.
+* Updated the French translation.
+
 ## 1.4.3 (20th October 2015)
 * Corrected undefined function for Google Analytics tracking in the JavaScript.
 * Improved Google Analytics. Now detects old, classic, current and Yoast method of tracking pageviews.
