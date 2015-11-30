@@ -1,3 +1,7 @@
+## 1.4.5 (30th November 2015)
+* Added the English (United Kingdom) translation.
+* Updated the Italian (Italy) translation.
+
 ## 1.4.4 (29th November 2015)
 * Fixed the activation of the plugin from the broken update in version 1.4.3
 * Removed code that is not needed and certain parts that are not for the free version of Auto Load Next Post.

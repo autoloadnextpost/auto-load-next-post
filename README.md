@@ -43,7 +43,7 @@ If you need help with any customizations for this plugin. Please [hire me](http:
 Want to try it out? [Go to the demo site](http://demo.autoloadnextpost.com) and view a post. Scroll down and see the plugin in action.
 
 ### Support by Donating
-Donations of any sum help keep this plugin actively developed and supported. Your support goes along way in making this plugin better. (Make a Donation)[https://donorbox.org/auto-load-next-post]
+Donations of any sum help keep this plugin actively developed and supported. Your support goes along way in making this plugin better. [Make a Donation](https://donorbox.org/auto-load-next-post)
 
 ### Leave a Review
 Reviews are helpful to other users and this plugin reputation. Please consider spending a minute or two leaving a [review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform) and tell me what you think about the plugin. It matters a lot and is most appreciated.
