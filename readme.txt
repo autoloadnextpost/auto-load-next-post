@@ -4,7 +4,7 @@ Donate link:       https://donorbox.org/auto-load-next-post
 Tags:              auto load posts, scroll, scroll posts, post scroller, scrolling, infinite scroll, AJAX, endless, history, post history, browsing history
 Requires at least: 4.0
 Tested up to:      4.3.1
-Stable tag:        1.4.4
+Stable tag:        1.4.5
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,13 +52,13 @@ If you need help with any customizations for this plugin. Please [hire me](http:
 Want to try it out? [Go to the demo site](http://demo.autoloadnextpost.com) and view a post. Scroll down and see the plugin in action.
 
 = Support by Donating =
-Donations of any sum help keep this plugin actively developed and supported. Your support goes along way in making this plugin better. (Make a Donation)[https://donorbox.org/auto-load-next-post]
+Donations of any sum help keep this plugin actively developed and supported. Your support goes along way in making this plugin better. [Make a Donation](https://donorbox.org/auto-load-next-post)
 
 = Leave a Review =
 Reviews are helpful to other users and this plugin reputation. Please consider spending a minute or two leaving a [review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform) and tell me what you think about the plugin. It matters a lot and is most appreciated.
 
 = Languages and Translation Support =
-Current languages available: English(US), Français (French)(France), German (Germany), Italian (Italy), Româna (Romanian)
+Current languages available: English(US), English(GB), Français (French)(France), German (Germany), Italian (Italy), Româna (Romanian)
 
 Auto Load Next Post is currently available in 5 languages with more on the way. The folks over at WP Translations handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
 
@@ -122,6 +122,10 @@ A.7 You simply need to have Google Analytics added to your site. Either by codin
 3. Admin Settings Page
 
 == Changelog ==
+= 1.4.5 (30th November 2015) =
+* Added the English (United Kingdom) translation.
+* Updated the Italian (Italy) translation.
+
 = 1.4.4 : 29th November 2015 =
 * Fixed the activation of the plugin from the broken update in version 1.4.3
 * Removed code that is not needed and certain parts that are not for the free version of Auto Load Next Post.
