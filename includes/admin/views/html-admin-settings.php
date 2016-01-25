@@ -10,7 +10,7 @@ if ( ! defined('ABSPATH')) {
 <div class="wrap auto-load-next-post <?php echo $current_tab; ?>">
 	<form method="post" id="mainform" action="" enctype="multipart/form-data">
 		<h2 class="nav-tab-wrapper">
-			Auto Load Next Post
+			<span>Auto Load Next Post</span>
 			<?php
 				foreach ($tabs as $name => $label) {
 					echo '<a href="'.admin_url('options-general.php?page='.'auto-load-next-post-settings&tab='.$name).'" class="nav-tab '.($current_tab == $name ? 'nav-tab-active' : '').'">'.$label.'</a>';

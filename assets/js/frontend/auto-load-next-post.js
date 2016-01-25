@@ -1,11 +1,12 @@
 // Variables
-var content_container   = auto_load_next_post_params.alnp_content_container;
-var post_title_selector = auto_load_next_post_params.alnp_title_selector;
-var nav_container       = auto_load_next_post_params.alnp_navigation_container;
-var comments_container  = auto_load_next_post_params.alnp_comments_container;
-var remove_comments     = auto_load_next_post_params.alnp_remove_comments;
-var track_pageviews     = auto_load_next_post_params.alnp_google_analytics;
-var curr_url            = window.location.href;
+var content_container      = auto_load_next_post_params.alnp_content_container;
+var post_title_selector    = auto_load_next_post_params.alnp_title_selector;
+var nav_container          = auto_load_next_post_params.alnp_navigation_container;
+var previous_post_selector = auto_load_next_post_params.alnp_previous_post_selector;
+var comments_container     = auto_load_next_post_params.alnp_comments_container;
+var remove_comments        = auto_load_next_post_params.alnp_remove_comments;
+var track_pageviews        = auto_load_next_post_params.alnp_google_analytics;
+var curr_url               = window.location.href;
 
 jQuery.noConflict();
 
@@ -130,16 +131,23 @@ function update_google_analytics() {
  * This is the main function.
  */
 function auto_load_next_post() {
-	// Grab the url for the next post
-	var post_url = jQuery( 'a[rel="prev"]').attr( 'href' );
+	// Find the previous post link
+	var previous_post = jQuery( nav_container + ' a').attr('rel');
+
+	// Grab the url for the next post to load
+	if ( previous_post == undefined || previous_post == false ) {
+		console.error("Could not find the previous post link. Finding alternative.");
+
+		var post_url = jQuery( nav_container + ' ' + previous_post_selector ).attr( 'href' );
+	} else {
+		var post_url = jQuery( nav_container + ' a[rel="prev"]').attr( 'href' );
+	}
 
 	// For some browsers, `post_url` is undefined; for others,
 	// `post_url` is false. So we check for both possibilites.
 	if ( typeof post_url !== typeof undefined && post_url !== false ) {
 		console.log( 'Post URL was defined. All is good.' );
 		console.log( 'Next Post URL: ' + post_url );
-	} else {
-		console.error( 'Post URL was not defined. Oh dear!' );
 	}
 
 	if ( !post_url ) return;

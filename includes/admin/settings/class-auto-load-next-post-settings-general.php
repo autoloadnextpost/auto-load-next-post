@@ -23,6 +23,8 @@ if ( ! class_exists('Auto_Load_Next_Post_Settings_General_Tab')) {
  */
 class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Settings_Page {
 
+	private $customizer_url;
+
 	/**
 	 * Constructor.
 	 *
@@ -33,10 +35,14 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 		$this->id    = 'general';
 		$this->label = __('General', 'auto-load-next-post');
 
+		$this->set_customizer_url();
+
 		add_filter('auto_load_next_post_settings_submenu_array', array($this, 'add_menu_page'), 20);
 		add_filter('auto_load_next_post_settings_tabs_array', array($this, 'add_settings_page'), 20);
 		add_action('auto_load_next_post_settings_'.$this->id, array($this, 'output'));
 		add_action('auto_load_next_post_settings_save_'.$this->id, array($this, 'save'));
+
+		add_action('auto_load_next_post_admin_field_customize_button', array($this, 'customize_button'));
 	} // END __construct()
 
 	/**
@@ -82,8 +88,17 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 			array(
 				'title' => __('General', 'auto-load-next-post'),
 				'type'  => 'title',
-				'desc'  => sprintf(__('Set variables below according to your active theme. All are required for %s to work.', 'auto-load-next-post'), 'Auto Load Next Post'),
+				'desc'  => sprintf(__('The variables below need to be set according to your active theme. This allows the plugin to identify the specific elements on the page. All are required in order for %s to work.', 'auto-load-next-post'), 'Auto Load Next Post'),
 				'id'    => $this->id.'_options'
+			),
+
+			array(
+				'title'       => __('Use the Customizer', 'auto-load-next-post'),
+				'type'        => 'customize_button',
+				'desc'        => __('If it helps makes things easier for you. You can use the customizer instead as you set up the plugin with your active theme.', 'auto-load-next-post'),
+				'id'          => 'auto_load_next_post_customizer',
+				'link'        => $this->customizer_url,
+				'button_text' => __('Open the Customizer', 'auto-load-next-post'),
 			),
 
 			array(
@@ -114,6 +129,17 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_navigation_container',
 				'default'  => 'nav.post-navigation',
+				'type'     => 'text',
+				'css'      => 'min-width:300px;',
+				'autoload' => false
+			),
+
+			array(
+				'title'    => __('Previous Post Selector', 'auto-load-next-post'),
+				'desc'     => __('Should you need to also identify the previous post link in the navigation, fill in this field. Example: <code>.nav-previous</code>', 'auto-load-next-post'),
+				'desc_tip' => true,
+				'id'       => 'auto_load_next_post_previous_post_selector',
+				'default'  => '',
 				'type'     => 'text',
 				'css'      => 'min-width:300px;',
 				'autoload' => false
@@ -166,7 +192,50 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 		)); // End general settings
 	} // END get_settings()
 
-}
+	/**
+	 * Set the customizer url
+	 *
+	 * @since  1.5.0
+	 * @access private
+	 * @return bool
+	 */
+	private function set_customizer_url() {
+		$url = admin_url('customize.php');
+
+		$url = add_query_arg('alnp-customizer', 'yes', $url);
+
+		$url = add_query_arg('url', urlencode( wp_nonce_url( site_url() . '/?alnp-customizer=yes', 'config-plugin' ) ), $url);
+
+		$url = add_query_arg('return', urlencode( add_query_arg( array( 'page' => 'auto-load-next-post-settings', 'tab' => 'general' ), admin_url( 'options-general.php' ) ) ), $url);
+
+		$this->customizer_url = esc_url_raw($url);
+
+		return true;
+	} // END set_customizer_url()
+
+	/**
+	 * Add a custom setting type
+	 *
+	 * @param mixed $settings
+	 * @since 1.5.0
+	 */
+	public function customize_button( $settings ) {
+		?>
+		<tr valign="top">
+			<th scope="row" class="titledesc"><?php echo $settings['title'];?></th>
+			<td class="forminp forminp-<?php echo sanitize_title( $settings['type'] ) ?>">
+				<a href="<?php echo $settings['link']; ?>" class="button-secondary <?php echo esc_attr( $settings['class'] ); ?>">
+				<?php echo $settings['button_text']; ?>
+				</a>
+				<span class="description"><?php echo $settings['desc'];?></span>
+			</td>
+		</tr>
+		<?php
+
+		return true;
+	} // END customizer_button()
+
+} // END class
 
 } // END if class exists
 

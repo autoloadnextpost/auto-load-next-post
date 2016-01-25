@@ -2,10 +2,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Load Next Post 1.4.4\n"
+"Project-Id-Version: Auto Load Next Post 1.5.0\n"
 "Report-Msgid-Bugs-To: https://github.com/seb86/WordPress-Plugin-Boilerplate/"
 "issues\n"
-"POT-Creation-Date: 2015-11-28 16:47+0100\n"
+"POT-Creation-Date: 2016-01-25 03:14+0100\n"
 "PO-Revision-Date: 2015-05-20 17:15+0100\n"
 "Last-Translator: Auto Load Next Post <mailme@sebastiendumont.com>\n"
 "Language-Team: WP-Translations <wpt@wp-translations.org>\n"
@@ -22,16 +22,16 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: auto-load-next-post.php:87 auto-load-next-post.php:99
-msgid "Cheatin’ huh?"
-msgstr ""
-
+#: New folder/includes/admin/class-auto-load-next-post-admin-help.php:51
+#: folder/includes/admin/class-auto-load-next-post-admin.php:81
+#: folder/includes/admin/class-auto-load-next-post-admin.php:147
 #: includes/admin/class-auto-load-next-post-admin-help.php:51
 #: includes/admin/class-auto-load-next-post-admin.php:81
 #: includes/admin/class-auto-load-next-post-admin.php:147
 msgid "Documentation"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin-help.php:53
 #: includes/admin/class-auto-load-next-post-admin-help.php:53
 #, php-format
 msgid ""
@@ -39,15 +39,18 @@ msgid ""
 "<strong>%1$s</strong> please read the documentation."
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin-help.php:54
 #: includes/admin/class-auto-load-next-post-admin-help.php:54
 #, php-format
 msgid "%s Documentation"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin-help.php:59
 #: includes/admin/class-auto-load-next-post-admin-help.php:59
 msgid "Found a bug?"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin-help.php:61
 #: includes/admin/class-auto-load-next-post-admin-help.php:61
 #, php-format
 msgid ""
@@ -57,67 +60,85 @@ msgid ""
 "report. Be as descriptive as possible. Thank you."
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin-help.php:62
 #: includes/admin/class-auto-load-next-post-admin-help.php:62
 msgid "Report a bug"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin-help.php:66
 #: includes/admin/class-auto-load-next-post-admin-help.php:66
 msgid "For more information:"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin-help.php:67
 #: includes/admin/class-auto-load-next-post-admin-help.php:67
 #, php-format
 msgid "About %s"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin-help.php:68
 #: includes/admin/class-auto-load-next-post-admin-help.php:68
 msgid "Project on WordPress.org"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin-help.php:69
 #: includes/admin/class-auto-load-next-post-admin-help.php:69
 msgid "Project on Github"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin-menus.php:49
 #: includes/admin/class-auto-load-next-post-admin-menus.php:49
 #, php-format
 msgid "%s Settings"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-settings.php:60
+#: New folder/includes/admin/class-auto-load-next-post-admin-settings.php:65
+#: includes/admin/class-auto-load-next-post-admin-settings.php:67
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-settings.php:68
+#: New folder/includes/admin/class-auto-load-next-post-admin-settings.php:73
+#: includes/admin/class-auto-load-next-post-admin-settings.php:75
 msgid "Your settings have been saved."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-settings.php:134
+#: New folder/includes/admin/class-auto-load-next-post-admin-settings.php:139
+#: folder/includes/admin/class-auto-load-next-post-admin.php:122
+#: includes/admin/class-auto-load-next-post-admin-settings.php:147
 #: includes/admin/class-auto-load-next-post-admin.php:122
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin.php:55
 #: includes/admin/class-auto-load-next-post-admin.php:55
 msgid "Upgrade to Premium"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin.php:56
 #: includes/admin/class-auto-load-next-post-admin.php:56
 msgid "Settings"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin.php:57
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-support.php:32
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-support.php:83
 #: includes/admin/class-auto-load-next-post-admin.php:57
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:32
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:83
 msgid "Support"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin.php:82
 #: includes/admin/class-auto-load-next-post-admin.php:82
 msgid "Community Support"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin.php:146
 #: includes/admin/class-auto-load-next-post-admin.php:146
 msgid "Website"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin.php:163
 #: includes/admin/class-auto-load-next-post-admin.php:163
 #, php-format
 msgid ""
@@ -126,106 +147,167 @@ msgid ""
 "\" target=\"_blank\">WordPress.org</a>. A huge thank you in advance!"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin.php:190
 #: includes/admin/class-auto-load-next-post-admin.php:190
 msgid "Contribute"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin.php:191
 #: includes/admin/class-auto-load-next-post-admin.php:191
 msgid "Report Bugs"
 msgstr ""
 
+#: New folder/includes/admin/class-auto-load-next-post-admin.php:200
 #: includes/admin/class-auto-load-next-post-admin.php:200
 #, php-format
 msgid "%s Version"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:34
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:83
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:34
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:83
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:36
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:89
 msgid "General"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:85
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:85
 #, php-format
 msgid ""
 "Set variables below according to your active theme. All are required for %s "
 "to work."
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:90
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:90
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:105
+#: includes/auto-load-next-post-customizer.php:208
 msgid "Content Container"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:91
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:91
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:106
+#: includes/auto-load-next-post-customizer.php:207
 msgid "Example: <code>main.site-main</code>"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:101
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:101
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:116
+#: includes/auto-load-next-post-customizer.php:216
 msgid "Post Title Selector"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:102
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:102
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:117
+#: includes/auto-load-next-post-customizer.php:215
 msgid "Example: <code>h1.entry-title</code>"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:112
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:112
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:127
+#: includes/auto-load-next-post-customizer.php:224
 msgid "Post Navigation Container"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:113
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:113
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:128
+#: includes/auto-load-next-post-customizer.php:223
 msgid "Example: <code>nav.post-navigation</code>"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:123
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:123
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:149
+#: includes/auto-load-next-post-customizer.php:240
 msgid "Comments Container"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:124
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:124
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:150
+#: includes/auto-load-next-post-customizer.php:239
 msgid "Example: <code>div#comments</code>"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:134
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:134
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:160
+#: includes/auto-load-next-post-customizer.php:248
 msgid "Remove Comments"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:135
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:135
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:161
+#: includes/auto-load-next-post-customizer.php:247
 msgid "Enable to remove comments when each post loads."
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:142
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:142
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:168
+#: includes/auto-load-next-post-customizer.php:256
 msgid "Update Google Analytics"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:143
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:143
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:169
+#: includes/auto-load-next-post-customizer.php:255
 msgid ""
 "Each time a post is loaded it will count as a pageview. You must have a "
 "reference to your Google Analytics tracking code on the page."
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:150
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:150
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:176
 msgid "Reset all data?"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:151
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:151
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:177
 msgid ""
 "Press the reset button to clear all settings for this plugin and re-install "
 "the default settings."
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:158
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:158
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:184
 msgid "Remove all data on uninstall?"
 msgstr ""
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:159
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-general.php:159
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:185
 msgid ""
 "If enabled, all settings for this plugin will all be deleted when "
 "uninstalling via Plugins > Delete."
 msgstr ""
 
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-integrations.php:36
+#: includes/admin/settings/class-auto-load-next-post-settings-integrations.php:35
+msgid "Integration"
+msgstr ""
+
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-support.php:62
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:62
 #, php-format
 msgid "Hi <b>%s</b>,"
 msgstr ""
 
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-support.php:63
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:63
 #, php-format
 msgid ""
@@ -234,6 +316,8 @@ msgid ""
 "for you well, please consider making a donation at %2$s"
 msgstr ""
 
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-support.php:64
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:64
 #, php-format
 msgid ""
@@ -243,6 +327,8 @@ msgid ""
 "from a few days to a few weeks and will likely be from a non-developer."
 msgstr ""
 
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-support.php:66
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:66
 #, php-format
 msgid ""
@@ -250,6 +336,8 @@ msgid ""
 "issue on GitHub</a> where I can act upon it more efficiently."
 msgstr ""
 
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-support.php:67
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:67
 msgid ""
 "Also if you can spare about 5 minutes to take a simple <a href=\"http://"
@@ -257,20 +345,25 @@ msgid ""
 "it would be a great help."
 msgstr ""
 
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-support.php:68
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:68
 msgid "Thank you."
 msgstr ""
 
+#: New
+#: folder/includes/admin/settings/class-auto-load-next-post-settings-support.php:68
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:68
 #, php-format
 msgid "regards,<br><br>%s"
 msgstr ""
 
+#: New folder/includes/admin/views/html-admin-settings.php:26
 #: includes/admin/views/html-admin-settings.php:26
 msgid "Save Changes"
 msgstr ""
 
-#: includes/admin/views/html-notice-please-review.php:14
+#: New folder/includes/admin/views/html-notice-please-review.php:14
 #, php-format
 msgid ""
 "Hi <b>%s</b>, you've been using <b>%s</b> for some time now, and I hope "
@@ -278,14 +371,16 @@ msgid ""
 "for you, and I would really appreciate it if you gave it a quick review!"
 msgstr ""
 
+#: New folder/includes/admin/views/html-notice-please-review.php:15
 #: includes/admin/views/html-notice-please-review.php:15
 msgid "Yes, take me there!"
 msgstr ""
 
-#: includes/admin/views/html-notice-please-review.php:15
+#: New folder/includes/admin/views/html-notice-please-review.php:15
 msgid "Already have :)"
 msgstr ""
 
+#: New folder/includes/admin/views/html-notice-requirement-wp.php:12
 #: includes/admin/views/html-notice-requirement-wp.php:12
 #, php-format
 msgid ""
@@ -293,19 +388,22 @@ msgid ""
 "your WordPress setup."
 msgstr ""
 
+#: New folder/includes/admin/views/html-notice-theme-support.php:13
 #: includes/admin/views/html-notice-theme-support.php:13
 msgid "Supporting your theme"
 msgstr ""
 
+#: New folder/includes/admin/views/html-notice-theme-support.php:13
 #: includes/admin/views/html-notice-theme-support.php:13
 msgid "Hide this notice"
 msgstr ""
 
-#: template/content-partial.php:53
+#: New folder/template/content-partial.php:53 template/content-partial.php:53
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
+#: New folder/wp-update-php/wp-update-php.php:151
 #: wp-update-php/wp-update-php.php:151
 #, php-format
 msgid ""
@@ -313,6 +411,7 @@ msgid ""
 "href=\"%s\" target=\"_blank\">how you can update</a>."
 msgstr ""
 
+#: New folder/wp-update-php/wp-update-php.php:153
 #: wp-update-php/wp-update-php.php:153
 #, php-format
 msgid ""
@@ -320,6 +419,7 @@ msgid ""
 "about <a href=\"%s\" target=\"_blank\">how you can update</a>."
 msgstr ""
 
+#: New folder/wp-update-php/wp-update-php.php:158
 #: wp-update-php/wp-update-php.php:158
 #, php-format
 msgid ""
@@ -327,10 +427,73 @@ msgid ""
 "information about <a href=\"%s\" target=\"_blank\">how you can update</a>."
 msgstr ""
 
+#: New folder/wp-update-php/wp-update-php.php:160
 #: wp-update-php/wp-update-php.php:160
 #, php-format
 msgid ""
 "Unfortunately, this plugin cannot run on PHP versions older than %s. Read "
 "more information about <a href=\"%s\" target=\"_blank\">how you can update</"
 "a>."
+msgstr ""
+
+#: auto-load-next-post.php:94 auto-load-next-post.php:106
+msgid "Cheatin’ huh?"
+msgstr ""
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:91
+#: includes/auto-load-next-post-customizer.php:119
+#, php-format
+msgid ""
+"The variables below need to be set according to your active theme. This "
+"allows the plugin to identify the specific elements on the page. All are "
+"required in order for %s to work."
+msgstr ""
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:96
+msgid "Use the Customizer"
+msgstr ""
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:98
+msgid ""
+"If it helps makes things easier for you. You can use the customizer instead "
+"as you set up the plugin with your active theme."
+msgstr ""
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:101
+msgid "Open the Customizer"
+msgstr ""
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:138
+#: includes/auto-load-next-post-customizer.php:232
+msgid "Previous Post Selector"
+msgstr ""
+
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:139
+#: includes/auto-load-next-post-customizer.php:231
+msgid ""
+"Should you need to also identify the previous post link in the navigation, "
+"fill in this field. Example: <code>.nav-previous</code>"
+msgstr ""
+
+#: includes/admin/views/html-notice-please-review.php:14
+#, php-format
+msgid ""
+"Hi <b>%s</b>, you've been using <b>%s</b> for some time now, and I hope "
+"you're happy with it. I've spent countless hours developing this free plugin "
+"for you, and I would really appreciate it if could kindly give it a quick "
+"review!"
+msgstr ""
+
+#: includes/admin/views/html-notice-please-review.php:15
+msgid "I already have :)"
+msgstr ""
+
+#: includes/auto-load-next-post-customizer.php:118
+msgid "General Settings"
+msgstr ""
+
+#: wp-update-php/WPUpdatePhp.php:47
+#, php-format
+msgid ""
+"Unfortunately, <strong>%s</strong> can not run on PHP versions older than "
 msgstr ""
