@@ -58,6 +58,7 @@ Reviews are helpful to other users and this plugin reputation. Please consider s
 ### Languages and Translation Support
 Current languages available:
 * English(US)
+* English(GB)
 * Français (French)(France)
 * German (Germany)
 * Italian (Italy)
