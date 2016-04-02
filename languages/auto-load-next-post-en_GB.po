@@ -1,12 +1,12 @@
-# Auto Load Next Post Copyright (c) {2014}
+# Auto Load Next Post Copyright (c) {2016}
 # Translators:
-# Sebastien D <mailme@sebastiendumont.com>, 2015
+# Sebastien D <mailme@sebastiendumont.com>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Auto Load Next Post\n"
-"Report-Msgid-Bugs-To: https://github.com/seb86/WordPress-Plugin-Boilerplate/issues\n"
-"POT-Creation-Date: 2015-11-28 16:47+0100\n"
-"PO-Revision-Date: 2015-11-30 14:40+0100\n"
+"Report-Msgid-Bugs-To: https://github.com/seb86/Auto-Load-Next-Post/issues\n"
+"POT-Creation-Date: 2016-04-02 23:57+0200\n"
+"PO-Revision-Date: 2016-04-03 00:41+0200\n"
 "Last-Translator: Sebastien D <mailme@sebastiendumont.com>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/wp-translations/auto-load-next-post/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -45,27 +45,57 @@ msgstr "Found a bug?"
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:61
 #, php-format
-msgid "If you find a bug within <strong>%s</strong> you can create a ticket via <a href=\"%s\" target=\"_blank\">Github issues</a>. Ensure you read the <a href=\"%s\" target=\"_blank\">contribution guide</a> prior to submitting your report. Be as descriptive as possible. Thank you."
-msgstr "If you find a bug within <strong>%s</strong> you can create a ticket via <a href=\"%s\" target=\"_blank\">Github issues</a>. Ensure you read the <a href=\"%s\" target=\"_blank\">contribution guide</a> prior to submitting your report. Be as descriptive as possible. Thank you."
+msgid "If you find a bug within <strong>%s</strong>, please create a ticket on GitHub via the <a href=\"%s\" target=\"_blank\">Github issues</a>. Ensure that you read the <a href=\"%s\" target=\"_blank\">contribution guidelines</a> prior to submitting your report. Be as descriptive as possible. Thank you."
+msgstr "If you find a bug within <strong>%s</strong>, please create a ticket on GitHub via the <a href=\"%s\" target=\"_blank\">Github issues</a>. Ensure that you read the <a href=\"%s\" target=\"_blank\">contribution guidelines</a> prior to submitting your report. Be as descriptive as possible. Thank you."
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:62
-msgid "Report a bug"
-msgstr "Report a bug"
+#: includes/admin/class-auto-load-next-post-admin-help.php:62 includes/admin/class-auto-load-next-post-admin.php:191
+msgid "Report an Issue"
+msgstr "Report an Issue"
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:66
+#: includes/admin/class-auto-load-next-post-admin-help.php:67 includes/admin/class-auto-load-next-post-admin.php:57 includes/admin/settings/class-auto-load-next-post-settings-support.php:32 includes/admin/settings/class-auto-load-next-post-settings-support.php:83
+msgid "Support"
+msgstr "Support"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:69
+#, php-format
+msgid "If you need support with <strong>%s</strong>, you may ask the WordPress community for help by opening a thread on the <a href=\"%s\" target=\"_blank\">WordPress.org support forum</a>."
+msgstr "If you need support with <strong>%s</strong>, you may ask the WordPress community for help by opening a thread on the <a href=\"%s\" target=\"_blank\">WordPress.org support forum</a>."
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:70
+msgid "Create a Ticket"
+msgstr "Create a Ticket"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:75
+msgid "Feedback"
+msgstr "Feedback"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:77
+#, php-format
+msgid "Your feedback is most important as it helps improve <strong>%s</strong> to support what you need. You can either submit a review on WordPress.org or complete a simple survey."
+msgstr "Your feedback is most important as it helps improve <strong>%s</strong> to support what you need. You can either submit a review on WordPress.org or complete a simple survey."
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:78
+msgid "Submit a Review"
+msgstr "Submit a Review"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:78
+msgid "Complete Survey"
+msgstr "Complete Survey"
+
+#: includes/admin/class-auto-load-next-post-admin-help.php:82
 msgid "For more information:"
 msgstr "For more information:"
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:67
+#: includes/admin/class-auto-load-next-post-admin-help.php:83
 #, php-format
 msgid "About %s"
 msgstr "About %s"
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:68
+#: includes/admin/class-auto-load-next-post-admin-help.php:84
 msgid "Project on WordPress.org"
 msgstr "Project on WordPress.org"
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:69
+#: includes/admin/class-auto-load-next-post-admin-help.php:85
 msgid "Project on Github"
 msgstr "Project on Github"
 
@@ -94,10 +124,6 @@ msgstr "Upgrade to Premium"
 msgid "Settings"
 msgstr "Settings"
 
-#: includes/admin/class-auto-load-next-post-admin.php:57 includes/admin/settings/class-auto-load-next-post-settings-support.php:32 includes/admin/settings/class-auto-load-next-post-settings-support.php:83
-msgid "Support"
-msgstr "Support"
-
 #: includes/admin/class-auto-load-next-post-admin.php:82
 msgid "Community Support"
 msgstr "Community Support"
@@ -114,10 +140,6 @@ msgstr "If you like <strong>%1$s</strong> please leave a <a href=\"%2$s\" target
 #: includes/admin/class-auto-load-next-post-admin.php:190
 msgid "Contribute"
 msgstr "Contribute"
-
-#: includes/admin/class-auto-load-next-post-admin.php:191
-msgid "Report Bugs"
-msgstr "Report Bugs"
 
 #: includes/admin/class-auto-load-next-post-admin.php:200
 #, php-format
@@ -204,13 +226,13 @@ msgstr "Hi <b>%s</b>,"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:63
 #, php-format
-msgid "%1$s is <b>100&#37; free and open-sourced</b>, but I do rely on donations to facilitate further development of the free plugin. If %1$s has worked out for you well, please consider making a donation at %2$s"
-msgstr "%1$s is <b>100&#37; free and open-sourced</b>, but I do rely on donations to facilitate further development of the free plugin. If %1$s has worked out for you well, please consider making a donation at %2$s"
+msgid "%1$s is <b>100&#37; free and open-sourced</b>, but I do rely on donations to facilitate further development of the free plugin. If %1$s has worked out for you well, please consider <a href=\"%2$s\" target=\"_blank\">making a donation</a>."
+msgstr "%1$s is <b>100&#37; free and open-sourced</b>, but I do rely on donations to facilitate further development of the free plugin. If %1$s has worked out for you well, please consider <a href=\"%2$s\" target=\"_blank\">making a donation</a>."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:64
 #, php-format
-msgid "As this is a free plugin, I can not provide support. You may ask the WordPress community for help by opening a thread on the <a href=\"%s\" target=\"_blank\">WordPress.org support forum</a>. Response time can range from a few days to a few weeks and will likely be from a non-developer."
-msgstr "As this is a free plugin, I can not provide support. You may ask the WordPress community for help by opening a thread on the <a href=\"%s\" target=\"_blank\">WordPress.org support forum</a>. Response time can range from a few days to a few weeks and will likely be from a non-developer."
+msgid "As this is a free plugin, I can not always provide support. You may ask the WordPress community for help by opening a thread on the <a href=\"%s\" target=\"_blank\">WordPress.org support forum</a>. Response time can range from a few days to a few weeks and will likely be from a non-developer."
+msgstr "As this is a free plugin, I can not always provide support. You may ask the WordPress community for help by opening a thread on the <a href=\"%s\" target=\"_blank\">WordPress.org support forum</a>. Response time can range from a few days to a few weeks and will likely be from a non-developer."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:66
 #, php-format
@@ -218,8 +240,8 @@ msgid "If you've found a bug, please <a href=\"%s\" target=\"_blank\">submit an 
 msgstr "If you've found a bug, please <a href=\"%s\" target=\"_blank\">submit an issue on GitHub</a> where I can act upon it more efficiently."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:67
-msgid "Also if you can spare about 5 minutes to take a simple <a href=\"http://sebd86.polldaddy.com/s/auto-load-next-post\" target=\"_blank\">survey</a>, it would be a great help."
-msgstr "Also if you can spare about 5 minutes to take a simple <a href=\"http://sebd86.polldaddy.com/s/auto-load-next-post\" target=\"_blank\">survey</a>, it would be a great help."
+msgid "Also if you can spare about 5 minutes to <a href=\"https://sebd86.polldaddy.com/s/auto-load-next-post\" target=\"_blank\">take a simple survey</a>, it would be a great help."
+msgstr "Also if you can spare about 5 minutes to <a href=\"https://sebd86.polldaddy.com/s/auto-load-next-post\" target=\"_blank\">take a simple survey</a>, it would be a great help."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:68
 msgid "Thank you."
@@ -264,6 +286,11 @@ msgstr "Hide this notice"
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr "&larr;"
+
+#: wp-update-php/WPUpdatePhp.php:47
+#, php-format
+msgid "Unfortunately, <strong>%s</strong> can not run on PHP versions older than "
+msgstr "Unfortunately, <strong>%s</strong> can not run on PHP versions older than "
 
 #: wp-update-php/wp-update-php.php:151
 #, php-format

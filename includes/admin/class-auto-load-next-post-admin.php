@@ -52,7 +52,7 @@ class Auto_Load_Next_Post_Admin {
 	public function action_links($links) {
 		if (current_user_can('manage_options')) {
 			$plugin_links = array(
-				'<a href="http://autoloadnextpost.com/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page" target="_blank" style="color:green; font-weight:bold;">'.__('Upgrade to Premium', 'auto-load-next-post').'</a>',
+				'<a href="https://autoloadnextpost.com/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page" target="_blank" style="color:green; font-weight:bold;">'.__('Upgrade to Premium', 'auto-load-next-post').'</a>',
 				'<a href="'.admin_url('options-general.php?page=auto-load-next-post-settings').'">'.__('Settings', 'auto-load-next-post').'</a>',
 				'<a href="'.admin_url('options-general.php?page=auto-load-next-post-settings&tab=support').'">'.__('Support', 'auto-load-next-post').'</a>',
 			);
@@ -143,7 +143,7 @@ class Auto_Load_Next_Post_Admin {
 		if ($screen->id == 'settings_page_auto-load-next-post-settings') {
 
 			$links = array(
-				'http://autoloadnextpost.com/?utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __('Website', 'auto-load-next-post'),
+				'https://autoloadnextpost.com/?utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __('Website', 'auto-load-next-post'),
 				'https://github.com/seb86/Auto-Load-Next-Post/wiki/?utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __('Documentation', 'auto-load-next-post'),
 			);
 
@@ -187,8 +187,8 @@ class Auto_Load_Next_Post_Admin {
 			$text = '<span class="wrap">';
 
 			$links = array(
-				'https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md?utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __('Contribute', 'auto-load-next-post'),
-				'https://github.com/seb86/Auto-Load-Next-Post/issues?state=open&utm_source=wpadmin&utm_campaign=plugin-settings-footer' => __('Report Bugs', 'auto-load-next-post'),
+				'https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md' => __('Contribute', 'auto-load-next-post'),
+				'https://github.com/seb86/Auto-Load-Next-Post/issues/new' => __('Report an Issue', 'auto-load-next-post'),
 			);
 
 			foreach ($links as $key => $value) {

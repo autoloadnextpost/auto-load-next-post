@@ -58,13 +58,29 @@ class Auto_Load_Next_Post_Admin_Help {
 			'id'      => 'auto_load_next_post_bugs_tab',
 			'title'   => __('Found a bug?', 'auto-load-next-post'),
 			'content' =>
-				'<p>'.sprintf(__('If you find a bug within <strong>%s</strong> you can create a ticket via <a href="%s" target="_blank">Github issues</a>. Ensure you read the <a href="%s" target="_blank">contribution guide</a> prior to submitting your report. Be as descriptive as possible. Thank you.', 'auto-load-next-post'), 'Auto Load Next Post', 'https://github.com/seb86/Auto-Load-Next-Post/issues?state=open', 'https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md').'</p>'.
-				'<p><a href="https://github.com/seb86/Auto-Load-Next-Post/issues?state=open" class="button button-primary" target="_blank">'.__('Report a bug', 'auto-load-next-post').'</a></p>'
+				'<p>'.sprintf(__('If you find a bug within <strong>%s</strong>, please create a ticket on GitHub via the <a href="%s" target="_blank">Github issues</a>. Ensure that you read the <a href="%s" target="_blank">contribution guidelines</a> prior to submitting your report. Be as descriptive as possible. Thank you.', 'auto-load-next-post'), 'Auto Load Next Post', 'https://github.com/seb86/Auto-Load-Next-Post/issues?state=open', 'https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md').'</p>'.
+				'<p><a href="https://github.com/seb86/Auto-Load-Next-Post/issues/new" class="button button-primary" target="_blank">'.__('Report an Issue', 'auto-load-next-post').'</a></p>'
+		));
+
+		$screen->add_help_tab(array(
+			'id'      => 'auto_load_next_post_support_tab',
+			'title'   => __('Support', 'auto-load-next-post'),
+			'content' =>
+				'<p>'.sprintf(__('If you need support with <strong>%s</strong>, you may ask the WordPress community for help by opening a thread on the <a href="%s" target="_blank">WordPress.org support forum</a>.', 'auto-load-next-post'), 'Auto Load Next Post', 'https://wordpress.org/support/plugin/auto-load-next-post').'</p>'.
+				'<p><a href="https://wordpress.org/support/plugin/auto-load-next-post" class="button button-primary" target="_blank">'.__('Create a Ticket', 'auto-load-next-post').'</a></p>'
+		));
+
+		$screen->add_help_tab(array(
+			'id'      => 'auto_load_next_post_feedback_tab',
+			'title'   => __('Feedback', 'auto-load-next-post'),
+			'content' =>
+				'<p>'.sprintf(__('Your feedback is most important as it helps improve <strong>%s</strong> to support what you need. You can either submit a review on WordPress.org or complete a simple survey.', 'auto-load-next-post'), 'Auto Load Next Post').'</p>'.
+				'<p><a href="https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?filter=5#postform" class="button button-primary" target="_blank">'.__('Submit a Review', 'auto-load-next-post').'</a> | <a href="https://sebd86.polldaddy.com/s/auto-load-next-post" class="button button-secondary" target="_blank">'.__('Complete Survey', 'auto-load-next-post').'</a></p>'
 		));
 
 		$screen->set_help_sidebar(
 			'<p><strong>'.__('For more information:', 'auto-load-next-post').'</strong></p>'.
-			'<p><a href="http://autoloadnextpost.com" target="_blank">'.sprintf(__('About %s', 'auto-load-next-post'), 'Auto Load Next Post').'</a></p>'.
+			'<p><a href="https://autoloadnextpost.com" target="_blank">'.sprintf(__('About %s', 'auto-load-next-post'), 'Auto Load Next Post').'</a></p>'.
 			'<p><a href="https://wordpress.org/plugins/auto-load-next-post" target="_blank">'.__('Project on WordPress.org', 'auto-load-next-post').'</a></p>'.
 			'<p><a href="https://github.com/seb86/Auto-Load-Next-Post/" target="_blank">'.__('Project on Github', 'auto-load-next-post').'</a></p>'
 		);

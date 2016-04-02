@@ -18,6 +18,9 @@ jQuery( document ).ready( function() {
 	// It's up to you if you want to hide the comments. If the answer is yes then the comments will be gone.
 	if ( remove_comments === 'yes' ) {
 		jQuery( comments_container ).remove(); // Remove Comments
+		if ( jQuery( comments_container ).length <= 0 ) {
+			console.log( 'Comments Removed' );
+		}
 	}
 
 	// Add a divider
@@ -71,6 +74,7 @@ function changeURL() {
 
 		// Are we tracking the page view?
 		if ( track_pageviews == 'yes' ) {
+			console.log( 'Google Analytics Tracking Enabled' );
 			update_google_analytics();
 		} // END if track_pageviews
 	}
@@ -92,28 +96,34 @@ function changeURL() {
  */
 function update_google_analytics() {
 	if ( typeof pageTracker === "undefined" && typeof _gaq === 'undefined' && typeof ga === 'undefined' && typeof __gaTracker === 'undefined' ) {
+		console.error( 'Google Analytics was not found installed on your site!' );
 		return;
 	}
 
 	var track_page_url = window.location.pathname;
+	console.log( 'Track: ' + track_page_url );
 
 	// This uses Asynchronous version of Google Analytics tracking method.
 	if ( typeof pageTracker !== "undefined" && pageTracker !== null ) {
+		console.log( 'Google Analytics is installed, but old.' );
 		pageTracker._trackPageview( track_page_url );
 	}
 
 	// This uses Google's classic Google Analytics tracking method.
 	if ( typeof _gaq !== 'undefined' && _gaq !== null ) {
+		console.log( 'Google Analytics is installed. Yahoo!' );
 		_gaq.push(['_trackPageview', track_page_url]);
 	}
 
 	// This uses Google Analytics Universal Analytics tracking method.
 	if ( typeof ga !== 'undefined' && _ga !== null ) {
+		console.log( 'Google Analytics Universal Analytics is installed. Yahoo!' );
 		ga( 'send', 'pageview', track_page_url);
 	}
 
 	// This uses Yoast's method of tracking Google Analytics.
 	if ( typeof __gaTracker !== 'undefined' && __gaTracker !== null ) {
+		console.log( 'Google Analytics by Yoast is installed. Awesome!' );
 		__gaTracker( 'send', 'pageview', track_page_url);
 	}
 } // END update_google_analytics()
@@ -124,6 +134,15 @@ function update_google_analytics() {
 function auto_load_next_post() {
 	// Grab the url for the next post
 	var post_url = jQuery( 'a[rel="prev"]').attr( 'href' );
+
+	// For some browsers, `post_url` is undefined; for others,
+	// `post_url` is false. So we check for both possibilites.
+	if ( typeof post_url !== typeof undefined && post_url !== false ) {
+		console.log( 'Post URL was defined. All is good.' );
+		console.log( 'Next Post URL: ' + post_url );
+	} else {
+		console.error( 'Post URL was not defined. Oh dear!' );
+	}
 
 	if ( !post_url ) return;
 
@@ -141,6 +160,9 @@ function auto_load_next_post() {
 
 	// Remove the post navigation HTML once the next post has loaded.
 	jQuery( nav_container ).remove();
+	if ( jQuery( nav_container ).length <= 0 ) {
+		console.log( 'Post Navigation Removed!' );
+	}
 
 	jQuery.get( np_url , function( data ) {
 		var post = jQuery( "<div>" + data + "</div>" );
@@ -149,6 +171,8 @@ function auto_load_next_post() {
 
 		var post_html  = jQuery( '<hr class="post-divider" data-url="' + post_url + '"/>' + data );
 		var post_title = post_html.find( post_title_selector );
+
+		console.log( 'Post Title: ' + post_title.text() ); // Console Log Post Title
 
 		jQuery( content_container ).append( post_html ); // Add next post
 

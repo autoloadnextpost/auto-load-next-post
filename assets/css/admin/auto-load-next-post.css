@@ -80,6 +80,12 @@
 	display:none;
 }
 h2.nav-tab-wrapper{padding-left:0px !important;}
+h2.nav-tab-wrapper span {
+	float: left;
+	line-height: initial;
+	font-size: 1.3em;
+	margin-right: 6px;
+}
 h2 .nav-tab:first-child{margin-left:10px;}
 .wrap.auto-load-next-post-div.updated, .wrap.auto-load-next-post-div.error{margin-top:10px}
 .wrap.auto-load-next-post.auto-load-next-post-status .submit.debug-report{
