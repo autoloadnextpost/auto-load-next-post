@@ -1,11 +1,11 @@
 <?php
 /*
  * Plugin Name:       Auto Load Next Post
- * Plugin URI:        http://autoloadnextpost.com
+ * Plugin URI:        https://autoloadnextpost.com
  * Description:       Auto loads the next post as you scroll down to the end of a post. Replaces the URL in the address bar and the page title when viewing the next post.
- * Version:           1.4.5
+ * Version:           1.4.6
  * Author:            Sébastien Dumont
- * Author URI:        http://www.sebastiendumont.com
+ * Author URI:        https://sebastiendumont.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       auto-load-next-post
@@ -149,7 +149,7 @@ final class Auto_Load_Next_Post {
 	 * @access private
 	 */
 	private function setup_constants() {
-		$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.5');
+		$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.6');
 		$this->define('AUTO_LOAD_NEXT_POST_FILE', __FILE__);
 		$this->define('AUTO_LOAD_NEXT_POST_SLUG', 'auto-load-next-post');
 

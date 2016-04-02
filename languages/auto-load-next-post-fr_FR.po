@@ -1,4 +1,4 @@
-# Auto Load Next Post Copyright (c) {2014}
+# Auto Load Next Post Copyright (c) {2016}
 # Translators:
 # Franck, 2015
 # FX Bénard <fxb@wp-translations.org>, 2015
@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Auto Load Next Post\n"
-"Report-Msgid-Bugs-To: https://github.com/seb86/WordPress-Plugin-Boilerplate/issues\n"
-"POT-Creation-Date: 2015-11-28 05:41+0100\n"
-"PO-Revision-Date: 2015-11-29 18:44+0100\n"
+"Report-Msgid-Bugs-To: https://github.com/seb86/Auto-Load-Next-Post/issues\n"
+"POT-Creation-Date: 2015-11-28 16:47+0100\n"
+"PO-Revision-Date: 2016-03-17 07:25+0000\n"
 "Last-Translator: FX Bénard <fxb@wp-translations.org>\n"
 "Language-Team: French (France) (http://www.transifex.com/wp-translations/auto-load-next-post/language/fr_FR/)\n"
 "MIME-Version: 1.0\n"
@@ -19,21 +19,25 @@ msgstr ""
 "X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Textdomain-Support: yes\n"
-"X-Poedit-SearchPath-0: .\n"
 
 #: auto-load-next-post.php:87 auto-load-next-post.php:99
 msgid "Cheatin’ huh?"
 msgstr "Alors on essaye de tricher&nbsp;?"
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:51 includes/admin/class-auto-load-next-post-admin.php:81 includes/admin/class-auto-load-next-post-admin.php:147
+#: includes/admin/class-auto-load-next-post-admin-help.php:51
+#: includes/admin/class-auto-load-next-post-admin.php:81
+#: includes/admin/class-auto-load-next-post-admin.php:147
 msgid "Documentation"
 msgstr "Documentation"
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:53
 #, php-format
-msgid "Thank you for using <strong>%1$s</strong> :) Should you need help using <strong>%1$s</strong> please read the documentation."
+msgid ""
+"Thank you for using <strong>%1$s</strong> :) Should you need help using "
+"<strong>%1$s</strong> please read the documentation."
 msgstr "Merci d'utiliser <strong>%1$s</strong> :) Si vous avez besoin d'aide pour utiliser ou modifier <strong>%1$s</strong> veuillez lire la documentation."
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:54
@@ -47,7 +51,11 @@ msgstr "Un bug à signaler&nbsp;?"
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:61
 #, php-format
-msgid "If you find a bug within <strong>%s</strong> you can create a ticket via <a href=\"%s\" target=\"_blank\">Github issues</a>. Ensure you read the <a href=\"%s\" target=\"_blank\">contribution guide</a> prior to submitting your report. Be as descriptive as possible. Thank you."
+msgid ""
+"If you find a bug within <strong>%s</strong> you can create a ticket via <a "
+"href=\"%s\" target=\"_blank\">Github issues</a>. Ensure you read the <a "
+"href=\"%s\" target=\"_blank\">contribution guide</a> prior to submitting "
+"your report. Be as descriptive as possible. Thank you."
 msgstr "Si vous trouvez un a bug dans <strong>%s</strong> vous pouvez créer un ticket via les <a href=\"%s\" target=\"_blank\">issues de Github</a>. Assurez-vous d'avoir lu le <a href=\"%s\" target=\"_blank\">guide de contribution</a> avant d'envoyer votre rapport. Soyez aussi descriptif que possible."
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:62
@@ -84,7 +92,8 @@ msgstr "Échec. Veuillez rafraîchir la page et réessayer."
 msgid "Your settings have been saved."
 msgstr "Vos réglages ont bien été enregistrés."
 
-#: includes/admin/class-auto-load-next-post-admin-settings.php:134 includes/admin/class-auto-load-next-post-admin.php:122
+#: includes/admin/class-auto-load-next-post-admin-settings.php:134
+#: includes/admin/class-auto-load-next-post-admin.php:122
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr "Les modifications que vous avez faites seront perdues si vous quittez cette page."
 
@@ -96,7 +105,9 @@ msgstr "Passer en Premium"
 msgid "Settings"
 msgstr "Réglages"
 
-#: includes/admin/class-auto-load-next-post-admin.php:57 includes/admin/settings/class-auto-load-next-post-settings-support.php:32 includes/admin/settings/class-auto-load-next-post-settings-support.php:83
+#: includes/admin/class-auto-load-next-post-admin.php:57
+#: includes/admin/settings/class-auto-load-next-post-settings-support.php:32
+#: includes/admin/settings/class-auto-load-next-post-settings-support.php:83
 msgid "Support"
 msgstr "Aide"
 
@@ -110,7 +121,11 @@ msgstr "Site Web"
 
 #: includes/admin/class-auto-load-next-post-admin.php:163
 #, php-format
-msgid "If you like <strong>%1$s</strong> please leave a <a href=\"%2$s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating on <a href=\"%2$s\" target=\"_blank\">WordPress.org</a>. A huge thank you in advance!"
+msgid ""
+"If you like <strong>%1$s</strong> please leave a <a href=\"%2$s\" "
+"target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating on <a "
+"href=\"%2$s\" target=\"_blank\">WordPress.org</a>. A huge thank you in "
+"advance!"
 msgstr "Si vous aimez <strong>%1$s</strong> veuillez laisser une évaluation <a href=\"%2$s\" target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> sur <a href=\"%2$s\" target=\"_blank\">WordPress.org</a>. Un grand merci d'avance&nbsp;!"
 
 #: includes/admin/class-auto-load-next-post-admin.php:190
@@ -126,13 +141,16 @@ msgstr "Signaler un bug"
 msgid "%s Version"
 msgstr "Version %s"
 
-#: includes/admin/settings/class-auto-load-next-post-settings-general.php:34 includes/admin/settings/class-auto-load-next-post-settings-general.php:83
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:34
+#: includes/admin/settings/class-auto-load-next-post-settings-general.php:83
 msgid "General"
 msgstr "Réglages généraux"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:85
 #, php-format
-msgid "Set variables below according to your active theme. All are required for %s to work."
+msgid ""
+"Set variables below according to your active theme. All are required for %s "
+"to work."
 msgstr "Réglez les variables ci-dessous en fonction de votre thème actif. Toutes sont obligatoires pour que %s fonctionne."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:90
@@ -180,7 +198,9 @@ msgid "Update Google Analytics"
 msgstr "Mettre à jour Google Analytics"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:143
-msgid "Each time a post is loaded it will count as a pageview. You must have a reference to your Google Analytics tracking code on the page."
+msgid ""
+"Each time a post is loaded it will count as a pageview. You must have a "
+"reference to your Google Analytics tracking code on the page."
 msgstr "A chaque fois qu'un article est chargé cela sera compté comme une vue de page. Vous devez avoir installé une référence à votre code de suivi de Google Analytics sur cette page."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:150
@@ -188,7 +208,9 @@ msgid "Reset all data?"
 msgstr "Réinitialiser toutes les données&nbsp;?"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:151
-msgid "Press the reset button to clear all settings for this plugin and re-install the default settings."
+msgid ""
+"Press the reset button to clear all settings for this plugin and re-install "
+"the default settings."
 msgstr "Appuyez sur le bouton de réinitialisation pour supprimer tous les réglages de l&rsquo;extension et réinstaller tous les réglages par défaut."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:158
@@ -196,7 +218,9 @@ msgid "Remove all data on uninstall?"
 msgstr "Supprimer toutes les données lors de la désinstallation ?"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:159
-msgid "If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete."
+msgid ""
+"If enabled, all settings for this plugin will all be deleted when "
+"uninstalling via Plugins > Delete."
 msgstr "Si activée, tous les réglages pour cette extension seront tous supprimés lors de la désinstallation via Extensions > Supprimer."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:62
@@ -206,21 +230,33 @@ msgstr "Bonjour <b>%s</b>,"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:63
 #, php-format
-msgid "%1$s is <b>100&#37; free and open-sourced</b>, but I do rely on donations to facilitate further development of the free plugin. If %1$s has worked out for you well, please consider making a donation at %2$s"
+msgid ""
+"%1$s is <b>100&#37; free and open-sourced</b>, but I do rely on donations to"
+" facilitate further development of the free plugin. If %1$s has worked out "
+"for you well, please consider making a donation at %2$s"
 msgstr "%1$s est <b>100&#37; libre et open-source</b>, mais je suis dépendant des dons pour faciliter le développement de cette extension gratuite. Si %1$s fonctionne bien pour vous, s'il vous plaît pensez à faire un don à %2$s"
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:64
 #, php-format
-msgid "As this is a free plugin, I can not provide support. You may ask the WordPress community for help by opening a thread on the <a href=\"%s\" target=\"_blank\">WordPress.org support forum</a>. Response time can range from a few days to a few weeks and will likely be from a non-developer."
+msgid ""
+"As this is a free plugin, I can not provide support. You may ask the "
+"WordPress community for help by opening a thread on the <a href=\"%s\" "
+"target=\"_blank\">WordPress.org support forum</a>. Response time can range "
+"from a few days to a few weeks and will likely be from a non-developer."
 msgstr "Comme il s'agit d'une extension gratuite, je ne fourni pas de support. Vous pouvez demande de l&rsquo;aide à la communauté de WordPress en publiant sur  <a href=\"%s\" target=\"_blank\">le forum d&rsquo;entraide de WordPress.org</a>. La réponse pourra prendre entre plusieurs jours à plusieurs semaines et pourra être d&rsquo;une personne non-dev."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:66
 #, php-format
-msgid "If you've found a bug, please <a href=\"%s\" target=\"_blank\">submit an issue on GitHub</a> where I can act upon it more efficiently."
+msgid ""
+"If you've found a bug, please <a href=\"%s\" target=\"_blank\">submit an "
+"issue on GitHub</a> where I can act upon it more efficiently."
 msgstr "Si vous trouvez un bug, veuillez-le <a href=\"%s\" target=\"_blank\">signaler sur GitHub</a> d'où je pourrais faire le nécessaire plus efficacement."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:67
-msgid "Also if you can spare about 5 minutes to take a simple <a href=\"http://sebd86.polldaddy.com/s/auto-load-next-post\" target=\"_blank\">survey</a>, it would be a great help."
+msgid ""
+"Also if you can spare about 5 minutes to take a simple <a "
+"href=\"http://sebd86.polldaddy.com/s/auto-load-next-post\" "
+"target=\"_blank\">survey</a>, it would be a great help."
 msgstr " Aussi, si vous pouviez prendre 5 minutes pour répondre à ce <a href=\"http://sebd86.polldaddy.com/s/auto-load-next-post\" target=\"_blank\">questionnaire</a>, cela me serez d'une grande aide."
 
 #: includes/admin/settings/class-auto-load-next-post-settings-support.php:68
@@ -238,7 +274,10 @@ msgstr "Enregistrer les modifications"
 
 #: includes/admin/views/html-notice-please-review.php:14
 #, php-format
-msgid "Hi <b>%s</b>, you've been using <b>%s</b> for some time now, and I hope you're happy with it. I've spent countless hours developing this free plugin for you, and I would really appreciate it if you gave it a quick review!"
+msgid ""
+"Hi <b>%s</b>, you've been using <b>%s</b> for some time now, and I hope "
+"you're happy with it. I've spent countless hours developing this free plugin"
+" for you, and I would really appreciate it if you gave it a quick review!"
 msgstr "Bonjour <b>%s</b>, vous utilisez <b>%s</b> depuis un certain temps maintenant, et j'espère que vous en êtes satisfait. J'ai passé de nombreuses heures à développer cette extension gratuit pour vous, et j'apprécierais vraiment si vous pouviez lui donner un avis favorable !"
 
 #: includes/admin/views/html-notice-please-review.php:15
@@ -251,7 +290,9 @@ msgstr "Déjà fait :)"
 
 #: includes/admin/views/html-notice-requirement-wp.php:12
 #, php-format
-msgid "Sorry, <strong>%s</strong> requires WordPress %s or higher. Please upgrade your WordPress setup."
+msgid ""
+"Sorry, <strong>%s</strong> requires WordPress %s or higher. Please upgrade "
+"your WordPress setup."
 msgstr "Désolé, <strong>%s</strong> requiert WordPress %s ou supérieur. Veuillez mettre à jour votre installation de WordPress."
 
 #: includes/admin/views/html-notice-theme-support.php:13
@@ -269,20 +310,29 @@ msgstr "&larr;"
 
 #: wp-update-php/wp-update-php.php:151
 #, php-format
-msgid "%s recommends a PHP version higher than %s. Read more information about <a href=\"%s\" target=\"_blank\">how you can update</a>."
+msgid ""
+"%s recommends a PHP version higher than %s. Read more information about <a "
+"href=\"%s\" target=\"_blank\">how you can update</a>."
 msgstr "%s recommande une version PHP supérieure à %s. Consultez <a href=\"%s\" target=\"_blank\">pour savoir comment faire la mise à jour</a>."
 
 #: wp-update-php/wp-update-php.php:153
 #, php-format
-msgid "This plugin recommends a PHP version higher than %s. Read more information about <a href=\"%s\" target=\"_blank\">how you can update</a>."
+msgid ""
+"This plugin recommends a PHP version higher than %s. Read more information "
+"about <a href=\"%s\" target=\"_blank\">how you can update</a>."
 msgstr "Cette extension recommande une version PHP supérieure à %s. Consultez <a href=\"%s\" target=\"_blank\">pour savoir comment faire la mise à jour</a>."
 
 #: wp-update-php/wp-update-php.php:158
 #, php-format
-msgid "Unfortunately, %s cannot run on PHP versions older than %s. Read more information about <a href=\"%s\" target=\"_blank\">how you can update</a>."
+msgid ""
+"Unfortunately, %s cannot run on PHP versions older than %s. Read more "
+"information about <a href=\"%s\" target=\"_blank\">how you can update</a>."
 msgstr "Malheureusement, %s ne fonctionne pas avec une version PHP inférieure à %s. Consultez <a href=\"%s\" target=\"_blank\">pour savoir comment faire la mise à jour</a>."
 
 #: wp-update-php/wp-update-php.php:160
 #, php-format
-msgid "Unfortunately, this plugin cannot run on PHP versions older than %s. Read more information about <a href=\"%s\" target=\"_blank\">how you can update</a>."
+msgid ""
+"Unfortunately, this plugin cannot run on PHP versions older than %s. Read "
+"more information about <a href=\"%s\" target=\"_blank\">how you can "
+"update</a>."
 msgstr "Malheureusement, cette extension ne fonctionne pas avec une version PHP inférieure à %s. Consultez <a href=\"%s\" target=\"_blank\">pour savoir comment faire la mise à jour</a>."

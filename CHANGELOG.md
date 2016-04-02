@@ -1,3 +1,15 @@
+# 1.4.6 (3rd April 2016)
+* Corrected links within the readme.txt file.
+* Provided a list of extra features coming with Auto Load Next Post Premium.
+* Improved copy.
+* Added two additional help tabs on the plugin settings page.
+* Updated the F.A.Q's.
+* Updated the uninstall.php file.
+* Updated the POT file.
+* Fixed undefined issue with Google Analytics.
+* Removed all console.log and console.error in the Javascript.
+* Tested up to WordPress 4.4.2
+
 ## 1.4.5 (30th November 2015)
 * Added the English (United Kingdom) translation.
 * Updated the Italian (Italy) translation.
@@ -34,7 +46,7 @@
 * Cleaned up the code.
 
 ## 1.4.2 (31st July 2015)
-* Added two languages for localizing the plugin settings page. Français (French)(France) and Româna (Romanian).
+* Added two languages for localizing the plugin settings page. Franï¿½ais (French)(France) and Romï¿½na (Romanian).
 
 ## 1.4.1 (13th June 2015)
 * Added many action hooks in template file 'content-partial.php' - See documentation for list of hooks.

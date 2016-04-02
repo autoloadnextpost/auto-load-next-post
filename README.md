@@ -23,9 +23,16 @@ For new first time users I suggest reading [the documentation](https://github.co
 * Over-writable template file.
 
 > #### Auto Load Next Post Premium
-> There's an even better version of the plugin coming out soon with priority email support.<br />
+> There's an even better version of the plugin coming out soon with the following extra features:
+> - Custom Post Type Support<br />
+> - Media Attachments Support<br />
+> - Overwritable Template for Pages<br />
+> - Supports more popular themes with auto setup detection<br />
+> - [JetPack](https://wordpress.org/plugins/jetpack/) Supported<br />
+> - [Related Posts for WordPress](https://wordpress.org/plugins/related-posts-for-wp/) Supported<br />
+> - Priority Email Support<br />
 >
-> [More information](http://autoloadnextpost.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
+> [More information](https://autoloadnextpost.com/?utm_source=github-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
 
 ### Contributing
 You can [contribute code](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) to this plugin via the [GitHub](https://github.com/seb86/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) repository and localizations via [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/).
@@ -49,9 +56,22 @@ Donations of any sum help keep this plugin actively developed and supported. You
 Reviews are helpful to other users and this plugin reputation. Please consider spending a minute or two leaving a [review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform) and tell me what you think about the plugin. It matters a lot and is most appreciated.
 
 ### Languages and Translation Support
-Current languages available: English(US), Français (French)(France), German (Germany), Italian (Italy), Româna (Romanian)
+Current languages available:
+* English(US)
+* Français (French)(France)
+* German (Germany)
+* Italian (Italy)
+* Româna (Romanian)
 
-Auto Load Next Post is currently available in 5 languages with more on the way. The folks over at WP Translations handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
+Auto Load Next Post is currently available in 5 languages. The folks over at [WP Translations](http://wp-translations.org/) handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
+
+### Libraries Used
+- [chosen](https://github.com/harvesthq/chosen)
+- [jQuery.history](https://github.com/browserstate/history.js)
+- [jQuery.tiptip](https://github.com/drewwilson/TipTip)
+- [scrollspy](https://github.com/thesmart/jquery-scrollspy)
+
+The libraries above are used with the plugin.
 
 > #### PHP Requirement
 > This plugin requires PHP version 5.3 or higher.<br />
@@ -59,6 +79,7 @@ Auto Load Next Post is currently available in 5 languages with more on the way. 
 > Updating to a newer PHP version is almost always done in minutes and free of charge!
 
 ### More information
+* [Visit Auto Load Next Post website](https://autoloadnextpost.com)
 * Other [WordPress plugins](http://profiles.wordpress.org/sebd86/) by [Sébastien Dumont](http://www.sebastiendumont.com/)
 * Contact Sébastien on Twitter: [@sebd86](http://twitter.com/sebd86)
 * This plugin uses a modified version of the [WP Update Php](https://github.com/seb86/wp-update-php) library class.

@@ -8,7 +8,7 @@
  * @package  Auto Load Next Post
  * @license  GPL-2.0+
  */
-if ( ! defined('WP_UNINSTALL_PLUGIN')) {
+if ( ! defined( 'ABSPATH' ) || ! defined('WP_UNINSTALL_PLUGIN')) {
 	exit();
 }
 
@@ -23,3 +23,9 @@ if ( ! is_multisite()) {
 		$wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE 'auto_load_next_post_%';");
 	}
 }
+
+// Delete Site options
+delete_site_option('auto_load_next_post_install_date');
+
+// Delete Uninstall Data
+delete_option('auto_load_next_post_uninstall_data');
