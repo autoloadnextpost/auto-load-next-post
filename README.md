@@ -44,13 +44,13 @@ You may also find that a topic similar to yours has already been posted so join 
 
 If you spot a bug within the plugin, you can of course log it as an [issue](https://github.com/seb86/Auto-Load-Next-Post/issues) on Github where I can act upon it more efficiently.
 
-If you need help with any customizations for this plugin. Please [hire me](http://www.sebastiendumont.com/hire-me/) to apply them for you.
+If you need help with any customizations for this plugin. Please [hire me](https://sebastiendumont.com) to apply them for you.
 
 ### Demo Site
 Want to try it out? [Go to the demo site](http://demo.autoloadnextpost.com) and view a post. Scroll down and see the plugin in action.
 
 ### Support by Donating
-Donations of any sum help keep this plugin actively developed and supported. Your support goes along way in making this plugin better. [Make a Donation](https://donorbox.org/auto-load-next-post)
+Donations of any sum help keep this plugin actively developed and supported. Your support goes along way in making this plugin better. [Make a Donation](https://autoloadnextpost.com/donate.htm)
 
 ### Leave a Review
 Reviews are helpful to other users and this plugin reputation. Please consider spending a minute or two leaving a [review](https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?rate=5#postform) and tell me what you think about the plugin. It matters a lot and is most appreciated.
@@ -75,11 +75,11 @@ The libraries above are used with the plugin.
 
 > #### PHP Requirement
 > This plugin requires PHP version 5.3 or higher.<br />
-> If you're still at PHP 5.2, it's time to update. [Read here why and how](http://www.wpupdatephp.com/update/)<br />
+> If you're still at PHP 5.2, it's time to update. [Read here why and how.](http://www.wpupdatephp.com/update/)<br />
 > Updating to a newer PHP version is almost always done in minutes and free of charge!
 
 ### More information
 * [Visit Auto Load Next Post website](https://autoloadnextpost.com)
-* Other [WordPress plugins](http://profiles.wordpress.org/sebd86/) by [Sébastien Dumont](http://www.sebastiendumont.com/)
-* Contact Sébastien on Twitter: [@sebd86](http://twitter.com/sebd86)
+* Other [WordPress plugins](http://profiles.wordpress.org/sebd86/) by [Sébastien Dumont](https://sebastiendumont.com)
+* Contact Sébastien on Twitter: [@sebd86](https://twitter.com/sebd86)
 * This plugin uses a modified version of the [WP Update Php](https://github.com/seb86/wp-update-php) library class.
