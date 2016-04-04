@@ -2,25 +2,28 @@
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png?style=flat)](http://gruntjs.com/)  [![GitHub forks](https://img.shields.io/github/forks/seb86/Auto-Load-Next-Post.svg?style=flat)](https://github.com/seb86/Auto-Load-Next-Post/network) [![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg?style=flat)](https://raw.githubusercontent.com/seb86/Auto-Load-Next-Post/master/license.txt) [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/auto-load-next-post.svg?style=flat)](https://wordpress.org/plugins/auto-load-next-post/) [![WordPress](https://img.shields.io/wordpress/plugin/dt/auto-load-next-post.svg?style=flat)](https://wordpress.org/plugins/auto-load-next-post/) [![WordPress](https://img.shields.io/wordpress/v/auto-load-next-post.svg?style=flat)](https://wordpress.org/plugins/auto-load-next-post/) [![Build Status](https://scrutinizer-ci.com/g/seb86/Auto-Load-Next-Post/badges/build.png?b=master)](https://scrutinizer-ci.com/g/seb86/Auto-Load-Next-Post/build-status/master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/seb86/Auto-Load-Next-Post/badges/quality-score.png)](https://scrutinizer-ci.com/g/seb86/Auto-Load-Next-Post/) [![Code Climate](https://codeclimate.com/github/seb86/Auto-Load-Next-Post/badges/gpa.svg)](https://codeclimate.com/github/seb86/Auto-Load-Next-Post)
 
-Have you ever felt tired of going back and forth between blog posts? I know I have so I developed a solution, one where you would need no coding or very little required to set up on your blog.
+Gain more post views by allowing your site viewers to continue reading your blog posts as they scroll down the page.
 
 [![Auto Load Next Post Video](https://raw.githubusercontent.com/seb86/Auto-Load-Next-Post/master/youtube-video-screenshot.png)](https://www.youtube.com/watch?v=EvBCPXVe2U4)
 
 ### What is Auto Load Next Post?
-Auto Load Next Post loads the next post once the bottom of the first post the user visits has been reached. The process is repeated until there are no more posts to load.
+Auto Load Next Post simply loads the next post on your blog automatically once the user has reached the bottom of the initial post. This is repeated until there are no more posts to load.
 
-It simply reads the post navigation in the theme at the end of each post and collects the post URL for the next post / page. WordPress will then do a partial load and place the content of the next post underneath the parent post / page.
+The post navigation at the end of each post is detected to collect the previous post URL for the next post to load. The Javacript then loads the post by inserting the content via a partial template underneath the parent post.
 
-Not only that, it updates your web history by manipulating the web address and page title. This allows you to return to any post you have looked at in your browser history. When you refresh the browser, it will load the post / page the user was viewing last.
+As it does this, your browser URL address bar and page title changes to the post that it has loaded. Should you refresh the browser, the post you were currently reading would load as the initial post.
+
+Your browser still retains the history of the posts that were viewed on the blog.
 
 ### First Time Users
-For new first time users I suggest reading [the documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki) to understand how to setup the plugin and see how it works. By default when the plugin is activated, the settings are ready to be used with the latest WordPress core theme, Twenty Fifteen.
+For new first time users I suggest reading [the documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki) to understand how to setup the plugin and see how it works. By default when the plugin is activated, the settings are ready to be used with WordPress's core theme, Twenty Fifteen.
 
 ### Features
-* Use action hooks to load content before and after the next post has loaded.
+* Use action hooks to load content before and after the next post has loaded. [Example Plugin](https://github.com/seb86/Auto-Load-Next-Post-Hooks-Example)
 * Have the option to hide the comments if you wish.
 * Track each post load with Google Analytics. ( Requires Google Analytics to be applied for this to work. )
 * Over-writable template file.
+* WordPress Network / Multisite support.
 
 > #### Auto Load Next Post Premium
 > There's an even better version of the plugin coming out soon with the following extra features:
@@ -63,8 +66,9 @@ Current languages available:
 * German (Germany)
 * Italian (Italy)
 * Româna (Romanian)
+* Russian (Russia)
 
-Auto Load Next Post is currently available in 5 languages. The folks over at [WP Translations](http://wp-translations.org/) handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
+Auto Load Next Post is currently available in 6 languages. The folks over at [WP Translations](http://wp-translations.org/) handle the translations, and it's because of them that these translations are available. More are on the way and with your help they can be released quicker. If you would like to help translate, go to the [Transifex](https://www.transifex.com/projects/p/auto-load-next-post/) project.
 
 ### Libraries Used
 - [chosen](https://github.com/harvesthq/chosen)
