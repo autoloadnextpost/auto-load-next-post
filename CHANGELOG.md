@@ -1,3 +1,8 @@
+# 1.4.7 (4th April 2016)
+* Added the Russian (Russia) translation.
+* Updated the English (United Kingdom) translation.
+* Updated the Italian (Italy) translation.
+
 # 1.4.6 (3rd April 2016)
 * Corrected links within the readme.txt file.
 * Provided a list of extra features coming with Auto Load Next Post Premium.

@@ -25,7 +25,7 @@ GitHub is for *bug reports and contributions only* - if you have a support quest
 * When committing, reference your issue (#1234) and include a note about the fix.
 * Push the changes to your fork and submit a pull request to the 'dev' branch of the Auto-Load-Next-Post repository.
 * Please **don't** modify the changelog - this will be maintained by me.
-* Please **don't** add your localizations or update the .pot files - this will be maintanied by me. To contribute to the localization of Auto Load Next Post, please join the [Auto Load Next Post Transifex project](https://www.transifex.com/projects/p/auto-load-next-post/).
+* Please **don't** add your localizations or update the .pot files - this will be maintained by me. To contribute to the localization of Auto Load Next Post, please join the [Auto Load Next Post Transifex project](https://www.transifex.com/projects/p/auto-load-next-post/).
 
 At this point you're waiting on me to merge your pull request. I'll review all pull requests, and make suggestions and changes if necessary.
 
