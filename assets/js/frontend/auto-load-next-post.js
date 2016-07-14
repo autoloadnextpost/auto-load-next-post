@@ -157,6 +157,9 @@ function auto_load_next_post() {
 
 		// need to set up ScrollSpy on new content
 		scrollspy();
+
+		// notify others
+		jQuery( 'body').trigger( 'alnpNewPostLoaded' );
 	});
 
 } // END auto_load_next_post()
