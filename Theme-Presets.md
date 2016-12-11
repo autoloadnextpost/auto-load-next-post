@@ -12,4 +12,4 @@ Make | Free | [WordPress.org](https://wordpress.org/themes/make/) | Yes | Coming
 Twenty Fifteen | Free | [WordPress.org](https://wordpress.org/themes/twentyfifteen/) | No | Plugins Default Settings
 Twenty Sixteen | Free | [WordPress.org](https://wordpress.org/themes/twentysixteen/) | To Be Confirmed | To Be Confirmed
 Twenty Seventeen | Free | [WordPress.org](https://wordpress.org/themes/twentyseventeen/) | To Be Confirmed | To Be Confirmed
-Voice | Premimum | [Themeforest.net](https://themeforest.net/item/voice-clean-newsmagazine-wordpress-theme/9646105) | Yes | Coming Soon
+Voice | Premium | [Themeforest.net](https://themeforest.net/item/voice-clean-newsmagazine-wordpress-theme/9646105) | Yes | Coming Soon
