@@ -108,7 +108,7 @@ function update_google_analytics() {
 	}
 
 	// This uses Google Analytics Universal Analytics tracking method.
-	if ( typeof ga !== 'undefined' && _ga !== null ) {
+	if ( typeof ga !== 'undefined' && ga !== null ) {
 		ga( 'send', 'pageview', track_page_url);
 	}
 
