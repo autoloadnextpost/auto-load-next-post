@@ -32,13 +32,16 @@ function auto_load_next_post_template_redirect() {
   }
 
   /**
-   * Load the template file from theme if one exists.
+   * Load the template file from theme (child or main) if one exists.
    * If theme does not have a template file, load default from the plugin.
    */
-  $template_path = get_stylesheet_directory().'/'.AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
+  $child_path = get_stylesheet_directory().'/'.AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
+  $template_path = get_template_directory().'/'.AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
   $default_path = AUTO_LOAD_NEXT_POST_FILE_PATH;
 
-  if (file_exists($template_path.'content-partial.php')) {
+  if (file_exists($child_path.'content-partial.php')) {
+	include($child_path.'content-partial.php');
+  } else if (file_exists($template_path.'content-partial.php')) {
 	include($template_path.'content-partial.php');
   } else if (file_exists($default_path.'/template/content-partial.php')) {
 	include($default_path.'/template/content-partial.php');
