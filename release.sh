@@ -38,7 +38,7 @@ read -p "Press [ENTER] to begin releasing "${VERSION}
 clear
 
 # VARS
-ROOT_PATH=$(pwd)"/"
+ROOT_PATH=""
 TEMP_GITHUB_REPO=${PLUGIN_SLUG}"-git"
 TEMP_SVN_REPO=${PLUGIN_SLUG}"-svn"
 SVN_REPO="https://plugins.svn.wordpress.org/"${PLUGIN_SLUG}"/"
