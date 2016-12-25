@@ -110,7 +110,7 @@ rm -f .coveralls.yml
 rm -f .editorconfig
 rm -f .scrutinizer.yml
 rm -f apigen.neon
-rm -f CHANGELOG.txt
+rm -f CHANGELOG.md
 rm -f CONTRIBUTING.md
 rm -f Theme-Presets.md
 rm -f screenshot-*.png
@@ -157,10 +157,7 @@ echo ""
 
 # CREATE THE GITHUB RELEASE
 echo "Creating release on GITHUB repository."
-#API_JSON=$(printf '{ "tag_name": "%s","target_commitish": "%s","name": "%s", "body": "Release of version %s", "draft": false, "prerelease": false }' $VERSION $BRANCH $VERSION $VERSION)
-#RESULT=$(curl --data "${API_JSON}" https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/releases?access_token=${GITHUB_ACCESS_TOKEN})
 cd "$GITPATH"
-#git commit -m "Releasing version ${VERSION}"
 
 echo "Tagging new version in git"
 git tag -a "v${VERSION}" -m "Tagging version v${VERSION}"
@@ -176,6 +173,7 @@ svn commit -m "Releasing "${VERSION}"" || { echo "Unable to commit."; exit 1; }
 
 # REMOVE THE TEMP DIRS
 echo "Cleaning Up..."
+cd "../"
 rm -Rf $ROOT_PATH$TEMP_GITHUB_REPO
 rm -Rf $ROOT_PATH$TEMP_SVN_REPO
 
