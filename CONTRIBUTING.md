@@ -4,19 +4,17 @@ Community made patches, bug reports and contributions are always welcome and are
 
 When contributing please ensure you follow the guidelines below so that we can keep on top of things.
 
-__Please Note:__
-
-GitHub is for *bug reports and contributions only* - if you have a support question or a request for a customization this is not the right place to post it. Use [WordPress.org](https://wordpress.org/support/plugin/auto-load-next-post) for community support.
+__Please Note:__ GitHub is for *bug reports and contributions only* - if you have a support question or a request for a customization this is not the right place to post it. Use [WordPress.org](https://wordpress.org/support/plugin/auto-load-next-post) for community support.
 
 If you need help setting up the plugin you can [purchase the setup support](https://autoloadnextpost.com/product/setup-support/?utm_source=github&utm_campaign=contributing.md) package.
 
 ## Contributing to Auto Load Next Post
 
-#### Reporting Issues
+### Reporting Issues
 
 Reporting issues is a great way to became a contributor as it doesn't require technical skills. In fact you don't even need to know a programming language or to be able to check the code itself, you just need to make sure that everything works as expected and [submit an issue report](https://github.com/seb86/Auto-Load-Next-Post/issues/new) if you spot a bug. Sound like something you're up for? Go for it!
 
-##### How To Submit An Issue Report
+#### How To Submit An Issue Report
 
 If something isn't working, congratulations you've found a bug! Help us fix it by submitting an issue report:
 
@@ -32,7 +30,7 @@ Making changes help improve Auto Load Next Post. You will need some technical sk
 
 If you think something could be improved and you're able to do so, make your changes and submit a Pull Request. We'll be pleased to get it :)
 
-##### How to submit a PR
+### How to submit a PR
 * Fork the repository on GitHub.
 * Make the changes to your forked repository.
   * Ensure you stick to the [WordPress Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards).
