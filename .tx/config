@@ -1,8 +1,0 @@
-[main]
-host = https://www.transifex.com
-
-[auto-load-next-post.auto-load-next-post]
-file_filter = auto-load-next-post/languages/auto-load-next-post-<lang>.po
-source_file = auto-load-next-post/languages/auto-load-next-post.pot
-source_lang = en_US
-type = PO

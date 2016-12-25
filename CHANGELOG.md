@@ -1,3 +1,31 @@
+# 1.4.8 (25th December 2016)
+* Added: Support for child-themes so they too can also use the plugin. Thanks to [lwesolowski](https://github.com/lwesolowski)
+* Added: New template location filter. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
+* Added: New action hook for when there are no new posts to load.
+* Added: a post count of the posts that have loaded. Can be used to trigger an event after X amount of posts have loaded.
+* Added: a new variable that can be set to prevent further posts from loading.
+* Added: Support for Twenty Seventeen.
+* Corrected: Plugin links and improved spelling and grammar.
+* Corrected: Admin notices now use WordPress style.
+* Dev Feature: Can view the console.logs if debug mode is enabled for Auto Load Next Post. Must have SCRIPT_DEBUG set to true also. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
+* Dev Feature: JavaScript triggers have been added so developers can do fun stuff. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
+* Fixed: Google Analytics bug that prevented more than 3 posts to load. Thanks to [PatriceVB](https://github.com/PatriceVB)
+* Improved: How Google Analytics is triggered.
+* Improved: The JavaScript now identifies the post ID of each post including the initial post on load.
+* Improved: The JavaScript to remove the comments on load instead if requested.
+* Improved: The default template "content-partial.php".
+* Removed: The post navigation from the template "content-partial.php" file and applied it via an action hook instead.
+* Removed: The comments from the template "content-partial.php" file and applied it via an action hook instead.
+* Removed: History state on the initial post load. Not required.
+* Removed: All languages except the POT file from the plugin as they will now be downloaded from WordPress.org
+* Removed: The support section on the plugins page as the help tab has been improved.
+* Updated: The admin help sections on the plugins page.
+* Updated: The admin footer on the plugins page.
+* Updated: The POT file.
+* Updated: The readme.txt file.
+* Updated: Gruntfile.js file.
+* Updated: package.json file.
+
 # 1.4.7 (4th April 2016)
 * Added the Russian (Russia) translation.
 * Updated the English (United Kingdom) translation.

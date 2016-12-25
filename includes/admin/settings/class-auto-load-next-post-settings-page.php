@@ -10,9 +10,8 @@
  */
 
 if ( ! defined('ABSPATH')) {
-	exit;
+	exit; // Exit if accessed directly.
 }
-// Exit if accessed directly
 
 if ( ! class_exists('Auto_Load_Next_Post_Settings_Page')) {
 

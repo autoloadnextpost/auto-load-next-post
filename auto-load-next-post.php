@@ -1,17 +1,14 @@
 <?php
-/*
- * Plugin Name:       Auto Load Next Post
- * Plugin URI:        https://autoloadnextpost.com
- * Description:       Auto loads the next post as you scroll down to the end of a post. Replaces the URL in the address bar and the page title when viewing the next post.
- * Version:           1.4.7
- * Author:            Sébastien Dumont
- * Author URI:        https://sebastiendumont.com
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       auto-load-next-post
- * Domain Path:       languages
- * Network:           false
- * GitHub Plugin URI: https://github.com/seb86/Auto-Load-Next-Post
+/**
+ * Plugin Name: Auto Load Next Post
+ * Plugin URI:  https://autoloadnextpost.com
+ * Description: Gain more post views on your site as readers continue reading your posts scrolling down the page.
+ * Version:     1.4.8
+ * Author:      Sébastien Dumont
+ * Author URI:  https://sebastiendumont.com
+ *
+ * Text Domain: auto-load-next-post
+ * Domain Path: languages
  *
  * Auto Load Next Post is distributed under the terms of the
  * GNU General Public License as published by the Free Software Foundation,
@@ -26,20 +23,21 @@
  * along with Auto Load Next Post.
  * If not, see <http://www.gnu.org/licenses/>.
  *
- * @package Auto_Load_Next_Post
- * @author  Sébastien Dumont
+ * @package  Auto_Load_Next_Post
+ * @category Core
+ * @author   Sébastien Dumont
  */
 if ( ! defined('ABSPATH')) {
-	exit;
+	exit; // Exit if accessed directly.
 }
-// Exit if accessed directly
 
-if ( ! class_exists('Auto_Load_Next_Post')) {
+if ( ! class_exists('Auto_Load_Next_Post') ) {
 
 /**
  * Main Auto Load Next Post Class
  *
- * @since 1.0.0
+ * @class   Auto_Load_Next_Post
+ * @version 1.4.8
  */
 final class Auto_Load_Next_Post {
 
@@ -48,7 +46,7 @@ final class Auto_Load_Next_Post {
 	 *
 	 * @since  1.0.0
 	 * @access private
-	 * @var    object
+	 * @var    Auto_Load_Next_Post
 	 */
 	private static $_instance = null;
 
@@ -58,9 +56,10 @@ final class Auto_Load_Next_Post {
 	 * Ensures only one instance of Auto Load Next Post is loaded or can be loaded.
 	 *
 	 * @since  1.0.0
-	 * @access public static
+	 * @access public
+	 * @static
 	 * @see    Auto_Load_Next_Post()
-	 * @return Auto Load Next Post instance
+	 * @return Auto Load Next Post - Main instance.
 	 */
 	public static function instance() {
 		if (is_null(self::$_instance)) {
@@ -84,7 +83,7 @@ final class Auto_Load_Next_Post {
 	 */
 	public function __clone() {
 		// Cloning instances of the class is forbidden
-		_doing_it_wrong(__FUNCTION__, __('Cheatin’ huh?', 'auto-load-next-post'), AUTO_LOAD_NEXT_POST_VERSION);
+		_doing_it_wrong(__FUNCTION__, __('Cheatin&#8217; huh?', 'auto-load-next-post'), AUTO_LOAD_NEXT_POST_VERSION);
 	} // END __clone()
 
 	/**
@@ -96,7 +95,7 @@ final class Auto_Load_Next_Post {
 	 */
 	public function __wakeup() {
 		// Unserializing instances of the class is forbidden
-		_doing_it_wrong(__FUNCTION__, __('Cheatin’ huh?', 'auto-load-next-post'), AUTO_LOAD_NEXT_POST_VERSION);
+		_doing_it_wrong(__FUNCTION__, __('Cheatin&#8217; huh?', 'auto-load-next-post'), AUTO_LOAD_NEXT_POST_VERSION);
 	} // END __wakeup()
 
 	/**
@@ -145,11 +144,12 @@ final class Auto_Load_Next_Post {
 	/**
 	 * Setup Constants
 	 *
-	 * @since  1.4.3
+	 * @since   1.4.3
+	 * @version 1.4.8
 	 * @access private
 	 */
 	private function setup_constants() {
-		$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.7');
+		$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.8');
 		$this->define('AUTO_LOAD_NEXT_POST_FILE', __FILE__);
 		$this->define('AUTO_LOAD_NEXT_POST_SLUG', 'auto-load-next-post');
 
@@ -159,8 +159,11 @@ final class Auto_Load_Next_Post {
 
 		$this->define('AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE', '4.0');
 
-		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+		$suffix       = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+		$debug_suffix = defined('ALNP_DEV_DEBUG') && ALNP_DEV_DEBUG ? '.dev' : '';
+
 		$this->define('AUTO_LOAD_NEXT_POST_SCRIPT_MODE', $suffix);
+		$this->define('AUTO_LOAD_NEXT_POST_DEBUG_MODE', $debug_suffix);
 	} // END setup_constants()
 
 	/**
@@ -175,7 +178,7 @@ final class Auto_Load_Next_Post {
 		if ( ! defined($name)) {
 			define($name, $value);
 		}
-	}
+	} // END define()
 
 	/**
 	 * Include required core files used in admin and on the frontend.
@@ -188,7 +191,7 @@ final class Auto_Load_Next_Post {
 		include_once('includes/auto-load-next-post-core-functions.php'); // Contains core functions for the front/back end.
 
 		if (is_admin()) {
-			include_once('includes/admin/class-auto-load-next-post-admin.php'); // Admin section
+			include_once('includes/admin/class-auto-load-next-post-admin.php'); // Admin section.
 		}
 	} // END includes()
 
@@ -208,38 +211,18 @@ final class Auto_Load_Next_Post {
 	/**
 	 * Load Localisation files.
 	 *
-	 * Note: the first-loaded translation file overrides any
-	 * following ones if the same translation is present.
+	 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
 	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @filter auto_load_next_post_languages_directory
-	 * @filter plugin_locale
-	 * @return void
+	 * Locales found in:
+	 *      - WP_LANG_DIR/auto-load-next-post/auto-load-next-post-LOCALE.mo
+	 *      - WP_LANG_DIR/plugins/auto-load-next-post-LOCALE.mo
+	 * @since   1.0.0
+	 * @version 1.4.8
 	 */
 	public function load_plugin_textdomain() {
-		// Set filter for plugin's languages directory
-		$lang_dir = dirname(plugin_basename(AUTO_LOAD_NEXT_POST_FILE)).'/languages/';
-		$lang_dir = apply_filters('auto_load_next_post_languages_directory', $lang_dir);
-
-		// Traditional WordPress plugin locale filter
-		$locale = apply_filters('plugin_locale', get_locale(), 'auto-load-next-post');
-		$mofile = sprintf('%1$s-%2$s.mo', 'auto-load-next-post', $locale);
-
-		// Setup paths to current locale file
-		$mofile_local  = $lang_dir.$mofile;
-		$mofile_global = WP_LANG_DIR.'/auto-load-next-post/'.$mofile;
-
-		if (file_exists($mofile_global)) {
-			// Look in global /wp-content/languages/auto-load-next-post/ folder
-			load_textdomain('auto-load-next-post', $mofile_global);
-		} else if (file_exists($mofile_local)) {
-			// Look in local /wp-content/plugins/auto-load-next-post/languages/ folder
-			load_textdomain('auto-load-next-post', $mofile_local);
-		} else {
-			// Load the default language files
-			load_plugin_textdomain('auto-load-next-post', false, $lang_dir);
-		}
+		$locale = apply_filters( 'plugin_locale', get_locale(), 'auto-load-next-post' );
+		load_textdomain( 'auto-load-next-post', WP_LANG_DIR . '/auto-load-next-post/auto-load-next-post-' . $locale . '.mo' );
+		load_plugin_textdomain( 'auto-load-next-post', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 	} // END load_plugin_textdomain()
 
 	/**
@@ -255,7 +238,7 @@ final class Auto_Load_Next_Post {
 		if (supports_alnp() && is_singular() && get_post_type() == 'post') {
 			$this->load_file('auto-load-next-post-scrollspy', '/assets/js/libs/scrollspy'.AUTO_LOAD_NEXT_POST_SCRIPT_MODE.'.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION);
 			$this->load_file('auto-load-next-post-history', '/assets/js/libs/jquery.history.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION);
-			$this->load_file('auto-load-next-post-script', '/assets/js/frontend/auto-load-next-post'.AUTO_LOAD_NEXT_POST_SCRIPT_MODE.'.js', true, array('auto-load-next-post-scrollspy'), AUTO_LOAD_NEXT_POST_VERSION);
+			$this->load_file('auto-load-next-post-script', '/assets/js/frontend/auto-load-next-post'.AUTO_LOAD_NEXT_POST_DEBUG_MODE.AUTO_LOAD_NEXT_POST_SCRIPT_MODE.'.js', true, array('auto-load-next-post-scrollspy'), AUTO_LOAD_NEXT_POST_VERSION);
 
 			// Variables for JS scripts
 			wp_localize_script('auto-load-next-post-script', 'auto_load_next_post_params', array(
@@ -267,13 +250,14 @@ final class Auto_Load_Next_Post {
 				'alnp_google_analytics'     => get_option('auto_load_next_post_google_analytics'),
 			));
 		} // END if is_singular() && get_post_type()
-	} // END register_scripts_and_styles()
+	} // END front_scripts_and_styles()
 
 	/**
 	 * Helper function for registering and enqueueing scripts and styles.
 	 *
 	 * @since  1.0.0
-	 * @access public static
+	 * @access public
+	 * @static
 	 * @param  string  $name      The ID to register with WordPress.
 	 * @param  string  $file_path The path to the actual file.
 	 * @param  bool    $is_script Optional, argument for if the incoming file_path is a JavaScript source file.

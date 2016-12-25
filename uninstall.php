@@ -9,7 +9,7 @@
  * @license  GPL-2.0+
  */
 if ( ! defined( 'ABSPATH' ) || ! defined('WP_UNINSTALL_PLUGIN')) {
-	exit();
+	exit(); // Exit if accessed directly.
 }
 
 global $wpdb;

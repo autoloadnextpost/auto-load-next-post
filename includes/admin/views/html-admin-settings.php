@@ -1,11 +1,17 @@
 <?php
 /**
  * Admin View: Settings
+ *
+ * @since    1.0.0
+ * @version  1.4.8
+ * @author   Sébastien Dumont
+ * @category Admin
+ * @package  Auto Load Next Post
+ * @license  GPL-2.0+
  */
 if ( ! defined('ABSPATH')) {
-	exit;
+	exit; // Exit if accessed directly.
 }
-// Exit if accessed directly.
 ?>
 <div class="wrap auto-load-next-post <?php echo $current_tab; ?>">
 	<form method="post" id="mainform" action="" enctype="multipart/form-data">
