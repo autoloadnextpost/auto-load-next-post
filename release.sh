@@ -44,6 +44,18 @@ TEMP_SVN_REPO=${PLUGIN_SLUG}"-svn"
 SVN_REPO="https://plugins.svn.wordpress.org/"${PLUGIN_SLUG}"/"
 GIT_REPO="https://github.com/"${GITHUB_REPO_OWNER}"/"${GITHUB_REPO_NAME}".git"
 
+# Check if version is already released.
+if $ROOT_PATH git show-ref --tags | egrep -q "refs/tags/v${VERSION}"
+then
+	echo "Version already tagged and released.";
+	echo ""
+	echo "Run sh release.sh again and enter another version.";
+	exit 1;
+else
+	echo ""
+	read -p "v${VERSION} has not been found released. Press [ENTER] to continue."; exit 1;
+fi
+
 # DELETE OLD TEMP DIRS
 rm -Rf $ROOT_PATH$TEMP_GITHUB_REPO
 
