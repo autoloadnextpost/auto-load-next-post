@@ -53,7 +53,7 @@ then
 	exit 1;
 else
 	echo ""
-	read -p "v${VERSION} has not been found released. Press [ENTER] to continue."; exit 1;
+	echo "v${VERSION} has not been found released. Now processing...";
 fi
 
 # DELETE OLD TEMP DIRS
