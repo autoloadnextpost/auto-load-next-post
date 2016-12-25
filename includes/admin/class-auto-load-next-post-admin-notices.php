@@ -3,6 +3,7 @@
  * Display notices in the WordPress admin.
  *
  * @since    1.3.2
+ * @version  1.4.8
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post
@@ -10,9 +11,8 @@
  */
 
 if ( ! defined('ABSPATH')) {
-	exit;
+	exit; // Exit if accessed directly.
 }
-// Exit if accessed directly
 
 if ( ! class_exists('Auto_Load_Next_Post_Admin_Notices')) {
 

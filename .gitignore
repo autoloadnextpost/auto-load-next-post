@@ -11,13 +11,6 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 
-# Sublime
-*.sublime-project
-*.sublime-workspace
-
-# PhpStorm
-.idea/
-
 # Bin
 bin/
 
@@ -31,6 +24,3 @@ wiki/
 node_modules/
 build/
 npm-debug.log
-
-# Transifex
-tx.exe

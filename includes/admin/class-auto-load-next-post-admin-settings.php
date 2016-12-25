@@ -1,8 +1,9 @@
 <?php
 /**
- * Auto Load Next Post Admin Settings Class.
+ * Auto Load Next Post - Admin Settings Class.
  *
  * @since    1.0.0
+ * @version  1.4.8
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post
@@ -10,9 +11,8 @@
  */
 
 if ( ! defined('ABSPATH')) {
-	exit;
+	exit; // Exit if accessed directly.
 }
-// Exit if accessed directly
 
 if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings')) {
 
@@ -30,9 +30,11 @@ class Auto_Load_Next_Post_Admin_Settings {
 	/**
 	 * Include the settings page classes
 	 *
-	 * @since  1.0.0
-	 * @access public static
-	 * @return $settings
+	 * @since   1.0.0
+	 * @version 1.4.8
+	 * @access  public
+	 * @static
+	 * @return  $settings
 	 */
 	public static function get_settings_pages() {
 		if (empty(self::$settings)) {
@@ -40,7 +42,6 @@ class Auto_Load_Next_Post_Admin_Settings {
 
 			include_once('settings/class-auto-load-next-post-settings-page.php');
 			$settings[] = include('settings/class-auto-load-next-post-settings-general.php');
-			$settings[] = include('settings/class-auto-load-next-post-settings-support.php');
 		}
 
 		return self::$settings;
@@ -50,7 +51,8 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * Save the settings
 	 *
 	 * @since  1.0.0
-	 * @access public static
+	 * @access public
+	 * @static
 	 * @global $current_tab
 	 */
 	public static function save() {
@@ -74,7 +76,8 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * Add a message
 	 *
 	 * @since  1.0.0
-	 * @access public static
+	 * @access public
+	 * @static
 	 * @param  string $text
 	 */
 	public static function add_message($text) {
@@ -85,7 +88,8 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * Add an error
 	 *
 	 * @since  1.0.0
-	 * @access public static
+	 * @access public
+	 * @static
 	 * @param  string $text
 	 */
 	public static function add_error($text) {
@@ -96,7 +100,8 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * Output messages and errors.
 	 *
 	 * @since  1.0.0
-	 * @access public static
+	 * @access public
+	 * @static
 	 * @return string
 	 */
 	public static function show_messages() {
@@ -117,7 +122,8 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * Handles the display of the main settings page in admin.
 	 *
 	 * @since  1.0.0
-	 * @access public static
+	 * @access public
+	 * @static
 	 * @filter auto_load_next_post_settings_tabs_array
 	 * @global $current_tab
 	 * @return void
@@ -163,7 +169,8 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * Get a setting from the settings API.
 	 *
 	 * @since  1.0.0
-	 * @access public static
+	 * @access public
+	 * @static
 	 * @param  mixed $option_name
 	 * @return string
 	 */
@@ -205,7 +212,8 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * Loops though the plugin name options array and outputs each field.
 	 *
 	 * @since  1.0.0
-	 * @access public static
+	 * @access public
+	 * @static
 	 * @param  array $options Opens array to output
 	 */
 	public static function output_fields($options) {
@@ -509,7 +517,8 @@ class Auto_Load_Next_Post_Admin_Settings {
 	 * Loops though the plugin name options array and outputs each field.
 	 *
 	 * @since  1.0.0
-	 * @access public static
+	 * @access public
+	 * @static
 	 * @param  array $options Opens array to output
 	 * @return bool
 	 */

@@ -21,7 +21,7 @@ grunt.initConfig({
             pot.headers['report-msgid-bugs-to'] = 'https://github.com/seb86/Auto-Load-Next-Post/issues\n';
             pot.headers['plural-forms'] = 'nplurals=2; plural=n != 1;\n';
             pot.headers['last-translator'] = 'Auto Load Next Post <mailme@sebastiendumont.com>\n';
-            pot.headers['language-team'] = 'WP-Translations <wpt@wp-translations.org>\n';
+            //pot.headers['language-team'] = 'WP-Translations <wpt@wp-translations.org>\n';
             pot.headers['x-poedit-basepath'] = '..\n';
             pot.headers['x-poedit-language'] = 'English\n';
             pot.headers['x-poedit-country'] = 'UNITED STATES\n';
@@ -38,12 +38,6 @@ grunt.initConfig({
     exec: {
       npmUpdate: {
         command: 'npm update'
-      },
-      txpull: { // Pull Transifex translation - grunt exec:txpull
-        cmd: 'tx pull -a --minimum-perc=60' // Change the percentage with --minimum-perc=yourvalue
-      },
-      txpush_s: { // Push pot to Transifex - grunt exec:txpush_s
-        cmd: 'tx push -s'
       },
     },
 
@@ -71,11 +65,5 @@ grunt.initConfig({
 
 // Default task. - grunt makepot
 grunt.registerTask( 'default', 'makepot' );
-
-// Makepot and push it on Transifex task(s).
-grunt.registerTask( 'txpush', [ 'makepot', 'exec:txpush_s' ] );
-
-// Pull from Transifex and create .mo task(s).
-grunt.registerTask( 'txpull', [ 'exec:txpull', 'potomo' ] );
 
 };
