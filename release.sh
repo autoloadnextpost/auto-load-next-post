@@ -3,7 +3,7 @@
 # ----- START EDITING HERE -----
 
 # THE GITHUB ACCESS TOKEN, GENERATE ONE AT: https://github.com/settings/tokens
-# GITHUB_ACCESS_TOKEN="TOKEN"
+GITHUB_ACCESS_TOKEN="56afee542a82dbd0355c6d5d537b5479869cb156"
 
 # The slug of your WordPress.org plugin
 PLUGIN_SLUG="auto-load-next-post"
