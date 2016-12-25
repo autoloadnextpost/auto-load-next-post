@@ -105,7 +105,7 @@ rm -f screenshot-*.png
 rm -f release.sh
 
 # MOVE INTO SVN DIR
-cd $ROOT_PATH$TEMP_SVN_REPO
+cd "../"$TEMP_SVN_REPO
 
 # UPDATE SVN
 echo "Updating SVN"
@@ -116,7 +116,7 @@ echo "Replacing trunk"
 rm -Rf trunk/
 
 # COPY GIT DIR TO TRUNK
-cp -R $ROOT_PATH$TEMP_GITHUB_REPO trunk/
+cp -R "../"$TEMP_GITHUB_REPO trunk/
 
 # DO THE ADD ALL NOT KNOWN FILES UNIX COMMAND
 svn add --force * --auto-props --parents --depth infinity -q
@@ -148,10 +148,10 @@ echo "Creating release on GITHUB repository."
 #API_JSON=$(printf '{ "tag_name": "%s","target_commitish": "%s","name": "%s", "body": "Release of version %s", "draft": false, "prerelease": false }' $VERSION $BRANCH $VERSION $VERSION)
 #RESULT=$(curl --data "${API_JSON}" https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/releases?access_token=${GITHUB_ACCESS_TOKEN})
 cd "$GITPATH"
-git commit -m "Releasing version ${VERSION}"
+#git commit -m "Releasing version ${VERSION}"
 
 echo "Tagging new version in git"
-git tag -a "$VERSION" -m "Tagging version $VERSION"
+git tag -a "v${VERSION}" -m "Tagging version v${VERSION}"
 
 echo "Pushing latest commit to origin, with tags"
 git push origin master
