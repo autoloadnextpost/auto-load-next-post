@@ -40,7 +40,7 @@ function auto_load_next_post_template_redirect() {
 	 $template_path = get_template_directory() . '/' . AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
 	 $default_path  = AUTO_LOAD_NEXT_POST_FILE_PATH;
 
-	 if ( file_exists( $child_path . 'content-partial.php' ) ) {
+	if ( file_exists( $child_path . 'content-partial.php' ) ) {
 		include( $child_path . 'content-partial.php' );
 	}
 	else if( file_exists( $template_path . 'content-partial.php') ) {
