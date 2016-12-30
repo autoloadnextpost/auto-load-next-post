@@ -1,6 +1,6 @@
-# Theme Presets
+# Theme Supported
 
-This file **will** contain a table of verfied themes that will be updated from time to time with the help of the community and theme developers.
+This file **will** contain a table of verfied themes that Auto Load Next Post supports and will be updated from time to time with the help of the community and theme developers.
 
 > [More information](https://github.com/seb86/Auto-Load-Next-Post/issues/63)
 
