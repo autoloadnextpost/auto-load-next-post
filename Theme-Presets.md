@@ -6,15 +6,15 @@ Use the table to find the theme you want to use the plugin with. If found then c
 
 > [More information](https://github.com/seb86/Auto-Load-Next-Post/issues/63)
 
-Theme Name | Free / Premium | Source | Requires Custom Template? | Selectors
------------- | ------------- | ------------- | ------------- | -------------
-Make | Free | [WordPress.org](https://wordpress.org/themes/make/) | Yes | Coming Soon
-Twenty Ten | Free | [WordPress.org](https://wordpress.org/themes/twentyten/) | Yes | To Be Confirmed
-Twenty Twelve | Free | [WordPress.org](https://wordpress.org/themes/twentytwelve/) | To Be Confirmed | To Be Confirmed
-Twenty Thirteen | Free | [WordPress.org](https://wordpress.org/themes/twentythirteen/) | To Be Confirmed | To Be Confirmed
-Twenty Fourteen | Free | [WordPress.org](https://wordpress.org/themes/twentyfourteen/) | To Be Confirmed | To Be Confirmed
-Twenty Fifteen | Free | [WordPress.org](https://wordpress.org/themes/twentyfifteen/) | No | Plugins Default Settings
-Twenty Sixteen | Free | [WordPress.org](https://wordpress.org/themes/twentysixteen/) | To Be Confirmed | To Be Confirmed
-Twenty Seventeen | Free | [WordPress.org](https://wordpress.org/themes/twentyseventeen/) | No | Plugins Default Settings
-Voice | Premium | [Themeforest.net](https://themeforest.net/item/voice-clean-newsmagazine-wordpress-theme/9646105) | Yes | Coming Soon
-Bimber | Premium | [bring the pixel](http://www.bringthepixel.com/) | Yes | Already Preset
+Theme Name | Free / Premium | Source | Custom Template? | Selectors | Custom Post Nav
+------------ | ------------- | ------------- | ------------- | ------------- | -------------
+Make | Free | [WordPress.org](https://wordpress.org/themes/make/) | Yes | Coming Soon | No
+Twenty Ten | Free | [WordPress.org](https://wordpress.org/themes/twentyten/) | Yes | To Be Confirmed | No
+Twenty Twelve | Free | [WordPress.org](https://wordpress.org/themes/twentytwelve/) | No | To Be Confirmed | Yes
+Twenty Thirteen | Free | [WordPress.org](https://wordpress.org/themes/twentythirteen/) | To Be Confirmed | To Be Confirmed | To Be Confirmed
+Twenty Fourteen | Free | [WordPress.org](https://wordpress.org/themes/twentyfourteen/) | To Be Confirmed | To Be Confirmed | To Be Confirmed
+Twenty Fifteen | Free | [WordPress.org](https://wordpress.org/themes/twentyfifteen/) | No | Plugins Default Settings | To Be Confirmed
+Twenty Sixteen | Free | [WordPress.org](https://wordpress.org/themes/twentysixteen/) | To Be Confirmed | To Be Confirmed | To Be Confirmed
+Twenty Seventeen | Free | [WordPress.org](https://wordpress.org/themes/twentyseventeen/) | No | Plugins Default Settings | To Be Confirmed
+Voice | Premium | [Themeforest.net](https://themeforest.net/item/voice-clean-newsmagazine-wordpress-theme/9646105) | Yes | To Be Confirmed | To Be Confirmed
+Bimber | Premium | [bring the pixel](http://www.bringthepixel.com/) | Yes | Already Preset | -
