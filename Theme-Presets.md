@@ -2,16 +2,16 @@
 
 This file **will** contain a table of verfied themes that will be updated from time to time with the help of the community and theme developers.
 
-Use the table to find the theme you want to use the plugin with. If found then click on the selectors link for that the theme.
-
 > [More information](https://github.com/seb86/Auto-Load-Next-Post/issues/63)
+
+Use the table to find the theme you want to use the plugin with and select the theme name to view the instructions for that theme.
 
 Theme Name | Free / Premium | Source | Custom Template? | Selectors | Custom Post Nav
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 Make | Free | [WordPress.org](https://wordpress.org/themes/make/) | Yes | Coming Soon | No
-Twenty Ten | Free | [WordPress.org](https://wordpress.org/themes/twentyten/) | Yes | To Be Confirmed | No
-Twenty Twelve | Free | [WordPress.org](https://wordpress.org/themes/twentytwelve/) | No | To Be Confirmed | Yes
-Twenty Thirteen | Free | [WordPress.org](https://wordpress.org/themes/twentythirteen/) | To Be Confirmed | To Be Confirmed | To Be Confirmed
+[Twenty Ten](https://github.com/seb86/alnp-theme-support/tree/master/twentyten) | Free | [WordPress.org](https://wordpress.org/themes/twentyten/) | Yes | Requires User Input | No
+[Twenty Twelve](https://github.com/seb86/alnp-theme-support/tree/master/twentytwelve) | Free | [WordPress.org](https://wordpress.org/themes/twentytwelve/) | No | Requires User Input | Yes
+[Twenty Thirteen](https://github.com/seb86/alnp-theme-support/tree/master/twentythirteen) | Free | [WordPress.org](https://wordpress.org/themes/twentythirteen/) | No | Requires User Input | Yes
 Twenty Fourteen | Free | [WordPress.org](https://wordpress.org/themes/twentyfourteen/) | To Be Confirmed | To Be Confirmed | To Be Confirmed
 Twenty Fifteen | Free | [WordPress.org](https://wordpress.org/themes/twentyfifteen/) | No | Plugins Default Settings | To Be Confirmed
 Twenty Sixteen | Free | [WordPress.org](https://wordpress.org/themes/twentysixteen/) | To Be Confirmed | To Be Confirmed | To Be Confirmed
