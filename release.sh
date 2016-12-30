@@ -112,7 +112,7 @@ rm -f .scrutinizer.yml
 rm -f apigen.neon
 rm -f CHANGELOG.md
 rm -f CONTRIBUTING.md
-rm -f Theme-Presets.md
+rm -f Themes-Supported.md
 rm -f screenshot-*.png
 rm -f release.sh
 
