@@ -1,4 +1,4 @@
-# Theme Supported
+# Themes Supported
 
 This file **will** contain a table of verfied themes that Auto Load Next Post supports and will be updated from time to time with the help of the community and theme developers.
 
