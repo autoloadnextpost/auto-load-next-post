@@ -3,6 +3,7 @@
  * Auto Load Next Post General Tab Settings
  *
  * @since    1.0.0
+ * @version  1.4.9
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post
@@ -87,7 +88,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 
 			array(
 				'title'    => __('Content Container', 'auto-load-next-post'),
-				'desc'     => __('Example: <code>main.site-main</code>', 'auto-load-next-post'),
+				'desc'     => __('This is the primary container were the post content is loaded in. Example: <code>main.site-main</code>', 'auto-load-next-post'),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_content_container',
 				'default'  => 'main.site-main',
@@ -97,7 +98,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 			),
 
 			array(
-				'title'    => __('Post Title Selector', 'auto-load-next-post'),
+				'title'    => __('Post Title', 'auto-load-next-post'),
 				'desc'     => __('Example: <code>h1.entry-title</code>', 'auto-load-next-post'),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_title_selector',
@@ -108,8 +109,8 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 			),
 
 			array(
-				'title'    => __('Post Navigation Container', 'auto-load-next-post'),
-				'desc'     => __('Example: <code>nav.post-navigation</code>', 'auto-load-next-post'),
+				'title'    => __('Post Navigation', 'auto-load-next-post'),
+				'desc'     => __('The post navigation needs to be indentified to find the next post. Example: <code>nav.post-navigation</code>', 'auto-load-next-post'),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_navigation_container',
 				'default'  => 'nav.post-navigation',
@@ -120,7 +121,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 
 			array(
 				'title'    => __('Comments Container', 'auto-load-next-post'),
-				'desc'     => __('Example: <code>div#comments</code>', 'auto-load-next-post'),
+				'desc'     => __('This is so comments can be removed if enabled below. Example: <code>div#comments</code>', 'auto-load-next-post'),
 				'desc_tip' => true,
 				'id'       => 'auto_load_next_post_comments_container',
 				'default'  => 'div#comments',

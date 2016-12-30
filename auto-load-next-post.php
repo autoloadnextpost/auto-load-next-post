@@ -3,7 +3,7 @@
  * Plugin Name: Auto Load Next Post
  * Plugin URI:  https://autoloadnextpost.com
  * Description: Gain more post views on your site as readers continue reading your posts scrolling down the page.
- * Version:     1.4.8
+ * Version:     1.4.9
  * Author:      Sébastien Dumont
  * Author URI:  https://sebastiendumont.com
  *
@@ -37,7 +37,7 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
  * Main Auto Load Next Post Class
  *
  * @class   Auto_Load_Next_Post
- * @version 1.4.8
+ * @version 1.4.9
  */
 final class Auto_Load_Next_Post {
 
@@ -145,11 +145,11 @@ final class Auto_Load_Next_Post {
 	 * Setup Constants
 	 *
 	 * @since   1.4.3
-	 * @version 1.4.8
+	 * @version 1.4.9
 	 * @access private
 	 */
 	private function setup_constants() {
-		$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.8');
+		$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.9');
 		$this->define('AUTO_LOAD_NEXT_POST_FILE', __FILE__);
 		$this->define('AUTO_LOAD_NEXT_POST_SLUG', 'auto-load-next-post');
 

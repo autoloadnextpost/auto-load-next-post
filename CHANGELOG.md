@@ -1,3 +1,9 @@
+# 1.4.9 (30th December 2016)
+* Added: Support for Twenty Sixteen.
+* Updated: Admin notice for contribution.
+* Updated: Admin settings field labels and help tips.
+* Updated: POT file.
+
 # 1.4.8 (25th December 2016)
 * Added: Support for child-themes so they too can also use the plugin. Thanks to [lwesolowski](https://github.com/lwesolowski)
 * Added: New template location filter. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
