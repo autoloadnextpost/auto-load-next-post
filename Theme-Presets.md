@@ -10,7 +10,6 @@ Theme Name | Free / Premium | Source | Requires Custom Template? | Selectors
 ------------ | ------------- | ------------- | ------------- | -------------
 Make | Free | [WordPress.org](https://wordpress.org/themes/make/) | Yes | Coming Soon
 Twenty Ten | Free | [WordPress.org](https://wordpress.org/themes/twentyten/) | Yes | To Be Confirmed
-Twenty Eleven | Free | [WordPress.org](https://wordpress.org/themes/twentyeleven/) | To Be Confirmed | To Be Confirmed
 Twenty Twelve | Free | [WordPress.org](https://wordpress.org/themes/twentytwelve/) | To Be Confirmed | To Be Confirmed
 Twenty Thirteen | Free | [WordPress.org](https://wordpress.org/themes/twentythirteen/) | To Be Confirmed | To Be Confirmed
 Twenty Fourteen | Free | [WordPress.org](https://wordpress.org/themes/twentyfourteen/) | To Be Confirmed | To Be Confirmed
