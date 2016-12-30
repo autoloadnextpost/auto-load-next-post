@@ -4,7 +4,7 @@ Donate link:       https://autoloadnextpost.com/donate/
 Tags:              AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scroll, infinite scrolling, post scrolling, pagination, scroll, post history, browsing history, navigation
 Requires at least: 4.3
 Tested up to:      4.7
-Stable tag:        1.4.8
+Stable tag:        1.4.9
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,12 @@ It does. Just make sure that you activate the plugin on the site you want it use
 2. Theme Support Admin Notification
 
 == Changelog ==
+= 1.4.9 : 30th December 2016 =
+* Added: Support for Twenty Sixteen.
+* Updated: Admin notice for contribution.
+* Updated: Admin settings field labels and help tips.
+* Updated: POT file.
+
 = 1.4.8 : 25th December 2016 =
 * Added: Support for child-themes so they too can also use the plugin. Thanks to [lwesolowski](https://github.com/lwesolowski)
 * Added: New template location filter. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
@@ -277,6 +283,12 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Initial version
 
 == Upgrade Notice ==
+= 1.4.9 : 30th December 2016 =
+* Added: Support for Twenty Sixteen.
+* Updated: Admin notice for contribution.
+* Updated: Admin settings field labels and help tips.
+* Updated: POT file.
+
 = 1.4.8 : 25th December 2016 =
 * Added: Support for child-themes so they too can also use the plugin. Thanks to [lwesolowski](https://github.com/lwesolowski)
 * Added: New template location filter. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
