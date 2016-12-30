@@ -12,7 +12,7 @@ Make | Free | [WordPress.org](https://wordpress.org/themes/make/) | Yes | Coming
 [Twenty Ten](https://github.com/seb86/alnp-theme-support/tree/master/twentyten) | Free | [WordPress.org](https://wordpress.org/themes/twentyten/) | Yes | Requires User Input | No
 [Twenty Twelve](https://github.com/seb86/alnp-theme-support/tree/master/twentytwelve) | Free | [WordPress.org](https://wordpress.org/themes/twentytwelve/) | No | Requires User Input | Yes
 [Twenty Thirteen](https://github.com/seb86/alnp-theme-support/tree/master/twentythirteen) | Free | [WordPress.org](https://wordpress.org/themes/twentythirteen/) | No | Requires User Input | Yes
-Twenty Fourteen | Free | [WordPress.org](https://wordpress.org/themes/twentyfourteen/) | To Be Confirmed | To Be Confirmed | To Be Confirmed
+[Twenty Fourteen](https://github.com/seb86/alnp-theme-support/tree/master/twentyfourteen) | Free | [WordPress.org](https://wordpress.org/themes/twentyfourteen/) | No | Requires User Input | No
 Twenty Fifteen | Free | [WordPress.org](https://wordpress.org/themes/twentyfifteen/) | No | Plugins Default Settings | To Be Confirmed
 Twenty Sixteen | Free | [WordPress.org](https://wordpress.org/themes/twentysixteen/) | To Be Confirmed | To Be Confirmed | To Be Confirmed
 Twenty Seventeen | Free | [WordPress.org](https://wordpress.org/themes/twentyseventeen/) | No | Plugins Default Settings | To Be Confirmed
