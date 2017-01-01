@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# ----- START EDITING HERE -----
-
-# THE GITHUB ACCESS TOKEN, GENERATE ONE AT: https://github.com/settings/tokens
-# GITHUB_ACCESS_TOKEN="TOKEN"
-
 # The slug of your WordPress.org plugin
 PLUGIN_SLUG="auto-load-next-post"
 
@@ -14,17 +9,15 @@ GITHUB_REPO_OWNER="seb86"
 # GITHUB Repository name
 GITHUB_REPO_NAME="Auto-Load-Next-Post"
 
-# ----- STOP EDITING HERE -----
-
 set -e
 clear
 
 # ASK INFO
-echo "--------------------------------------------"
-echo "      Github to WordPress.org RELEASER      "
-echo "--------------------------------------------"
+echo "-------------------------------------------------------"
+echo "  Github to WordPress.org Auto Load Next Post Release  "
+echo "-------------------------------------------------------"
 read -p "TAG AND RELEASE VERSION: " VERSION
-echo "--------------------------------------------"
+echo "-------------------------------------------------------"
 echo ""
 echo "Before continuing, confirm that you have done the following :)"
 echo ""
@@ -97,24 +90,18 @@ rm -Rf apigen
 rm -f .gitattributes
 rm -f .gitignore
 rm -f .gitmodules
-rm -f .travis.yml
 rm -f Gruntfile.js
-rm -f package.json
 rm -f .jscrsrc
 rm -f .jshintrc
-rm -f composer.json
-rm -f phpunit.xml
 rm -f phpunit.xml.dist
-rm -f README.md
-rm -f .coveralls.yml
 rm -f .editorconfig
-rm -f .scrutinizer.yml
 rm -f apigen.neon
-rm -f CHANGELOG.md
-rm -f CONTRIBUTING.md
-rm -f Themes-Supported.md
-rm -f screenshot-*.png
-rm -f release.sh
+rm -f *.json
+rm -f *.yml
+rm -f *.xml
+rm -f *.md
+rm -f *.png
+rm -f *.sh
 
 # MOVE INTO SVN DIR
 cd "../"$TEMP_SVN_REPO
@@ -152,7 +139,7 @@ svn status
 
 # PROMPT USER
 echo ""
-read -p "Press [ENTER] to commit release "${VERSION}" to WordPress.org AND GITHUB"
+read -p "Press [ENTER] to commit release "${VERSION}" to WordPress.org AND GitHub."
 echo ""
 
 # CREATE THE GITHUB RELEASE
@@ -182,7 +169,4 @@ echo "Release Done."
 echo ""
 read -p "Press [ENTER] to close program."
 echo ""
-
 clear
-
-echo "END OF LINE!"
