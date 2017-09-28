@@ -30,6 +30,8 @@ Making changes help improve Auto Load Next Post. You will need some technical sk
 
 If you think something could be improved and you're able to do so, make your changes and submit a Pull Request. We'll be pleased to get it :)
 
+If you are making Javascript changes for the frontend then please edit the developer version of the Javascript. To test with the developer version you need to make sure that you have **ALNP_DEV_DEBUG** set as true in your *wp-config.php* file.
+
 ### How to submit a PR
 * Fork the repository on GitHub.
 * Make the changes to your forked repository.
