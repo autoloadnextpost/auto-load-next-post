@@ -6,8 +6,10 @@ var comments_container  = auto_load_next_post_params.alnp_comments_container;
 var remove_comments     = auto_load_next_post_params.alnp_remove_comments;
 var track_pageviews     = auto_load_next_post_params.alnp_google_analytics;
 var curr_url            = window.location.href;
+var orig_curr_url       = window.location.href;
 var post_count          = 0;
 var stop_reading        = false;
+var scroll_up           = false;
 
 jQuery.noConflict();
 
@@ -85,6 +87,39 @@ jQuery( document ).ready( function() {
 		if ( typeof __gaTracker !== 'undefined' && __gaTracker !== null ) {
 			console.log( 'Google Analytics by Yoast is installed. Awesome!' );
 			__gaTracker( 'send', 'pageview', post_url );
+		}
+	});
+
+	jQuery('body').on('mousewheel', function( e ) {
+		scroll_up = e.originalEvent.wheelDelta > 0;
+	});
+
+	History.Adapter.bind( window, 'statechange', function() {
+		// If they returned back to the first post, then when you click the button back go to the url from which they came
+		if ( scroll_up ) {
+			var states = History.savedStates;
+			var prev_state_index = states.length - 2;
+			var prev_state = states[prev_state_index];
+
+			console.log( 'Prev url: ', prev_state.url );
+
+			if ( prev_state.url === orig_curr_url ) {
+				window.location = document.referrer;
+				return;
+			}
+		}
+
+		var state = History.getState();
+
+		console.log( 'State url: ' + state.url );
+
+		// If the previous url does not match the current url then go back.
+		if ( state.url != curr_url ) {
+			var previous_post = jQuery('.post-divider[data-url="' + state.url + '"]');
+
+			if ( previous_post.length > 0 ) {
+				jQuery('html, body').animate({ scrollTop: (previous_post.offset().top) }, 1000 );
+			}
 		}
 	});
 
