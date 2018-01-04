@@ -267,6 +267,11 @@ final class Auto_Load_Next_Post {
 	 */
 	public static function load_file($name, $file_path, $is_script = false, $support = array(), $version = '') {
 		global $wp_version;
+		
+		// Let's not load within the Customizer, as it can cause issues.
+		if ( is_customize_preview() ) {
+			return;
+		}
 
 		$url = AUTO_LOAD_NEXT_POST_URL_PATH.$file_path; // URL to the file.
 
