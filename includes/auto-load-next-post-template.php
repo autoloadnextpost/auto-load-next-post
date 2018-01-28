@@ -1,11 +1,8 @@
 <?php
 /**
- * Auto Load Next Post Core Functions
+ * Auto Load Next Post Template Functions
  *
- * General core functions available for both the front-end and admin.
- *
- * @since    1.0.0
- * @version  1.4.8
+ * @since    1.5
  * @author   Sébastien Dumont
  * @category Core
  * @package  Auto Load Next Post
@@ -16,12 +13,11 @@ if ( ! defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-// Include core functions
-include('auto-load-next-post-conditional-functions.php');
-include('auto-load-next-post-formatting-functions.php');
-
 /**
  * When the 'partial' endpoint is used on a post, retrieve only the post content.
+ *
+ * @since   1.0.0
+ * @version 1.4.8
  */
 function auto_load_next_post_template_redirect() {
 	global $wp_query;
