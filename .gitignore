@@ -8,7 +8,7 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# Mac crap
+# OS X metadata
 .DS_Store
 
 # Bin
@@ -24,3 +24,9 @@ wiki/
 node_modules/
 build/
 npm-debug.log
+
+# Various other files and folders
+releases/
+*.sh
+.gitconfig
+*.zip
