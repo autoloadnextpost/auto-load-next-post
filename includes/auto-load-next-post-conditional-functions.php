@@ -35,7 +35,7 @@ if ( ! function_exists('auto_load_next_post_is_ajax')) {
 
 if ( ! function_exists('supports_alnp')) {
 	/**
-	 * Returns true or false if the plugin is supported by the theme.
+	 * Returns true or false if Auto Load Next Post supports the theme.
 	 *
 	 * @since   1.4.3
 	 * @version 1.4.9

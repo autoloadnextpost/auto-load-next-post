@@ -1,13 +1,18 @@
 // Variables
+var version             = auto_load_next_post_params.alnp_version;
 var content_container   = auto_load_next_post_params.alnp_content_container;
 var post_title_selector = auto_load_next_post_params.alnp_title_selector;
 var nav_container       = auto_load_next_post_params.alnp_navigation_container;
 var comments_container  = auto_load_next_post_params.alnp_comments_container;
 var remove_comments     = auto_load_next_post_params.alnp_remove_comments;
 var track_pageviews     = auto_load_next_post_params.alnp_google_analytics;
+var is_customizer       = auto_load_next_post_params.alnp_is_customizer;
+var pathname            = window.location.pathname;
 var curr_url            = window.location.href;
+var orig_curr_url       = window.location.href;
 var post_count          = 0;
 var stop_reading        = false;
+var scroll_up           = false;
 
 jQuery.noConflict();
 
@@ -23,7 +28,7 @@ jQuery( document ).ready( function() {
 	}
 
 	// Add a post divider.
-	jQuery( content_container ).prepend( '<hr style="height: 0" class="post-divider" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
+	jQuery( content_container ).prepend( '<hr style="display: none;" data-initial-post="true" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
 
 	// Initialise scrollSpy
 	initialise_scrollspy();
@@ -38,14 +43,22 @@ jQuery( document ).ready( function() {
 	 *
 	 * Also supports Google Analytics by Monster Insights should it be used.
 	 */
-	jQuery('body').on( 'alnp-post-changed', function( e, post_title, post_url, post_id ) {
+	jQuery('body').on( 'alnp-post-changed', function( e, post_title, post_url, post_id, post_count, stop_reading ) {
 		if ( track_pageviews != 'yes' ) {
+			return;
+		}
+
+		// If we are previewing in the customizer then dont track.
+		if ( is_customizer ) {
 			return;
 		}
 
 		if ( typeof pageTracker === "undefined" && typeof _gaq === 'undefined' && typeof ga === 'undefined' && typeof __gaTracker === 'undefined' ) {
 			return;
 		}
+
+		// Clean Post URL before tracking. - Assuming the post url is still local.
+		post_url = post_url.replace(pathname, '');
 
 		// This uses Asynchronous version of Google Analytics tracking method.
 		if ( typeof pageTracker !== "undefined" && pageTracker !== null ) {
@@ -68,6 +81,37 @@ jQuery( document ).ready( function() {
 		}
 	});
 
+	// If the browser back button is pressed or the user scrolled up then change history state.
+	jQuery('body').on( 'mousewheel', function( e ) {
+		scroll_up = e.originalEvent.wheelDelta > 0;
+	});
+
+	History.Adapter.bind( window, 'statechange', function() {
+		// If they returned back to the first post, then when you click the button back go to the url from which they came.
+		if ( scroll_up ) {
+			var states = History.savedStates;
+			var prev_state_index = states.length - 2;
+			var prev_state = states[prev_state_index];
+
+			if ( prev_state.url === orig_curr_url ) {
+				window.location = document.referrer;
+				return;
+			}
+		}
+
+		var state = History.getState();
+
+		// If the previous URL does not match the current URL then go back.
+		if ( state.url != curr_url ) {
+			var previous_post = jQuery('hr[data-url="' + state.url + '"]');
+
+			// Scroll to the top of the previous article.
+			if ( previous_post.length > 0 ) {
+				jQuery('html, body').animate({ scrollTop: (previous_post.offset().top) }, 1000 );
+			}
+		}
+	});
+
 }); // END document()
 
 function initialise_scrollspy() {
@@ -86,7 +130,7 @@ function alnp_enter() {
 
 	jQuery('body').trigger( 'alnp-enter', [ $enter ] );
 
-	changeURL($enter);
+	changeURL( $enter, 'enter' );
 } // END alnp_enter()
 
 function alnp_leave() {
@@ -94,27 +138,34 @@ function alnp_leave() {
 
 	jQuery('body').trigger( 'alnp-leave', [ $leave ] );
 
-	changeURL($leave);
+	changeURL( $leave, 'leave' );
 } // END alnp_leave()
 
-function changeURL( $this ) {
+function changeURL( $this, $direction ) {
 	var el           = jQuery($this);
 	var this_url     = el.attr( 'data-url' );
 	var this_title   = el.attr( 'data-title' );
 	var this_post_id = el.attr( 'data-post-id' );
+	var initial_post = el.attr( 'data-initial-post' );
 	var offset       = el.offset();
 	var scrollTop    = jQuery(document).scrollTop();
 
-	// If exiting or entering from top, change URL.
+	// If exiting or entering from the top, then change the URL.
 	if ( ( offset.top - scrollTop ) < 200 && curr_url != this_url ) {
 		curr_url = this_url;
-		History.pushState(null, this_title, this_url);
+
+		// Update the History ONLY if we are NOT in the customizer.
+		if ( !is_customizer ) {
+			History.pushState(null, this_title, this_url);
+		}
 
 		jQuery('body').trigger( 'alnp-post-changed', [ this_title, this_url, this_post_id, post_count, stop_reading ] );
 	}
 
-	// Look for the next post to load if any.
-	auto_load_next_post();
+	if ( $direction == 'enter' && initial_post != true || $direction == 'leave' ) {
+		// Look for the next post to load if any.
+		auto_load_next_post();
+	}
 } // END changeURL()
 
 /**
@@ -128,6 +179,11 @@ function auto_load_next_post() {
 
 	// Grab the url for the next post in the post navigation.
 	var post_url = jQuery( nav_container ).find( 'a[rel="prev"]').attr( 'href' );
+
+	// If the post url length returns nothing then try finding the alternative and set that as the next post.
+	if ( jQuery( post_url ).length <= 0 ) {
+		post_url = jQuery( nav_container ).find( 'a[rel="previous"]').attr( 'href' );
+	}
 
 	// Override the post url via a trigger.
 	jQuery('body').trigger( 'alnp-post-url', [ post_count, post_url ] );
@@ -157,7 +213,7 @@ function auto_load_next_post() {
 
 		data = post.html(); // Returns the HTML data of the next post that was loaded.
 
-		var post_divider = '<hr style="height: 0" class="post-divider" data-url="' + post_url + '"/>';
+		var post_divider = '<hr style="display: none;" data-initial-post="false" data-url="' + post_url + '"/>';
 		var post_html    = jQuery( post_divider + data );
 		var post_title   = post_html.find( post_title_selector ); // Find the post title of the loaded article.
 		var post_ID      = jQuery(post).find( 'article' ).attr( 'id' ); // Find the post ID of the loaded article.

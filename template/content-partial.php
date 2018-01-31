@@ -1,9 +1,20 @@
 <?php
 /**
- * This file loads the content when called.
+ * The Template for displaying a post when called.
  *
- * @version 1.4.8
- */
+ * This template can be overridden by copying it to yourtheme/auto-load-next-post/content-partial.php.
+ *
+ * HOWEVER, on occasion Auto Load Next Post will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. I try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @author  Sébastien Dumont
+ * @package Auto Load Next Post/Templates
+ * @license GPL-2.0+
+ * @version 1.4.10
+*/
 
 $template_location = apply_filters('alnp_template_location', ''); // e.g. "template-parts/post/"
 
