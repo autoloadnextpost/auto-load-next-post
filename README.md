@@ -16,9 +16,20 @@ If you are not a developer, please use the [Auto Load Next Post plugin page](htt
 Want to contribute to the project? Then please read the [contribute guidelines](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) clearly.
 
 ### What is Auto Load Next Post?
-Auto Load Next Post is a WordPress plugin developed to increase page views by engaging the site viewers to keep them reading the blogs content as they reach the bottom of an article rather than having to go back and select another post to read.
+Auto Load Next Post is a WordPress plugin developed to increase your pageviews by engaging the site viewers to keep reading your content rather than increasing your bounce rate.
 
-It simply loads the next post on your blog automatically once the user has reached the bottom of the initial post the viewer is reading and repeats as the user reads the content until there are no more posts to load.
+It simply automatically loads the next post on your blog once the user has reached the bottom of the initial post the viewer is reading and repeats the process as the user reads your content until there are no more posts to load.
+
+## Features
+* Customizable repeat template
+* Custom JavaScript event triggers
+* Developer friendly
+* Reduce page load by hiding the post comments
+* Track pageviews with Google Analytics. ***Requires Google Analytics to be applied on your site first for this to work.***
+* Works even for child-themes
+* WordPress Network / Multisite Supported
+
+Want more? See [what is coming soon with Auto Load Next Post Pro](https://autoloadnextpost.com/pro/).
 
 ### Installation
 
