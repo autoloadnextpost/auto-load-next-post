@@ -1,4 +1,4 @@
-﻿=== Auto Load Next Post ===
+=== Auto Load Next Post ===
 Contributors:      sebd86
 Donate link:       https://autoloadnextpost.com/donate/
 Tags:              AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scroll, infinite scrolling, post scrolling, pagination, scroll, post history, browsing history, navigation

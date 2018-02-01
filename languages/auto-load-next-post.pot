@@ -1,25 +1,19 @@
-# Auto Load Next Post Copyright (c) {2016}
-#, fuzzy
+# Copyright (C) 2018 Sébastien Dumont
+# This file is distributed under the same license as the Auto Load Next Post package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Load Next Post\n"
-"Report-Msgid-Bugs-To: https://github.com/seb86/Auto-Load-Next-Post/issues\n"
-"POT-Creation-Date: 2016-12-30 21:01+0100\n"
-"PO-Revision-Date: 2015-05-20 17:15+0100\n"
-"Last-Translator: Auto Load Next Post <mailme@sebastiendumont.com>\n"
+"Project-Id-Version: Auto Load Next Post 1.4.10\n"
+"Report-Msgid-Bugs-To: "
+"https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues\n"
+"POT-Creation-Date: 2018-02-01 00:54:47+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Sébastien Dumont <mailme@sebastiendumont.com>\n"
 "Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Textdomain-Support: yes\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Generator: grunt-wp-i18n1.0.1\n"
 
 #: auto-load-next-post.php:86 auto-load-next-post.php:98
 msgid "Cheatin&#8217; huh?"
@@ -31,7 +25,6 @@ msgid "General Settings"
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:54
-#, php-format
 msgid ""
 "%s requires theme selectors to match the active theme in order for the "
 "plugin to work."
@@ -51,27 +44,26 @@ msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:63
 msgid ""
-"Should you need help understanding, using, or extending Auto Load Next Post, "
-"please <a href=\"https://github.com/seb86/Auto-Load-Next-Post/wiki/\" target="
-"\"_blank\">read the documentation</a>. You will find snippets, tutorials and "
-"much more."
+"Should you need help understanding, using, or extending Auto Load Next "
+"Post, please <a "
+"href=\"https://autoloadnextpost.com/documentation/?utm_source=wpadmin&utm_"
+"campaign=plugin-settings-help-tab\" target=\"_blank\">read the "
+"documentation</a>. You will find snippets, tutorials and much more."
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:64
-#, php-format
 msgid ""
-"For further assistance with %s you can use the <a href=\"%s\" target=\"_blank"
-"\">community forum</a>."
+"For further assistance with %s you can use the <a href=\"%s\" "
+"target=\"_blank\">community forum</a>."
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:65
-#, php-format
 msgid ""
 "%1$s is in need of translations. Is the plugin not translated in your "
-"language or do you spot errors with the current translations? Helping out is "
-"easy! Head over to the project on WordPress.org and click <a href=\"https://"
-"translate.wordpress.org/projects/wp-plugins/auto-load-next-post\" target="
-"\"_blank\">Translate %1$s</a>."
+"language or do you spot errors with the current translations? Helping out "
+"is easy! Head over to the project on WordPress.org and click <a "
+"href=\"https://translate.wordpress.org/projects/wp-plugins/auto-load-next-"
+"post\" target=\"_blank\">Translate %1$s</a>."
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:66
@@ -84,6 +76,7 @@ msgid "Documentation"
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:66
+#: includes/admin/views/html-notice-theme-support.php:19
 msgid "Frequently Asked Questions"
 msgstr ""
 
@@ -93,13 +86,13 @@ msgid "Found a bug?"
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:74
-#, php-format
 msgid ""
 "If you find a bug within %s, please <a href=\"%s\" target=\"_blank\">report "
-"the issue</a> by creating a ticket on the GitHub repository where we can "
-"deal with it more appropriately. Please ensure that you read the <a href=\"%s"
-"\" target=\"_blank\">contribution guidelines</a> prior to submitting your "
-"report. To help us solve the issue, please be as descriptive as possible."
+"the issue</a> by creating a ticket on the GitHub repository where I can "
+"deal with it more appropriately. Please ensure that you have read the <a "
+"href=\"%s\" target=\"_blank\">guidelines to contributing</a> prior to "
+"submitting your report. To help me solve the issue, please be as "
+"descriptive as possible."
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:75
@@ -113,15 +106,14 @@ msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:83
 msgid ""
-"Your feedback is very important to us. Please consider submitting a review "
+"Your feedback is very important to me. Please consider submitting a review "
 "on WordPress.org or complete a simple survey."
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:84
-#, php-format
 msgid ""
-"If %1$s has worked out for you well and you like it, please consider <a href="
-"\"%2$s\" target=\"_blank\">making a donation</a>."
+"If %1$s has worked out for you well and you like it, please consider <a "
+"href=\"%2$s\" target=\"_blank\">making a donation</a>."
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:85
@@ -142,7 +134,6 @@ msgid "For more information:"
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-help.php:90
-#, php-format
 msgid "About %s"
 msgstr ""
 
@@ -155,7 +146,6 @@ msgid "Github Project"
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin-menus.php:49
-#, php-format
 msgid "%s Settings"
 msgstr ""
 
@@ -173,7 +163,7 @@ msgid "The changes you made will be lost if you navigate away from this page."
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin.php:56
-msgid "Upgrade to Premium"
+msgid "Upgrade to Pro"
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin.php:57
@@ -185,19 +175,18 @@ msgid "Community Support"
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin.php:84
-msgid "Setup Support"
+msgid "Theme Support"
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin.php:148
-#, php-format
 msgid ""
-"If you like <strong>%1$s</strong>, please leave a <a href=\"%2$s\" target="
-"\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating on <a href=\"%2$s"
-"\" target=\"_blank\">WordPress.org</a>. A huge thank you in advance!"
+"If you like <strong>%1$s</strong>, please leave a <a href=\"%2$s\" "
+"target=\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating on <a "
+"href=\"%2$s\" target=\"_blank\">WordPress.org</a>. A huge thank you in "
+"advance!"
 msgstr ""
 
 #: includes/admin/class-auto-load-next-post-admin.php:171
-#, php-format
 msgid "%s Version"
 msgstr ""
 
@@ -207,12 +196,12 @@ msgid "General"
 msgstr ""
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:85
-#, php-format
 msgid ""
 "Set the theme selectors below according to your active theme. All are "
-"required for %s to work. <a href=\"https://autoloadnextpost.com/product/"
-"setup-support/?utm_source=wpadmin&utm_campaign=plugin-settings-general\" "
-"target=\"_blank\">Need help setting up the plugin?</a>"
+"required for %s to work. <a "
+"href=\"https://autoloadnextpost.com/product/theme-support/?utm_source="
+"wpadmin&utm_campaign=plugin-settings-general\" target=\"_blank\">Need help "
+"setting up the plugin?</a>"
 msgstr ""
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:90
@@ -258,8 +247,7 @@ msgid "Remove Comments"
 msgstr ""
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:135
-msgid ""
-"Enable to remove comments when each post loads including the initial post."
+msgid "Enable to remove comments when each post loads including the initial post."
 msgstr ""
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:142
@@ -268,8 +256,8 @@ msgstr ""
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:143
 msgid ""
-"Each time a post is loaded it will count as a pageview. Must have reference "
-"to Google Analytics tracking code on the site."
+"Each time a post has loaded and is in view it will count as a pageview. "
+"Must have reference to Google Analytics tracking code on the site."
 msgstr ""
 
 #: includes/admin/settings/class-auto-load-next-post-settings-general.php:150
@@ -296,15 +284,6 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: includes/admin/views/html-notice-please-review.php:20
-#, php-format
-msgid ""
-"Hi <b>%s</b>, you've been using <b>%s</b> for some time now and I hope "
-"you're happy with it. I've spent countless hours developing this free plugin "
-"for you and I would really appreciate it if you could give it a review or "
-"offer a contribution. Thank you!"
-msgstr ""
-
 #: includes/admin/views/html-notice-please-review.php:21
 msgid "Write a Review"
 msgstr ""
@@ -314,56 +293,38 @@ msgid "Already have :)"
 msgstr ""
 
 #: includes/admin/views/html-notice-requirement-wp.php:18
-#, php-format
 msgid ""
 "Sorry, <strong>%s</strong> requires WordPress %s or higher. Please upgrade "
 "your WordPress setup."
 msgstr ""
 
 #: includes/admin/views/html-notice-theme-support.php:19
-msgid "Integration Guide"
+msgid "Hide this notice"
 msgstr ""
 
-#: includes/admin/views/html-notice-theme-support.php:19
-msgid "Hide this notice"
+#. Plugin Name of the plugin/theme
+msgid "Auto Load Next Post"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://autoloadnextpost.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Increase your pageviews on your site as readers continue reading your posts "
+"scrolling down the page."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Sébastien Dumont"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://sebastiendumont.com"
 msgstr ""
 
 #: includes/auto-load-next-post-core-functions.php:78
 msgctxt "Previous post link"
 msgid "&larr;"
-msgstr ""
-
-#: wp-update-php/WPUpdatePhp.php:47
-#, php-format
-msgid ""
-"Unfortunately, <strong>%s</strong> can not run on PHP versions older than "
-msgstr ""
-
-#: wp-update-php/wp-update-php.php:151
-#, php-format
-msgid ""
-"%s recommends a PHP version higher than %s. Read more information about <a "
-"href=\"%s\" target=\"_blank\">how you can update</a>."
-msgstr ""
-
-#: wp-update-php/wp-update-php.php:153
-#, php-format
-msgid ""
-"This plugin recommends a PHP version higher than %s. Read more information "
-"about <a href=\"%s\" target=\"_blank\">how you can update</a>."
-msgstr ""
-
-#: wp-update-php/wp-update-php.php:158
-#, php-format
-msgid ""
-"Unfortunately, %s cannot run on PHP versions older than %s. Read more "
-"information about <a href=\"%s\" target=\"_blank\">how you can update</a>."
-msgstr ""
-
-#: wp-update-php/wp-update-php.php:160
-#, php-format
-msgid ""
-"Unfortunately, this plugin cannot run on PHP versions older than %s. Read "
-"more information about <a href=\"%s\" target=\"_blank\">how you can update</"
-"a>."
 msgstr ""

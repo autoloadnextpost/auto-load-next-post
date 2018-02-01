@@ -7,6 +7,66 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		cssmin: {
+			target: {
+				files: [{
+					expand: true,
+					cwd: 'assets/css/admin',
+					src: [
+						'auto-load-next-post.css',
+						'!auto-load-next-post.min.css'
+					],
+					dest: 'assets/css/admin',
+					ext: '.min.css'
+				}]
+			}
+		},
+
+		uglify: {
+			options: {
+				compress: {
+					global_defs: {
+						"EO_SCRIPT_DEBUG": false
+					},
+					dead_code: true
+				},
+				banner: '/*! <%= pkg.title %> <%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM") %> */\n'
+			},
+			build: {
+				files: [{
+					expand: true, // Enable dynamic expansion.
+					src: [
+						'assets/js/frontend/*.js',
+						'!assets/js/frontend/*.min.js',
+						'!assets/js/frontend/*.dev.js',
+						'assets/js/admin/*.js',
+						'!assets/js/admin/*.min.js'
+					],
+					ext: '.min.js', // Dest filepaths will have this extension.
+				}]
+			}
+		},
+
+		jshint: {
+			options: {
+				reporter: require('jshint-stylish'),
+				globals: {
+					"EO_SCRIPT_DEBUG": false,
+				},
+				'-W099': true, // Mixed spaces and tabs
+				'-W083': true, // Fix functions within loop
+				'-W082': true, // Declarations should not be placed in blocks
+				'-W020': true, // Read only - error when assigning EO_SCRIPT_DEBUG a value.
+			},
+			all: [
+				'assets/js/frontend/*.js',
+				'!assets/js/frontend/*.min.js',
+				'assets/js/frontend/*.dev.js',
+				'assets/js/admin/*.js',
+				'!assets/js/admin/*.min.js'
+			]
+		},
+
 		// Generate .pot file
 		makepot: {
 			target: {
@@ -155,11 +215,11 @@ module.exports = function(grunt) {
 	// Set the default grunt command to run test cases.
 	grunt.registerTask( 'default', [ 'test' ] );
 
-	// Checks for errors.
-	grunt.registerTask( 'test', [ 'checktextdomain' ]);
+	// Checks for errors with the javascript and text domain.
+	grunt.registerTask( 'test', [ 'jshint', 'checktextdomain' ]);
 
-	// Checks for errors, updates version and runs i18n tasks.
-	grunt.registerTask( 'dev', [ 'replace', 'makepot' ]);
+	// Checks for errors, updates version, minify css and javascript and finaly runs i18n tasks.
+	grunt.registerTask( 'dev', [ 'replace', 'cssmin', 'newer:uglify', 'makepot' ]);
 
 	/**
 	 * Run i18n related tasks.

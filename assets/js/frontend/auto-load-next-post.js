@@ -192,7 +192,7 @@ function auto_load_next_post() {
 
 	// Check to see if pretty permalinks, if not then add partial=1
 	if ( post_url.indexOf( '?p=' ) > -1 ) {
-		np_url = post_url + '&partial=1'
+		np_url = post_url + '&partial=1';
 	} else {
 		var partial_endpoint = 'partial/';
 
