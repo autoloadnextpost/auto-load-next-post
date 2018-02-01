@@ -22,7 +22,8 @@ module.exports = function(grunt) {
 					},
 					exclude: [
 						'releases',
-						'node_modules'
+						'node_modules',
+						'wp-update-php'
 					]
 				}
 			}
@@ -52,7 +53,8 @@ module.exports = function(grunt) {
 				src:  [
 					'*.php',
 					'**/*.php', // Include all files
-					'!node_modules/**' // Exclude node_modules/
+					'!node_modules/**', // Exclude node_modules/
+					'!wp-update-php/**'
 				],
 				expand: true
 			},
