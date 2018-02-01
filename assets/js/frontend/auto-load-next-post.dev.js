@@ -1,10 +1,13 @@
 // Variables
+var version             = auto_load_next_post_params.alnp_version;
 var content_container   = auto_load_next_post_params.alnp_content_container;
 var post_title_selector = auto_load_next_post_params.alnp_title_selector;
 var nav_container       = auto_load_next_post_params.alnp_navigation_container;
 var comments_container  = auto_load_next_post_params.alnp_comments_container;
 var remove_comments     = auto_load_next_post_params.alnp_remove_comments;
 var track_pageviews     = auto_load_next_post_params.alnp_google_analytics;
+var is_customizer       = auto_load_next_post_params.alnp_is_customizer;
+var pathname            = window.location.pathname;
 var curr_url            = window.location.href;
 var orig_curr_url       = window.location.href;
 var post_count          = 0;
@@ -14,6 +17,12 @@ var scroll_up           = false;
 jQuery.noConflict();
 
 jQuery( document ).ready( function() {
+	console.log( 'Auto Load Next Post version: ' + version );
+
+	if ( is_customizer ) {
+		console.log( 'You are previewing with the customizer.' );
+	}
+
 	// Don't do this if looking for comments.
 	if ( window.location.href.indexOf( '#comments' ) > -1 ) {
 		return;
@@ -28,17 +37,17 @@ jQuery( document ).ready( function() {
 	}
 
 	// Add a post divider.
-	jQuery( content_container ).prepend( '<hr style="height: 0" class="post-divider" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
+	jQuery( content_container ).prepend( '<hr style="display: none;" data-initial-post="true" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
 
 	// Initialise scrollSpy
 	initialise_scrollspy();
 
 	jQuery('body').on( 'alnp-enter', function( e ) {
-		console.log('Entering new post');
+		console.log( 'Entering new post' );
 	});
 
 	jQuery('body').on( 'alnp-leaving', function( e ) {
-		console.log('Leaving post');
+		console.log( 'Leaving post' );
 	});
 
 	/**
@@ -56,24 +65,35 @@ jQuery( document ).ready( function() {
 			return;
 		}
 
-		console.log( 'Google Analytics Tracking Enabled' );
+		// If we are previewing in the customizer then dont track.
+		if ( is_customizer ) {
+			console.log( 'Google Analytics tracking is disabled when previewing in the customizer.' );
+			return;
+		}
+
+		console.log( 'Google Analytics tracking is enabled' );
 
 		if ( typeof pageTracker === "undefined" && typeof _gaq === 'undefined' && typeof ga === 'undefined' && typeof __gaTracker === 'undefined' ) {
 			console.error( 'Google Analytics was not found installed on your site!' );
 			return;
 		}
 
-		console.log( 'Track: ' + post_url );
+		console.log( 'Post URL before clean: ' + post_url );
+
+		// Clean Post URL before tracking. - Assuming the post url is still local.
+		post_url = post_url.replace(pathname, '');
+
+		console.log( 'Post URL after clean: ' + post_url );
 
 		// This uses Asynchronous version of Google Analytics tracking method.
 		if ( typeof pageTracker !== "undefined" && pageTracker !== null ) {
-			console.log( 'Google Analytics is installed, but old.' );
+			console.log( 'Google Analytics is installed, but very old. Highly recommend upgrading GA!' );
 			pageTracker._trackPageview( post_url );
 		}
 
 		// This uses Google's classic Google Analytics tracking method.
 		if ( typeof _gaq !== 'undefined' && _gaq !== null ) {
-			console.log( 'Google Analytics is installed. Yahoo!' );
+			console.log( 'Google Analytics is installed but you are using a classic version. Recommend upgrading!' );
 			_gaq.push(['_trackPageview', post_url]);
 		}
 
@@ -85,23 +105,24 @@ jQuery( document ).ready( function() {
 
 		// This uses Monster Insights method of tracking Google Analytics.
 		if ( typeof __gaTracker !== 'undefined' && __gaTracker !== null ) {
-			console.log( 'Google Analytics by Yoast is installed. Awesome!' );
+			console.log( 'Google Analytics by MonsterInsights is installed. Awesome!' );
 			__gaTracker( 'send', 'pageview', post_url );
 		}
 	});
 
-	jQuery('body').on('mousewheel', function( e ) {
+	// If the browser back button is pressed or the user scrolled up then change history state.
+	jQuery('body').on( 'mousewheel', function( e ) {
 		scroll_up = e.originalEvent.wheelDelta > 0;
 	});
 
 	History.Adapter.bind( window, 'statechange', function() {
-		// If they returned back to the first post, then when you click the button back go to the url from which they came
+		// If they returned back to the first post, then when you click the button back go to the url from which they came.
 		if ( scroll_up ) {
 			var states = History.savedStates;
 			var prev_state_index = states.length - 2;
 			var prev_state = states[prev_state_index];
 
-			console.log( 'Prev url: ', prev_state.url );
+			console.log( 'Previous URL: ', prev_state.url );
 
 			if ( prev_state.url === orig_curr_url ) {
 				window.location = document.referrer;
@@ -111,12 +132,13 @@ jQuery( document ).ready( function() {
 
 		var state = History.getState();
 
-		console.log( 'State url: ' + state.url );
+		console.log( 'State URL: ' + state.url );
 
-		// If the previous url does not match the current url then go back.
+		// If the previous URL does not match the current URL then go back.
 		if ( state.url != curr_url ) {
-			var previous_post = jQuery('.post-divider[data-url="' + state.url + '"]');
+			var previous_post = jQuery('hr[data-url="' + state.url + '"]');
 
+			// Scroll to the top of the previous article.
 			if ( previous_post.length > 0 ) {
 				jQuery('html, body').animate({ scrollTop: (previous_post.offset().top) }, 1000 );
 			}
@@ -141,7 +163,7 @@ function alnp_enter() {
 
 	jQuery('body').trigger( 'alnp-enter', [ $enter ] );
 
-	changeURL($enter);
+	changeURL( $enter, 'enter' );
 } // END alnp_enter()
 
 function alnp_leave() {
@@ -149,27 +171,34 @@ function alnp_leave() {
 
 	jQuery('body').trigger( 'alnp-leave', [ $leave ] );
 
-	changeURL($leave);
+	changeURL( $leave, 'leave' );
 } // END alnp_leave()
 
-function changeURL( $this ) {
+function changeURL( $this, $direction ) {
 	var el           = jQuery($this);
 	var this_url     = el.attr( 'data-url' );
 	var this_title   = el.attr( 'data-title' );
 	var this_post_id = el.attr( 'data-post-id' );
+	var initial_post = el.attr( 'data-initial-post' );
 	var offset       = el.offset();
 	var scrollTop    = jQuery(document).scrollTop();
 
-	// If exiting or entering from top, change URL.
+	// If exiting or entering from the top, then change the URL.
 	if ( ( offset.top - scrollTop ) < 200 && curr_url != this_url ) {
 		curr_url = this_url;
-		History.pushState(null, this_title, this_url);
+
+		// Update the History ONLY if we are NOT in the customizer.
+		if ( !is_customizer ) {
+			History.pushState(null, this_title, this_url);
+		}
 
 		jQuery('body').trigger( 'alnp-post-changed', [ this_title, this_url, this_post_id, post_count, stop_reading ] );
 	}
 
-	// Look for the next post to load if any.
-	auto_load_next_post();
+	if ( $direction == 'enter' && initial_post != true || $direction == 'leave' ) {
+		// Look for the next post to load if any.
+		auto_load_next_post();
+	}
 } // END changeURL()
 
 /**
@@ -184,6 +213,11 @@ function auto_load_next_post() {
 	// Grab the url for the next post in the post navigation.
 	var post_url = jQuery( nav_container ).find( 'a[rel="prev"]').attr( 'href' );
 
+	// If the post url length returns nothing then try finding the alternative and set that as the next post.
+	if ( jQuery( post_url ).length <= 0 ) {
+		post_url = jQuery( nav_container ).find( 'a[rel="previous"]').attr( 'href' );
+	}
+
 	// Override the post url via a trigger.
 	jQuery('body').trigger( 'alnp-post-url', [ post_count, post_url ] );
 
@@ -192,14 +226,14 @@ function auto_load_next_post() {
 	if ( typeof post_url !== typeof undefined && post_url !== false ) {
 		console.log( 'Post URL was defined. Next Post URL: ' + post_url );
 	} else {
-		console.error( 'Post URL was not defined. Oh dear!' );
+		console.error( 'Post Navigation NOT FOUND!' );
 	}
 
 	if ( !post_url ) return;
 
 	// Check to see if pretty permalinks, if not then add partial=1
 	if ( post_url.indexOf( '?p=' ) > -1 ) {
-		np_url = post_url + '&partial=1'
+		np_url = post_url + '&partial=1';
 	} else {
 		var partial_endpoint = 'partial/';
 
@@ -223,14 +257,14 @@ function auto_load_next_post() {
 
 		data = post.html(); // Returns the HTML data of the next post that was loaded.
 
-		var post_divider = '<hr style="height: 0" class="post-divider" data-url="' + post_url + '"/>';
+		var post_divider = '<hr style="display: none;" data-initial-post="false" data-url="' + post_url + '"/>';
 		var post_html    = jQuery( post_divider + data );
 		var post_title   = post_html.find( post_title_selector ); // Find the post title of the loaded article.
 		var post_ID      = jQuery(post).find( 'article' ).attr( 'id' ); // Find the post ID of the loaded article.
 
 		if ( typeof post_ID !== typeof undefined && post_ID !== "" ) {
 			post_ID = post_ID.replace('post-', ''); // Make sure that only the post ID remains.
-			console.log( 'Post ID: ' + post_ID + ' was found.' );
+			console.log( 'Post ID: ' + post_ID );
 		} else {
 			console.error( 'Post ID was not found.' );
 		}
@@ -253,7 +287,7 @@ function auto_load_next_post() {
 		scrollspy(); // Need to set up ScrollSpy now that the new content has loaded.
 
 		post_count = post_count+1; // Updates the post count.
-		console.log('Post Count: ' + post_count);
+		console.log( 'Post Count: ' + post_count );
 
 		// Run an event once the post has loaded.
 		jQuery('body').trigger( 'alnp-post-loaded', [ post_title.text(), post_url, post_ID, post_count ] );

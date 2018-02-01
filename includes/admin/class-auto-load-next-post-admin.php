@@ -3,7 +3,7 @@
  * Auto Load Next Post - Admin.
  *
  * @since    1.0.0
- * @version  1.4.8
+ * @version  1.4.10
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post
@@ -45,7 +45,7 @@ class Auto_Load_Next_Post_Admin {
 	 * Plugin action links.
 	 *
 	 * @since   1.0.0
-	 * @version 1.4.8
+	 * @version 1.4.10
 	 * @access  public
 	 * @param   mixed $links
 	 * @return  void
@@ -53,7 +53,7 @@ class Auto_Load_Next_Post_Admin {
 	public function action_links($links) {
 		if (current_user_can('manage_options')) {
 			$plugin_links = array(
-				'<a href="'.esc_url('https://autoloadnextpost.com/premium/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page').'" target="_blank" style="color:green; font-weight:bold;">'.__('Upgrade to Premium', 'auto-load-next-post').'</a>',
+				'<a href="'.esc_url('https://autoloadnextpost.com/pro/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page').'" target="_blank" style="color:green; font-weight:bold;">'.__('Upgrade to Pro', 'auto-load-next-post').'</a>',
 				'<a href="'.admin_url('options-general.php?page=auto-load-next-post-settings').'">'.__('Settings', 'auto-load-next-post').'</a>',
 			);
 
@@ -67,7 +67,7 @@ class Auto_Load_Next_Post_Admin {
 	 * Plugin row meta links
 	 *
 	 * @since   1.0.0
-	 * @version 1.4.8
+	 * @version 1.4.10
 	 * @access  public
 	 * @param   array  $input already defined meta links
 	 * @param   string $file  plugin file path and name being processed
@@ -79,9 +79,9 @@ class Auto_Load_Next_Post_Admin {
 		}
 
 		$links = array(
-			'<a href="'.esc_url('https://github.com/seb86/Auto-Load-Next-Post/wiki/').'" target="_blank">'.__('Documentation', 'auto-load-next-post').'</a>',
+			'<a href="'.esc_url('https://autoloadnextpost.com/documentation/').'" target="_blank">'.__('Documentation', 'auto-load-next-post').'</a>',
 			'<a href="'.esc_url('https://wordpress.org/support/plugin/auto-load-next-post').'" target="_blank">'.__('Community Support', 'auto-load-next-post').'</a>',
-			'<a href="'.esc_url('https://autoloadnextpost.com/product/setup-support/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page').'" target="_blank">'.__('Setup Support', 'auto-load-next-post').'</a>',
+			'<a href="'.esc_url('https://autoloadnextpost.com/product/theme-support/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page').'" target="_blank">'.__('Theme Support', 'auto-load-next-post').'</a>',
 		);
 
 		$input = array_merge($input, $links);

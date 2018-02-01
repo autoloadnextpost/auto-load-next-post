@@ -1,3 +1,14 @@
+# 1.4.10 (31st January 2018)
+* Added: Alternative post navigation lookup for some theme frameworks.
+* Fixed: Issue with History.js already been loaded when previewing in the customizer.
+* Fixed: Issue with Google Analytics returning the full URL... sometimes.
+* Fixed: Issue with the next post loads instantly before scrolling on the initial post.
+* Improved: Detection of the initial post and hidden the post divider.
+* Updated: Template file header to provide clear information for overriding repeater template.
+* Updated: POT file.
+* Updated: Documentation links in readme.txt
+* Updated: FAQ's in readme.txt
+
 # 1.4.9 (30th December 2016)
 * Added: Support for Twenty Sixteen.
 * Updated: Admin notice for contribution.

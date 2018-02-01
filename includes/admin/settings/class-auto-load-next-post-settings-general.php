@@ -82,7 +82,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 			array(
 				'title' => __('General', 'auto-load-next-post'),
 				'type'  => 'title',
-				'desc'  => sprintf(__('Set the theme selectors below according to your active theme. All are required for %s to work. <a href="https://autoloadnextpost.com/product/setup-support/?utm_source=wpadmin&utm_campaign=plugin-settings-general" target="_blank">Need help setting up the plugin?</a>', 'auto-load-next-post'), 'Auto Load Next Post'),
+				'desc'  => sprintf(__('Set the theme selectors below according to your active theme. All are required for %s to work. <a href="https://autoloadnextpost.com/product/theme-support/?utm_source=wpadmin&utm_campaign=plugin-settings-general" target="_blank">Need help setting up the plugin?</a>', 'auto-load-next-post'), 'Auto Load Next Post'),
 				'id'    => $this->id.'_options'
 			),
 
@@ -140,7 +140,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 
 			array(
 				'title'   => __('Update Google Analytics', 'auto-load-next-post'),
-				'desc'    => __('Each time a post is loaded it will count as a pageview. Must have reference to Google Analytics tracking code on the site.', 'auto-load-next-post'),
+				'desc'    => __('Each time a post has loaded and is in view it will count as a pageview. Must have reference to Google Analytics tracking code on the site.', 'auto-load-next-post'),
 				'id'      => 'auto_load_next_post_google_analytics',
 				'default' => 'no',
 				'type'    => 'checkbox'
@@ -149,7 +149,7 @@ class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Setti
 			array(
 				'title'   => __('Reset all data?', 'auto-load-next-post'),
 				'desc'    => __('Press the reset button to clear all settings for this plugin and re-install the default settings.', 'auto-load-next-post'),
-				'id'      => 'auto_load_next_post_uninstall_data',
+				'id'      => 'auto_load_next_post_reset_data',
 				'default' => 'no',
 				'type'    => 'reset_data'
 			),

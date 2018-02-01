@@ -2,13 +2,13 @@
 /**
  * Plugin Name: Auto Load Next Post
  * Plugin URI:  https://autoloadnextpost.com
- * Description: Gain more post views on your site as readers continue reading your posts scrolling down the page.
- * Version:     1.4.9
+ * Description: Increase your pageviews on your site as readers continue reading your posts scrolling down the page.
+ * Version:     1.4.10
  * Author:      Sébastien Dumont
  * Author URI:  https://sebastiendumont.com
  *
  * Text Domain: auto-load-next-post
- * Domain Path: languages
+ * Domain Path: /languages/
  *
  * Auto Load Next Post is distributed under the terms of the
  * GNU General Public License as published by the Free Software Foundation,
@@ -37,7 +37,7 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
  * Main Auto Load Next Post Class
  *
  * @class   Auto_Load_Next_Post
- * @version 1.4.9
+ * @version 1.4.10
  */
 final class Auto_Load_Next_Post {
 
@@ -145,11 +145,11 @@ final class Auto_Load_Next_Post {
 	 * Setup Constants
 	 *
 	 * @since   1.4.3
-	 * @version 1.4.9
+	 * @version 1.4.10
 	 * @access private
 	 */
 	private function setup_constants() {
-		$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.9');
+		$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.10');
 		$this->define('AUTO_LOAD_NEXT_POST_FILE', __FILE__);
 		$this->define('AUTO_LOAD_NEXT_POST_SLUG', 'auto-load-next-post');
 
@@ -157,7 +157,7 @@ final class Auto_Load_Next_Post {
 		$this->define('AUTO_LOAD_NEXT_POST_FILE_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
 		$this->define('AUTO_LOAD_NEXT_POST_TEMPLATE_PATH', 'auto-load-next-post/');
 
-		$this->define('AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE', '4.0');
+		$this->define('AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE', '4.3');
 
 		$suffix       = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		$debug_suffix = defined('ALNP_DEV_DEBUG') && ALNP_DEV_DEBUG ? '.dev' : '';
@@ -228,8 +228,9 @@ final class Auto_Load_Next_Post {
 	/**
 	 * Registers and enqueues stylesheets and javascripts for the front of the site.
 	 *
-	 * @since  1.3.2
-	 * @access public
+	 * @since   1.3.2
+	 * @version 1.4.10
+	 * @access  public
 	 */
 	public function front_scripts_and_styles() {
 		/**
@@ -242,12 +243,14 @@ final class Auto_Load_Next_Post {
 
 			// Variables for JS scripts
 			wp_localize_script('auto-load-next-post-script', 'auto_load_next_post_params', array(
+				'alnp_version'              => AUTO_LOAD_NEXT_POST_VERSION,
 				'alnp_content_container'    => get_option('auto_load_next_post_content_container'),
 				'alnp_title_selector'       => get_option('auto_load_next_post_title_selector'),
 				'alnp_navigation_container' => get_option('auto_load_next_post_navigation_container'),
 				'alnp_comments_container'   => get_option('auto_load_next_post_comments_container'),
 				'alnp_remove_comments'      => get_option('auto_load_next_post_remove_comments'),
 				'alnp_google_analytics'     => get_option('auto_load_next_post_google_analytics'),
+				'alnp_is_customizer'        => is_customize_preview()
 			));
 		} // END if is_singular() && get_post_type()
 	} // END front_scripts_and_styles()

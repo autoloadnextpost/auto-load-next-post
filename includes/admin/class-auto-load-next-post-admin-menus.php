@@ -51,6 +51,7 @@ class Auto_Load_Next_Post_Admin_Menus {
 
 	/**
 	 * Initialize the Auto Load Next Post settings page.
+	 *
 	 * @since  1.0.0
 	 * @access public
 	 */

@@ -1,6 +1,6 @@
 Auto Load Next Post
 
-Copyright 2016 by Sébastien Dumont
+Copyright 2018 by Sébastien Dumont
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

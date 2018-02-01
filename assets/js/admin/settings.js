@@ -10,7 +10,7 @@ jQuery(window).load(function(){
 			if (changed) {
 				window.onbeforeunload = function() {
 					return auto_load_next_post_settings_params.i18n_nav_warning;
-				}
+				};
 			}
 			else {
 				window.onbeforeunload = '';
