@@ -87,7 +87,7 @@ module.exports = function(grunt) {
 				replacements: [
 					{
 						from: /Stable tag:.*$/m,
-						to: "Stable tag: <%= pkg.version %>"
+						to: "Stable tag:        <%= pkg.version %>"
 					},
 					{
 						from: /Version:.*$/m,
