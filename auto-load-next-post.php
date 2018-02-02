@@ -3,7 +3,7 @@
  * Plugin Name: Auto Load Next Post
  * Plugin URI:  https://autoloadnextpost.com
  * Description: Increase your pageviews on your site as readers continue reading your posts scrolling down the page.
- * Version:     1.4.10
+ * Version:     1.4.10-beta.1
  * Author:      Sébastien Dumont
  * Author URI:  https://sebastiendumont.com
  *

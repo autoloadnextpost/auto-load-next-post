@@ -5,7 +5,7 @@ Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scr
 Requires PHP: 5.3
 Requires at least: 4.3
 Tested up to: 4.9.2
-Stable tag:        1.4.10
+Stable tag: 1.4.10-beta.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -170,6 +170,7 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Enhanced: Auto Load Next Post now does not run if the post url has a hashtag for a specific comment on an initial load.
 * Updated: Template file header to provide clear information for overriding repeater template.
 * Updated: POT file.
+* Updated: Documentation links in the plugin.
 * Updated: Documentation links in readme.txt
 * Updated: FAQ's in readme.txt
 
@@ -297,5 +298,6 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Enhanced: Auto Load Next Post now does not run if the post url has a hashtag for a specific comment on an initial load.
 * Updated: Template file header to provide clear information for overriding repeater template.
 * Updated: POT file.
+* Updated: Documentation links in the plugin.
 * Updated: Documentation links in readme.txt
 * Updated: FAQ's in readme.txt
