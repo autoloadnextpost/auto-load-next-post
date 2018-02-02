@@ -8,7 +8,6 @@ var remove_comments     = auto_load_next_post_params.alnp_remove_comments;
 var track_pageviews     = auto_load_next_post_params.alnp_google_analytics;
 var is_customizer       = auto_load_next_post_params.alnp_is_customizer;
 var post_title          = window.document.title;
-var pathname            = window.location.pathname;
 var curr_url            = window.location.href;
 var orig_curr_url       = window.location.href;
 var post_count          = 0;
@@ -138,7 +137,7 @@ jQuery( document ).ready( function() {
 	});
 
 	History.Adapter.bind( window, 'statechange', function() {
-		// If they returned back to the first post, then when you click the button back go to the url from which they came.
+		// If they returned back to the first post, then when you click the back button go to the url from which they came.
 		if ( scroll_up ) {
 			var states = History.savedStates;
 			var prev_state_index = states.length - 2;
@@ -176,6 +175,7 @@ function scrollspy() {
 	jQuery('hr[data-powered-by="alnp"]').scrollSpy();
 } // END scrollspy()
 
+// Entering a post
 function alnp_enter() {
 	var divider = jQuery(this);
 
@@ -184,6 +184,7 @@ function alnp_enter() {
 	changeURL( divider, 'enter' );
 } // END alnp_enter()
 
+// Leaving a Post
 function alnp_leave() {
 	var divider = jQuery(this);
 
@@ -211,7 +212,7 @@ function changeURL( divider, $direction ) {
 			History.pushState(null, this_title, this_url);
 		}
 
-		jQuery('body').trigger( 'alnp-post-changed', [ this_title, this_url, this_post_id, post_count, stop_reading ] );
+		jQuery('body').trigger( 'alnp-post-changed', [ this_title, this_url, this_post_id, post_count, stop_reading, initial_post ] );
 	}
 
 	console.log( 'Direction: ' + $direction);
