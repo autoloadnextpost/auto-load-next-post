@@ -162,6 +162,7 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Added: Alternative post navigation lookup for some theme frameworks.
 * Fixed: Issue with History.js already been loaded when previewing in the customizer.
 * Fixed: Issue with Google Analytics returning the full URL... sometimes.
+* Enhanced: Browser back button now scrolls to the top of the previous post if any. Thanks to @lex111
 * Enhanced: Detect if Auto Load Next Post parameters exist.
 * Enhanced: Added attributes to identify which post is the initial post both on the post divider and the article.
 * Enhanced: Hidden the post divider completely. Inline styling is used instead for better compatibility with themes.
@@ -288,6 +289,7 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Added: Alternative post navigation lookup for some theme frameworks.
 * Fixed: Issue with History.js already been loaded when previewing in the customizer.
 * Fixed: Issue with Google Analytics returning the full URL... sometimes.
+* Enhanced: Browser back button now scrolls to the top of the previous post if any. Thanks to @lex111
 * Enhanced: Detect if Auto Load Next Post parameters exist.
 * Enhanced: Added attributes to identify which post is the initial post both on the post divider and the article.
 * Enhanced: Hidden the post divider completely. Inline styling is used instead for better compatibility with themes.
