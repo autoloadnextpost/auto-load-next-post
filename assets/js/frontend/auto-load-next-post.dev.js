@@ -7,6 +7,7 @@ var comments_container  = auto_load_next_post_params.alnp_comments_container;
 var remove_comments     = auto_load_next_post_params.alnp_remove_comments;
 var track_pageviews     = auto_load_next_post_params.alnp_google_analytics;
 var is_customizer       = auto_load_next_post_params.alnp_is_customizer;
+var post_title          = window.document.title;
 var pathname            = window.location.pathname;
 var curr_url            = window.location.href;
 var orig_curr_url       = window.location.href;
@@ -17,30 +18,51 @@ var scroll_up           = false;
 jQuery.noConflict();
 
 jQuery( document ).ready( function() {
-	console.log( 'Auto Load Next Post version: ' + version );
+	// Ensure auto_load_next_post_params exists to continue.
+	if ( typeof auto_load_next_post_params === 'undefined' ) {
+		return false;
+	}
 
 	if ( is_customizer ) {
 		console.log( 'You are previewing with the customizer.' );
 	}
 
-	// Don't do this if looking for comments.
-	if ( window.location.href.indexOf( '#comments' ) > -1 ) {
+	console.log( 'Auto Load Next Post is version: ' + version );
+
+	// Don't do anything if post was loaded looking for comments.
+	if ( orig_curr_url.indexOf( '#comments' ) > -1 || orig_curr_url.match(/#comment-*([0-9]+)/) ) {
+		console.log( 'Auto Load Next Post is disabled while loading a post to view comments' );
 		return;
 	}
+
+	// Add a post divider.
+	jQuery( content_container ).prepend( '<hr style="display:none;" data-powered-by="alnp" data-initial-post="true" data-title="' + post_title + '" data-url="' + orig_curr_url + '"/>' );
+
+	// Mark the first article as the initial post.
+	jQuery( content_container ).find( 'article' ).attr( 'data-initial-post', true );
+
+	// Find the post ID of the initial loaded article.
+	var initial_post_id = jQuery( content_container ).find( 'article' ).attr( 'id' );
+
+	// Apply post ID to the first post divider.
+	if ( initial_post_id.length > 0 ) {
+		initial_post_id = initial_post_id.replace('post-', ''); // Make sure that only the post ID remains.
+		console.log( 'Initial Post ID: ' + initial_post_id );
+		jQuery( content_container ).find( 'article[data-initial-post]' ).prev().attr( 'data-post-id', initial_post_id );
+	}
+
+	console.log( 'Post Count: ' + post_count );
 
 	// Remove Comments.
 	if ( remove_comments === 'yes' ) {
 		jQuery( comments_container ).remove();
 		if ( jQuery( comments_container ).length <= 0 ) {
-			console.log( 'Comments Removed' );
+			console.log( 'Comments have been removed' );
 		}
 	}
 
-	// Add a post divider.
-	jQuery( content_container ).prepend( '<hr style="display: none;" data-initial-post="true" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
-
 	// Initialise scrollSpy
-	initialise_scrollspy();
+	scrollspy();
 
 	jQuery('body').on( 'alnp-enter', function( e ) {
 		console.log( 'Entering new post' );
@@ -80,8 +102,8 @@ jQuery( document ).ready( function() {
 
 		console.log( 'Post URL before clean: ' + post_url );
 
-		// Clean Post URL before tracking. - Assuming the post url is still local.
-		post_url = post_url.replace(pathname, '');
+		// Clean Post URL before tracking.
+		post_url = post_url.replace(/https?:\/\/[^\/]+/i, '');
 
 		console.log( 'Post URL after clean: ' + post_url );
 
@@ -147,35 +169,32 @@ jQuery( document ).ready( function() {
 
 }); // END document()
 
-function initialise_scrollspy() {
-	scrollspy();
-} // END initialise_scrollspy()
-
 function scrollspy() {
-	// Spy on post-divider - changes the URL in browser location and loads new post.
-	jQuery( '.post-divider').on( 'scrollSpy:enter', alnp_enter );
-	jQuery( '.post-divider').on( 'scrollSpy:exit', alnp_leave );
-	jQuery( '.post-divider').scrollSpy();
+	// Spy on post divider - changes the URL in browser location and loads a new post.
+	jQuery('hr[data-powered-by="alnp"]').on( 'scrollSpy:enter', alnp_enter );
+	jQuery('hr[data-powered-by="alnp"]').on( 'scrollSpy:exit', alnp_leave );
+	jQuery('hr[data-powered-by="alnp"]').scrollSpy();
 } // END scrollspy()
 
 function alnp_enter() {
-	var $enter = jQuery(this);
+	var divider = jQuery(this);
 
-	jQuery('body').trigger( 'alnp-enter', [ $enter ] );
+	jQuery('body').trigger( 'alnp-enter', [ divider ] );
 
-	changeURL( $enter, 'enter' );
+	changeURL( divider, 'enter' );
 } // END alnp_enter()
 
 function alnp_leave() {
-	var $leave = jQuery(this);
+	var divider = jQuery(this);
 
-	jQuery('body').trigger( 'alnp-leave', [ $leave ] );
+	jQuery('body').trigger( 'alnp-leave', [ divider ] );
 
-	changeURL( $leave, 'leave' );
+	changeURL( divider, 'leave' );
 } // END alnp_leave()
 
-function changeURL( $this, $direction ) {
-	var el           = jQuery($this);
+// Change URL
+function changeURL( divider, $direction ) {
+	var el           = jQuery(divider);
 	var this_url     = el.attr( 'data-url' );
 	var this_title   = el.attr( 'data-title' );
 	var this_post_id = el.attr( 'data-post-id' );
@@ -184,7 +203,7 @@ function changeURL( $this, $direction ) {
 	var scrollTop    = jQuery(document).scrollTop();
 
 	// If exiting or entering from the top, then change the URL.
-	if ( ( offset.top - scrollTop ) < 200 && curr_url != this_url ) {
+	if ( ( offset.top - scrollTop ) <= 200 && curr_url != this_url ) {
 		curr_url = this_url;
 
 		// Update the History ONLY if we are NOT in the customizer.
@@ -195,10 +214,10 @@ function changeURL( $this, $direction ) {
 		jQuery('body').trigger( 'alnp-post-changed', [ this_title, this_url, this_post_id, post_count, stop_reading ] );
 	}
 
-	if ( $direction == 'enter' && initial_post != true || $direction == 'leave' ) {
-		// Look for the next post to load if any.
-		auto_load_next_post();
-	}
+	console.log( 'Direction: ' + $direction);
+
+	// Look for the next post to load if any.
+	auto_load_next_post();
 } // END changeURL()
 
 /**
@@ -214,7 +233,7 @@ function auto_load_next_post() {
 	var post_url = jQuery( nav_container ).find( 'a[rel="prev"]').attr( 'href' );
 
 	// If the post url length returns nothing then try finding the alternative and set that as the next post.
-	if ( jQuery( post_url ).length <= 0 ) {
+	if ( post_url.length <= 0 ) {
 		post_url = jQuery( nav_container ).find( 'a[rel="previous"]').attr( 'href' );
 	}
 
@@ -257,7 +276,7 @@ function auto_load_next_post() {
 
 		data = post.html(); // Returns the HTML data of the next post that was loaded.
 
-		var post_divider = '<hr style="display: none;" data-initial-post="false" data-url="' + post_url + '"/>';
+		var post_divider = '<hr style="display:none;" data-powered-by="alnp" data-initial-post="false" data-url="' + post_url + '"/>';
 		var post_html    = jQuery( post_divider + data );
 		var post_title   = post_html.find( post_title_selector ); // Find the post title of the loaded article.
 		var post_ID      = jQuery(post).find( 'article' ).attr( 'id' ); // Find the post ID of the loaded article.
@@ -269,9 +288,11 @@ function auto_load_next_post() {
 			console.error( 'Post ID was not found.' );
 		}
 
-		console.log( 'Post Title: ' + post_title.text() ); // Console Log Post Title
+		console.log( 'Post Title: ' + post_title.text() );
 
 		jQuery( content_container ).append( post_html ); // Add next post.
+
+		jQuery( 'article[id="post-' + post_ID + '"]').attr( 'data-initial-post', false ); // Set article as not the initial post.
 
 		// Remove Comments.
 		if ( remove_comments === 'yes' ) {
