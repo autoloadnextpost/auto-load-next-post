@@ -1,11 +1,16 @@
-# 1.4.10 (31st January 2018)
+# 1.4.10 (2nd February 2018)
 * Added: Alternative post navigation lookup for some theme frameworks.
 * Fixed: Issue with History.js already been loaded when previewing in the customizer.
 * Fixed: Issue with Google Analytics returning the full URL... sometimes.
-* Fixed: Issue with the next post loads instantly before scrolling on the initial post.
-* Improved: Detection of the initial post and hidden the post divider.
+* Enhanced: Browser back button now scrolls to the top of the previous post if any. Thanks to @lex111
+* Enhanced: Detect if Auto Load Next Post parameters exist.
+* Enhanced: Added attributes to identify which post is the initial post both on the post divider and the article.
+* Enhanced: Hidden the post divider completely. Inline styling is used instead for better compatibility with themes.
+* Enhanced: ScrollSpy now identifies the post divider via the new data attribute.
+* Enhanced: Auto Load Next Post now does not run if the post url has a hashtag for a specific comment on an initial load.
 * Updated: Template file header to provide clear information for overriding repeater template.
 * Updated: POT file.
+* Updated: Documentation links in the plugin.
 * Updated: Documentation links in readme.txt
 * Updated: FAQ's in readme.txt
 
