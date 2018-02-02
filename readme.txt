@@ -1,11 +1,11 @@
-﻿=== WordPress Infinite Scroll by Auto Load Next Post ===
+=== WordPress Infinite Scroll by Auto Load Next Post ===
 Contributors: autoloadnextpost, sebd86
 Donate link: https://autoloadnextpost.com/donate/
 Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scroll, infinite scrolling, post scrolling, pagination, scroll, post history, browsing history, navigation
 Requires PHP: 5.3
 Requires at least: 4.3
 Tested up to: 4.9.2
-Stable tag: 1.4.10
+Stable tag:        1.4.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -158,12 +158,15 @@ It does. Just make sure that you activate the plugin on the site you want it use
 2. Theme Support Admin Notification
 
 == Changelog ==
-= 1.4.10 : 31st January 2018 =
+= 1.4.10 : 2nd February 2018 =
 * Added: Alternative post navigation lookup for some theme frameworks.
 * Fixed: Issue with History.js already been loaded when previewing in the customizer.
 * Fixed: Issue with Google Analytics returning the full URL... sometimes.
-* Fixed: Issue with the next post loads instantly before scrolling on the initial post.
-* Improved: Detection of the initial post and hidden the post divider.
+* Enhanced: Detect if Auto Load Next Post parameters exist.
+* Enhanced: Added attributes to identify which post is the initial post both on the post divider and the article.
+* Enhanced: Hidden the post divider, no longer using a class.
+* Enhanced: ScrollSpy now identifies the post divider via the new data attribute.
+* Enhanced: Auto Load Next Post now does not run if the post url has a hashtag for a specific comment on an initial load.
 * Updated: Template file header to provide clear information for overriding repeater template.
 * Updated: POT file.
 * Updated: Documentation links in readme.txt
@@ -281,12 +284,15 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Initial version
 
 == Upgrade Notice ==
-= 1.4.10 : 31st January 2018 =
+= 1.4.10 : 2nd February 2018 =
 * Added: Alternative post navigation lookup for some theme frameworks.
 * Fixed: Issue with History.js already been loaded when previewing in the customizer.
 * Fixed: Issue with Google Analytics returning the full URL... sometimes.
-* Fixed: Issue with the next post loads instantly before scrolling on the initial post.
-* Improved: Detection of the initial post and hidden the post divider.
+* Enhanced: Detect if Auto Load Next Post parameters exist.
+* Enhanced: Added attributes to identify which post is the initial post both on the post divider and the article.
+* Enhanced: Hidden the post divider, no longer using a class.
+* Enhanced: ScrollSpy now identifies the post divider via the new data attribute.
+* Enhanced: Auto Load Next Post now does not run if the post url has a hashtag for a specific comment on an initial load.
 * Updated: Template file header to provide clear information for overriding repeater template.
 * Updated: POT file.
 * Updated: Documentation links in readme.txt
