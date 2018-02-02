@@ -232,8 +232,8 @@ function auto_load_next_post() {
 	// Grab the url for the next post in the post navigation.
 	var post_url = jQuery( nav_container ).find( 'a[rel="prev"]').attr( 'href' );
 
-	// If the post url length returns nothing then try finding the alternative and set that as the next post.
-	if ( post_url.length <= 0 ) {
+	// If the post url returns nothing then try finding the alternative and set that as the next post.
+	if ( !post_url ) {
 		post_url = jQuery( nav_container ).find( 'a[rel="previous"]').attr( 'href' );
 	}
 
@@ -248,6 +248,7 @@ function auto_load_next_post() {
 		console.error( 'Post Navigation NOT FOUND!' );
 	}
 
+	// If the post navigation is not found then dont continue.
 	if ( !post_url ) return;
 
 	// Check to see if pretty permalinks, if not then add partial=1
