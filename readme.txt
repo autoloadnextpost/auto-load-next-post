@@ -164,7 +164,7 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Fixed: Issue with Google Analytics returning the full URL... sometimes.
 * Enhanced: Detect if Auto Load Next Post parameters exist.
 * Enhanced: Added attributes to identify which post is the initial post both on the post divider and the article.
-* Enhanced: Hidden the post divider, no longer using a class.
+* Enhanced: Hidden the post divider completely. Inline styling is used instead for better compatibility with themes.
 * Enhanced: ScrollSpy now identifies the post divider via the new data attribute.
 * Enhanced: Auto Load Next Post now does not run if the post url has a hashtag for a specific comment on an initial load.
 * Updated: Template file header to provide clear information for overriding repeater template.
@@ -290,7 +290,7 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Fixed: Issue with Google Analytics returning the full URL... sometimes.
 * Enhanced: Detect if Auto Load Next Post parameters exist.
 * Enhanced: Added attributes to identify which post is the initial post both on the post divider and the article.
-* Enhanced: Hidden the post divider, no longer using a class.
+* Enhanced: Hidden the post divider completely. Inline styling is used instead for better compatibility with themes.
 * Enhanced: ScrollSpy now identifies the post divider via the new data attribute.
 * Enhanced: Auto Load Next Post now does not run if the post url has a hashtag for a specific comment on an initial load.
 * Updated: Template file header to provide clear information for overriding repeater template.
