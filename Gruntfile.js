@@ -218,7 +218,7 @@ module.exports = function(grunt) {
 	// Checks for errors with the javascript and text domain.
 	grunt.registerTask( 'test', [ 'jshint', 'checktextdomain' ]);
 
-	// Checks for errors, updates version, minify css and javascript and finaly runs i18n tasks.
+	// Updates version, minify css and javascript and finaly runs i18n tasks.
 	grunt.registerTask( 'dev', [ 'replace', 'cssmin', 'newer:uglify', 'makepot' ]);
 
 	/**
