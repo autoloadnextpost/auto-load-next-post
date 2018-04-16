@@ -13,6 +13,7 @@ var orig_curr_url       = window.location.href;
 var post_count          = 0;
 var stop_reading        = false;
 var scroll_up           = false;
+var article_container   = 'article';
 
 jQuery.noConflict();
 
@@ -20,6 +21,10 @@ jQuery( document ).ready( function() {
 	// Ensure auto_load_next_post_params exists to continue.
 	if ( typeof auto_load_next_post_params === 'undefined' ) {
 		return false;
+	}
+
+	if ( jQuery( 'article' ).length == 0 ) {
+		article_container = 'div';
 	}
 
 	// Don't do anything if post was loaded looking for comments.
@@ -31,10 +36,10 @@ jQuery( document ).ready( function() {
 	jQuery( content_container ).prepend( '<hr style="height:0px;margin:0px;padding:0px;" data-powered-by="alnp" data-initial-post="true" data-title="' + post_title + '" data-url="' + orig_curr_url + '"/>' );
 
 	// Mark the first article as the initial post.
-	jQuery( content_container ).find( 'article' ).attr( 'data-initial-post', true );
+	jQuery( content_container ).find( article_container ).attr( 'data-initial-post', true );
 
 	// Find the post ID of the initial loaded article.
-	var initial_post_id = jQuery( content_container ).find( 'article' ).attr( 'id' );
+	var initial_post_id = jQuery( content_container ).find( article_container ).attr( 'id' );
 
 	// Apply post ID to the first post divider.
 	if ( initial_post_id.length > 0 ) {
@@ -51,7 +56,7 @@ jQuery( document ).ready( function() {
 	scrollspy();
 
 	/**
-	 * Track Page View with Google Analytics.
+	 * Track pageviews with Google Analytics.
 	 *
 	 * It will first detect if Google Analytics is installed before
 	 * attempting to send a pageview.
@@ -103,7 +108,10 @@ jQuery( document ).ready( function() {
 		scroll_up = e.originalEvent.wheelDelta > 0;
 	});
 
+	// Note: We are using statechange instead of popstate
 	History.Adapter.bind( window, 'statechange', function() {
+		var state = History.getState(); // Note: We are using History.getState() instead of event.state
+
 		// If they returned back to the first post, then when you click the back button go to the url from which they came.
 		if ( scroll_up ) {
 			var states = History.savedStates;
@@ -116,25 +124,45 @@ jQuery( document ).ready( function() {
 			}
 		}
 
-		var state = History.getState();
-
 		// If the previous URL does not match the current URL then go back.
 		if ( state.url != curr_url ) {
-			var previous_post = jQuery( 'hr[data-url="' + state.url + '"]' );
+			var previous_post = jQuery( 'hr[data-url="' + state.url + '"]' ).next( article_container ).find( post_title_selector );
 
-			// Scroll to the top of the previous article.
+			// Is there a previous post?
 			if ( previous_post.length > 0 ) {
-				jQuery('html, body').animate({ scrollTop: (previous_post.offset().top) }, 1000 );
+				var previous_post_title = previous_post[0].dataset.title;
+
+				// Update the History ONLY if we are NOT in the customizer.
+				if ( ! is_customizer ) {
+					History.pushState(null, previous_post_title, state.url);
+				}
+
+				// Scroll to the top of the previous article.
+				jQuery( 'html, body' ).animate({ scrollTop: (previous_post.offset().top - 100) }, 1000, function() {
+					jQuery( 'body' ).trigger( 'alnp-previous-post', [ previous_post ] );
+				});
 			}
 		}
 	});
 
 }); // END document()
 
+/**
+ * ScrollSpy.
+ *
+ * 1. Load a new post once the post comes near the end.
+ * 2. If a new post has loaded and come into view, change the URL in the browser
+ *    address bar and the post title for history.
+ *
+ * This is done by looking for the post divider.
+ */
 function scrollspy() {
-	// Spy on post divider - changes the URL in browser location and loads a new post.
-	jQuery( 'hr[data-powered-by="alnp"]' ).on( 'scrollSpy:enter', alnp_enter );
-	jQuery( 'hr[data-powered-by="alnp"]' ).on( 'scrollSpy:exit', alnp_leave );
+	// Do not enter once the initial post has loaded.
+	if ( post_count > 0 ) {
+		jQuery( 'hr[data-powered-by="alnp"]' ).on( 'scrollSpy:enter', alnp_enter );
+	}
+
+	jQuery( 'hr[data-powered-by="alnp"]' ).on( 'scrollSpy:exit', alnp_leave ); // Loads next post.
 	jQuery( 'hr[data-powered-by="alnp"]' ).scrollSpy();
 } // END scrollspy()
 
