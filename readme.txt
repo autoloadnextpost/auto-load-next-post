@@ -151,7 +151,9 @@ It does. Just make sure that you activate the plugin on the site you want it use
 
 == Changelog ==
 = 1.4.10 : 16th April 2018 =
+* Added: Compatible HTML semantics lookup if HTML5 is not used for article.
 * Added: Alternative post navigation lookup for some theme frameworks.
+* Added: Storefront theme to the list of themes that work out of the box.
 * Changed: PHP minimum requirement to version 5.6
 * Fixed: Issue with plugin setting up default settings once activated.
 * Fixed: Issue with History.js already been loaded when previewing in the customizer.
