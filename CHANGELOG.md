@@ -1,5 +1,9 @@
-# 1.4.10 (2nd February 2018)
+# 1.4.10 (16th April 2018)
+* Added: Compatible HTML semantics lookup if HTML5 is not used for article.
 * Added: Alternative post navigation lookup for some theme frameworks.
+* Added: Storefront theme to the list of themes that work out of the box.
+* Changed: PHP minimum requirement to version 5.6
+* Fixed: Issue with plugin setting up default settings once activated.
 * Fixed: Issue with History.js already been loaded when previewing in the customizer.
 * Fixed: Issue with Google Analytics returning the full URL... sometimes.
 * Enhanced: Browser back button now scrolls to the top of the previous post if any. Thanks to @lex111
@@ -8,7 +12,11 @@
 * Enhanced: Hidden the post divider completely. Inline styling is used instead for better compatibility with themes.
 * Enhanced: ScrollSpy now identifies the post divider via the new data attribute.
 * Enhanced: Auto Load Next Post now does not run if the post url has a hashtag for a specific comment on an initial load.
+* Improved: The uninstallation of plugin. Now refreshes the permalinks to remove custom rewrite permalink for the plugin.
+* Improved: Code base in preparation for Auto Load Next Post Pro.
 * Updated: Template file header to provide clear information for overriding repeater template.
+* Updated: Settings page to display the theme selectors descriptions rather than using tips.
+* Updated: The help tab on the settings page.
 * Updated: POT file.
 * Updated: Documentation links in the plugin.
 * Updated: Documentation links in readme.txt
