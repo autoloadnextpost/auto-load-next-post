@@ -2,10 +2,10 @@
 Contributors: autoloadnextpost, sebd86
 Donate link: https://autoloadnextpost.com/donate/
 Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scroll, infinite scrolling, post scrolling, pagination, scroll, post history, browsing history, navigation
-Requires PHP: 5.3
-Requires at least: 4.3
-Tested up to: 4.9.2
-Stable tag: 1.4.10-beta.1
+Requires PHP: 5.6
+Requires at least: 4.4
+Tested up to: 4.9.5
+Stable tag: 1.4.10-beta.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,9 +13,11 @@ Increase your pageviews on your site as readers continue reading your posts scro
 
 == Description ==
 
-You have great content. That's great but you shouldn't have to work twice as hard to get the pageviews you want. While Auto Load Next Post is not the only infinite scrolling plugin out there it is the first that is designed to work and match the theme you are using and track the content that is viewed. Not the excerpts in your post archives like other plugins out there, all of your posts content.
+You have great content. That's great but you shouldn't have to work twice as hard to get the pageviews you want. While Auto Load Next Post is not the only infinite scrolling plugin out there it is the first that is designed to work and match the theme you are using and track the content that is viewed and not the excerpts in your post archives like other plugins out there. All of your posts content.
 
 **Auto Load Next Post templating experience is the best in class - by a long shot.**
+
+Don't take my word for it. [Read what Rich Tabor](https://wordpress.org/support/topic/best-in-class-35/) "Author of [ThemeBeans](https://themebeans.com/?utm_source=wp-plugin-repo&utm_medium=link)" had to say in his review.
 
 = What is Auto Load Next Post? =
 
@@ -37,7 +39,7 @@ Auto Load Next Post is a plugin for self-hosted WordPress sites. This means you 
 
 = Demo Site =
 
-Want to see how it works? [Go to the demo site](https://demo.autoloadnextpost.com) and view any single post. Scroll down and see the plugin in action.
+Want to see how it works? [Go to the demo site](https://demo.autoloadnextpost.com?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=demo-link) and view any single post. Scroll down and see the plugin in action.
 
 = Increase Your PageViews Today =
 
@@ -60,15 +62,6 @@ Extendable and open source — Auto Load Next Post is created with developers in
 
 This plugin is created and maintained by [Sébastien Dumont](https://sebastiendumont.com).
 
-**Libraries Used**
-
-- [chosen](https://github.com/harvesthq/chosen)
-- [jQuery.history](https://github.com/browserstate/history.js)
-- [jQuery.tiptip](https://github.com/drewwilson/TipTip)
-- [scrollspy](https://github.com/thesmart/jquery-scrollspy)
-
-The libraries above are used with the plugin.
-
 **More information**
 
 - [Visit Auto Load Next Post website](https://autoloadnextpost.com)
@@ -83,9 +76,8 @@ Installing "Auto Load Next Post" can be done either by searching for "Auto Load 
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 4. Go to the plugin settings page 'Settings > Auto Load Next Post'.
 5. Enter each of the selectors specified for the theme you are using and press "Save Changes".
-6. Finally, add support for **Auto Load Next Post** by simply adding a line of code to your ***functions.php*** file.
 
-Once you have activated the plugin, you may get an admin notice telling you that you have not declared support for the plugin. This is perfectly normal and with a little setting up, the notification will remove automatically. There are two buttons. The first leads you to documentation to help you support the plugin. The second allows you to force hide the admin notice. - This notification does not show for any of WordPress core themes.
+Once you have activated the plugin, you may get an admin notice telling you that you have not declared support for the plugin. This is perfectly normal and with a little setting up, the notification will remove automatically. There are two buttons. The first leads you to documentation to help you support the plugin in your theme. The second allows you to hide the admin notice. - This notification does not show for any of WordPress core themes.
 
 See [documentation](https://autoloadnextpost.com/documentation/) for more information.
 
@@ -136,7 +128,7 @@ No, it does not. You may follow this guide to help you [find your theme selector
 
 = My theme does not work with the plugin, what do I do? =
 
-If after adding theme support to your functions.php file, first, check that you have a post navigation at the end of your post. If one does exists then you may need to copy and modify the template file **content-partial.php** in order to support your theme.
+If after adding theme support to your `functions.php` file, first, check that you have a post navigation at the end of your post. If one does exists then you may need to copy and modify the template file **content-partial.php** in order to support your theme.
 
 Not all themes are coded the same way so some alterations will be needed to match the theme. If you need help with this then I provide [theme support](https://autoloadnextpost.com/product/theme-support/) on request.
 
@@ -158,8 +150,10 @@ It does. Just make sure that you activate the plugin on the site you want it use
 2. Theme Support Admin Notification
 
 == Changelog ==
-= 1.4.10 : 2nd February 2018 =
+= 1.4.10 : 16th April 2018 =
 * Added: Alternative post navigation lookup for some theme frameworks.
+* Changed: PHP minimum requirement to version 5.6
+* Fixed: Issue with plugin setting up default settings once activated.
 * Fixed: Issue with History.js already been loaded when previewing in the customizer.
 * Fixed: Issue with Google Analytics returning the full URL... sometimes.
 * Enhanced: Browser back button now scrolls to the top of the previous post if any. Thanks to @lex111
@@ -168,7 +162,11 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Enhanced: Hidden the post divider completely. Inline styling is used instead for better compatibility with themes.
 * Enhanced: ScrollSpy now identifies the post divider via the new data attribute.
 * Enhanced: Auto Load Next Post now does not run if the post url has a hashtag for a specific comment on an initial load.
+* Improved: The uninstallation of plugin. Now refreshes the permalinks to remove custom rewrite permalink for the plugin.
+* Improved: Code base in preparation for Auto Load Next Post Pro.
 * Updated: Template file header to provide clear information for overriding repeater template.
+* Updated: Settings page to display the theme selectors descriptions rather than using tips.
+* Updated: The help tab on the settings page.
 * Updated: POT file.
 * Updated: Documentation links in the plugin.
 * Updated: Documentation links in readme.txt
@@ -286,18 +284,5 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Initial version
 
 == Upgrade Notice ==
-= 1.4.10 : 2nd February 2018 =
-* Added: Alternative post navigation lookup for some theme frameworks.
-* Fixed: Issue with History.js already been loaded when previewing in the customizer.
-* Fixed: Issue with Google Analytics returning the full URL... sometimes.
-* Enhanced: Browser back button now scrolls to the top of the previous post if any. Thanks to @lex111
-* Enhanced: Detect if Auto Load Next Post parameters exist.
-* Enhanced: Added attributes to identify which post is the initial post both on the post divider and the article.
-* Enhanced: Hidden the post divider completely. Inline styling is used instead for better compatibility with themes.
-* Enhanced: ScrollSpy now identifies the post divider via the new data attribute.
-* Enhanced: Auto Load Next Post now does not run if the post url has a hashtag for a specific comment on an initial load.
-* Updated: Template file header to provide clear information for overriding repeater template.
-* Updated: POT file.
-* Updated: Documentation links in the plugin.
-* Updated: Documentation links in readme.txt
-* Updated: FAQ's in readme.txt
+= 1.4.10 : 16th April 2018 =
+Many corrections and improvements have been made in this release. Please see the changelog for a full list.
