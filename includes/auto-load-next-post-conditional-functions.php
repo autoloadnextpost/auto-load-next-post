@@ -96,3 +96,22 @@ if ( ! function_exists( 'alnp_template_location' ) ) {
 
 	add_filter('alnp_template_location', 'alnp_template_location');
 }
+
+if ( ! function_exists( 'is_alnp_pro_version_installed' ) ) {
+	/**
+	 * Detects if Auto Load Next Post Pro is installed.
+	 *
+	 * @access public
+	 * @since  1.4.10
+	 * @return boolen
+	 */
+	function is_alnp_pro_version_installed() {
+		$active_plugins = (array) get_option( 'active_plugins', array() );
+
+		if ( is_multisite() ) {
+			$active_plugins = array_merge( $active_plugins, get_site_option( 'active_sitewide_plugins', array() ) );
+		}
+
+		return in_array( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins ) || array_key_exists( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins );
+	}
+}
