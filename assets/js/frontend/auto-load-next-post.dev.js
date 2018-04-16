@@ -174,7 +174,7 @@ jQuery( document ).ready( function() {
 
 		// If the previous URL does not match the current URL then go back.
 		if ( state.url != curr_url ) {
-			var previous_post = jQuery('hr[data-url="' + state.url + '"]');
+			var previous_post = jQuery('hr[data-url="' + state.url + '"]').next('article').find( post_title_selector );
 
 			// Is there a previous post?
 			if ( previous_post.length > 0 ) {
@@ -187,7 +187,7 @@ jQuery( document ).ready( function() {
 				}
 
 				// Scroll to the top of the previous article.
-				jQuery('html, body').animate({ scrollTop: (previous_post.offset().top + 5) }, 1000, function() {
+				jQuery('html, body').animate({ scrollTop: (previous_post.offset().top - 100) }, 1000, function() {
 					jQuery('body').trigger( 'alnp-previous-post', [ previous_post ] );
 				});
 			}
@@ -258,7 +258,7 @@ function changePost( divider, $direction ) {
 	console.log( 'Direction: ' + $direction);
 
 	// Look for the next post to load if any when leaving previous post.
-	if ( direction == 'leaving' ) {
+	if ( $direction == 'leave' ) {
 		auto_load_next_post();
 	}
 } // END changePost()
