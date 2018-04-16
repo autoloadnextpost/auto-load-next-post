@@ -38,7 +38,7 @@ jQuery( document ).ready( function() {
 
 	// Apply post ID to the first post divider.
 	if ( initial_post_id.length > 0 ) {
-		initial_post_id = initial_post_id.replace('post-', ''); // Make sure that only the post ID remains.
+		initial_post_id = initial_post_id.replace( 'post-', '' ); // Make sure that only the post ID remains.
 		jQuery( content_container ).find( 'article[data-initial-post]' ).prev().attr( 'data-post-id', initial_post_id );
 	}
 
@@ -60,7 +60,7 @@ jQuery( document ).ready( function() {
 	 *
 	 * Also supports Google Analytics by Monster Insights should it be used.
 	 */
-	jQuery('body').on( 'alnp-post-changed', function( e, post_title, post_url, post_id, post_count, stop_reading ) {
+	jQuery( 'body' ).on( 'alnp-post-changed', function( e, post_title, post_url, post_id, post_count, stop_reading ) {
 		if ( track_pageviews != 'yes' ) {
 			return;
 		}
@@ -99,7 +99,7 @@ jQuery( document ).ready( function() {
 	});
 
 	// If the browser back button is pressed or the user scrolled up then change history state.
-	jQuery('body').on( 'mousewheel', function( e ) {
+	jQuery( 'body' ).on( 'mousewheel', function( e ) {
 		scroll_up = e.originalEvent.wheelDelta > 0;
 	});
 
@@ -120,7 +120,7 @@ jQuery( document ).ready( function() {
 
 		// If the previous URL does not match the current URL then go back.
 		if ( state.url != curr_url ) {
-			var previous_post = jQuery('hr[data-url="' + state.url + '"]');
+			var previous_post = jQuery( 'hr[data-url="' + state.url + '"]' );
 
 			// Scroll to the top of the previous article.
 			if ( previous_post.length > 0 ) {
@@ -133,60 +133,62 @@ jQuery( document ).ready( function() {
 
 function scrollspy() {
 	// Spy on post divider - changes the URL in browser location and loads a new post.
-	jQuery('hr[data-powered-by="alnp"]').on( 'scrollSpy:enter', alnp_enter );
-	jQuery('hr[data-powered-by="alnp"]').on( 'scrollSpy:exit', alnp_leave );
-	jQuery('hr[data-powered-by="alnp"]').scrollSpy();
+	jQuery( 'hr[data-powered-by="alnp"]' ).on( 'scrollSpy:enter', alnp_enter );
+	jQuery( 'hr[data-powered-by="alnp"]' ).on( 'scrollSpy:exit', alnp_leave );
+	jQuery( 'hr[data-powered-by="alnp"]' ).scrollSpy();
 } // END scrollspy()
 
 // Entering a post
 function alnp_enter() {
 	var divider = jQuery(this);
 
-	jQuery('body').trigger( 'alnp-enter', [ divider ] );
+	jQuery( 'body' ).trigger( 'alnp-enter', [ divider ] );
 
-	changeURL( divider, 'enter' );
+	changePost( divider, 'enter' );
 } // END alnp_enter()
 
-// Leaving a Post
+// Leaving a post
 function alnp_leave() {
 	var divider = jQuery(this);
 
-	jQuery('body').trigger( 'alnp-leave', [ divider ] );
+	jQuery( 'body' ).trigger( 'alnp-leave', [ divider ] );
 
-	changeURL( divider, 'leave' );
+	changePost( divider, 'leave' );
 } // END alnp_leave()
 
-// Change URL
-function changeURL( divider, $direction ) {
+// Change Post
+function changePost( divider, $direction ) {
 	var el           = jQuery(divider);
 	var this_url     = el.attr( 'data-url' );
 	var this_title   = el.attr( 'data-title' );
 	var this_post_id = el.attr( 'data-post-id' );
 	var initial_post = el.attr( 'data-initial-post' );
 	var offset       = el.offset();
-	var scrollTop    = jQuery(document).scrollTop();
+	var scrollTop    = jQuery( document ).scrollTop();
 
 	// If exiting or entering from the top, then change the URL.
 	if ( ( offset.top - scrollTop ) <= 200 && curr_url != this_url ) {
 		curr_url = this_url;
 
 		// Update the History ONLY if we are NOT in the customizer.
-		if ( !is_customizer ) {
+		if ( ! is_customizer ) {
 			History.pushState(null, this_title, this_url);
 		}
 
-		jQuery('body').trigger( 'alnp-post-changed', [ this_title, this_url, this_post_id, post_count, stop_reading, initial_post ] );
+		jQuery( 'body' ).trigger( 'alnp-post-changed', [ this_title, this_url, this_post_id, post_count, stop_reading, initial_post ] );
 	}
 
-	// Look for the next post to load if any.
-	auto_load_next_post();
-} // END changeURL()
+	// Look for the next post to load if any when leaving previous post.
+	if ( $direction == 'leave' ) {
+		auto_load_next_post();
+	}
+} // END changePost()
 
 /**
  * This is the main function.
  */
 function auto_load_next_post() {
-	// If the user can no read any more then stop looking for new posts.
+	// If the user can not read any more then stop looking for new posts.
 	if ( stop_reading ) {
 		return;
 	}
@@ -200,7 +202,7 @@ function auto_load_next_post() {
 	}
 
 	// Override the post url via a trigger.
-	jQuery('body').trigger( 'alnp-post-url', [ post_count, post_url ] );
+	jQuery( 'body' ).trigger( 'alnp-post-url', [ post_count, post_url ] );
 
 	// If the post navigation is not found then dont continue.
 	if ( !post_url ) return;
@@ -224,14 +226,14 @@ function auto_load_next_post() {
 		var post = jQuery( "<div>" + data + "</div>" );
 
 		// Allows the post data to be modified before being appended.
-		jQuery('body').trigger( 'alnp-post-data', [ post ] );
+		jQuery( 'body' ).trigger( 'alnp-post-data', [ post ] );
 
 		data = post.html(); // Returns the HTML data of the next post that was loaded.
 
 		var post_divider = '<hr style="height:0px;margin:0px;padding:0px;" data-powered-by="alnp" data-initial-post="false" data-url="' + post_url + '"/>';
 		var post_html    = jQuery( post_divider + data );
 		var post_title   = post_html.find( post_title_selector ); // Find the post title of the loaded article.
-		var post_ID      = jQuery(post).find( 'article' ).attr( 'id' ); // Find the post ID of the loaded article.
+		var post_ID      = jQuery( post ).find( article_container ).attr( 'id' ); // Find the post ID of the loaded article.
 
 		if ( typeof post_ID !== typeof undefined && post_ID !== "" ) {
 			post_ID = post_ID.replace('post-', ''); // Make sure that only the post ID remains.
@@ -254,7 +256,7 @@ function auto_load_next_post() {
 		post_count = post_count+1; // Updates the post count.
 
 		// Run an event once the post has loaded.
-		jQuery('body').trigger( 'alnp-post-loaded', [ post_title.text(), post_url, post_ID, post_count ] );
+		jQuery( 'body' ).trigger( 'alnp-post-loaded', [ post_title.text(), post_url, post_ID, post_count ] );
 	});
 
 } // END auto_load_next_post()

@@ -85,11 +85,11 @@ jQuery( document ).ready( function() {
 	// Initialise scrollSpy
 	scrollspy();
 
-	jQuery('body').on( 'alnp-enter', function( e ) {
+	jQuery( 'body' ).on( 'alnp-enter', function( e ) {
 		console.log( 'Entering new post' );
 	});
 
-	jQuery('body').on( 'alnp-leaving', function( e ) {
+	jQuery( 'body' ).on( 'alnp-leaving', function( e ) {
 		console.log( 'Leaving post' );
 	});
 
@@ -103,7 +103,7 @@ jQuery( document ).ready( function() {
 	 *
 	 * Also supports Google Analytics by Monster Insights should it be used.
 	 */
-	jQuery('body').on( 'alnp-post-changed', function( e, post_title, post_url, post_id, post_count, stop_reading ) {
+	jQuery( 'body' ).on( 'alnp-post-changed', function( e, post_title, post_url, post_id, post_count, stop_reading ) {
 		if ( track_pageviews != 'yes' ) {
 			return;
 		}
@@ -154,7 +154,7 @@ jQuery( document ).ready( function() {
 	});
 
 	// If the browser back button is pressed or the user scrolled up then change history state.
-	jQuery('body').on( 'mousewheel', function( e ) {
+	jQuery( 'body' ).on( 'mousewheel', function( e ) {
 		scroll_up = e.originalEvent.wheelDelta > 0;
 	});
 
@@ -193,8 +193,8 @@ jQuery( document ).ready( function() {
 				}
 
 				// Scroll to the top of the previous article.
-				jQuery('html, body').animate({ scrollTop: (previous_post.offset().top - 100) }, 1000, function() {
-					jQuery('body').trigger( 'alnp-previous-post', [ previous_post ] );
+				jQuery( 'html, body' ).animate({ scrollTop: (previous_post.offset().top - 100) }, 1000, function() {
+					jQuery( 'body' ).trigger( 'alnp-previous-post', [ previous_post ] );
 				});
 			}
 		}
@@ -214,18 +214,18 @@ jQuery( document ).ready( function() {
 function scrollspy() {
 	// Do not enter once the initial post has loaded.
 	if ( post_count > 0 ) {
-		jQuery('hr[data-powered-by="alnp"]').on( 'scrollSpy:enter', alnp_enter );
+		jQuery( 'hr[data-powered-by="alnp"]' ).on( 'scrollSpy:enter', alnp_enter );
 	}
 
-	jQuery('hr[data-powered-by="alnp"]').on( 'scrollSpy:exit', alnp_leave ); // Loads next post.
-	jQuery('hr[data-powered-by="alnp"]').scrollSpy();
+	jQuery( 'hr[data-powered-by="alnp"]' ).on( 'scrollSpy:exit', alnp_leave ); // Loads next post.
+	jQuery( 'hr[data-powered-by="alnp"]' ).scrollSpy();
 } // END scrollspy()
 
 // Entering a post
 function alnp_enter() {
 	var divider = jQuery(this);
 
-	jQuery('body').trigger( 'alnp-enter', [ divider ] );
+	jQuery( 'body' ).trigger( 'alnp-enter', [ divider ] );
 
 	changePost( divider, 'enter' );
 } // END alnp_enter()
@@ -234,7 +234,7 @@ function alnp_enter() {
 function alnp_leave() {
 	var divider = jQuery(this);
 
-	jQuery('body').trigger( 'alnp-leave', [ divider ] );
+	jQuery( 'body' ).trigger( 'alnp-leave', [ divider ] );
 
 	changePost( divider, 'leave' );
 } // END alnp_leave()
@@ -258,7 +258,7 @@ function changePost( divider, $direction ) {
 			History.pushState(null, this_title, this_url);
 		}
 
-		jQuery('body').trigger( 'alnp-post-changed', [ this_title, this_url, this_post_id, post_count, stop_reading, initial_post ] );
+		jQuery( 'body' ).trigger( 'alnp-post-changed', [ this_title, this_url, this_post_id, post_count, stop_reading, initial_post ] );
 	}
 
 	console.log( 'Direction: ' + $direction);
@@ -287,7 +287,7 @@ function auto_load_next_post() {
 	}
 
 	// Override the post url via a trigger.
-	jQuery('body').trigger( 'alnp-post-url', [ post_count, post_url ] );
+	jQuery( 'body' ).trigger( 'alnp-post-url', [ post_count, post_url ] );
 
 	// For some browsers, `post_url` is undefined; for others,
 	// `post_url` is false. So we check for both possibilites.
@@ -322,7 +322,7 @@ function auto_load_next_post() {
 		var post = jQuery( "<div>" + data + "</div>" );
 
 		// Allows the post data to be modified before being appended.
-		jQuery('body').trigger( 'alnp-post-data', [ post ] );
+		jQuery( 'body' ).trigger( 'alnp-post-data', [ post ] );
 
 		data = post.html(); // Returns the HTML data of the next post that was loaded.
 
@@ -366,7 +366,7 @@ function auto_load_next_post() {
 		console.log( 'Post Count: ' + post_count );
 
 		// Run an event once the post has loaded.
-		jQuery('body').trigger( 'alnp-post-loaded', [ post_title.text(), post_url, post_ID, post_count ] );
+		jQuery( 'body' ).trigger( 'alnp-post-loaded', [ post_title.text(), post_url, post_ID, post_count ] );
 	});
 
 } // END auto_load_next_post()
