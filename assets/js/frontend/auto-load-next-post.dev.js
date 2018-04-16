@@ -158,47 +158,47 @@ jQuery( document ).ready( function() {
 		scroll_up = e.originalEvent.wheelDelta > 0;
 	});
 
-	// Note: We are using statechange instead of popstate
-	History.Adapter.bind( window, 'statechange', function() {
-		var state = History.getState(); // Note: We are using History.getState() instead of event.state
+	// Update the History ONLY if we are NOT in the customizer.
+	if ( ! is_customizer ) {
+		// Note: We are using statechange instead of popstate
+		History.Adapter.bind( window, 'statechange', function() {
+			var state = History.getState(); // Note: We are using History.getState() instead of event.state
 
-		console.log(state);
+			console.log(state);
 
-		// If they returned back to the first post, then when you click the back button go to the url from which they came.
-		if ( scroll_up ) {
-			var states = History.savedStates;
-			var prev_state_index = states.length - 2;
-			var prev_state = states[prev_state_index];
+			// If they returned back to the first post, then when you click the back button go to the url from which they came.
+			if ( scroll_up ) {
+				var states = History.savedStates;
+				var prev_state_index = states.length - 2;
+				var prev_state = states[prev_state_index];
 
-			console.log( 'Previous URL: ', prev_state.url );
+				console.log( 'Previous URL: ', prev_state.url );
 
-			if ( prev_state.url === orig_curr_url ) {
-				window.location = document.referrer;
-				return;
-			}
-		}
-
-		// If the previous URL does not match the current URL then go back.
-		if ( state.url != curr_url ) {
-			var previous_post = jQuery( 'hr[data-url="' + state.url + '"]' ).next( article_container ).find( post_title_selector );
-
-			// Is there a previous post?
-			if ( previous_post.length > 0 ) {
-				var previous_post_title = previous_post[0].dataset.title;
-				console.log( 'Previous Post: ' + previous_post_title );
-
-				// Update the History ONLY if we are NOT in the customizer.
-				if ( ! is_customizer ) {
-					History.pushState(null, previous_post_title, state.url);
+				if ( prev_state.url === orig_curr_url ) {
+					window.location = document.referrer;
+					return;
 				}
-
-				// Scroll to the top of the previous article.
-				jQuery( 'html, body' ).animate({ scrollTop: (previous_post.offset().top - 100) }, 1000, function() {
-					jQuery( 'body' ).trigger( 'alnp-previous-post', [ previous_post ] );
-				});
 			}
-		}
-	});
+
+			// If the previous URL does not match the current URL then go back.
+			if ( state.url != curr_url ) {
+				var previous_post = jQuery( 'hr[data-url="' + state.url + '"]' ).next( article_container ).find( post_title_selector );
+
+				// Is there a previous post?
+				if ( previous_post.length > 0 ) {
+					var previous_post_title = previous_post[0].dataset.title;
+					console.log( 'Previous Post: ' + previous_post_title );
+
+					History.pushState(null, previous_post_title, state.url);
+
+					// Scroll to the top of the previous article.
+					jQuery( 'html, body' ).animate({ scrollTop: (previous_post.offset().top - 100) }, 1000, function() {
+						jQuery( 'body' ).trigger( 'alnp-previous-post', [ previous_post ] );
+					});
+				}
+			}
+		});
+	}
 
 }); // END document()
 
