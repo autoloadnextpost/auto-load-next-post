@@ -289,8 +289,8 @@ function run_auto_load_next_post() {
 } // END run_auto_load_next_post()
 
 // Fetch the Php version checker.
-if ( ! class_exists('WP_Update_Php')) {
-	require_once('wp-update-php/wp-update-php.php');
+if ( ! class_exists( 'WP_Update_Php' ) ) {
+	require_once( dirname( __FILE__ ) . '/wp-update-php/wp-update-php.php' );
 }
 $updatePhp = new WP_Update_Php(
 	array(
@@ -298,12 +298,12 @@ $updatePhp = new WP_Update_Php(
 		'textdomain' => 'auto-load-next-post'
 	),
 	array(
-		'minimum_version' => '5.3.0',
-		'recommended_version' => '5.4.7'
+		'minimum_version' => '5.6.0',
+		'recommended_version' => '7.2'
 	)
 );
 
 // If the miniumum version of PHP required is available then run the plugin.
-if ($updatePhp->does_it_meet_required_php_version()) {
+if ( $updatePhp->does_it_meet_required_php_version() ) {
 	add_action('plugins_loaded', 'run_auto_load_next_post', 20);
 }
