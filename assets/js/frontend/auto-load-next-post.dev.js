@@ -22,6 +22,22 @@ jQuery( document ).ready( function() {
 		return false;
 	}
 
+	// Ensure the main required selectors are set before continuing.
+	if ( content_container.length < 0 ) {
+		console.error( 'Auto Load Next Post requires that you set the content container selector.' );
+		return false;
+	}
+
+	if ( post_title_selector.length < 0 ) {
+		console.error( 'Auto Load Next Post requires that you set the post title selector.' );
+		return false;
+	}
+
+	if ( nav_container.length < 0 ) {
+		console.error( 'Auto Load Next Post requires that you set the post navigation container selector.' );
+		return false;
+	}
+
 	if ( is_customizer ) {
 		console.log( 'You are previewing with the customizer.' );
 	}
@@ -72,7 +88,7 @@ jQuery( document ).ready( function() {
 	});
 
 	/**
-	 * Track Page View with Google Analytics.
+	 * Track pageviews with Google Analytics.
 	 *
 	 * It will first detect if Google Analytics is installed before
 	 * attempting to send a pageview.
@@ -136,7 +152,12 @@ jQuery( document ).ready( function() {
 		scroll_up = e.originalEvent.wheelDelta > 0;
 	});
 
+	// Note: We are using statechange instead of popstate
 	History.Adapter.bind( window, 'statechange', function() {
+		var state = History.getState(); // Note: We are using History.getState() instead of event.state
+
+		console.log(state);
+
 		// If they returned back to the first post, then when you click the back button go to the url from which they came.
 		if ( scroll_up ) {
 			var states = History.savedStates;
@@ -151,27 +172,46 @@ jQuery( document ).ready( function() {
 			}
 		}
 
-		var state = History.getState();
-
-		console.log( 'State URL: ' + state.url );
-
 		// If the previous URL does not match the current URL then go back.
 		if ( state.url != curr_url ) {
 			var previous_post = jQuery('hr[data-url="' + state.url + '"]');
 
-			// Scroll to the top of the previous article.
+			// Is there a previous post?
 			if ( previous_post.length > 0 ) {
-				jQuery('html, body').animate({ scrollTop: (previous_post.offset().top) }, 1000 );
+				var previous_post_title = previous_post[0].dataset.title;
+				console.log( 'Previous Post: ' + previous_post_title );
+
+				// Update the History ONLY if we are NOT in the customizer.
+				if ( !is_customizer ) {
+					History.pushState(null, previous_post_title, state.url);
+				}
+
+				// Scroll to the top of the previous article.
+				jQuery('html, body').animate({ scrollTop: (previous_post.offset().top + 5) }, 1000, function() {
+					jQuery('body').trigger( 'alnp-previous-post', [ previous_post ] );
+				});
 			}
 		}
 	});
 
 }); // END document()
 
+/**
+ * ScrollSpy.
+ *
+ * 1. Load a new post once the post comes near the end.
+ * 2. If a new post has loaded and come into view, change the URL in the browser
+ *    address bar and the post title for history.
+ *
+ * This is done by looking for the post divider.
+ */
 function scrollspy() {
-	// Spy on post divider - changes the URL in browser location and loads a new post.
-	jQuery('hr[data-powered-by="alnp"]').on( 'scrollSpy:enter', alnp_enter );
-	jQuery('hr[data-powered-by="alnp"]').on( 'scrollSpy:exit', alnp_leave );
+	// Do not enter once the initial post has loaded.
+	if ( post_count > 0 ) {
+		jQuery('hr[data-powered-by="alnp"]').on( 'scrollSpy:enter', alnp_enter );
+	}
+
+	jQuery('hr[data-powered-by="alnp"]').on( 'scrollSpy:exit', alnp_leave ); // Loads next post.
 	jQuery('hr[data-powered-by="alnp"]').scrollSpy();
 } // END scrollspy()
 
@@ -181,20 +221,20 @@ function alnp_enter() {
 
 	jQuery('body').trigger( 'alnp-enter', [ divider ] );
 
-	changeURL( divider, 'enter' );
+	changePost( divider, 'enter' );
 } // END alnp_enter()
 
-// Leaving a Post
+// Leaving a post
 function alnp_leave() {
 	var divider = jQuery(this);
 
 	jQuery('body').trigger( 'alnp-leave', [ divider ] );
 
-	changeURL( divider, 'leave' );
+	changePost( divider, 'leave' );
 } // END alnp_leave()
 
-// Change URL
-function changeURL( divider, $direction ) {
+// Change Post
+function changePost( divider, $direction ) {
 	var el           = jQuery(divider);
 	var this_url     = el.attr( 'data-url' );
 	var this_title   = el.attr( 'data-title' );
@@ -217,15 +257,17 @@ function changeURL( divider, $direction ) {
 
 	console.log( 'Direction: ' + $direction);
 
-	// Look for the next post to load if any.
-	auto_load_next_post();
-} // END changeURL()
+	// Look for the next post to load if any when leaving previous post.
+	if ( direction == 'leaving' ) {
+		auto_load_next_post();
+	}
+} // END changePost()
 
 /**
  * This is the main function.
  */
 function auto_load_next_post() {
-	// If the user can no read any more then stop looking for new posts.
+	// If the user can not read any more then stop looking for new posts.
 	if ( stop_reading ) {
 		return;
 	}
@@ -290,7 +332,12 @@ function auto_load_next_post() {
 			console.error( 'Post ID was not found.' );
 		}
 
-		console.log( 'Post Title: ' + post_title.text() );
+		// Check if the post title exists.
+		if ( post_title.length > 0 ) {
+			console.log( 'Post Title: ' + post_title.text() );
+		} else {
+			console.log( 'Post title was not found!' );
+		}
 
 		jQuery( content_container ).append( post_html ); // Add next post.
 
