@@ -5,29 +5,34 @@
  * General core functions available for both the front-end and admin.
  *
  * @since    1.0.0
- * @version  1.4.8
+ * @version  1.4.10
  * @author   Sébastien Dumont
  * @category Core
  * @package  Auto Load Next Post
  * @license  GPL-2.0+
  */
 
-if ( ! defined('ABSPATH')) {
-	exit; // Exit if accessed directly.
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
 // Include core functions
-include('auto-load-next-post-conditional-functions.php');
-include('auto-load-next-post-formatting-functions.php');
+include( dirname( __FILE__ ) . '/auto-load-next-post-conditional-functions.php');
+include( dirname( __FILE__ ) . '/auto-load-next-post-formatting-functions.php');
 
 /**
  * When the 'partial' endpoint is used on a post, retrieve only the post content.
+ *
+ * @access public
+ * @since  1.0.0
+ * @global $wp_query
  */
 function auto_load_next_post_template_redirect() {
 	global $wp_query;
 
 	// If this is not a request for partial or a singular object then bail
-	if ( ! isset($wp_query->query_vars['partial']) || ! is_singular()) {
+	if ( ! isset( $wp_query->query_vars['partial'] ) || ! is_singular() ) {
 		return;
 	}
 
@@ -52,12 +57,13 @@ function auto_load_next_post_template_redirect() {
 
 	exit;
 }
-add_action('template_redirect', 'auto_load_next_post_template_redirect');
+add_action( 'template_redirect', 'auto_load_next_post_template_redirect' );
 
 /**
  * Adds the comments template after the post content.
  *
- * @since 1.4.8
+ * @access public
+ * @since  1.4.8
  */
 function auto_load_next_post_comments() {
 	// If comments are open or we have at least one comment, load up the comment template.
@@ -65,12 +71,13 @@ function auto_load_next_post_comments() {
 		comments_template();
 	endif;
 }
-add_action('alnp_load_after_content', 'auto_load_next_post_comments', 1, 5);
+add_action( 'alnp_load_after_content', 'auto_load_next_post_comments', 1, 5 );
 
 /**
  * Adds the post navigation for the previous link only after the post content.
  *
- * @since 1.4.8
+ * @access public
+ * @since  1.4.8
  */
 function auto_load_next_post_navigation() {
 	?>
@@ -79,4 +86,4 @@ function auto_load_next_post_navigation() {
 	</nav>
 	<?php
 }
-add_action('alnp_load_after_content', 'auto_load_next_post_navigation', 1, 10);
+add_action( 'alnp_load_after_content', 'auto_load_next_post_navigation', 1, 10 );

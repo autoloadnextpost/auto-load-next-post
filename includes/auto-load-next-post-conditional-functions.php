@@ -5,41 +5,42 @@
  * Functions for determining the current query/page.
  *
  * @since    1.0.0
- * @version  1.4.8
+ * @version  1.4.10
  * @author   Sébastien Dumont
  * @category Core
  * @package  Auto Load Next Post
  * @license  GPL-2.0+
  */
 
-if ( ! defined('ABSPATH')) {
-	exit; // Exit if accessed directly.
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-if ( ! function_exists('auto_load_next_post_is_ajax')) {
+if ( ! function_exists( 'auto_load_next_post_is_ajax' ) ) {
 	/**
 	 * Returns true when the page is loaded via ajax.
 	 *
-	 * @since  1.0.0
 	 * @access public
+	 * @since  1.0.0
 	 * @return bool
 	 */
 	function auto_load_next_post_is_ajax() {
-		if (defined('DOING_AJAX')) {
+		if ( defined( 'DOING_AJAX' ) ) {
 			return true;
 		}
 
-		return(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') ? true : false;
+		return( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest' ) ? true : false;
 	} // END auto_load_next_post_is_ajax
 }
 
-if ( ! function_exists('supports_alnp')) {
+if ( ! function_exists( 'supports_alnp' ) ) {
 	/**
 	 * Returns true or false if Auto Load Next Post supports the theme.
 	 *
-	 * @since   1.4.3
-	 * @version 1.4.9
 	 * @access  public
+	 * @since   1.4.3
+	 * @version 1.4.10
 	 * @return  boolen
 	 */
 	function supports_alnp() {
@@ -58,13 +59,13 @@ if ( ! function_exists('supports_alnp')) {
 	} // END supports_alnp()
 }
 
-if ( ! function_exists('alnp_template_location')) {
+if ( ! function_exists( 'alnp_template_location' ) ) {
 	/**
 	 * Filters the template location for get_template_part().
 	 *
+	 * @access  public
 	 * @since   1.4.8
 	 * @version 1.4.9
-	 * @access  public
 	 * @return  boolen
 	 */
 	function alnp_template_location() {
