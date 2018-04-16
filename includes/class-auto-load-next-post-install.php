@@ -1,0 +1,165 @@
+<?php
+/**
+ * Auto Load Next Post - Installation related functions and actions.
+ *
+ * @class    Auto_Load_Next_Post_Install
+ * @author   Sébastien Dumont
+ * @category Classes
+ * @package  Auto Load Next Post
+ * @license  GPL-2.0+
+ * @since    1.0.0
+ * @version  1.4.10
+ */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
+
+	class Auto_Load_Next_Post_Install {
+
+		/**
+		 * Plugin version.
+		 *
+		 * @access private
+		 * @static
+		 * @since 1.4.10
+		 * @var string
+		 */
+		private static $current_version;
+
+		/**
+		 * Constructor.
+		 *
+		 * @since  1.0.0
+		 * @access public
+		 */
+		public function __construct() {
+			add_action( 'init', array( __CLASS__, 'add_rewrite_endpoint' ), 0 );
+			add_action( 'init', array( __CLASS__, 'check_version' ), 5 );
+
+			// Get plugin version.
+			self::$current_version = get_option( 'auto_load_next_post_version', null );
+		} // END __construct()
+
+		/**
+		 * Check plugin version and run the updater if necessary.
+		 *
+		 * This check is done on all requests and runs if the versions do not match.
+		 *
+		 * @access public
+		 * @static
+		 * @since  1.4.10
+		 */
+		public static function check_version() {
+			if ( ! defined( 'IFRAME_REQUEST' ) && version_compare( self::$current_version, AUTO_LOAD_NEXT_POST_VERSION, '<' ) ) {
+				self::install();
+				do_action( 'auto_load_next_post_updated' );
+			}
+		} // END check_version()
+
+		/**
+		 * Install Auto Load Next Post.
+		 *
+		 * @access  public
+		 * @static
+		 * @since   1.0.0
+		 * @version 1.4.10
+		 */
+		public static function install() {
+			if ( ! is_blog_installed() ) {
+				return;
+			}
+
+			// Check if we are not already running this routine.
+			if ( 'yes' === get_transient( 'alnp_installing' ) ) {
+				return;
+			}
+
+			// If we made it till here nothing is running yet, lets set the transient now for five minutes.
+			set_transient( 'alnp_installing', 'yes', MINUTE_IN_SECONDS * 5 );
+			if ( ! defined( 'AUTO_LOAD_NEXT_POST_INSTALLING' ) ) {
+				define( 'AUTO_LOAD_NEXT_POST_INSTALLING', true );
+			}
+
+			// Add default options.
+			self::create_options();
+
+			// Update plugin version.
+			self::update_version();
+
+			// Set activation date.
+			self::set_install_date();
+
+			delete_transient( 'alnp_installing' );
+
+			do_action( 'alnp_installed' );
+		} // END install()
+
+		/**
+		 * Update plugin version to current.
+		 *
+		 * @access private
+		 * @static
+		 */
+		private static function update_version() {
+			update_option( 'auto_load_next_post_version', AUTO_LOAD_NEXT_POST_VERSION );
+		} // END update_version()
+
+		/**
+		 * Set the time the plugin was installed.
+		 *
+		 * @access  public
+		 * @static
+		 * @since   1.4.4
+		 * @version 1.4.10
+		 */
+		public static function set_install_date() {
+			add_site_option( 'auto_load_next_post_install_date', time() );
+		} // END set_install_date()
+
+		/**
+		 * Default Options
+		 *
+		 * Sets up the default options defined on the settings pages.
+		 *
+		 * @access public
+		 * @static
+		 * @since  1.0.0
+		 */
+		public static function create_options() {
+			// Include settings so that we can run through defaults
+			include_once( dirname( __FILE__ ) . '/admin/class-auto-load-next-post-admin-settings.php' );
+
+			$settings = Auto_Load_Next_Post_Admin_Settings::get_settings_pages();
+
+			foreach ( $settings as $section ) {
+				foreach ( $section->get_settings() as $value ) {
+					if ( isset( $value['default'] ) && isset( $value['id'] ) ) {
+						$autoload = isset( $value['autoload'] ) ? (bool) $value['autoload'] : true;
+						add_option( $value['id'], $value['default'], '', ( $autoload ? 'yes' : 'no' ) );
+					}
+				}
+			}
+		} // END create_options()
+
+		/**
+		 * Runs when the plugin is initialized.
+		 *
+		 * @access public
+		 * @since  1.0.0
+		 */
+		public static function add_rewrite_endpoint() {
+			add_rewrite_endpoint( 'partial', EP_PERMALINK );
+
+			// Refresh permalinks
+			flush_rewrite_rules();
+		} // END add_rewrite_endpoint()
+
+	} // END if class.
+
+} // END if class exists.
+
+return new Auto_Load_Next_Post_Install();
