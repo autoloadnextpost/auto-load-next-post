@@ -49,9 +49,15 @@ if ( ! function_exists( 'supports_alnp' ) ) {
 			'twentyseventeen', 'twentysixteen', 'twentyfifteen', 'twentyfourteen', 'twentythirteen', 'twentytwelve', 'twentyten'
 		);
 
-		if (in_array(get_option('template'), $core_themes)) {
+		$other_themes = array(
+			'storefront'
+		);
+
+		$supported_themes = array_merge( $core_themes, $other_themes );
+
+		if ( in_array( get_option('template'), $supported_themes ) ) {
 			return true;
-		} else if (current_theme_supports('auto-load-next-post')) {
+		} else if ( current_theme_supports( 'auto-load-next-post' ) ) {
 			return true;
 		}
 
