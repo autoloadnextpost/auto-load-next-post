@@ -13,6 +13,7 @@ var orig_curr_url       = window.location.href;
 var post_count          = 0;
 var stop_reading        = false;
 var scroll_up           = false;
+var article_container   = 'article';
 
 jQuery.noConflict();
 
@@ -38,6 +39,11 @@ jQuery( document ).ready( function() {
 		return false;
 	}
 
+	if ( jQuery( 'article' ).length == 0 ) {
+		console.log( 'HTML5 semantics for article has not been found. Setting compatible HTML semantic.' );
+		article_container = 'div';
+	}
+
 	if ( is_customizer ) {
 		console.log( 'You are previewing with the customizer.' );
 	}
@@ -54,10 +60,10 @@ jQuery( document ).ready( function() {
 	jQuery( content_container ).prepend( '<hr style="height:0px;margin:0px;padding:0px;" data-powered-by="alnp" data-initial-post="true" data-title="' + post_title + '" data-url="' + orig_curr_url + '"/>' );
 
 	// Mark the first article as the initial post.
-	jQuery( content_container ).find( 'article' ).attr( 'data-initial-post', true );
+	jQuery( content_container ).find( article_container ).attr( 'data-initial-post', true );
 
 	// Find the post ID of the initial loaded article.
-	var initial_post_id = jQuery( content_container ).find( 'article' ).attr( 'id' );
+	var initial_post_id = jQuery( content_container ).find( article_container ).attr( 'id' );
 
 	// Apply post ID to the first post divider.
 	if ( initial_post_id.length > 0 ) {
@@ -174,7 +180,7 @@ jQuery( document ).ready( function() {
 
 		// If the previous URL does not match the current URL then go back.
 		if ( state.url != curr_url ) {
-			var previous_post = jQuery('hr[data-url="' + state.url + '"]').next('article').find( post_title_selector );
+			var previous_post = jQuery( 'hr[data-url="' + state.url + '"]' ).next( article_container ).find( post_title_selector );
 
 			// Is there a previous post?
 			if ( previous_post.length > 0 ) {
@@ -323,7 +329,7 @@ function auto_load_next_post() {
 		var post_divider = '<hr style="height:0px;margin:0px;padding:0px;" data-powered-by="alnp" data-initial-post="false" data-url="' + post_url + '"/>';
 		var post_html    = jQuery( post_divider + data );
 		var post_title   = post_html.find( post_title_selector ); // Find the post title of the loaded article.
-		var post_ID      = jQuery(post).find( 'article' ).attr( 'id' ); // Find the post ID of the loaded article.
+		var post_ID      = jQuery( post ).find( article_container ).attr( 'id' ); // Find the post ID of the loaded article.
 
 		if ( typeof post_ID !== typeof undefined && post_ID !== "" ) {
 			post_ID = post_ID.replace('post-', ''); // Make sure that only the post ID remains.
