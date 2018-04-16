@@ -61,7 +61,7 @@ jQuery( document ).ready( function() {
 
 	// Apply post ID to the first post divider.
 	if ( initial_post_id.length > 0 ) {
-		initial_post_id = initial_post_id.replace('post-', ''); // Make sure that only the post ID remains.
+		initial_post_id = initial_post_id.replace( 'post-', '' ); // Make sure that only the post ID remains.
 		console.log( 'Initial Post ID: ' + initial_post_id );
 		jQuery( content_container ).find( 'article[data-initial-post]' ).prev().attr( 'data-post-id', initial_post_id );
 	}
@@ -182,7 +182,7 @@ jQuery( document ).ready( function() {
 				console.log( 'Previous Post: ' + previous_post_title );
 
 				// Update the History ONLY if we are NOT in the customizer.
-				if ( !is_customizer ) {
+				if ( ! is_customizer ) {
 					History.pushState(null, previous_post_title, state.url);
 				}
 
@@ -241,14 +241,14 @@ function changePost( divider, $direction ) {
 	var this_post_id = el.attr( 'data-post-id' );
 	var initial_post = el.attr( 'data-initial-post' );
 	var offset       = el.offset();
-	var scrollTop    = jQuery(document).scrollTop();
+	var scrollTop    = jQuery( document ).scrollTop();
 
 	// If exiting or entering from the top, then change the URL.
 	if ( ( offset.top - scrollTop ) <= 200 && curr_url != this_url ) {
 		curr_url = this_url;
 
 		// Update the History ONLY if we are NOT in the customizer.
-		if ( !is_customizer ) {
+		if ( ! is_customizer ) {
 			History.pushState(null, this_title, this_url);
 		}
 
