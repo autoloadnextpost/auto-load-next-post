@@ -5,7 +5,7 @@
  * Description: Increase your pageviews on your site as readers continue reading your posts scrolling down the page.
  * Author:      Sébastien Dumont
  * Author URI:  https://sebastiendumont.com
- * Version:     1.4.10-beta.2
+ * Version:     1.4.10-beta.3
  * Text Domain: auto-load-next-post
  * Domain Path: /languages/
  *
