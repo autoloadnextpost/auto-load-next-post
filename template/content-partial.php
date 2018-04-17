@@ -34,7 +34,7 @@ if ( have_posts() ) :
 		do_action( 'alnp_load_before_content' );
 
 		// Load content before the post content for a specific post format.
-		do_action('alnp_load_before_content_type_'.$post_format);
+		do_action( 'alnp_load_before_content_post_format_' . $post_format );
 
 		// Load content before the post content for a specific post type.
 		do_action( 'alnp_load_before_content_post_type_' . $post_type );
@@ -67,7 +67,7 @@ if ( have_posts() ) :
 		do_action( 'alnp_load_after_content_post_type_' . $post_type );
 
 		// Load content after the post content for a specific post format.
-		do_action('alnp_load_after_content_type_'.$post_format);
+		do_action( 'alnp_load_after_content_post_format_' . $post_format );
 
 		// Load content after the post content.
 		do_action( 'alnp_load_after_content' );
