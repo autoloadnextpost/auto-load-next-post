@@ -24,9 +24,10 @@ include( dirname( __FILE__ ) . '/auto-load-next-post-formatting-functions.php');
 /**
  * When the 'partial' endpoint is used on a post, retrieve only the post content.
  *
- * @access public
- * @since  1.0.0
- * @global $wp_query
+ * @access  public
+ * @since   1.0.0
+ * @version 1.5.0
+ * @global  $wp_query
  */
 function auto_load_next_post_template_redirect() {
 	global $wp_query;
@@ -46,14 +47,18 @@ function auto_load_next_post_template_redirect() {
 	$default_path  = AUTO_LOAD_NEXT_POST_FILE_PATH;
 
 	if ( file_exists( $child_path . 'content-partial.php' ) ) {
-		include( $child_path . 'content-partial.php' );
+		$template_redirect = $child_path . 'content-partial.php';
 	}
 	else if( file_exists( $template_path . 'content-partial.php') ) {
-		include( $template_path . 'content-partial.php' );
+		$template_redirect = $template_path . 'content-partial.php';
 	}
 	else if( file_exists( $default_path . '/template/content-partial.php' ) ) {
-		include( $default_path . '/template/content-partial.php' );
+		$template_redirect = $default_path . '/template/content-partial.php';
 	}
+
+	$template_redirect = apply_filters( 'alnp_template_redirect', $template_redirect );
+
+	include( $template_redirect );
 
 	exit;
 }
