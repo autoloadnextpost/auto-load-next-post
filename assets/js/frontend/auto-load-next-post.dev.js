@@ -332,7 +332,7 @@ function auto_load_next_post() {
 		var post_ID      = jQuery( post ).find( article_container ).attr( 'id' ); // Find the post ID of the loaded article.
 
 		if ( typeof post_ID !== typeof undefined && post_ID !== "" ) {
-			post_ID = post_ID.replace('post-', ''); // Make sure that only the post ID remains.
+			post_ID = post_ID.replace( 'post-', '' ); // Make sure that only the post ID remains.
 			console.log( 'Post ID: ' + post_ID );
 		} else {
 			console.error( 'Post ID was not found.' );
@@ -347,7 +347,7 @@ function auto_load_next_post() {
 
 		jQuery( content_container ).append( post_html ); // Add next post.
 
-		jQuery( 'article[id="post-' + post_ID + '"]').attr( 'data-initial-post', false ); // Set article as not the initial post.
+		jQuery( article_container + '[id="post-' + post_ID + '"]' ).attr( 'data-initial-post', false ); // Set article as not the initial post.
 
 		// Remove Comments.
 		if ( remove_comments === 'yes' ) {
