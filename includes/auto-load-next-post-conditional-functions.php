@@ -115,3 +115,24 @@ if ( ! function_exists( 'is_alnp_pro_version_installed' ) ) {
 		return in_array( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins ) || array_key_exists( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins );
 	}
 }
+
+if ( ! function_exists( 'alnp_query' ) ) {
+	/**
+	 * Allows custom query arguments to be applied before returning the next post.
+	 *
+	 * @see https://codex.wordpress.org/Class_Reference/WP_Query
+	 *
+	 * @access public
+	 * @since  1.5.0
+	 * @return object WP_Query
+	 */
+	function alnp_query() {
+		$args = apply_filters( 'alnp_query_arguments', array(
+
+		) );
+
+		$alnp_query = new WP_Query( $args );
+
+		return $alnp_query;
+	} // END alnp_query()
+}

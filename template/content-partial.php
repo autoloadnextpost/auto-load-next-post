@@ -18,13 +18,13 @@
 
 $template_location = apply_filters( 'alnp_template_location', '' ); // e.g. "template-parts/post/"
 
-if ( have_posts() ) :
+if ( alnp_query()->have_posts() ) :
 
 	// Load content before the loop.
 	do_action( 'alnp_load_before_loop' );
 
 	// Check that there are posts to load.
-	while ( have_posts() ) : the_post();
+	while ( alnp_query()->have_posts() ) : alnp_query()->the_post();
 
 		$post_format = get_post_format(); // Post Format e.g. video
 
@@ -44,7 +44,7 @@ if ( have_posts() ) :
 			 * Include the Post-Type-specific template for the content.
 			 * content-___.php (where ___ is the Post Type name).
 			 */
-			if ( locate_template( $template_location . 'content-' . $post_type . '.php') != '' ) {
+			if ( locate_template( $template_location . 'content-' . $post_type . '.php' ) != '' ) {
 				get_template_part( $template_location . 'content', $post_type );
 			} else {
 				// If no specific post type found then fallback to standard content.php file.
