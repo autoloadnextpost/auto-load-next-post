@@ -300,11 +300,11 @@ function auto_load_next_post() {
 	// If the post navigation is not found then dont continue.
 	if ( !post_url ) return;
 
-	// Check to see if pretty permalinks, if not then add partial=1
+	// Check to see if pretty permalinks, if not then add alnp=1
 	if ( post_url.indexOf( '?p=' ) > -1 ) {
-		np_url = post_url + '&partial=1';
+		np_url = post_url + '&alnp=1';
 	} else {
-		var partial_endpoint = 'partial/';
+		var partial_endpoint = 'alnp/';
 
 		if ( post_url.charAt(post_url.length - 1) != '/' )
 			partial_endpoint = '/' + partial_endpoint;
