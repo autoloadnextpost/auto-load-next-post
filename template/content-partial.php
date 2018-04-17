@@ -51,12 +51,15 @@ if ( have_posts() ) :
 				get_template_part( $template_location . 'content' );
 			}
 		} else {
-			// Include the post format content.
-			if (locate_template($template_location . 'format-'.$post_format.'.php') != '') {
-				get_template_part($template_location . 'format', $post_format);
+			/*
+			 * Include the Post-Format-specific template for the content.
+			 * called format-___.php (where ___ is the Post Format name).
+			 */
+			if ( locate_template( $template_location . 'format-' . $post_format . '.php' ) != '' ) {
+				get_template_part( $template_location . 'format', $post_format );
 			} else {
 				// If no format-{post-format}.php file found then fallback to content-{post-format}.php
-				get_template_part($template_location . 'content', $post_format);
+				get_template_part( $template_location . 'content', $post_format );
 			}
 		}
 
