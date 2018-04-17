@@ -28,15 +28,28 @@ if ( have_posts() ) :
 
 		$post_format = get_post_format(); // Post Format e.g. video
 
+		$post_type = get_post_type(); // Post Type e.g. post
+
 		// Load content before the post content.
 		do_action( 'alnp_load_before_content' );
 
 		// Load content before the post content for a specific post format.
 		do_action('alnp_load_before_content_type_'.$post_format);
 
-		if (false === $post_format) {
-			// Include the standard content.php file.
-			get_template_part($template_location . 'content');
+		// Load content before the post content for a specific post type.
+		do_action( 'alnp_load_before_content_post_type_' . $post_type );
+
+		if ( false === $post_format ) {
+			/*
+			 * Include the Post-Type-specific template for the content.
+			 * content-___.php (where ___ is the Post Type name).
+			 */
+			if ( locate_template( $template_location . 'content-' . $post_type . '.php') != '' ) {
+				get_template_part( $template_location . 'content', $post_type );
+			} else {
+				// If no specific post type found then fallback to standard content.php file.
+				get_template_part( $template_location . 'content' );
+			}
 		} else {
 			// Include the post format content.
 			if (locate_template($template_location . 'format-'.$post_format.'.php') != '') {
@@ -46,6 +59,9 @@ if ( have_posts() ) :
 				get_template_part($template_location . 'content', $post_format);
 			}
 		}
+
+		// Load content after the post content for a specific post type.
+		do_action( 'alnp_load_after_content_post_type_' . $post_type );
 
 		// Load content after the post content for a specific post format.
 		do_action('alnp_load_after_content_type_'.$post_format);
