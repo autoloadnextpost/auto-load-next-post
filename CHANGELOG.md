@@ -2,6 +2,8 @@
 * Added: Compatible HTML semantics lookup if HTML5 is not used for article.
 * Added: Alternative post navigation lookup for some theme frameworks.
 * Added: Storefront theme to the list of themes that work out of the box.
+* Added: Two new action hooks in the template to support post types in preparation for Auto Load Next Post Pro. - [See action hooks in documentation for details.](https://autoloadnextpost.com/documentation/action-hooks/)
+* Changed: Two action hooks in the template to be inconsistent with the new action hooks for post types. - [See action hooks in documentation for details.](https://autoloadnextpost.com/documentation/action-hooks/)
 * Changed: PHP minimum requirement to version 5.6
 * Fixed: Issue with plugin setting up default settings once activated.
 * Fixed: Issue with History.js already been loaded when previewing in the customizer.
@@ -15,6 +17,7 @@
 * Improved: The uninstallation of plugin. Now refreshes the permalinks to remove custom rewrite permalink for the plugin.
 * Improved: Code base in preparation for Auto Load Next Post Pro.
 * Updated: Template file header to provide clear information for overriding repeater template.
+* Updated: Template to include support for other post types in preparation for Auto Load Next Post Pro.
 * Updated: Settings page to display the theme selectors descriptions rather than using tips.
 * Updated: The help tab on the settings page.
 * Updated: POT file.
