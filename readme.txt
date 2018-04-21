@@ -150,7 +150,7 @@ It does. Just make sure that you activate the plugin on the site you want it use
 2. Theme Support Admin Notification
 
 == Changelog ==
-= 1.4.10 : 16th April 2018 =
+= 1.4.10 : 21st April 2018 =
 * Added: Compatible HTML semantics lookup if HTML5 is not used for article.
 * Added: Alternative post navigation lookup for some theme frameworks.
 * Added: Storefront theme to the list of themes that work out of the box.
