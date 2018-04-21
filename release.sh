@@ -37,16 +37,25 @@ TEMP_SVN_REPO=${PLUGIN_SLUG}"-svn"
 SVN_REPO="https://plugins.svn.wordpress.org/"${PLUGIN_SLUG}"/"
 GIT_REPO="https://github.com/"${GITHUB_REPO_OWNER}"/"${GITHUB_REPO_NAME}".git"
 
+echo "-------------------------------------------------------"
+echo "Did you tag a beta or a release candidate last?"
+read -p "Enter Y for Yes or N for No "${BETA}""
+echo "-------------------------------------------------------"
+clear
+
 # Check if version is already released.
-if $ROOT_PATH git show-ref --tags | egrep -q "refs/tags/v${VERSION}"
+if ${BETA} = 'n' && $ROOT_PATH git show-ref --tags --exclude-existing | egrep -q "refs/tags/v${VERSION}"
 then
+	echo "-------------------------------------------------------"
 	echo "Version already tagged and released.";
 	echo ""
 	echo "Run sh release.sh again and enter another version.";
+	echo "-------------------------------------------------------"
 	exit 1;
 else
-	echo ""
+	echo "-------------------------------------------------------"
 	echo "v${VERSION} has not been found released. Now processing...";
+	echo "-------------------------------------------------------"
 fi
 
 # DELETE OLD TEMP DIRS
@@ -56,25 +65,35 @@ rm -Rf $ROOT_PATH$TEMP_GITHUB_REPO
 if [[ ! -d $TEMP_SVN_REPO ]];
 then
 	echo "Checking out WordPress.org plugin repository"
+	echo "-------------------------------------------------------"
 	svn checkout $SVN_REPO $TEMP_SVN_REPO || { echo "Unable to checkout repo."; exit 1; }
 fi
 
+clear
+
 # CLONE GIT DIR
-echo "Cloning GIT repository from GITHUB"
+echo "Cloning GIT repository from GitHub.com"
 git clone --progress $GIT_REPO $TEMP_GITHUB_REPO || { echo "Unable to clone repo."; exit 1; }
 
 # MOVE INTO GIT DIR
 cd $ROOT_PATH$TEMP_GITHUB_REPO
 
+# Update local tags just incase.
+clear
+echo "Fetching remote tags to update locally."
+git fetch --tags
+
 # LIST BRANCHES
 clear
 git fetch origin
+echo "-------------------------------------------------------"
 echo "Which branch do you wish to release?"
 git branch -r || { echo "Unable to list branches."; exit 1; }
 echo ""
 read -p "origin/" BRANCH
 
 # Switch Branch
+echo ""
 echo "Switching to branch"
 git checkout ${BRANCH} || { echo "Unable to checkout branch."; exit 1; }
 
@@ -82,11 +101,13 @@ echo ""
 read -p "Press [ENTER] to deploy branch "${BRANCH}
 
 # REMOVE UNWANTED FILES & FOLDERS
+echo ""
 echo "Removing unwanted files"
 rm -Rf .git
 rm -Rf .github
 rm -Rf tests
 rm -Rf apigen
+rm -Rf screenshots
 rm -f .gitattributes
 rm -f .gitignore
 rm -f .gitmodules
@@ -107,10 +128,12 @@ rm -f *.sh
 cd "../"$TEMP_SVN_REPO
 
 # UPDATE SVN
+echo ""
 echo "Updating SVN"
 svn update || { echo "Unable to update SVN."; exit 1; }
 
 # DELETE TRUNK
+echo ""
 echo "Replacing trunk"
 rm -Rf trunk/
 
@@ -129,12 +152,13 @@ for MISSING_PATH in $MISSING_PATHS; do
 done
 
 # COPY TRUNK TO TAGS/$VERSION
+echo ""
 echo "Copying trunk to new tag"
 svn copy trunk tags/${VERSION} || { echo "Unable to create tag."; exit 1; }
 
 # DO SVN COMMIT
 clear
-echo "Showing SVN status"
+echo "Show SVN status"
 svn status
 
 # PROMPT USER
@@ -146,9 +170,11 @@ echo ""
 echo "Creating release on GITHUB repository."
 cd "$GITPATH"
 
+echo ""
 echo "Tagging new version in git"
 git tag -a "v${VERSION}" -m "Tagging version v${VERSION}"
 
+echo ""
 echo "Pushing latest commit to origin, with tags"
 git push origin master
 git push origin master --tags
@@ -159,14 +185,15 @@ echo "Committing to WordPress.org... this may take a while..."
 svn commit -m "Releasing "${VERSION}"" || { echo "Unable to commit."; exit 1; }
 
 # REMOVE THE TEMP DIRS
+echo ""
 echo "Cleaning Up..."
 cd "../"
 rm -Rf $ROOT_PATH$TEMP_GITHUB_REPO
 rm -Rf $ROOT_PATH$TEMP_SVN_REPO
 
 # DONE
+echo ""
 echo "Release Done."
 echo ""
 read -p "Press [ENTER] to close program."
-echo ""
 clear
