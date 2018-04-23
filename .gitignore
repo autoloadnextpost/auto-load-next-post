@@ -27,7 +27,7 @@ npm-debug.log
 
 # Various other files and folders
 .wordpress-org/.svn/
-auto-load-next-post-snv/
+auto-load-next-post-svn/
 releases/
 *.sh
 .gitconfig
