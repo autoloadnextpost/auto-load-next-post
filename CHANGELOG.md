@@ -1,3 +1,6 @@
+# 1.4.11 (23rd April 2018)
+* Fixed: Initial post id was failing the rest of the script if undefined with some themes.
+
 # 1.4.10 (21st April 2018)
 * Added: Compatible HTML semantics lookup if HTML5 is not used for article.
 * Added: Alternative post navigation lookup for some theme frameworks.

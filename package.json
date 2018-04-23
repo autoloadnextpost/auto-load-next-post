@@ -3,7 +3,7 @@
   "name": "auto-load-next-post",
   "author": "AutoLoadNextPost",
   "license": "GPL-2.0",
-  "version": "1.4.10",
+  "version": "1.4.11",
   "description": "Increase your pageviews on your site as readers continue reading your posts scrolling down the page.",
   "homepage": "https://autoloadnextpost.com/",
   "main": "Gruntfile.js",

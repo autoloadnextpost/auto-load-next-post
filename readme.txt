@@ -5,7 +5,7 @@ Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scr
 Requires PHP: 5.6
 Requires at least: 4.4
 Tested up to: 4.9.5
-Stable tag: 1.4.10
+Stable tag: 1.4.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -150,6 +150,9 @@ It does. Just make sure that you activate the plugin on the site you want it use
 2. Theme Support Admin Notification
 
 == Changelog ==
+= 1.4.11 : 23rd April 2018 =
+* Fixed: Initial post id was failing the rest of the script if undefined with some themes.
+
 = 1.4.10 : 21st April 2018 =
 * Added: Compatible HTML semantics lookup if HTML5 is not used for article.
 * Added: Alternative post navigation lookup for some theme frameworks.
@@ -289,5 +292,5 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Initial version
 
 == Upgrade Notice ==
-= 1.4.10 : 16th April 2018 =
-Many corrections and improvements have been made in this release. Please see the changelog for a full list.
+= 1.4.11 : 23rd April 2018 =
+Fixed: Initial post id was failing the rest of the script if undefined with some themes.

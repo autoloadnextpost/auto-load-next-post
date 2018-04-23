@@ -65,8 +65,8 @@ jQuery( document ).ready( function() {
 	// Find the post ID of the initial loaded article.
 	var initial_post_id = jQuery( content_container ).find( article_container ).attr( 'id' );
 
-	// Apply post ID to the first post divider.
-	if ( initial_post_id.length > 0 ) {
+	// Apply post ID to the first post divider if found.
+	if ( typeof initial_post_id !== 'undefined' && initial_post_id.length > 0 ) {
 		initial_post_id = initial_post_id.replace( 'post-', '' ); // Make sure that only the post ID remains.
 		console.log( 'Initial Post ID: ' + initial_post_id );
 		jQuery( content_container ).find( 'article[data-initial-post]' ).prev().attr( 'data-post-id', initial_post_id );
