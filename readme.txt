@@ -2,7 +2,7 @@
 Contributors: autoloadnextpost, sebd86
 Donate link: https://autoloadnextpost.com/donate/
 Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scroll, infinite scrolling, post scrolling, pagination, scroll, post history, browsing history, navigation
-Requires PHP: 5.6
+Requires PHP: 5.6+
 Requires at least: 4.4
 Tested up to: 4.9.5
 Stable tag: 1.4.11
@@ -49,6 +49,14 @@ Intrigued? _I bet you are._ Once you try Auto Load Next Post, you pageviews will
 
 Extendable and open source — Auto Load Next Post is created with developers in mind. There are opportunities for developers at all levels to contribute. [Click here to contribute](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md).
 
+= Free Add-ons =
+
+WordPress.org hosts some great free add-ons for Auto Load Next Post.
+
+- [Facebook Pixel Tracking](https://wordpress.org/plugins/alnp-facebook-pixel-tracking/)
+
+> Have a free add-on for Auto Load Next Post? [Let me know about it](https://autoloadnextpost.com/contact/).
+
 > #### Auto Load Next Post Pro
 > There's an even better version of the plugin coming out soon with the following extra features:<br />
 >
@@ -64,7 +72,7 @@ This plugin is created and maintained by [Sébastien Dumont](https://sebastiendu
 **More information**
 
 - [Visit Auto Load Next Post website](https://autoloadnextpost.com)
-- [Documentation](https://autoloadnextpost.com/documentation/)
+- [View Documentation](https://autoloadnextpost.com/documentation/)
 - If you're a developer yourself, follow or contribute to the [Auto Load Next Post plugin on GitHub](https://github.com/AutoLoadNextPost/auto-load-next-post)
 
 == Installation ==
@@ -151,6 +159,10 @@ Well, WordPress loads posts in descending order by default so the next post is t
 = How can I get the Google Analytics option to work? =
 
 You first need to have Google Analytics added to your site. Either by inserting the analytics into your theme yourself or by using the [Google Analytics plugin by MonsterInsights](https://wordpress.org/plugins/google-analytics-for-wordpress/).
+
+= Can I track with Facebook Pixels instead? =
+
+You can. All you have to do is simply install the [Facebook Pixel Tracking add-on](https://wordpress.org/plugins/alnp-facebook-pixel-tracking/) and activate. All that is required is that you have your Facebook Pixel tracker installed on the site first.
 
 = Does Auto Load Next Post support WordPress Network / Multisite websites? =
 
