@@ -115,3 +115,14 @@ if ( ! function_exists( 'is_alnp_pro_version_installed' ) ) {
 		return in_array( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins ) || array_key_exists( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins );
 	}
 }
+
+/**
+ * See if theme/s is activate or not.
+ *
+ * @since 1.5.0
+ * @param string|array $theme Theme name or array of theme names to check.
+ * @return boolean
+ */
+function alnp_is_active_theme( $theme ) {
+	return is_array( $theme ) ? in_array( get_template(), $theme, true ) : get_template() === $theme;
+}

@@ -177,11 +177,14 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.4.10
+		 * @version 1.5.0
 		 * @return  void
 		 */
 		public function includes() {
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-core-functions.php'); // Contains core functions for the front/back end.
+
+			// Include theme support.
+			alnp_include_theme_support();
 
 			// Include admin class to handle all back-end functions.
 			if ( is_admin() ) {

@@ -60,6 +60,30 @@ function auto_load_next_post_template_redirect() {
 add_action( 'template_redirect', 'auto_load_next_post_template_redirect' );
 
 /**
+ * Include classes for theme support.
+ *
+ * @since 1.5.0
+ */
+function alnp_include_theme_support() {
+	if ( alnp_is_active_theme( array( 'twentyfourteen', 'twentythirteen', 'twentytwelve', 'twentyten' ) ) ) {
+		switch ( get_template() ) {
+			case 'twentyten':
+				include_once( AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/theme-support/class-alnp-twenty-ten.php' );
+				break;
+			case 'twentytwelve':
+				include_once( AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/theme-support/class-alnp-twenty-twelve.php' );
+				break;
+			case 'twentythirteen':
+				include_once( AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/theme-support/class-alnp-twenty-thirteen.php' );
+				break;
+			case 'twentyfourteen':
+				include_once( AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/theme-support/class-alnp-twenty-fourteen.php' );
+				break;
+		}
+	}
+}
+
+/**
  * Adds the comments template after the post content.
  *
  * @access public
