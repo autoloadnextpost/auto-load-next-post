@@ -3,7 +3,7 @@
  * Admin View: Settings
  *
  * @since    1.0.0
- * @version  1.4.10
+ * @version  1.5.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post
@@ -23,28 +23,37 @@ if ( ! $tab_exists ) {
 	exit;
 }
 ?>
-<div class="wrap auto-load-next-post">
-	<form method="post" id="mainform" action="" enctype="multipart/form-data">
-		<h2 class="nav-tab-wrapper">
-			<span>Auto Load Next Post v<?php echo AUTO_LOAD_NEXT_POST_VERSION; ?></span>
-			<?php
-				foreach ( $tabs as $slug => $label ) {
-					echo '<a href="' . esc_html( admin_url( 'options-general.php?page=auto-load-next-post-settings&tab=' . esc_attr( $slug ) ) ) . '" class="nav-tab ' . ( $current_tab === $slug ? 'nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
-				}
-
-				do_action( 'auto_load_next_post_settings_tabs' );
-			?>
-		</h2>
+<div class="wrap auto-load-next-post-main">
+	<h1>Auto Load Next Post</h1>
+	<h2 class="nav-tab-wrapper">
+		<div class="nav-tab-container">
 		<?php
-		do_action( 'auto_load_next_post_sections_' . $current_tab );
+			foreach ( $tabs as $slug => $label ) {
+				echo '<a href="' . esc_html( admin_url( 'options-general.php?page=auto-load-next-post-settings&tab=' . esc_attr( $slug ) ) ) . '" class="nav-tab ' . ( $current_tab === $slug ? 'nav-tab-active' : '' ) . '" data-tab=' .esc_att( $slug ) . '>' . esc_html( $label ) . '</a>';
+			}
 
-		self::show_messages();
-
-		do_action( 'auto_load_next_post_settings_' . $current_tab );
+			do_action( 'auto_load_next_post_settings_tabs' );
 		?>
-		<p class="submit">
-			<input name="save" class="button-primary" type="submit" value="<?php esc_attr_e( 'Save Changes', 'auto-load-next-post' ); ?>" />
-			<?php wp_nonce_field( 'auto-load-next-post-settings' ); ?>
-		</p>
-	</form>
+		</div>
+	</h2>
+
+	<div class="nav-tab-container">
+		<form method="post" action="" enctype="multipart/form-data">
+			<?php
+
+			do_action( 'auto_load_next_post_sections_' . $current_tab );
+
+			self::show_messages();
+
+			do_action( 'auto_load_next_post_settings_' . $current_tab );
+			?>
+			<p class="submit">
+				<input name="save" class="button-primary" type="submit" value="<?php esc_attr_e( 'Save Changes', 'auto-load-next-post' ); ?>" />
+				<?php
+				wp_nonce_field( 'auto-load-next-post-settings' );
+				wp_referer_field( true );
+				?>
+			</p>
+		</form>
+	</div>
 </div>
