@@ -103,6 +103,7 @@ read -p "Press [ENTER] to deploy branch "${BRANCH}
 # REMOVE UNWANTED FILES & FOLDERS
 echo ""
 echo "Removing unwanted files"
+rm -RF .wordpress-org
 rm -Rf .git
 rm -Rf .github
 rm -Rf tests
@@ -148,7 +149,7 @@ MISSING_PATHS=$( svn status | sed -e '/^!/!d' -e 's/^!//' )
 
 # iterate over filepaths
 for MISSING_PATH in $MISSING_PATHS; do
-    svn rm --force "$MISSING_PATH"
+	svn rm --force "$MISSING_PATH"
 done
 
 # COPY TRUNK TO TAGS/$VERSION
