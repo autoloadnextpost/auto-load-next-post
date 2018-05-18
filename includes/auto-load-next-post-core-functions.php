@@ -22,7 +22,7 @@ include( dirname( __FILE__ ) . '/auto-load-next-post-conditional-functions.php')
 include( dirname( __FILE__ ) . '/auto-load-next-post-formatting-functions.php');
 
 /**
- * When the 'partial' endpoint is used on a post, retrieve only the post content.
+ * When the 'alnp' endpoint is used on a post, retrieve only the post content.
  *
  * @access public
  * @since  1.0.0
@@ -31,8 +31,8 @@ include( dirname( __FILE__ ) . '/auto-load-next-post-formatting-functions.php');
 function auto_load_next_post_template_redirect() {
 	global $wp_query;
 
-	// If this is not a request for partial or a singular object then bail
-	if ( ! isset( $wp_query->query_vars['partial'] ) || ! is_singular() ) {
+	// If this is not a request for alnp or a singular object then bail
+	if ( ! isset( $wp_query->query_vars['alnp'] ) || ! is_singular() ) {
 		return;
 	}
 
@@ -45,14 +45,14 @@ function auto_load_next_post_template_redirect() {
 	$template_path = get_template_directory() . '/' . AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
 	$default_path  = AUTO_LOAD_NEXT_POST_FILE_PATH;
 
-	if ( file_exists( $child_path . 'content-partial.php' ) ) {
-		include( $child_path . 'content-partial.php' );
+	if ( file_exists( $child_path . 'content-alnp.php' ) ) {
+		include( $child_path . 'content-alnp.php' );
 	}
-	else if( file_exists( $template_path . 'content-partial.php') ) {
-		include( $template_path . 'content-partial.php' );
+	else if( file_exists( $template_path . 'content-alnp.php') ) {
+		include( $template_path . 'content-alnp.php' );
 	}
-	else if( file_exists( $default_path . '/template/content-partial.php' ) ) {
-		include( $default_path . '/template/content-partial.php' );
+	else if( file_exists( $default_path . '/template/content-alnp.php' ) ) {
+		include( $default_path . '/template/content-alnp.php' );
 	}
 
 	exit;

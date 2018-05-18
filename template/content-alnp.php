@@ -2,7 +2,7 @@
 /**
  * The Template for displaying a post when called.
  *
- * This template can be overridden by copying it to yourtheme/auto-load-next-post/content-partial.php.
+ * This template can be overridden by copying it to yourtheme/auto-load-next-post/content-alnp.php.
  *
  * HOWEVER, on occasion Auto Load Next Post will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to

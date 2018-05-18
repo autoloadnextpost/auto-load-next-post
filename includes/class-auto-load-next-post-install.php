@@ -177,7 +177,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 * @since  1.0.0
 		 */
 		public static function add_rewrite_endpoint() {
-			add_rewrite_endpoint( 'partial', EP_PERMALINK );
+			add_rewrite_endpoint( 'alnp', EP_PERMALINK );
 
 			// Refresh permalinks
 			flush_rewrite_rules();
