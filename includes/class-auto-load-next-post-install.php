@@ -96,6 +96,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			// Set activation date.
 			self::set_install_date();
 
+			// Refresh rewrite rules.
+			self::flush_rewrite_rules();
+
 			delete_transient( 'alnp_installing' );
 
 			do_action( 'alnp_installed' );
@@ -171,17 +174,26 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		} // END create_options()
 
 		/**
-		 * Runs when the plugin is initialized.
+		 * Add rewrite endpoint for Auto Load Next Post.
 		 *
 		 * @access public
+		 * @static
 		 * @since  1.0.0
 		 */
 		public static function add_rewrite_endpoint() {
 			add_rewrite_endpoint( 'alnp', EP_PERMALINK );
-
-			// Refresh permalinks
-			flush_rewrite_rules();
 		} // END add_rewrite_endpoint()
+
+		/**
+		 * Flush rewrite rules.
+		 *
+		 * @access public
+		 * @static
+		 * @since  1.5.0
+		 */
+		public static function flush_rewrite_rules() {
+			flush_rewrite_rules();
+		} // END flush_rewrite_rules()
 
 	} // END if class.
 
