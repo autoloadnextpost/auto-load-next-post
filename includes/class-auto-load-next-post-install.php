@@ -176,9 +176,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		/**
 		 * Add rewrite endpoint for Auto Load Next Post.
 		 *
-		 * @access public
+		 * @access  public
 		 * @static
-		 * @since  1.0.0
+		 * @since   1.0.0
+		 * @version 1.5.0
 		 */
 		public static function add_rewrite_endpoint() {
 			add_rewrite_endpoint( 'alnp', EP_PERMALINK );
