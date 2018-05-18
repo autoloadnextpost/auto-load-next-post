@@ -66,7 +66,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.4.10
+		 * @version 1.5.0
 		 */
 		public static function install() {
 			if ( ! is_blog_installed() ) {
@@ -87,6 +87,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			// Add default options.
 			self::create_options();
 
+			// Set theme selectors if current active theme supports Auto Load Next Post.
+			self::set_theme_selectors();
+
 			// Update plugin version.
 			self::update_version();
 
@@ -97,6 +100,28 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 
 			do_action( 'alnp_installed' );
 		} // END install()
+
+		/**
+		 * Set theme selectors for the current active theme should it
+		 * support Auto Load Next Post and have the theme selectors set.
+		 *
+		 * @access private
+		 * @static
+		 * @since  1.5.0
+		 */
+		private static function set_theme_selectors() {
+			if ( is_alnp_supported() ) {
+				$content_container    = alnp_get_theme_support( 'content_container' );
+				$title_selector       = alnp_get_theme_support( 'title_selector' );
+				$navigation_container = alnp_get_theme_support( 'navigation_container' );
+				$comments_container   = alnp_get_theme_support( 'comments_container' );
+
+				if ( ! empty( $content_container ) ) update_option( 'auto_load_next_post_content_container', $content_container );
+				if ( ! empty( $title_selector ) ) update_option( 'auto_load_next_post_title_selector', $title_selector );
+				if ( ! empty( $navigation_container ) ) update_option( 'auto_load_next_post_navigation_container', $navigation_container );
+				if ( ! empty( $comments_container ) ) update_option( 'auto_load_next_post_comments_container', $comments_container );
+			}
+		} // END set_theme_selectors()
 
 		/**
 		 * Update plugin version to current.

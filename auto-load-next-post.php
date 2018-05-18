@@ -220,31 +220,32 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.4.10
+		 * @version 1.5.0
 		 */
 		public function alnp_scripts() {
-			/**
-			 * Load the Javascript if found as a singluar post.
-			 */
-			if ( supports_alnp() && is_singular() && get_post_type() == 'post' ) {
-				$this->load_file( 'auto-load-next-post-scrollspy', '/assets/js/libs/scrollspy' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION );
+			// Load the Javascript if found as a singluar post and the user is not a bot.
+			if ( !alnp_is_bot() && is_singular() && get_post_type() == 'post' ) {
+				// This helps the plugin decide to load the JavaScript in the footer or not.
+				$load_in_footer = get_option( 'auto_load_next_post_js_footer' );
+
+				$this->load_file( 'auto-load-next-post-scrollspy', '/assets/js/libs/scrollspy' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION, $load_in_footer );
 
 				// Only load History.js when not in the customizer.
 				if ( ! is_customize_preview() ) {
-					$this->load_file( 'auto-load-next-post-history', '/assets/js/libs/jquery.history.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION );
+					$this->load_file( 'auto-load-next-post-history', '/assets/js/libs/jquery.history.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION, $load_in_footer );
 				}
 
-				$this->load_file( 'auto-load-next-post-script', '/assets/js/frontend/auto-load-next-post' . AUTO_LOAD_NEXT_POST_DEBUG_MODE.AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array('auto-load-next-post-scrollspy'), AUTO_LOAD_NEXT_POST_VERSION );
+				$this->load_file( 'auto-load-next-post-script', '/assets/js/frontend/auto-load-next-post' . AUTO_LOAD_NEXT_POST_DEBUG_MODE.AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array('auto-load-next-post-scrollspy'), AUTO_LOAD_NEXT_POST_VERSION, $load_in_footer );
 
-				// Variables for JS scripts
+				// Variables for the JavaScript
 				wp_localize_script( 'auto-load-next-post-script', 'auto_load_next_post_params', array(
 					'alnp_version'              => AUTO_LOAD_NEXT_POST_VERSION,
-					'alnp_content_container'    => get_option('auto_load_next_post_content_container'),
-					'alnp_title_selector'       => get_option('auto_load_next_post_title_selector'),
-					'alnp_navigation_container' => get_option('auto_load_next_post_navigation_container'),
-					'alnp_comments_container'   => get_option('auto_load_next_post_comments_container'),
-					'alnp_remove_comments'      => get_option('auto_load_next_post_remove_comments'),
-					'alnp_google_analytics'     => get_option('auto_load_next_post_google_analytics'),
+					'alnp_content_container'    => get_option( 'auto_load_next_post_content_container' ),
+					'alnp_title_selector'       => get_option( 'auto_load_next_post_title_selector' ),
+					'alnp_navigation_container' => get_option( 'auto_load_next_post_navigation_container' ),
+					'alnp_comments_container'   => get_option( 'auto_load_next_post_comments_container' ),
+					'alnp_remove_comments'      => get_option( 'auto_load_next_post_remove_comments' ),
+					'alnp_google_analytics'     => get_option( 'auto_load_next_post_google_analytics' ),
 					'alnp_is_customizer'        => is_customize_preview()
 				) );
 			} // END if is_singular() && get_post_type()
@@ -253,24 +254,26 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		/**
 		 * Helper function for registering and enqueueing scripts and styles.
 		 *
-		 * @access public
-		 * @since  1.0.0
+		 * @access  public
+		 * @since   1.0.0
+		 * @version 1.5.0
 		 * @static
-		 * @param  string  $name      The ID to register with WordPress.
-		 * @param  string  $file_path The path to the actual file.
-		 * @param  bool    $is_script Optional, argument for if the incoming file_path is a JavaScript source file.
-		 * @param  array   $support   Optional, for requiring other javascripts for the source file you are calling.
-		 * @param  string  $version   Optional, can match the version of the plugin or version of the source file.
-		 * @global string  $wp_version
+		 * @param   string  $name      The ID to register with WordPress.
+		 * @param   string  $file_path The path to the actual file.
+		 * @param   bool    $is_script Optional, argument for if the incoming file_path is a JavaScript source file.
+		 * @param   array   $support   Optional, for requiring other javascripts for the source file you are calling.
+		 * @param   string  $version   Optional, can match the version of the plugin or version of the source file.
+		 * @param   bool    $footer Optional, can set the JavaScript to load in the footer instead.
+		 * @global  string  $wp_version
 		 */
-		public static function load_file( $name, $file_path, $is_script = false, $support = array(), $version = '' ) {
+		public static function load_file( $name, $file_path, $is_script = false, $support = array(), $version = '', $footer = false ) {
 			global $wp_version;
 
 			$url = AUTO_LOAD_NEXT_POST_URL_PATH . $file_path; // URL to the file.
 
 			if ( file_exists( AUTO_LOAD_NEXT_POST_FILE_PATH . $file_path ) ) {
 				if ( $is_script ) {
-					wp_register_script( $name, $url, $support, $version );
+					wp_register_script( $name, $url, $support, $version, $footer );
 					wp_enqueue_script( $name );
 				} else {
 					wp_register_style( $name, $url );

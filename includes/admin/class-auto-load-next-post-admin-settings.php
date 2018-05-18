@@ -4,7 +4,7 @@
  *
  * @class    Auto_Load_Next_Post_Admin_Settings
  * @since    1.0.0
- * @version  1.4.8
+ * @version  1.5.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post
@@ -53,7 +53,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.4.10
+		 * @version 1.5.0
 		 * @return  $settings
 		 */
 		public static function get_settings_pages() {
@@ -63,6 +63,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 				include_once( dirname( __FILE__ ) . '/settings/class-alnp-settings-page.php' );
 
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-general.php');
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-misc.php');
 
 				self::$settings = apply_filters( 'auto_load_next_post_get_settings_pages', $settings );
 			}
@@ -160,7 +161,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 			wp_enqueue_script( 'auto_load_next_post_settings', AUTO_LOAD_NEXT_POST_URL_PATH . '/assets/js/admin/settings' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', array('jquery'), AUTO_LOAD_NEXT_POST_VERSION, true );
 
 			wp_localize_script( 'auto_load_next_post_settings', 'auto_load_next_post_settings_params', array(
-				'i18n_nav_warning' => __( 'The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post' ),
+				'i18n_nav_warning' => __( 'The changes you have made will be lost if you navigate away from this page before saving.', 'auto-load-next-post' ),
 			) );
 
 			// Get tabs for the settings page

@@ -13,10 +13,8 @@
  * @author  Sébastien Dumont
  * @package Auto Load Next Post/Templates
  * @license GPL-2.0+
- * @version 1.4.10
+ * @version 1.5.0
 */
-
-$template_location = apply_filters( 'alnp_template_location', '' ); // e.g. "template-parts/post/"
 
 if ( have_posts() ) :
 
@@ -44,22 +42,22 @@ if ( have_posts() ) :
 			 * Include the Post-Type-specific template for the content.
 			 * content-___.php (where ___ is the Post Type name).
 			 */
-			if ( locate_template( $template_location . 'content-' . $post_type . '.php') != '' ) {
-				get_template_part( $template_location . 'content', $post_type );
+			if ( locate_template( alnp_template_location() . 'content-' . $post_type . '.php') != '' ) {
+				get_template_part( alnp_template_location() . 'content', $post_type );
 			} else {
 				// If no specific post type found then fallback to standard content.php file.
-				get_template_part( $template_location . 'content' );
+				get_template_part( alnp_template_location() . 'content' );
 			}
 		} else {
 			/*
 			 * Include the Post-Format-specific template for the content.
 			 * called format-___.php (where ___ is the Post Format name).
 			 */
-			if ( locate_template( $template_location . 'format-' . $post_format . '.php' ) != '' ) {
-				get_template_part( $template_location . 'format', $post_format );
+			if ( locate_template( alnp_template_location() . 'format-' . $post_format . '.php' ) != '' ) {
+				get_template_part( alnp_template_location() . 'format', $post_format );
 			} else {
 				// If no format-{post-format}.php file found then fallback to content-{post-format}.php
-				get_template_part( $template_location . 'content', $post_format );
+				get_template_part( alnp_template_location() . 'content', $post_format );
 			}
 		}
 
