@@ -5,7 +5,7 @@
  * General core functions available for both the front-end and admin.
  *
  * @since    1.0.0
- * @version  1.4.10
+ * @version  1.5.0
  * @author   Sébastien Dumont
  * @category Core
  * @package  Auto Load Next Post
@@ -24,9 +24,10 @@ include( dirname( __FILE__ ) . '/auto-load-next-post-formatting-functions.php');
 /**
  * When the 'alnp' endpoint is used on a post, retrieve only the post content.
  *
- * @access public
- * @since  1.0.0
- * @global $wp_query
+ * @access  public
+ * @since   1.0.0
+ * @version 1.5.0
+ * @global  $wp_query
  */
 function auto_load_next_post_template_redirect() {
 	global $wp_query;
