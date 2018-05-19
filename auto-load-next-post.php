@@ -217,13 +217,13 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.4.10
+		 * @version 1.4.12
 		 */
 		public function alnp_scripts() {
 			/**
 			 * Load the Javascript if found as a singluar post.
 			 */
-			if ( supports_alnp() && is_singular() && get_post_type() == 'post' ) {
+			if ( is_singular() && get_post_type() == 'post' ) {
 				$this->load_file( 'auto-load-next-post-scrollspy', '/assets/js/libs/scrollspy' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION );
 
 				// Only load History.js when not in the customizer.
