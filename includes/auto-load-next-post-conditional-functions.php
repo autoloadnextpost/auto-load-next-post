@@ -115,3 +115,23 @@ if ( ! function_exists( 'is_alnp_pro_version_installed' ) ) {
 		return in_array( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins ) || array_key_exists( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins );
 	}
 }
+
+if ( ! function_exists( 'alnp_get_post_type' ) ) {
+	/**
+	 * Returns the post type.
+	 *
+	 * @access public
+	 * @since  1.4.12
+	 * @return string
+	 */
+	function alnp_get_post_type() {
+		$post_type = get_post_type();
+
+		// If the post type is a post then return single instead.
+		if ( $post_type == 'post' ) {
+			return 'single';
+		}
+
+		return $post_type;
+	}
+}
