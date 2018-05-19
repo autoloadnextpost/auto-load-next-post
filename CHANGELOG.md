@@ -1,5 +1,5 @@
 # 1.4.12 (19th May 2018)
-* Fixed: Correct post type returned for single posts in the repeater template.
+* Fixed: Corrected post type returned for single posts in the repeater template.
 * Removed: The need to check if the theme has declared support before the plugin loads the JavaScript.
 
 # 1.4.11 (23rd April 2018)
