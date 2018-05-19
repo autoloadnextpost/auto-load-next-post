@@ -38,7 +38,7 @@ function auto_load_next_post_template_redirect() {
 	}
 
 	/**
-	 * Load the template file from the theme (child or main) if one exists.
+	 * Load the template file from the theme (child or parent) if one exists.
 	 * If theme does not have a template file for Auto Load Next Post,
 	 * the plugin will load a default template.
 	 */
@@ -47,14 +47,18 @@ function auto_load_next_post_template_redirect() {
 	$default_path  = AUTO_LOAD_NEXT_POST_FILE_PATH;
 
 	if ( file_exists( $child_path . 'content-alnp.php' ) ) {
-		include( $child_path . 'content-alnp.php' );
+		$template_redirect = $child_path . 'content-alnp.php';
 	}
 	else if( file_exists( $template_path . 'content-alnp.php') ) {
-		include( $template_path . 'content-alnp.php' );
+		$template_redirect = $template_path . 'content-alnp.php';
 	}
 	else if( file_exists( $default_path . '/template/content-alnp.php' ) ) {
-		include( $default_path . '/template/content-alnp.php' );
+		$template_redirect = $default_path . '/template/content-alnp.php';
 	}
+
+	$template_redirect = apply_filters( 'alnp_template_redirect', $template_redirect );
+
+	include( $template_redirect );
 
 	exit;
 }
@@ -110,7 +114,7 @@ add_action( 'alnp_load_after_content', 'auto_load_next_post_comments', 1, 5 );
 function auto_load_next_post_navigation() {
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<span class="nav-previous"><?php previous_post_link('%link', '<span class="meta-nav">'._x('&larr;', 'Previous post link', 'auto-load-next-post').'</span> %title'); ?></span>
+		<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'auto-load-next-post' ) . '</span> %title' ); ?></span>
 	</nav>
 	<?php
 }
