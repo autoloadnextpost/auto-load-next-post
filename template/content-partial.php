@@ -13,7 +13,7 @@
  * @author  Sébastien Dumont
  * @package Auto Load Next Post/Templates
  * @license GPL-2.0+
- * @version 1.4.10
+ * @version 1.4.12
 */
 
 $template_location = apply_filters( 'alnp_template_location', '' ); // e.g. "template-parts/post/"
@@ -28,7 +28,7 @@ if ( have_posts() ) :
 
 		$post_format = get_post_format(); // Post Format e.g. video
 
-		$post_type = get_post_type(); // Post Type e.g. post
+		$post_type = alnp_get_post_type(); // Post Type e.g. single
 
 		// Load content before the post content.
 		do_action( 'alnp_load_before_content' );
