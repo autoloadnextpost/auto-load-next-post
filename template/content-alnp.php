@@ -26,7 +26,7 @@ if ( have_posts() ) :
 
 		$post_format = get_post_format(); // Post Format e.g. video
 
-		$post_type = get_post_type(); // Post Type e.g. post
+		$post_type = alnp_get_post_type(); // Post Type e.g. single
 
 		// Load content before the post content.
 		do_action( 'alnp_load_before_content' );
