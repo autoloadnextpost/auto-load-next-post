@@ -174,6 +174,10 @@ It does. Just make sure that you activate the plugin on the site you want it use
 2. Admin Notice: Not declared theme support.
 
 == Changelog ==
+= 1.4.12 : 19th May 2019 =
+* Fixed: Correct post type returned for single posts in the repeater template.
+* Removed: The need to check if the theme has declared support before the plugin loads the JavaScript.
+
 = 1.4.11 : 23rd April 2018 =
 * Fixed: Initial post id was failing the rest of the script if undefined with some themes.
 
