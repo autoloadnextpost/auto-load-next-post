@@ -39,7 +39,7 @@ class ALNP_Theme_Support {
 			$theme_support = get_theme_support( 'auto-load-next-post' );
 
 			foreach( $theme_support as $key => $value ) {
-				update_option( 'auto_load_next_post_' . $key, $value );
+				if ( ! empty( $key ) ) update_option( 'auto_load_next_post_' . $key, $value );
 			}
 		}
 	} // END update_alnp_theme_selectors()

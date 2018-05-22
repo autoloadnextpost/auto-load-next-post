@@ -18,10 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * ALNP_Twenty_Fourteen class.
- *
- * @extends ALNP_Theme_Support
  */
-class ALNP_Twenty_Fourteen extends ALNP_Theme_Support {
+class ALNP_Twenty_Fourteen {
 
 	/**
 	 * Initlize Theme.
@@ -30,8 +28,6 @@ class ALNP_Twenty_Fourteen extends ALNP_Theme_Support {
 	 * @static
 	 */
 	public static function init() {
-		// Filters the repeater template location.
-
 		// Override theme selectors.
 		add_theme_support( 'auto-load-next-post' array(
 			'content_container'    => '.site-content',

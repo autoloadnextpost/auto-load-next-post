@@ -3,6 +3,7 @@
  * Auto Load Next Post Formatting
  *
  * @since    1.0.0
+ * @version  1.4.10
  * @author   Sébastien Dumont
  * @category Core
  * @package  Auto Load Next Post/Functions

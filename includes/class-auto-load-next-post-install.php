@@ -90,11 +90,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			// Set theme selectors if current active theme supports Auto Load Next Post.
 			self::set_theme_selectors();
 
-			// Update plugin version.
-			self::update_version();
-
 			// Set activation date.
 			self::set_install_date();
+
+			// Update plugin version.
+			self::update_version();
 
 			// Refresh rewrite rules.
 			self::flush_rewrite_rules();

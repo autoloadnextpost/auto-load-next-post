@@ -18,10 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * ALNP_Twenty_Twelve class.
- *
- * @extends ALNP_Theme_Support
  */
-class ALNP_Twenty_Twelve extends ALNP_Theme_Support {
+class ALNP_Twenty_Twelve {
 
 	/**
 	 * Initlize Theme.
@@ -35,8 +33,6 @@ class ALNP_Twenty_Twelve extends ALNP_Theme_Support {
 
 		// Add a compaitable post navigation.
 		add_action( 'alnp_load_after_content', 'alnp_twentytwelve_post_navigation', 1, 10 );
-
-		// Filters the repeater template location.
 
 		// Override theme selectors.
 		add_theme_support( 'auto-load-next-post' array(

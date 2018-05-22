@@ -18,10 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * ALNP_Twenty_Ten class.
- *
- * @extends ALNP_Theme_Support
  */
-class ALNP_Twenty_Ten extends ALNP_Theme_Support {
+class ALNP_Twenty_Ten {
 
 	/**
 	 * Initlize Theme.
@@ -31,6 +29,7 @@ class ALNP_Twenty_Ten extends ALNP_Theme_Support {
 	 */
 	public static function init() {
 		// Filters the repeater template location.
+		add_filter( 'alnp_template_redirect', 'alnp_twentyten_template_redirect' );
 
 		// Override theme selectors.
 		add_theme_support( 'auto-load-next-post' array(
@@ -40,6 +39,17 @@ class ALNP_Twenty_Ten extends ALNP_Theme_Support {
 			'comments_container'   => 'div#comments',
 		) );
 	} // END init()
+
+	/**
+	 * Filters the location of the repeater template.
+	 *
+	 * @access public
+	 * @static
+	 * @return string
+	 */
+	public static function alnp_twentyten_template_redirect() {
+		return AUTO_LOAD_NEXT_POST_FILE_PATH . '/template/theme-support/twenty-ten/content-alnp.php';
+	} // END alnp_twentyten_template_redirect()
 
 } // END class
 
