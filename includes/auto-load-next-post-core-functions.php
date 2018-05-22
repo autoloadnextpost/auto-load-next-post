@@ -70,13 +70,16 @@ add_action( 'template_redirect', 'auto_load_next_post_template_redirect' );
  * @since 1.5.0
  */
 function alnp_include_theme_support() {
-	if ( is_alnp_active_theme( array( 'twentyfourteen', 'twentythirteen', 'twentytwelve', 'twentyten' ) ) ) {
+	if ( is_alnp_active_theme( array( 'twentyfourteen', 'twentythirteen', 'twentytwelve', 'twentyeleven', 'twentyten' ) ) ) {
 
 		include_once( AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/theme-support/class-alnp-theme-support.php' );
 
 		switch ( get_template() ) {
 			case 'twentyten':
 				include_once( AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/theme-support/class-alnp-twenty-ten.php' );
+				break;
+			case 'twentyeleven':
+				include_once( AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/theme-support/class-alnp-twenty-eleven.php' );
 				break;
 			case 'twentytwelve':
 				include_once( AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/theme-support/class-alnp-twenty-twelve.php' );
