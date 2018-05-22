@@ -127,7 +127,7 @@ function alnp_get_customizer_sections() {
 		'section_auto_load_next_post_misc' => array(
 			'capability'  => 'edit_theme_options',
 			'title'       => __( 'Misc Settings', 'auto-load-next-post' ),
-			'description' => '',
+			'description' => sprintf( __( 'Here you set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 		),
 	) );
 }
@@ -241,14 +241,6 @@ function alnp_get_customizer_controls() {
 			'settings'    => 'auto_load_next_post_navigation_container',
 			'type'        => 'text',
 		),
-		/*'previous_post_selector' => array(
-			'class'       => 'WP_Customize_Control',
-			'description' => __( 'Should you need to also identify the previous post link in the navigation, fill in this field. Example: <code>.nav-previous</code>', 'auto-load-next-post' ),
-			'label'       => __( 'Previous Post Selector', 'auto-load-next-post' ),
-			'section'     => 'section_auto_load_next_post_general',
-			'settings'    => 'auto_load_next_post_previous_post_selector',
-			'type'        => 'text',
-		),*/
 		'comments_container' => array(
 			'class'       => 'WP_Customize_Control',
 			'description' => __( 'This is so comments can be removed if enabled below. Example: <code>div#comments</code>', 'auto-load-next-post' ),

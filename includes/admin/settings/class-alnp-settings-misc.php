@@ -47,7 +47,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 					array(
 						'title' => __( 'Misc', 'auto-load-next-post' ),
 						'type'  => 'title',
-						'desc'  => '',
+						'desc'  => sprintf( __( 'Here you set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 						'id'    => 'misc_options'
 					),
 
