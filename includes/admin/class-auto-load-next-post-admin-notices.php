@@ -88,7 +88,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.4.10
+		 * @version 1.5.0
 		 * @global  $current_user
 		 */
 		public function add_notices() {
@@ -96,15 +96,12 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 
 			$template = get_option('template');
 
-			if ( ! supports_alnp() ) {
-				// If user hides theme support notice then set active theme.
-				if ( ! empty( $_GET['hide_auto_load_next_post_theme_support_check'] ) ) {
-					update_option( 'auto_load_next_post_theme_support_check', $template );
-					return;
-				}
-
-				if ( get_option( 'auto_load_next_post_theme_support_check' ) !== $template ) {
-					add_action( 'admin_notices', array( $this, 'theme_check_notice' ) );
+			// Checks if the theme supports Auto Load Next Post.
+			if ( is_alnp_supported() ) {
+				// If supported theme does not match active theme then show notice.
+				if ( get_option( 'auto_load_next_post_theme_supported' ) !== $template ) {
+					add_action( 'admin_notices', array( $this, 'theme_ready_notice' ) );
+					update_option( 'auto_load_next_post_theme_supported', $template );
 				}
 			}
 
@@ -131,14 +128,14 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		} // END requirement_wp_notice()
 
 		/**
-		 * Show the theme check notice.
+		 * Show the theme ready notice.
 		 *
 		 * @access public
-		 * @since  1.3.2
+		 * @since  1.5.0
 		 */
-		public function theme_check_notice() {
-			include( dirname( __FILE__ ) . '/views/html-notice-theme-support.php' );
-		} // END theme_check_notice()
+		public function theme_ready_notice() {
+			include( dirname( __FILE__ ) . '/views/html-notice-theme-ready.php' );
+		} // END theme_ready_notice()
 
 		/**
 		 * Show the plugin review notice.
