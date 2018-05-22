@@ -25,7 +25,7 @@
  *
  * The main instance of the plugin.
  *
- * @version 1.4.10
+ * @version 1.5.0
  */
 if ( ! class_exists('Auto_Load_Next_Post') ) {
 
@@ -39,6 +39,15 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		 * @since  1.0.0
 		 */
 		protected static $_instance = null;
+
+		/**
+		 * Plugin Version
+		 *
+		 * @access public
+		 * @static
+		 * @since  1.5.0
+		 */
+		public static $version = '1.5.0-beta.1';
 
 		/**
 		 * Main Auto Load Next Post Instance
@@ -102,7 +111,7 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 			add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
 			// Load Auto Load Next Post scripts on the frontend.
-			add_action( 'wp_enqueue_scripts', array( $this, 'alnp_scripts' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'alnp_enqueue_scripts' ) );
 		} // END __construct()
 
 		/**
@@ -129,20 +138,24 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 			}
 		} // END autoload()
 
+		/*-----------------------------------------------------------------------------------*/
+		/*  Helper Functions                                                                 */
+		/*-----------------------------------------------------------------------------------*/
+
 		/**
 		 * Setup Constants
 		 *
 		 * @since   1.4.3
-		 * @version 1.4.10
+		 * @version 1.5.0
 		 * @access private
 		 */
 		private function setup_constants() {
-			$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.10');
+			$this->define('AUTO_LOAD_NEXT_POST_VERSION', self::$version);
 			$this->define('AUTO_LOAD_NEXT_POST_FILE', __FILE__);
 			$this->define('AUTO_LOAD_NEXT_POST_SLUG', 'auto-load-next-post');
 
-			$this->define('AUTO_LOAD_NEXT_POST_URL_PATH', untrailingslashit(plugins_url('/', __FILE__)));
-			$this->define('AUTO_LOAD_NEXT_POST_FILE_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
+			$this->define('AUTO_LOAD_NEXT_POST_URL_PATH', untrailingslashit( plugins_url('/', __FILE__) ) );
+			$this->define('AUTO_LOAD_NEXT_POST_FILE_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 			$this->define('AUTO_LOAD_NEXT_POST_TEMPLATE_PATH', 'auto-load-next-post/');
 
 			$this->define('AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE', '4.3');
@@ -200,6 +213,10 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 			do_action( 'auto_load_next_post_loaded' );
 		} // END includes()
 
+		/*-----------------------------------------------------------------------------------*/
+		/*  Localization                                                                     */
+		/*-----------------------------------------------------------------------------------*/
+
 		/**
 		 * Make the plugin translation ready.
 		 *
@@ -222,7 +239,7 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		 * @since   1.3.2
 		 * @version 1.5.0
 		 */
-		public function alnp_scripts() {
+		public function alnp_enqueue_scripts() {
 			// Load the Javascript if found as a singluar post and the user is not a bot.
 			if ( !alnp_is_bot() && is_singular() && get_post_type() == 'post' ) {
 				// This helps the plugin decide to load the JavaScript in the footer or not.
@@ -249,7 +266,7 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 					'alnp_is_customizer'        => is_customize_preview()
 				) );
 			} // END if is_singular() && get_post_type()
-		} // END alnp_scripts()
+		} // END alnp_enqueue_scripts()
 
 		/**
 		 * Helper function for registering and enqueueing scripts and styles.
