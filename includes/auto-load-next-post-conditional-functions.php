@@ -115,118 +115,128 @@ if ( ! function_exists( 'is_alnp_pro_version_installed' ) ) {
 	}
 }
 
-/**
- * See if theme/s is activate or not.
- *
- * @since 1.5.0
- * @param string|array $theme Theme name or array of theme names to check.
- * @return boolean
- */
-function is_alnp_active_theme( $theme ) {
-	return is_array( $theme ) ? in_array( get_template(), $theme, true ) : get_template() === $theme;
+if ( ! function_exists( 'is_alnp_active_theme' ) ) {
+	/**
+	 * See if theme/s is activate or not.
+	 *
+	 * @since 1.5.0
+	 * @param string|array $theme Theme name or array of theme names to check.
+	 * @return boolean
+	 */
+	function is_alnp_active_theme( $theme ) {
+		return is_array( $theme ) ? in_array( get_template(), $theme, true ) : get_template() === $theme;
+	}
 }
 
-/**
- * Returns true if Auto Load Next Post was supported in the theme.
- *
- * @since  1.5.0
- * @return boolean
- */
-function is_alnp_supported() {
-	$theme_support = current_theme_supports( 'auto-load-next-post' );
-	$theme_support = is_array( $theme_support ) ? $theme_support[0] : false;
+if ( ! function_exists( 'is_alnp_supported' ) ) {
+	/**
+	 * Returns true if Auto Load Next Post was supported in the theme.
+	 *
+	 * @since  1.5.0
+	 * @return boolean
+	 */
+	function is_alnp_supported() {
+		$theme_support = current_theme_supports( 'auto-load-next-post' );
+		$theme_support = is_array( $theme_support ) ? $theme_support[0] : false;
 
-	if ( ! $theme_support ) {
-		return false;
+		if ( ! $theme_support ) {
+			return false;
+		}
+
+		return true;
 	}
-
-	return true;
 }
 
-/**
- * Return "theme support" values from the current theme, if set.
- *
- * @since  1.5.0
- * @param  string $prop Name of prop (or key::subkey for arrays of props) if you want a specific value. Leave blank to get all props as an array.
- * @param  mixed  $default Optional value to return if the theme does not declare support for a prop.
- * @return mixed  Value of prop(s).
- */
-function alnp_get_theme_support( $prop = '', $default = null ) {
-	$theme_support = get_theme_support( 'auto-load-next-post' );
-	$theme_support = is_array( $theme_support ) ? $theme_support[0] : false;
+if ( ! function_exists( 'alnp_get_theme_support' ) ) {
+	/**
+	 * Return "theme support" values from the current theme, if set.
+	 *
+	 * @since  1.5.0
+	 * @param  string $prop Name of prop (or key::subkey for arrays of props) if you want a specific value. Leave blank to get all props as an array.
+	 * @param  mixed  $default Optional value to return if the theme does not declare support for a prop.
+	 * @return mixed  Value of prop(s).
+	 */
+	function alnp_get_theme_support( $prop = '', $default = null ) {
+		$theme_support = get_theme_support( 'auto-load-next-post' );
+		$theme_support = is_array( $theme_support ) ? $theme_support[0] : false;
 
-	if ( ! $theme_support ) {
-		return $default;
-	}
+		if ( ! $theme_support ) {
+			return $default;
+		}
 
-	if ( ! empty( $prop ) ) {
-		$prop_stack = explode( '::', $prop );
-		$prop_key   = array_shift( $prop_stack );
+		if ( ! empty( $prop ) ) {
+			$prop_stack = explode( '::', $prop );
+			$prop_key   = array_shift( $prop_stack );
 
-		if ( isset( $theme_support[ $prop_key ] ) ) {
-			$value = $theme_support[ $prop_key ];
+			if ( isset( $theme_support[ $prop_key ] ) ) {
+				$value = $theme_support[ $prop_key ];
 
-			if ( count( $prop_stack ) ) {
-				foreach ( $prop_stack as $prop_key ) {
-					if ( is_array( $value ) && isset( $value[ $prop_key ] ) ) {
-						$value = $value[ $prop_key ];
-					} else {
-						$value = $default;
-						break;
+				if ( count( $prop_stack ) ) {
+					foreach ( $prop_stack as $prop_key ) {
+						if ( is_array( $value ) && isset( $value[ $prop_key ] ) ) {
+							$value = $value[ $prop_key ];
+						} else {
+							$value = $default;
+							break;
+						}
 					}
 				}
+			} else {
+				$value = $default;
 			}
-		} else {
-			$value = $default;
+
+			return $value;
 		}
 
-		return $value;
+		return $theme_support;
 	}
-
-	return $theme_support;
 }
 
-/**
- * Was the current request made by a known bot?
- *
- * @since  1.5.0
- * @return boolean
- */
-function alnp_is_bot() {
-	$is_bot = alnp_is_bot_user_agent( $_SERVER['HTTP_USER_AGENT'] );
+if ( ! function_exists( 'alnp_is_bot' ) ) {
+	/**
+	 * Was the current request made by a known bot?
+	 *
+	 * @since  1.5.0
+	 * @return boolean
+	 */
+	function alnp_is_bot() {
+		$is_bot = alnp_is_bot_user_agent( $_SERVER['HTTP_USER_AGENT'] );
 
-	return $is_bot;
+		return $is_bot;
+	}
 }
 
-/**
- * Is the given user-agent a known bot?
- *
- * @since  1.5.0
- * @param  string A user-agent string
- * @return boolean
- */
-function alnp_is_bot_user_agent( $ua = null ) {
-	if ( empty( $ua ) ) {
+if ( ! function_exists( 'alnp_is_bot_user_agent' ) ) {
+	/**
+	 * Is the given user-agent a known bot?
+	 *
+	 * @since  1.5.0
+	 * @param  string A user-agent string
+	 * @return boolean
+	 */
+	function alnp_is_bot_user_agent( $ua = null ) {
+		if ( empty( $ua ) ) {
+			return false;
+		}
+
+		$bot_agents = array(
+			'alexa', 'altavista', 'ask jeeves', 'attentio', 'baiduspider', 'bingbot', 'chtml generic', 'crawler', 'fastmobilecrawl',
+			'feedfetcher-google', 'firefly', 'froogle', 'gigabot', 'googlebot', 'googlebot-mobile', 'heritrix', 'httrack', 'ia_archiver', 'irlbot',
+			'iescholar', 'infoseek', 'jumpbot', 'linkcheck', 'lycos', 'mediapartners', 'mediobot', 'motionbot', 'msnbot', 'mshots', 'openbot',
+			'pss-webkit-request', 'pythumbnail', 'scooter', 'slurp', 'snapbot', 'spider', 'taptubot', 'technoratisnoop',
+			'teoma', 'twiceler', 'yahooseeker', 'yahooysmcm', 'yammybot', 'ahrefsbot', 'pingdom.com_bot', 'kraken', 'yandexbot',
+			'twitterbot', 'tweetmemebot', 'openhosebot', 'queryseekerspider', 'linkdexbot', 'grokkit-crawler',
+			'livelapbot', 'germcrawler', 'domaintunocrawler', 'grapeshotcrawler', 'cloudflare-alwaysonline',
+		);
+
+		foreach ( $bot_agents as $bot_agent ) {
+			if ( false !== stripos( $ua, $bot_agent ) ) {
+				return true;
+			}
+		}
+
 		return false;
 	}
-
-	$bot_agents = array(
-		'alexa', 'altavista', 'ask jeeves', 'attentio', 'baiduspider', 'bingbot', 'chtml generic', 'crawler', 'fastmobilecrawl',
-		'feedfetcher-google', 'firefly', 'froogle', 'gigabot', 'googlebot', 'googlebot-mobile', 'heritrix', 'httrack', 'ia_archiver', 'irlbot',
-		'iescholar', 'infoseek', 'jumpbot', 'linkcheck', 'lycos', 'mediapartners', 'mediobot', 'motionbot', 'msnbot', 'mshots', 'openbot',
-		'pss-webkit-request', 'pythumbnail', 'scooter', 'slurp', 'snapbot', 'spider', 'taptubot', 'technoratisnoop',
-		'teoma', 'twiceler', 'yahooseeker', 'yahooysmcm', 'yammybot', 'ahrefsbot', 'pingdom.com_bot', 'kraken', 'yandexbot',
-		'twitterbot', 'tweetmemebot', 'openhosebot', 'queryseekerspider', 'linkdexbot', 'grokkit-crawler',
-		'livelapbot', 'germcrawler', 'domaintunocrawler', 'grapeshotcrawler', 'cloudflare-alwaysonline',
-	);
-
-	foreach ( $bot_agents as $bot_agent ) {
-		if ( false !== stripos( $ua, $bot_agent ) ) {
-			return true;
-		}
-	}
-
-	return false;
 }
 
 if ( ! function_exists( 'alnp_get_post_type' ) ) {
