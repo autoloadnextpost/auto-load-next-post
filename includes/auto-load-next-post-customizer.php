@@ -56,13 +56,13 @@ function alnp_init_customizer( $wp_customize ) {
 	 *
 	 * @since 1.5.0
 	 */
-	add_filter( 'customize_section_active', 'auto_load_next_post_customizer_hide_sections', 12, 2 );
+	add_filter( 'customize_section_active', 'alnp_customizer_hide_sections', 12, 2 );
 
 	if ( alnp_is_customizer() ) {
 		alnp_customizer_remove_controls( $wp_customize ); // Remove controls from the customizer.
 	}
 }
-add_action( 'customize_register', 'auto_load_next_post_init_customizer' );
+add_action( 'customize_register', 'alnp_init_customizer', 11 );
 
 /**
  * Remove any unwanted default conrols.
@@ -91,7 +91,7 @@ function alnp_is_customizer() {
 }
 
 /**
- * Only show the plugin sections in the Customizer.
+ * Only show Auto Load Next Post sections in the Customizer if requested.
  *
  * @since  1.5.0
  * @param  $active Whether the Customizer section is active.
@@ -133,7 +133,7 @@ function alnp_get_customizer_sections() {
 }
 
 /**
- * Get Customizer settings for plugin.
+ * Get Customizer settings for Auto Load Next Post.
  *
  * @since  1.5.0
  * @return array
@@ -142,7 +142,7 @@ function alnp_get_customizer_settings() {
 	$settings = alnp_get_settings();
 
 	/**
-	 * Filter Customizer settings for plugin.
+	 * Filter Customizer settings for Auto Load Next Post.
 	 *
 	 * @param array $settings Customizer settings to add.
 	 */
@@ -204,7 +204,7 @@ function alnp_get_customizer_settings() {
 }
 
 /**
- * Get Customizer controls for the plugin.
+ * Get Customizer controls for Auto Load Next Post.
  *
  * @since  1.5.0
  * @return array
@@ -212,7 +212,7 @@ function alnp_get_customizer_settings() {
 function alnp_get_customizer_controls() {
 
 	/**
-	 * Filter Customizer controls for the plugin.
+	 * Filter Customizer controls for Auto Load Next Post.
 	 *
 	 * @param array $controls Customizer controls to add.
 	 */
@@ -227,7 +227,7 @@ function alnp_get_customizer_controls() {
 		),
 		'title_selector' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'Used to identify which article the user is reading and track if should Google Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
+			'description' => __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
 			'label'       => __( 'Post Title Selector', 'auto-load-next-post' ),
 			'section'     => 'section_auto_load_next_post_general',
 			'settings'    => 'auto_load_next_post_title_selector',
@@ -277,7 +277,7 @@ function alnp_get_customizer_controls() {
 }
 
 /**
- * Return plugin settings.
+ * Return Auto Load Next Post settings.
  *
  * @since  1.5.0
  * @return array $args
@@ -290,7 +290,7 @@ function alnp_get_settings() {
 		'previous_post_selector' => get_option( 'auto_load_next_post_previous_post_selector' ),
 		'comments_container'     => get_option( 'auto_load_next_post_comments_container' ),
 		'remove_comments'        => get_option( 'auto_load_next_post_remove_comments' ),
-		'google_analytics'       => get_option( 'auto_load_next_post_google_analytics' )
+		'google_analytics'       => get_option( 'auto_load_next_post_google_analytics' ),
 		'js_footer'              => get_option( 'auto_load_next_post_js_footer' )
 	);
 
