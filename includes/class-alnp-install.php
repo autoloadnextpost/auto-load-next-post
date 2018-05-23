@@ -89,6 +89,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 
 			// Set theme selectors if current active theme supports Auto Load Next Post.
 			self::set_theme_selectors();
+			wp_die('Boo');
 
 			// Set activation date.
 			self::set_install_date();

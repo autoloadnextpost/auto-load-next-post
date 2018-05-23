@@ -50,8 +50,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		public function includes() {
 			// Classes we only need if the ajax is not-ajax
 			if ( ! auto_load_next_post_is_ajax() ) {
-				include( dirname( __FILE__ ) . '/class-auto-load-next-post-admin-notices.php' ); // Plugin Notices
-				include( dirname( __FILE__ ) . '/class-auto-load-next-post-admin-help.php' ); // Plugin Help Tab
+				include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' ); // Plugin Notices
+				include( dirname( __FILE__ ) . '/class-alnp-admin-help.php' ); // Plugin Help Tab
 			}
 		} // END includes()
 
@@ -108,7 +108,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 			global $current_tab, $current_section;
 
 			// Include settings pages.
-			include_once( dirname( __FILE__ ) . '/class-auto-load-next-post-admin-settings.php' );
+			include_once( dirname( __FILE__ ) . '/class-alnp-admin-settings.php' );
 
 			Auto_Load_Next_Post_Admin_Settings::get_settings_pages();
 
@@ -140,7 +140,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 * @since  1.0.0
 		 */
 		public function settings_page() {
-			include_once( dirname( __FILE__ ) . '/class-auto-load-next-post-admin-settings.php' );
+			include_once( dirname( __FILE__ ) . '/class-alnp-admin-settings.php' );
 
 			Auto_Load_Next_Post_Admin_Settings::output();
 		} // END settings_page()
