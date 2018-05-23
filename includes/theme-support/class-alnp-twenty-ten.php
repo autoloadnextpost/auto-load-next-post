@@ -31,7 +31,7 @@ class ALNP_Twenty_Ten {
 		// Filters the repeater template location.
 		add_filter( 'alnp_template_redirect', array( __CLASS__, 'alnp_twentyten_template_redirect' ) );
 
-		// Override theme selectors.
+		// Add theme support and preset the theme selectors.
 		add_action( 'after_setup_theme', array( __CLASS__, 'add_theme_support' ) );
 	} // END init()
 

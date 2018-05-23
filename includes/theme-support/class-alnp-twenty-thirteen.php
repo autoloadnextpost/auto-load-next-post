@@ -34,7 +34,7 @@ class ALNP_Twenty_Thirteen {
 		// Add a compaitable post navigation.
 		add_action( 'alnp_load_after_content', array( __CLASS__, 'alnp_twentythirteen_post_navigation' ), 1, 10 );
 
-		// Override theme selectors.
+		// Add theme support and preset the theme selectors.
 		add_action( 'after_setup_theme', array( __CLASS__, 'add_theme_support' ) );
 	} // END init()
 
