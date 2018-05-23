@@ -92,7 +92,7 @@ if ( ! function_exists( 'alnp_template_location' ) ) {
 				break;
 		}
 
-		return apply_filter( 'alnp_template_location', $path );
+		return apply_filters( 'alnp_template_location', $path );
 	} // END alnp_template_location()
 }
 
