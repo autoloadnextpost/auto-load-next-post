@@ -59,107 +59,10 @@ h2 .nav-tab:first-child {
 	text-align: center;
 	line-height: 22px;
 }
-img.help_tip {
-	vertical-align: middle;
-	margin: 0 0 0 9px;
-}
-.postbox img.help_tip {
-	margin-top: -4px;
-}
-.auto-load-next-post table.form-table img.help_tip {
-	padding: 0;
-	margin: -4px 0 0 5px;
-	vertical-align: middle;
-	cursor: help;
-	line-height: 1;
-}
-.auto-load-next-post table.form-table span.help_tip {
-	cursor: help;
-	color: #2ea2cc;
-}
-.auto-load-next-post table.form-table th img.help_tip {
-	margin: 4px -10px 0 0;
-	float: right;
-}
 .auto-load-next-post table.form-table fieldset {
 	margin-top: 4px;
 }
-.auto-load-next-post table.form-table fieldset img.help_tip {
-	margin: -3px 0 0 5px;
-}
 
-/**
- * CSS for TipTip
- *
- * jquery.tipTip.js
- */
-#tiptip_holder {
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 99999;
-}
-#tiptip_holder.tip_top {
-	padding-bottom: 5px;
-}
-#tiptip_holder.tip_top #tiptip_arrow_inner {
-	margin-top: -7px;
-	margin-left: -6px;
-	border-top-color: #fac75a;
-}
-#tiptip_holder.tip_bottom {
-	padding-top: 5px;
-}
-#tiptip_holder.tip_bottom #tiptip_arrow_inner {
-	margin-top: -5px;
-	margin-left: -6px;
-	border-bottom-color: #fac75a;
-}
-#tiptip_holder.tip_right {
-	padding-left: 5px;
-}
-#tiptip_holder.tip_right #tiptip_arrow_inner {
-	margin-top: -6px;
-	margin-left: -5px;
-	border-right-color: #fac75a;
-}
-#tiptip_holder.tip_left {
-	padding-right: 5px;
-}
-#tiptip_holder.tip_left #tiptip_arrow_inner {
-	margin-top: -6px;
-	margin-left: -7px;
-	border-left-color: #fac75a;
-}
-#tiptip_content,
-.auto_load_next_post_error_tip {
-	font-size: 11px;
-	color: #333;
-	padding: .5em;
-	background: #fac75a;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,.1);
-	-moz-box-shadow: 1px 1px 3px rgba(0,0,0,.1);
-	box-shadow: 1px 1px 3px rgba(0,0,0,.1);
-	text-align: center;
-}
-#tiptip_content code,
-.auto_load_next_post_error_tip code{
-	background: #888;
-	padding: 1px;
-}
-#tiptip_arrow,
-#tiptip_arrow_inner {
-	position: absolute;
-	border-color: transparent;
-	border-style: solid;
-	border-width: 6px;
-	height: 0;
-	width: 0;
-}
 .auto_load_next_post_error_tip {
 	background: #d82223;
 	max-width: 20em;
