@@ -2,7 +2,6 @@
 /**
  * Auto Load Next Post - Admin Settings Class.
  *
- * @class    Auto_Load_Next_Post_Admin_Settings
  * @since    1.0.0
  * @version  1.5.0
  * @author   Sébastien Dumont
