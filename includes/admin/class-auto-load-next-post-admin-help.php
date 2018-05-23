@@ -1,6 +1,9 @@
 <?php
 /**
- * Help is provided for this plugin on the plugin pages.
+ * Auto Load Next Post: Help Tab.
+ *
+ * Adds a help tab to the settings page providing useful
+ * and helpful information for the users.
  *
  * @since    1.0.0
  * @version  1.5.0
