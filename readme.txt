@@ -39,11 +39,11 @@ Auto Load Next Post is a plugin _designed_ for self-hosted WordPress sites. This
 
 = Demo Site =
 
-Want to see how it works? [Go to the demo site](https://demo.autoloadnextpost.com?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=demo-link) and view any single post. Scroll down and see the plugin in action.
+Want to see how it works? [Go to the demo site](https://demo.autoloadnextpost.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=demo-link) and view any single post. Scroll down and see the plugin in action.
 
 = Increase Your PageViews Today =
 
-Intrigued? _I bet you are._ Once you try Auto Load Next Post, you pageviews will increase and you will not want to go back. **Guaranteed.**
+Intrigued? _I bet you are._ Once you try Auto Load Next Post, your pageviews will increase and you will not want to go back. **Guaranteed.**
 
 = Built with developers in mind =
 
@@ -55,7 +55,7 @@ WordPress.org hosts some great free add-ons for Auto Load Next Post.
 
 - [Facebook Pixel Tracking](https://wordpress.org/plugins/alnp-facebook-pixel-tracking/)
 
-> Have a free add-on for Auto Load Next Post? [Let me know about it](https://autoloadnextpost.com/contact/).
+> Have a free add-on for Auto Load Next Post? [Let me know about it](https://autoloadnextpost.com/contact/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=have-addon-to-share-link).
 
 > #### Auto Load Next Post Pro
 > There's an even better version of the plugin coming out soon with the following extra features:<br />
@@ -71,8 +71,8 @@ This plugin is created and maintained by [Sébastien Dumont](https://sebastiendu
 
 **More information**
 
-- [Visit Auto Load Next Post website](https://autoloadnextpost.com)
-- [View Documentation](https://autoloadnextpost.com/documentation/)
+- [Visit Auto Load Next Post website](https://autoloadnextpost.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=more-info-link)
+- [View Documentation](https://autoloadnextpost.com/documentation/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=more-info-link)
 - If you're a developer yourself, follow or contribute to the [Auto Load Next Post plugin on GitHub](https://github.com/AutoLoadNextPost/auto-load-next-post)
 
 == Installation ==
@@ -82,10 +82,11 @@ Installing "Auto Load Next Post" can be done either by searching for "Auto Load 
 1. Download the plugin via WordPress.org
 2. Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard.
 3. Activate the plugin through the 'Plugins' menu in WordPress.
+
+If the theme already supports Auto Load Next Post then you do not need to complete the remaining steps.
+
 4. Go to the plugin settings page 'Settings > Auto Load Next Post'.
 5. Enter each of the selectors specified for the theme you are using and press "Save Changes".
-
-Once you have activated the plugin, you may get an admin notice telling you that you have not declared support for the plugin. This is perfectly normal and with a little setting up, the notification will remove automatically. There are two buttons. The first leads you to documentation to help you support the plugin in your theme. The second allows you to hide the admin notice. - This notification does not show for any of WordPress core themes.
 
 See [documentation](https://autoloadnextpost.com/documentation/) for more information.
 
@@ -102,11 +103,6 @@ Any properly developed WordPress theme will work with Auto Load Next Post.
 = Is Auto Load Next Post translatable? =
 
 Yes! Auto Load Next Post is deployed with full translation and localization support via the 'auto-load-next-post' text-domain.
-
-= How do I declare Auto Load Next Post support in a theme? =
-
-Simple add this to your ***functions.php*** file.<br />
-> ```add_theme_support('auto-load-next-post');```<br />
 
 = Where do I go to change the plugin settings? =
 
@@ -142,13 +138,13 @@ If you have this issue and you have created a custom repeater template file to s
 
 You need to place it inside the loop. If that is not the case then you have not included the content of the post correctly according to the theme you are using.
 
-= Does the plugin detect my theme and insert the correct selectors for me? =
+= Does the plugin detect my theme and insert the theme selectors for me? =
 
-No, it does not. You may follow this guide to help you [find your theme selectors](https://autoloadnextpost.com/documentation/find-theme-selectors/).
+If the theme author has added support for Auto Load Next Post and has set the theme selectors then yes, it will set the theme selectors for you. If not supported then it does not. You may follow this guide to help you [find your theme selectors](https://autoloadnextpost.com/documentation/find-theme-selectors/).
 
 = My theme does not work with the plugin, what do I do? =
 
-If after adding theme support to your `functions.php` file, first, check that you have a post navigation at the end of your post. If one does exists then you may need to copy and modify the repeater template file **content-partial.php** in order to support your theme.
+Check that you have a post navigation at the end of your post. If one does exists then you may need to copy and modify the repeater template file **content-partial.php** in order to support your theme.
 
 Not all themes are coded the same way so some alterations will be needed to match the theme. If you need help with this then I provide [theme support](https://autoloadnextpost.com/product/theme-support/) on request.
 
