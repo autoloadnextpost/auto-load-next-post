@@ -35,37 +35,6 @@ if ( ! function_exists( 'auto_load_next_post_is_ajax' ) ) {
 	} // END auto_load_next_post_is_ajax
 }
 
-if ( ! function_exists( 'supports_alnp' ) ) {
-	/**
-	 * Returns true or false if Auto Load Next Post supports the theme.
-	 *
-	 * @access  public
-	 * @since   1.4.3
-	 * @version 1.4.10
-	 * @return  boolean
-	 */
-	function supports_alnp() {
-		/* WordPress core themes. */
-		$core_themes = array(
-			'twentyseventeen', 'twentysixteen', 'twentyfifteen', 'twentyfourteen', 'twentythirteen', 'twentytwelve', 'twentyten'
-		);
-
-		$other_themes = array(
-			'storefront'
-		);
-
-		$supported_themes = array_merge( $core_themes, $other_themes );
-
-		if ( in_array( get_option('template'), $supported_themes ) ) {
-			return true;
-		} else if ( current_theme_supports( 'auto-load-next-post' ) ) {
-			return true;
-		}
-
-		return false;
-	} // END supports_alnp()
-}
-
 if ( ! function_exists( 'alnp_template_location' ) ) {
 	/**
 	 * Filters the template location for get_template_part().
