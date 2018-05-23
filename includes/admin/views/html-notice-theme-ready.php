@@ -78,7 +78,7 @@ $active_theme = wp_get_theme();
 
 		<div class="auto-load-next-post-notice-content">
 			<h3><?php echo esc_html__( 'Congratulations!', 'auto-load-next-post' ); ?></h3>
-			<p><?php echo sprintf( __( '<strong>$1%s</strong> supports $2%s and is ready to increase your page views.', 'auto-load-next-post' ), $active_theme->name, esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
+			<p><?php echo sprintf( __( '<strong>%1$s</strong> supports %2$s and is ready to increase your page views.', 'auto-load-next-post' ), $active_theme->name, esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
 		</div>
 	</div>
 </div>
