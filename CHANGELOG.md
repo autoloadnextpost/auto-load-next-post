@@ -1,3 +1,24 @@
+# 1.5.0 (23rd May 2018)
+* Added: A filter for the repeater template location so theme or plugin developers can move it to another location should they need to.
+* Added: Option to load the JavaScript in the footer.
+* Added: A user agent checker to see if the request was made from a known bot.
+* Added: All settings to the customizer.
+* Added: Detection of plugin support. If supported, set the theme selectors for the current active theme even when the theme has changed.
+* Added: Admin notice to tell the user the theme supports Auto Load Next Post. Only shows once.
+* Added: Admin notice in the general settings only if theme supports Auto Load Next Post have already set the theme selectors.
+* Added: Admin notice in the general settings only if all three or one of the required theme selectors are not set.
+* Added: Admin notice in the misc settings only if remove comments was enabled but the comments container selector was not set.
+* Changed: Rewrite endpoint to be more distinct for Auto Load Next Post and prevent any conflicts.
+* Changed: Settings have been separated into General and Miscellanous settings.
+* Improved: Theme support and all default WordPress themes are supported out of the box. (Twenty Ten to Twenty Seventeen)
+* Improved: Moved flushing rewrite rules so it only runs once during installation or updating the Auto Load Next Post.
+* Improved: Inline Phpdocs
+* Removed: Admin notice for theme has not declared support.
+* Removed: Template location filter from the repeater template.
+* Removed: PHP version check.
+* Updated: POT file for translation.
+* Updated: Repeater template due to improvements with this release.
+
 # 1.4.12 (19th May 2018)
 * Fixed: Corrected post type returned for single posts in the repeater template.
 * Removed: The need to check if the theme has declared support before the plugin loads the JavaScript.
