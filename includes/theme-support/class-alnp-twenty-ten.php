@@ -29,15 +29,10 @@ class ALNP_Twenty_Ten {
 	 */
 	public static function init() {
 		// Filters the repeater template location.
-		add_filter( 'alnp_template_redirect', 'alnp_twentyten_template_redirect' );
+		add_filter( 'alnp_template_redirect', array( __CLASS__, 'alnp_twentyten_template_redirect' ) );
 
 		// Override theme selectors.
-		add_theme_support( 'auto-load-next-post' array(
-			'content_container'    => '#content',
-			'title_selector'       => 'h1.entry-title',
-			'navigation_container' => '#nav-below',
-			'comments_container'   => 'div#comments',
-		) );
+		add_action( 'after_setup_theme', array( __CLASS__, 'add_theme_support' ) );
 	} // END init()
 
 	/**
@@ -50,6 +45,22 @@ class ALNP_Twenty_Ten {
 	public static function alnp_twentyten_template_redirect() {
 		return AUTO_LOAD_NEXT_POST_FILE_PATH . '/template/theme-support/twenty-ten/content-alnp.php';
 	} // END alnp_twentyten_template_redirect()
+
+	/**
+	 * Add theme support by providing the theme selectors
+	 * to be applied once the theme is activated.
+	 *
+	 * @access public
+	 * @static
+	 */
+	public static function add_theme_support() {
+		add_theme_support( 'auto-load-next-post', array(
+			'content_container'    => '#content',
+			'title_selector'       => 'h1.entry-title',
+			'navigation_container' => '#nav-below',
+			'comments_container'   => 'div#comments',
+		) );
+	} // END add_theme_support()
 
 } // END class
 

@@ -29,13 +29,24 @@ class ALNP_Twenty_Fourteen {
 	 */
 	public static function init() {
 		// Override theme selectors.
-		add_theme_support( 'auto-load-next-post' array(
+		add_action( 'after_setup_theme', array( __CLASS__, 'add_theme_support' ) );
+	} // END init()
+
+	/**
+	 * Add theme support by providing the theme selectors
+	 * to be applied once the theme is activated.
+	 *
+	 * @access public
+	 * @static
+	 */
+	public static function add_theme_support() {
+		add_theme_support( 'auto-load-next-post', array(
 			'content_container'    => '.site-content',
 			'title_selector'       => 'h1.entry-title',
 			'navigation_container' => 'nav.post-navigation',
 			'comments_container'   => 'div#comments',
 		) );
-	} // END init()
+	} // END add_theme_support()
 
 } // END class
 

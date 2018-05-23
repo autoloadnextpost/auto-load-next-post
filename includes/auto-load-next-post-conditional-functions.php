@@ -130,14 +130,13 @@ if ( ! function_exists( 'is_alnp_active_theme' ) ) {
 
 if ( ! function_exists( 'is_alnp_supported' ) ) {
 	/**
-	 * Returns true if Auto Load Next Post was supported in the theme.
+	 * Returns true if Auto Load Next Post is supported in the theme.
 	 *
 	 * @since  1.5.0
 	 * @return boolean
 	 */
 	function is_alnp_supported() {
 		$theme_support = current_theme_supports( 'auto-load-next-post' );
-		$theme_support = is_array( $theme_support ) ? $theme_support[0] : false;
 
 		if ( ! $theme_support ) {
 			return false;
