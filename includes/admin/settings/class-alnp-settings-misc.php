@@ -79,7 +79,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 
 					array(
 						'title'   => __( 'Update Google Analytics', 'auto-load-next-post' ),
-						'desc'    => __( 'Each time a post has loaded and is in view it will count as a pageview. Must have reference to Google Analytics tracking code on the site.', 'auto-load-next-post' ),
+						'desc'    => __( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
 						'id'      => 'auto_load_next_post_google_analytics',
 						'default' => 'no',
 						'type'    => 'checkbox'
@@ -87,7 +87,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 
 					array(
 						'title'   => __( 'JavaScript in Footer?', 'auto-load-next-post' ),
-						'desc'    => __( 'Enable to load Auto Load Next Post in the footer instead of the header.', 'auto-load-next-post' ),
+						'desc'    => __( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site.', 'auto-load-next-post' ),
 						'id'      => 'auto_load_next_post_js_footer',
 						'default' => 'no',
 						'type'    => 'checkbox'

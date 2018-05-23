@@ -100,8 +100,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 
 					array(
 						'title'    => __( 'Content Container', 'auto-load-next-post' ),
-						'desc'     => __( 'This is the primary container were the post content is loaded in. Example: <code>main.site-main</code>', 'auto-load-next-post' ),
-						//'desc_tip' => true,
+						'desc'     => __( 'The primary container where the post content is loaded in. Example: <code>main.site-main</code>', 'auto-load-next-post' ),
 						'id'       => 'auto_load_next_post_content_container',
 						'default'  => 'main.site-main',
 						'type'     => 'text',
@@ -111,8 +110,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 
 					array(
 						'title'    => __( 'Post Title', 'auto-load-next-post' ),
-						'desc'     => __( 'This is used to identify which article the user is reading and track if Google Analytics is enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
-						//'desc_tip' => true,
+						'desc'     => __( 'Used to identify which article the user is reading and track if should Google Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
 						'id'       => 'auto_load_next_post_title_selector',
 						'default'  => 'h1.entry-title',
 						'type'     => 'text',
@@ -123,7 +121,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 					array(
 						'title'    => __( 'Post Navigation', 'auto-load-next-post' ),
 						'desc'     => __( 'The post navigation needs to be indentified to find the next post. Example: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
-						//'desc_tip' => true,
 						'id'       => 'auto_load_next_post_navigation_container',
 						'default'  => 'nav.post-navigation',
 						'type'     => 'text',
@@ -133,8 +130,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 
 					array(
 						'title'    => __( 'Comments Container', 'auto-load-next-post' ),
-						'desc'     => __( 'This is so comments can be removed if enabled below. Example: <code>div#comments</code>', 'auto-load-next-post' ),
-						//'desc_tip' => true,
+						'desc'     => __( 'So comments can be removed if enabled under "Misc" settings. Example: <code>div#comments</code>', 'auto-load-next-post' ),
 						'id'       => 'auto_load_next_post_comments_container',
 						'default'  => 'div#comments',
 						'type'     => 'text',

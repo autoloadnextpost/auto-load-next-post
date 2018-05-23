@@ -219,7 +219,7 @@ function alnp_get_customizer_controls() {
 	return apply_filters( 'auto_load_next_post_get_customizer_controls', array(
 		'content_container' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'This is the primary container were the post content is loaded in. Example: <code>main.site-main</code>', 'auto-load-next-post' ),
+			'description' => __( 'The primary container where the post content is loaded in. Example: <code>main.site-main</code>', 'auto-load-next-post' ),
 			'label'       => __( 'Content Container', 'auto-load-next-post' ),
 			'section'     => 'section_auto_load_next_post_general',
 			'settings'    => 'auto_load_next_post_content_container',
@@ -227,7 +227,7 @@ function alnp_get_customizer_controls() {
 		),
 		'title_selector' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'This is used to identify which article the user is reading and track if Google Analytics is enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
+			'description' => __( 'Used to identify which article the user is reading and track if should Google Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
 			'label'       => __( 'Post Title Selector', 'auto-load-next-post' ),
 			'section'     => 'section_auto_load_next_post_general',
 			'settings'    => 'auto_load_next_post_title_selector',
@@ -243,7 +243,7 @@ function alnp_get_customizer_controls() {
 		),
 		'comments_container' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'This is so comments can be removed if enabled below. Example: <code>div#comments</code>', 'auto-load-next-post' ),
+			'description' => __( 'So comments can be removed if enabled under "Misc" settings. Example: <code>div#comments</code>', 'auto-load-next-post' ),
 			'label'       => __( 'Comments Container', 'auto-load-next-post' ),
 			'section'     => 'section_auto_load_next_post_general',
 			'settings'    => 'auto_load_next_post_comments_container',
@@ -259,7 +259,7 @@ function alnp_get_customizer_controls() {
 		),
 		'google_analytics' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'Each time a post has loaded and is in view it will count as a pageview. Must have reference to Google Analytics tracking code on the site.', 'auto-load-next-post' ),
+			'description' => __( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
 			'label'       => __( 'Update Google Analytics', 'auto-load-next-post' ),
 			'section'     => 'section_auto_load_next_post_misc',
 			'settings'    => 'auto_load_next_post_google_analytics',
@@ -267,7 +267,7 @@ function alnp_get_customizer_controls() {
 		),
 		'js_footer' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'Enable to load Auto Load Next Post in the footer instead of the header.', 'auto-load-next-post' ),
+			'description' => __( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site.', 'auto-load-next-post' ),
 			'label'       => __( 'JavaScript in Footer?', 'auto-load-next-post' ),
 			'section'     => 'section_auto_load_next_post_misc',
 			'settings'    => 'auto_load_next_post_google_analytics',
