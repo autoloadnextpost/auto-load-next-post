@@ -31,7 +31,25 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 			$this->label = __( 'Misc', 'auto-load-next-post' );
 
 			parent::__construct();
+
+			add_action( 'auto_load_next_post_sections_misc', array( __CLASS__, 'no_comment_selector_set' ), 10 );
 		} // END __construct()
+
+		/**
+		 * This notifies the user if the comment selector is NOT set.
+		 *
+		 * @access public
+		 * @static
+		 * @since  1.5.0
+		 */
+		public static function no_comment_selector_set() {
+			$comments_container = get_option( 'auto_load_next_post_comments_container' );
+			$remove_comments    = get_option( 'auto_load_next_post_remove_comments' );
+
+			if ( empty( $comments_container ) && ! empty( $remove_comments ) ) {
+				include( dirname( AUTO_LOAD_NEXT_POST_FILE ) . '/includes/admin/views/html-notice-no-comment-selector.php' );
+			}
+		} // END no_comment_selector_set()
 
 		/**
 		 * Get settings array
@@ -93,7 +111,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 
 					array(
 						'type' => 'sectionend',
-						'id' => 'misc_options'
+						'id'   => 'misc_options'
 					),
 				)
 			); // End misc settings

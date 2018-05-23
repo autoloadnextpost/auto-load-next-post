@@ -31,7 +31,54 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 			$this->label = __( 'General', 'auto-load-next-post' );
 
 			parent::__construct();
+
+			add_action( 'auto_load_next_post_sections_general', array( __CLASS__, 'is_theme_supported' ), 10 );
+			add_action( 'auto_load_next_post_sections_general', array( __CLASS__, 'no_theme_selectors_set' ), 10 );
 		} // END __construct()
+
+		/**
+		 * This notifies the user if the active theme supports Auto Load Next Post.
+		 *
+		 * @access public
+		 * @static
+		 * @since  1.5.0
+		 */
+		public static function is_theme_supported() {
+			if ( is_alnp_supported() ) {
+				include( dirname( AUTO_LOAD_NEXT_POST_FILE ) . '/includes/admin/views/html-notice-is-supported.php' );
+			}
+		} // END is_theme_supported()
+
+		/**
+		 * This notifies the user if none of the required theme selectors are set.
+		 *
+		 * @access public
+		 * @static
+		 * @since  1.5.0
+		 */
+		public static function no_theme_selectors_set() {
+			$set_selectors = array();
+
+			$content_container    = get_option( 'auto_load_next_post_content_container' );
+			$title_selector       = get_option( 'auto_load_next_post_title_selector' );
+			$navigation_container = get_option( 'auto_load_next_post_navigation_container' );
+
+			if ( ! empty( $content_container ) ) {
+				$set_selectors[] = $content_container;
+			}
+
+			if ( ! empty( $title_selector ) ) {
+				$set_selectors[] = $title_selector;
+			}
+
+			if ( ! empty( $navigation_container ) ) {
+				$set_selectors[] = $navigation_container;
+			}
+
+			if ( empty( $set_selectors ) || is_array( $set_selectors ) && count( $set_selectors ) < 3 ) {
+				include( dirname( AUTO_LOAD_NEXT_POST_FILE ) . '/includes/admin/views/html-notice-no-theme-selectors.php' );
+			}
+		} // END no_theme_selectors_set()
 
 		/**
 		 * Get settings array.
@@ -47,7 +94,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 					array(
 						'title' => __( 'General', 'auto-load-next-post' ),
 						'type'  => 'title',
-						'desc'  => sprintf( __( 'Set the theme selectors below according to your active theme. All are required for %s to work. <a href="https://autoloadnextpost.com/documentation/find-theme-selectors/?utm_source=wpadmin&utm_campaign=plugin-settings-general" target="_blank">How to find my theme selectors?</a>', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						'desc'  => sprintf( __( 'Here you set the theme selectors below according to your active theme. All are required for %s to work.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 						'id'    => 'general_options'
 					),
 
@@ -94,46 +141,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 						'css'      => 'min-width:300px;',
 						'autoload' => false
 					),
-
-					/*array(
-						'title'   => __( 'Remove Comments', 'auto-load-next-post' ),
-						'desc'    => __( 'Enable to remove comments when each post loads including the initial post.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_remove_comments',
-						'default' => 'yes',
-						'type'    => 'checkbox'
-					),
-
-					array(
-						'title'   => __( 'Update Google Analytics', 'auto-load-next-post' ),
-						'desc'    => __( 'Each time a post has loaded and is in view it will count as a pageview. Must have reference to Google Analytics tracking code on the site.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_google_analytics',
-						'default' => 'no',
-						'type'    => 'checkbox'
-					),
-
-					array(
-						'title'   => __( 'JavaScript in Footer?', 'auto-load-next-post' ),
-						'desc'    => __( 'Enable to load Auto Load Next Post in the footer instead of the header.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_js_footer',
-						'default' => 'no',
-						'type'    => 'checkbox'
-					),
-
-					array(
-						'title'   => __( 'Reset all data?', 'auto-load-next-post' ),
-						'desc'    => __( 'Press the reset button to clear all settings for this plugin and re-install the default settings.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_reset_data',
-						'default' => 'no',
-						'type'    => 'reset_data'
-					),
-
-					array(
-						'title'   => __( 'Remove all data on uninstall?', 'auto-load-next-post' ),
-						'desc'    => __( 'If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_uninstall_data',
-						'default' => 'no',
-						'type'    => 'checkbox'
-					),*/
 
 					array(
 						'type' => 'sectionend',
