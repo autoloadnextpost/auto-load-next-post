@@ -194,10 +194,12 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		 * @return  void
 		 */
 		public function includes() {
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-conditional-functions.php'); // Conditional functions.
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-formatting-functions.php'); // Formatting functions.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-core-functions.php'); // Contains core functions for the front/back end.
 
 			// Include theme support.
-			alnp_include_theme_support();
+			$this->alnp_include_theme_support();
 
 			// Include admin class to handle all back-end functions.
 			if ( is_admin() ) {
@@ -212,6 +214,37 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 			 */
 			do_action( 'auto_load_next_post_loaded' );
 		} // END includes()
+
+		/**
+		 * Include classes for theme support.
+		 *
+		 * @access public
+		 * @since  1.5.0
+		 */
+		public function alnp_include_theme_support() {
+			if ( is_alnp_active_theme( array( 'twentyfourteen', 'twentythirteen', 'twentytwelve', 'twentyeleven', 'twentyten' ) ) ) {
+
+				include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-theme-support.php' );
+
+				switch ( get_template() ) {
+					case 'twentyten':
+						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-ten.php' );
+						break;
+					case 'twentyeleven':
+						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-eleven.php' );
+						break;
+					case 'twentytwelve':
+						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-twelve.php' );
+						break;
+					case 'twentythirteen':
+						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-thirteen.php' );
+						break;
+					case 'twentyfourteen':
+						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-fourteen.php' );
+						break;
+				}
+			}
+		} // END alnp_include_theme_support()
 
 		/*-----------------------------------------------------------------------------------*/
 		/*  Localization                                                                     */
