@@ -63,8 +63,6 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		public static function instance() {
 			if ( is_null( self::$_instance ) ) {
 				self::$_instance = new self();
-				self::$_instance->setup_constants();
-				self::$_instance->includes();
 			}
 			return self::$_instance;
 		} // END instance()
@@ -95,48 +93,35 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		/**
 		 * Auto_Load_Next_Post Constructor
 		 *
-		 * @access public
-		 * @since  1.0.0
-		 * @return Auto_Load_Next_Post
+		 * @access  public
+		 * @since   1.0.0
+		 * @version 1.5.0
+		 * @return  Auto_Load_Next_Post
 		 */
 		public function __construct() {
-			// Auto-load classes on demand
-			if ( function_exists("__autoload") ) {
-				spl_autoload_register("__autoload");
-			}
+			$this->setup_constants();
+			$this->includes();
+			$this->init_hooks();
 
-			spl_autoload_register( array( $this, 'autoload' ) );
+			/**
+			 * Auto Load Next Post is fully loaded.
+			 */
+			do_action( 'auto_load_next_post_loaded' );
+		} // END __construct()
 
+		/**
+		 * Hooks into action hooks.
+		 *
+		 * @access public
+		 * @since  1.5.0
+		 */
+		public function init_hooks() {
 			// Load translation files.
 			add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
 			// Load Auto Load Next Post scripts on the frontend.
 			add_action( 'wp_enqueue_scripts', array( $this, 'alnp_enqueue_scripts' ) );
-		} // END __construct()
-
-		/**
-		 * Auto-load Auto Load Next Post classes on demand to reduce memory consumption.
-		 *
-		 * @since  1.0.0
-		 * @access public
-		 * @param  mixed $class
-		 * @return void
-		 */
-		public function autoload( $class ) {
-			$path  = null;
-			$file  = strtolower( 'class-' . str_replace( '_', '-', $class ) ) . '.php';
-
-			if ( strpos( $class, 'auto_load_next_post_admin' ) === 0 ) {
-				$path = AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/admin/';
-			} else if ( strpos( $class, 'auto_load_next_post_' ) === 0 ) {
-				$path = AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/';
-			}
-
-			if ( $path !== null && is_readable( $path . $file ) ) {
-				include_once( $path . $file );
-				return true;
-			}
-		} // END autoload()
+		} // END init_hooks()
 
 		/*-----------------------------------------------------------------------------------*/
 		/*  Helper Functions                                                                 */
@@ -194,6 +179,7 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		 * @return  void
 		 */
 		public function includes() {
+			include_once( dirname( __FILE__ ) . '/includes/class-alnp-autoloader.php' ); // Autoloader.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-conditional-functions.php'); // Conditional functions.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-formatting-functions.php'); // Formatting functions.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-core-functions.php'); // Contains core functions for the front/back end.
@@ -203,16 +189,11 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 
 			// Include admin class to handle all back-end functions.
 			if ( is_admin() ) {
-				include_once( dirname( __FILE__ ) . '/includes/admin/class-auto-load-next-post-admin.php'); // Admin section.
+				include_once( dirname( __FILE__ ) . '/includes/admin/class-alnp-admin.php'); // Admin section.
 			}
 
 			// Install.
-			require_once( dirname( __FILE__ ) . '/includes/class-auto-load-next-post-install.php' );
-
-			/**
-			 * Auto Load Next Post is fully loaded.
-			 */
-			do_action( 'auto_load_next_post_loaded' );
+			require_once( dirname( __FILE__ ) . '/includes/class-alnp-install.php' );
 		} // END includes()
 
 		/**
@@ -223,8 +204,6 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		 */
 		public function alnp_include_theme_support() {
 			if ( is_alnp_active_theme( array( 'twentyfourteen', 'twentythirteen', 'twentytwelve', 'twentyeleven', 'twentyten' ) ) ) {
-
-				include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-theme-support.php' );
 
 				switch ( get_template() ) {
 					case 'twentyten':
@@ -242,7 +221,10 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 					case 'twentyfourteen':
 						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-fourteen.php' );
 						break;
-				}
+				} // END switch()
+
+				include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-theme-support.php' );
+
 			}
 		} // END alnp_include_theme_support()
 
@@ -323,11 +305,15 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 
 			if ( file_exists( AUTO_LOAD_NEXT_POST_FILE_PATH . $file_path ) ) {
 				if ( $is_script ) {
-					wp_register_script( $name, $url, $support, $version, $footer );
-					wp_enqueue_script( $name );
+					if ( !wp_script_is( $name, 'registered' ) ) {
+						wp_register_script( $name, $url, $support, $version, $footer );
+						wp_enqueue_script( $name );
+					}
 				} else {
-					wp_register_style( $name, $url );
-					wp_enqueue_style( $name );
+					if ( !wp_style_is( $name, 'registered' ) ) {
+						wp_register_style( $name, $url );
+						wp_enqueue_style( $name );
+					}
 				} // end if
 			} // end if
 
