@@ -71,7 +71,7 @@ jQuery( document ).ready( function() {
 		}
 
 		// If we are previewing in the customizer then dont track.
-		if ( is_customizer ) {
+		if ( is_customizer == 'yes' ) {
 			return;
 		}
 
@@ -227,6 +227,11 @@ function auto_load_next_post() {
 	// If the post url returns nothing then try finding the alternative and set that as the next post.
 	if ( !post_url ) {
 		post_url = jQuery( nav_container ).find( 'a[rel="previous"]').attr( 'href' );
+	}
+
+	// If we are in the customizer then clean the post url before fetching the post.
+	if ( is_customizer == 'yes' ) {
+		post_url = post_url.substring(0, post_url.indexOf("?"));
 	}
 
 	// Override the post url via a trigger.
