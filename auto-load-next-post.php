@@ -123,10 +123,6 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'alnp_enqueue_scripts' ) );
 		} // END init_hooks()
 
-		/*-----------------------------------------------------------------------------------*/
-		/*  Helper Functions                                                                 */
-		/*-----------------------------------------------------------------------------------*/
-
 		/**
 		 * Setup Constants
 		 *
@@ -281,10 +277,30 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 					'alnp_comments_container'   => get_option( 'auto_load_next_post_comments_container' ),
 					'alnp_remove_comments'      => get_option( 'auto_load_next_post_remove_comments' ),
 					'alnp_google_analytics'     => get_option( 'auto_load_next_post_google_analytics' ),
-					'alnp_is_customizer'        => is_customize_preview()
+					'alnp_is_customizer'        => $this->is_alnp_using_customizer(),
 				) );
 			} // END if is_singular() && get_post_type()
 		} // END alnp_enqueue_scripts()
+
+		/*-----------------------------------------------------------------------------------*/
+		/*  Helper Functions                                                                 */
+		/*-----------------------------------------------------------------------------------*/
+
+		/**
+		 * Checks if we are using the theme customizer.
+		 *
+		 * @access public
+		 * @since  1.5.0
+		 * @static
+		 * @return string|boolean
+		 */
+		public static function is_alnp_using_customizer() {
+			if ( is_customize_preview() ) {
+				return "yes";
+			}
+
+			return false;
+		} // END is_alnp_using_customizer()
 
 		/**
 		 * Helper function for registering and enqueueing scripts and styles.
