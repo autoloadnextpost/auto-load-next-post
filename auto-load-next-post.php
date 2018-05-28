@@ -187,7 +187,8 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 			// Include theme support.
 			$this->alnp_include_theme_support();
 
-			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-customizer.php'); // Customizer.
+			// Customizer.
+			include_once( dirname( __FILE__ ) . '/includes/customizer/auto-load-next-post-customizer.php');
 
 			// Include admin class to handle all back-end functions.
 			if ( is_admin() ) {
