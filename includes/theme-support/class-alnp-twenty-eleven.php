@@ -29,7 +29,7 @@ class ALNP_Twenty_Eleven {
 	 */
 	public static function init() {
 		// This removes the default post navigation in the repeater template.
-		remove_action( 'alnp_load_after_content', array( __CLASS__, 'auto_load_next_post_navigation' ), 1, 10 );
+		remove_action( 'alnp_load_after_content', 'auto_load_next_post_navigation', 1, 10 );
 
 		// Add a compaitable post navigation.
 		add_action( 'alnp_load_after_content', array( __CLASS__, 'alnp_twentyeleven_post_navigation' ), 1, 10 );
