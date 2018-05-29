@@ -109,7 +109,7 @@ function alnp_init_customizer( $wp_customize ) {
 
 		$preview_args = array(
 			'capability' => 'edit_theme_options',
-			'title'      => __( 'Auto Load Next Post Pro', 'auto-load-next-post' ),
+			'title'      => esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ),
 			'priority'   => 999,
 		);
 
@@ -202,7 +202,7 @@ function alnp_get_customizer_sections() {
 		'auto_load_next_post_theme_selectors' => array(
 			'capability'  => 'edit_theme_options',
 			'title'       => __( 'Theme Selectors', 'auto-load-next-post' ),
-			'description' => sprintf( __( 'Set the theme selectors below according to the theme. <a href="https://autoloadnextpost.com/documentation/find-theme-selectors/?utm_source=wpadmin&utm_campaign=plugin-settings-general" target="_blank">How to find my theme selectors?</a>', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+			'description' => sprintf( __( 'Set the theme selectors below according to the theme. <a href="https://autoloadnextpost.com/documentation/find-theme-selectors/?utm_source=wpcustomizer&utm_campaign=plugin-settings-theme-selectors" target="_blank">How to find my theme selectors?</a>', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 		),
 		'auto_load_next_post_misc' => array(
 			'capability'  => 'edit_theme_options',
@@ -301,56 +301,56 @@ function alnp_get_customizer_controls() {
 	return apply_filters( 'auto_load_next_post_get_customizer_controls', array(
 		'alnp_content_container' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'The primary container where the post content is loaded in. Example: <code>main.site-main</code>', 'auto-load-next-post' ),
-			'label'       => __( 'Content Container', 'auto-load-next-post' ),
+			'description' => esc_html__( 'The primary container where the post content is loaded in. Example: <code>main.site-main</code>', 'auto-load-next-post' ),
+			'label'       => esc_html__( 'Content Container', 'auto-load-next-post' ),
 			'section'     => 'auto_load_next_post_theme_selectors',
 			'settings'    => 'auto_load_next_post_content_container',
 			'type'        => 'text',
 		),
 		'alnp_title_selector' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
-			'label'       => __( 'Post Title Selector', 'auto-load-next-post' ),
+			'description' => esc_html__( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
+			'label'       => esc_html__( 'Post Title Selector', 'auto-load-next-post' ),
 			'section'     => 'auto_load_next_post_theme_selectors',
 			'settings'    => 'auto_load_next_post_title_selector',
 			'type'        => 'text',
 		),
 		'alnp_navigation_container' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'Used to identify which post to load next if any. Example: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
-			'label'       => __( 'Post Navigation Container', 'auto-load-next-post' ),
+			'description' => esc_html__( 'Used to identify which post to load next if any. Example: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
+			'label'       => esc_html__( 'Post Navigation Container', 'auto-load-next-post' ),
 			'section'     => 'auto_load_next_post_theme_selectors',
 			'settings'    => 'auto_load_next_post_navigation_container',
 			'type'        => 'text',
 		),
 		'alnp_comments_container' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'So comments can be removed if enabled under "Misc" settings. Example: <code>div#comments</code>', 'auto-load-next-post' ),
-			'label'       => __( 'Comments Container', 'auto-load-next-post' ),
+			'description' => esc_html__( 'So comments can be removed if enabled under "Misc" settings. Example: <code>div#comments</code>', 'auto-load-next-post' ),
+			'label'       => esc_html__( 'Comments Container', 'auto-load-next-post' ),
 			'section'     => 'auto_load_next_post_theme_selectors',
 			'settings'    => 'auto_load_next_post_comments_container',
 			'type'        => 'text',
 		),
 		'alnp_remove_comments' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'Enable to remove comments when each post loads including the initial post.', 'auto-load-next-post' ),
-			'label'       => __( 'Remove Comments', 'auto-load-next-post' ),
+			'description' => esc_html__( 'Enable to remove comments when each post loads including the initial post.', 'auto-load-next-post' ),
+			'label'       => esc_html__( 'Remove Comments', 'auto-load-next-post' ),
 			'section'     => 'auto_load_next_post_misc',
 			'settings'    => 'auto_load_next_post_remove_comments',
 			'type'        => 'checkbox',
 		),
 		'alnp_google_analytics' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
-			'label'       => __( 'Update Google Analytics', 'auto-load-next-post' ),
+			'description' => esc_html__( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
+			'label'       => esc_html__( 'Update Google Analytics', 'auto-load-next-post' ),
 			'section'     => 'auto_load_next_post_misc',
 			'settings'    => 'auto_load_next_post_google_analytics',
 			'type'        => 'checkbox',
 		),
 		'alnp_js_footer' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => __( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site.', 'auto-load-next-post' ),
-			'label'       => __( 'JavaScript in Footer?', 'auto-load-next-post' ),
+			'description' => esc_html__( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site.', 'auto-load-next-post' ),
+			'label'       => esc_html__( 'JavaScript in Footer?', 'auto-load-next-post' ),
 			'section'     => 'auto_load_next_post_misc',
 			'settings'    => 'auto_load_next_post_google_analytics',
 			'type'        => 'checkbox',
@@ -368,7 +368,7 @@ function alnp_get_customizer_controls() {
  */
 function alnp_validate_content_container_selector( $validity, $value ) {
 	if ( empty( $value ) ) {
-		$validity->add( 'required', __( 'The content container selector is empty. Will not know where to load posts without it.', 'auto-load-next-post' ) );
+		$validity->add( 'required', esc_html__( 'The content container selector is empty. Will not know where to load posts without it.', 'auto-load-next-post' ) );
 	}
 
 	return $validity;
@@ -384,7 +384,7 @@ function alnp_validate_content_container_selector( $validity, $value ) {
  */
 function alnp_validate_post_title_selector( $validity, $value ) {
 	if ( empty( $value ) ) {
-		$validity->add( 'required', __( 'The post title selector is empty. Will not be able to identify which article the user is reading.', 'auto-load-next-post' ) );
+		$validity->add( 'required', esc_html__( 'The post title selector is empty. Will not be able to identify which article the user is reading.', 'auto-load-next-post' ) );
 	}
 
 	return $validity;
@@ -400,7 +400,7 @@ function alnp_validate_post_title_selector( $validity, $value ) {
  */
 function alnp_validate_post_navigation_selector( $validity, $value ) {
 	if ( empty( $value ) ) {
-		$validity->add( 'required', __( 'The post navigation container selector is empty. Required so ALNP can look up the next post to load.', 'auto-load-next-post' ) );
+		$validity->add( 'required', esc_html__( 'The post navigation container selector is empty. Required so ALNP can look up the next post to load.', 'auto-load-next-post' ) );
 	}
 
 	return $validity;
