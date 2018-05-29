@@ -125,9 +125,8 @@ function alnp_init_customizer( $wp_customize ) {
 		include_once( dirname( __FILE__ ) . '/class-alnp-pro-preview-controller.php' );
 
 		$preview_args = array(
-			'capability' => 'edit_theme_options',
-			'title'      => esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ),
-			'priority'   => 999,
+			'title'    => esc_html__( 'More?', 'auto-load-next-post' ),
+			'priority' => 999,
 		);
 
 		if ( ! alnp_is_customizer() ) {
@@ -137,8 +136,7 @@ function alnp_init_customizer( $wp_customize ) {
 		$wp_customize->add_section( 'alnp_pro_preview', $preview_args );
 
 		$wp_customize->add_setting( 'alnp_pro_preview', array(
-			'default'           => null,
-			'sanitize_callback' => 'sanitize_text_field',
+			'default' => null,
 		) );
 
 		$wp_customize->add_control( new ALNP_Pro_Preview_Controller( $wp_customize, 'alnp_pro_preview', array(
@@ -318,7 +316,7 @@ function alnp_get_customizer_controls() {
 	return apply_filters( 'auto_load_next_post_get_customizer_controls', array(
 		'alnp_content_container' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => esc_html__( 'The primary container where the post content is loaded in. Example: <code>main.site-main</code>', 'auto-load-next-post' ),
+			'description' => __( 'The primary container where the post content is loaded in. Example: <code>main.site-main</code>', 'auto-load-next-post' ),
 			'label'       => esc_html__( 'Content Container', 'auto-load-next-post' ),
 			'section'     => 'auto_load_next_post_theme_selectors',
 			'settings'    => 'auto_load_next_post_content_container',
@@ -326,7 +324,7 @@ function alnp_get_customizer_controls() {
 		),
 		'alnp_title_selector' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => esc_html__( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
+			'description' => __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
 			'label'       => esc_html__( 'Post Title Selector', 'auto-load-next-post' ),
 			'section'     => 'auto_load_next_post_theme_selectors',
 			'settings'    => 'auto_load_next_post_title_selector',
@@ -334,7 +332,7 @@ function alnp_get_customizer_controls() {
 		),
 		'alnp_navigation_container' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => esc_html__( 'Used to identify which post to load next if any. Example: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
+			'description' => __( 'Used to identify which post to load next if any. Example: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
 			'label'       => esc_html__( 'Post Navigation Container', 'auto-load-next-post' ),
 			'section'     => 'auto_load_next_post_theme_selectors',
 			'settings'    => 'auto_load_next_post_navigation_container',
@@ -342,7 +340,7 @@ function alnp_get_customizer_controls() {
 		),
 		'alnp_comments_container' => array(
 			'class'       => 'WP_Customize_Control',
-			'description' => esc_html__( 'So comments can be removed if enabled under "Misc" settings. Example: <code>div#comments</code>', 'auto-load-next-post' ),
+			'description' => __( 'So comments can be removed if enabled under "Misc" settings. Example: <code>div#comments</code>', 'auto-load-next-post' ),
 			'label'       => esc_html__( 'Comments Container', 'auto-load-next-post' ),
 			'section'     => 'auto_load_next_post_theme_selectors',
 			'settings'    => 'auto_load_next_post_comments_container',
