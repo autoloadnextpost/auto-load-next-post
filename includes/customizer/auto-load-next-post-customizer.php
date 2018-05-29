@@ -99,6 +99,23 @@ function alnp_init_customizer( $wp_customize ) {
 		$wp_customize->get_setting( 'auto_load_next_post_remove_comments' )->transport = 'postMessage';
 	}
 
+	// Load custom controllers.
+	/*include_once( dirname( __FILE__ ) . '/class-alnp-display-video-controller.php' );
+
+	// Video Help - Coming Soon
+	$wp_customize->add_setting( 'alnp_video_theme_selectors', array(
+		'default' => '', // The video ID
+		'type'    => 'theme_mod',
+	) );
+
+	$wp_customize->add_control( new ALNP_Display_Video_Controller( $wp_customize, 'alnp_video_theme_selectors', array(
+		'label'    => __( 'Video: How to find your theme selectors', 'auto-load-next-post' ),
+		'section'  => 'auto_load_next_post_theme_selectors',
+		'settings' => 'alnp_video_theme_selectors',
+		'type'     => 'alnp-display-video',
+		'priority' => 1,
+	) ) );*/
+
 	/**
 	 * If Auto Load Next Post Pro is not installed, display a new section
 	 * to tell users about the pro version, what comes with it

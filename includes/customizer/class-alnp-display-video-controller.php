@@ -46,7 +46,7 @@ class ALNP_Display_Video_Controller extends WP_Customize_Control {
 		<span class="customize-control-title"><?php esc_html_e( $this->label ); ?></span>
 
 		<p>
-			<iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/<?php echo $this->video_id; ?>?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/<?php echo $this->value(); ?>?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 		</p>
 		<?php
 	} // END render_content()
