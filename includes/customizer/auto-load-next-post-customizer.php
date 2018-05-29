@@ -202,7 +202,7 @@ function alnp_get_customizer_sections() {
 		'auto_load_next_post_theme_selectors' => array(
 			'capability'  => 'edit_theme_options',
 			'title'       => __( 'Theme Selectors', 'auto-load-next-post' ),
-			'description' => sprintf( __( 'Set the theme selectors below according to the theme. <a href="https://autoloadnextpost.com/documentation/find-theme-selectors/?utm_source=wpcustomizer&utm_campaign=plugin-settings-theme-selectors" target="_blank">How to find my theme selectors?</a>', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+			'description' => sprintf( __( 'Set the theme selectors below according to the theme. %1$sHow to find my theme selectors?%2$s', 'auto-load-next-post' ), '<a href="' . esc_url( 'https://autoloadnextpost.com/documentation/find-theme-selectors/?utm_source=wpcustomizer&utm_campaign=plugin-settings-theme-selectors' ) . '" target="_blank">', '</a>' ),
 		),
 		'auto_load_next_post_misc' => array(
 			'capability'  => 'edit_theme_options',
