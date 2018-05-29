@@ -41,7 +41,7 @@ function alnp_init_customizer( $wp_customize ) {
 		'alnp', array(
 			'title'           => esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ),
 			'capability'      => 'edit_theme_options',
-			'description'     => esc_html__( 'While Auto Load Next Post is not the only infinite scrolling plugin out there it is the first that is designed to work and match the theme you are using and track the content that is viewed.', 'auto-load-next-post' ),
+			'description'     => esc_html__( 'Auto Load Next Post increases your pageviews by engaging the site viewers to keep reading your content rather than increasing your bounce rate.', 'auto-load-next-post' ),
 			'priority'        => 160,
 			'active_callback' => 'is_page_alnp_ready'
 		)
