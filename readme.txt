@@ -1,10 +1,10 @@
 === WordPress Infinite Scroll by Auto Load Next Post ===
 Contributors: autoloadnextpost, sebd86
-Donate link: https://autoloadnextpost.com/donate/
+Donate link: https://www.buymeacoffee.com/sebastien
 Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scroll, infinite scrolling, post scrolling, pagination, scroll, post history, browsing history, navigation
 Requires PHP: 5.6+
 Requires at least: 4.4
-Tested up to: 4.9.5
+Tested up to: 4.9.6
 Stable tag: 1.5.0-beta.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,7 +31,7 @@ At the end of every single post their is a post navigation which is used to dete
 
 The JavaScript detects when you are reading the next post and updates your browser URL address bar and page title to that post. Should you refresh the browser, the post you are currently reading would load as the new initial post.
 
-All previous posts of the blog are still retained in your browser history and too top it off, you can track each post read the same way a single post is tracked as a pageview.
+All previous posts of the blog are still retained in your browser history and too top it off, you can track each post read the same way a single post is tracked as a pageview using Google Analytics.
 
 = Note to Beginners =
 
@@ -49,6 +49,10 @@ Intrigued? _I bet you are._ Once you try Auto Load Next Post, your pageviews wil
 
 Extendable and open source — Auto Load Next Post is created with developers in mind. There are opportunities for developers at all levels to contribute. [Click here to contribute](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md).
 
+Need to trigger something during each post load? [See the JavaScript triggers available](https://autoloadnextpost.com/documentation/javascript-triggers/) in the documentation for details.
+
+Want to provide feedback or discuss plugins to be supported, features to be added, integrations and provide suggestions for Auto Load Next Post for future releases. Come [join the Slack channel](https://launchpass.com/autoloadnextpost).
+
 = Free Add-ons =
 
 WordPress.org hosts some great free add-ons for Auto Load Next Post.
@@ -60,8 +64,11 @@ WordPress.org hosts some great free add-ons for Auto Load Next Post.
 > #### Auto Load Next Post Pro
 > There's an even better version of the plugin coming out soon with the following extra features:<br />
 >
+> - User Role Restrictions<br />
 > - Custom Post Type Support<br />
-> - Media Attachments Support<br />
+> - Media Attachment Support<br />
+> - Limit Posts per Session<br />
+> - Query Posts by Category or Tag<br />
 > - Priority Email Support<br />
 > - and many more features to follow.
 >
@@ -114,7 +121,7 @@ No. This was put in place to support themes that have coded their template files
 
 = How can I override the repeater template file? =
 
-You first need to create a new folder in your theme directory called "auto-load-next-post" like so: **your-theme-name/auto-load-next-post/** and copy the repeater template file **content-partial.php** from the plugin template folder into that new folder.
+You first need to create a new folder in your theme directory called "auto-load-next-post" like so: **your-theme-name/auto-load-next-post/** and copy the repeater template file **content-alnp.php** from the plugin template folder into that new folder.
 
 Now you can modify it to match how your theme’s content is loaded for a single post. This will be the repeater template the plugin will use to load posts with from now on.
 
@@ -144,7 +151,7 @@ If the theme author has added support for Auto Load Next Post and has set the th
 
 = My theme does not work with the plugin, what do I do? =
 
-Check that you have a post navigation at the end of your post. If one does exists then you may need to copy and modify the repeater template file **content-partial.php** in order to support your theme.
+Check that you have a post navigation at the end of your post. If one does exists then you may need to copy and modify the repeater template file **content-alnp.php** in order to support your theme.
 
 Not all themes are coded the same way so some alterations will be needed to match the theme. If you need help with this then I provide [theme support](https://autoloadnextpost.com/product/theme-support/) on request.
 
@@ -166,8 +173,9 @@ It does. Just make sure that you activate the plugin on the site you want it use
 
 == Screenshots ==
 
-1. Settings Page: Here you can change the theme selectors should you need to.
-2. Admin Notice: Not declared theme support.
+1. Plugin Settings: Theme Selectors.
+2. Plugin Settings: Misc Settings, here you can enable Google Analytics tracking, remove comments and if you need to set the JavaScript to load in the footer of your website.
+3. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
 = 1.4.12 : 19th May 2018 =
