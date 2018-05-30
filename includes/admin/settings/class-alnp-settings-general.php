@@ -1,9 +1,9 @@
 <?php
 /**
- * Auto Load Next Post Settings - General
+ * Auto Load Next Post Settings - Theme Selectors
  *
  * @since    1.0.0
- * @version  1.4.10
+ * @version  1.5.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post
@@ -28,7 +28,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 		 */
 		public function __construct() {
 			$this->id    = 'general';
-			$this->label = __( 'General', 'auto-load-next-post' );
+			$this->label = esc_html__( 'Theme Selectors', 'auto-load-next-post' );
 
 			parent::__construct();
 
@@ -92,14 +92,14 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 				'auto_load_next_post_general_settings', array(
 
 					array(
-						'title' => __( 'General', 'auto-load-next-post' ),
+						'title' => esc_html__( 'Theme Selectors', 'auto-load-next-post' ),
 						'type'  => 'title',
-						'desc'  => sprintf( __( 'Here you set the theme selectors below according to your active theme. All are required for %s to work.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						'desc'  => sprintf( esc_html__( 'Here you set the theme selectors below according to your active theme. All are required for %s to work.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 						'id'    => 'general_options'
 					),
 
 					array(
-						'title'    => __( 'Content Container', 'auto-load-next-post' ),
+						'title'    => esc_html__( 'Content Container', 'auto-load-next-post' ),
 						'desc'     => __( 'The primary container where the post content is loaded in. Example: <code>main.site-main</code>', 'auto-load-next-post' ),
 						'id'       => 'auto_load_next_post_content_container',
 						'default'  => 'main.site-main',
@@ -109,8 +109,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 					),
 
 					array(
-						'title'    => __( 'Post Title', 'auto-load-next-post' ),
-						'desc'     => __( 'Used to identify which article the user is reading and track if should Google Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
+						'title'    => esc_html__( 'Post Title', 'auto-load-next-post' ),
+						'desc'     => __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
 						'id'       => 'auto_load_next_post_title_selector',
 						'default'  => 'h1.entry-title',
 						'type'     => 'text',
@@ -119,8 +119,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 					),
 
 					array(
-						'title'    => __( 'Post Navigation', 'auto-load-next-post' ),
-						'desc'     => __( 'The post navigation needs to be indentified to find the next post. Example: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
+						'title'    => esc_html__( 'Post Navigation', 'auto-load-next-post' ),
+						'desc'     => __( 'Used to identify which post to load next if any. Example: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
 						'id'       => 'auto_load_next_post_navigation_container',
 						'default'  => 'nav.post-navigation',
 						'type'     => 'text',
@@ -129,7 +129,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 					),
 
 					array(
-						'title'    => __( 'Comments Container', 'auto-load-next-post' ),
+						'title'    => esc_html__( 'Comments Container', 'auto-load-next-post' ),
 						'desc'     => __( 'So comments can be removed if enabled under "Misc" settings. Example: <code>div#comments</code>', 'auto-load-next-post' ),
 						'id'       => 'auto_load_next_post_comments_container',
 						'default'  => 'div#comments',
