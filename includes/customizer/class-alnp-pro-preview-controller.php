@@ -54,17 +54,23 @@ class ALNP_Pro_Preview_Controller extends WP_Customize_Control {
 			<li><?php _e( 'Query Posts by Category or Tag', 'auto-load-next-post' ); ?></li>
 		</ul>
 
+		<p>
+			<?php printf( esc_html__( 'Find out more about %1$s%2$s%3$s.', 'auto-load-next-post'), '<a target="_blank" href="' . esc_url( 'https://autoloadnextpost.com/pro/?utm_source=wpcustomizer&utm_campaign=plugin-settings-pro-preview' ) . '">', esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ), '</a>' ); ?>
+		</p>
+
 		<span class="customize-control-title"><?php printf( esc_html__( 'Add-ons for %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></span>
 
 		<p>
-			<?php printf( esc_html__( 'Add-ons available provide additional support or options for %1$s. %2$sCheck out the add-ons%3$s page to see what is available.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a target="_blank" href="' . esc_url( 'https://autoloadnextpost.com/add-ons/?utm_source=wpcustomizer&utm_campaign=plugin-settings-pro-preview' ) . '">', '</a>' ); ?>
+			<?php printf( esc_html__( 'Add-ons available provide additional support or options for %1$s. %2$sCheck out the add-ons%3$s to see what is available.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a target="_blank" href="' . esc_url( 'https://autoloadnextpost.com/add-ons/?utm_source=wpcustomizer&utm_campaign=plugin-settings-pro-preview' ) . '">', '</a>' ); ?>
 		</p>
 
 		<span class="customize-control-title"><?php printf( esc_html__( 'Enjoying %s?', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></span>
 
-		<p>
-			<?php printf( esc_html__( 'Why not leave me a review on %1$sWordPress.org%2$s?  I\'d really appreciate it!', 'auto-load-next-post' ), '<a target="_blank" href="https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?filter=5#postform">', '</a>' ); ?>
-		</p>
+		<div class="notice inline notice-info">
+			<p>
+				<?php printf( esc_html__( 'Why not leave me a review on %1$sWordPress.org%2$s?  I\'d really appreciate it!', 'auto-load-next-post' ), '<a target="_blank" href="https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?filter=5#postform">', '</a>' ); ?>
+			</p>
+		</div>
 		<?php
 	} // END render_content()
 
