@@ -84,6 +84,22 @@ if ( ! function_exists( 'is_alnp_pro_version_installed' ) ) {
 	}
 }
 
+if ( ! function_exists( 'is_alnp_beta' ) ) {
+	/**
+	 * Returns true if Auto Load Next Post is a beta release.
+	 *
+	 * @since  1.5.0
+	 * @return boolean
+	 */
+	function is_alnp_beta() {
+		if ( strpos( AUTO_LOAD_NEXT_POST_VERSION, 'beta' ) ) {
+			return true;
+		}
+
+		return false;
+	}
+}
+
 if ( ! function_exists( 'is_alnp_active_theme' ) ) {
 	/**
 	 * See if theme/s is activate or not.
