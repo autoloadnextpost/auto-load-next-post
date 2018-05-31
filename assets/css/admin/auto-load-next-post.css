@@ -1,5 +1,5 @@
 /**
- * CSS for Auto Load Next Post settings page.
+ * CSS for Auto Load Next Post settings page and notifications.
  */
 #wpfooter .wrap {
 	display: block;
@@ -82,4 +82,94 @@ h2 .nav-tab:first-child {
 	top: -3px;
 	left: 50%;
 	margin: -1em 0 0 -3px;
+}
+
+/* Notifications */
+.notice.auto-load-next-post-notice {
+	padding: 20px;
+}
+.rtl .notice.auto-load-next-post-notice {
+	border-right-color: #008ec2 !important;
+}
+.notice-info.auto-load-next-post-notice {
+	border-left-color: #008ec2 !important;
+}
+.rtl .notice-info.auto-load-next-post-notice {
+	border-right-color: #008ec2 !important;
+}
+.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner {
+	display: table;
+	width: 100%;
+}
+.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-notice-icon,
+.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-notice-content,
+.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-review-now,
+.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-send-feedback {
+	display: table-cell;
+	vertical-align: middle;
+}
+.notice.auto-load-next-post-notice .auto-load-next-post-notice-icon {
+	color: #509ed2;
+	font-size: 50px;
+	width: 60px;
+}
+.notice.auto-load-next-post-notice .auto-load-next-post-notice-icon img {
+	width: 64px;
+}
+.notice.auto-load-next-post-notice .auto-load-next-post-notice-content {
+	padding: 0 40px 0 20px;
+}
+.notice.auto-load-next-post-notice p {
+	padding: 0;
+	margin: 0;
+}
+.notice.auto-load-next-post-notice h3 {
+	margin: 0 0 5px;
+}
+.notice.auto-load-next-post-notice .auto-load-next-post-review-now,
+.notice.auto-load-next-post-notice .auto-load-next-post-send-feedback {
+	text-align: center;
+}
+.notice.auto-load-next-post-notice .auto-load-next-post-review-now .auto-load-next-post-review-button,
+.notice.auto-load-next-post-notice .auto-load-next-post-send-feedback .auto-load-next-post-feedback-button {
+	padding: 6px 50px;
+	height: auto;
+	line-height: 20px;
+}
+.notice.auto-load-next-post-notice a.no-thanks {
+	display: block;
+	margin-top: 10px;
+	color: #72777c;
+	text-decoration: none;
+}
+.notice.auto-load-next-post-notice a.no-thanks:hover {
+	color: #444;
+}
+@media (max-width: 767px) {
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner {
+		display: block;
+	}
+	.notice.auto-load-next-post-notice {
+		padding: 20px !important;
+	}
+	.notice.auto-load-next-post-noticee .auto-load-next-post-notice-inner {
+		display: block;
+	}
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-notice-content {
+		display: block;
+		padding: 0;
+	}
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-notice-icon {
+		display: none;
+	}
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-review-now,
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-send-feedback {
+		margin-top: 20px;
+		display: block;
+		text-align: left;
+	}
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .no-thanks {
+		display: inline-block;
+		margin-left: 15px;
+	}
 }
