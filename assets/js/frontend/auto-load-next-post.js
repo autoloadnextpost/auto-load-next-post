@@ -33,7 +33,7 @@ jQuery( document ).ready( function() {
 	}
 
 	// Add a post divider.
-	jQuery( content_container ).prepend( '<hr style="height:0px;margin:0px;padding:0px;" data-powered-by="alnp" data-initial-post="true" data-title="' + post_title + '" data-url="' + orig_curr_url + '"/>' );
+	jQuery( content_container ).prepend( '<hr style="height:0px;margin:0px;padding:0px;border:none;" data-powered-by="alnp" data-initial-post="true" data-title="' + post_title + '" data-url="' + orig_curr_url + '"/>' );
 
 	// Mark the first article as the initial post.
 	jQuery( content_container ).find( article_container ).attr( 'data-initial-post', true );
@@ -263,7 +263,7 @@ function auto_load_next_post() {
 
 		data = post.html(); // Returns the HTML data of the next post that was loaded.
 
-		var post_divider = '<hr style="height:0px;margin:0px;padding:0px;" data-powered-by="alnp" data-initial-post="false" data-url="' + post_url + '"/>';
+		var post_divider = '<hr style="height:0px;margin:0px;padding:0px;border:none;" data-powered-by="alnp" data-initial-post="false" data-url="' + post_url + '"/>';
 		var post_html    = jQuery( post_divider + data );
 		var post_title   = post_html.find( post_title_selector ); // Find the post title of the loaded article.
 		var post_ID      = jQuery( post ).find( article_container ).attr( 'id' ); // Find the post ID of the loaded article.
