@@ -73,8 +73,8 @@ if ( have_posts() ) :
 	// End the loop.
 	endwhile;
 
-		// Load content after the loop.
-		do_action( 'alnp_load_after_loop' );
+	// Load content after the loop.
+	do_action( 'alnp_load_after_loop' );
 
 else :
 
