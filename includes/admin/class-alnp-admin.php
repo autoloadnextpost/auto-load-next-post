@@ -176,7 +176,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.4.10
+		 * @version 1.5.0
 		 * @param   array  $links Plugin Row Meta
 		 * @param   string $file  Plugin Base file
 		 * @param   array  $data  Plugin Information
@@ -187,7 +187,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 				$links[ 1 ] = sprintf( __( 'Developed By %s', 'auto-load-next-post' ), '<a href="' . $data[ 'AuthorURI' ] . '">' . $data[ 'Author' ] . '</a>' );
 
 				$row_meta = array(
-					'docs' => '<a href="' . esc_url( 'https://autoloadnextpost.com/documentation/' ) . '" target="_blank">' . __( 'Documentation', 'auto-load-next-post' ) . '</a>',
+					'docs' => '<a href="' . esc_url( 'https://autoloadnextpost.com/documentation/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" target="_blank">' . __( 'Documentation', 'auto-load-next-post' ) . '</a>',
 					'community' => '<a href="' . esc_url( 'https://wordpress.org/support/plugin/auto-load-next-post' ) . '" target="_blank">' . __( 'Community Support', 'auto-load-next-post' ) . '</a>',
 					'theme-support' => '<a href="' . esc_url( 'https://autoloadnextpost.com/product/theme-support/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" target="_blank">' . __( 'Theme Support', 'auto-load-next-post' ) . '</a>',
 				);
