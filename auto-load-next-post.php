@@ -176,19 +176,19 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		 */
 		public function includes() {
 			include_once( dirname( __FILE__ ) . '/includes/class-alnp-autoloader.php' ); // Autoloader.
-			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-conditional-functions.php'); // Conditional functions.
-			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-formatting-functions.php'); // Formatting functions.
-			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-core-functions.php'); // Contains core functions for the front/back end.
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-conditional-functions.php' ); // Conditional functions.
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-formatting-functions.php' ); // Formatting functions.
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-core-functions.php' ); // Contains core functions for the front/back end.
 
 			// Include theme support.
 			$this->alnp_include_theme_support();
 
 			// Customizer.
-			include_once( dirname( __FILE__ ) . '/includes/customizer/auto-load-next-post-customizer.php');
+			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer.php' );
 
 			// Include admin class to handle all back-end functions.
 			if ( is_admin() ) {
-				include_once( dirname( __FILE__ ) . '/includes/admin/class-alnp-admin.php'); // Admin section.
+				include_once( dirname( __FILE__ ) . '/includes/admin/class-alnp-admin.php' ); // Admin section.
 			}
 
 			// Install.
