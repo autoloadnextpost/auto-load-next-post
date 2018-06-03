@@ -198,7 +198,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 				}
 			// Single value
 			} else {
-				$option_value = get_option($option_name, null);
+				$option_value = get_option( $option_name, null );
 			}
 
 			if ( is_array( $option_value ) ) {
@@ -210,310 +210,288 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 			return $option_value === null ? $default : $option_value;
 		} // END get_option()
 
-	/**
-	 * Output admin fields.
-	 *
-	 * Loops though the plugin name options array and outputs each field.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @static
-	 * @param  array $options Opens array to output
-	 */
-	public static function output_fields($options) {
-		foreach ($options as $value) {
-			if ( ! isset($value['type'])) {
-				continue;
-			}
-			if ( ! isset($value['id'])) {
-				$value['id'] = '';
-			}
-			if ( ! isset($value['title'])) {
-				$value['title'] = isset($value['name']) ? $value['name'] : '';
-			}
-			if ( ! isset($value['class'])) {
-				$value['class'] = '';
-			}
-			if ( ! isset($value['css'])) {
-				$value['css'] = '';
-			}
-			if ( ! isset($value['default'])) {
-				$value['default'] = '';
-			}
-			if ( ! isset($value['desc'])) {
-				$value['desc'] = '';
-			}
-			if ( ! isset($value['desc_tip'])) {
-				$value['desc_tip'] = false;
-			}
-
-			// Custom attribute handling
-			$custom_attributes = array();
-
-			if ( ! empty($value['custom_attributes']) && is_array($value['custom_attributes'])) {
-				foreach ($value['custom_attributes'] as $attribute => $attribute_value) {
-					$custom_attributes[] = esc_attr($attribute).'="'.esc_attr($attribute_value).'"';
+		/**
+		 * Output admin fields.
+		 *
+		 * Loops though the plugin name options array and outputs each field.
+		 *
+		 * @access  public
+		 * @static
+		 * @since   1.0.0
+		 * @version 1.5.0
+		 * @param   array $options Opens array to output
+		 */
+		public static function output_fields( $options ) {
+			foreach ( $options as $value ) {
+				if ( ! isset( $value['type'] ) ) {
+					continue;
 				}
-			}
+				if ( ! isset( $value['id'] ) ) {
+					$value['id'] = '';
+				}
+				if ( ! isset( $value['title'] ) ) {
+					$value['title'] = isset( $value['name'] ) ? $value['name'] : '';
+				}
+				if ( ! isset( $value['class'] ) ) {
+					$value['class'] = '';
+				}
+				if ( ! isset( $value['css'] ) ) {
+					$value['css'] = '';
+				}
+				if ( ! isset( $value['default'] ) ) {
+					$value['default'] = '';
+				}
+				if ( ! isset( $value['desc'] ) ) {
+					$value['desc'] = '';
+				}
+				if ( ! isset( $value['placeholder'] ) ) {
+					$value['placeholder'] = '';
+				}
 
-			// Description handling
-			if ($value['desc_tip'] === true) {
-				$description = '';
-				$tip = $value['desc'];
-			} else if ( ! empty($value['desc_tip'])) {
-				$description = $value['desc'];
-				$tip = $value['desc_tip'];
-			} else if ( ! empty($value['desc'])) {
-				$description = $value['desc'];
-				$tip = '';
-			} else {
-				$description = $tip = '';
-			}
+				// Custom attribute handling
+				$custom_attributes = array();
 
-			if ($description && in_array($value['type'], array('textarea', 'radio'))) {
-				$description = '<p style="margin-top:0">'.wp_kses_post($description).'</p>';
-			} else if ($description) {
-				$description = '<span class="description">'.wp_kses_post($description).'</span>';
-			}
-
-			if ($tip && in_array($value['type'], array('checkbox'))) {
-				$tip = '<p class="description">'.$tip.'</p>';
-			} else if ($tip) {
-				$tip = '<img class="help_tip" data-tip="'.esc_attr($tip).'" src="' . AUTO_LOAD_NEXT_POST_URL_PATH . '/assets/images/help.png" height="16" width="16" />';
-			}
-
-			// Switch based on type
-			switch ($value['type']) {
-				// Section Titles
-				case 'title':
-					if ( ! empty($value['title'])) {
-						echo '<h3>'.esc_html($value['title']).'</h3>';
+				if ( ! empty( $value['custom_attributes'] ) && is_array( $value['custom_attributes'] ) ) {
+					foreach ( $value['custom_attributes'] as $attribute => $attribute_value ) {
+						$custom_attributes[] = esc_attr( $attribute ) . '="' . esc_attr( $attribute_value ) . '"';
 					}
+				}
 
-					if ( ! empty($value['desc'])) {
-						echo wpautop(wptexturize(wp_kses_post($value['desc'])));
-					}
+				// Description handling
+				if ( ! empty( $value['desc'] ) ) {
+					$description = $value['desc'];
+				}
 
-					echo '<table class="form-table">'."\n\n";
+				if ( $description && in_array( $value['type'], array( 'textarea', 'radio' ), true ) ) {
+					$description = '<p style="margin-top:0">' . wp_kses_post( $description ) . '</p>';
+				} elseif ( $description && in_array( $value['type'], array( 'checkbox' ), true ) ) {
+					$description = wp_kses_post( $description );
+				} elseif ( $description ) {
+					$description = '<span class="description">' . wp_kses_post( $description ) . '</span>';
+				}
 
-					if ( ! empty($value['id'])) {
-						do_action('auto_load_next_post_settings_'.sanitize_title($value['id']));
-					}
+				// Switch based on type
+				switch( $value['type'] ) {
 
-					break;
-
-				// Section Ends
-				case 'sectionend':
-
-					if ( ! empty($value['id'])) {
-						do_action('auto_load_next_post_settings_'.sanitize_title($value['id']).'_end');
-					}
-
-					echo '</table>';
-
-					if ( ! empty($value['id'])) {
-						do_action('auto_load_next_post_settings_'.sanitize_title($value['id']).'_after');
-					}
-
-					break;
-
-				// Standard text inputs and subtypes like 'number'
-				case 'text':
-				case 'number':
-					$type         = $value['type'];
-					$class        = '';
-					$option_value = self::get_option($value['id'], $value['default']);
-					?><tr valign="top">
-						<th scope="row" class="titledesc">
-							<label for="<?php echo esc_attr($value['id']); ?>"><?php echo esc_html($value['title']); ?></label>
-							<?php echo $tip; ?>
-						</th>
-						<td class="forminp forminp-<?php echo sanitize_title($value['type']); ?>">
-							<input
-								name="<?php echo esc_attr($value['id']); ?>"
-								id="<?php echo esc_attr($value['id']); ?>"
-								type="<?php echo esc_attr($type); ?>"
-								style="<?php echo esc_attr($value['css']); ?>"
-								value="<?php echo esc_attr($option_value); ?>"
-								class="<?php echo esc_attr($value['class']); ?>"
-								<?php echo implode(' ', $custom_attributes); ?>
-							/> <?php echo $description; ?>
-						</td>
-					</tr><?php
-
-					break;
-
-				// Textarea
-				case 'textarea':
-					$option_value = self::get_option($value['id'], $value['default']);
-					?><tr valign="top">
-						<th scope="row" class="titledesc">
-							<label for="<?php echo esc_attr($value['id']); ?>"><?php echo esc_html($value['title']); ?></label>
-							<?php echo $tip; ?>
-						</th>
-						<td class="forminp forminp-<?php echo sanitize_title($value['type']); ?>">
-						<?php echo $description; ?>
-						<textarea
-								name="<?php echo esc_attr($value['id']); ?>"
-								id="<?php echo esc_attr($value['id']); ?>"
-								style="<?php echo esc_attr($value['css']); ?>"
-								class="<?php echo esc_attr($value['class']); ?>"
-								<?php echo implode(' ', $custom_attributes); ?>
-								><?php echo esc_textarea($option_value); ?></textarea>
-						</td>
-					</tr><?php
-
-					break;
-
-				// Select boxes
-				case 'select':
-				case 'multiselect':
-					$option_value = self::get_option($value['id'], $value['default']);
-					?><tr valign="top">
-						<th scope="row" class="titledesc">
-							<label for="<?php echo esc_attr($value['id']); ?>"><?php echo esc_html($value['title']); ?></label>
-							<?php echo $tip; ?>
-						</th>
-						<td class="forminp forminp-<?php echo sanitize_title($value['type']); ?>">
-						<select
-								name="<?php echo esc_attr($value['id']); ?><?php if ($value['type'] == 'multiselect') {
-	echo '[]';
-}
-?>"
-								id="<?php echo esc_attr($value['id']); ?>"
-								style="<?php echo esc_attr($value['css']); ?>"
-								class="<?php echo esc_attr($value['class']); ?>"
-								<?php echo implode(' ', $custom_attributes); ?>
-								<?php if ($value['type'] == 'multiselect') {
-	echo 'multiple="multiple"';
-}
-?>>
-								<?php foreach ($value['options'] as $key => $val) { ?>
-										<option value="<?php echo esc_attr($key); ?>" <?php
-											if (is_array($option_value)) {
-												selected(in_array($key, $option_value), true);
-											} else {
-												selected($option_value, $key);
-											}
-										?>><?php echo $val ?></option>
-										<?php
-									}
-								?>
-							</select> <?php echo $description; ?>
-						</td>
-						</tr><?php
+					// Section Titles
+					case 'title':
+						if ( ! empty( $value['title'] ) ) {
+							echo '<h2>' . esc_html( $value['title'] ) . '</h2>';
+						}
+						if ( ! empty( $value['desc'] ) ) {
+							echo wp_kses_post( wpautop( wptexturize( $value['desc'] ) ) );
+						}
+						echo '<table class="form-table">'."\n\n";
+						if ( ! empty( $value['id'] ) ) {
+							do_action( 'auto_load_next_post_settings_' . sanitize_title( $value['id'] ) );
+						}
 
 						break;
 
-				// Radio inputs
-				case 'radio':
-					$option_value = self::get_option($value['id'], $value['default']);
-					?><tr valign="top">
-						<th scope="row" class="titledesc">
-							<label for="<?php echo esc_attr($value['id']); ?>"><?php echo esc_html($value['title']); ?></label>
-							<?php echo $tip; ?>
-						</th>
-						<td class="forminp forminp-<?php echo sanitize_title($value['type']); ?>">
-							<fieldset>
+					// Section Ends
+					case 'sectionend':
+						if ( ! empty( $value['id'] ) ) {
+							do_action( 'auto_load_next_post_settings_' . sanitize_title( $value['id'] ) . '_end' );
+						}
+						echo '</table>';
+						if ( ! empty( $value['id'] ) ) {
+							do_action( 'auto_load_next_post_settings_' . sanitize_title( $value['id'] ) . '_after' );
+						}
+						break;
+
+					// Standard text inputs and subtypes like 'number'
+					case 'text':
+					case 'number':
+						$option_value = self::get_option( $value['id'], $value['default'] );
+
+						?><tr valign="top">
+							<th scope="row" class="titledesc">
+								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
+							</th>
+							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
+								<input
+									name="<?php echo esc_attr( $value['id'] ); ?>"
+									id="<?php echo esc_attr( $value['id'] ); ?>"
+									type="<?php echo esc_attr( $value['type'] ); ?>"
+									style="<?php echo esc_attr( $value['css'] ); ?>"
+									value="<?php echo esc_attr( $option_value ); ?>"
+									class="<?php echo esc_attr( $value['class'] ); ?>"
+									placeholder="<?php echo esc_attr( $value['placeholder'] ); ?>"
+									<?php echo implode(' ', $custom_attributes ); ?>
+								/><?php echo $description; ?>
+							</td>
+						</tr><?php
+						break;
+
+					// Textarea.
+					case 'textarea':
+						$option_value = self::get_option( $value['id'], $value['default'] );
+						?>
+						<tr valign="top">
+							<th scope="row" class="titledesc">
+								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
+							</th>
+							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
 								<?php echo $description; ?>
-							<ul>
-							<?php foreach ($value['options'] as $key => $val) { ?>
-								<li>
-									<label><input
-												name="<?php echo esc_attr($value['id']); ?>"
-												value="<?php echo $key; ?>"
-												type="radio"
-												style="<?php echo esc_attr($value['css']); ?>"
-												class="<?php echo esc_attr($value['class']); ?>"
-												<?php echo implode(' ', $custom_attributes); ?>
-												<?php checked($key, $option_value); ?>
-												/> <?php echo $val ?></label>
-								</li>
-							<?php } ?>
-							</ul>
-							</fieldset>
-						</td>
-					</tr><?php
-
-					break;
-
-				// Checkbox input
-				case 'checkbox':
-					$option_value = self::get_option($value['id'], $value['default']);
-					if ( ! isset($value['hide_if_checked'])) {
-						$value['hide_if_checked'] = false;
-					}
-					if ( ! isset($value['show_if_checked'])) {
-						$value['show_if_checked'] = false;
-					}
-					if ( ! isset($value['checkboxgroup']) || (isset($value['checkboxgroup']) && $value['checkboxgroup'] == 'start')) {
-					?>
-						<tr valign="top" class="<?php
-							if ($value['hide_if_checked'] == 'yes' || $value['show_if_checked'] == 'yes') {
-								echo 'hidden_option';
-							}
-							if ($value['hide_if_checked'] == 'option') {
-								echo 'hide_options_if_checked';
-							}
-							if ($value['show_if_checked'] == 'option') {
-								echo 'show_options_if_checked';
-							}
-						?>">
-						<th scope="row" class="titledesc"><?php echo esc_html($value['title']); ?></th>
-						<td class="forminp forminp-checkbox">
-							<fieldset>
-						<?php
-					} else {
-						?>
-						<fieldset class="<?php
-							if ($value['hide_if_checked'] == 'yes' || $value['show_if_checked'] == 'yes') {
-								echo 'hidden_option';
-							}
-							if ($value['hide_if_checked'] == 'option') {
-								echo 'hide_options_if_checked';
-							}
-							if ($value['show_if_checked'] == 'option') {
-								echo 'show_options_if_checked';
-							}
-						?>">
-					<?php
-					}
-					?>
-						<legend class="screen-reader-text"><span><?php echo esc_html($value['title']); ?></span></legend>
-						<label for="<?php echo $value['id'] ?>">
-						<input
-							name="<?php echo esc_attr($value['id']); ?>"
-							id="<?php echo esc_attr($value['id']); ?>"
-							type="checkbox"
-							value="1"
-							<?php checked($option_value, 'yes'); ?>
-							<?php echo implode(' ', $custom_attributes); ?>
-						/> <?php echo wp_kses_post($value['desc']) ?></label> <?php echo $tip; ?>
-					<?php
-					if ( ! isset($value['checkboxgroup']) || (isset($value['checkboxgroup']) && $value['checkboxgroup'] == 'end')) {
-						?>
-							</fieldset>
-						</td>
+								<textarea
+									name="<?php echo esc_attr( $value['id'] ); ?>"
+									id="<?php echo esc_attr( $value['id'] ); ?>"
+									style="<?php echo esc_attr( $value['css'] ); ?>"
+									class="<?php echo esc_attr( $value['class'] ); ?>"
+									placeholder="<?php echo esc_attr( $value['placeholder'] ); ?>"
+									<?php echo implode( ' ', $custom_attributes ); ?>
+									><?php echo esc_textarea( $option_value ); ?></textarea>
+							</td>
 						</tr>
 						<?php
-					} else {
+						break;
+
+					// Select boxes.
+					case 'select':
+					case 'multiselect':
+						$option_value = self::get_option( $value['id'], $value['default'] );
+						?>
+						<tr valign="top">
+							<th scope="row" class="titledesc">
+								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
+							</th>
+							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
+								<select
+									name="<?php echo esc_attr( $value['id'] ); ?><?php echo ( 'multiselect' === $value['type'] ) ? '[]' : ''; ?>"
+									id="<?php echo esc_attr( $value['id'] ); ?>"
+									style="<?php echo esc_attr( $value['css'] ); ?>"
+									class="<?php echo esc_attr( $value['class'] ); ?>"
+									<?php echo implode( ' ', $custom_attributes ); ?>
+									<?php echo 'multiselect' === $value['type'] ? 'multiple="multiple"' : ''; ?>>
+									<?php foreach ( $value['options'] as $key => $val ) { ?>
+										<option value="<?php echo esc_attr( $key ); ?>"
+										<?php
+										if ( is_array( $option_value ) ) {
+											selected( in_array( (string) $key, $option_value, true ), true );
+										} else {
+											selected( $option_value, (string) $key );
+										}
+										?>>
+										<?php echo esc_html( $val ); ?></option>
+										<?php
+									}
+									?>
+								</select> <?php echo $description; ?>
+							</td>
+						</tr>
+						<?php
+						break;
+
+					// Radio inputs.
+					case 'radio':
+						$option_value = self::get_option( $value['id'], $value['default'] );
+						?>
+						<tr valign="top">
+							<th scope="row" class="titledesc">
+								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
+							</th>
+							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
+								<fieldset>
+									<?php echo $description; ?>
+									<ul>
+									<?php foreach ( $value['options'] as $key => $val ) { ?>
+										<li>
+											<label>
+												<input
+													name="<?php echo esc_attr( $value['id'] ); ?>"
+													value="<?php echo esc_attr( $key ); ?>"
+													type="radio"
+													style="<?php echo esc_attr( $value['css'] ); ?>"
+													class="<?php echo esc_attr( $value['class'] ); ?>"
+													<?php echo implode( ' ', $custom_attributes ); // WPCS: XSS ok. ?>
+													<?php checked( $key, $option_value ); ?>
+													/> <?php echo esc_html( $val ); ?>
+											</label>
+										</li>
+										<?php
+										}
+										?>
+									</ul>
+								</fieldset>
+							</td>
+						</tr>
+						<?php
+						break;
+
+					// Checkbox input.
+					case 'checkbox':
+						$option_value     = self::get_option( $value['id'], $value['default'] );
+						$visibility_class = array();
+
+						if ( ! isset( $value['hide_if_checked'] ) ) {
+							$value['hide_if_checked'] = false;
+						}
+						if ( ! isset( $value['show_if_checked'] ) ) {
+							$value['show_if_checked'] = false;
+						}
+						if ( 'yes' === $value['hide_if_checked'] || 'yes' === $value['show_if_checked'] ) {
+							$visibility_class[] = 'hidden_option';
+						}
+						if ( 'option' === $value['hide_if_checked'] ) {
+							$visibility_class[] = 'hide_options_if_checked';
+						}
+						if ( 'option' === $value['show_if_checked'] ) {
+							$visibility_class[] = 'show_options_if_checked';
+						}
+
+						if ( ! isset( $value['checkboxgroup'] ) || 'start' === $value['checkboxgroup'] ) {
+						?>
+						<tr valign="top" class="<?php echo esc_attr( implode( ' ', $visibility_class ) ); ?>">
+							<th scope="row" class="titledesc"><?php echo esc_html( $value['title'] ); ?></th>
+							<td class="forminp forminp-checkbox">
+								<fieldset>
+								<?php
+						} else {
+						?>
+							<fieldset class="<?php echo esc_attr( implode( ' ', $visibility_class ) ); ?>">
+						<?php
+						}
+
+						if ( ! empty( $value['title'] ) ) {
+						?>
+							<legend class="screen-reader-text"><span><?php echo esc_html( $value['title'] ); ?></span></legend>
+						<?php
+						}
+						?>
+								<label for="<?php echo esc_attr( $value['id'] ); ?>">
+									<input
+										name="<?php echo esc_attr( $value['id'] ); ?>"
+										id="<?php echo esc_attr( $value['id'] ); ?>"
+										type="checkbox"
+										class="<?php echo esc_attr( isset( $value['class'] ) ? $value['class'] : '' ); ?>"
+										value="1"
+										<?php checked( $option_value, 'yes' ); ?>
+										<?php echo implode( ' ', $custom_attributes ); ?>
+									/> <?php echo $description; ?>
+								</label>
+								<?php
+
+								if ( ! isset( $value['checkboxgroup'] ) || 'end' === $value['checkboxgroup'] ) {
+								?>
+								</fieldset>
+							</td>
+						</tr>
+						<?php
+						} else {
 						?>
 						</fieldset>
 						<?php
-					}
+						}
+						break;
 
-					break;
+					// Default: run an action
+					default:
+						do_action( 'auto_load_next_post_admin_field_' . $value['type'], $value );
 
-				// Default: run an action
-				default:
-					do_action('auto_load_next_post_admin_field_'.$value['type'], $value);
-
-					break;
-			} // end switch
-
-		}
-
-	} // END output_fields()
+						break;
+				} // end switch()
+			} // END foreach()
+		} // END output_fields()
 
 		/**
 		 * Save admin fields.
@@ -569,7 +547,6 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 					case "text" :
 					case "number":
 					case "select" :
-					case "single_select_page" :
 					case "radio" :
 						if ( isset( $_POST[$value['id']] ) ) {
 							$option_value = auto_load_next_post_clean( stripslashes( $_POST[$value['id']] ) );
@@ -608,16 +585,16 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 						$option_name = current( array_keys( $option_array ) );
 
 						// Get old option value
-						if ( ! isset($update_options[$option_name])) {
-							$update_options[$option_name] = get_option($option_name, array());
+						if ( ! isset( $update_options[$option_name] ) ) {
+							$update_options[$option_name] = get_option( $option_name, array() );
 						}
 
-						if ( ! is_array($update_options[$option_name])) {
+						if ( ! is_array( $update_options[$option_name] ) ) {
 							$update_options[$option_name] = array();
 						}
 
 						// Set keys and value
-						$key = key($option_array[$option_name]);
+						$key = key( $option_array[$option_name] );
 						$update_options[$option_name][$key] = $option_value;
 
 					// Single value
