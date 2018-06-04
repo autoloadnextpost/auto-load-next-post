@@ -125,6 +125,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 					update_option( 'auto_load_next_post_theme_supported', $template );
 				}
 			}
+			else {
+				// If theme not supported then delete option.
+				delete_option( 'auto_load_next_post_theme_supported' );
+			}
 
 			// Is admin review notice hidden?
 			$hide_review_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_review_notice', true );
@@ -143,7 +147,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			// Check if we need to display the welcome notice.
 			if ( current_user_can( 'install_plugins' ) && empty( $hide_welcome_notice ) ) {
 				// If the user has just installed the plugin for the first time then welcome the user.
-				if ( ( intval( time() - strtotime( $install_date ) ) / WEEK_IN_SECONDS ) % 52 <= 2 ) {
+				if ( ( intval( time() - strtotime( self::$install_date ) ) / WEEK_IN_SECONDS ) % 52 <= 2 ) {
 					add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
 				}
 			}
