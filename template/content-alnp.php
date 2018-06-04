@@ -14,7 +14,7 @@
  * @package Auto Load Next Post/Templates
  * @license GPL-2.0+
  * @version 1.5.0
-*/
+ */
 
 if ( have_posts() ) :
 

@@ -27,7 +27,7 @@
  *
  * @version 1.5.0
  */
-if ( ! class_exists('Auto_Load_Next_Post') ) {
+if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
 	class Auto_Load_Next_Post {
 
@@ -128,7 +128,7 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		 *
 		 * @since   1.4.3
 		 * @version 1.5.0
-		 * @access private
+		 * @access  private
 		 */
 		private function setup_constants() {
 			$this->define('AUTO_LOAD_NEXT_POST_VERSION', self::$version);
