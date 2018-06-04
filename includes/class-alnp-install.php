@@ -2,13 +2,12 @@
 /**
  * Auto Load Next Post - Installation related functions and actions.
  *
- * @class    Auto_Load_Next_Post_Install
+ * @since    1.0.0
+ * @version  1.5.0
  * @author   Sébastien Dumont
  * @category Classes
  * @package  Auto Load Next Post/Classes/Install
  * @license  GPL-2.0+
- * @since    1.0.0
- * @version  1.4.10
  */
 
 // Exit if accessed directly.
@@ -89,7 +88,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 
 			// Set theme selectors if current active theme supports Auto Load Next Post.
 			self::set_theme_selectors();
-			wp_die('Boo');
 
 			// Set activation date.
 			self::set_install_date();
@@ -143,10 +141,17 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.4.4
-		 * @version 1.4.10
+		 * @version 1.5.0
 		 */
 		public static function set_install_date() {
-			add_site_option( 'auto_load_next_post_install_date', time() );
+			$install_date = get_site_option( 'auto_load_next_post_install_date' );
+
+			// If ALNP was installed before but the install date was not converted to time then convert it.
+			if ( ! empty( $install_date ) && !intval( $install_date ) ) {
+				update_site_option( 'auto_load_next_post_install_date', strtotime( $install_date ) );
+			} else {
+				add_site_option( 'auto_load_next_post_install_date', time() );
+			}
 		} // END set_install_date()
 
 		/**
