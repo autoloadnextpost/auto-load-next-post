@@ -55,22 +55,25 @@ Want to provide feedback or discuss plugins to be supported, features to be adde
 
 = Free Add-ons =
 
-WordPress.org hosts some great free add-ons for Auto Load Next Post.
-
+WordPress.org is home to some great add-ons for Auto Load Next Post, including:
 - [Facebook Pixel Tracking](https://wordpress.org/plugins/alnp-facebook-pixel-tracking/)
+
+Keen to see them all? Search WordPress.org for ‘Auto Load Next Post’ to dive in.
 
 > Have a free add-on for Auto Load Next Post? [Let me know about it](https://autoloadnextpost.com/contact/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=have-addon-to-share-link).
 
 > #### Auto Load Next Post Pro
-> There's an even better version of the plugin coming out soon with the following extra features:<br />
+> Want more? _I bet you do._ A premium extension is currently in development with some of the most highly requested features. Here are just a few:<br />
 >
 > - User Role Restrictions<br />
 > - Custom Post Type Support<br />
 > - Media Attachment Support<br />
 > - Limit Posts per Session<br />
 > - Query Posts by Category or Tag<br />
+>
+> On top of that you also get:
 > - Priority Email Support<br />
-> - and many more features to follow.
+> - and many more features and add-ons to follow.
 >
 > [More information](https://autoloadnextpost.com/pro/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
 
@@ -78,24 +81,30 @@ This plugin is created and maintained by [Sébastien Dumont](https://sebastiendu
 
 **More information**
 
-- [Visit Auto Load Next Post website](https://autoloadnextpost.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=more-info-link)
-- [View Documentation](https://autoloadnextpost.com/documentation/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=more-info-link)
+- [Visit Auto Load Next Post website](https://autoloadnextpost.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=more-info-link) to learn more.
+- [View Documentation](https://autoloadnextpost.com/documentation/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=more-info-link) for guides and code snippets.
 - If you're a developer yourself, follow or contribute to the [Auto Load Next Post plugin on GitHub](https://github.com/AutoLoadNextPost/auto-load-next-post)
 
 == Installation ==
 
-Installing "Auto Load Next Post" can be done either by searching for "Auto Load Next Post" via the "Plugins > Add New" screen in your WordPress dashboard, or by using the following steps:
+= Automatic installation =
 
-1. Download the plugin via WordPress.org
-2. Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard.
-3. Activate the plugin through the 'Plugins' menu in WordPress.
+Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't need to leave your web browser. To do an automatic install of Auto Load Next Post, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New.
 
-If the theme already supports Auto Load Next Post then you do not need to complete the remaining steps.
+In the search field type "Auto Load Next Post" and click Search Plugins. Once you've found the plugin you can view details about it such as the point release, rating and description. Most importantly of course, you can install it by simply clicking "Install Now".
 
-4. Go to the plugin settings page 'Settings > Auto Load Next Post'.
-5. Enter each of the selectors specified for the theme you are using and press "Save Changes".
+= Manual installation =
 
-See [documentation](https://autoloadnextpost.com/documentation/) for more information.
+The manual installation method involves downloading the plugin and uploading it to your webserver via your favourite FTP application. The WordPress codex contains [instructions on how to do this here](https://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).
+
+If the theme already supports Auto Load Next Post then you do not need to complete the remaining steps:
+
+1. Go to the plugin settings page by 'Settings > Auto Load Next Post'.
+2. Enter each of the selectors specified for the theme you are using and press "Save Changes".
+
+= Updating =
+
+Automatic updates should work like a charm; as always though, ensure you backup your site just in case.
 
 == Frequently Asked Questions ==
 
@@ -103,15 +112,19 @@ See [documentation](https://autoloadnextpost.com/documentation/) for more inform
 
 Yes! Auto Load Next Post's core features are and always will be free.
 
-= What themes work with Auto Load Next Post? =
+= Will Auto Load Next Post work with my theme? =
 
-Any properly developed WordPress theme will work with Auto Load Next Post.
+Yes, Auto Load Next Post will work with any theme, but may require some configuration for it to understand your theme. Please see the [documentation](https://autoloadnextpost.com/documentation/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link) for help or read further down to see if your question has already been answered.
 
 = Is Auto Load Next Post translatable? =
 
 Yes! Auto Load Next Post is deployed with full translation and localization support via the 'auto-load-next-post' text-domain.
 
-= Where do I go to change the plugin settings? =
+= Where can I request new features and add-ons? =
+
+You can vote on and request new features and add-ons on the [public roadmap](https://trello.com/c/OcC1oDGE/1-submitting-new-ideas).
+
+= Where can I find the settings for this plugin? =
 
 Go to "Settings -> Auto Load Next Post". There you will find the options to change any of the theme selectors, enable Google Analytics and remove comments.
 
@@ -121,9 +134,11 @@ No. This was put in place to support themes that have coded their template files
 
 = How can I override the repeater template file? =
 
-You first need to create a new folder in your theme directory called "auto-load-next-post" like so: **your-theme-name/auto-load-next-post/** and copy the repeater template file **content-alnp.php** from the plugin template folder into that new folder.
+You first need to create a new folder in your active theme directory called "auto-load-next-post" like so: **wp-content/themes/your-theme-name/auto-load-next-post/** and copy the repeater template file **content-alnp.php** from the plugin template folder into that new folder.
 
 Now you can modify it to match how your theme’s content is loaded for a single post. This will be the repeater template the plugin will use to load posts with from now on.
+
+> PHP knowledge will be required.
 
 = Can I use JetPack Social Links and Like Button? =
 
@@ -169,7 +184,7 @@ You can. All you have to do is simply install the [Facebook Pixel Tracking add-o
 
 = Does Auto Load Next Post support WordPress Network / Multisite websites? =
 
-It does. Just make sure that you activate the plugin on the site you want it used on and then make sure the selectors match the theme the site is using.
+It does. Just make sure that you activate the plugin on the site you want it used on and then make sure the selectors match the theme that site is using.
 
 == Screenshots ==
 
