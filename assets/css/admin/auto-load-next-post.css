@@ -127,11 +127,13 @@ h2 .nav-tab:first-child {
 	margin: 0 0 5px;
 }
 .notice.auto-load-next-post-notice .auto-load-next-post-review-now,
-.notice.auto-load-next-post-notice .auto-load-next-post-send-feedback {
+.notice.auto-load-next-post-notice .auto-load-next-post-send-feedback,
+.notice.auto-load-next-post-notice .auto-load-next-post-documentation {
 	text-align: center;
 }
 .notice.auto-load-next-post-notice .auto-load-next-post-review-now .auto-load-next-post-review-button,
-.notice.auto-load-next-post-notice .auto-load-next-post-send-feedback .auto-load-next-post-feedback-button {
+.notice.auto-load-next-post-notice .auto-load-next-post-send-feedback .auto-load-next-post-feedback-button,
+.notice.auto-load-next-post-notice .auto-load-next-post-documentation .auto-load-next-post-documentation-button {
 	padding: 6px 50px;
 	height: auto;
 	line-height: 20px;
@@ -163,7 +165,8 @@ h2 .nav-tab:first-child {
 		display: none;
 	}
 	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-review-now,
-	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-send-feedback {
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-send-feedback,
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-documentation {
 		margin-top: 20px;
 		display: block;
 		text-align: left;
