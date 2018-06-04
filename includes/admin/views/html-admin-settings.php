@@ -6,7 +6,7 @@
  * @version  1.4.10
  * @author   Sébastien Dumont
  * @category Admin
- * @package  Auto Load Next Post
+ * @package  Auto Load Next Post/Admin/Views
  * @license  GPL-2.0+
  */
 

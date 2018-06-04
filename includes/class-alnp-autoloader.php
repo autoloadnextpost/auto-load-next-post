@@ -2,11 +2,11 @@
 /**
  * Auto Load Next Post - Autoloader.
  *
+ * @since    1.5.0
  * @author   Sébastien Dumont
  * @category Classes
- * @package  Auto Load Next Post
+ * @package  Auto Load Next Post/Classes/AutoLoader
  * @license  GPL-2.0+
- * @since    1.5.0
  *
  * @note This class was forked from WooCommerce and modified.
  */

@@ -7,7 +7,7 @@
  * @since    1.5.0
  * @author   Sébastien Dumont
  * @category Customizer
- * @package  Auto Load Next Post
+ * @package  Auto Load Next Post/Customizer/Controller
  * @license  GPL-2.0+
  */
 

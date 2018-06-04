@@ -6,8 +6,8 @@
  *
  * @since    1.5.0
  * @author   Sébastien Dumont
- * @category Core
- * @package  Auto Load Next Post
+ * @category Theme Support
+ * @package  Auto Load Next Post/Theme Support
  * @license  GPL-2.0+
  */
 

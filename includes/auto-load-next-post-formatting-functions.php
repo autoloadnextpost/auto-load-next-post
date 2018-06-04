@@ -6,7 +6,7 @@
  * @version  1.4.10
  * @author   Sébastien Dumont
  * @category Core
- * @package  Auto Load Next Post/Functions
+ * @package  Auto Load Next Post/Core/Functions
  * @license  GPL-2.0+
  */
 

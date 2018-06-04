@@ -9,7 +9,7 @@
  * @version  1.5.0
  * @author   Sébastien Dumont
  * @category Admin
- * @package  Auto Load Next Post
+ * @package  Auto Load Next Post/Admin/Help
  * @license  GPL-2.0+
  */
 
