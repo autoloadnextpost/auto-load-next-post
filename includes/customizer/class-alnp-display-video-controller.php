@@ -21,34 +21,38 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
-/**
- * This class is for the display video control in the Customizer.
- */
-class ALNP_Display_Video_Controller extends WP_Customize_Control {
+if ( !class_exists( 'Auto_Load_Next_Post_Display_Video_Controller' ) ) {
 
 	/**
-	 * The type of customize control.
-	 *
-	 * @access public
-	 * @since  1.5.0
-	 * @var    string
+	 * This class is for the display video control in the Customizer.
 	 */
-	public $type = 'alnp-display-video';
+	class Auto_Load_Next_Post_Display_Video_Controller extends WP_Customize_Control {
 
-	/**
-	 * Render the content on the theme customizer page via PHP.
-	 *
-	 * @access public
-	 * @since  1.5.0
-	 */
-	public function render_content() {
-		?>
-		<span class="customize-control-title"><?php esc_html_e( $this->label ); ?></span>
+		/**
+		 * The type of customize control.
+		 *
+		 * @access public
+		 * @since  1.5.0
+		 * @var    string
+		 */
+		public $type = 'alnp-display-video';
 
-		<p>
-			<iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/<?php echo $this->value(); ?>?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		</p>
-		<?php
-	} // END render_content()
+		/**
+		 * Render the content on the theme customizer page via PHP.
+		 *
+		 * @access public
+		 * @since  1.5.0
+		 */
+		public function render_content() {
+			?>
+			<span class="customize-control-title"><?php esc_html_e( $this->label ); ?></span>
 
-} // END class
+			<p>
+				<iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/<?php echo $this->value(); ?>?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</p>
+			<?php
+		} // END render_content()
+
+	} // END class
+
+} // END if class

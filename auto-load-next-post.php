@@ -185,6 +185,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
 			// Customizer.
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer.php' );
+			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer-scripts.php' );
 
 			// Include admin class to handle all back-end functions.
 			if ( is_admin() ) {
