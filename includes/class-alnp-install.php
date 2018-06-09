@@ -202,7 +202,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			flush_rewrite_rules();
 		} // END flush_rewrite_rules()
 
-	} // END if class.
+	} // END class.
 
 } // END if class exists.
 

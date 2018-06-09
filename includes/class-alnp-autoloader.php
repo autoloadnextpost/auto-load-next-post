@@ -92,7 +92,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Autoloader' ) ) {
 			}
 		} // END autoload()
 
-	} // END if class.
+	} // END class.
 
 } // END if class exists.
 
