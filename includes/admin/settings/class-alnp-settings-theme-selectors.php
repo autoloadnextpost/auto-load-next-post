@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
+if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Theme_Selectors_Tab' ) ) {
 
-	class Auto_Load_Next_Post_Settings_General_Tab extends Auto_Load_Next_Post_Settings_Page {
+	class Auto_Load_Next_Post_Settings_Theme_Selectors_Tab extends Auto_Load_Next_Post_Settings_Page {
 
 		/**
 		 * Constructor.
@@ -27,13 +27,13 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 		 * @version 1.4.10
 		 */
 		public function __construct() {
-			$this->id    = 'general';
+			$this->id    = 'theme-selectors';
 			$this->label = esc_html__( 'Theme Selectors', 'auto-load-next-post' );
 
 			parent::__construct();
 
-			add_action( 'auto_load_next_post_sections_general', array( __CLASS__, 'is_theme_supported' ), 10 );
-			add_action( 'auto_load_next_post_sections_general', array( __CLASS__, 'no_theme_selectors_set' ), 10 );
+			add_action( 'auto_load_next_post_sections_theme-selectors', array( __CLASS__, 'is_theme_supported' ), 10 );
+			add_action( 'auto_load_next_post_sections_theme-selectors', array( __CLASS__, 'no_theme_selectors_set' ), 10 );
 		} // END __construct()
 
 		/**
@@ -85,24 +85,28 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 		 *
 		 * @access public
 		 * @since  1.0.0
+		 * @global int $blog_id
 		 * @return array
 		 */
 		public function get_settings() {
+			global $blog_id;
+
 			return apply_filters(
-				'auto_load_next_post_general_settings', array(
+				'auto_load_next_post_theme_selectors_settings', array(
 
 					array(
 						'title' => esc_html__( 'Theme Selectors', 'auto-load-next-post' ),
 						'type'  => 'title',
 						'desc'  => sprintf( esc_html__( 'Here you set the theme selectors below according to your active theme. All are required for %s to work.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
-						'id'    => 'general_options'
+						'id'    => 'theme_selectors_options'
 					),
 
 					array(
 						'title'    => esc_html__( 'Content Container', 'auto-load-next-post' ),
-						'desc'     => __( 'The primary container where the post content is loaded in. Example: <code>main.site-main</code>', 'auto-load-next-post' ),
+						'desc'     => __( 'The primary container where the post content is loaded in. Default: <code>main.site-main</code>', 'auto-load-next-post' ),
 						'id'       => 'auto_load_next_post_content_container',
 						'default'  => 'main.site-main',
+						'placeholder' => __( 'Required', 'auto-load-next-post' ),
 						'type'     => 'text',
 						'css'      => 'min-width:300px;',
 						'autoload' => false
@@ -110,7 +114,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 
 					array(
 						'title'    => esc_html__( 'Post Title', 'auto-load-next-post' ),
-						'desc'     => __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>', 'auto-load-next-post' ),
+						'desc'     => __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Default: <code>h1.entry-title</code>', 'auto-load-next-post' ),
 						'id'       => 'auto_load_next_post_title_selector',
 						'default'  => 'h1.entry-title',
 						'type'     => 'text',
@@ -120,7 +124,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 
 					array(
 						'title'    => esc_html__( 'Post Navigation', 'auto-load-next-post' ),
-						'desc'     => __( 'Used to identify which post to load next if any. Example: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
+						'desc'     => __( 'Used to identify which post to load next if any. Default: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
 						'id'       => 'auto_load_next_post_navigation_container',
 						'default'  => 'nav.post-navigation',
 						'type'     => 'text',
@@ -130,7 +134,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 
 					array(
 						'title'    => esc_html__( 'Comments Container', 'auto-load-next-post' ),
-						'desc'     => __( 'So comments can be removed if enabled under "Misc" settings. Example: <code>div#comments</code>', 'auto-load-next-post' ),
+						'desc'     => sprintf( __( 'Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> settings. Default: <code>div#comments</code>', 'auto-load-next-post' ), '<a href="' . get_admin_url( $blog_id, 'options-theme_selectors.php?page=auto-load-next-post-settings&tab=misc' ) . '">', '</a>' ),
 						'id'       => 'auto_load_next_post_comments_container',
 						'default'  => 'div#comments',
 						'type'     => 'text',
@@ -140,9 +144,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 
 					array(
 						'type' => 'sectionend',
-						'id'   => 'general_options'
+						'id'   => 'theme_selectors_options'
 					),
-			) ); // End general settings
+			) ); // End theme selectors settings
 		} // END get_settings()
 
 		/**
@@ -191,4 +195,4 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_General_Tab' ) ) {
 
 } // END if class exists
 
-return new Auto_Load_Next_Post_Settings_General_Tab();
+return new Auto_Load_Next_Post_Settings_Theme_Selectors_Tab();

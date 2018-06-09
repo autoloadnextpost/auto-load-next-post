@@ -113,7 +113,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 			Auto_Load_Next_Post_Admin_Settings::get_settings_pages();
 
 			// Get current tab/section.
-			$current_tab     = empty( $_GET['tab'] ) ? 'general' : sanitize_title( wp_unslash( $_GET['tab'] ) );
+			$current_tab     = empty( $_GET['tab'] ) ? 'theme-selectors' : sanitize_title( wp_unslash( $_GET['tab'] ) );
 			$current_section = empty( $_REQUEST['section'] ) ? '' : sanitize_title( wp_unslash( $_REQUEST['section'] ) );
 
 			// Save settings if data has been posted.
