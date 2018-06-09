@@ -61,15 +61,15 @@
 
 # 1.4.8 (25th December 2016)
 * Added: Support for child-themes so they too can also use the plugin. Thanks to [lwesolowski](https://github.com/lwesolowski)
-* Added: New template location filter. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
+* Added: New template location filter. [See Documentation](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/wiki).
 * Added: New action hook for when there are no new posts to load.
 * Added: a post count of the posts that have loaded. Can be used to trigger an event after X amount of posts have loaded.
 * Added: a new variable that can be set to prevent further posts from loading.
 * Added: Support for Twenty Seventeen.
 * Corrected: Plugin links and improved spelling and grammar.
 * Corrected: Admin notices now use WordPress style.
-* Dev Feature: Can view the console.logs if debug mode is enabled for Auto Load Next Post. Must have SCRIPT_DEBUG set to true also. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
-* Dev Feature: JavaScript triggers have been added so developers can do fun stuff. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
+* Dev Feature: Can view the console.logs if debug mode is enabled for Auto Load Next Post. Must have SCRIPT_DEBUG set to true also. [See Documentation](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/wiki).
+* Dev Feature: JavaScript triggers have been added so developers can do fun stuff. [See Documentation](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/wiki).
 * Fixed: Google Analytics bug that prevented more than 3 posts to load. Thanks to [PatriceVB](https://github.com/PatriceVB)
 * Improved: How Google Analytics is triggered.
 * Improved: The JavaScript now identifies the post ID of each post including the initial post on load.
@@ -136,7 +136,7 @@
 * Updated the readme.txt file with better copy.
 * Removed public variables and hardcoded them into the plugin instead.
 * Removed whitespace.
-* Removed @return void on __construct() functions.
+* Removed @return void on `__construct()` functions.
 * Cleaned up the code.
 
 ## 1.4.2 (31st July 2015)
