@@ -50,6 +50,15 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		public static $version = '1.5.0-beta.1';
 
 		/**
+		 * Integrations instance.
+		 *
+		 * @access public
+		 * @since  1.5.0
+		 * @var    Auto_Load_Next_Post_Integrations
+		 */
+		public $integrations = null;
+
+		/**
 		 * Main Auto Load Next Post Instance
 		 *
 		 * Ensures only one instance of Auto Load Next Post is loaded or can be loaded.
@@ -116,6 +125,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @since  1.5.0
 		 */
 		public function init_hooks() {
+			add_action( 'init', array( $this, 'init' ), 0 );
+
 			// Load translation files.
 			add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
@@ -187,6 +198,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer.php' );
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer-scripts.php' );
 
+			// Integrations.
+			include_once( dirname( __FILE__ ) . '/includes/class-alnp-integrations.php' );
+
 			// Include admin class to handle all back-end functions.
 			if ( is_admin() ) {
 				include_once( dirname( __FILE__ ) . '/includes/admin/class-alnp-admin.php' ); // Admin section.
@@ -245,6 +259,16 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
 			}
 		} // END alnp_include_theme_support()
+
+		public function init() {
+			// Before init action.
+			do_action( 'before_auto_load_next_post_init' );
+
+			$this->integrations = new Auto_Load_Next_Post_Integrations();
+
+			// Init action.
+			do_action( 'auto_load_next_post_init' );
+		}
 
 		/*-----------------------------------------------------------------------------------*/
 		/*  Localization                                                                     */
