@@ -24,10 +24,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Integrations' ) ) {
 			$this->id    = 'integration';
 			$this->label = esc_html__( 'Integration', 'auto-load-next-post' );
 
-			if ( isset( Auto_Load_Next_Post()->integrations ) && Auto_Load_Next_Post()->integrations->get_integrations() ) {
+			if ( isset( Auto_Load_Next_Post::$integrations ) && Auto_Load_Next_Post::$integrations->get_integrations() ) {
 				parent::__construct();
 			}
-		}
+		} // END __construct()
 
 		/**
 		 * Get sections.
@@ -55,7 +55,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Integrations' ) ) {
 			}
 
 			return apply_filters( 'auto_load_next_post_get_sections_' . $this->id, $sections );
-		}
+		} // END get_sections()
 
 		/**
 		 * Output the settings.
@@ -68,9 +68,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Integrations' ) ) {
 			if ( isset( $integrations[ $current_section ] ) ) {
 				$integrations[ $current_section ]->admin_options();
 			}
-		}
-	}
+		} // END output()
 
-endif;
+	} // END class
+
+} // END if class exists
 
 return new Auto_Load_Next_Post_Settings_Integrations();
