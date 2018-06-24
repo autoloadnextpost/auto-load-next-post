@@ -172,12 +172,14 @@ function scrollspy() {
 function triggerEvents(events, params) {
 	if (typeof events !== 'string') return;
 
+	var body = jQuery( 'body' );
+
     events = events.split(',');
 
     for (var i = 0; i < events.length; i++) {
     	//support all browsers, "replace" instead of "trim"
         events[i] = events[i].replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-    	jQuery( 'body' ).trigger(events[i], params);
+    	body.trigger(events[i], params);
     }
 
     return this;
