@@ -63,6 +63,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 				include_once( dirname( __FILE__ ) . '/settings/class-alnp-settings-page.php' );
 
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-general.php');
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-events.php');
 
 				self::$settings = apply_filters( 'auto_load_next_post_get_settings_pages', $settings );
 			}
@@ -231,6 +232,9 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 			if ( ! isset($value['title'])) {
 				$value['title'] = isset($value['name']) ? $value['name'] : '';
 			}
+			if ( ! isset($value['placeholder'])) {
+				$value['placeholder'] = '';
+			}
 			if ( ! isset($value['class'])) {
 				$value['class'] = '';
 			}
@@ -357,6 +361,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 								name="<?php echo esc_attr($value['id']); ?>"
 								id="<?php echo esc_attr($value['id']); ?>"
 								style="<?php echo esc_attr($value['css']); ?>"
+								placeholder="<?php echo esc_attr($value['placeholder']); ?>"
 								class="<?php echo esc_attr($value['class']); ?>"
 								<?php echo implode(' ', $custom_attributes); ?>
 								><?php echo esc_textarea($option_value); ?></textarea>
