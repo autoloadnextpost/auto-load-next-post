@@ -34,6 +34,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_styles' ), 10 );
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ), 10 );
 
+			// Add a message in the WP Privacy Policy Guide page.
+			add_action( 'admin_init', array( $this, 'add_privacy_policy_guide_content' ) );
+
 			// Add settings page.
 			add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
 
@@ -115,6 +118,38 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 				) );
 			}
 		} // END admin_scripts()
+
+		/**
+		 * Add a message in the WP Privacy Policy Guide page.
+		 *
+		 * @access public
+		 * @since  1.5.0
+		 * @static
+		 */
+		public static function add_privacy_policy_guide_content() {
+			if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
+				wp_add_privacy_policy_content( esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), self::get_privacy_policy_guide_message() );
+			}
+		} // END add_privacy_policy_guide_content()
+
+		/**
+		 * Message to add in the WP Privacy Policy Guide page.
+		 *
+		 * @access protected
+		 * @since  1.5.0
+		 * @static
+		 * @return string
+		 */
+		protected static function get_privacy_policy_guide_message() {
+			$content = '
+				<div contenteditable="false">' .
+					'<p class="wp-policy-help">' .
+						sprintf( __( '%s does not collect, store or share any personal data.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) .
+					'</p>' .
+				'</div>';
+
+			return $content;
+		} // END get_privacy_policy_guide_message()
 
 		/**
 		 * Add Auto Load Next Post to the settings menu.
