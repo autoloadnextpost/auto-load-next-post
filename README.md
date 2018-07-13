@@ -61,6 +61,7 @@ There are various ways you can contribute:
 Auto Load Next Post is in need of translations. Is the plugin not translated in your language or do you spot errors with the current translations? Helping out is easy! [Translate Auto Load Next Post](https://translate.wordpress.org/projects/wp-plugins/auto-load-next-post).
 
 ### Libraries Used
+- [select2](https://github.com/select2/select2)
 - [jQuery.history](https://github.com/browserstate/history.js)
 - [scrollspy](https://github.com/thesmart/jquery-scrollspy)
 
