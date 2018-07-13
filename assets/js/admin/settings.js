@@ -1,25 +1,59 @@
-jQuery(window).load(function(){
+/* global alnp_settings_params */
+( function( $, params ) {
+	$( function() {
 
-	// Edit prompt
-	jQuery(function(){
-		var changed = false;
-		jQuery('input, checkbox').change(function(){
-			changed = true;
-		});
-		jQuery('.nav-tab-wrapper a').click(function(){
-			if (changed) {
-				window.onbeforeunload = function() {
-					return auto_load_next_post_settings_params.i18n_nav_warning;
-				};
-			}
-			else {
+		// Edit prompt
+		$( function() {
+			var changed = false;
+
+			$( 'input, number, email, textarea, select, checkbox, radio' ).change( function() {
+				changed = true;
+			});
+
+			$( '.nav-tab-wrapper a' ).click( function() {
+				if ( changed ) {
+					window.onbeforeunload = function() {
+						return params.i18n_nav_warning;
+					};
+				} else {
+					window.onbeforeunload = '';
+				}
+			});
+
+			$( '.submit :input' ).click( function() {
 				window.onbeforeunload = '';
+			});
+		});
+
+		// Select all button
+		$( '.auto-load-next-post' ).on( 'click', '.select_all', function() {
+			$( this ).closest( 'td' ).find( 'select option' ).attr( 'selected', 'selected' );
+			$( this ).closest( 'td' ).find( 'select' ).trigger( 'change' );
+			return false;
+		});
+
+		// Select none button
+		$( '.auto-load-next-post' ).on( 'click', '.select_none', function() {
+			$( this ).closest( 'td' ).find( 'select option' ).removeAttr( 'selected' );
+			$( this ).closest( 'td' ).find( 'select' ).trigger( 'change' );
+			return false;
+		});
+
+		// Select2 enhanced select fields
+		$('.alnp-enhanced-select').select2({
+			dir: params.is_rtl,
+			minimumResultsForSearch: Infinity,
+			placeholder: function() {
+				$( this ).data('placeholder');
 			}
 		});
-		jQuery('.submit input').click(function(){
-			window.onbeforeunload = '';
+
+		$('.alnp-enhanced-multiselect').select2({
+			dir: params.is_rtl,
+			multiple: true,
+			placeholder: function() {
+				$( this ).data('placeholder');
+			}
 		});
 	});
-
-
-});
+})( jQuery, alnp_settings_params );

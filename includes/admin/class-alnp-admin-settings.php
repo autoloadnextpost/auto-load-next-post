@@ -157,12 +157,6 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 
 			do_action( 'auto_load_next_post_settings_start' );
 
-			wp_enqueue_script( 'auto_load_next_post_settings', AUTO_LOAD_NEXT_POST_URL_PATH . '/assets/js/admin/settings' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', array('jquery'), AUTO_LOAD_NEXT_POST_VERSION, true );
-
-			wp_localize_script( 'auto_load_next_post_settings', 'auto_load_next_post_settings_params', array(
-				'i18n_nav_warning' => __( 'The changes you have made will be lost if you navigate away from this page before saving.', 'auto-load-next-post' ),
-			) );
-
 			// Get tabs for the settings page
 			$tabs = apply_filters( 'auto_load_next_post_settings_tabs_array', array() );
 
@@ -196,8 +190,8 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 				} else {
 					$option_value = null;
 				}
-			// Single value
 			} else {
+				// Single value
 				$option_value = get_option( $option_name, null );
 			}
 
@@ -213,7 +207,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		/**
 		 * Output admin fields.
 		 *
-		 * Loops though the plugin name options array and outputs each field.
+		 * Loops though the plugin options array and outputs each field.
 		 *
 		 * @access  public
 		 * @static
@@ -279,7 +273,9 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 							echo '<h2>' . esc_html( $value['title'] ) . '</h2>';
 						}
 						if ( ! empty( $value['desc'] ) ) {
+							echo '<div id="' . esc_attr( sanitize_title( $value['id'] ) ) . '-description">';
 							echo wp_kses_post( wpautop( wptexturize( $value['desc'] ) ) );
+							echo '</div>';
 						}
 						echo '<table class="form-table">'."\n\n";
 						if ( ! empty( $value['id'] ) ) {
@@ -302,6 +298,12 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 					// Standard text inputs and subtypes like 'number'
 					case 'text':
 					case 'number':
+					case 'password':
+					case 'date':
+					case 'month':
+					case 'time':
+					case 'week':
+					case 'email':
 						$option_value = self::get_option( $value['id'], $value['default'] );
 
 						?><tr valign="top">
@@ -333,6 +335,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 							</th>
 							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
 								<?php echo $description; ?>
+
 								<textarea
 									name="<?php echo esc_attr( $value['id'] ); ?>"
 									id="<?php echo esc_attr( $value['id'] ); ?>"
@@ -361,19 +364,24 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 									id="<?php echo esc_attr( $value['id'] ); ?>"
 									style="<?php echo esc_attr( $value['css'] ); ?>"
 									class="<?php echo esc_attr( $value['class'] ); ?>"
+									data-placeholder="<?php echo esc_attr( $value['placeholder'] ); ?>"
 									<?php echo implode( ' ', $custom_attributes ); ?>
-									<?php echo 'multiselect' === $value['type'] ? 'multiple="multiple"' : ''; ?>>
-									<?php foreach ( $value['options'] as $key => $val ) { ?>
+									<?php echo 'multiselect' === $value['type'] ? 'multiple="multiple"' : ''; ?>
+									>
+									<?php
+									foreach ( $value['options'] as $key => $val ) {
+										?>
 										<option value="<?php echo esc_attr( $key ); ?>"
-										<?php
-										if ( is_array( $option_value ) ) {
-											selected( in_array( (string) $key, $option_value, true ), true );
-										} else {
-											selected( $option_value, (string) $key );
-										}
-										?>>
-										<?php echo esc_html( $val ); ?></option>
-										<?php
+											<?php
+											if ( is_array( $option_value ) ) {
+												selected( in_array( (string) $key, $option_value, true ), true );
+											} else {
+												selected( $option_value, (string) $key );
+											}
+											?>
+											>
+											<?php echo esc_html( $val ); ?></option>
+											<?php
 									}
 									?>
 								</select> <?php echo $description; ?>
@@ -394,10 +402,11 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 								<fieldset>
 									<?php echo $description; ?>
 									<ul>
-									<?php foreach ( $value['options'] as $key => $val ) { ?>
+									<?php
+									foreach ( $value['options'] as $key => $val ) {
+										?>
 										<li>
-											<label>
-												<input
+											<label><input
 													name="<?php echo esc_attr( $value['id'] ); ?>"
 													value="<?php echo esc_attr( $key ); ?>"
 													type="radio"
@@ -405,12 +414,11 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 													class="<?php echo esc_attr( $value['class'] ); ?>"
 													<?php echo implode( ' ', $custom_attributes ); // WPCS: XSS ok. ?>
 													<?php checked( $key, $option_value ); ?>
-													/> <?php echo esc_html( $val ); ?>
-											</label>
+													/> <?php echo esc_html( $val ); ?></label>
 										</li>
 										<?php
-										}
-										?>
+									}
+									?>
 									</ul>
 								</fieldset>
 							</td>
@@ -440,22 +448,22 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 						}
 
 						if ( ! isset( $value['checkboxgroup'] ) || 'start' === $value['checkboxgroup'] ) {
-						?>
-						<tr valign="top" class="<?php echo esc_attr( implode( ' ', $visibility_class ) ); ?>">
-							<th scope="row" class="titledesc"><?php echo esc_html( $value['title'] ); ?></th>
-							<td class="forminp forminp-checkbox">
-								<fieldset>
-								<?php
+							?>
+								<tr valign="top" class="<?php echo esc_attr( implode( ' ', $visibility_class ) ); ?>">
+									<th scope="row" class="titledesc"><?php echo esc_html( $value['title'] ); ?></th>
+									<td class="forminp forminp-checkbox">
+										<fieldset>
+							<?php
 						} else {
-						?>
-							<fieldset class="<?php echo esc_attr( implode( ' ', $visibility_class ) ); ?>">
-						<?php
+							?>
+								<fieldset class="<?php echo esc_attr( implode( ' ', $visibility_class ) ); ?>">
+							<?php
 						}
 
 						if ( ! empty( $value['title'] ) ) {
-						?>
-							<legend class="screen-reader-text"><span><?php echo esc_html( $value['title'] ); ?></span></legend>
-						<?php
+							?>
+								<legend class="screen-reader-text"><span><?php echo esc_html( $value['title'] ); ?></span></legend>
+							<?php
 						}
 						?>
 								<label for="<?php echo esc_attr( $value['id'] ); ?>">
@@ -472,15 +480,15 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 								<?php
 
 								if ( ! isset( $value['checkboxgroup'] ) || 'end' === $value['checkboxgroup'] ) {
-								?>
-								</fieldset>
-							</td>
-						</tr>
-						<?php
+									?>
+										</fieldset>
+									</td>
+								</tr>
+							<?php
 						} else {
-						?>
-						</fieldset>
-						<?php
+							?>
+								</fieldset>
+							<?php
 						}
 						break;
 
@@ -496,125 +504,128 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		/**
 		 * Save admin fields.
 		 *
-		 * Loops though the plugin name options array and outputs each field.
+		 * Loops though the plugin options array and outputs each field.
 		 *
-		 * @access public
+		 * @access  public
 		 * @static
-		 * @since  1.0.0
-		 * @param  array $options Opens array to output
-		 * @return bool
+		 * @since   1.0.0
+		 * @version 1.5.0
+		 * @param   array $options Opens array to output
+		 * @return  bool
 		 */
-		public static function save_fields( $options, $current_tab ) {
+		public static function save_fields( $options ) {
 			if ( empty( $_POST ) ) {
 				return false;
 			}
 
 			// Options to update will be stored here
-			$update_options = array();
+			$update_options   = array();
+			$autoload_options = array();
 
 			// Loop options and get values to save
-			foreach ( $options as $value ) {
-
-				if ( ! isset( $value['id'] ) ) {
+			foreach ( $options as $option ) {
+				if ( ! isset( $option['id'] ) || ! isset( $option['type'] ) ) {
 					continue;
 				}
 
-				$type = isset( $value['type'] ) ? sanitize_title( $value['type'] ) : '';
-
-				// Get the option name
-				$option_value = null;
-
-				switch ( $type ) {
-					// Standard types
-					case "checkbox" :
-						if ( isset( $_POST[$value['id']] ) ) {
-							$option_value = 'yes';
-						} else {
-							$option_value = 'no';
-						}
-
-					break;
-
-					case "textarea" :
-						if ( isset( $_POST[$value['id']] ) ) {
-							$option_value = wp_kses_post( trim( stripslashes( $_POST[$value['id']] ) ) );
-						} else {
-							$option_value = '';
-						}
-
-					break;
-
-					case "text" :
-					case "number":
-					case "select" :
-					case "radio" :
-						if ( isset( $_POST[$value['id']] ) ) {
-							$option_value = auto_load_next_post_clean( stripslashes( $_POST[$value['id']] ) );
-						} else {
-							$option_value = '';
-						}
-
-					break;
-
-					// Special types
-					case "multiselect" :
-						// Get array
-						if ( isset( $_POST[$value['id']] ) ) {
-							$selected_values = array_map( 'auto_load_next_post_clean', array_map( 'stripslashes', (array) $_POST[$value['id']] ) );
-						} else {
-							$selected_values = array();
-						}
-						$option_value = $selected_values;
-
-					break;
-
-					// Custom handling
-					default :
-						do_action( 'auto_load_next_post_update_option_' . $type, $value );
-
-					break;
-				} // END switch()
-
-				if ( ! is_null( $option_value ) ) {
-
-					// Check if option is an array
-					if ( strstr( $value['id'], '[') ) {
-						parse_str( $value['id'], $option_array );
-
-						// Option name is first key
-						$option_name = current( array_keys( $option_array ) );
-
-						// Get old option value
-						if ( ! isset( $update_options[$option_name] ) ) {
-							$update_options[$option_name] = get_option( $option_name, array() );
-						}
-
-						if ( ! is_array( $update_options[$option_name] ) ) {
-							$update_options[$option_name] = array();
-						}
-
-						// Set keys and value
-						$key = key( $option_array[$option_name] );
-						$update_options[$option_name][$key] = $option_value;
-
-					// Single value
-					} else {
-						$update_options[$value['id']] = $option_value;
-					}
-
+				// Get posted value.
+				if ( strstr( $option['id'], '[' ) ) {
+					parse_str( $option['id'], $option_name_array );
+					$option_name  = current( array_keys( $option_name_array ) );
+					$setting_name = key( $option_name_array[ $option_name ] );
+					$raw_value    = isset( $_POST[ $option_name ][ $setting_name ] ) ? wp_unslash( $_POST[ $option_name ][ $setting_name ] ) : null;
+				} else {
+					$option_name  = $option['id'];
+					$setting_name = '';
+					$raw_value    = isset( $_POST[ $option['id'] ] ) ? wp_unslash( $_POST[ $option['id'] ] ) : null;
 				}
 
-				// Custom handling
-				do_action( 'auto_load_next_post_update_option', $value );
+				switch ( $option['type'] ) {
+					case "checkbox" :
+						$value = '1' === $raw_value || 'yes' === $raw_value ? 'yes' : 'no';
+						break;
+
+					case "textarea" :
+						$value = wp_kses_post( trim( stripslashes( $_POST[$option['id']] ) ) );
+						break;
+
+					case "multiselect" :
+						$value = array_filter( array_map( 'auto_load_next_post_clean', (array) $raw_value ) );
+						break;
+
+					case 'select' :
+						$allowed_values = empty( $option['options'] ) ? array() : array_map( 'strval', array_keys( $option['options'] ) );
+						if ( empty( $option['default'] ) && empty( $allowed_values ) ) {
+							$value = null;
+							break;
+						}
+						$default = ( empty( $option['default'] ) ? $allowed_values[0] : $option['default'] );
+						$value   = in_array( $raw_value, $allowed_values, true ) ? $raw_value : $default;
+						break;
+
+					default :
+						$value = auto_load_next_post_clean( $raw_value );
+						break;
+				} // END switch()
+
+				/**
+				 * Fire an action when a certain 'type' of field is being saved.
+				 *
+				 * @deprecated 1.5.0 - doesn't allow manipulation of values!
+				 */
+				if ( has_action( 'auto_load_next_post_update_option_' . sanitize_title( $option['type'] ) ) ) {
+					if ( is_ajax() ) {
+						error_log( 'auto_load_next_post_update_option_' . sanitize_title( $option['type'] ) . ' is deprecated since version 1.5.0' );
+					} else {
+						_deprecated_hook( 'auto_load_next_post_update_option_' . sanitize_title( $option['type'] ), '1.5.0' );
+					}
+
+					do_action( 'auto_load_next_post_update_option_' . sanitize_title( $option['type'] ), $option );
+					continue;
+				}
+
+				if ( is_null( $value ) ) {
+					continue;
+				}
+
+				// Check if option is an array and handle that differently to single values.
+				if ( $option_name && $setting_name ) {
+					if ( ! isset( $update_options[ $option_name ] ) ) {
+						$update_options[ $option_name ] = get_option( $option_name, array() );
+					}
+					if ( ! is_array( $update_options[ $option_name ] ) ) {
+						$update_options[ $option_name ] = array();
+					}
+					$update_options[ $option_name ][ $setting_name ] = $value;
+				} else {
+					$update_options[ $option_name ] = $value;
+				}
+
+				$autoload_options[ $option_name ] = isset( $option['autoload'] ) ? (bool) $option['autoload'] : true;
+
+				/**
+				 * Fire an action before saved.
+				 *
+				 * @deprecated 1.5.0 - doesn't allow manipulation of values!
+				 */
+				if ( has_action( 'auto_load_next_post_update_option' ) ) {
+					if ( is_ajax() ) {
+						error_log( 'auto_load_next_post_update_option is deprecated since version 1.5.0' );
+					} else {
+						_deprecated_hook( 'auto_load_next_post_update_option', '1.5.0' );
+					}
+
+					do_action( 'auto_load_next_post_update_option', $option );
+				}
 			}
 
 			// Now save the options
 			foreach ( $update_options as $name => $value ) {
-				update_option( $name, $value );
+				update_option( $name, $value, $autoload_options[ $name ] ? 'yes' : 'no' );
 			}
 
 			// Save all options as an array. Ready for export.
-			update_option( 'auto_load_next_post_options_' . $current_tab, $update_options );
+			update_option( 'auto_load_next_post_options', $update_options );
 
 			return true;
 		} // END save_fields()

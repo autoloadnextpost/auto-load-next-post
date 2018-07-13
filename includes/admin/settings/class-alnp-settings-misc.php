@@ -156,14 +156,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		 *
 		 * @access public
 		 * @since  1.5.0
-		 * @global $current_tab
 		 */
 		public function save() {
-			global $current_tab;
-
 			$settings = $this->get_settings();
 
-			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings, $current_tab );
+			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings );
 		} // END save()
 
 	} // END class

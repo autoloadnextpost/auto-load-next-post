@@ -7,19 +7,22 @@
 }
 .wrap.auto-load-next-post.support input[type="button"].button-primary,
 .wrap.auto-load-next-post.support input[type="submit"].button-primary,
-.auto-load-next-post-message.support a.button-primary {
+.wrap.auto-load-next-post.support input[type="button"].button-secondary,
+.wrap.auto-load-next-post.support input[type="submit"].button-secondary,
+.auto-load-next-post-message.support a.button-primary,
+.auto-load-next-post-message.support a.button-secondary {
 	display: none;
 }
-h2.nav-tab-wrapper {
+nav.nav-tab-wrapper {
 	padding-left: 0px !important;
 }
-h2.nav-tab-wrapper span {
+nav.nav-tab-wrapper span {
 	float: left;
 	line-height: initial;
 	font-size: 1.3em;
 	margin-right: 6px;
 }
-h2 .nav-tab:first-child {
+nav .nav-tab:first-child {
 	margin-left: 10px;
 }
 .wrap.auto-load-next-post-div.updated, .wrap.auto-load-next-post-div.error {
@@ -154,4 +157,17 @@ h2 .nav-tab:first-child {
 		display: inline-block;
 		margin-left: 15px;
 	}
+}
+
+/* Settings Form */
+.wrap #mainform {
+  float: left;
+  position: relative;
+  width: 74%;
+}
+
+@media screen and (max-width: 1052px) {
+  .wrap #mainform {
+    width: 100%;
+  }
 }
