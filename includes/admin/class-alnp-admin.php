@@ -64,8 +64,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 * @version 1.5.0
 		 */
 		public function admin_scripts() {
-			// Chosen
-			Auto_Load_Next_Post::load_file( 'chosen', '/assets/js/libs/chosen.jquery.min.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION );
 
 			// Variables for Admin JavaScripts
 			wp_localize_script( AUTO_LOAD_NEXT_POST_SLUG . '_admin_script', 'auto_load_next_post_admin_params', array(
@@ -74,7 +72,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 
 			// Stylesheets
 			Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin_style', '/assets/css/admin/auto-load-next-post' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
-			Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG.'_chosen_style', '/assets/css/libs/chosen.min.css' );
 		} // END admin_scripts()
 
 		/**

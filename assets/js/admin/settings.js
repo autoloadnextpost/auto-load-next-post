@@ -21,10 +21,5 @@ jQuery(window).load(function(){
 		});
 	});
 
-	// Chosen selects
-	jQuery("select.chosen-select").chosen({
-		width: '300px',
-		disable_search_threshold: 5
-	});
 
 });

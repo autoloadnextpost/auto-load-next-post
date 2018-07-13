@@ -63,27 +63,6 @@ h2 .nav-tab:first-child {
 	margin-top: 4px;
 }
 
-.auto_load_next_post_error_tip {
-	background: #d82223;
-	max-width: 20em;
-	white-space: normal;
-	position: absolute;
-	margin: 1.5em 1px 0 -1em;
-	z-index: 9999999;
-}
-.auto_load_next_post_error_tip:after {
-	content: "";
-	display: block;
-	border: 8px solid #d82223;
-	border-right-color: transparent;
-	border-left-color: transparent;
-	border-top-color: transparent;
-	position: absolute;
-	top: -3px;
-	left: 50%;
-	margin: -1em 0 0 -3px;
-}
-
 /* Notifications */
 .notice.auto-load-next-post-notice {
 	padding: 20px;
