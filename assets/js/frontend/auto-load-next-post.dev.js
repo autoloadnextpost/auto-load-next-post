@@ -53,7 +53,13 @@ var article_container   = 'article';
 
 	// Don't do anything if post was loaded looking for comments.
 	if ( orig_curr_url.indexOf( '#comments' ) > -1 || orig_curr_url.match(/#comment-*([0-9]+)/) ) {
-		console.log( 'Auto Load Next Post is disabled while loading a post to view comments' );
+		console.log( 'Auto Load Next Post is disabled while requested to view comments.' );
+		return;
+	}
+
+	// Don't do anything if post was loaded to post a comment.
+	if ( orig_curr_url.indexOf( '#respond' ) > -1 ) {
+		console.log( 'Auto Load Next Post is disabled while requested to respond and post a comment.' );
 		return;
 	}
 
@@ -317,6 +323,9 @@ var article_container   = 'article';
 
 		// If the post navigation is not found then dont continue.
 		if ( !post_url ) return;
+
+		// Define next post URL to load.
+		var np_url = '';
 
 		// Check to see if pretty permalinks, if not then add alnp=1
 		if ( post_url.indexOf( '?p=' ) > -1 ) {

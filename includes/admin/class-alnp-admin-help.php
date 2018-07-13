@@ -47,7 +47,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 			}
 
 			$screen->add_help_tab( array(
-				'id'      => 'auto_load_next_post_docs_tab',
+				'id'      => 'auto_load_next_post_theme_selectors_tab',
 				'title'   => __( 'Theme Selectors', 'auto-load-next-post' ),
 				'content' =>
 					'<h2>' . __( 'Theme Selectors', 'auto-load-next-post' ) . '</h2>' .

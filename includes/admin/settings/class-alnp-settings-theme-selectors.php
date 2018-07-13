@@ -164,32 +164,15 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Theme_Selectors_Tab' ) ) {
 		/**
 		 * Save settings.
 		 *
-		 * @access public
-		 * @since  1.0.0
-		 * @global $current_tab
+		 * @access  public
+		 * @since   1.0.0
+		 * @version 1.5.0
 		 */
 		public function save() {
-			global $current_tab;
-
 			$settings = $this->get_settings();
 
-			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings, $current_tab );
+			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings );
 		} // END save()
-
-		/**
-		 * Get post types.
-		 *
-		 * This returns a list of public registered post types.
-		 *
-		 * @access public
-		 * @since  1.3.2
-		 * @return array
-		 */
-		public function get_post_types() {
-			$post_types = get_post_types( array( 'public' => true ), 'names' );
-
-			return $post_types;
-		} // END get_post_types()
 
 	} // END class
 

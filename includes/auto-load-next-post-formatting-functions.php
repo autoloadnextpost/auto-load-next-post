@@ -16,15 +16,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Clean variables
+ * Clean variables using sanitize_text_field. Arrays are cleaned recursively.
+ * Non-scalar values are ignored.
  *
- * @since  1.0.0
- * @access public
- * @param  string $var
- * @return string
+ * @since   1.0.0
+ * @version 1.5.0
+ * @access  public
+ * @param  string|array $var Data to sanitize.
+ * @return string|array *
  */
 function auto_load_next_post_clean($var) {
-	return sanitize_text_field($var);
+	if ( is_array( $var ) ) {
+		return array_map( 'auto_load_next_post_clean', $var );
+	} else {
+		return is_scalar( $var ) ? sanitize_text_field( $var ) : $var;
+	}
 } // END auto_load_next_post_clean()
 
 /**
