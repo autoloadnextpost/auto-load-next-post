@@ -3,7 +3,7 @@
  * Admin View: Settings
  *
  * @since    1.0.0
- * @version  1.4.10
+ * @version  1.5.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -47,4 +47,11 @@ if ( ! $tab_exists ) {
 			<?php wp_nonce_field( 'auto-load-next-post-settings' ); ?>
 		</p>
 	</form>
+
+	<?php
+	// Checks if Auto Load Next Post Pro is installed before displaying sidebar.
+	if ( ! is_alnp_pro_version_installed() ) {
+		include_once( dirname( __FILE__ ) . '/html-admin-sidebar.php' );
+	}
+	?>
 </div>
