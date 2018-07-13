@@ -32,6 +32,11 @@ jQuery( document ).ready( function() {
 		return;
 	}
 
+	// Don't do anything if post was loaded to post a comment.
+	if ( orig_curr_url.indexOf( '#respond' ) > -1 ) {
+		return;
+	}
+
 	// Add a post divider.
 	jQuery( content_container ).prepend( '<hr style="height:0px;margin:0px;padding:0px;border:none;" data-powered-by="alnp" data-initial-post="true" data-title="' + post_title + '" data-url="' + orig_curr_url + '"/>' );
 

@@ -18,15 +18,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * When the 'alnp' endpoint is used on a post, retrieve only the post content.
+ * When the 'alnp' endpoint is used on a singular post it forces
+ * the template redirect to retrieve only the post content.
  *
  * @access  public
  * @since   1.0.0
  * @version 1.5.0
- * @global  $wp_query
+ * @global  WP_Query $wp_query - The object information defining the current request and determines what type of query it's dealing with. See https://codex.wordpress.org/Class_Reference/WP_Query
+ * @global  WP_Post  $post - The post object for the current post. See https://codex.wordpress.org/Class_Reference/WP_Post
+ * @global  WP_User  $authordata - The author object for the current post. See https://codex.wordpress.org/Class_Reference/WP_User
+ * @global  boolean  $multipage - Returns true if the post has multiple pages.
+ * @global  int      $numpages - Returns the number of pages in the post, related to $pages.
  */
 function auto_load_next_post_template_redirect() {
-	global $wp_query;
+	global $wp_query, $post, $authordata, $multipage, $numpages;
 
 	// If this is not a request for alnp or a singular object then bail
 	if ( ! isset( $wp_query->query_vars['alnp'] ) || ! is_singular() ) {
