@@ -42,7 +42,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Pro_Preview_Controller' ) ) {
 		 */
 		public function render_content() {
 			?>
-			<span class="customize-control-title"><?php esc_html_e( $this->label ); ?></span>
+			<span class="customize-control-title"><?php echo $this->label; ?></span>
 
 			<p>
 				<?php printf( esc_html__( '%1$s is coming soon and will come with more powerful features. Here are just a few of them you can look forward to.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ) ); ?>
