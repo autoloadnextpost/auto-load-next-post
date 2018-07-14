@@ -36,7 +36,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer_Scripts' ) ) {
 		 * @since 1.5.0
 		 */
 		public function alnp_add_customizer_preview_scripts() {
-			Auto_Load_Next_Post::load_file( 'alnp-theme-customizer', '/assets/js/customizer/theme-customizer.js', true, array( 'jquery', 'customize-preview' ), '', true );
+			Auto_Load_Next_Post::load_file( 'alnp-theme-customizer', '/assets/js/customizer/theme-customizer.js', true, array( 'customize-preview' ), '', true );
 		} // END alnp_add_customizer_preview_scripts()
 
 		/**
@@ -67,11 +67,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer_Scripts' ) ) {
 						 * but we are not viewing a single post.
 						 */
 						if ( isExpanded && !is_page_single ) {
-							console.log( "Random single post loaded." );
 							wp.customize.previewer.previewUrl.set( '<?php echo esc_js( Auto_Load_Next_Post_Customizer::alnp_get_random_page_permalink() ); ?>' );
-						}
-						else {
-							console.log( 'Already viewing a single post!' );
 						}
 
 					} );
