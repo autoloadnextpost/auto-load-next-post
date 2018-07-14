@@ -33,3 +33,4 @@ releases/
 *.sh
 .gitconfig
 *.zip
+notes/

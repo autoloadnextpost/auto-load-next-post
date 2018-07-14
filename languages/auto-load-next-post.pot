@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Auto Load Next Post\n"
 "Report-Msgid-Bugs-To: https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/"
 "issues\n"
-"POT-Creation-Date: 2018-05-19 19:39+0200\n"
+"POT-Creation-Date: 2018-07-14 18:01+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Sébastien Dumont <mailme@sebastiendumont.com>\n"
 "Language: en_US\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.0.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: auto-load-next-post.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -23,346 +23,550 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: releases\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+"X-Poedit-SearchPathExcluded-3: assets\n"
+"X-Poedit-SearchPathExcluded-4: languages\n"
 
-#: auto-load-next-post.php:72
+#: auto-load-next-post.php:79
 msgid "Cloning this object is forbidden."
 msgstr ""
 
-#: auto-load-next-post.php:83
+#: auto-load-next-post.php:90
 msgid "Unserializing instances of this class is forbidden."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:47
-#: includes/admin/class-auto-load-next-post-admin-help.php:49
-msgid "General Settings"
+#: includes/admin/class-alnp-admin-help.php:51
+#: includes/admin/class-alnp-admin-help.php:53
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:31
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:98
+#: includes/customizer/class-alnp-customizer-backup.php:242
+#: includes/customizer/class-alnp-customizer.php:223
+msgid "Theme Selectors"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:50
+#: includes/admin/class-alnp-admin-help.php:54
 #, php-format
 msgid ""
-"%s requires theme selectors to match the active theme in order to detect the "
-"elements and let the magic happen."
+"Theme Selectors allows %s look for where to load content in, the post being "
+"read, the next post to load and whether to show or hide comments per post."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: includes/admin/class-auto-load-next-post-admin-help.php:50
-#: includes/admin/class-auto-load-next-post-admin-help.php:67
-#: includes/admin/class-auto-load-next-post-admin-help.php:68
-#: includes/admin/class-auto-load-next-post-admin-help.php:69
-#: includes/admin/class-auto-load-next-post-admin-help.php:78
-#: includes/admin/class-auto-load-next-post-admin-help.php:88
-#: includes/admin/class-auto-load-next-post-admin-help.php:94
-#: includes/admin/class-auto-load-next-post-admin.php:95
-#: includes/admin/class-auto-load-next-post-admin.php:96
-#: includes/admin/class-auto-load-next-post-admin.php:224
-#: includes/admin/class-auto-load-next-post-admin.php:246
-#: includes/admin/settings/class-alnp-settings-general.php:50
-#: includes/admin/views/html-notice-please-review.php:111
+#: includes/admin/class-alnp-admin-help.php:54
+#: includes/admin/class-alnp-admin-help.php:55
+#: includes/admin/class-alnp-admin-help.php:56
+#: includes/admin/class-alnp-admin-help.php:71
+#: includes/admin/class-alnp-admin-help.php:72
+#: includes/admin/class-alnp-admin-help.php:73
+#: includes/admin/class-alnp-admin-help.php:74
+#: includes/admin/class-alnp-admin-help.php:82
+#: includes/admin/class-alnp-admin-help.php:92
+#: includes/admin/class-alnp-admin-help.php:98
+#: includes/admin/class-alnp-admin.php:131
+#: includes/admin/class-alnp-admin.php:147
+#: includes/admin/class-alnp-admin.php:163
+#: includes/admin/class-alnp-admin.php:164
+#: includes/admin/class-alnp-admin.php:293
+#: includes/admin/class-alnp-admin.php:315
+#: includes/admin/settings/class-alnp-settings-misc.php:68
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:100
+#: includes/admin/views/html-notice-is-supported.php:18
+#: includes/admin/views/html-notice-no-theme-selectors.php:18
+#: includes/admin/views/html-notice-please-review.php:30
 #: includes/admin/views/html-notice-requirement-wp.php:19
-#: includes/admin/views/html-notice-theme-support.php:19
+#: includes/admin/views/html-notice-theme-ready.php:27
+#: includes/admin/views/html-notice-welcome.php:26
+#: includes/customizer/class-alnp-customizer-backup.php:58
+#: includes/customizer/class-alnp-customizer-backup.php:248
+#: includes/customizer/class-alnp-customizer.php:58
+#: includes/customizer/class-alnp-customizer.php:229
+#: includes/customizer/class-alnp-pro-preview-controller.php:69
+#: includes/customizer/class-alnp-pro-preview-controller.php:72
+#: includes/customizer/class-alnp-pro-preview-controller.php:75
 msgid "Auto Load Next Post"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:51
+#: includes/admin/class-alnp-admin-help.php:55
+#, php-format
 msgid ""
-"When the plugin was activated, the theme selectors are set to WordPress theme "
-"standard. If you are experiencing any problems, it is most likely that at "
-"least one of these selectors need to be changed however it could also be "
-"related with the theme template structure."
+"When the plugin was activated, default theme selectors are set that match the "
+"majority of most WordPress themes. If the active theme supports %1$s then it "
+"will set its own theme selectors. If the theme has not declared support for "
+"%1$s and posts are not loading, dont worry. It is most likely that at least "
+"one of these selectors need to be changed. You may find it to be the "
+"<em>Content Container</em>. See more information on %2$show to find your "
+"theme selectors%3$s."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:52
-msgid ""
-"These are the default theme selectors when Auto Load Next Post is installed."
+#: includes/admin/class-alnp-admin-help.php:56
+#, php-format
+msgid "These are the default theme selectors when %s is installed."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:53
+#: includes/admin/class-alnp-admin-help.php:57
 msgid "Default Theme Selectors"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:55
-#: includes/admin/settings/class-alnp-settings-general.php:55
+#: includes/admin/class-alnp-admin-help.php:59
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:105
+#: includes/customizer/class-alnp-customizer-backup.php:343
+#: includes/customizer/class-alnp-customizer.php:327
 msgid "Content Container"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:56
-#: includes/admin/settings/class-alnp-settings-general.php:66
+#: includes/admin/class-alnp-admin-help.php:60
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:116
 msgid "Post Title"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:57
-#: includes/admin/settings/class-alnp-settings-general.php:77
+#: includes/admin/class-alnp-admin-help.php:61
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:126
 msgid "Post Navigation"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:58
-#: includes/admin/settings/class-alnp-settings-general.php:88
+#: includes/admin/class-alnp-admin-help.php:62
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:136
+#: includes/customizer/class-alnp-customizer-backup.php:367
+#: includes/customizer/class-alnp-customizer.php:351
 msgid "Comments Container"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:64
-#: includes/admin/class-auto-load-next-post-admin-help.php:66
+#: includes/admin/class-alnp-admin-help.php:68
+#: includes/admin/class-alnp-admin-help.php:70
 msgid "Help & Support"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:67
-msgid ""
-"Should you need help understanding, using, or extending Auto Load Next Post, "
-"please <a href=\"https://autoloadnextpost.com/documentation/?"
-"utm_source=wpadmin&utm_campaign=plugin-settings-help-tab\" target=\"_blank"
-"\">read the documentation</a>. You will find snippets, tutorials and much "
-"more."
-msgstr ""
-
-#: includes/admin/class-auto-load-next-post-admin-help.php:68
+#: includes/admin/class-alnp-admin-help.php:71
 #, php-format
 msgid ""
-"For further assistance with %s you can use the <a href=\"%s\" target=\"_blank"
-"\">community forum</a>."
+"Should you need help understanding, using, or extending %1$s, please %2$sread "
+"the documentation%3$s. You will find snippets, tutorials and much more."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:69
+#: includes/admin/class-alnp-admin-help.php:72
+#, php-format
+msgid ""
+"For further assistance with %1$s you can use the %2$scommunity forum%3$s."
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:73
 #, php-format
 msgid ""
 "%1$s is in need of translations. Is the plugin not translated in your "
 "language or do you spot errors with the current translations? Helping out is "
-"easy! Head over to the project on WordPress.org and click <a href=\"https://"
-"translate.wordpress.org/projects/wp-plugins/auto-load-next-post\" target="
-"\"_blank\">Translate %1$s</a>."
+"easy! Head over to the project on WordPress.org and click %2$sTranslate %1$s"
+"%3$s."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:70
-#: includes/admin/class-auto-load-next-post-admin.php:195
-#: includes/admin/views/html-notice-theme-support.php:20
+#: includes/admin/class-alnp-admin-help.php:74
+#: includes/admin/class-alnp-admin.php:264
+#: includes/admin/views/html-notice-welcome.php:47
 msgid "Documentation"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:70
+#: includes/admin/class-alnp-admin-help.php:74
 msgid "Community Forum"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:70
-#: includes/admin/views/html-notice-theme-support.php:20
+#: includes/admin/class-alnp-admin-help.php:74
 msgid "Frequently Asked Questions"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:75
-#: includes/admin/class-auto-load-next-post-admin-help.php:77
+#: includes/admin/class-alnp-admin-help.php:74
+#, php-format
+msgid "Translate %s"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:79
+#: includes/admin/class-alnp-admin-help.php:81
 msgid "Found a bug?"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:78
+#: includes/admin/class-alnp-admin-help.php:82
 #, php-format
 msgid ""
-"If you find a bug within %s, please <a href=\"%s\" target=\"_blank\">report "
-"the issue</a> by creating a ticket on the GitHub repository where I can deal "
-"with it more appropriately. Please ensure that you have read the <a href=\"%s"
-"\" target=\"_blank\">guidelines to contributing</a> prior to submitting your "
-"report. To help me solve the issue, please be as descriptive as possible."
+"If you find a bug within %1$s, please %2$sreport the issue%4$s by creating a "
+"ticket on the GitHub repository where I can deal with it more appropriately. "
+"Please ensure that you have read the %3$sguidelines to contributing%4$s prior "
+"to submitting your report. To help me solve the issue, please be as "
+"descriptive as possible."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:79
+#: includes/admin/class-alnp-admin-help.php:83
 msgid "Report an Issue"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:84
-#: includes/admin/class-auto-load-next-post-admin-help.php:86
+#: includes/admin/class-alnp-admin-help.php:88
+#: includes/admin/class-alnp-admin-help.php:90
 msgid "Feedback"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:87
+#: includes/admin/class-alnp-admin-help.php:91
 msgid ""
 "Your feedback is very important to me. Please consider leaving a review on "
 "WordPress.org or complete a simple survey."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:88
+#: includes/admin/class-alnp-admin-help.php:92
 #, php-format
 msgid ""
-"If %1$s has worked out for you well and you like it, please consider <a href="
-"\"%2$s\" target=\"_blank\">making a donation</a>."
+"If %1$s has worked out for you well and you like it, please consider "
+"%2$smaking a donation%3$s."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:89
+#: includes/admin/class-alnp-admin-help.php:93
 msgid "Submit a Review"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:89
+#: includes/admin/class-alnp-admin-help.php:93
 msgid "Complete a Simple Survey"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:89
+#: includes/admin/class-alnp-admin-help.php:93
 msgid "Make a Donation"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:93
+#: includes/admin/class-alnp-admin-help.php:97
 msgid "For more information:"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:94
+#: includes/admin/class-alnp-admin-help.php:98
+#: template/theme-support/twenty-eleven/content-alnp.php:73
+#: template/theme-support/twenty-ten/content-alnp.php:47
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:95
+#: includes/admin/class-alnp-admin-help.php:99
 msgid "WordPress.org Project"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-help.php:96
-msgid "Github Project"
+#: includes/admin/class-alnp-admin-help.php:100
+msgid "GitHub Project"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-settings.php:92
+#: includes/admin/class-alnp-admin-settings.php:92
 msgid "Your settings have been saved."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin-settings.php:163
-#: includes/admin/class-auto-load-next-post-admin.php:78
+#: includes/admin/class-alnp-admin.php:117
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin.php:95
+#: includes/admin/class-alnp-admin.php:147
+#, php-format
+msgid "%s does not collect, store or share any personal data."
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:163
 #, php-format
 msgid "%s Settings"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin.php:168
+#: includes/admin/class-alnp-admin.php:237
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin.php:171
+#: includes/admin/class-alnp-admin.php:240
 msgid "Settings"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin.php:192
+#: includes/admin/class-alnp-admin.php:261
 #, php-format
 msgid "Developed By %s"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin.php:196
+#: includes/admin/class-alnp-admin.php:265
 msgid "Community Support"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin.php:197
+#: includes/admin/class-alnp-admin.php:266
 msgid "Theme Support"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin.php:223
+#: includes/admin/class-alnp-admin.php:292
 #, php-format
 msgid ""
 "If you like %1$s, please leave a %2$s rating. A huge thank you in advance!"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin.php:225
+#: includes/admin/class-alnp-admin.php:294
 msgid "Thanks :)"
 msgstr ""
 
-#: includes/admin/class-auto-load-next-post-admin.php:246
+#: includes/admin/class-alnp-admin.php:315
 #, php-format
 msgid "%s Version"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-general.php:31
-#: includes/admin/settings/class-alnp-settings-general.php:48
-msgid "General"
+#: includes/admin/settings/class-alnp-settings-misc.php:31
+#: includes/admin/settings/class-alnp-settings-misc.php:66
+msgid "Misc"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-general.php:50
+#: includes/admin/settings/class-alnp-settings-misc.php:68
 #, php-format
 msgid ""
-"Set the theme selectors below according to your active theme. All are "
-"required for %s to work. <a href=\"https://autoloadnextpost.com/documentation/"
-"find-theme-selectors/?utm_source=wpadmin&utm_campaign=plugin-settings-general"
-"\" target=\"_blank\">How to find my theme selectors?</a>"
+"Here you set if you want to track pageviews, remove comments and load %s "
+"javascript in the footer."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-general.php:56
-msgid ""
-"This is the primary container were the post content is loaded in. Example: "
-"<code>main.site-main</code>"
-msgstr ""
-
-#: includes/admin/settings/class-alnp-settings-general.php:67
-msgid ""
-"This is used to identify which article the user is reading and track if "
-"Google Analytics is enabled. Example: <code>h1.entry-title</code>"
-msgstr ""
-
-#: includes/admin/settings/class-alnp-settings-general.php:78
-msgid ""
-"The post navigation needs to be indentified to find the next post. Example: "
-"<code>nav.post-navigation</code>"
-msgstr ""
-
-#: includes/admin/settings/class-alnp-settings-general.php:89
-msgid ""
-"This is so comments can be removed if enabled below. Example: "
-"<code>div#comments</code>"
-msgstr ""
-
-#: includes/admin/settings/class-alnp-settings-general.php:99
+#: includes/admin/settings/class-alnp-settings-misc.php:73
+#: includes/customizer/class-alnp-customizer-backup.php:375
+#: includes/customizer/class-alnp-customizer.php:359
 msgid "Remove Comments"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-general.php:100
+#: includes/admin/settings/class-alnp-settings-misc.php:74
+#: includes/customizer/class-alnp-customizer-backup.php:374
+#: includes/customizer/class-alnp-customizer.php:358
 msgid ""
 "Enable to remove comments when each post loads including the initial post."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-general.php:107
+#: includes/admin/settings/class-alnp-settings-misc.php:81
+#: includes/customizer/class-alnp-customizer-backup.php:383
+#: includes/customizer/class-alnp-customizer.php:367
 msgid "Update Google Analytics"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-general.php:108
+#: includes/admin/settings/class-alnp-settings-misc.php:82
+#: includes/customizer/class-alnp-customizer-backup.php:382
+#: includes/customizer/class-alnp-customizer.php:366
 msgid ""
-"Each time a post has loaded and is in view it will count as a pageview. Must "
-"have reference to Google Analytics tracking code on the site."
+"Enable to track each post the visitor is reading. This will count as a "
+"pageview. You must already have Google Analytics setup."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-general.php:115
+#: includes/admin/settings/class-alnp-settings-misc.php:89
+#: includes/customizer/class-alnp-customizer-backup.php:391
+#: includes/customizer/class-alnp-customizer.php:375
+msgid "JavaScript in Footer?"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-misc.php:90
+#: includes/customizer/class-alnp-customizer-backup.php:390
+#: includes/customizer/class-alnp-customizer.php:374
+msgid ""
+"Enable to load Auto Load Next Post in the footer instead of the header. Can "
+"be useful to optimize your site."
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-misc.php:97
 msgid "Reset all data?"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-general.php:116
+#: includes/admin/settings/class-alnp-settings-misc.php:98
 msgid ""
 "Press the reset button to clear all settings for this plugin and re-install "
 "the default settings."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-general.php:123
+#: includes/admin/settings/class-alnp-settings-misc.php:105
 msgid "Remove all data on uninstall?"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-general.php:124
+#: includes/admin/settings/class-alnp-settings-misc.php:106
 msgid ""
 "If enabled, all settings for this plugin will all be deleted when "
 "uninstalling via Plugins > Delete."
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:100
+#, php-format
+msgid ""
+"Here you set the theme selectors below according to your active theme. All "
+"are required for %s to work."
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:106
+#: includes/customizer/class-alnp-customizer.php:326
+msgid ""
+"The primary container where the post content is loaded in. Default: "
+"<code>main.site-main</code>"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:109
+msgid "Required"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:117
+#: includes/customizer/class-alnp-customizer.php:334
+msgid ""
+"Used to identify which article the user is reading and track should Google "
+"Analytics or other analytics be enabled. Default: <code>h1.entry-title</code>"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:127
+#: includes/customizer/class-alnp-customizer.php:342
+msgid ""
+"Used to identify which post to load next if any. Default: <code>nav.post-"
+"navigation</code>"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:137
+#: includes/customizer/class-alnp-customizer.php:350
+#, php-format
+msgid ""
+"Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> "
+"settings. Default: <code>div#comments</code>"
 msgstr ""
 
 #: includes/admin/views/html-admin-settings.php:46
 msgid "Save Changes"
 msgstr ""
 
-#: includes/admin/views/html-notice-please-review.php:106
+#: includes/admin/views/html-admin-sidebar.php:6
+msgid "Pro Coming Soon"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:9
+#: includes/customizer/class-alnp-pro-preview-controller.php:52
+msgid ""
+"Load the Next Post or Next Post with same Category or New Posts or Related "
+"Posts or by Custom Query"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:10
+#: includes/customizer/class-alnp-pro-preview-controller.php:53
+msgid "Page and Media Attachment Support"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:11
+#: includes/customizer/class-alnp-pro-preview-controller.php:54
+msgid "Custom Post Type Support"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:12
+#: includes/customizer/class-alnp-pro-preview-controller.php:55
+msgid "Exclude Post Formats"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:13
+#: includes/customizer/class-alnp-pro-preview-controller.php:56
+msgid "Limit Posts per Session"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:14
+#: includes/customizer/class-alnp-pro-preview-controller.php:57
+msgid "Query Posts by Category and Tag"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:15
+#: includes/customizer/class-alnp-pro-preview-controller.php:58
+msgid "Exclude User Roles and Specific Users"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:16
+#: includes/customizer/class-alnp-pro-preview-controller.php:59
+msgid "Pre-Query Posts Ready to Load"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:17
+#: includes/customizer/class-alnp-pro-preview-controller.php:60
+msgid "Hide Comments and Show by Toggle Button"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:18
+#: includes/customizer/class-alnp-pro-preview-controller.php:61
+#, php-format
+msgid "Multilingual Support for %1$s and %2$s"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:19
+#: includes/customizer/class-alnp-pro-preview-controller.php:62
+msgid "Email Support"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:23
+msgid "Visit autoloadnextpost.com &rarr;"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:29
+msgid "Sign up to pre-order first"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:32
+#, php-format
+msgid ""
+"Submit your name and email and be the first to know when you can pre-order "
+"Auto Load Next Post Pro and keep up to date with my developments plus a "
+"10% discount."
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:36
+msgid "Your Email Address"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:40
+msgid "First Name"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:44
+msgid "Last Name"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:51
+msgid "Sign me up"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:55
+msgid ""
+"I promise I will not use your email for anything else and you can unsubscribe "
+"with 1-click anytime."
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:60
+msgid "Created &amp; maintained by"
+msgstr ""
+
+#: includes/admin/views/html-notice-is-supported.php:18
+#, php-format
+msgid ""
+"This theme supports %s. No need to change the theme selectors as they have "
+"already been set by the theme."
+msgstr ""
+
+#: includes/admin/views/html-notice-no-comment-selector.php:18
+#, php-format
+msgid ""
+"In order to remove comments we need to know what the comments container is. "
+"Please identify the comments container under <strong>Theme Selectors</"
+"strong>. %1$sHow to find my theme selectors?%2$s"
+msgstr ""
+
+#: includes/admin/views/html-notice-no-theme-selectors.php:18
+#, php-format
+msgid ""
+"It seems that not all of the required theme selectors have been set. These "
+"theme selectors are required in order for %1$s to work. %2$sHow to find my "
+"theme selectors?%3$s"
+msgstr ""
+
+#: includes/admin/views/html-notice-please-review.php:25
+#: includes/admin/views/html-notice-theme-ready.php:22
+#: includes/admin/views/html-notice-trying-beta.php:21
+#: includes/admin/views/html-notice-welcome.php:20
 msgid "Auto Load Next Post WordPress Plugin"
 msgstr ""
 
-#: includes/admin/views/html-notice-please-review.php:110
+#: includes/admin/views/html-notice-please-review.php:29
 msgid "Are you enjoying Auto Load Next Post?"
 msgstr ""
 
-#: includes/admin/views/html-notice-please-review.php:111
+#: includes/admin/views/html-notice-please-review.php:30
 #, php-format
 msgid ""
 "You have been using %1$s for %2$s now! Mind leaving a quick review and let me "
 "know know what you think of the plugin? I'd really appreciate it!"
 msgstr ""
 
-#: includes/admin/views/html-notice-please-review.php:115
+#: includes/admin/views/html-notice-please-review.php:34
 msgid "Leave a Review"
 msgstr ""
 
-#: includes/admin/views/html-notice-please-review.php:116
+#: includes/admin/views/html-notice-please-review.php:35
 msgid "No thank you / I already have"
 msgstr ""
 
@@ -373,274 +577,300 @@ msgid ""
 "your WordPress setup."
 msgstr ""
 
-#: includes/admin/views/html-notice-theme-support.php:19
+#: includes/admin/views/html-notice-theme-ready.php:26
+msgid "Congratulations!"
+msgstr ""
+
+#: includes/admin/views/html-notice-theme-ready.php:27
 #, php-format
 msgid ""
-"The theme you are using has not declared support for %s &#8211; please see "
-"documentation or the F.A.Q. to find out how to support your theme."
+"Your current theme <strong>%1$s</strong> is supported. %2$s is ready to "
+"increase your pageviews. There is nothing else to setup so your good to go."
 msgstr ""
 
-#: includes/admin/views/html-notice-theme-support.php:20
-msgid "Hide this notice"
+#: includes/admin/views/html-notice-trying-beta.php:25
+msgid "Thanks for trying out this beta!"
 msgstr ""
 
-#: includes/auto-load-next-post-core-functions.php:85
+#: includes/admin/views/html-notice-trying-beta.php:26
+#, php-format
+msgid ""
+"If you have any questions about the beta or if you have any feedback at all, "
+"let me know. Any little bit you're willing to share helps. You can %1$sjoin "
+"the Slack channel%2$s to provide feedback, discuss features to be added and "
+"integrations to support. Or you can just give feedback the old fashion way "
+"pressing the big button on the side."
+msgstr ""
+
+#: includes/admin/views/html-notice-trying-beta.php:30
+msgid "Give Feedback"
+msgstr ""
+
+#: includes/admin/views/html-notice-trying-beta.php:31
+msgid "Ask me again in 7 days"
+msgstr ""
+
+#: includes/admin/views/html-notice-welcome.php:24
+msgid "Welcome!"
+msgstr ""
+
+#: includes/admin/views/html-notice-welcome.php:26
+#, php-format
+msgid ""
+"Thank you for activating %1$s! If you're a first time user, welcome! You're "
+"well on your way to increasing your pageviews."
+msgstr ""
+
+#: includes/admin/views/html-notice-welcome.php:37
+#, php-format
+msgid ""
+"I encourage you to check out the plugin documentation and getting started "
+"with %1$ssetting up your theme selectors%2$s."
+msgstr ""
+
+#: includes/admin/views/html-notice-welcome.php:50
+msgid "Dismiss Notice"
+msgstr ""
+
+#: includes/auto-load-next-post-core-functions.php:87
+#: includes/theme-support/class-alnp-twenty-twelve.php:51
+#: template/theme-support/twenty-ten/content-alnp.php:67
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:41
+#: includes/auto-load-next-post-formatting-functions.php:48
 #, php-format
 msgid "%s years"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:43
+#: includes/auto-load-next-post-formatting-functions.php:50
 msgid "a year"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:50
+#: includes/auto-load-next-post-formatting-functions.php:57
 #, php-format
 msgid "%s weeks"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:52
+#: includes/auto-load-next-post-formatting-functions.php:59
 msgid "a week"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:59
+#: includes/auto-load-next-post-formatting-functions.php:66
 #, php-format
 msgid "%s days"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:61
+#: includes/auto-load-next-post-formatting-functions.php:68
 msgid "a day"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:68
+#: includes/auto-load-next-post-formatting-functions.php:75
 #, php-format
 msgid "%s hours"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:70
+#: includes/auto-load-next-post-formatting-functions.php:77
 msgid "an hour"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:77
+#: includes/auto-load-next-post-formatting-functions.php:84
 #, php-format
 msgid "%s minutes"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:79
+#: includes/auto-load-next-post-formatting-functions.php:86
 msgid "a minute"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:86
+#: includes/auto-load-next-post-formatting-functions.php:93
 #, php-format
 msgid "%s seconds"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:88
+#: includes/auto-load-next-post-formatting-functions.php:95
 msgid "a second"
 msgstr ""
 
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:3
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:5
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:9
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:10
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:14
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:15
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:4
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:6
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:10
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:11
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:15
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:16
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:3
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:5
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:9
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:10
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:14
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:15
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:3
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:5
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:9
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:10
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:14
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:15
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:3
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:5
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:9
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:10
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:14
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:15
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:3
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:5
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:9
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:10
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:14
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:15
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:4
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:6
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:10
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:11
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:15
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:16
-msgid "Hello World"
+#: includes/customizer/class-alnp-customizer-backup.php:60
+#: includes/customizer/class-alnp-customizer.php:60
+msgid ""
+"Auto Load Next Post increases your pageviews by engaging the site viewers to "
+"keep reading your content rather than increasing your bounce rate."
 msgstr ""
 
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:4
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:6
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:11
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:16
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:5
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:7
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:12
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:17
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:4
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:6
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:11
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:16
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:4
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:6
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:11
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:16
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:4
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:6
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:11
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:16
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:4
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:6
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:11
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:16
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:5
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:7
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:12
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:17
-msgctxt "verb"
-msgid "Post"
+#: includes/customizer/class-alnp-customizer-backup.php:153
+#: includes/customizer/class-alnp-customizer.php:134
+msgid "More?"
 msgstr ""
 
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:20
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:24
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:21
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:25
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:20
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:24
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:20
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:24
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:20
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:24
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:20
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:24
-#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:3
-#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:8
-#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:15
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:21
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:25
-#, php-format
-msgid "%d apple"
-msgid_plural "%d apples"
-msgstr[0] ""
-msgstr[1] ""
-
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:21
-#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:25
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:22
-#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:26
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:21
-#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:25
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:21
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:25
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:21
-#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:25
-#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:25
-#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:4
-#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:9
-#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:16
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:22
-#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:26
-#, php-format
-msgctxt "noun, job positions"
-msgid "%d post"
-msgid_plural "%d posts"
-msgstr[0] ""
-msgstr[1] ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/basic-theme/exclude/file.php:3
-#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/plugin-include.php:6
-msgid "Exclude"
+#: includes/customizer/class-alnp-customizer-backup.php:168
+#: includes/customizer/class-alnp-customizer.php:149
+msgid "Looking for more options?"
 msgstr ""
 
-#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/include/file.php:2
-msgid "Include"
-msgstr ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/add-domain.php:2
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:2
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:3
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:4
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:2
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:3
-msgid "String"
-msgstr ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:6
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:7
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:8
-msgctxt "a string"
-msgid "String"
-msgstr ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:9
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:10
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:11
-#, php-format
-msgid "1 Star"
-msgid_plural "%s Stars"
-msgstr[0] ""
-msgstr[1] ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:7
-msgid "A"
-msgstr ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:15
-msgid "B"
-msgstr ""
-
-#: wp-update-php/WPUpdatePhp.php:47
+#: includes/customizer/class-alnp-customizer-backup.php:243
+#: includes/customizer/class-alnp-customizer.php:224
 #, php-format
 msgid ""
-"Unfortunately, <strong>%s</strong> can not run on PHP versions older than "
+"Set the theme selectors below according to the theme. %1$sHow to find my "
+"theme selectors?%2$s"
 msgstr ""
 
-#: wp-update-php/wp-update-php.php:151
-#, php-format
-msgid ""
-"%s recommends a PHP version higher than %s. Read more information about <a "
-"href=\"%s\" target=\"_blank\">how you can update</a>."
+#: includes/customizer/class-alnp-customizer-backup.php:247
+#: includes/customizer/class-alnp-customizer.php:228
+msgid "Misc Settings"
 msgstr ""
 
-#: wp-update-php/wp-update-php.php:153
+#: includes/customizer/class-alnp-customizer-backup.php:248
+#: includes/customizer/class-alnp-customizer.php:229
 #, php-format
 msgid ""
-"This plugin recommends a PHP version higher than %s. Read more information "
-"about <a href=\"%s\" target=\"_blank\">how you can update</a>."
+"Here you can set if you want to track pageviews, remove comments and load %s "
+"javascript in the footer."
 msgstr ""
 
-#: wp-update-php/wp-update-php.php:158
-#, php-format
+#: includes/customizer/class-alnp-customizer-backup.php:342
 msgid ""
-"Unfortunately, %s cannot run on PHP versions older than %s. Read more "
-"information about <a href=\"%s\" target=\"_blank\">how you can update</a>."
+"The primary container where the post content is loaded in. Example: "
+"<code>main.site-main</code>"
 msgstr ""
 
-#: wp-update-php/wp-update-php.php:160
+#: includes/customizer/class-alnp-customizer-backup.php:350
+msgid ""
+"Used to identify which article the user is reading and track should Google "
+"Analytics or other analytics be enabled. Example: <code>h1.entry-title</code>"
+msgstr ""
+
+#: includes/customizer/class-alnp-customizer-backup.php:351
+#: includes/customizer/class-alnp-customizer.php:335
+msgid "Post Title Selector"
+msgstr ""
+
+#: includes/customizer/class-alnp-customizer-backup.php:358
+msgid ""
+"Used to identify which post to load next if any. Example: <code>nav.post-"
+"navigation</code>"
+msgstr ""
+
+#: includes/customizer/class-alnp-customizer-backup.php:359
+#: includes/customizer/class-alnp-customizer.php:343
+msgid "Post Navigation Container"
+msgstr ""
+
+#: includes/customizer/class-alnp-customizer-backup.php:366
+msgid ""
+"So comments can be removed if enabled under \"Misc\" settings. Example: "
+"<code>div#comments</code>"
+msgstr ""
+
+#: includes/customizer/class-alnp-customizer-backup.php:435
+#: includes/customizer/class-alnp-customizer.php:393
+msgid ""
+"The content container selector is empty. Will not know where to load posts "
+"without it."
+msgstr ""
+
+#: includes/customizer/class-alnp-customizer-backup.php:451
+#: includes/customizer/class-alnp-customizer.php:409
+msgid ""
+"The post title selector is empty. Will not be able to identify which article "
+"the user is reading."
+msgstr ""
+
+#: includes/customizer/class-alnp-customizer-backup.php:467
+#: includes/customizer/class-alnp-customizer.php:425
+msgid ""
+"The post navigation container selector is empty. Required so ALNP can look up "
+"the next post to load."
+msgstr ""
+
+#: includes/customizer/class-alnp-pro-preview-controller.php:48
 #, php-format
 msgid ""
-"Unfortunately, this plugin cannot run on PHP versions older than %s. Read "
-"more information about <a href=\"%s\" target=\"_blank\">how you can update</"
-"a>."
+"%1$s is coming soon and will come with more powerful features. Here are just "
+"a few of them you can look forward to."
+msgstr ""
+
+#: includes/customizer/class-alnp-pro-preview-controller.php:48
+#: includes/customizer/class-alnp-pro-preview-controller.php:66
+msgid "Auto Load Next Post Pro"
+msgstr ""
+
+#: includes/customizer/class-alnp-pro-preview-controller.php:66
+#, php-format
+msgid "Find out more about %1$s%2$s%3$s."
+msgstr ""
+
+#: includes/customizer/class-alnp-pro-preview-controller.php:69
+#, php-format
+msgid "Add-ons for %s"
+msgstr ""
+
+#: includes/customizer/class-alnp-pro-preview-controller.php:72
+#, php-format
+msgid ""
+"Add-ons available provide additional support or options for %1$s. %2$sCheck "
+"out the add-ons%3$s to see what is available."
+msgstr ""
+
+#: includes/customizer/class-alnp-pro-preview-controller.php:75
+#, php-format
+msgid "Enjoying %s?"
+msgstr ""
+
+#: includes/customizer/class-alnp-pro-preview-controller.php:79
+#, php-format
+msgid ""
+"Why not leave me a review on %1$sWordPress.org%2$s?  I'd really appreciate it!"
+msgstr ""
+
+#: includes/theme-support/class-alnp-twenty-eleven.php:53
+#: includes/theme-support/class-alnp-twenty-twelve.php:50
+msgid "Post navigation"
+msgstr ""
+
+#: includes/theme-support/class-alnp-twenty-eleven.php:54
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr ""
+
+#: template/theme-support/twenty-eleven/content-alnp.php:35
+#: template/theme-support/twenty-ten/content-alnp.php:32
+msgid "Pages:"
+msgstr ""
+
+#: template/theme-support/twenty-eleven/content-alnp.php:41
+#: template/theme-support/twenty-eleven/content-alnp.php:44
+msgid ", "
+msgstr ""
+
+#: template/theme-support/twenty-eleven/content-alnp.php:46
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</a>. "
+"Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+
+#: template/theme-support/twenty-eleven/content-alnp.php:48
+#, php-format
+msgid ""
+"This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
+"href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: template/theme-support/twenty-eleven/content-alnp.php:50
+#, php-format
+msgid ""
+"This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href="
+"\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: template/theme-support/twenty-eleven/content-alnp.php:77
+#: template/theme-support/twenty-ten/content-alnp.php:51
+#, php-format
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

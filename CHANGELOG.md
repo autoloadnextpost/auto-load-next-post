@@ -1,3 +1,37 @@
+# 1.5.0 (23rd May 2018)
+# 1.5.0 (14th July 2018)
+# 1.5.0 (28th July 2018)
+* Added: A check in the JavaScript to prevent it from loading if a user is requesting to post a comment. - Initial post only.
+* Added: A filter for the repeater template location so theme or plugin developers can move it to another location should they need to.
+* Added: Option to load the JavaScript in the footer.
+* Added: A user agent checker to see if the request was made from a known bot.
+* Added: All settings to the customizer.
+* Added: Detection of plugin support. If supported, set the theme selectors for the currently active theme even when the theme has changed.
+* Added: Admin notice to tell the user the theme supports Auto Load Next Post. Only shows once.
+* Added: Admin notice in the theme selectors settings only if the theme supports Auto Load Next Post have already set the theme selectors.
+* Added: Admin notice in the theme selectors settings only if all three or one of the required theme selectors is not set.
+* Added: Admin notice in the misc settings only if remove comments was enabled but the comments container selector was not set.
+* Added: Support for theme Make and Understrap.
+* Added: Select2 to replace previous JS library chosen for better support and performance.
+* Added: Privacy policy guide content.
+* Added: Beta notice if trying out beta releases. Explains how you can provide feedback and can be dismissed for 7 days.
+* Added: Welcome notice to users who install ALNP for the first time.
+* Changed: Rewrite endpoint to be more distinct for Auto Load Next Post and prevent any conflicts.
+* Changed: Settings have been separated into Theme Selectors and Miscellaneous settings.
+* Changed: The JavaScript now does not require the document to be ready. This is especially helpful if you have enabled the JavaScript to load in the footer.
+* Fixed: The trigger to override the post URL.
+* Fixed: Install date to a timestamp for those who have previously installed ALNP so when you see the review notice, it does not say it's been 48 years since you installed because that is just crazy. LOL :)
+* Improved: Theme support and all default WordPress themes are supported out of the box. (Twenty Ten to Twenty Seventeen)
+* Improved: Moved flushing rewrite rules so it only runs once during installation or updating Auto Load Next Post.
+* Improved: Admin setting fields and added placeholder support.
+* Improved: Inline PHPdocs
+* Removed: Admin notice for the theme has not declared support.
+* Removed: Template location filter from the repeater template as it has been moved for better support.
+* Removed: PHP version check.
+* Removed: JavaScript library chosen.
+* Updated: POT file for translation.
+* Updated: Repeater template due to improvements with this release.
+
 # 1.4.12 (19th May 2018)
 * Fixed: Corrected post type returned for single posts in the repeater template.
 * Removed: The need to check if the theme has declared support before the plugin loads the JavaScript.
@@ -9,8 +43,8 @@
 * Added: Compatible HTML semantics lookup if HTML5 is not used for article.
 * Added: Alternative post navigation lookup for some theme frameworks.
 * Added: Storefront theme to the list of themes that work out of the box.
-* Added: Two new action hooks in the template to support post types in preparation for Auto Load Next Post Pro. - [See action hooks in documentation for details.](https://autoloadnextpost.com/documentation/action-hooks/)
-* Changed: Two action hooks in the template to be inconsistent with the new action hooks for post types. - [See action hooks in documentation for details.](https://autoloadnextpost.com/documentation/action-hooks/)
+* Added: Two new action hooks in the template to support post types in preparation for Auto Load Next Post Pro. - [See action hooks in the documentation for details.](https://autoloadnextpost.com/documentation/action-hooks/)
+* Changed: Two action hooks in the template to be inconsistent with the new action hooks for post types. - [See action hooks in the documentation for details.](https://autoloadnextpost.com/documentation/action-hooks/)
 * Changed: PHP minimum requirement to version 5.6
 * Fixed: Issue with plugin setting up default settings once activated.
 * Fixed: Issue with History.js already been loaded when previewing in the customizer.
@@ -20,8 +54,8 @@
 * Enhanced: Added attributes to identify which post is the initial post both on the post divider and the article.
 * Enhanced: Hidden the post divider completely. Inline styling is used instead for better compatibility with themes.
 * Enhanced: ScrollSpy now identifies the post divider via the new data attribute.
-* Enhanced: Auto Load Next Post now does not run if the post url has a hashtag for a specific comment on an initial load.
-* Improved: The uninstallation of plugin. Now refreshes the permalinks to remove custom rewrite permalink for the plugin.
+* Enhanced: Auto Load Next Post now does not run if the post URL has a hashtag for a specific comment on an initial load.
+* Improved: The uninstallation of the plugin. Now refreshes the permalinks to remove custom rewrite permalink for the plugin.
 * Improved: Code base in preparation for Auto Load Next Post Pro.
 * Updated: Template file header to provide clear information for overriding repeater template.
 * Updated: Template to include support for other post types in preparation for Auto Load Next Post Pro.
@@ -40,15 +74,15 @@
 
 # 1.4.8 (25th December 2016)
 * Added: Support for child-themes so they too can also use the plugin. Thanks to [lwesolowski](https://github.com/lwesolowski)
-* Added: New template location filter. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
+* Added: New template location filter. [See Documentation](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/wiki).
 * Added: New action hook for when there are no new posts to load.
 * Added: a post count of the posts that have loaded. Can be used to trigger an event after X amount of posts have loaded.
 * Added: a new variable that can be set to prevent further posts from loading.
 * Added: Support for Twenty Seventeen.
 * Corrected: Plugin links and improved spelling and grammar.
 * Corrected: Admin notices now use WordPress style.
-* Dev Feature: Can view the console.logs if debug mode is enabled for Auto Load Next Post. Must have SCRIPT_DEBUG set to true also. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
-* Dev Feature: JavaScript triggers have been added so developers can do fun stuff. [See Documentation](https://github.com/seb86/Auto-Load-Next-Post/wiki).
+* Dev Feature: Can view the console.logs if debug mode is enabled for Auto Load Next Post. Must have SCRIPT_DEBUG set to true also. [See Documentation](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/wiki).
+* Dev Feature: JavaScript triggers have been added so developers can do fun stuff. [See Documentation](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/wiki).
 * Fixed: Google Analytics bug that prevented more than 3 posts to load. Thanks to [PatriceVB](https://github.com/PatriceVB)
 * Improved: How Google Analytics is triggered.
 * Improved: The JavaScript now identifies the post ID of each post including the initial post on load.
@@ -103,7 +137,7 @@
 * Corrected a loading issue of the template file should the theme have one also.
 * Improved the partial content template file. Now has a fallback. Should be more compatible with themes.
 * Added a support tab to the plugin settings page.
-* Added a upgrade link on the plugins page.
+* Added an upgrade link on the plugins page.
 * Added a community support link on the plugins page.
 * Added the German translation.
 * Redefined the constants.
@@ -115,26 +149,26 @@
 * Updated the readme.txt file with better copy.
 * Removed public variables and hardcoded them into the plugin instead.
 * Removed whitespace.
-* Removed @return void on __construct() functions.
+* Removed @return void on `__construct()` functions.
 * Cleaned up the code.
 
 ## 1.4.2 (31st July 2015)
 * Added two languages for localizing the plugin settings page. Français (French)(France) and Româna (Romanian).
 
 ## 1.4.1 (13th June 2015)
-* Added many action hooks in template file 'content-partial.php' - See documentation for list of hooks.
+* Added many action hooks in template file 'content-partial.php' - See the documentation for a list of hooks.
 * Removed an error from the admin side when debug is enabled.
 
 ## 1.3.2 (20th May 2015)
-* Added more theme support with compatible theme template file which can be overrided.
-* Added option to enable auto loading posts for specific post types.
+* Added more theme support with compatible theme template file which can be overridden.
+* Added option to enable autoloading posts for specific post types.
 * Added option for comments. Now you can choose to show or hide rather than forcing it to hide automatically.
 * Added Chosen (v1.4.2) Javascript by [Harvest](http://harvesthq.github.io/chosen/)
 * Added console.logs in the Javascript for debugging.
 * Corrected text domain name in plugin header.
 * Corrected access to function load_file() from private to public
 * Corrected access to function register_scripts_and_styles() from private to public
-* Corrected error with uninstall.php file
+* Corrected error with the uninstall.php file
 * Moved function register_scripts_and_styles() to class-auto-load-next-post-admin.php
 * Filtered the Javascript to load only on singular posts and the enabled post types.
 * Removed security issue in the main plugin file by accessing $GLOBALS directly.

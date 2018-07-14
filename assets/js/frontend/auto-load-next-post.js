@@ -32,8 +32,13 @@ jQuery( document ).ready( function() {
 		return;
 	}
 
+	// Don't do anything if post was loaded to post a comment.
+	if ( orig_curr_url.indexOf( '#respond' ) > -1 ) {
+		return;
+	}
+
 	// Add a post divider.
-	jQuery( content_container ).prepend( '<hr style="height:0px;margin:0px;padding:0px;" data-powered-by="alnp" data-initial-post="true" data-title="' + post_title + '" data-url="' + orig_curr_url + '"/>' );
+	jQuery( content_container ).prepend( '<hr style="height:0px;margin:0px;padding:0px;border:none;" data-powered-by="alnp" data-initial-post="true" data-title="' + post_title + '" data-url="' + orig_curr_url + '"/>' );
 
 	// Mark the first article as the initial post.
 	jQuery( content_container ).find( article_container ).attr( 'data-initial-post', true );
@@ -71,7 +76,7 @@ jQuery( document ).ready( function() {
 		}
 
 		// If we are previewing in the customizer then dont track.
-		if ( is_customizer ) {
+		if ( is_customizer == 'yes' ) {
 			return;
 		}
 
@@ -229,17 +234,22 @@ function auto_load_next_post() {
 		post_url = jQuery( nav_container ).find( 'a[rel="previous"]').attr( 'href' );
 	}
 
+	// If we are in the customizer then clean the post url before fetching the post.
+	if ( is_customizer == 'yes' ) {
+		post_url = post_url.substring(0, post_url.indexOf("?"));
+	}
+
 	// Override the post url via a trigger.
 	jQuery( 'body' ).trigger( 'alnp-post-url', [ post_count, post_url ] );
 
 	// If the post navigation is not found then dont continue.
 	if ( !post_url ) return;
 
-	// Check to see if pretty permalinks, if not then add partial=1
+	// Check to see if pretty permalinks, if not then add alnp=1
 	if ( post_url.indexOf( '?p=' ) > -1 ) {
-		np_url = post_url + '&partial=1';
+		np_url = post_url + '&alnp=1';
 	} else {
-		var partial_endpoint = 'partial/';
+		var partial_endpoint = 'alnp/';
 
 		if ( post_url.charAt(post_url.length - 1) != '/' )
 			partial_endpoint = '/' + partial_endpoint;
@@ -258,7 +268,7 @@ function auto_load_next_post() {
 
 		data = post.html(); // Returns the HTML data of the next post that was loaded.
 
-		var post_divider = '<hr style="height:0px;margin:0px;padding:0px;" data-powered-by="alnp" data-initial-post="false" data-url="' + post_url + '"/>';
+		var post_divider = '<hr style="height:0px;margin:0px;padding:0px;border:none;" data-powered-by="alnp" data-initial-post="false" data-url="' + post_url + '"/>';
 		var post_html    = jQuery( post_divider + data );
 		var post_title   = post_html.find( post_title_selector ); // Find the post title of the loaded article.
 		var post_ID      = jQuery( post ).find( article_container ).attr( 'id' ); // Find the post ID of the loaded article.
