@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Auto Load Next Post\n"
 "Report-Msgid-Bugs-To: https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/"
 "issues\n"
-"POT-Creation-Date: 2018-06-10 00:33+0200\n"
+"POT-Creation-Date: 2018-07-14 18:01+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,11 +28,11 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-3: assets\n"
 "X-Poedit-SearchPathExcluded-4: languages\n"
 
-#: auto-load-next-post.php:88
+#: auto-load-next-post.php:79
 msgid "Cloning this object is forbidden."
 msgstr ""
 
-#: auto-load-next-post.php:99
+#: auto-load-next-post.php:90
 msgid "Unserializing instances of this class is forbidden."
 msgstr ""
 
@@ -63,9 +63,12 @@ msgstr ""
 #: includes/admin/class-alnp-admin-help.php:82
 #: includes/admin/class-alnp-admin-help.php:92
 #: includes/admin/class-alnp-admin-help.php:98
-#: includes/admin/class-alnp-admin.php:89 includes/admin/class-alnp-admin.php:90
-#: includes/admin/class-alnp-admin.php:219
-#: includes/admin/class-alnp-admin.php:241
+#: includes/admin/class-alnp-admin.php:131
+#: includes/admin/class-alnp-admin.php:147
+#: includes/admin/class-alnp-admin.php:163
+#: includes/admin/class-alnp-admin.php:164
+#: includes/admin/class-alnp-admin.php:293
+#: includes/admin/class-alnp-admin.php:315
 #: includes/admin/settings/class-alnp-settings-misc.php:68
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:100
 #: includes/admin/views/html-notice-is-supported.php:18
@@ -78,9 +81,9 @@ msgstr ""
 #: includes/customizer/class-alnp-customizer-backup.php:248
 #: includes/customizer/class-alnp-customizer.php:58
 #: includes/customizer/class-alnp-customizer.php:229
-#: includes/customizer/class-alnp-pro-preview-controller.php:63
-#: includes/customizer/class-alnp-pro-preview-controller.php:66
 #: includes/customizer/class-alnp-pro-preview-controller.php:69
+#: includes/customizer/class-alnp-pro-preview-controller.php:72
+#: includes/customizer/class-alnp-pro-preview-controller.php:75
 msgid "Auto Load Next Post"
 msgstr ""
 
@@ -157,7 +160,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:74
-#: includes/admin/class-alnp-admin.php:190
+#: includes/admin/class-alnp-admin.php:264
 #: includes/admin/views/html-notice-welcome.php:47
 msgid "Documentation"
 msgstr ""
@@ -247,59 +250,54 @@ msgstr ""
 msgid "Your settings have been saved."
 msgstr ""
 
-#: includes/admin/class-alnp-admin-settings.php:163
-msgid ""
-"The changes you have made will be lost if you navigate away from this page "
-"before saving."
-msgstr ""
-
-#: includes/admin/class-alnp-admin.php:72
+#: includes/admin/class-alnp-admin.php:117
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:89
+#: includes/admin/class-alnp-admin.php:147
+#, php-format
+msgid "%s does not collect, store or share any personal data."
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:163
 #, php-format
 msgid "%s Settings"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:163
+#: includes/admin/class-alnp-admin.php:237
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:166
+#: includes/admin/class-alnp-admin.php:240
 msgid "Settings"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:187
+#: includes/admin/class-alnp-admin.php:261
 #, php-format
 msgid "Developed By %s"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:191
+#: includes/admin/class-alnp-admin.php:265
 msgid "Community Support"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:192
+#: includes/admin/class-alnp-admin.php:266
 msgid "Theme Support"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:218
+#: includes/admin/class-alnp-admin.php:292
 #, php-format
 msgid ""
 "If you like %1$s, please leave a %2$s rating. A huge thank you in advance!"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:220
+#: includes/admin/class-alnp-admin.php:294
 msgid "Thanks :)"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:241
+#: includes/admin/class-alnp-admin.php:315
 #, php-format
 msgid "%s Version"
-msgstr ""
-
-#: includes/admin/settings/class-alnp-settings-integrations.php:25
-msgid "Integration"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-misc.php:31
@@ -419,6 +417,110 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
+#: includes/admin/views/html-admin-sidebar.php:6
+msgid "Pro Coming Soon"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:9
+#: includes/customizer/class-alnp-pro-preview-controller.php:52
+msgid ""
+"Load the Next Post or Next Post with same Category or New Posts or Related "
+"Posts or by Custom Query"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:10
+#: includes/customizer/class-alnp-pro-preview-controller.php:53
+msgid "Page and Media Attachment Support"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:11
+#: includes/customizer/class-alnp-pro-preview-controller.php:54
+msgid "Custom Post Type Support"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:12
+#: includes/customizer/class-alnp-pro-preview-controller.php:55
+msgid "Exclude Post Formats"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:13
+#: includes/customizer/class-alnp-pro-preview-controller.php:56
+msgid "Limit Posts per Session"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:14
+#: includes/customizer/class-alnp-pro-preview-controller.php:57
+msgid "Query Posts by Category and Tag"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:15
+#: includes/customizer/class-alnp-pro-preview-controller.php:58
+msgid "Exclude User Roles and Specific Users"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:16
+#: includes/customizer/class-alnp-pro-preview-controller.php:59
+msgid "Pre-Query Posts Ready to Load"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:17
+#: includes/customizer/class-alnp-pro-preview-controller.php:60
+msgid "Hide Comments and Show by Toggle Button"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:18
+#: includes/customizer/class-alnp-pro-preview-controller.php:61
+#, php-format
+msgid "Multilingual Support for %1$s and %2$s"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:19
+#: includes/customizer/class-alnp-pro-preview-controller.php:62
+msgid "Email Support"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:23
+msgid "Visit autoloadnextpost.com &rarr;"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:29
+msgid "Sign up to pre-order first"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:32
+#, php-format
+msgid ""
+"Submit your name and email and be the first to know when you can pre-order "
+"Auto Load Next Post Pro and keep up to date with my developments plus a "
+"10% discount."
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:36
+msgid "Your Email Address"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:40
+msgid "First Name"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:44
+msgid "Last Name"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:51
+msgid "Sign me up"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:55
+msgid ""
+"I promise I will not use your email for anything else and you can unsubscribe "
+"with 1-click anytime."
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:60
+msgid "Created &amp; maintained by"
+msgstr ""
+
 #: includes/admin/views/html-notice-is-supported.php:18
 #, php-format
 msgid ""
@@ -530,64 +632,64 @@ msgstr ""
 msgid "Dismiss Notice"
 msgstr ""
 
-#: includes/auto-load-next-post-core-functions.php:91
+#: includes/auto-load-next-post-core-functions.php:87
 #: includes/theme-support/class-alnp-twenty-twelve.php:51
 #: template/theme-support/twenty-ten/content-alnp.php:67
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:42
+#: includes/auto-load-next-post-formatting-functions.php:48
 #, php-format
 msgid "%s years"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:44
+#: includes/auto-load-next-post-formatting-functions.php:50
 msgid "a year"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:51
+#: includes/auto-load-next-post-formatting-functions.php:57
 #, php-format
 msgid "%s weeks"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:53
+#: includes/auto-load-next-post-formatting-functions.php:59
 msgid "a week"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:60
+#: includes/auto-load-next-post-formatting-functions.php:66
 #, php-format
 msgid "%s days"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:62
+#: includes/auto-load-next-post-formatting-functions.php:68
 msgid "a day"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:69
+#: includes/auto-load-next-post-formatting-functions.php:75
 #, php-format
 msgid "%s hours"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:71
+#: includes/auto-load-next-post-formatting-functions.php:77
 msgid "an hour"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:78
+#: includes/auto-load-next-post-formatting-functions.php:84
 #, php-format
 msgid "%s minutes"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:80
+#: includes/auto-load-next-post-formatting-functions.php:86
 msgid "a minute"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:87
+#: includes/auto-load-next-post-formatting-functions.php:93
 #, php-format
 msgid "%s seconds"
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:89
+#: includes/auto-load-next-post-formatting-functions.php:95
 msgid "a second"
 msgstr ""
 
@@ -692,53 +794,33 @@ msgid ""
 msgstr ""
 
 #: includes/customizer/class-alnp-pro-preview-controller.php:48
-#: includes/customizer/class-alnp-pro-preview-controller.php:60
+#: includes/customizer/class-alnp-pro-preview-controller.php:66
 msgid "Auto Load Next Post Pro"
 msgstr ""
 
-#: includes/customizer/class-alnp-pro-preview-controller.php:52
-msgid "User Role Restrictions"
-msgstr ""
-
-#: includes/customizer/class-alnp-pro-preview-controller.php:53
-msgid "Custom Post Type Support"
-msgstr ""
-
-#: includes/customizer/class-alnp-pro-preview-controller.php:54
-msgid "Media Attachment Support"
-msgstr ""
-
-#: includes/customizer/class-alnp-pro-preview-controller.php:55
-msgid "Limit Posts per Session"
-msgstr ""
-
-#: includes/customizer/class-alnp-pro-preview-controller.php:56
-msgid "Query Posts by Category or Tag"
-msgstr ""
-
-#: includes/customizer/class-alnp-pro-preview-controller.php:60
+#: includes/customizer/class-alnp-pro-preview-controller.php:66
 #, php-format
 msgid "Find out more about %1$s%2$s%3$s."
 msgstr ""
 
-#: includes/customizer/class-alnp-pro-preview-controller.php:63
+#: includes/customizer/class-alnp-pro-preview-controller.php:69
 #, php-format
 msgid "Add-ons for %s"
 msgstr ""
 
-#: includes/customizer/class-alnp-pro-preview-controller.php:66
+#: includes/customizer/class-alnp-pro-preview-controller.php:72
 #, php-format
 msgid ""
 "Add-ons available provide additional support or options for %1$s. %2$sCheck "
 "out the add-ons%3$s to see what is available."
 msgstr ""
 
-#: includes/customizer/class-alnp-pro-preview-controller.php:69
+#: includes/customizer/class-alnp-pro-preview-controller.php:75
 #, php-format
 msgid "Enjoying %s?"
 msgstr ""
 
-#: includes/customizer/class-alnp-pro-preview-controller.php:73
+#: includes/customizer/class-alnp-pro-preview-controller.php:79
 #, php-format
 msgid ""
 "Why not leave me a review on %1$sWordPress.org%2$s?  I'd really appreciate it!"

@@ -45,7 +45,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Display_Video_Controller' ) ) {
 		 */
 		public function render_content() {
 			?>
-			<span class="customize-control-title"><?php esc_html_e( $this->label ); ?></span>
+			<span class="customize-control-title"><?php echo $this->label; ?></span>
 
 			<p>
 				<iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/<?php echo $this->value(); ?>?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

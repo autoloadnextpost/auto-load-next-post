@@ -42,18 +42,24 @@ if ( !class_exists( 'Auto_Load_Next_Post_Pro_Preview_Controller' ) ) {
 		 */
 		public function render_content() {
 			?>
-			<span class="customize-control-title"><?php esc_html_e( $this->label ); ?></span>
+			<span class="customize-control-title"><?php echo $this->label; ?></span>
 
 			<p>
 				<?php printf( esc_html__( '%1$s is coming soon and will come with more powerful features. Here are just a few of them you can look forward to.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ) ); ?>
 			</p>
 
 			<ul style="list-style: disc; margin-left: 1em;">
-				<li><?php _e( 'User Role Restrictions', 'auto-load-next-post' ); ?></li>
-				<li><?php _e( 'Custom Post Type Support', 'auto-load-next-post' ); ?></li>
-				<li><?php _e( 'Media Attachment Support', 'auto-load-next-post' ); ?></li>
-				<li><?php _e( 'Limit Posts per Session', 'auto-load-next-post' ); ?></li>
-				<li><?php _e( 'Query Posts by Category or Tag', 'auto-load-next-post' ); ?></li>
+				<li><?php echo wptexturize( esc_html__( 'Load the Next Post or Next Post with same Category or New Posts or Related Posts or by Custom Query', 'auto-load-next-post' ) ); ?></li>
+				<li><?php echo wptexturize( esc_html__( 'Page and Media Attachment Support', 'auto-load-next-post' ) ); ?></li>
+				<li><?php echo wptexturize( esc_html__( 'Custom Post Type Support', 'auto-load-next-post' ) ); ?></li>
+				<li><?php echo wptexturize( esc_html__( 'Exclude Post Formats', 'auto-load-next-post' ) ); ?></li>
+				<li><?php echo wptexturize( esc_html__( 'Limit Posts per Session', 'auto-load-next-post' ) ); ?></li>
+				<li><?php echo wptexturize( esc_html__( 'Query Posts by Category and Tag', 'auto-load-next-post' ) ); ?></li>
+				<li><?php echo wptexturize( esc_html__( 'Exclude User Roles and Specific Users', 'auto-load-next-post' ) ); ?></li>
+				<li><?php echo wptexturize( esc_html__( 'Pre-Query Posts Ready to Load', 'auto-load-next-post' ) ); ?></li>
+				<li><?php echo wptexturize( esc_html__( 'Hide Comments and Show by Toggle Button', 'auto-load-next-post' ) ); ?></li>
+				<li><?php echo wptexturize( sprintf( esc_html__( 'Multilingual Support for %1$s and %2$s', 'auto-load-next-post' ), 'WPML', 'Polylang' ) ); ?></li>
+				<li><?php echo wptexturize( esc_html__( 'Email Support', 'auto-load-next-post' ) ); ?></li>
 			</ul>
 
 			<p>

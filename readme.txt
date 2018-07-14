@@ -4,12 +4,12 @@ Donate link: https://www.buymeacoffee.com/sebastien
 Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scroll, infinite scrolling, post scrolling, pagination, scroll, post history, browsing history, navigation
 Requires PHP: 5.6+
 Requires at least: 4.4
-Tested up to: 4.9.6
+Tested up to: 4.9.7
 Stable tag: 1.5.0-beta.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Increase the pageviews on your site as readers continue reading your posts scrolling down the page.
+Increase the pageviews on your site and reduce bounce rates as readers continue reading your posts infinitely scrolling down the page.
 
 == Description ==
 
@@ -17,7 +17,7 @@ You have great content. That's great but you shouldn't have to work twice as har
 
 **Auto Load Next Post templating experience is the best in class - _by a long shot_.**
 
-Don't take my word for it. [Read what Rich Tabor](https://wordpress.org/support/topic/best-in-class-35/) "Author of [ThemeBeans](https://themebeans.com/?utm_source=wp-plugin-repo&utm_medium=link)" had to say in his review.
+Don't take my word for it. [Read what Rich Tabor](https://wordpress.org/support/topic/best-in-class-35/) (Author of [ThemeBeans](https://themebeans.com/?utm_source=wp-plugin-repo&utm_medium=link)) had to say in his review.
 
 = What is Auto Load Next Post? =
 
@@ -118,7 +118,7 @@ Yes, Auto Load Next Post will work with any theme but may require some configura
 
 = Is Auto Load Next Post translatable? =
 
-Yes! Auto Load Next Post is deployed with full translation and localization support via the 'auto-load-next-post' text-domain.
+Yes! Auto Load Next Post is deployed with full translation and localization support via the 'auto-load-next-post' text-domain. [How to translate?](https://autoloadnextpost.com/documentation/can-i-install-auto-load-next-post-language/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link)
 
 = Where can I request new features and add-ons? =
 
@@ -126,15 +126,15 @@ You can vote on and request new features and add-ons on the [public roadmap](htt
 
 = Where can I find the settings for this plugin? =
 
-Go to "Settings -> Auto Load Next Post". There you will find the options to change any of the theme selectors, enable Google Analytics and remove comments.
+Go to **Settings -> Auto Load Next Post**. There you will find the options to change any of the theme selectors, enable Google Analytics and remove comments.
 
 = Is overriding the repeater template file required? =
 
-No. This was put in place to support themes that have coded their template files differently from [WordPress theme code standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards). For example, the [Genesis Framework](https://autoloadnextpost.com/product/genesis-framework-support/) displays content via many action hooks instead so for this case overriding the template is a required.
+No. This was put in place to support themes that have coded their template files differently from [WordPress theme code standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards). For example, the [Genesis Framework](https://autoloadnextpost.com/product/genesis-framework-support/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link) displays content via many action hooks instead so for this case overriding the template is a required.
 
 = How can I override the repeater template file? =
 
-You first need to create a new folder in your active theme directory called "auto-load-next-post" like so: **wp-content/themes/your-theme-name/auto-load-next-post/** and copy the repeater template file **content-alnp.php** from the plugin template folder into that new folder.
+You first need to create a new folder in your active theme directory called **auto-load-next-post** like so: **wp-content/themes/your-theme-name/auto-load-next-post/** and copy the repeater template file **content-alnp.php** from the plugin template folder into that new folder.
 
 Now you can modify it to match how your theme’s content is loaded for a single post. This will be the repeater template the plugin will use to load posts with from now on.
 
@@ -150,7 +150,7 @@ This is not possible but it would also drive away the purpose of this plugin if 
 
 = Can I load content before and after the next post has loaded? =
 
-Yes, you can. In the repeater template, there are [action hooks](https://autoloadnextpost.com/documentation/action-hooks/) that you can use.
+Yes, you can. In the repeater template, there are [action hooks](https://autoloadnextpost.com/documentation/action-hooks/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link) that you can use.
 
 I have also prepared a [plugin demonstrating](https://github.com/AutoLoadNextPost/alnp-action-hooks-demonstration) the action hooks used when called. Simply download and install the plugin to see where you can place content.
 
@@ -162,21 +162,23 @@ You need to place it inside the loop. If that is not the case then you have not 
 
 = Does the plugin detect my theme and insert the theme selectors for me? =
 
-If the theme author has added support for Auto Load Next Post and has set the theme selectors then yes, it will set the theme selectors for you. If not supported then it does not. You may follow this guide to help you [find your theme selectors](https://autoloadnextpost.com/documentation/find-theme-selectors/).
+If the theme author has added support for Auto Load Next Post and has set the theme selectors then yes, it will set the theme selectors for you. If not supported then it does not. You may follow this guide to help you [find your theme selectors](https://autoloadnextpost.com/documentation/find-theme-selectors/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link).
 
 = My theme does not work with the plugin, what do I do? =
 
 Check that you have a post navigation at the end of your post. If one does exists then you may need to copy and modify the repeater template file **content-alnp.php** in order to support your theme.
 
-Not all themes are coded the same way so some alterations will be needed to match the theme. If you need help with this then I provide [theme support](https://autoloadnextpost.com/product/theme-support/) on request.
+Not all themes are coded the same way so some alterations will be needed to match the theme. If you need help with this then I can provide [theme support](https://autoloadnextpost.com/product/theme-support/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link) on request.
 
-= I'm confused about the post order. Why is the plugin called Auto Load Next Post? =
+= What is the post order? =
 
-Well, WordPress loads posts in descending order by default so the next post is the previous post and a user reads content going down not up so it loads the next post, not previous.
+The post order is descending order from the initial post the visitor started reading from.
 
 = How can I get the Google Analytics option to work? =
 
 You first need to have Google Analytics added to your site. Either by inserting the analytics into your theme yourself or by using the [Google Analytics plugin by MonsterInsights](https://wordpress.org/plugins/google-analytics-for-wordpress/).
+
+Once you have Google Analytics applied to your site you can enable to track each post via the plugin settings.
 
 = Can I track Facebook Pixels instead? =
 
@@ -193,9 +195,41 @@ It does. Just make sure that you activate the plugin on the site you want it use
 3. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
+= 1.5.0 : 28th July 2018 =
+* Added: A check in the JavaScript to prevent it from loading if a user is requesting to post a comment. - Initial post only.
+* Added: A filter for the repeater template location so theme or plugin developers can move it to another location should they need to.
+* Added: Option to load the JavaScript in the footer.
+* Added: A user agent checker to see if the request was made from a known bot.
+* Added: All settings to the customizer.
+* Added: Detection of plugin support. If supported, set the theme selectors for the currently active theme even when the theme has changed.
+* Added: Admin notice to tell the user the theme supports Auto Load Next Post. Only shows once.
+* Added: Admin notice in the theme selectors settings only if the theme supports Auto Load Next Post have already set the theme selectors.
+* Added: Admin notice in the theme selectors settings only if all three or one of the required theme selectors is not set.
+* Added: Admin notice in the misc settings only if remove comments was enabled but the comments container selector was not set.
+* Added: Support for theme Make and Understrap.
+* Added: Select2 to replace previous JS library chosen for better support and performance.
+* Added: Privacy policy guide content.
+* Added: Beta notice if trying out beta releases. Explains how you can provide feedback and can be dismissed for 7 days.
+* Added: Welcome notice to users who install ALNP for the first time.
+* Changed: Rewrite endpoint to be more distinct for Auto Load Next Post and prevent any conflicts.
+* Changed: Settings have been separated into Theme Selectors and Miscellaneous settings.
+* Changed: The JavaScript now does not require the document to be ready. This is especially helpful if you have enabled the JavaScript to load in the footer.
+* Fixed: The trigger to override the post URL.
+* Fixed: Install date to a timestamp for those who have previously installed ALNP so when you see the review notice, it does not say it's been 48 years since you installed because that is just crazy. LOL :)
+* Improved: Theme support and all default WordPress themes are supported out of the box. (Twenty Ten to Twenty Seventeen)
+* Improved: Moved flushing rewrite rules so it only runs once during installation or updating Auto Load Next Post.
+* Improved: Admin setting fields and added placeholder support.
+* Improved: Inline PHPdocs
+* Removed: Admin notice for the theme has not declared support.
+* Removed: Template location filter from the repeater template as it has been moved for better support.
+* Removed: PHP version check.
+* Removed: JavaScript library chosen.
+* Updated: POT file for translation.
+* Updated: Repeater template due to improvements with this release.
 
 [See changelog for all versions](https://raw.githubusercontent.com/AutoLoadNextPost/Auto-Load-Next-Post/master/CHANGELOG.md).
 
 == Upgrade Notice ==
-= 1.4.12 : 19th May 2018 =
-Fixed: Corrected post type returned for single posts in the repeater template.
+= 1.5.0 : 28th July 2018 =
+
+This release brings many improvements and better theme support. [See blog post](https://autoloadnextpost.com/2018/05/28/whats-coming-in-v1-5-0-of-auto-load-next-post/) for more details.
