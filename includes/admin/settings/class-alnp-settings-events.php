@@ -23,8 +23,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		 * Constructor.
 		 *
 		 * @access  public
-		 * @since   1.0.0
-		 * @version 1.4.10
+		 * @since   1.5.0
+		 * @version 1.5.0
 		 */
 		public function __construct() {
 			$this->id    = 'events';
@@ -37,7 +37,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		 * Get settings array.
 		 *
 		 * @access public
-		 * @since  1.0.0
+		 * @since  1.5.0
 		 * @return array
 		 */
 		public function get_settings() {
@@ -84,7 +84,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		 * Output the settings.
 		 *
 		 * @access public
-		 * @since  1.4.10
+		 * @since  1.5.0
 		 */
 		public function output() {
 			$settings = $this->get_settings();
@@ -96,7 +96,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		 * Save settings.
 		 *
 		 * @access public
-		 * @since  1.0.0
+		 * @since  1.5.0
 		 * @global $current_tab
 		 */
 		public function save() {
@@ -113,7 +113,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		 * This returns a list of public registered post types.
 		 *
 		 * @access public
-		 * @since  1.3.2
+		 * @since  1.5.0
 		 * @return array
 		 */
 		public function get_post_types() {
