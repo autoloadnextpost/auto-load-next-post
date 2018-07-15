@@ -54,7 +54,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 					array(
 						'title'    => __( 'Post loaded', 'auto-load-next-post' ),
 						'desc'     => __( 'After the new post has loaded, comma separated events list: <code>event1,event2, ...</code>', 'auto-load-next-post' ),
-						//'desc_tip' => true,
 						'id'       => 'auto_load_next_post_on_load_event',
 						'placeholder' => 'event1,event2, ...',
 						'type'     => 'textarea',
@@ -65,7 +64,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 					array(
 						'title'    => __( 'Entering a post', 'auto-load-next-post' ),
 						'desc'     => __( 'Entering a post, comma separated events list: <code>event1,event2, ...</code>', 'auto-load-next-post' ),
-						//'desc_tip' => true,
 						'id'       => 'auto_load_next_post_on_entering_event',
 						'placeholder' => 'event1,event2, ...',
 						'type'     => 'textarea',
@@ -100,27 +98,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		 * @global $current_tab
 		 */
 		public function save() {
-			global $current_tab;
-
-			$settings = $this->get_settings();
-
-			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings, $current_tab );
+			Auto_Load_Next_Post_Admin_Settings::save_fields( $this->get_settings() );
 		} // END save()
-
-		/**
-		 * Get post types.
-		 *
-		 * This returns a list of public registered post types.
-		 *
-		 * @access public
-		 * @since  1.5.0
-		 * @return array
-		 */
-		public function get_post_types() {
-			$post_types = get_post_types( array( 'public' => true ), 'names' );
-
-			return $post_types;
-		} // END get_post_types()
 
 	} // END class
 
