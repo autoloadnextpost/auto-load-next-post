@@ -85,7 +85,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		 * @since  1.5.0
 		 */
 		public function output() {
-			Auto_Load_Next_Post_Admin_Settings::output_fields( $this->get_settings() );
+			$settings = $this->get_settings();
+			Auto_Load_Next_Post_Admin_Settings::output_fields( $settings );
 		} // END output()
 
 		/**
@@ -96,7 +97,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		 * @global $current_tab
 		 */
 		public function save() {
-			Auto_Load_Next_Post_Admin_Settings::save_fields( $this->get_settings() );
+			$settings = $this->get_settings();
+			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings );
 		} // END save()
 
 	} // END class
