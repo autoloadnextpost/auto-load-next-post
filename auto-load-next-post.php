@@ -296,6 +296,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 					'alnp_comments_container'   => get_option( 'auto_load_next_post_comments_container' ),
 					'alnp_remove_comments'      => get_option( 'auto_load_next_post_remove_comments' ),
 					'alnp_google_analytics'     => get_option( 'auto_load_next_post_google_analytics' ),
+					'alnp_event_on_load'        => get_option( 'auto_load_next_post_on_load_event' ),
+					'alnp_event_on_entering'    => get_option( 'auto_load_next_post_on_entering_event' ),
 					'alnp_is_customizer'        => $this->is_alnp_using_customizer(),
 				) );
 			} // END if is_singular() && get_post_type()
