@@ -85,9 +85,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		 * @since  1.5.0
 		 */
 		public function output() {
-			$settings = $this->get_settings();
-
-			Auto_Load_Next_Post_Admin_Settings::output_fields( $settings );
+			Auto_Load_Next_Post_Admin_Settings::output_fields( $this->get_settings() );
 		} // END output()
 
 		/**
