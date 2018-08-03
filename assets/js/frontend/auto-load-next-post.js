@@ -179,15 +179,15 @@ function triggerEvents(events, params) {
 
 	var body = jQuery( 'body' );
 
-    events = events.split(',');
+	events = events.split(',');
 
-    for (var i = 0; i < events.length; i++) {
-    	//support all browsers, "replace" instead of "trim"
-        events[i] = events[i].replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-    	body.trigger(events[i], params);
-    }
+	for (var i = 0; i < events.length; i++) {
+		//support all browsers, "replace" instead of "trim"
+		events[i] = events[i].replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+		body.trigger(events[i], params);
+	}
 
-    return this;
+	return this;
 }
 
 // Entering a post
@@ -196,7 +196,7 @@ function alnp_enter() {
 
 	jQuery( 'body' ).trigger( 'alnp-enter', [ divider ] );
 
-    triggerEvents(event_on_entering, [ divider ]);
+	triggerEvents(event_on_entering, [ divider ]);
 
 	changePost( divider, 'enter' );
 } // END alnp_enter()
@@ -293,7 +293,7 @@ function auto_load_next_post() {
 		var post_html    = jQuery( post_divider + data );
 		var post_title   = post_html.find( post_title_selector ); // Find the post title of the loaded article.
 		var post_ID      = jQuery( post ).find( article_container ).attr( 'id' ); // Find the post ID of the loaded article.
-        var triggerParams = [ post_title.text(), post_url, post_ID, post_count ];
+		var triggerParams = [ post_title.text(), post_url, post_ID, post_count ];
 
 		if ( typeof post_ID !== typeof undefined && post_ID !== "" ) {
 			post_ID = post_ID.replace('post-', ''); // Make sure that only the post ID remains.
@@ -319,7 +319,7 @@ function auto_load_next_post() {
 		jQuery( 'body' ).trigger( 'alnp-post-loaded', triggerParams );
 
 		// Trigger user defined events
-        triggerEvents(event_on_load, triggerParams)
+		triggerEvents(event_on_load, triggerParams);
 	});
 
 } // END auto_load_next_post()
