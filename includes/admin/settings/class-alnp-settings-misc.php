@@ -65,45 +65,45 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 					array(
 						'title' => $this->label,
 						'type'  => 'title',
-						'desc'  => sprintf( __( 'Here you set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						'desc'  => sprintf( esc_html__( 'Here you set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 						'id'    => 'misc_options'
 					),
 
 					array(
-						'title'   => __( 'Remove Comments', 'auto-load-next-post' ),
-						'desc'    => __( 'Enable to remove comments when each post loads including the initial post.', 'auto-load-next-post' ),
+						'title'   => esc_html__( 'Remove Comments', 'auto-load-next-post' ),
+						'desc'    => esc_html__( 'Enable to remove comments when each post loads including the initial post.', 'auto-load-next-post' ),
 						'id'      => 'auto_load_next_post_remove_comments',
 						'default' => 'yes',
 						'type'    => 'checkbox'
 					),
 
 					array(
-						'title'   => __( 'Update Google Analytics', 'auto-load-next-post' ),
-						'desc'    => __( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
+						'title'   => esc_html__( 'Update Google Analytics', 'auto-load-next-post' ),
+						'desc'    => esc_html__( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
 						'id'      => 'auto_load_next_post_google_analytics',
 						'default' => 'no',
 						'type'    => 'checkbox'
 					),
 
 					array(
-						'title'   => __( 'JavaScript in Footer?', 'auto-load-next-post' ),
-						'desc'    => __( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site.', 'auto-load-next-post' ),
+						'title'   => esc_html__( 'JavaScript in Footer?', 'auto-load-next-post' ),
+						'desc'    => esc_html__( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site.', 'auto-load-next-post' ),
 						'id'      => 'auto_load_next_post_js_footer',
 						'default' => 'no',
 						'type'    => 'checkbox'
 					),
 
 					array(
-						'title'   => __( 'Reset all data?', 'auto-load-next-post' ),
-						'desc'    => __( 'Press the reset button to clear all settings for this plugin and re-install the default settings.', 'auto-load-next-post' ),
+						'title'   => esc_html__( 'Reset all data?', 'auto-load-next-post' ),
+						'desc'    => esc_html__( 'Press the reset button to clear all settings for this plugin and re-install the default settings.', 'auto-load-next-post' ),
 						'id'      => 'auto_load_next_post_reset_data',
 						'default' => 'no',
 						'type'    => 'reset_data'
 					),
 
 					array(
-						'title'   => __( 'Remove all data on uninstall?', 'auto-load-next-post' ),
-						'desc'    => __( 'If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete.', 'auto-load-next-post' ),
+						'title'   => esc_html__( 'Remove all data on uninstall?', 'auto-load-next-post' ),
+						'desc'    => esc_html__( 'If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete.', 'auto-load-next-post' ),
 						'id'      => 'auto_load_next_post_uninstall_data',
 						'default' => 'no',
 						'type'    => 'checkbox'
