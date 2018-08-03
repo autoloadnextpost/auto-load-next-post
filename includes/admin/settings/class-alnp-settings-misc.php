@@ -28,7 +28,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		 */
 		public function __construct() {
 			$this->id    = 'misc';
-			$this->label = __( 'Misc', 'auto-load-next-post' );
+			$this->label = esc_html__( 'Misc', 'auto-load-next-post' );
 
 			parent::__construct();
 
@@ -54,7 +54,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since  1.0.0
+		 * @since  1.5.0
 		 * @access public
 		 * @return array
 		 */
@@ -63,7 +63,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 				'auto_load_next_post_misc_settings', array(
 
 					array(
-						'title' => __( 'Misc', 'auto-load-next-post' ),
+						'title' => $this->label,
 						'type'  => 'title',
 						'desc'  => sprintf( __( 'Here you set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 						'id'    => 'misc_options'
