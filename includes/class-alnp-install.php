@@ -188,7 +188,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 * @version 1.5.0
 		 */
 		public static function add_rewrite_endpoint() {
-			add_rewrite_endpoint( 'alnp', EP_PERMALINK );
+			add_rewrite_endpoint( 'alnp', EP_PERMALINK | EP_PAGES | EP_ATTACHMENT );
 		} // END add_rewrite_endpoint()
 
 		/**
