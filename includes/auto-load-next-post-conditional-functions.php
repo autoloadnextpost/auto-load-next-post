@@ -242,3 +242,20 @@ if ( ! function_exists( 'alnp_get_post_type' ) ) {
 		return $post_type;
 	}
 }
+
+if ( ! function_exists( 'alnp_check_jetpack' ) ) {
+	/**
+	 * Check if Jetpack is installed.
+	 *
+	 * @access public
+	 * @since  1.5.0
+	 * @return string
+	 */
+	function alnp_check_jetpack() {
+		$jetpack_active = class_exists( 'Jetpack' );
+
+		$is_active = $jetpack_active ? 'yes' : 'no';
+
+		return $is_active;
+	}
+}

@@ -28,7 +28,24 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 			$this->label = esc_html__( 'Events', 'auto-load-next-post' );
 
 			parent::__construct();
+
+			add_action( 'auto_load_next_post_settings_' . $this->id, array( __CLASS__, 'is_jetpack_lazy_images_active' ), 10 );
 		} // END __construct()
+
+		/**
+		 * Displays a notification if JetPack is active and
+		 * JetPack's Lazy Images module is enabled.
+		 *
+		 * @access public
+		 * @static
+		 */
+		public static function is_jetpack_lazy_images_active() {
+			if ( alnp_check_jetpack() == 'yes' ) {
+				if ( Jetpack::is_module_active( 'lazy-images' ) ) {
+					include( dirname( AUTO_LOAD_NEXT_POST_FILE ) . '/includes/admin/views/html-notice-jetpack-lazy-images-module.php' );
+				}
+			}
+		} // END is_jetpack_lazy_images_active()
 
 		/**
 		 * Get settings array.
