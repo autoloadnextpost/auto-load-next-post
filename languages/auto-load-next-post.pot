@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Auto Load Next Post\n"
 "Report-Msgid-Bugs-To: https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/"
 "issues\n"
-"POT-Creation-Date: 2018-07-14 18:01+0200\n"
+"POT-Creation-Date: 2018-08-03 19:13+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Sébastien Dumont <mailme@sebastiendumont.com>\n"
 "Language: en_US\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: auto-load-next-post.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -69,6 +69,7 @@ msgstr ""
 #: includes/admin/class-alnp-admin.php:164
 #: includes/admin/class-alnp-admin.php:293
 #: includes/admin/class-alnp-admin.php:315
+#: includes/admin/settings/class-alnp-settings-events.php:63
 #: includes/admin/settings/class-alnp-settings-misc.php:68
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:100
 #: includes/admin/views/html-notice-is-supported.php:18
@@ -246,7 +247,7 @@ msgstr ""
 msgid "GitHub Project"
 msgstr ""
 
-#: includes/admin/class-alnp-admin-settings.php:92
+#: includes/admin/class-alnp-admin-settings.php:93
 msgid "Your settings have been saved."
 msgstr ""
 
@@ -300,8 +301,34 @@ msgstr ""
 msgid "%s Version"
 msgstr ""
 
+#: includes/admin/settings/class-alnp-settings-events.php:28
+msgid "Events"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-events.php:63
+#, php-format
+msgid ""
+"Below you can enter external JavaScript events to be triggered alongside %1$s "
+"native events. Separate each event like so: %2$s"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-events.php:68
+msgid "Post loaded"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-events.php:69
+msgid "Events listed here will be triggered after a new post has loaded."
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-events.php:78
+msgid "Entering a Post"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-events.php:79
+msgid "Events listed here will be triggered when entering a post."
+msgstr ""
+
 #: includes/admin/settings/class-alnp-settings-misc.php:31
-#: includes/admin/settings/class-alnp-settings-misc.php:66
 msgid "Misc"
 msgstr ""
 
@@ -382,9 +409,8 @@ msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:106
 #: includes/customizer/class-alnp-customizer.php:326
-msgid ""
-"The primary container where the post content is loaded in. Default: "
-"<code>main.site-main</code>"
+#, php-format
+msgid "The primary container where the post content is loaded in. Default: %s"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:109
@@ -393,24 +419,22 @@ msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:117
 #: includes/customizer/class-alnp-customizer.php:334
+#, php-format
 msgid ""
 "Used to identify which article the user is reading and track should Google "
-"Analytics or other analytics be enabled. Default: <code>h1.entry-title</code>"
+"Analytics or other analytics be enabled. Default: %s"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:127
 #: includes/customizer/class-alnp-customizer.php:342
-msgid ""
-"Used to identify which post to load next if any. Default: <code>nav.post-"
-"navigation</code>"
+#, php-format
+msgid "Used to identify which post to load next if any. Default: %s"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:137
-#: includes/customizer/class-alnp-customizer.php:350
 #, php-format
 msgid ""
-"Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> "
-"settings. Default: <code>div#comments</code>"
+"Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s"
 msgstr ""
 
 #: includes/admin/views/html-admin-settings.php:46
@@ -526,6 +550,13 @@ msgstr ""
 msgid ""
 "This theme supports %s. No need to change the theme selectors as they have "
 "already been set by the theme."
+msgstr ""
+
+#: includes/admin/views/html-notice-jetpack-lazy-images-module.php:18
+#, php-format
+msgid ""
+"You have enabled the Lazy-loading for Images module in JetPack. To trigger "
+"the lazy loading event apply %s to \"Entering a Post\"."
 msgstr ""
 
 #: includes/admin/views/html-notice-no-comment-selector.php:18
@@ -784,6 +815,13 @@ msgstr ""
 msgid ""
 "The post navigation container selector is empty. Required so ALNP can look up "
 "the next post to load."
+msgstr ""
+
+#: includes/customizer/class-alnp-customizer.php:350
+#, php-format
+msgid ""
+"Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> "
+"settings. Default: %3$s"
 msgstr ""
 
 #: includes/customizer/class-alnp-pro-preview-controller.php:48
