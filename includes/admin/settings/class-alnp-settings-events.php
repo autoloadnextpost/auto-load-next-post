@@ -60,28 +60,28 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 					array(
 						'title' => $this->label,
 						'type'  => 'title',
-						'desc'  => sprintf( esc_html__( 'User defined events, below you can choose external JavaScript events to be triggered alongside %s native events', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						'desc'  => sprintf( __( 'Below you can enter external JavaScript events to be triggered alongside %1$s native events. Separate each event like so: %2$s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<code>event1, event2,</code>' ),
 						'id'    => 'events_options'
 					),
 
 					array(
-						'title'       => esc_html__( 'Post loaded', 'auto-load-next-post' ),
-						'desc'        => __( 'After the new post has loaded, comma separated events list: <code>event1, event2, ...</code>', 'auto-load-next-post' ),
-						'id'          => 'auto_load_next_post_on_load_event',
-						'placeholder' => 'event1,event2, ...',
-						'type'        => 'textarea',
-						'css'         => 'min-width:300px;',
-						'autoload'    => false
+						'title'    => esc_html__( 'Post loaded', 'auto-load-next-post' ),
+						'desc'     => __( 'Events listed here will be triggered after a new post has loaded.', 'auto-load-next-post' ),
+						'id'       => 'auto_load_next_post_on_load_event',
+						'default'  => '',
+						'type'     => 'textarea',
+						'css'      => 'min-width: 50%; height: 75px;',
+						'autoload' => false
 					),
 
 					array(
-						'title'       => esc_html__( 'Entering a post', 'auto-load-next-post' ),
-						'desc'        => esc_html__( 'Entering a post, comma separated events list: <code>event1,event2, ...</code>', 'auto-load-next-post' ),
-						'id'          => 'auto_load_next_post_on_entering_event',
-						'placeholder' => 'event1,event2, ...',
-						'type'        => 'textarea',
-						'css'         => 'min-width:300px;',
-						'autoload'    => false
+						'title'    => esc_html__( 'Entering a Post', 'auto-load-next-post' ),
+						'desc'     => esc_html__( 'Events listed here will be triggered when entering a post.', 'auto-load-next-post' ),
+						'id'       => 'auto_load_next_post_on_entering_event',
+						'default'  => '',
+						'type'     => 'textarea',
+						'css'      => 'min-width: 50%; height: 75px;',
+						'autoload' => false
 					),
 
 					array(
