@@ -220,12 +220,12 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 			return apply_filters( 'auto_load_next_post_get_customizer_sections', array(
 				'auto_load_next_post_theme_selectors' => array(
 					'capability'  => 'edit_theme_options',
-					'title'       => __( 'Theme Selectors', 'auto-load-next-post' ),
+					'title'       => esc_html__( 'Theme Selectors', 'auto-load-next-post' ),
 					'description' => sprintf( __( 'Set the theme selectors below according to the theme. %1$sHow to find my theme selectors?%2$s', 'auto-load-next-post' ), '<a href="' . esc_url( 'https://autoloadnextpost.com/documentation/find-theme-selectors/?utm_source=wpcustomizer&utm_campaign=plugin-settings-theme-selectors' ) . '" target="_blank">', '</a>' ),
 				),
 				'auto_load_next_post_misc' => array(
 					'capability'  => 'edit_theme_options',
-					'title'       => __( 'Misc Settings', 'auto-load-next-post' ),
+					'title'       => esc_html__( 'Misc Settings', 'auto-load-next-post' ),
 					'description' => sprintf( __( 'Here you can set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 				),
 			) );
@@ -323,7 +323,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 			return apply_filters( 'auto_load_next_post_get_customizer_controls', array(
 				'alnp_content_container' => array(
 					'class'       => 'WP_Customize_Control',
-					'description' => __( 'The primary container where the post content is loaded in. Default: <code>main.site-main</code>', 'auto-load-next-post' ),
+					'description' => sprintf( __( 'The primary container where the post content is loaded in. Default: %s', 'auto-load-next-post' ), '<code>main.site-main</code>' ),
 					'label'       => esc_html__( 'Content Container', 'auto-load-next-post' ),
 					'section'     => 'auto_load_next_post_theme_selectors',
 					'settings'    => 'auto_load_next_post_content_container',
@@ -331,7 +331,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				),
 				'alnp_title_selector' => array(
 					'class'       => 'WP_Customize_Control',
-					'description' => __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Default: <code>h1.entry-title</code>', 'auto-load-next-post' ),
+					'description' => sprintf( __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Default: %s', 'auto-load-next-post' ), '<code>h1.entry-title</code>' ),
 					'label'       => esc_html__( 'Post Title Selector', 'auto-load-next-post' ),
 					'section'     => 'auto_load_next_post_theme_selectors',
 					'settings'    => 'auto_load_next_post_title_selector',
@@ -339,7 +339,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				),
 				'alnp_navigation_container' => array(
 					'class'       => 'WP_Customize_Control',
-					'description' => __( 'Used to identify which post to load next if any. Default: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
+					'description' => sprintf( __( 'Used to identify which post to load next if any. Default: %s', 'auto-load-next-post' ), '<code>nav.post-navigation</code>' ),
 					'label'       => esc_html__( 'Post Navigation Container', 'auto-load-next-post' ),
 					'section'     => 'auto_load_next_post_theme_selectors',
 					'settings'    => 'auto_load_next_post_navigation_container',
@@ -347,7 +347,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				),
 				'alnp_comments_container' => array(
 					'class'       => 'WP_Customize_Control',
-					'description' => sprintf( __( 'Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> settings. Default: <code>div#comments</code>', 'auto-load-next-post' ), '<a href="javascript:wp.customize.section( \'auto_load_next_post_misc\' ).focus();">', '</a>' ),
+					'description' => sprintf( __( 'Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> settings. Default: %3$s', 'auto-load-next-post' ), '<a href="javascript:wp.customize.section( \'auto_load_next_post_misc\' ).focus();">', '</a>', '<code>div#comments</code>' ),
 					'label'       => esc_html__( 'Comments Container', 'auto-load-next-post' ),
 					'section'     => 'auto_load_next_post_theme_selectors',
 					'settings'    => 'auto_load_next_post_comments_container',
