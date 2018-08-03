@@ -9,6 +9,7 @@
 			<li><?php echo wptexturize( esc_html__( 'Load the Next Post or Next Post with same Category or New Posts or Related Posts or by Custom Query', 'auto-load-next-post' ) ); ?></li>
 			<li><?php echo wptexturize( esc_html__( 'Page and Media Attachment Support', 'auto-load-next-post' ) ); ?></li>
 			<li><?php echo wptexturize( esc_html__( 'Custom Post Type Support', 'auto-load-next-post' ) ); ?></li>
+			<li><?php echo wptexturize( esc_html__( 'Paginated Posts Supported', 'auto-load-next-post' ) ); ?></li>
 			<li><?php echo wptexturize( esc_html__( 'Exclude Post Formats', 'auto-load-next-post' ) ); ?></li>
 			<li><?php echo wptexturize( esc_html__( 'Limit Posts per Session', 'auto-load-next-post' ) ); ?></li>
 			<li><?php echo wptexturize( esc_html__( 'Query Posts by Category and Tag', 'auto-load-next-post' ) ); ?></li>

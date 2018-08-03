@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Auto Load Next Post\n"
 "Report-Msgid-Bugs-To: https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/"
 "issues\n"
-"POT-Creation-Date: 2018-08-03 19:13+0200\n"
+"POT-Creation-Date: 2018-08-03 20:33+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,7 +69,7 @@ msgstr ""
 #: includes/admin/class-alnp-admin.php:164
 #: includes/admin/class-alnp-admin.php:293
 #: includes/admin/class-alnp-admin.php:315
-#: includes/admin/settings/class-alnp-settings-events.php:63
+#: includes/admin/settings/class-alnp-settings-events.php:67
 #: includes/admin/settings/class-alnp-settings-misc.php:68
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:100
 #: includes/admin/views/html-notice-is-supported.php:18
@@ -82,9 +82,9 @@ msgstr ""
 #: includes/customizer/class-alnp-customizer-backup.php:248
 #: includes/customizer/class-alnp-customizer.php:58
 #: includes/customizer/class-alnp-customizer.php:229
-#: includes/customizer/class-alnp-pro-preview-controller.php:69
-#: includes/customizer/class-alnp-pro-preview-controller.php:72
-#: includes/customizer/class-alnp-pro-preview-controller.php:75
+#: includes/customizer/class-alnp-pro-preview-controller.php:70
+#: includes/customizer/class-alnp-pro-preview-controller.php:73
+#: includes/customizer/class-alnp-pro-preview-controller.php:76
 msgid "Auto Load Next Post"
 msgstr ""
 
@@ -305,26 +305,26 @@ msgstr ""
 msgid "Events"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:63
+#: includes/admin/settings/class-alnp-settings-events.php:67
 #, php-format
 msgid ""
 "Below you can enter external JavaScript events to be triggered alongside %1$s "
 "native events. Separate each event like so: %2$s"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:68
+#: includes/admin/settings/class-alnp-settings-events.php:72
 msgid "Post loaded"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:69
+#: includes/admin/settings/class-alnp-settings-events.php:73
 msgid "Events listed here will be triggered after a new post has loaded."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:78
+#: includes/admin/settings/class-alnp-settings-events.php:82
 msgid "Entering a Post"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:79
+#: includes/admin/settings/class-alnp-settings-events.php:83
 msgid "Events listed here will be triggered when entering a post."
 msgstr ""
 
@@ -464,54 +464,59 @@ msgstr ""
 
 #: includes/admin/views/html-admin-sidebar.php:12
 #: includes/customizer/class-alnp-pro-preview-controller.php:55
-msgid "Exclude Post Formats"
+msgid "Paginated Posts Supported"
 msgstr ""
 
 #: includes/admin/views/html-admin-sidebar.php:13
 #: includes/customizer/class-alnp-pro-preview-controller.php:56
-msgid "Limit Posts per Session"
+msgid "Exclude Post Formats"
 msgstr ""
 
 #: includes/admin/views/html-admin-sidebar.php:14
 #: includes/customizer/class-alnp-pro-preview-controller.php:57
-msgid "Query Posts by Category and Tag"
+msgid "Limit Posts per Session"
 msgstr ""
 
 #: includes/admin/views/html-admin-sidebar.php:15
 #: includes/customizer/class-alnp-pro-preview-controller.php:58
-msgid "Exclude User Roles and Specific Users"
+msgid "Query Posts by Category and Tag"
 msgstr ""
 
 #: includes/admin/views/html-admin-sidebar.php:16
 #: includes/customizer/class-alnp-pro-preview-controller.php:59
-msgid "Pre-Query Posts Ready to Load"
+msgid "Exclude User Roles and Specific Users"
 msgstr ""
 
 #: includes/admin/views/html-admin-sidebar.php:17
 #: includes/customizer/class-alnp-pro-preview-controller.php:60
-msgid "Hide Comments and Show by Toggle Button"
+msgid "Pre-Query Posts Ready to Load"
 msgstr ""
 
 #: includes/admin/views/html-admin-sidebar.php:18
 #: includes/customizer/class-alnp-pro-preview-controller.php:61
-#, php-format
-msgid "Multilingual Support for %1$s and %2$s"
+msgid "Hide Comments and Show by Toggle Button"
 msgstr ""
 
 #: includes/admin/views/html-admin-sidebar.php:19
 #: includes/customizer/class-alnp-pro-preview-controller.php:62
+#, php-format
+msgid "Multilingual Support for %1$s and %2$s"
+msgstr ""
+
+#: includes/admin/views/html-admin-sidebar.php:20
+#: includes/customizer/class-alnp-pro-preview-controller.php:63
 msgid "Email Support"
 msgstr ""
 
-#: includes/admin/views/html-admin-sidebar.php:23
+#: includes/admin/views/html-admin-sidebar.php:24
 msgid "Visit autoloadnextpost.com &rarr;"
 msgstr ""
 
-#: includes/admin/views/html-admin-sidebar.php:29
+#: includes/admin/views/html-admin-sidebar.php:30
 msgid "Sign up to pre-order first"
 msgstr ""
 
-#: includes/admin/views/html-admin-sidebar.php:32
+#: includes/admin/views/html-admin-sidebar.php:33
 #, php-format
 msgid ""
 "Submit your name and email and be the first to know when you can pre-order "
@@ -519,29 +524,29 @@ msgid ""
 "10% discount."
 msgstr ""
 
-#: includes/admin/views/html-admin-sidebar.php:36
+#: includes/admin/views/html-admin-sidebar.php:37
 msgid "Your Email Address"
 msgstr ""
 
-#: includes/admin/views/html-admin-sidebar.php:40
+#: includes/admin/views/html-admin-sidebar.php:41
 msgid "First Name"
 msgstr ""
 
-#: includes/admin/views/html-admin-sidebar.php:44
+#: includes/admin/views/html-admin-sidebar.php:45
 msgid "Last Name"
 msgstr ""
 
-#: includes/admin/views/html-admin-sidebar.php:51
+#: includes/admin/views/html-admin-sidebar.php:52
 msgid "Sign me up"
 msgstr ""
 
-#: includes/admin/views/html-admin-sidebar.php:55
+#: includes/admin/views/html-admin-sidebar.php:56
 msgid ""
 "I promise I will not use your email for anything else and you can unsubscribe "
 "with 1-click anytime."
 msgstr ""
 
-#: includes/admin/views/html-admin-sidebar.php:60
+#: includes/admin/views/html-admin-sidebar.php:61
 msgid "Created &amp; maintained by"
 msgstr ""
 
@@ -832,33 +837,33 @@ msgid ""
 msgstr ""
 
 #: includes/customizer/class-alnp-pro-preview-controller.php:48
-#: includes/customizer/class-alnp-pro-preview-controller.php:66
+#: includes/customizer/class-alnp-pro-preview-controller.php:67
 msgid "Auto Load Next Post Pro"
 msgstr ""
 
-#: includes/customizer/class-alnp-pro-preview-controller.php:66
+#: includes/customizer/class-alnp-pro-preview-controller.php:67
 #, php-format
 msgid "Find out more about %1$s%2$s%3$s."
 msgstr ""
 
-#: includes/customizer/class-alnp-pro-preview-controller.php:69
+#: includes/customizer/class-alnp-pro-preview-controller.php:70
 #, php-format
 msgid "Add-ons for %s"
 msgstr ""
 
-#: includes/customizer/class-alnp-pro-preview-controller.php:72
+#: includes/customizer/class-alnp-pro-preview-controller.php:73
 #, php-format
 msgid ""
 "Add-ons available provide additional support or options for %1$s. %2$sCheck "
 "out the add-ons%3$s to see what is available."
 msgstr ""
 
-#: includes/customizer/class-alnp-pro-preview-controller.php:75
+#: includes/customizer/class-alnp-pro-preview-controller.php:76
 #, php-format
 msgid "Enjoying %s?"
 msgstr ""
 
-#: includes/customizer/class-alnp-pro-preview-controller.php:79
+#: includes/customizer/class-alnp-pro-preview-controller.php:80
 #, php-format
 msgid ""
 "Why not leave me a review on %1$sWordPress.org%2$s?  I'd really appreciate it!"
