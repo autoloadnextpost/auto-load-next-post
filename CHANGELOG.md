@@ -1,4 +1,6 @@
 # 1.5.0 (28th July 2018)
+* NEW: Added trigger event support for third party plugins.
+* Added: A check to see if JetPack is active.
 * Added: A check in the JavaScript to prevent it from loading if a user is requesting to post a comment. - Initial post only.
 * Added: A filter for the repeater template location so theme or plugin developers can move it to another location should they need to.
 * Added: Option to load the JavaScript in the footer.
@@ -9,6 +11,7 @@
 * Added: Admin notice in the theme selectors settings only if the theme supports Auto Load Next Post have already set the theme selectors.
 * Added: Admin notice in the theme selectors settings only if all three or one of the required theme selectors is not set.
 * Added: Admin notice in the misc settings only if remove comments was enabled but the comments container selector was not set.
+* Added: A sidebar to the settings page to promote Auto Load Next Post and allow users to sign up.
 * Added: Support for theme Make and Understrap.
 * Added: Select2 to replace previous JS library chosen for better support and performance.
 * Added: Privacy policy guide content.
