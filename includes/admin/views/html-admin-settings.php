@@ -53,5 +53,15 @@ if ( ! $tab_exists ) {
 	if ( ! is_alnp_pro_version_installed() ) {
 		include_once( dirname( __FILE__ ) . '/html-admin-sidebar.php' );
 	}
+	else {
+		echo '<div class="alnp-sidebar">';
+
+		do_action( 'auto_load_next_post_after_settings' );
+
+		// Use this hook to display after settings for a specific tab.
+		do_action( 'auto_load_next_post_after_settings_' . $current_tab );
+
+		echo '</div>';
+	}
 	?>
 </div>
