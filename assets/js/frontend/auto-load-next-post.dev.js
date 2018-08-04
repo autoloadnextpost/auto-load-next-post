@@ -7,6 +7,8 @@ var comments_container  = auto_load_next_post_params.alnp_comments_container;
 var remove_comments     = auto_load_next_post_params.alnp_remove_comments;
 var track_pageviews     = auto_load_next_post_params.alnp_google_analytics;
 var is_customizer       = auto_load_next_post_params.alnp_is_customizer;
+var event_on_load       = auto_load_next_post_params.alnp_event_on_load;
+var event_on_entering   = auto_load_next_post_params.alnp_event_on_entering;
 var post_title          = window.document.title;
 var curr_url            = window.location.href;
 var orig_curr_url       = window.location.href;
@@ -228,11 +230,30 @@ var article_container   = 'article';
 		$( 'hr[data-powered-by="alnp"]' ).scrollSpy();
 	} // END scrollspy()
 
+	// Trigger multiple events
+	function triggerEvents(events, params) {
+		if (typeof events !== 'string') return;
+
+		var body = jQuery( 'body' );
+
+		events = events.split(',');
+
+		for (var i = 0; i < events.length; i++) {
+			//support all browsers, "replace" instead of "trim"
+			events[i] = events[i].replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+			body.trigger(events[i], params);
+		}
+
+		return this;
+	}
+
 	// Entering a post
 	function alnp_enter() {
 		var divider = $(this);
 
 		$( 'body' ).trigger( 'alnp-enter', [ divider ] );
+
+		triggerEvents(event_on_entering, [ divider ]);
 
 		changePost( divider, 'enter' );
 	} // END alnp_enter()
@@ -357,6 +378,7 @@ var article_container   = 'article';
 			var post_html    = $( post_divider + data );
 			var post_title   = post_html.find( post_title_selector ); // Find the post title of the loaded article.
 			var post_ID      = $( post ).find( article_container ).attr( 'id' ); // Find the post ID of the loaded article.
+			var triggerParams = [ post_title.text(), post_url, post_ID, post_count ];
 
 			if ( typeof post_ID !== typeof undefined && post_ID !== "" ) {
 				post_ID = post_ID.replace( 'post-', '' ); // Make sure that only the post ID remains.
@@ -393,7 +415,10 @@ var article_container   = 'article';
 			console.log( 'Post Count: ' + post_count );
 
 			// Run an event once the post has loaded.
-			$( 'body' ).trigger( 'alnp-post-loaded', [ post_title.text(), post_url, post_ID, post_count ] );
+			$( 'body' ).trigger( 'alnp-post-loaded', triggerParams );
+
+			// Trigger user defined events
+			triggerEvents(event_on_load, triggerParams);
 		});
 
 	} // END auto_load_next_post()
