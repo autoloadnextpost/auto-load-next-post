@@ -127,7 +127,7 @@ var article_container   = 'article';
 
 		console.log( 'Google Analytics tracking is enabled' );
 
-		if ( typeof pageTracker === "undefined" && typeof _gaq === 'undefined' && typeof ga === 'undefined' && typeof __gaTracker === 'undefined' ) {
+		if ( typeof _gaq === 'undefined' && typeof ga === 'undefined' && typeof __gaTracker === 'undefined' ) {
 			console.error( 'Google Analytics was not found installed on your site!' );
 			return;
 		}
@@ -138,12 +138,6 @@ var article_container   = 'article';
 		post_url = post_url.replace(/https?:\/\/[^\/]+/i, '');
 
 		console.log( 'Post URL after clean: ' + post_url );
-
-		// This uses Asynchronous version of Google Analytics tracking method.
-		if ( typeof pageTracker !== "undefined" && pageTracker !== null ) {
-			console.log( 'Google Analytics is installed, but very old. Highly recommend upgrading GA!' );
-			pageTracker._trackPageview( post_url );
-		}
 
 		// This uses Google's classic Google Analytics tracking method.
 		if ( typeof _gaq !== 'undefined' && _gaq !== null ) {
