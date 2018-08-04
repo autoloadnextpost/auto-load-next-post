@@ -21,7 +21,7 @@ It simply automatically loads the next post on your blog once the user has reach
 
 ## Features
 * Customizable repeater template
-* Custom JavaScript event triggers
+* JavaScript event triggers plus 3rd-party support
 * Developer friendly
 * Reduce page load by hiding the post comments
 * Track pageviews with Google Analytics. ***Requires Google Analytics to be applied on your site first for this to work.***
