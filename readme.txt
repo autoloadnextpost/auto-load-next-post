@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/sebastien
 Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scroll, infinite scrolling, post scrolling, pagination, scroll, post history, browsing history, navigation
 Requires PHP: 5.6+
 Requires at least: 4.4
-Tested up to: 4.9.7
+Tested up to: 4.9.8
 Stable tag: 1.5.0-beta.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -49,7 +49,7 @@ Intrigued? _I bet you are._ Once you try Auto Load Next Post, your pageviews wil
 
 Extendable and open source — Auto Load Next Post is created with developers in mind. There are opportunities for developers at all levels to contribute. [Click here to contribute](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md).
 
-Need to trigger something during each post load? [See the JavaScript triggers available](https://autoloadnextpost.com/documentation/javascript-triggers/) in the documentation for details.
+Need to trigger something during each post load? [See the JavaScript triggers available](https://autoloadnextpost.com/documentation/javascript-triggers/) in the documentation for details. 3rd-party supported also.
 
 Want to provide feedback or discuss plugins to be supported, features to be added, integrations and provide suggestions for Auto Load Next Post for future releases. Come [join the Slack channel](https://launchpass.com/autoloadnextpost).
 
@@ -65,14 +65,16 @@ Keen to see them all? Search WordPress.org for ‘Auto Load Next Post’ to dive
 > #### Auto Load Next Post Pro
 > Want more? _I bet you do._ A premium extension is currently in development with some of the most highly requested features. Here are just a few:<br />
 >
-> - User Role Restrictions<br />
+> - Page and Media Attachment Support<br />
 > - Custom Post Type Support<br />
-> - Media Attachment Support<br />
+> - Paginated Posts Supported<br />
+> - Exclude Post Formats<br />
 > - Limit Posts per Session<br />
 > - Query Posts by Category or Tag<br />
+> - Exclude User Roles and Specific Users<br />
 >
 > On top of that you also get:
-> - Priority Email Support<br />
+> - Email Support<br />
 > - and many more features and add-ons to follow.
 >
 > [More information](https://autoloadnextpost.com/pro/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
@@ -232,4 +234,4 @@ It does. Just make sure that you activate the plugin on the site you want it use
 == Upgrade Notice ==
 = 1.5.0 : 28th July 2018 =
 
-This release brings many improvements and better theme support. [See blog post](https://autoloadnextpost.com/2018/05/28/whats-coming-in-v1-5-0-of-auto-load-next-post/) for more details.
+This release brings many improvements, enhancements and better theme support. [See blog post](https://autoloadnextpost.com/2018/05/28/whats-coming-in-v1-5-0-of-auto-load-next-post/) for more details.
