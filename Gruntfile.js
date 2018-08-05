@@ -13,8 +13,8 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: 'assets/css/admin',
 					src: [
-						'auto-load-next-post.css',
-						'!auto-load-next-post.min.css'
+						'*.css',
+						'!*.min.css'
 					],
 					dest: 'assets/css/admin',
 					ext: '.min.css'
@@ -71,19 +71,28 @@ module.exports = function(grunt) {
 		makepot: {
 			target: {
 				options: {
-					type: 'wp-plugin', // Type of project (wp-plugin or wp-theme).
-					domainPath: 'languages', // Where to save the POT file.
+					cwd: '',
+					domainPath: '/languages', // Where to save the POT file.
 					mainFile: '<%= pkg.name %>.php', // Main project file.
 					potFilename: '<%= pkg.name %>.pot', // Name of the POT file.
 					potHeaders: {
-						'Report-Msgid-Bugs-To': 'https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues',
-						'language-team': 'Sébastien Dumont <mailme@sebastiendumont.com>',
-						'language': 'en_US'
+						//'Report-Msgid-Bugs-To': 'https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues',
+						//'language-team': 'Sébastien Dumont <mailme@sebastiendumont.com>',
+						//'language': 'en_US',
+						poedit: true,                 // Includes common Poedit headers.
+						'x-poedit-keywordslist': true // Include a list of all possible gettext functions.
 					},
+					processPot: function( pot, options ) {
+						pot.headers['report-msgid-bugs-to'] = 'https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues';
+						pot.headers['language-team'] = 'Sébastien Dumont <mailme@sebastiendumont.com>';
+						pot.headers['language'] = 'en_US';
+						return pot;
+					},
+					type: 'wp-plugin', // Type of project (wp-plugin or wp-theme).
+					updateTimestamp: true,
 					exclude: [
 						'releases',
 						'node_modules',
-						'wp-update-php'
 					]
 				}
 			}
@@ -175,6 +184,7 @@ module.exports = function(grunt) {
 					'!package-lock.json',
 					'!releases/**',
 					'!node_modules/**',
+					'!notes/**',
 					'!.DS_Store',
 					'!npm-debug.log',
 					'!*.sh',
@@ -209,17 +219,32 @@ module.exports = function(grunt) {
 		},
 
 		// Deletes the deployable plugin folder once zipped up.
-		clean: [ '<%= pkg.name %>' ]
+		clean: [ '<%= pkg.name %>' ],
+
+		// Download translated languages from Transifex and upload POT to update resource.
+		tx: {
+			'auto-load-next-post': [
+				{
+					sourceFile: 'languages/<%= pkg.name %>.pot', // Source file.
+					// _lang_ will be replaced with the language code (`en` for example)
+					// _type_ will be replaced with the lowercased type of the resource (`po` for example)
+					targetFilePath: 'languages/<%= pkg.name %>-_lang_._type_',
+					type: 'PO',
+					languages: ['fr_FR', 'de_DE'],
+				}
+			]
+		},
+
 	});
 
 	// Set the default grunt command to run test cases.
 	grunt.registerTask( 'default', [ 'test' ] );
 
 	// Checks for errors with the javascript and text domain.
-	grunt.registerTask( 'test', [ 'jshint', 'checktextdomain' ]);
+	grunt.registerTask( 'test', [ 'jshint', 'checktextdomain' ] );
 
 	// Updates version, minify css and javascript and finaly runs i18n tasks.
-	grunt.registerTask( 'dev', [ 'replace', 'cssmin', 'newer:uglify', 'makepot' ]);
+	grunt.registerTask( 'dev', [ 'replace', 'cssmin', 'newer:uglify', 'makepot' ] );
 
 	/**
 	 * Run i18n related tasks.
@@ -227,7 +252,13 @@ module.exports = function(grunt) {
 	 * This includes extracting translatable strings, updating the master pot file.
 	 * If this is part of a deploy process, it should come before zipping everything up.
 	 */
-	grunt.registerTask( 'update-pot', [ 'checktextdomain', 'makepot' ]);
+	grunt.registerTask( 'update-pot', [ 'checktextdomain', 'makepot' ] );
+
+	// Updates the resource for translators.
+	grunt.registerTask( 'update-resource', [ 'tx:upload' ] );
+
+	// Downloads translations
+	grunt.registerTask( 'get-languages', [ 'tx:download' ] );
 
 	/**
 	 * Creates a deployable plugin zipped up ready to upload

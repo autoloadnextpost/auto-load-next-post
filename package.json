@@ -29,7 +29,8 @@
     "grunt-newer": "~1.3.0",
     "grunt-potomo": "~3.5.0",
     "grunt-text-replace": "^0.4.0",
-    "grunt-wp-i18n": "~1.0.0",
+    "grunt-tx": "~1.1.7",
+    "grunt-wp-i18n": "~1.0.2",
     "jshint-stylish": "~2.2.0",
     "load-grunt-tasks": "~3.5.2"
   },
