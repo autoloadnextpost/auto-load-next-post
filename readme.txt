@@ -192,9 +192,10 @@ It does. Just make sure that you activate the plugin on the site you want it use
 
 == Screenshots ==
 
-1. Plugin Settings: Theme Selectors.
-2. Plugin Settings: Misc Settings, here you can enable Google Analytics tracking, remove comments and if you need to set the JavaScript to load in the footer of your website.
-3. Theme Customizer: The same settings can be applied via the theme customizer.
+1. Plugin Settings: Theme Selectors, here is where we define the elements Auto Load Next Post will look for.
+2. Plugin Settings: Misc Settings, here you can enable Google Analytics tracking, remove comments and set the JavaScript to load in the footer of your website instead should you need to.
+3. Plugin Settings: Events, here you can support custom triggers or 3rd-party plugins to trigger their own once a post has loaded or when the visitor is entering a post.
+4. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
 = 1.5.0 : 6th August 2018 =
