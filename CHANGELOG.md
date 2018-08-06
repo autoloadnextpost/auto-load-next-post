@@ -1,4 +1,4 @@
-# 1.5.0 (28th July 2018)
+# 1.5.0 (6th August 2018)
 * NEW: Added trigger event support for third party plugins.
 * Added: A check to see if JetPack is active.
 * Added: A check in the JavaScript to prevent it from loading if a user is requesting to post a comment. - Initial post only.
@@ -8,20 +8,20 @@
 * Added: All settings to the customizer.
 * Added: Detection of plugin support. If supported, set the theme selectors for the currently active theme even when the theme has changed.
 * Added: Admin notice to tell the user the theme supports Auto Load Next Post. Only shows once.
-* Added: Admin notice in the theme selectors settings only if the theme supports Auto Load Next Post have already set the theme selectors.
-* Added: Admin notice in the theme selectors settings only if all three or one of the required theme selectors is not set.
-* Added: Admin notice in the misc settings only if remove comments was enabled but the comments container selector was not set.
-* Added: A sidebar to the settings page to promote Auto Load Next Post and allow users to sign up.
+* Added: Admin notice to tell the user the theme selectors have already been set by the the current theme if that theme supports Auto Load Next Post.
+* Added: Admin notice under "Theme Selectors" settings only if all three or one of the required theme selectors are not set.
+* Added: Admin notice under the "Misc" settings only if remove comments was enabled but the comments container selector was not set.
+* Added: A sidebar to the settings page to promote Auto Load Next Post Pro and allow users to sign up.
 * Added: Support for theme Make and Understrap.
-* Added: Select2 to replace previous JS library chosen for better support and performance.
+* Added: Select2 to replace previous JavaScript library "chosen" for better support and performance.
 * Added: Privacy policy guide content.
 * Added: Beta notice if trying out beta releases. Explains how you can provide feedback and can be dismissed for 7 days.
-* Added: Welcome notice to users who install ALNP for the first time.
+* Added: Welcome notice to users who install Auto Load Next Post for the first time.
 * Changed: Rewrite endpoint to be more distinct for Auto Load Next Post and prevent any conflicts.
 * Changed: Settings have been separated into Theme Selectors and Miscellaneous settings.
 * Changed: The JavaScript now does not require the document to be ready. This is especially helpful if you have enabled the JavaScript to load in the footer.
 * Fixed: The trigger to override the post URL.
-* Fixed: Install date to a timestamp for those who have previously installed ALNP so when you see the review notice, it does not say it's been 48 years since you installed because that is just crazy. LOL :)
+* Fixed: Install date to a timestamp for those who have previously installed Auto Load Next Post so when you see the review notice, it does not say it's been 48 years since you installed because that is just crazy. LOL :)
 * Improved: Theme support and all default WordPress themes are supported out of the box. (Twenty Ten to Twenty Seventeen)
 * Improved: Moved flushing rewrite rules so it only runs once during installation or updating Auto Load Next Post.
 * Improved: Admin setting fields and added placeholder support.
