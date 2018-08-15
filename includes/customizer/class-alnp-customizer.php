@@ -229,6 +229,11 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 					'title'       => esc_html__( 'Misc Settings', 'auto-load-next-post' ),
 					'description' => sprintf( __( 'Here you can set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 				),
+				'auto_load_next_post_events' => array(
+					'capability'  => 'edit_theme_options',
+					'title'       => esc_html__( 'Event Settings', 'auto-load-next-post' ),
+					'description' => sprintf( __( 'Below you can enter external JavaScript events to be triggered alongside %1$s native events. Separate each event like so: %2$s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<code>event1, event2,</code>' ),
+				),
 			) );
 		} // END alnp_get_customizer_sections()
 
@@ -300,6 +305,18 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				'auto_load_next_post_js_footer' => array(
 					'capability'        => 'edit_theme_options',
 					'default'           => $settings['alnp_js_footer'],
+					'transport'         => 'postMessage',
+					'type'              => 'option',
+				),
+				'auto_load_next_post_on_load_event' => array(
+					'capability'        => 'edit_theme_options',
+					'default'           => $settings['alnp_on_load_event'],
+					'transport'         => 'postMessage',
+					'type'              => 'option',
+				),
+				'auto_load_next_post_on_entering_event' => array(
+					'capability'        => 'edit_theme_options',
+					'default'           => $settings['alnp_on_entering_event'],
 					'transport'         => 'postMessage',
 					'type'              => 'option',
 				),
@@ -378,6 +395,22 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 					'settings'    => 'auto_load_next_post_google_analytics',
 					'type'        => 'checkbox',
 				),
+				'alnp_on_load_event' => array(
+					'class'       => 'WP_Customize_Control',
+					'label'       => esc_html__( 'Post loaded', 'auto-load-next-post' ),
+					'description' => esc_html__( 'Events listed here will be triggered after a new post has loaded.', 'auto-load-next-post' ),
+					'section'     => 'auto_load_next_post_events',
+					'settings'    => 'auto_load_next_post_on_load_event',
+					'type'        => 'textarea',
+				),
+				'alnp_on_entering_event' => array(
+					'class'       => 'WP_Customize_Control',
+					'label'       => esc_html__( 'Entering a Post', 'auto-load-next-post' ),
+					'description' => esc_html__( 'Events listed here will be triggered when entering a post.', 'auto-load-next-post' ),
+					'section'     => 'auto_load_next_post_events',
+					'settings'    => 'auto_load_next_post_on_entering_event',
+					'type'        => 'textarea',
+				),
 			) );
 		} // END alnp_get_customizer_controls()
 
@@ -444,7 +477,9 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				'alnp_comments_container'     => get_option( 'auto_load_next_post_comments_container' ),
 				'alnp_remove_comments'        => get_option( 'auto_load_next_post_remove_comments' ),
 				'alnp_google_analytics'       => get_option( 'auto_load_next_post_google_analytics' ),
-				'alnp_js_footer'              => get_option( 'auto_load_next_post_js_footer' )
+				'alnp_js_footer'              => get_option( 'auto_load_next_post_js_footer' ),
+				'alnp_on_load_event'          => get_option( 'auto_load_next_post_on_load_event' ),
+				'alnp_on_entering_event'      => get_option( 'auto_load_next_post_on_entering_event' ),
 			);
 
 			return $args;
