@@ -191,6 +191,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 			$wp_customize->remove_section("background_image");
 			$wp_customize->remove_section("static_front_page");
 			$wp_customize->remove_section("custom_css");
+			$wp_customize->remove_section("theme_options");
 
 			return true;
 		} // END alnp_remove_default_customizer_panels()
