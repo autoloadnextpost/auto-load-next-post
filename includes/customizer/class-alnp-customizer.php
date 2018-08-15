@@ -45,6 +45,10 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				return;
 			}
 
+			// Load custom controllers.
+			require_once( dirname( __FILE__ ) . '/class-alnp-arbitrary-controller.php' );
+			//require_once( dirname( __FILE__ ) . '/class-alnp-display-video-controller.php' );
+
 			// Auto Load Next Post Panel.
 			$panel = array( 'panel' => 'alnp' );
 
@@ -105,11 +109,8 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				$this->alnp_remove_default_customizer_panels( $wp_customize ); // Remove controls from the customizer.
 			}
 
-			// Load custom controllers.
-			/*include_once( dirname( __FILE__ ) . '/class-alnp-display-video-controller.php' );
-
 			// Video Help - Coming Soon
-			$wp_customize->add_setting( 'alnp_video_theme_selectors', array(
+			/*$wp_customize->add_setting( 'alnp_video_theme_selectors', array(
 				'default' => '', // The video ID
 				'type'    => 'theme_mod',
 			) );
@@ -231,7 +232,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				),
 				'auto_load_next_post_events' => array(
 					'capability'  => 'edit_theme_options',
-					'title'       => esc_html__( 'Event Settings', 'auto-load-next-post' ),
+					'title'       => esc_html__( 'Events', 'auto-load-next-post' ),
 					'description' => sprintf( __( 'Below you can enter external JavaScript events to be triggered alongside %1$s native events. Separate each event like so: %2$s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<code>event1, event2,</code>' ),
 				),
 			) );
