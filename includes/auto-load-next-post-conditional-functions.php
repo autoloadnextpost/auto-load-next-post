@@ -255,3 +255,28 @@ if ( ! function_exists( 'alnp_check_jetpack' ) ) {
 		return $is_active;
 	}
 }
+
+if ( ! function_exists( 'alnp_check_monster_insights' ) ) {
+	/**
+	 * Check if either Monster Insights Lite or Pro is installed.
+	 *
+	 * @since 1.5.0
+	 * @return string
+	 */
+	function alnp_check_monster_insights() {
+		$mi_lite_active = class_exists( 'MonsterInsights_Lite' );
+		$mi_pro_active  = class_exists( 'MonsterInsights_Pro' );
+
+		$is_lite_active = $mi_lite_active ? 'yes' : 'no';
+		$is_pro_active  = $mi_pro_active ? 'yes' : 'no';
+
+		$is_mi_active = 'no';
+
+		// If either version of Monster Insights is active, return yes.
+		if ( $is_lite_active == 'yes' || $is_pro_active == 'yes' ) {
+			$is_mi_active = 'yes';
+		}
+
+		return $is_mi_active;
+	}
+}

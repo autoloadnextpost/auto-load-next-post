@@ -33,6 +33,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 			parent::__construct();
 
 			add_action( 'auto_load_next_post_sections_misc', array( __CLASS__, 'no_comment_selector_set' ), 10 );
+			add_action( 'auto_load_next_post_sections_' . $this->id, array( __CLASS__, 'is_monsterinsights_active' ), 10 );
 		} // END __construct()
 
 		/**
@@ -50,6 +51,22 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 				include( dirname( AUTO_LOAD_NEXT_POST_FILE ) . '/includes/admin/views/html-notice-no-comment-selector.php' );
 			}
 		} // END no_comment_selector_set()
+
+		/**
+		 * Displays a notification if MonsterInsights is active
+		 * but the pageviews are not being tracked.
+		 *
+		 * @access public
+		 * @static
+		 * @since  1.5.0
+		 */
+		public static function is_monsterinsights_active() {
+			$ga_tracking_enabled = get_option( 'auto_load_next_post_google_analytics' );
+
+			if ( alnp_check_monster_insights() == 'yes' && empty( $ga_tracking_enabled ) ) {
+				include( dirname( AUTO_LOAD_NEXT_POST_FILE ) . '/includes/admin/views/html-notice-monsterinsights.php' );
+			}
+		} // END is_monsterinsights_active()
 
 		/**
 		 * Get settings array
