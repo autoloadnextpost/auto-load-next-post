@@ -34,3 +34,4 @@ releases/
 .gitconfig
 *.zip
 notes/
+*.notes
