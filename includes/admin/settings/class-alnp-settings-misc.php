@@ -32,7 +32,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 
 			parent::__construct();
 
-			add_action( 'auto_load_next_post_sections_misc', array( __CLASS__, 'no_comment_selector_set' ), 10 );
+			add_action( 'auto_load_next_post_sections_' . $this->id, array( __CLASS__, 'no_comment_selector_set' ), 10 );
 		} // END __construct()
 
 		/**

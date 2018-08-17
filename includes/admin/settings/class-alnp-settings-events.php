@@ -66,7 +66,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 
 					array(
 						'title'    => esc_html__( 'Post loaded', 'auto-load-next-post' ),
-						'desc'     => __( 'Events listed here will be triggered after a new post has loaded.', 'auto-load-next-post' ),
+						'desc'     => esc_html__( 'Events listed here will be triggered after a new post has loaded.', 'auto-load-next-post' ),
 						'id'       => 'auto_load_next_post_on_load_event',
 						'default'  => '',
 						'type'     => 'textarea',

@@ -40,7 +40,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			add_action( 'init', array( __CLASS__, 'check_version' ), 5 );
 
 			// Get plugin version.
-			self::$current_version = get_option( 'auto_load_next_post_version', null );
+			self::$current_version = get_option( 'auto_load_next_post_version' );
 		} // END __construct()
 
 		/**
