@@ -1,4 +1,4 @@
-# 1.5.0 (6th August 2018)
+# 1.5.0 (29th August 2018)
 * NEW: Added trigger event support for third party plugins.
 * Added: A check to see if JetPack is active.
 * Added: A check in the JavaScript to prevent it from loading if a user is requesting to post a comment. - Initial post only.

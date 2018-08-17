@@ -198,7 +198,7 @@ It does. Just make sure that you activate the plugin on the site you want it use
 4. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
-= 1.5.0 : 6th August 2018 =
+= 1.5.0 : 29th August 2018 =
 * NEW: Added trigger event support for third party plugins.
 * Added: A check to see if JetPack is active.
 * Added: A check in the JavaScript to prevent it from loading if a user is requesting to post a comment. - Initial post only.
@@ -236,6 +236,8 @@ It does. Just make sure that you activate the plugin on the site you want it use
 [See changelog for all versions](https://raw.githubusercontent.com/AutoLoadNextPost/Auto-Load-Next-Post/master/CHANGELOG.md).
 
 == Upgrade Notice ==
-= 1.5.0 : 6th August 2018 =
+= 1.5.0 : 29th August 2018 =
 
 This release brings many improvements, enhancements and better theme support. [See blog post](https://autoloadnextpost.com/2018/05/28/whats-coming-in-v1-5-0-of-auto-load-next-post/) for more details.
+
+Note: You will need to flush your permalinks due to an endpoint change made in this release.
