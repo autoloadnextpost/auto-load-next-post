@@ -194,6 +194,10 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 			$wp_customize->remove_section("custom_css");
 			$wp_customize->remove_section("theme_options");
 
+			// Remove other sections added by 3rd-party plugins.
+			$wp_customize->remove_section("login_designer");
+			$wp_customize->remove_section("woocommerce");
+
 			return true;
 		} // END alnp_remove_default_customizer_panels()
 
