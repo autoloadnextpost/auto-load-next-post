@@ -25,7 +25,7 @@
  *
  * The main instance of the plugin.
  *
- * @version 1.4.10
+ * @version 1.4.13
  */
 if ( ! class_exists('Auto_Load_Next_Post') ) {
 
