@@ -137,7 +137,7 @@ if ( ! class_exists('Auto_Load_Next_Post') ) {
 		 * @access private
 		 */
 		private function setup_constants() {
-			$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.10');
+			$this->define('AUTO_LOAD_NEXT_POST_VERSION', '1.4.13');
 			$this->define('AUTO_LOAD_NEXT_POST_FILE', __FILE__);
 			$this->define('AUTO_LOAD_NEXT_POST_SLUG', 'auto-load-next-post');
 
