@@ -118,7 +118,25 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 					add_action( 'admin_notices', array( $this, 'plugin_review_notice' ) );
 				}
 			}
+
+			// Upgrade Warning Notice that will disapear once the new release is installed.
+			self::upgrade_warning();
 		} // END add_notices()
+
+		/**
+		 * Shows an upgrade warning notice if the installed version is less
+		 * than the new release coming soon.
+		 *
+		 * @access public
+		 * @since  1.4.13
+		 */
+		public function upgrade_warning() {
+			$upgrade_version = '1.5.0';
+
+			if ( version_compare( AUTO_LOAD_NEXT_POST_VERSION, $upgrade_version, '<' ) ) {
+				include_once( dirname( __FILE__ ) . '/views/html-notice-upgrade-warning.php' );
+			}
+		} // END upgrade_warning()
 
 		/**
 		 * Show the WordPress requirement notice.

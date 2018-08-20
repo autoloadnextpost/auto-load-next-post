@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Auto Load Next Post\n"
 "Report-Msgid-Bugs-To: https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/"
 "issues\n"
-"POT-Creation-Date: 2018-05-19 19:39+0200\n"
+"POT-Creation-Date: 2018-08-20 13:17+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Sébastien Dumont <mailme@sebastiendumont.com>\n"
 "Language: en_US\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: auto-load-next-post.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -60,6 +60,7 @@ msgstr ""
 #: includes/admin/views/html-notice-please-review.php:111
 #: includes/admin/views/html-notice-requirement-wp.php:19
 #: includes/admin/views/html-notice-theme-support.php:19
+#: includes/admin/views/html-notice-upgrade-warning.php:18
 msgid "Auto Load Next Post"
 msgstr ""
 
@@ -382,6 +383,14 @@ msgstr ""
 
 #: includes/admin/views/html-notice-theme-support.php:20
 msgid "Hide this notice"
+msgstr ""
+
+#: includes/admin/views/html-notice-upgrade-warning.php:18
+#, php-format
+msgid ""
+"Warning! Version 1.5.0 of %1$s is coming soon and is a major update. Before "
+"updating, please test on a staging site. %2$sLearn more about the changes in "
+"version 1.5.0 &raquo;%3$s"
 msgstr ""
 
 #: includes/auto-load-next-post-core-functions.php:85

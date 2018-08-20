@@ -5,7 +5,7 @@ Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scr
 Requires PHP: 5.6+
 Requires at least: 4.4
 Tested up to: 4.9.5
-Stable tag: 1.4.12
+Stable tag: 1.4.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -174,7 +174,10 @@ It does. Just make sure that you activate the plugin on the site you want it use
 2. Admin Notice: Not declared theme support.
 
 == Changelog ==
-= 1.4.12 : 19th May 2019 =
+= 1.4.13 : 20th August 2018 =
+* Added: Upgrade warning notice in preparation for version 1.5.0 release.
+
+= 1.4.12 : 19th May 2018 =
 * Fixed: Corrected post type returned for single posts in the repeater template.
 * Removed: The need to check if the theme has declared support before the plugin loads the JavaScript.
 
@@ -320,5 +323,5 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Initial version
 
 == Upgrade Notice ==
-= 1.4.12 : 19th May 2018 =
-Fixed: Corrected post type returned for single posts in the repeater template.
+= 1.4.13 : 20th August 2018 =
+* Added: Upgrade warning notice in preparation for version 1.5.0 release.

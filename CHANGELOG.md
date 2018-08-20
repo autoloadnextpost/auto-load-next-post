@@ -1,3 +1,6 @@
+# 1.4.13 (20th August 2018)
+* Added: Upgrade warning notice in preparation for version 1.5.0 release.
+
 # 1.4.12 (19th May 2018)
 * Fixed: Corrected post type returned for single posts in the repeater template.
 * Removed: The need to check if the theme has declared support before the plugin loads the JavaScript.
