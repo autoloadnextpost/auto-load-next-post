@@ -154,8 +154,8 @@ module.exports = function(grunt) {
 						to: "Version:     <%= pkg.version %>"
 					},
 					{
-						from: /public \$version = \'.*.'/m,
-						to: "public $version = '<%= pkg.version %>'"
+						from: /public static \$version = \'.*.'/m,
+						to: "public static $version = '<%= pkg.version %>'"
 					}
 				]
 			}
