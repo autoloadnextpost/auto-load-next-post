@@ -14,11 +14,9 @@
   "bugs": {
     "url": "https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues"
   },
-  "dependencies": {
-    "grunt": "^1.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "grunt": "~1.0.2",
+    "grunt": "^1.0.3",
     "grunt-checktextdomain": "~1.0.1",
     "grunt-contrib-clean": "~1.1.0",
     "grunt-contrib-compress": "^1.4.3",

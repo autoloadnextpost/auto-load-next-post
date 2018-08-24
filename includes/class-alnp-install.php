@@ -89,6 +89,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			// Set theme selectors if current active theme supports Auto Load Next Post.
 			self::set_theme_selectors();
 
+			// Sets ALNP to load in the footer if the current active theme requires it.
+			self::set_js_in_footer();
+
 			// Set activation date.
 			self::set_install_date();
 
@@ -124,6 +127,25 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 				if ( ! empty( $comments_container ) ) update_option( 'auto_load_next_post_comments_container', $comments_container );
 			}
 		} // END set_theme_selectors()
+
+		/**
+		 * Sets Auto Load Next Post to load in the footer if the 
+		 * current active theme requires it and lock it so the 
+		 * user can not disable it should the theme not work any other way.
+		 *
+		 * @access private
+		 * @static
+		 * @since  1.5.0
+		 */
+		private static function set_js_in_footer() {
+			if ( is_alnp_supported() ) {
+				$load_js_in_footer = alnp_get_theme_support( 'load_js_in_footer' );
+				$lock_js_in_footer = alnp_get_theme_support( 'lock_js_in_footer' );
+
+				if ( ! empty( $load_js_in_footer ) && $load_js_in_footer == 'yes' ) update_option( 'auto_load_next_post_load_js_in_footer', $load_js_in_footer );
+				if ( ! empty( $lock_js_in_footer ) && $lock_js_in_footer == 'yes' ) update_option( 'auto_load_next_post_js_footer_locked', $lock_js_in_footer );
+			}
+		} // END set_js_in_footer()
 
 		/**
 		 * Update plugin version to current.

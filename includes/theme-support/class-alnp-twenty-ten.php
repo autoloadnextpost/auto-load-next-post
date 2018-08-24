@@ -59,6 +59,8 @@ class ALNP_Twenty_Ten {
 			'title_selector'       => 'h1.entry-title',
 			'navigation_container' => '#nav-below',
 			'comments_container'   => 'div#comments',
+			'load_js_in_footer'    => 'no',
+			'lock_js_in_footer'    => 'no',
 		) );
 	} // END add_theme_support()
 
