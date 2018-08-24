@@ -1,22 +1,23 @@
-# 1.5.0 (29th August 2018)
+# 1.5.0 (31st August 2018)
+* NEW: All settings are available in the theme customizer.
+* NEW: Option to load the JavaScript in the footer.
+* NEW: Support for themes that requires Auto Load Next Post to load in the footer.
 * NEW: Added trigger event support for third party plugins.
+* NEW: Support for theme Make and Understrap.
+* NEW: Privacy policy guide content.
+* NEW: Beta notice if trying out beta releases. Explains how you can provide feedback and can be dismissed for 7 days.
+* NEW: Welcome notice to users who install Auto Load Next Post for the first time.
 * Added: A check to see if JetPack is active.
 * Added: A check in the JavaScript to prevent it from loading if a user is requesting to post a comment. - Initial post only.
 * Added: A filter for the repeater template location so theme or plugin developers can move it to another location should they need to.
-* Added: Option to load the JavaScript in the footer.
 * Added: A user agent checker to see if the request was made from a known bot.
-* Added: All settings to the customizer.
 * Added: Detection of plugin support. If supported, set the theme selectors for the currently active theme even when the theme has changed.
 * Added: Admin notice to tell the user the theme supports Auto Load Next Post. Only shows once.
 * Added: Admin notice to tell the user the theme selectors have already been set by the the current theme if that theme supports Auto Load Next Post.
 * Added: Admin notice under "Theme Selectors" settings only if all three or one of the required theme selectors are not set.
 * Added: Admin notice under the "Misc" settings only if remove comments was enabled but the comments container selector was not set.
 * Added: A sidebar to the settings page to promote Auto Load Next Post Pro and allow users to sign up.
-* Added: Support for theme Make and Understrap.
 * Added: Select2 to replace previous JavaScript library "chosen" for better support and performance.
-* Added: Privacy policy guide content.
-* Added: Beta notice if trying out beta releases. Explains how you can provide feedback and can be dismissed for 7 days.
-* Added: Welcome notice to users who install Auto Load Next Post for the first time.
 * Changed: Rewrite endpoint to be more distinct for Auto Load Next Post and prevent any conflicts.
 * Changed: Settings have been separated into Theme Selectors and Miscellaneous settings.
 * Changed: The JavaScript now does not require the document to be ready. This is especially helpful if you have enabled the JavaScript to load in the footer.
