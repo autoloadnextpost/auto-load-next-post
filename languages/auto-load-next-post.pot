@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Auto Load Next Post\n"
 "Report-Msgid-Bugs-To: https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/"
 "issues\n"
-"POT-Creation-Date: 2018-08-20 14:09+0200\n"
+"POT-Creation-Date: 2018-09-01 20:01+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,2000 +28,12 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-3: assets\n"
 "X-Poedit-SearchPathExcluded-4: languages\n"
 
-#: auto-load-next-post-svn/tags/1.4.11/auto-load-next-post.php:72
-#: auto-load-next-post-svn/tags/1.4.12/auto-load-next-post.php:72
-#: auto-load-next-post-svn/tags/1.4.13/auto-load-next-post.php:72
-#: auto-load-next-post-svn/tags/1.4.13/trunk/auto-load-next-post.php:72
-#: auto-load-next-post-svn/trunk/auto-load-next-post.php:72
 #: auto-load-next-post.php:79
 msgid "Cloning this object is forbidden."
 msgstr ""
 
-#: auto-load-next-post-svn/tags/1.4.11/auto-load-next-post.php:83
-#: auto-load-next-post-svn/tags/1.4.12/auto-load-next-post.php:83
-#: auto-load-next-post-svn/tags/1.4.13/auto-load-next-post.php:83
-#: auto-load-next-post-svn/tags/1.4.13/trunk/auto-load-next-post.php:83
-#: auto-load-next-post-svn/trunk/auto-load-next-post.php:83
 #: auto-load-next-post.php:90
 msgid "Unserializing instances of this class is forbidden."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:47
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:49
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:47
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:49
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:47
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:49
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:47
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:49
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:51
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:53
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:51
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:53
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:47
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:49
-msgid "General Settings"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:50
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:50
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:50
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:50
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:50
-#, php-format
-msgid ""
-"%s requires theme selectors to match the active theme in order to detect the "
-"elements and let the magic happen."
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:50
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:68
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:88
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:94
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:95
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:96
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:224
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:246
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:50
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-please-review.php:111
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-requirement-wp.php:19
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:50
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:68
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:88
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:94
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:95
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:96
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:224
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:246
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:50
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-please-review.php:111
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-requirement-wp.php:19
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:50
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:68
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:88
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:94
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:95
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:96
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:224
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:246
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:50
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-please-review.php:111
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-requirement-wp.php:19
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-upgrade-warning.php:18
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:50
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:68
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:88
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:94
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:95
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:96
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:224
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:246
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:50
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-please-review.php:111
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-requirement-wp.php:19
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-upgrade-warning.php:18
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:50
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:68
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:88
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:94
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:95
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:96
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:224
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:246
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:50
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-please-review.php:111
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-requirement-wp.php:19
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-upgrade-warning.php:18
-#: includes/admin/class-alnp-admin-help.php:54
-#: includes/admin/class-alnp-admin-help.php:55
-#: includes/admin/class-alnp-admin-help.php:56
-#: includes/admin/class-alnp-admin-help.php:71
-#: includes/admin/class-alnp-admin-help.php:72
-#: includes/admin/class-alnp-admin-help.php:73
-#: includes/admin/class-alnp-admin-help.php:74
-#: includes/admin/class-alnp-admin-help.php:82
-#: includes/admin/class-alnp-admin-help.php:92
-#: includes/admin/class-alnp-admin-help.php:98
-#: includes/admin/class-alnp-admin.php:131
-#: includes/admin/class-alnp-admin.php:147
-#: includes/admin/class-alnp-admin.php:163
-#: includes/admin/class-alnp-admin.php:164
-#: includes/admin/class-alnp-admin.php:293
-#: includes/admin/class-alnp-admin.php:315
-#: includes/admin/settings/class-alnp-settings-events.php:63
-#: includes/admin/settings/class-alnp-settings-misc.php:68
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:100
-#: includes/admin/views/html-notice-is-supported.php:18
-#: includes/admin/views/html-notice-no-theme-selectors.php:18
-#: includes/admin/views/html-notice-please-review.php:30
-#: includes/admin/views/html-notice-requirement-wp.php:19
-#: includes/admin/views/html-notice-theme-ready.php:27
-#: includes/admin/views/html-notice-upgrade-warning.php:18
-#: includes/admin/views/html-notice-welcome.php:26
-#: includes/customizer/class-alnp-customizer.php:62
-#: includes/customizer/class-alnp-customizer.php:231
-#: includes/customizer/class-alnp-customizer.php:236
-#: includes/customizer/class-alnp-pro-preview-controller.php:70
-#: includes/customizer/class-alnp-pro-preview-controller.php:73
-#: includes/customizer/class-alnp-pro-preview-controller.php:76
-msgid "Auto Load Next Post"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:51
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:51
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:51
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:51
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:51
-msgid ""
-"When the plugin was activated, the theme selectors are set to WordPress theme "
-"standard. If you are experiencing any problems, it is most likely that at "
-"least one of these selectors need to be changed however it could also be "
-"related with the theme template structure."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:52
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:52
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:52
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:52
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:52
-msgid ""
-"These are the default theme selectors when Auto Load Next Post is installed."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:53
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:53
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:53
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:53
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:53
-#: includes/admin/class-alnp-admin-help.php:57
-msgid "Default Theme Selectors"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:55
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:55
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:55
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:55
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:55
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:55
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:55
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:55
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:100
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:100
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:100
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:90
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:90
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:89
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:90
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:90
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:90
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:55
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:55
-#: includes/admin/class-alnp-admin-help.php:59
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:105
-#: includes/customizer/class-alnp-customizer.php:345
-msgid "Content Container"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:56
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:66
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:56
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:66
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:56
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:66
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:56
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:66
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:101
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:56
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:66
-#: includes/admin/class-alnp-admin-help.php:60
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:116
-msgid "Post Title"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:57
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:77
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:57
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:77
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:57
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:77
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:57
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:77
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:112
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:57
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:77
-#: includes/admin/class-alnp-admin-help.php:61
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:126
-msgid "Post Navigation"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:58
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:88
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:58
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:88
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:58
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:88
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:58
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:88
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:144
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:133
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:133
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:123
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:123
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:122
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:123
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:123
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:123
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:58
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:88
-#: includes/admin/class-alnp-admin-help.php:62
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:136
-#: includes/customizer/class-alnp-customizer.php:369
-msgid "Comments Container"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:64
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:64
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:64
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:64
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:60
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:62
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:60
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:62
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:64
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: includes/admin/class-alnp-admin-help.php:68
-#: includes/admin/class-alnp-admin-help.php:70
-msgid "Help & Support"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:67
-msgid ""
-"Should you need help understanding, using, or extending Auto Load Next Post, "
-"please <a href=\"https://autoloadnextpost.com/documentation/?"
-"utm_source=wpadmin&utm_campaign=plugin-settings-help-tab\" target=\"_blank"
-"\">read the documentation</a>. You will find snippets, tutorials and much "
-"more."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:68
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:68
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:68
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:68
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:64
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:64
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:68
-#, php-format
-msgid ""
-"For further assistance with %s you can use the <a href=\"%s\" target=\"_blank"
-"\">community forum</a>."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:65
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:65
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:69
-#, php-format
-msgid ""
-"%1$s is in need of translations. Is the plugin not translated in your "
-"language or do you spot errors with the current translations? Helping out is "
-"easy! Head over to the project on WordPress.org and click <a href=\"https://"
-"translate.wordpress.org/projects/wp-plugins/auto-load-next-post\" target="
-"\"_blank\">Translate %1$s</a>."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:195
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:195
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:195
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:195
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.2/auto-load-next-post.php:291
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:48
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin.php:112
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-help.php:47
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:78
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:147
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-help.php:47
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:78
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:147
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-help.php:51
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:81
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:147
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-help.php:51
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:81
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:147
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin.php:82
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin.php:82
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:51
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:81
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:147
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:51
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:81
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:147
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:195
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-theme-support.php:20
-#: includes/admin/class-alnp-admin-help.php:74
-#: includes/admin/class-alnp-admin.php:264
-#: includes/admin/views/html-notice-welcome.php:47
-msgid "Documentation"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: includes/admin/class-alnp-admin-help.php:74
-msgid "Community Forum"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-theme-support.php:20
-#: includes/admin/class-alnp-admin-help.php:74
-msgid "Frequently Asked Questions"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:75
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:77
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:75
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:77
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:75
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:77
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:75
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:77
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:64
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-help.php:55
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-help.php:55
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-help.php:59
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-help.php:59
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:71
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:73
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:71
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:73
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:59
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:59
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:75
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:77
-#: includes/admin/class-alnp-admin-help.php:79
-#: includes/admin/class-alnp-admin-help.php:81
-msgid "Found a bug?"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:78
-#, php-format
-msgid ""
-"If you find a bug within %s, please <a href=\"%s\" target=\"_blank\">report "
-"the issue</a> by creating a ticket on the GitHub repository where I can deal "
-"with it more appropriately. Please ensure that you have read the <a href=\"%s"
-"\" target=\"_blank\">guidelines to contributing</a> prior to submitting your "
-"report. To help me solve the issue, please be as descriptive as possible."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:79
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:79
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:79
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:79
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:75
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:75
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:62
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:191
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:62
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:191
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:79
-#: includes/admin/class-alnp-admin-help.php:83
-msgid "Report an Issue"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:84
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:86
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:84
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:86
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:84
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:86
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:84
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:86
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:80
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:82
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:80
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:82
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:75
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:75
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:84
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:86
-#: includes/admin/class-alnp-admin-help.php:88
-#: includes/admin/class-alnp-admin-help.php:90
-msgid "Feedback"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:87
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:87
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:87
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:87
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:87
-#: includes/admin/class-alnp-admin-help.php:91
-msgid ""
-"Your feedback is very important to me. Please consider leaving a review on "
-"WordPress.org or complete a simple survey."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:88
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:88
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:88
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:88
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:84
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:84
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:88
-#, php-format
-msgid ""
-"If %1$s has worked out for you well and you like it, please consider <a href="
-"\"%2$s\" target=\"_blank\">making a donation</a>."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:85
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:85
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: includes/admin/class-alnp-admin-help.php:93
-msgid "Submit a Review"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: includes/admin/class-alnp-admin-help.php:93
-msgid "Complete a Simple Survey"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:85
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:85
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/views/html-notice-please-review.php:21
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: includes/admin/class-alnp-admin-help.php:93
-msgid "Make a Donation"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:93
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:93
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:93
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:93
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:71
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-help.php:62
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-help.php:62
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:89
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:82
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:82
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:93
-#: includes/admin/class-alnp-admin-help.php:97
-msgid "For more information:"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:94
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:94
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:94
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:94
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:72
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-help.php:63
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-help.php:63
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:90
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:90
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:83
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:83
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:94
-#: includes/admin/class-alnp-admin-help.php:98
-#: template/theme-support/twenty-eleven/content-alnp.php:73
-#: template/theme-support/twenty-ten/content-alnp.php:47
-#, php-format
-msgid "About %s"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:95
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:95
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:95
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:95
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:91
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:91
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:95
-#: includes/admin/class-alnp-admin-help.php:99
-msgid "WordPress.org Project"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-help.php:96
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-help.php:96
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-help.php:96
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-help.php:96
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:92
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:92
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-help.php:96
-msgid "Github Project"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-settings.php:92
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-settings.php:92
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-settings.php:92
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-settings.php:92
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-settings.php:68
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-settings.php:66
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-settings.php:66
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-settings.php:68
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-settings.php:68
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-settings.php:70
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-settings.php:70
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-settings.php:68
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-settings.php:68
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-settings.php:92
-#: includes/admin/class-alnp-admin-settings.php:93
-msgid "Your settings have been saved."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin-settings.php:163
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:78
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin-settings.php:163
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:78
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin-settings.php:163
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:78
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin-settings.php:163
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:78
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-settings.php:138
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin.php:83
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-settings.php:135
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:122
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-settings.php:135
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:122
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-settings.php:134
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:122
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-settings.php:134
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:122
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-settings.php:140
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin.php:124
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-settings.php:140
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin.php:124
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-settings.php:134
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:122
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-settings.php:134
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:122
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin-settings.php:163
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:78
-#: includes/admin/class-alnp-admin.php:117
-msgid "The changes you made will be lost if you navigate away from this page."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:95
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:95
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:95
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:95
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-menus.php:47
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-menus.php:46
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-menus.php:46
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-menus.php:49
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-menus.php:49
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-menus.php:49
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-menus.php:49
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-menus.php:49
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-menus.php:49
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:95
-#: includes/admin/class-alnp-admin.php:163
-#, php-format
-msgid "%s Settings"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:168
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:168
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:168
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:168
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:168
-#: includes/admin/class-alnp-admin.php:237
-msgid "Upgrade to Pro"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:171
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:171
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:171
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:171
-#: auto-load-next-post-svn/tags/1.4.2/auto-load-next-post.php:265
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:53
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:53
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:56
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:56
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin.php:57
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin.php:57
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:56
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:56
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:171
-#: includes/admin/class-alnp-admin.php:240
-msgid "Settings"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:192
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:192
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:192
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:192
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:192
-#: includes/admin/class-alnp-admin.php:261
-#, php-format
-msgid "Developed By %s"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:196
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:196
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:196
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:196
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:59
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:79
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:79
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:82
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:82
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin.php:83
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin.php:83
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:82
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:82
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:196
-#: includes/admin/class-alnp-admin.php:265
-msgid "Community Support"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:197
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:197
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:197
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:197
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:197
-#: includes/admin/class-alnp-admin.php:266
-msgid "Theme Support"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:223
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:223
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:223
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:223
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:223
-#: includes/admin/class-alnp-admin.php:292
-#, php-format
-msgid ""
-"If you like %1$s, please leave a %2$s rating. A huge thank you in advance!"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:225
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:225
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:225
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:225
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:225
-#: includes/admin/class-alnp-admin.php:294
-msgid "Thanks :)"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/class-auto-load-next-post-admin.php:246
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/class-auto-load-next-post-admin.php:246
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/class-auto-load-next-post-admin.php:246
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/class-auto-load-next-post-admin.php:246
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin.php:168
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:200
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:200
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:200
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:200
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin.php:171
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin.php:171
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:200
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:200
-#: auto-load-next-post-svn/trunk/includes/admin/class-auto-load-next-post-admin.php:246
-#: includes/admin/class-alnp-admin.php:315
-#, php-format
-msgid "%s Version"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:31
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:48
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:31
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:48
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:31
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:48
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:31
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:48
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:31
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:31
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:31
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:34
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:83
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:34
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:83
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:33
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:82
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:34
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:83
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:34
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:83
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:34
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:83
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:31
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:48
-msgid "General"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:50
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:50
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:50
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:50
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:50
-#, php-format
-msgid ""
-"Set the theme selectors below according to your active theme. All are "
-"required for %s to work. <a href=\"https://autoloadnextpost.com/documentation/"
-"find-theme-selectors/?utm_source=wpadmin&utm_campaign=plugin-settings-general"
-"\" target=\"_blank\">How to find my theme selectors?</a>"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:56
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:56
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:56
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:56
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:91
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:56
-msgid ""
-"This is the primary container were the post content is loaded in. Example: "
-"<code>main.site-main</code>"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:67
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:67
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:67
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:67
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:67
-msgid ""
-"This is used to identify which article the user is reading and track if "
-"Google Analytics is enabled. Example: <code>h1.entry-title</code>"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:78
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:78
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:78
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:78
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:113
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:78
-msgid ""
-"The post navigation needs to be indentified to find the next post. Example: "
-"<code>nav.post-navigation</code>"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:89
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:89
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:89
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:89
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:124
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:89
-msgid ""
-"This is so comments can be removed if enabled below. Example: "
-"<code>div#comments</code>"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:99
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:99
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:99
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:99
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:155
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:144
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:144
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:134
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:134
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:133
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:134
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:134
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:134
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:99
-#: includes/admin/settings/class-alnp-settings-misc.php:73
-#: includes/customizer/class-alnp-customizer.php:377
-msgid "Remove Comments"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:100
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:100
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:100
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:100
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:134
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:135
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:100
-#: includes/admin/settings/class-alnp-settings-misc.php:74
-#: includes/customizer/class-alnp-customizer.php:378
-msgid ""
-"Enable to remove comments when each post loads including the initial post."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:107
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:107
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:107
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:107
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:163
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:152
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:152
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:142
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:142
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:141
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:142
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:142
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:142
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:107
-#: includes/admin/settings/class-alnp-settings-misc.php:81
-#: includes/customizer/class-alnp-customizer.php:385
-msgid "Update Google Analytics"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:108
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:108
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:108
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:108
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:108
-msgid ""
-"Each time a post has loaded and is in view it will count as a pageview. Must "
-"have reference to Google Analytics tracking code on the site."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:115
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:115
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:115
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:115
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:160
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:160
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:150
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:150
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:149
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:150
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:150
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:150
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:115
-#: includes/admin/settings/class-alnp-settings-misc.php:97
-msgid "Reset all data?"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:116
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:116
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:116
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:116
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:161
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:161
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:151
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:151
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:150
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:151
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:151
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:151
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:116
-#: includes/admin/settings/class-alnp-settings-misc.php:98
-msgid ""
-"Press the reset button to clear all settings for this plugin and re-install "
-"the default settings."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:123
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:123
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:123
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:123
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:171
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:168
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:168
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:158
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:158
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:157
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:158
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:158
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:158
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:123
-#: includes/admin/settings/class-alnp-settings-misc.php:105
-msgid "Remove all data on uninstall?"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/settings/class-alnp-settings-general.php:124
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/settings/class-alnp-settings-general.php:124
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/settings/class-alnp-settings-general.php:124
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/settings/class-alnp-settings-general.php:124
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:172
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:169
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:169
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:159
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:159
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:158
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:159
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:159
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:159
-#: auto-load-next-post-svn/trunk/includes/admin/settings/class-alnp-settings-general.php:124
-#: includes/admin/settings/class-alnp-settings-misc.php:106
-msgid ""
-"If enabled, all settings for this plugin will all be deleted when "
-"uninstalling via Plugins > Delete."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-admin-settings.php:46
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-admin-settings.php:46
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-admin-settings.php:46
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-admin-settings.php:46
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/views/html-admin-settings.php:23
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/views/html-admin-settings.php:23
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/views/html-admin-settings.php:26
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/views/html-admin-settings.php:26
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/views/html-admin-settings.php:32
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/views/html-admin-settings.php:32
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/views/html-admin-settings.php:26
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/views/html-admin-settings.php:26
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-admin-settings.php:46
-#: includes/admin/views/html-admin-settings.php:46
-msgid "Save Changes"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-please-review.php:106
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-please-review.php:106
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-please-review.php:106
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-please-review.php:106
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-please-review.php:106
-#: includes/admin/views/html-notice-please-review.php:25
-#: includes/admin/views/html-notice-theme-ready.php:22
-#: includes/admin/views/html-notice-trying-beta.php:21
-#: includes/admin/views/html-notice-welcome.php:20
-msgid "Auto Load Next Post WordPress Plugin"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-please-review.php:110
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-please-review.php:110
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-please-review.php:110
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-please-review.php:110
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-please-review.php:110
-#: includes/admin/views/html-notice-please-review.php:29
-msgid "Are you enjoying Auto Load Next Post?"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-please-review.php:111
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-please-review.php:111
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-please-review.php:111
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-please-review.php:111
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-please-review.php:111
-#: includes/admin/views/html-notice-please-review.php:30
-#, php-format
-msgid ""
-"You have been using %1$s for %2$s now! Mind leaving a quick review and let me "
-"know know what you think of the plugin? I'd really appreciate it!"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-please-review.php:115
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-please-review.php:115
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-please-review.php:115
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-please-review.php:115
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-please-review.php:115
-#: includes/admin/views/html-notice-please-review.php:34
-msgid "Leave a Review"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-please-review.php:116
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-please-review.php:116
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-please-review.php:116
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-please-review.php:116
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-please-review.php:116
-#: includes/admin/views/html-notice-please-review.php:35
-msgid "No thank you / I already have"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-requirement-wp.php:19
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-requirement-wp.php:19
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-requirement-wp.php:19
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-requirement-wp.php:19
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/views/html-notice-requirement-wp.php:9
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/views/html-notice-requirement-wp.php:12
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/views/html-notice-requirement-wp.php:12
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/views/html-notice-requirement-wp.php:18
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/views/html-notice-requirement-wp.php:18
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/views/html-notice-requirement-wp.php:12
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/views/html-notice-requirement-wp.php:12
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-requirement-wp.php:19
-#: includes/admin/views/html-notice-requirement-wp.php:19
-#, php-format
-msgid ""
-"Sorry, <strong>%s</strong> requires WordPress %s or higher. Please upgrade "
-"your WordPress setup."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-theme-support.php:19
-#, php-format
-msgid ""
-"The theme you are using has not declared support for %s &#8211; please see "
-"documentation or the F.A.Q. to find out how to support your theme."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.12/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-theme-support.php:20
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/views/html-notice-theme-support.php:10
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/views/html-notice-theme-support.php:10
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/views/html-notice-theme-support.php:10
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/views/html-notice-theme-support.php:13
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/views/html-notice-theme-support.php:13
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/views/html-notice-theme-support.php:13
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/views/html-notice-theme-support.php:13
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-theme-support.php:20
-msgid "Hide this notice"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-core-functions.php:85
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-core-functions.php:85
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-core-functions.php:85
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-core-functions.php:85
-#: auto-load-next-post-svn/tags/1.4.2/template/content-partial.php:42
-#: auto-load-next-post-svn/tags/1.4.3.1/template/content-partial.php:55
-#: auto-load-next-post-svn/tags/1.4.3/template/content-partial.php:55
-#: auto-load-next-post-svn/tags/1.4.4/template/content-partial.php:53
-#: auto-load-next-post-svn/tags/1.4.5/template/content-partial.php:53
-#: auto-load-next-post-svn/tags/1.4.8/includes/auto-load-next-post-core-functions.php:78
-#: auto-load-next-post-svn/tags/1.4.9/includes/auto-load-next-post-core-functions.php:78
-#: auto-load-next-post-svn/tags/v1.4.6/template/content-partial.php:53
-#: auto-load-next-post-svn/tags/v1.4.7/template/content-partial.php:53
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-core-functions.php:85
-#: includes/auto-load-next-post-core-functions.php:87
-#: includes/theme-support/class-alnp-twenty-twelve.php:51
-#: template/theme-support/twenty-ten/content-alnp.php:67
-msgctxt "Previous post link"
-msgid "&larr;"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:41
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:41
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:41
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:41
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:41
-#: includes/auto-load-next-post-formatting-functions.php:48
-#, php-format
-msgid "%s years"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:43
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:43
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:43
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:43
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:43
-#: includes/auto-load-next-post-formatting-functions.php:50
-msgid "a year"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:50
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:50
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:50
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:50
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:50
-#: includes/auto-load-next-post-formatting-functions.php:57
-#, php-format
-msgid "%s weeks"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:52
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:52
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:52
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:52
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:52
-#: includes/auto-load-next-post-formatting-functions.php:59
-msgid "a week"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:59
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:59
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:59
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:59
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:59
-#: includes/auto-load-next-post-formatting-functions.php:66
-#, php-format
-msgid "%s days"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:61
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:61
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:61
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:61
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:61
-#: includes/auto-load-next-post-formatting-functions.php:68
-msgid "a day"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:68
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:68
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:68
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:68
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:68
-#: includes/auto-load-next-post-formatting-functions.php:75
-#, php-format
-msgid "%s hours"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:70
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:70
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:70
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:70
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:70
-#: includes/auto-load-next-post-formatting-functions.php:77
-msgid "an hour"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:77
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:77
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:77
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:77
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:77
-#: includes/auto-load-next-post-formatting-functions.php:84
-#, php-format
-msgid "%s minutes"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:79
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:79
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:79
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:79
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:79
-#: includes/auto-load-next-post-formatting-functions.php:86
-msgid "a minute"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:86
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:86
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:86
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:86
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:86
-#: includes/auto-load-next-post-formatting-functions.php:93
-#, php-format
-msgid "%s seconds"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/includes/auto-load-next-post-formatting-functions.php:88
-#: auto-load-next-post-svn/tags/1.4.12/includes/auto-load-next-post-formatting-functions.php:88
-#: auto-load-next-post-svn/tags/1.4.13/includes/auto-load-next-post-formatting-functions.php:88
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/auto-load-next-post-formatting-functions.php:88
-#: auto-load-next-post-svn/trunk/includes/auto-load-next-post-formatting-functions.php:88
-#: includes/auto-load-next-post-formatting-functions.php:95
-msgid "a second"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/wp-update-php/WPUpdatePhp.php:47
-#: auto-load-next-post-svn/tags/1.4.12/wp-update-php/WPUpdatePhp.php:47
-#: auto-load-next-post-svn/tags/1.4.13/trunk/wp-update-php/WPUpdatePhp.php:47
-#: auto-load-next-post-svn/tags/1.4.13/wp-update-php/WPUpdatePhp.php:47
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/wp-update-php/WPUpdatePhp.php:47
-#: auto-load-next-post-svn/tags/1.4.8/wp-update-php/WPUpdatePhp.php:47
-#: auto-load-next-post-svn/tags/1.4.9/wp-update-php/WPUpdatePhp.php:47
-#: auto-load-next-post-svn/trunk/wp-update-php/WPUpdatePhp.php:47
-#, php-format
-msgid ""
-"Unfortunately, <strong>%s</strong> can not run on PHP versions older than "
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/wp-update-php/wp-update-php.php:151
-#: auto-load-next-post-svn/tags/1.4.12/wp-update-php/wp-update-php.php:151
-#: auto-load-next-post-svn/tags/1.4.13/trunk/wp-update-php/wp-update-php.php:151
-#: auto-load-next-post-svn/tags/1.4.13/wp-update-php/wp-update-php.php:151
-#: auto-load-next-post-svn/tags/1.4.4/wp-update-php/wp-update-php.php:151
-#: auto-load-next-post-svn/tags/1.4.5/wp-update-php/wp-update-php.php:151
-#: auto-load-next-post-svn/tags/1.4.8/wp-update-php/wp-update-php.php:151
-#: auto-load-next-post-svn/tags/1.4.9/wp-update-php/wp-update-php.php:151
-#: auto-load-next-post-svn/tags/v1.4.6/wp-update-php/wp-update-php.php:151
-#: auto-load-next-post-svn/tags/v1.4.7/wp-update-php/wp-update-php.php:151
-#: auto-load-next-post-svn/trunk/wp-update-php/wp-update-php.php:151
-#, php-format
-msgid ""
-"%s recommends a PHP version higher than %s. Read more information about <a "
-"href=\"%s\" target=\"_blank\">how you can update</a>."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/wp-update-php/wp-update-php.php:153
-#: auto-load-next-post-svn/tags/1.4.12/wp-update-php/wp-update-php.php:153
-#: auto-load-next-post-svn/tags/1.4.13/trunk/wp-update-php/wp-update-php.php:153
-#: auto-load-next-post-svn/tags/1.4.13/wp-update-php/wp-update-php.php:153
-#: auto-load-next-post-svn/tags/1.4.4/wp-update-php/wp-update-php.php:153
-#: auto-load-next-post-svn/tags/1.4.5/wp-update-php/wp-update-php.php:153
-#: auto-load-next-post-svn/tags/1.4.8/wp-update-php/wp-update-php.php:153
-#: auto-load-next-post-svn/tags/1.4.9/wp-update-php/wp-update-php.php:153
-#: auto-load-next-post-svn/tags/v1.4.6/wp-update-php/wp-update-php.php:153
-#: auto-load-next-post-svn/tags/v1.4.7/wp-update-php/wp-update-php.php:153
-#: auto-load-next-post-svn/trunk/wp-update-php/wp-update-php.php:153
-#, php-format
-msgid ""
-"This plugin recommends a PHP version higher than %s. Read more information "
-"about <a href=\"%s\" target=\"_blank\">how you can update</a>."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/wp-update-php/wp-update-php.php:158
-#: auto-load-next-post-svn/tags/1.4.12/wp-update-php/wp-update-php.php:158
-#: auto-load-next-post-svn/tags/1.4.13/trunk/wp-update-php/wp-update-php.php:158
-#: auto-load-next-post-svn/tags/1.4.13/wp-update-php/wp-update-php.php:158
-#: auto-load-next-post-svn/tags/1.4.4/wp-update-php/wp-update-php.php:158
-#: auto-load-next-post-svn/tags/1.4.5/wp-update-php/wp-update-php.php:158
-#: auto-load-next-post-svn/tags/1.4.8/wp-update-php/wp-update-php.php:158
-#: auto-load-next-post-svn/tags/1.4.9/wp-update-php/wp-update-php.php:158
-#: auto-load-next-post-svn/tags/v1.4.6/wp-update-php/wp-update-php.php:158
-#: auto-load-next-post-svn/tags/v1.4.7/wp-update-php/wp-update-php.php:158
-#: auto-load-next-post-svn/trunk/wp-update-php/wp-update-php.php:158
-#, php-format
-msgid ""
-"Unfortunately, %s cannot run on PHP versions older than %s. Read more "
-"information about <a href=\"%s\" target=\"_blank\">how you can update</a>."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.11/wp-update-php/wp-update-php.php:160
-#: auto-load-next-post-svn/tags/1.4.12/wp-update-php/wp-update-php.php:160
-#: auto-load-next-post-svn/tags/1.4.13/trunk/wp-update-php/wp-update-php.php:160
-#: auto-load-next-post-svn/tags/1.4.13/wp-update-php/wp-update-php.php:160
-#: auto-load-next-post-svn/tags/1.4.4/wp-update-php/wp-update-php.php:160
-#: auto-load-next-post-svn/tags/1.4.5/wp-update-php/wp-update-php.php:160
-#: auto-load-next-post-svn/tags/1.4.8/wp-update-php/wp-update-php.php:160
-#: auto-load-next-post-svn/tags/1.4.9/wp-update-php/wp-update-php.php:160
-#: auto-load-next-post-svn/tags/v1.4.6/wp-update-php/wp-update-php.php:160
-#: auto-load-next-post-svn/tags/v1.4.7/wp-update-php/wp-update-php.php:160
-#: auto-load-next-post-svn/trunk/wp-update-php/wp-update-php.php:160
-#, php-format
-msgid ""
-"Unfortunately, this plugin cannot run on PHP versions older than %s. Read "
-"more information about <a href=\"%s\" target=\"_blank\">how you can update</"
-"a>."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.13/includes/admin/views/html-notice-upgrade-warning.php:18
-#: auto-load-next-post-svn/tags/1.4.13/trunk/includes/admin/views/html-notice-upgrade-warning.php:18
-#: auto-load-next-post-svn/trunk/includes/admin/views/html-notice-upgrade-warning.php:18
-#: includes/admin/views/html-notice-upgrade-warning.php:18
-#, php-format
-msgid ""
-"Warning! Version 1.5.0 of %1$s is coming soon and is a major update. Before "
-"updating, please test on a staging site. %2$sLearn more about the changes in "
-"version 1.5.0 &raquo;%3$s"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/auto-load-next-post.php:206
-#: auto-load-next-post-svn/tags/1.4.2/auto-load-next-post.php:218
-#: auto-load-next-post-svn/tags/1.4.8/auto-load-next-post.php:86
-#: auto-load-next-post-svn/tags/1.4.8/auto-load-next-post.php:98
-#: auto-load-next-post-svn/tags/1.4.9/auto-load-next-post.php:86
-#: auto-load-next-post-svn/tags/1.4.9/auto-load-next-post.php:98
-msgid "Cheatin&#8217; huh?"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/auto-load-next-post.php:266
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:56
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:54
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-support.php:29
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-support.php:75
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:54
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:57
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-support.php:32
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-support.php:83
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:57
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-support.php:32
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-support.php:83
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:57
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-support.php:32
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-support.php:83
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:57
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-support.php:32
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-support.php:83
-msgid "Support"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/auto-load-next-post.php:380
-#, php-format
-msgid "Sorry, %s requires WordPress "
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:50
-#, php-format
-msgid ""
-"Thank you for using <strong>%s</strong> :) Should you need help using or "
-"extending %s please read the documentation."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:51
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-help.php:50
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-help.php:50
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-help.php:54
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-help.php:54
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:54
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:54
-#, php-format
-msgid "%s Documentation"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:58
-#, php-format
-msgid ""
-"After <a href=\"%s\">reading the documentation</a>, for further assistance "
-"you can use the <a href=\"%s\">community forum</a>."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:66
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-help.php:57
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-help.php:57
-#, php-format
-msgid ""
-"If you find a bug within <strong>%s</strong> you can create a ticket via <a "
-"href=\"%s\">Github issues</a>. Ensure you read the <a href=\"%s"
-"\">contribution guide</a> prior to submitting your report. Be as descriptive "
-"as possible. Thank you."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:67
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-help.php:58
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-help.php:58
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-help.php:62
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-help.php:62
-msgid "Report a bug"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:73
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-help.php:64
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-help.php:64
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-help.php:68
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-help.php:68
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:84
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:84
-msgid "Project on WordPress.org"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-help.php:74
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-help.php:65
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-help.php:65
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:85
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:85
-msgid "Project on Github"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-settings.php:60
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-settings.php:58
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-settings.php:58
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-settings.php:60
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-settings.php:60
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-settings.php:62
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-settings.php:62
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-settings.php:60
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-settings.php:60
-msgid "Action failed. Please refresh the page and retry."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-settings.php:489
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-settings.php:486
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-settings.php:486
-msgid "Hard Crop?"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin-settings.php:511
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-settings.php:508
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-settings.php:508
-msgid "Select a page&hellip;"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin.php:111
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:146
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:146
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:146
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:146
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:146
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:146
-msgid "Website"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin.php:129
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:163
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:163
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:163
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:163
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:163
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:163
-#, php-format
-msgid ""
-"If you like <strong>%1$s</strong> please leave a <a href=\"%2$s\" target="
-"\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating on <a href=\"%2$s\" "
-"target=\"_blank\">WordPress.org</a>. A huge thank you in advance!"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin.php:158
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:190
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:190
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:190
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:190
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:190
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:190
-msgid "Contribute"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/class-auto-load-next-post-admin.php:159
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:191
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:191
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:191
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:191
-msgid "Report Bugs"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:80
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:80
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:80
-msgid "Information"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:82
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:82
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:82
-msgid "For the plugin to work you need to set the variables below."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:87
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:87
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:87
-msgid "Restrict Post Types"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:88
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:88
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:88
-msgid "Select which post types you wish to load automatically."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:101
-msgid "Example: <code>div.single</code>"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:122
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:111
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:111
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:101
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:101
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:100
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:101
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:101
-#: includes/customizer/class-alnp-customizer.php:353
-msgid "Post Title Selector"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:123
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:112
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:112
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:102
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:102
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:101
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:102
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:102
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:102
-msgid "Example: <code>h1.entry-title</code>"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:133
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:122
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:122
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:112
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:112
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:111
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:112
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:112
-#: includes/customizer/class-alnp-customizer.php:361
-msgid "Post Navigation Container"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:134
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:123
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:123
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:113
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:113
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:112
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:113
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:113
-msgid "Example: <code>nav.post-navigation</code>"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:145
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:134
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:134
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:124
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:124
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:123
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:124
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:124
-msgid "Example: <code>div#comments</code>"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:156
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:145
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:145
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:135
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:135
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:135
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:135
-msgid "Enable to remove comments when each post loads."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/settings/class-auto-load-next-post-settings-general.php:164
-msgid ""
-"Enable to update your Google Analytics each time a post is automatically "
-"loaded."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/views/html-admin-settings.php:24
-msgid "Save changes"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/includes/admin/views/html-notice-theme-support.php:10
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/views/html-notice-theme-support.php:10
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/views/html-notice-theme-support.php:10
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/views/html-notice-theme-support.php:13
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/views/html-notice-theme-support.php:13
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/views/html-notice-theme-support.php:13
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/views/html-notice-theme-support.php:13
-msgid "Supporting your theme"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/template/content-partial.php:40
-#: auto-load-next-post-svn/tags/1.4.3.1/template/content-partial.php:53
-#: auto-load-next-post-svn/tags/1.4.3/template/content-partial.php:53
-#: includes/theme-support/class-alnp-twenty-eleven.php:53
-#: includes/theme-support/class-alnp-twenty-twelve.php:50
-msgid "Post navigation"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.2/template/content-partial.php:43
-#: auto-load-next-post-svn/tags/1.4.3.1/template/content-partial.php:56
-#: auto-load-next-post-svn/tags/1.4.3/template/content-partial.php:56
-msgctxt "Next post link"
-msgid "&rarr;"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.3.1/auto-load-next-post.php:84
-#: auto-load-next-post-svn/tags/1.4.3.1/auto-load-next-post.php:96
-#: auto-load-next-post-svn/tags/1.4.3/auto-load-next-post.php:84
-#: auto-load-next-post-svn/tags/1.4.3/auto-load-next-post.php:96
-#: auto-load-next-post-svn/tags/1.4.4/auto-load-next-post.php:87
-#: auto-load-next-post-svn/tags/1.4.4/auto-load-next-post.php:99
-#: auto-load-next-post-svn/tags/1.4.5/auto-load-next-post.php:87
-#: auto-load-next-post-svn/tags/1.4.5/auto-load-next-post.php:99
-#: auto-load-next-post-svn/tags/v1.4.6/auto-load-next-post.php:87
-#: auto-load-next-post-svn/tags/v1.4.6/auto-load-next-post.php:99
-#: auto-load-next-post-svn/tags/v1.4.7/auto-load-next-post.php:87
-#: auto-load-next-post-svn/tags/v1.4.7/auto-load-next-post.php:99
-msgid "Cheatin’ huh?"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin-help.php:49
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin-help.php:49
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-help.php:53
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-help.php:53
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:53
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:53
-#, php-format
-msgid ""
-"Thank you for using <strong>%1$s</strong> :) Should you need help using "
-"<strong>%1$s</strong> please read the documentation."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/class-auto-load-next-post-admin.php:52
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/class-auto-load-next-post-admin.php:52
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin.php:55
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin.php:55
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin.php:56
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin.php:56
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin.php:55
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin.php:55
-msgid "Upgrade to Premium"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:101
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:101
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:91
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:91
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:90
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:91
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:91
-msgid "Example: <code>main.site-main</code>"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-general.php:153
-#: auto-load-next-post-svn/tags/1.4.3/includes/admin/settings/class-auto-load-next-post-settings-general.php:153
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:143
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:143
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:143
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:143
-msgid ""
-"Each time a post is loaded it will count as a pageview. You must have a "
-"reference to your Google Analytics tracking code on the page."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-support.php:56
-msgid "As this is a free plugin, I can not provide support."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-support.php:57
-#, php-format
-msgid ""
-"You may ask the WordPress community for help by posting to the <a href=\"%s"
-"\">WordPress.org support forum</a>. Response time can range from a few days "
-"to a few weeks and will likely be from a non-developer."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-support.php:58
-#, php-format
-msgid ""
-"If you want a <strong>timely response via email from me</strong>, <a href=\"%s"
-"\">upgrade</a> and then send me an email."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-support.php:59
-#, php-format
-msgid ""
-"If you've found a bug, please <a href=\"%s\">submit an issue on GitHub</a>."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.3.1/includes/admin/settings/class-auto-load-next-post-settings-support.php:60
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-support.php:68
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-support.php:68
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-support.php:68
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-support.php:68
-msgid "Thank you."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/class-auto-load-next-post-admin-help.php:61
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/class-auto-load-next-post-admin-help.php:61
-#, php-format
-msgid ""
-"If you find a bug within <strong>%s</strong> you can create a ticket via <a "
-"href=\"%s\" target=\"_blank\">Github issues</a>. Ensure you read the <a href="
-"\"%s\" target=\"_blank\">contribution guide</a> prior to submitting your "
-"report. Be as descriptive as possible. Thank you."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-general.php:85
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-general.php:85
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-general.php:85
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-general.php:85
-#, php-format
-msgid ""
-"Set variables below according to your active theme. All are required for %s "
-"to work."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-support.php:62
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-support.php:62
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-support.php:62
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-support.php:62
-#, php-format
-msgid "Hi <b>%s</b>,"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-support.php:63
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-support.php:63
-#, php-format
-msgid ""
-"%1$s is <b>100&#37; free and open-sourced</b>, but I do rely on donations to "
-"facilitate further development of the free plugin. If %1$s has worked out for "
-"you well, please consider making a donation at %2$s"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-support.php:64
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-support.php:64
-#, php-format
-msgid ""
-"As this is a free plugin, I can not provide support. You may ask the "
-"WordPress community for help by opening a thread on the <a href=\"%s\" target="
-"\"_blank\">WordPress.org support forum</a>. Response time can range from a "
-"few days to a few weeks and will likely be from a non-developer."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-support.php:66
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-support.php:66
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-support.php:66
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-support.php:66
-#, php-format
-msgid ""
-"If you've found a bug, please <a href=\"%s\" target=\"_blank\">submit an "
-"issue on GitHub</a> where I can act upon it more efficiently."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-support.php:67
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-support.php:67
-msgid ""
-"Also if you can spare about 5 minutes to take a simple <a href=\"http://"
-"sebd86.polldaddy.com/s/auto-load-next-post\" target=\"_blank\">survey</a>, it "
-"would be a great help."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/settings/class-auto-load-next-post-settings-support.php:68
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/settings/class-auto-load-next-post-settings-support.php:68
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-support.php:68
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-support.php:68
-#, php-format
-msgid "regards,<br><br>%s"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/views/html-notice-please-review.php:14
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/views/html-notice-please-review.php:14
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/views/html-notice-please-review.php:14
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/views/html-notice-please-review.php:14
-#, php-format
-msgid ""
-"Hi <b>%s</b>, you've been using <b>%s</b> for some time now, and I hope "
-"you're happy with it. I've spent countless hours developing this free plugin "
-"for you, and I would really appreciate it if you gave it a quick review!"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/views/html-notice-please-review.php:15
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/views/html-notice-please-review.php:15
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/views/html-notice-please-review.php:21
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/views/html-notice-please-review.php:15
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/views/html-notice-please-review.php:15
-msgid "Yes, take me there!"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.4/includes/admin/views/html-notice-please-review.php:15
-#: auto-load-next-post-svn/tags/1.4.5/includes/admin/views/html-notice-please-review.php:15
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/views/html-notice-please-review.php:21
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/views/html-notice-please-review.php:21
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/views/html-notice-please-review.php:15
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/views/html-notice-please-review.php:15
-msgid "Already have :)"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:54
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:54
-#, php-format
-msgid ""
-"%s requires theme selectors to match the active theme in order for the plugin "
-"to work."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:55
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:55
-msgid ""
-"When the plugin was activated, the standard theme selectors a WordPress theme "
-"normally uses were set. If you are experiencing any problems, it is most "
-"likeley that at least one of these selectors need to be changed."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:63
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:63
-msgid ""
-"Should you need help understanding, using, or extending Auto Load Next Post, "
-"please <a href=\"https://github.com/seb86/Auto-Load-Next-Post/wiki/\" target="
-"\"_blank\">read the documentation</a>. You will find snippets, tutorials and "
-"much more."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:74
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:74
-#, php-format
-msgid ""
-"If you find a bug within %s, please <a href=\"%s\" target=\"_blank\">report "
-"the issue</a> by creating a ticket on the GitHub repository where we can deal "
-"with it more appropriately. Please ensure that you read the <a href=\"%s\" "
-"target=\"_blank\">contribution guidelines</a> prior to submitting your "
-"report. To help us solve the issue, please be as descriptive as possible."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:83
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:83
-msgid ""
-"Your feedback is very important to us. Please consider submitting a review on "
-"WordPress.org or complete a simple survey."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin-help.php:85
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin-help.php:85
-msgid "Complete a Survey"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin.php:84
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin.php:84
-msgid "Setup Support"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/class-auto-load-next-post-admin.php:148
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/class-auto-load-next-post-admin.php:148
-#, php-format
-msgid ""
-"If you like <strong>%1$s</strong>, please leave a <a href=\"%2$s\" target="
-"\"_blank\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating on <a href=\"%2$s\" "
-"target=\"_blank\">WordPress.org</a>. A huge thank you in advance!"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:84
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:85
-#, php-format
-msgid ""
-"Set the theme selectors below according to your active theme. All are "
-"required for %s to work. <a href=\"https://autoloadnextpost.com/product/setup-"
-"support/?utm_source=wpadmin&utm_campaign=plugin-settings-general\" target="
-"\"_blank\">Need help setting up the plugin?</a>"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/settings/class-auto-load-next-post-settings-general.php:142
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/settings/class-auto-load-next-post-settings-general.php:143
-msgid ""
-"Each time a post is loaded it will count as a pageview. Must have reference "
-"to Google Analytics tracking code on the site."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/views/html-notice-please-review.php:20
-#, php-format
-msgid ""
-"Hi <b>%s</b>, you've been using <b>%s</b> for some time now, and I hope "
-"you're happy with it. I've spent countless hours developing this free plugin "
-"for you, and I would really appreciate it if you could give it a review!"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.8/includes/admin/views/html-notice-theme-support.php:19
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/views/html-notice-theme-support.php:19
-msgid "Integration Guide"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/views/html-notice-please-review.php:20
-#, php-format
-msgid ""
-"Hi <b>%s</b>, you've been using <b>%s</b> for some time now and I hope you're "
-"happy with it. I've spent countless hours developing this free plugin for you "
-"and I would really appreciate it if you could give it a review or offer a "
-"contribution. Thank you!"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/1.4.9/includes/admin/views/html-notice-please-review.php:21
-msgid "Write a Review"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:61
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:61
-#, php-format
-msgid ""
-"If you find a bug within <strong>%s</strong>, please create a ticket on "
-"GitHub via the <a href=\"%s\" target=\"_blank\">Github issues</a>. Ensure "
-"that you read the <a href=\"%s\" target=\"_blank\">contribution guidelines</"
-"a> prior to submitting your report. Be as descriptive as possible. Thank you."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:69
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:69
-#, php-format
-msgid ""
-"If you need support with <strong>%s</strong>, you may ask the WordPress "
-"community for help by opening a thread on the <a href=\"%s\" target=\"_blank"
-"\">WordPress.org support forum</a>."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:70
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:70
-msgid "Create a Ticket"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:77
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:77
-#, php-format
-msgid ""
-"Your feedback is most important as it helps improve <strong>%s</strong> to "
-"support what you need. You can either submit a review on WordPress.org or "
-"complete a simple survey."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/class-auto-load-next-post-admin-help.php:78
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/class-auto-load-next-post-admin-help.php:78
-msgid "Complete Survey"
-msgstr ""
-
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-support.php:63
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-support.php:63
-#, php-format
-msgid ""
-"%1$s is <b>100&#37; free and open-sourced</b>, but I do rely on donations to "
-"facilitate further development of the free plugin. If %1$s has worked out for "
-"you well, please consider <a href=\"%2$s\" target=\"_blank\">making a "
-"donation</a>."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-support.php:64
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-support.php:64
-#, php-format
-msgid ""
-"As this is a free plugin, I can not always provide support. You may ask the "
-"WordPress community for help by opening a thread on the <a href=\"%s\" target="
-"\"_blank\">WordPress.org support forum</a>. Response time can range from a "
-"few days to a few weeks and will likely be from a non-developer."
-msgstr ""
-
-#: auto-load-next-post-svn/tags/v1.4.6/includes/admin/settings/class-auto-load-next-post-settings-support.php:67
-#: auto-load-next-post-svn/tags/v1.4.7/includes/admin/settings/class-auto-load-next-post-settings-support.php:67
-msgid ""
-"Also if you can spare about 5 minutes to <a href=\"https://sebd86.polldaddy."
-"com/s/auto-load-next-post\" target=\"_blank\">take a simple survey</a>, it "
-"would be a great help."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:51
@@ -2039,6 +51,42 @@ msgid ""
 "read, the next post to load and whether to show or hide comments per post."
 msgstr ""
 
+#. Plugin Name of the plugin/theme
+#: includes/admin/class-alnp-admin-help.php:54
+#: includes/admin/class-alnp-admin-help.php:55
+#: includes/admin/class-alnp-admin-help.php:56
+#: includes/admin/class-alnp-admin-help.php:71
+#: includes/admin/class-alnp-admin-help.php:72
+#: includes/admin/class-alnp-admin-help.php:73
+#: includes/admin/class-alnp-admin-help.php:74
+#: includes/admin/class-alnp-admin-help.php:82
+#: includes/admin/class-alnp-admin-help.php:92
+#: includes/admin/class-alnp-admin-help.php:98
+#: includes/admin/class-alnp-admin.php:131
+#: includes/admin/class-alnp-admin.php:147
+#: includes/admin/class-alnp-admin.php:163
+#: includes/admin/class-alnp-admin.php:164
+#: includes/admin/class-alnp-admin.php:293
+#: includes/admin/class-alnp-admin.php:315
+#: includes/admin/settings/class-alnp-settings-events.php:63
+#: includes/admin/settings/class-alnp-settings-misc.php:98
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:100
+#: includes/admin/views/html-notice-is-supported.php:18
+#: includes/admin/views/html-notice-no-theme-selectors.php:18
+#: includes/admin/views/html-notice-please-review.php:30
+#: includes/admin/views/html-notice-requirement-wp.php:19
+#: includes/admin/views/html-notice-theme-ready.php:27
+#: includes/admin/views/html-notice-upgrade-warning.php:18
+#: includes/admin/views/html-notice-welcome.php:26
+#: includes/customizer/class-alnp-customizer.php:62
+#: includes/customizer/class-alnp-customizer.php:231
+#: includes/customizer/class-alnp-customizer.php:236
+#: includes/customizer/class-alnp-pro-preview-controller.php:70
+#: includes/customizer/class-alnp-pro-preview-controller.php:73
+#: includes/customizer/class-alnp-pro-preview-controller.php:76
+msgid "Auto Load Next Post"
+msgstr ""
+
 #: includes/admin/class-alnp-admin-help.php:55
 #, php-format
 msgid ""
@@ -2054,6 +102,37 @@ msgstr ""
 #: includes/admin/class-alnp-admin-help.php:56
 #, php-format
 msgid "These are the default theme selectors when %s is installed."
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:57
+msgid "Default Theme Selectors"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:59
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:105
+#: includes/customizer/class-alnp-customizer.php:345
+msgid "Content Container"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:60
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:116
+msgid "Post Title"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:61
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:126
+msgid "Post Navigation"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:62
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:136
+#: includes/customizer/class-alnp-customizer.php:369
+msgid "Comments Container"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:68
+#: includes/admin/class-alnp-admin-help.php:70
+msgid "Help & Support"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:71
@@ -2079,8 +158,27 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:74
+#: includes/admin/class-alnp-admin.php:264
+#: includes/admin/views/html-notice-welcome.php:47
+msgid "Documentation"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:74
+msgid "Community Forum"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:74
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:74
 #, php-format
 msgid "Translate %s"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:79
+#: includes/admin/class-alnp-admin-help.php:81
+msgid "Found a bug?"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:82
@@ -2093,6 +191,21 @@ msgid ""
 "descriptive as possible."
 msgstr ""
 
+#: includes/admin/class-alnp-admin-help.php:83
+msgid "Report an Issue"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:88
+#: includes/admin/class-alnp-admin-help.php:90
+msgid "Feedback"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:91
+msgid ""
+"Your feedback is very important to me. Please consider leaving a review on "
+"WordPress.org or complete a simple survey."
+msgstr ""
+
 #: includes/admin/class-alnp-admin-help.php:92
 #, php-format
 msgid ""
@@ -2100,13 +213,89 @@ msgid ""
 "%2$smaking a donation%3$s."
 msgstr ""
 
+#: includes/admin/class-alnp-admin-help.php:93
+msgid "Submit a Review"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:93
+msgid "Complete a Simple Survey"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:93
+msgid "Make a Donation"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:97
+msgid "For more information:"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:98
+#: template/theme-support/twenty-eleven/content-alnp.php:73
+#: template/theme-support/twenty-ten/content-alnp.php:47
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-help.php:99
+msgid "WordPress.org Project"
+msgstr ""
+
 #: includes/admin/class-alnp-admin-help.php:100
 msgid "GitHub Project"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-settings.php:93
+msgid "Your settings have been saved."
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:117
+msgid "The changes you made will be lost if you navigate away from this page."
 msgstr ""
 
 #: includes/admin/class-alnp-admin.php:147
 #, php-format
 msgid "%s does not collect, store or share any personal data."
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:163
+#, php-format
+msgid "%s Settings"
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:237
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:240
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:261
+#, php-format
+msgid "Developed By %s"
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:265
+msgid "Community Support"
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:266
+msgid "Theme Support"
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:292
+#, php-format
+msgid ""
+"If you like %1$s, please leave a %2$s rating. A huge thank you in advance!"
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:294
+msgid "Thanks :)"
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:315
+#, php-format
+msgid "%s Version"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:28
@@ -2146,30 +335,65 @@ msgstr ""
 msgid "Misc"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:68
+#: includes/admin/settings/class-alnp-settings-misc.php:98
 #, php-format
 msgid ""
 "Here you set if you want to track pageviews, remove comments and load %s "
 "javascript in the footer."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:82
+#: includes/admin/settings/class-alnp-settings-misc.php:103
+#: includes/customizer/class-alnp-customizer.php:377
+msgid "Remove Comments"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-misc.php:104
+#: includes/customizer/class-alnp-customizer.php:378
+msgid ""
+"Enable to remove comments when each post loads including the initial post."
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-misc.php:111
+#: includes/customizer/class-alnp-customizer.php:385
+msgid "Update Google Analytics"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-misc.php:112
 #: includes/customizer/class-alnp-customizer.php:386
 msgid ""
 "Enable to track each post the visitor is reading. This will count as a "
 "pageview. You must already have Google Analytics setup."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:89
+#: includes/admin/settings/class-alnp-settings-misc.php:119
 #: includes/customizer/class-alnp-customizer.php:393
 msgid "JavaScript in Footer?"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:90
-#: includes/customizer/class-alnp-customizer.php:394
+#: includes/admin/settings/class-alnp-settings-misc.php:120
 msgid ""
 "Enable to load Auto Load Next Post in the footer instead of the header. Can "
-"be useful to optimize your site."
+"be useful to optimize your site or if the current theme requires it."
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-misc.php:127
+msgid "Reset all data?"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-misc.php:128
+msgid ""
+"Press the reset button to clear all settings for this plugin and re-install "
+"the default settings."
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-misc.php:135
+msgid "Remove all data on uninstall?"
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-misc.php:136
+msgid ""
+"If enabled, all settings for this plugin will all be deleted when "
+"uninstalling via Plugins > Delete."
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:100
@@ -2207,6 +431,10 @@ msgstr ""
 #, php-format
 msgid ""
 "Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s"
+msgstr ""
+
+#: includes/admin/views/html-admin-settings.php:46
+msgid "Save Changes"
 msgstr ""
 
 #: includes/admin/views/html-admin-sidebar.php:6
@@ -2348,6 +576,39 @@ msgid ""
 "theme selectors?%3$s"
 msgstr ""
 
+#: includes/admin/views/html-notice-please-review.php:25
+#: includes/admin/views/html-notice-theme-ready.php:22
+#: includes/admin/views/html-notice-trying-beta.php:21
+#: includes/admin/views/html-notice-welcome.php:20
+msgid "Auto Load Next Post WordPress Plugin"
+msgstr ""
+
+#: includes/admin/views/html-notice-please-review.php:29
+msgid "Are you enjoying Auto Load Next Post?"
+msgstr ""
+
+#: includes/admin/views/html-notice-please-review.php:30
+#, php-format
+msgid ""
+"You have been using %1$s for %2$s now! Mind leaving a quick review and let me "
+"know know what you think of the plugin? I'd really appreciate it!"
+msgstr ""
+
+#: includes/admin/views/html-notice-please-review.php:34
+msgid "Leave a Review"
+msgstr ""
+
+#: includes/admin/views/html-notice-please-review.php:35
+msgid "No thank you / I already have"
+msgstr ""
+
+#: includes/admin/views/html-notice-requirement-wp.php:19
+#, php-format
+msgid ""
+"Sorry, <strong>%s</strong> requires WordPress %s or higher. Please upgrade "
+"your WordPress setup."
+msgstr ""
+
 #: includes/admin/views/html-notice-theme-ready.php:26
 msgid "Congratulations!"
 msgstr ""
@@ -2381,6 +642,14 @@ msgstr ""
 msgid "Ask me again in 7 days"
 msgstr ""
 
+#: includes/admin/views/html-notice-upgrade-warning.php:18
+#, php-format
+msgid ""
+"Warning! Version 1.5.0 of %1$s is coming soon and is a major update. Before "
+"updating, please test on a staging site. %2$sLearn more about the changes in "
+"version 1.5.0 &raquo;%3$s"
+msgstr ""
+
 #: includes/admin/views/html-notice-welcome.php:24
 msgid "Welcome!"
 msgstr ""
@@ -2401,6 +670,67 @@ msgstr ""
 
 #: includes/admin/views/html-notice-welcome.php:50
 msgid "Dismiss Notice"
+msgstr ""
+
+#: includes/auto-load-next-post-core-functions.php:87
+#: includes/theme-support/class-alnp-twenty-twelve.php:51
+#: template/theme-support/twenty-ten/content-alnp.php:67
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:48
+#, php-format
+msgid "%s years"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:50
+msgid "a year"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:57
+#, php-format
+msgid "%s weeks"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:59
+msgid "a week"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:66
+#, php-format
+msgid "%s days"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:68
+msgid "a day"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:75
+#, php-format
+msgid "%s hours"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:77
+msgid "an hour"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:84
+#, php-format
+msgid "%s minutes"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:86
+msgid "a minute"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:93
+#, php-format
+msgid "%s seconds"
+msgstr ""
+
+#: includes/auto-load-next-post-formatting-functions.php:95
+msgid "a second"
 msgstr ""
 
 #: includes/customizer/class-alnp-customizer.php:64
@@ -2435,11 +765,25 @@ msgid ""
 "javascript in the footer."
 msgstr ""
 
+#: includes/customizer/class-alnp-customizer.php:353
+msgid "Post Title Selector"
+msgstr ""
+
+#: includes/customizer/class-alnp-customizer.php:361
+msgid "Post Navigation Container"
+msgstr ""
+
 #: includes/customizer/class-alnp-customizer.php:370
 #, php-format
 msgid ""
 "Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> "
 "settings. Default: %3$s"
+msgstr ""
+
+#: includes/customizer/class-alnp-customizer.php:394
+msgid ""
+"Enable to load Auto Load Next Post in the footer instead of the header. Can "
+"be useful to optimize your site."
 msgstr ""
 
 #: includes/customizer/class-alnp-customizer.php:428
@@ -2498,6 +842,11 @@ msgstr ""
 #, php-format
 msgid ""
 "Why not leave me a review on %1$sWordPress.org%2$s?  I'd really appreciate it!"
+msgstr ""
+
+#: includes/theme-support/class-alnp-twenty-eleven.php:53
+#: includes/theme-support/class-alnp-twenty-twelve.php:50
+msgid "Post navigation"
 msgstr ""
 
 #: includes/theme-support/class-alnp-twenty-eleven.php:54
