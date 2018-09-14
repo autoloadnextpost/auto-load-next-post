@@ -1,3 +1,6 @@
+# 1.5.1 (14th September 2018)
+* Fixed: No such file for including the admin settings when setting default options due to a file rename.
+
 # 1.5.0 (14th September 2018)
 * NEW: All settings are available in the theme customizer.
 * NEW: Option to load the JavaScript in the footer.

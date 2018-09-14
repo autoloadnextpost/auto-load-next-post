@@ -3,7 +3,7 @@
  * Auto Load Next Post - Installation related functions and actions.
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.5.1
  * @author   Sébastien Dumont
  * @category Classes
  * @package  Auto Load Next Post/Classes/Install
@@ -181,13 +181,14 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 *
 		 * Sets up the default options defined on the settings pages.
 		 *
-		 * @access public
+		 * @access  public
 		 * @static
-		 * @since  1.0.0
+		 * @since   1.0.0
+		 * @version 1.5.1
 		 */
 		public static function create_options() {
 			// Include settings so that we can run through defaults
-			include_once( dirname( __FILE__ ) . '/admin/class-auto-load-next-post-admin-settings.php' );
+			include_once( dirname( __FILE__ ) . '/admin/class-alnp-admin-settings.php' );
 
 			$settings = Auto_Load_Next_Post_Admin_Settings::get_settings_pages();
 

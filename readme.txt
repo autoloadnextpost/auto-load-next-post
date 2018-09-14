@@ -5,7 +5,7 @@ Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scr
 Requires PHP: 5.6+
 Requires at least: 4.4
 Tested up to: 4.9.8
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -198,6 +198,9 @@ It does. Just make sure that you activate the plugin on the site you want it use
 4. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
+= 1.5.1 : 14th September 2018 =
+* Fixed: No such file for including the admin settings when setting default options due to a file rename.
+
 = 1.5.0 : 14th September 2018 =
 * NEW: All settings are available in the theme customizer.
 * NEW: Option to load the JavaScript in the footer.
