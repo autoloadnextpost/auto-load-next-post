@@ -103,6 +103,7 @@ read -p "Press [ENTER] to deploy branch "${BRANCH}
 # REMOVE UNWANTED FILES & FOLDERS
 echo ""
 echo "Removing unwanted files"
+rm -Rf .wordpress-org
 rm -Rf .git
 rm -Rf .github
 rm -Rf tests
