@@ -5,7 +5,7 @@ Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scr
 Requires PHP: 5.6+
 Requires at least: 4.4
 Tested up to: 4.9.8
-Stable tag: 1.4.13
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -198,46 +198,46 @@ It does. Just make sure that you activate the plugin on the site you want it use
 4. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
-= 1.5.0 : 29th August 2018 =
-* NEW: Added trigger event support for third party plugins.
+= 1.5.0 : 14th September 2018 =
+* NEW: All settings are available in the theme customizer.
+* NEW: Option to load the JavaScript in the footer.
+* NEW: Support for themes that require Auto Load Next Post to load in the footer.
+* NEW: Added trigger event support for third-party plugins thanks to Stelios Patsatzis.
+* NEW: Support for theme Make, Storefront and Understrap.
+* NEW: Privacy policy guide content.
+* NEW: Beta notice if trying out beta releases. Explains how you can provide feedback and can be dismissed for 7 days.
+* NEW: Welcome notice to users who install Auto Load Next Post for the first time.
 * Added: A check to see if JetPack is active.
 * Added: A check in the JavaScript to prevent it from loading if a user is requesting to post a comment. - Initial post only.
 * Added: A filter for the repeater template location so theme or plugin developers can move it to another location should they need to.
-* Added: Option to load the JavaScript in the footer.
 * Added: A user agent checker to see if the request was made from a known bot.
-* Added: All settings to the customizer.
 * Added: Detection of plugin support. If supported, set the theme selectors for the currently active theme even when the theme has changed.
 * Added: Admin notice to tell the user the theme supports Auto Load Next Post. Only shows once.
-* Added: Admin notice to tell the user the theme selectors have already been set by the the current theme if that theme supports Auto Load Next Post.
-* Added: Admin notice under "Theme Selectors" settings only if all three or one of the required theme selectors are not set.
+* Added: Admin notice to tell the user the theme selectors have already been set by the current theme if that theme supports Auto Load Next Post.
+* Added: Admin notice under "Theme Selectors" settings only if all three or one of the required theme selectors is not set.
 * Added: Admin notice under the "Misc" settings only if remove comments was enabled but the comments container selector was not set.
 * Added: A sidebar to the settings page to promote Auto Load Next Post Pro and allow users to sign up.
-* Added: Support for theme Make and Understrap.
 * Added: Select2 to replace previous JavaScript library "chosen" for better support and performance.
-* Added: Privacy policy guide content.
-* Added: Beta notice if trying out beta releases. Explains how you can provide feedback and can be dismissed for 7 days.
-* Added: Welcome notice to users who install Auto Load Next Post for the first time.
 * Changed: Rewrite endpoint to be more distinct for Auto Load Next Post and prevent any conflicts.
 * Changed: Settings have been separated into Theme Selectors and Miscellaneous settings.
 * Changed: The JavaScript now does not require the document to be ready. This is especially helpful if you have enabled the JavaScript to load in the footer.
 * Fixed: The trigger to override the post URL.
-* Fixed: Install date to a timestamp for those who have previously installed Auto Load Next Post so when you see the review notice, it does not say it's been 48 years since you installed because that is just crazy. LOL :)
+* Fixed: Install date to a timestamp for those who have previously installed Auto Load Next Post so when you see the review notice, it does not say it's been 48 years since you installed because that is just crazy. LOL :laughing:
 * Improved: Theme support and all default WordPress themes are supported out of the box. (Twenty Ten to Twenty Seventeen)
 * Improved: Moved flushing rewrite rules so it only runs once during installation or updating Auto Load Next Post.
 * Improved: Admin setting fields and added placeholder support.
 * Improved: Inline PHPdocs
+* Renamed: Repeater template from content-partial.php to content-alnp.php
 * Removed: Admin notice for the theme has not declared support.
 * Removed: Template location filter from the repeater template as it has been moved for better support.
 * Removed: PHP version check.
-* Removed: JavaScript library chosen.
+* Removed: JavaScript library "chosen".
 * Updated: POT file for translation.
 * Updated: Repeater template due to improvements with this release.
 
 [See changelog for all versions](https://raw.githubusercontent.com/AutoLoadNextPost/Auto-Load-Next-Post/master/CHANGELOG.md).
 
 == Upgrade Notice ==
-= 1.5.0 : 29th August 2018 =
+= 1.5.0 : 14th September 2018 =
 
 This release brings many improvements, enhancements and better theme support. [See blog post](https://autoloadnextpost.com/2018/05/28/whats-coming-in-v1-5-0-of-auto-load-next-post/) for more details.
-
-Note: You will need to flush your permalinks due to an endpoint change made in this release.
