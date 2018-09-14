@@ -5,7 +5,7 @@
  * Description: Increase your pageviews on your site as readers continue reading your posts scrolling down the page.
  * Author:      Sébastien Dumont
  * Author URI:  https://sebastiendumont.com
- * Version:     1.5.0-beta.3
+ * Version:     1.5.0
  * Text Domain: auto-load-next-post
  * Domain Path: /languages/
  *
@@ -47,7 +47,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @static
 		 * @since  1.5.0
 		 */
-		public static $version = '1.5.0-beta.3';
+		public static $version = '1.5.0';
 
 		/**
 		 * Main Auto Load Next Post Instance
@@ -76,7 +76,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 */
 		public function __clone() {
 			// Cloning instances of the class is forbidden
-			_doing_it_wrong( __FUNCTION__, __( 'Cloning this object is forbidden.', 'auto-load-next-post' ), AUTO_LOAD_NEXT_POST_VERSION );
+			_doing_it_wrong( __FUNCTION__, __( 'Cloning this object is forbidden.', 'auto-load-next-post' ), self::$version );
 		} // END __clone()
 
 		/**
@@ -87,7 +87,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @return void
 		 */
 		public function __wakeup() {
-			_doing_it_wrong( __FUNCTION__, __( 'Unserializing instances of this class is forbidden.', 'auto-load-next-post' ), AUTO_LOAD_NEXT_POST_VERSION );
+			_doing_it_wrong( __FUNCTION__, __( 'Unserializing instances of this class is forbidden.', 'auto-load-next-post' ), self::$version );
 		} // END __wakeup()
 
 		/**
