@@ -19,7 +19,7 @@ var stop_reading        = false;
 var scroll_up           = false;
 var article_container   = 'article';
 
-(function($) {
+jQuery( document ).ready( function($) {
 
 	// Ensure auto_load_next_post_params exists to continue.
 	if ( typeof auto_load_next_post_params === 'undefined' ) {
@@ -342,4 +342,4 @@ var article_container   = 'article';
 
 	} // END auto_load_next_post()
 
-})(jQuery);
+})

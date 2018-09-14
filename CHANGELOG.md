@@ -1,3 +1,6 @@
+# 1.5.2 (14th September 2018)
+* Reverted: The JavaScript from not requiring the document to be ready due to JS minification breaking it.
+
 # 1.5.1 (14th September 2018)
 * Fixed: No such file for including the admin settings when setting default options due to a file rename.
 
