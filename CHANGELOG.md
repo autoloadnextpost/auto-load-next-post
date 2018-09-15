@@ -1,3 +1,6 @@
+# 1.5.3 (15th September 2018)
+* Corrected: Meta name for when locking the JavaScript in the footer is set via theme support.
+
 # 1.5.2 (14th September 2018)
 * Reverted: The JavaScript from not requiring the document to be ready due to JS minification breaking it.
 

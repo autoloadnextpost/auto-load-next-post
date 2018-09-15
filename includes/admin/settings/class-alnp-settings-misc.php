@@ -3,6 +3,7 @@
  * Auto Load Next Post Settings - Misc
  *
  * @since    1.5.0
+ * @version  1.5.3
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Settings
@@ -23,8 +24,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		/**
 		 * Constructor.
 		 *
-		 * @since  1.5.0
 		 * @access public
+		 * @since  1.5.0
 		 */
 		public function __construct() {
 			$this->id    = 'misc';
@@ -57,13 +58,15 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		 * and filters the settings to remove the option so it can not 
 		 * be unset by the user.
 		 *
-		 * @access public
+		 * @access  public
 		 * @static
-		 * @param  array $settings
-		 * @return array $settings
+		 * @since   1.5.0
+		 * @version 1.5.3
+		 * @param   array $settings
+		 * @return  array $settings
 		 */
 		public static function lock_js_in_footer( $settings ) {
-			$js_locked_in_footer = get_option( 'auto_load_next_post_js_footer_locked' );
+			$js_locked_in_footer = get_option( 'auto_load_next_post_lock_js_in_footer' );
 
 			if ( !empty( $js_locked_in_footer ) && $js_locked_in_footer == 'yes' ) {
 				// Setting key to look for.
@@ -84,8 +87,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since  1.5.0
 		 * @access public
+		 * @since  1.5.0
 		 * @return array
 		 */
 		public function get_settings() {

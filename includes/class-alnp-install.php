@@ -135,7 +135,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 *
 		 * @access private
 		 * @static
-		 * @since  1.5.0
+		 * @since   1.5.0
+		 * @version 1.5.3
 		 */
 		private static function set_js_in_footer() {
 			if ( is_alnp_supported() ) {
@@ -143,7 +144,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 				$lock_js_in_footer = alnp_get_theme_support( 'lock_js_in_footer' );
 
 				if ( ! empty( $load_js_in_footer ) && $load_js_in_footer == 'yes' ) update_option( 'auto_load_next_post_load_js_in_footer', $load_js_in_footer );
-				if ( ! empty( $lock_js_in_footer ) && $lock_js_in_footer == 'yes' ) update_option( 'auto_load_next_post_js_footer_locked', $lock_js_in_footer );
+				if ( ! empty( $lock_js_in_footer ) && $lock_js_in_footer == 'yes' ) update_option( 'auto_load_next_post_lock_js_in_footer', $lock_js_in_footer );
 			}
 		} // END set_js_in_footer()
 

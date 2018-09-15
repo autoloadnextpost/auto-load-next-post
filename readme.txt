@@ -5,7 +5,7 @@ Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scr
 Requires PHP: 5.6+
 Requires at least: 4.4
 Tested up to: 4.9.8
-Stable tag: 1.5.2
+Stable tag: 1.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -198,6 +198,9 @@ It does. Just make sure that you activate the plugin on the site you want it use
 4. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
+= 1.5.3 : 15th September 2018 =
+* Corrected: Meta name for when locking the JavaScript in the footer is set via theme support.
+
 = 1.5.2 : 14th September 2018 =
 * Reverted: The JavaScript from not requiring the document to be ready due to JS minification breaking it.
 
@@ -244,6 +247,8 @@ It does. Just make sure that you activate the plugin on the site you want it use
 [See changelog for all versions](https://raw.githubusercontent.com/AutoLoadNextPost/Auto-Load-Next-Post/master/CHANGELOG.md).
 
 == Upgrade Notice ==
-= 1.5.0 : 14th September 2018 =
+= 1.5.0 : 15th September 2018 =
 
 This release brings many improvements, enhancements and better theme support. [See blog post](https://autoloadnextpost.com/2018/05/28/whats-coming-in-v1-5-0-of-auto-load-next-post/) for more details.
+
+Developer Warning: Please install version 1.5.2 or above. Version 1.5.0 had a merge conflict from the previous version which causes the dashboard to die.
