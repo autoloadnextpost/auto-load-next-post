@@ -50,6 +50,15 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		public static $version = '1.5.3';
 
 		/**
+		 * Integrations instance.
+		 *
+		 * @access public
+		 * @since  1.5.0
+		 * @var    Auto_Load_Next_Post_Integrations
+		 */
+		public $integrations = null;
+
+		/**
 		 * Main Auto Load Next Post Instance
 		 *
 		 * Ensures only one instance of Auto Load Next Post is loaded or can be loaded.
@@ -116,6 +125,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @since  1.5.0
 		 */
 		public function init_hooks() {
+			add_action( 'init', array( $this, 'init' ), 0 );
+
 			// Load translation files.
 			add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
@@ -131,21 +142,21 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @access  private
 		 */
 		private function setup_constants() {
-			$this->define('AUTO_LOAD_NEXT_POST_VERSION', self::$version);
-			$this->define('AUTO_LOAD_NEXT_POST_FILE', __FILE__);
-			$this->define('AUTO_LOAD_NEXT_POST_SLUG', 'auto-load-next-post');
+			$this->define( 'AUTO_LOAD_NEXT_POST_VERSION', self::$version );
+			$this->define( 'AUTO_LOAD_NEXT_POST_FILE', __FILE__ );
+			$this->define( 'AUTO_LOAD_NEXT_POST_SLUG', 'auto-load-next-post' );
 
-			$this->define('AUTO_LOAD_NEXT_POST_URL_PATH', untrailingslashit( plugins_url('/', __FILE__) ) );
-			$this->define('AUTO_LOAD_NEXT_POST_FILE_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
-			$this->define('AUTO_LOAD_NEXT_POST_TEMPLATE_PATH', 'auto-load-next-post/');
+			$this->define( 'AUTO_LOAD_NEXT_POST_URL_PATH', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
+			$this->define( 'AUTO_LOAD_NEXT_POST_FILE_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
+			$this->define( 'AUTO_LOAD_NEXT_POST_TEMPLATE_PATH', 'auto-load-next-post/' );
 
-			$this->define('AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE', '4.4');
+			$this->define( 'AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE', '4.4' );
 
-			$suffix       = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
-			$debug_suffix = defined('ALNP_DEV_DEBUG') && ALNP_DEV_DEBUG ? '.dev' : '';
+			$suffix       = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+			$debug_suffix = defined( 'ALNP_DEV_DEBUG' ) && ALNP_DEV_DEBUG ? '.dev' : '';
 
-			$this->define('AUTO_LOAD_NEXT_POST_SCRIPT_MODE', $suffix);
-			$this->define('AUTO_LOAD_NEXT_POST_DEBUG_MODE', $debug_suffix);
+			$this->define( 'AUTO_LOAD_NEXT_POST_SCRIPT_MODE', $suffix );
+			$this->define( 'AUTO_LOAD_NEXT_POST_DEBUG_MODE', $debug_suffix );
 		} // END setup_constants()
 
 		/**
@@ -186,6 +197,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			// Customizer.
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer.php' );
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer-scripts.php' );
+
+			// Integrations.
+			include_once( dirname( __FILE__ ) . '/includes/class-alnp-integrations.php' );
 
 			// Include admin class to handle all back-end functions.
 			if ( is_admin() ) {
@@ -245,6 +259,16 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
 			}
 		} // END alnp_include_theme_support()
+
+		public function init() {
+			// Before init action.
+			do_action( 'before_auto_load_next_post_init' );
+
+			$this->integrations = new Auto_Load_Next_Post_Integrations();
+
+			// Init action.
+			do_action( 'auto_load_next_post_init' );
+		}
 
 		/*-----------------------------------------------------------------------------------*/
 		/*  Localization                                                                     */
