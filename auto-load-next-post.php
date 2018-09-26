@@ -5,7 +5,7 @@
  * Description: Increase your pageviews on your site as readers continue reading your posts scrolling down the page.
  * Author:      Sébastien Dumont
  * Author URI:  https://sebastiendumont.com
- * Version:     1.5.0-beta.1
+ * Version:     1.5.3
  * Text Domain: auto-load-next-post
  * Domain Path: /languages/
  *
@@ -47,7 +47,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @static
 		 * @since  1.5.0
 		 */
-		public static $version = '1.5.0-beta.1';
+		public static $version = '1.5.3';
 
 		/**
 		 * Integrations instance.
@@ -85,7 +85,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 */
 		public function __clone() {
 			// Cloning instances of the class is forbidden
-			_doing_it_wrong( __FUNCTION__, __( 'Cloning this object is forbidden.', 'auto-load-next-post' ), AUTO_LOAD_NEXT_POST_VERSION );
+			_doing_it_wrong( __FUNCTION__, __( 'Cloning this object is forbidden.', 'auto-load-next-post' ), self::$version );
 		} // END __clone()
 
 		/**
@@ -96,7 +96,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @return void
 		 */
 		public function __wakeup() {
-			_doing_it_wrong( __FUNCTION__, __( 'Unserializing instances of this class is forbidden.', 'auto-load-next-post' ), AUTO_LOAD_NEXT_POST_VERSION );
+			_doing_it_wrong( __FUNCTION__, __( 'Unserializing instances of this class is forbidden.', 'auto-load-next-post' ), self::$version );
 		} // END __wakeup()
 
 		/**
@@ -320,6 +320,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 					'alnp_comments_container'   => get_option( 'auto_load_next_post_comments_container' ),
 					'alnp_remove_comments'      => get_option( 'auto_load_next_post_remove_comments' ),
 					'alnp_google_analytics'     => get_option( 'auto_load_next_post_google_analytics' ),
+					'alnp_event_on_load'        => get_option( 'auto_load_next_post_on_load_event' ),
+					'alnp_event_on_entering'    => get_option( 'auto_load_next_post_on_entering_event' ),
 					'alnp_is_customizer'        => $this->is_alnp_using_customizer(),
 				) );
 			} // END if is_singular() && get_post_type()

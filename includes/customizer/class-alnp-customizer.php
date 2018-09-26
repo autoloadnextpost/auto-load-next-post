@@ -45,6 +45,10 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				return;
 			}
 
+			// Load custom controllers.
+			require_once( dirname( __FILE__ ) . '/class-alnp-arbitrary-controller.php' );
+			//require_once( dirname( __FILE__ ) . '/class-alnp-display-video-controller.php' );
+
 			// Auto Load Next Post Panel.
 			$panel = array( 'panel' => 'alnp' );
 
@@ -105,11 +109,8 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				$this->alnp_remove_default_customizer_panels( $wp_customize ); // Remove controls from the customizer.
 			}
 
-			// Load custom controllers.
-			/*include_once( dirname( __FILE__ ) . '/class-alnp-display-video-controller.php' );
-
 			// Video Help - Coming Soon
-			$wp_customize->add_setting( 'alnp_video_theme_selectors', array(
+			/*$wp_customize->add_setting( 'alnp_video_theme_selectors', array(
 				'default' => '', // The video ID
 				'type'    => 'theme_mod',
 			) );
@@ -191,6 +192,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 			$wp_customize->remove_section("background_image");
 			$wp_customize->remove_section("static_front_page");
 			$wp_customize->remove_section("custom_css");
+			$wp_customize->remove_section("theme_options");
 
 			return true;
 		} // END alnp_remove_default_customizer_panels()
@@ -220,13 +222,18 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 			return apply_filters( 'auto_load_next_post_get_customizer_sections', array(
 				'auto_load_next_post_theme_selectors' => array(
 					'capability'  => 'edit_theme_options',
-					'title'       => __( 'Theme Selectors', 'auto-load-next-post' ),
+					'title'       => esc_html__( 'Theme Selectors', 'auto-load-next-post' ),
 					'description' => sprintf( __( 'Set the theme selectors below according to the theme. %1$sHow to find my theme selectors?%2$s', 'auto-load-next-post' ), '<a href="' . esc_url( 'https://autoloadnextpost.com/documentation/find-theme-selectors/?utm_source=wpcustomizer&utm_campaign=plugin-settings-theme-selectors' ) . '" target="_blank">', '</a>' ),
 				),
 				'auto_load_next_post_misc' => array(
 					'capability'  => 'edit_theme_options',
-					'title'       => __( 'Misc Settings', 'auto-load-next-post' ),
+					'title'       => esc_html__( 'Misc Settings', 'auto-load-next-post' ),
 					'description' => sprintf( __( 'Here you can set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+				),
+				'auto_load_next_post_events' => array(
+					'capability'  => 'edit_theme_options',
+					'title'       => esc_html__( 'Events', 'auto-load-next-post' ),
+					'description' => sprintf( __( 'Below you can enter external JavaScript events to be triggered alongside %1$s native events. Separate each event like so: %2$s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<code>event1, event2,</code>' ),
 				),
 			) );
 		} // END alnp_get_customizer_sections()
@@ -250,7 +257,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 					'capability'        => 'edit_theme_options',
 					'default'           => $settings['alnp_content_container'],
 					'sanitize_callback' => 'wp_filter_post_kses',
-					'validate_callback' => 'alnp_validate_content_container_selector',
+					'validate_callback' => array( $this, 'alnp_validate_content_container_selector' ),
 					'transport'         => 'postMessage',
 					'type'              => 'option',
 				),
@@ -258,7 +265,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 					'capability'        => 'edit_theme_options',
 					'default'           => $settings['alnp_title_selector'],
 					'sanitize_callback' => 'wp_filter_post_kses',
-					'validate_callback' => 'alnp_validate_post_title_selector',
+					'validate_callback' => array( $this, 'alnp_validate_post_title_selector' ),
 					'transport'         => 'postMessage',
 					'type'              => 'option',
 				),
@@ -266,7 +273,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 					'capability'        => 'edit_theme_options',
 					'default'           => $settings['alnp_navigation_container'],
 					'sanitize_callback' => 'wp_filter_post_kses',
-					'validate_callback' => 'alnp_validate_post_navigation_selector',
+					'validate_callback' => array( $this, 'alnp_validate_post_navigation_selector' ),
 					'transport'         => 'postMessage',
 					'type'              => 'option',
 				),
@@ -302,6 +309,18 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 					'transport'         => 'postMessage',
 					'type'              => 'option',
 				),
+				'auto_load_next_post_on_load_event' => array(
+					'capability'        => 'edit_theme_options',
+					'default'           => $settings['alnp_on_load_event'],
+					'transport'         => 'postMessage',
+					'type'              => 'option',
+				),
+				'auto_load_next_post_on_entering_event' => array(
+					'capability'        => 'edit_theme_options',
+					'default'           => $settings['alnp_on_entering_event'],
+					'transport'         => 'postMessage',
+					'type'              => 'option',
+				),
 			) );
 		} // END alnp_get_customizer_settings()
 
@@ -323,59 +342,75 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 			return apply_filters( 'auto_load_next_post_get_customizer_controls', array(
 				'alnp_content_container' => array(
 					'class'       => 'WP_Customize_Control',
-					'description' => __( 'The primary container where the post content is loaded in. Default: <code>main.site-main</code>', 'auto-load-next-post' ),
 					'label'       => esc_html__( 'Content Container', 'auto-load-next-post' ),
+					'description' => sprintf( __( 'The primary container where the post content is loaded in. Default: %s', 'auto-load-next-post' ), '<code>main.site-main</code>' ),
 					'section'     => 'auto_load_next_post_theme_selectors',
 					'settings'    => 'auto_load_next_post_content_container',
 					'type'        => 'text',
 				),
 				'alnp_title_selector' => array(
 					'class'       => 'WP_Customize_Control',
-					'description' => __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Default: <code>h1.entry-title</code>', 'auto-load-next-post' ),
 					'label'       => esc_html__( 'Post Title Selector', 'auto-load-next-post' ),
+					'description' => sprintf( __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Default: %s', 'auto-load-next-post' ), '<code>h1.entry-title</code>' ),
 					'section'     => 'auto_load_next_post_theme_selectors',
 					'settings'    => 'auto_load_next_post_title_selector',
 					'type'        => 'text',
 				),
 				'alnp_navigation_container' => array(
 					'class'       => 'WP_Customize_Control',
-					'description' => __( 'Used to identify which post to load next if any. Default: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
 					'label'       => esc_html__( 'Post Navigation Container', 'auto-load-next-post' ),
+					'description' => sprintf( __( 'Used to identify which post to load next if any. Default: %s', 'auto-load-next-post' ), '<code>nav.post-navigation</code>' ),
 					'section'     => 'auto_load_next_post_theme_selectors',
 					'settings'    => 'auto_load_next_post_navigation_container',
 					'type'        => 'text',
 				),
 				'alnp_comments_container' => array(
 					'class'       => 'WP_Customize_Control',
-					'description' => sprintf( __( 'Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> settings. Default: <code>div#comments</code>', 'auto-load-next-post' ), '<a href="javascript:wp.customize.section( \'auto_load_next_post_misc\' ).focus();">', '</a>' ),
 					'label'       => esc_html__( 'Comments Container', 'auto-load-next-post' ),
+					'description' => sprintf( __( 'Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> settings. Default: %3$s', 'auto-load-next-post' ), '<a href="javascript:wp.customize.section( \'auto_load_next_post_misc\' ).focus();">', '</a>', '<code>div#comments</code>' ),
 					'section'     => 'auto_load_next_post_theme_selectors',
 					'settings'    => 'auto_load_next_post_comments_container',
 					'type'        => 'text',
 				),
 				'alnp_remove_comments' => array(
 					'class'       => 'WP_Customize_Control',
-					'description' => esc_html__( 'Enable to remove comments when each post loads including the initial post.', 'auto-load-next-post' ),
 					'label'       => esc_html__( 'Remove Comments', 'auto-load-next-post' ),
+					'description' => esc_html__( 'Enable to remove comments when each post loads including the initial post.', 'auto-load-next-post' ),
 					'section'     => 'auto_load_next_post_misc',
 					'settings'    => 'auto_load_next_post_remove_comments',
 					'type'        => 'checkbox',
 				),
 				'alnp_google_analytics' => array(
 					'class'       => 'WP_Customize_Control',
-					'description' => esc_html__( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
 					'label'       => esc_html__( 'Update Google Analytics', 'auto-load-next-post' ),
+					'description' => esc_html__( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
 					'section'     => 'auto_load_next_post_misc',
 					'settings'    => 'auto_load_next_post_google_analytics',
 					'type'        => 'checkbox',
 				),
 				'alnp_js_footer' => array(
 					'class'       => 'WP_Customize_Control',
-					'description' => esc_html__( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site.', 'auto-load-next-post' ),
 					'label'       => esc_html__( 'JavaScript in Footer?', 'auto-load-next-post' ),
+					'description' => esc_html__( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site.', 'auto-load-next-post' ),
 					'section'     => 'auto_load_next_post_misc',
 					'settings'    => 'auto_load_next_post_google_analytics',
 					'type'        => 'checkbox',
+				),
+				'alnp_on_load_event' => array(
+					'class'       => 'WP_Customize_Control',
+					'label'       => esc_html__( 'Post loaded', 'auto-load-next-post' ),
+					'description' => esc_html__( 'Events listed here will be triggered after a new post has loaded.', 'auto-load-next-post' ),
+					'section'     => 'auto_load_next_post_events',
+					'settings'    => 'auto_load_next_post_on_load_event',
+					'type'        => 'textarea',
+				),
+				'alnp_on_entering_event' => array(
+					'class'       => 'WP_Customize_Control',
+					'label'       => esc_html__( 'Entering a Post', 'auto-load-next-post' ),
+					'description' => esc_html__( 'Events listed here will be triggered when entering a post.', 'auto-load-next-post' ),
+					'section'     => 'auto_load_next_post_events',
+					'settings'    => 'auto_load_next_post_on_entering_event',
+					'type'        => 'textarea',
 				),
 			) );
 		} // END alnp_get_customizer_controls()
@@ -443,7 +478,9 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				'alnp_comments_container'     => get_option( 'auto_load_next_post_comments_container' ),
 				'alnp_remove_comments'        => get_option( 'auto_load_next_post_remove_comments' ),
 				'alnp_google_analytics'       => get_option( 'auto_load_next_post_google_analytics' ),
-				'alnp_js_footer'              => get_option( 'auto_load_next_post_js_footer' )
+				'alnp_js_footer'              => get_option( 'auto_load_next_post_js_footer' ),
+				'alnp_on_load_event'          => get_option( 'auto_load_next_post_on_load_event' ),
+				'alnp_on_entering_event'      => get_option( 'auto_load_next_post_on_entering_event' ),
 			);
 
 			return $args;

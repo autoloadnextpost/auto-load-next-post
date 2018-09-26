@@ -15,6 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="notice notice-error auto-load-next-post-message">
+<div class="notice notice-error">
 	<p><?php echo sprintf( __( 'Sorry, <strong>%s</strong> requires WordPress %s or higher. Please upgrade your WordPress setup.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE ); ?></p>
 </div>

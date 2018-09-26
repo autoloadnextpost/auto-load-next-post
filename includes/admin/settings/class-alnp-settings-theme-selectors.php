@@ -102,19 +102,19 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Theme_Selectors_Tab' ) ) {
 					),
 
 					array(
-						'title'    => esc_html__( 'Content Container', 'auto-load-next-post' ),
-						'desc'     => __( 'The primary container where the post content is loaded in. Default: <code>main.site-main</code>', 'auto-load-next-post' ),
-						'id'       => 'auto_load_next_post_content_container',
-						'default'  => 'main.site-main',
-						'placeholder' => __( 'Required', 'auto-load-next-post' ),
-						'type'     => 'text',
-						'css'      => 'min-width:300px;',
-						'autoload' => false
+						'title'       => esc_html__( 'Content Container', 'auto-load-next-post' ),
+						'desc'        => sprintf( __( 'The primary container where the post content is loaded in. Default: %s', 'auto-load-next-post' ), '<code>main.site-main</code>' ),
+						'id'          => 'auto_load_next_post_content_container',
+						'default'     => 'main.site-main',
+						'placeholder' => esc_html__( 'Required', 'auto-load-next-post' ),
+						'type'        => 'text',
+						'css'         => 'min-width:300px;',
+						'autoload'    => false
 					),
 
 					array(
 						'title'    => esc_html__( 'Post Title', 'auto-load-next-post' ),
-						'desc'     => __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Default: <code>h1.entry-title</code>', 'auto-load-next-post' ),
+						'desc'     => sprintf( __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Default: %s', 'auto-load-next-post' ), '<code>h1.entry-title</code>' ),
 						'id'       => 'auto_load_next_post_title_selector',
 						'default'  => 'h1.entry-title',
 						'type'     => 'text',
@@ -124,7 +124,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Theme_Selectors_Tab' ) ) {
 
 					array(
 						'title'    => esc_html__( 'Post Navigation', 'auto-load-next-post' ),
-						'desc'     => __( 'Used to identify which post to load next if any. Default: <code>nav.post-navigation</code>', 'auto-load-next-post' ),
+						'desc'     => sprintf( __( 'Used to identify which post to load next if any. Default: %s', 'auto-load-next-post' ), '<code>nav.post-navigation</code>' ),
 						'id'       => 'auto_load_next_post_navigation_container',
 						'default'  => 'nav.post-navigation',
 						'type'     => 'text',
@@ -134,7 +134,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Theme_Selectors_Tab' ) ) {
 
 					array(
 						'title'    => esc_html__( 'Comments Container', 'auto-load-next-post' ),
-						'desc'     => sprintf( __( 'Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> settings. Default: <code>div#comments</code>', 'auto-load-next-post' ), '<a href="' . get_admin_url( $blog_id, 'options-theme_selectors.php?page=auto-load-next-post-settings&tab=misc' ) . '">', '</a>' ),
+						'desc'     => sprintf( __( 'Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s', 'auto-load-next-post' ), '<strong><a href="' . get_admin_url( $blog_id, 'options-general.php?page=auto-load-next-post-settings&tab=misc' ) . '">', '</a></strong>', '<code>div#comments</code>' ),
 						'id'       => 'auto_load_next_post_comments_container',
 						'default'  => 'div#comments',
 						'type'     => 'text',

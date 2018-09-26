@@ -63,6 +63,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-theme-selectors.php');
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-misc.php');
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-events.php');
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-integrations.php');
 
 				self::$settings = apply_filters( 'auto_load_next_post_get_settings_pages', $settings );
@@ -217,8 +218,9 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @param   array $options Opens array to output
 		 */
 		public static function output_fields( $options ) {
-			foreach ( $options as $value ) {
-				if ( ! isset( $value['type'] ) ) {
+			foreach ( $options as $key => $value ) {
+
+			if ( ! isset( $value['type'] ) ) {
 					continue;
 				}
 				if ( ! isset( $value['id'] ) ) {

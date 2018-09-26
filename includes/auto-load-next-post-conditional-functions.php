@@ -22,7 +22,6 @@ if ( ! function_exists( 'auto_load_next_post_is_ajax' ) ) {
 	/**
 	 * Returns true when the page is loaded via ajax.
 	 *
-	 * @access public
 	 * @since  1.0.0
 	 * @return bool
 	 */
@@ -39,7 +38,6 @@ if ( ! function_exists( 'alnp_template_location' ) ) {
 	/**
 	 * Filters the template location for get_template_part().
 	 *
-	 * @access  public
 	 * @since   1.4.8
 	 * @version 1.5.0
 	 * @return  boolean
@@ -227,7 +225,6 @@ if ( ! function_exists( 'alnp_get_post_type' ) ) {
 	/**
 	 * Returns the post type.
 	 *
-	 * @access public
 	 * @since  1.4.12
 	 * @return string
 	 */
@@ -240,5 +237,21 @@ if ( ! function_exists( 'alnp_get_post_type' ) ) {
 		}
 
 		return $post_type;
+	}
+}
+
+if ( ! function_exists( 'alnp_check_jetpack' ) ) {
+	/**
+	 * Check if Jetpack is installed.
+	 *
+	 * @since  1.5.0
+	 * @return string
+	 */
+	function alnp_check_jetpack() {
+		$jetpack_active = class_exists( 'Jetpack' );
+
+		$is_active = $jetpack_active ? 'yes' : 'no';
+
+		return $is_active;
 	}
 }

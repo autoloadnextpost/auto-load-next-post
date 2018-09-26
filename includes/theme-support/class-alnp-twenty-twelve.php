@@ -66,6 +66,8 @@ class ALNP_Twenty_Twelve {
 			'title_selector'       => 'h1.entry-title',
 			'navigation_container' => '.nav-single',
 			'comments_container'   => 'div#comments',
+			'load_js_in_footer'    => 'no',
+			'lock_js_in_footer'    => 'no',
 		) );
 	} // END add_theme_support()
 

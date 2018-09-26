@@ -59,6 +59,8 @@ class ALNP_Make {
 			'title_selector'       => 'h1.entry-title',
 			'navigation_container' => 'nav.post-navigation',
 			'comments_container'   => 'div#comments',
+			'load_js_in_footer'    => 'no',
+			'lock_js_in_footer'    => 'no',
 		) );
 	} // END add_theme_support()
 

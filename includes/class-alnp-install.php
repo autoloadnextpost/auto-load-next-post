@@ -3,7 +3,7 @@
  * Auto Load Next Post - Installation related functions and actions.
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.5.1
  * @author   Sébastien Dumont
  * @category Classes
  * @package  Auto Load Next Post/Classes/Install
@@ -40,7 +40,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			add_action( 'init', array( __CLASS__, 'check_version' ), 5 );
 
 			// Get plugin version.
-			self::$current_version = get_option( 'auto_load_next_post_version', null );
+			self::$current_version = get_option( 'auto_load_next_post_version' );
 		} // END __construct()
 
 		/**
@@ -89,6 +89,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			// Set theme selectors if current active theme supports Auto Load Next Post.
 			self::set_theme_selectors();
 
+			// Sets ALNP to load in the footer if the current active theme requires it.
+			self::set_js_in_footer();
+
 			// Set activation date.
 			self::set_install_date();
 
@@ -126,6 +129,26 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		} // END set_theme_selectors()
 
 		/**
+		 * Sets Auto Load Next Post to load in the footer if the 
+		 * current active theme requires it and lock it so the 
+		 * user can not disable it should the theme not work any other way.
+		 *
+		 * @access private
+		 * @static
+		 * @since   1.5.0
+		 * @version 1.5.3
+		 */
+		private static function set_js_in_footer() {
+			if ( is_alnp_supported() ) {
+				$load_js_in_footer = alnp_get_theme_support( 'load_js_in_footer' );
+				$lock_js_in_footer = alnp_get_theme_support( 'lock_js_in_footer' );
+
+				if ( ! empty( $load_js_in_footer ) && $load_js_in_footer == 'yes' ) update_option( 'auto_load_next_post_load_js_in_footer', $load_js_in_footer );
+				if ( ! empty( $lock_js_in_footer ) && $lock_js_in_footer == 'yes' ) update_option( 'auto_load_next_post_lock_js_in_footer', $lock_js_in_footer );
+			}
+		} // END set_js_in_footer()
+
+		/**
 		 * Update plugin version to current.
 		 *
 		 * @access private
@@ -159,13 +182,14 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 *
 		 * Sets up the default options defined on the settings pages.
 		 *
-		 * @access public
+		 * @access  public
 		 * @static
-		 * @since  1.0.0
+		 * @since   1.0.0
+		 * @version 1.5.1
 		 */
 		public static function create_options() {
 			// Include settings so that we can run through defaults
-			include_once( dirname( __FILE__ ) . '/admin/class-auto-load-next-post-admin-settings.php' );
+			include_once( dirname( __FILE__ ) . '/admin/class-alnp-admin-settings.php' );
 
 			$settings = Auto_Load_Next_Post_Admin_Settings::get_settings_pages();
 
@@ -188,7 +212,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 * @version 1.5.0
 		 */
 		public static function add_rewrite_endpoint() {
-			add_rewrite_endpoint( 'alnp', EP_PERMALINK );
+			add_rewrite_endpoint( 'alnp', EP_PERMALINK | EP_PAGES | EP_ATTACHMENT );
 		} // END add_rewrite_endpoint()
 
 		/**
