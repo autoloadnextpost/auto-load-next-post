@@ -26,46 +26,53 @@
 
 	</div>
 
-	<form method="post" action="https://sebastiendumont.us1.list-manage.com/subscribe/post?u=48ead612ad85b23fe2239c6e3&amp;id=79e97b5275" name="mc-embedded-subscribe-form" target="_blank" class="subscribe block">
-		<h2><?php esc_html_e( 'Sign up to pre-order first', 'auto-load-next-post' ); ?></h2>
+	<div class="block">
+		<div class="inner-block">
+			<form method="post" action="https://sebastiendumont.us1.list-manage.com/subscribe/post?u=48ead612ad85b23fe2239c6e3&amp;id=79e97b5275" name="mc-embedded-subscribe-form" target="_blank" class="subscribe block">
+				<h2><?php esc_html_e( 'Sign up to pre-order first', 'auto-load-next-post' ); ?></h2>
 
-		<p class="intro">
-			<?php echo wptexturize( esc_html__( 'Submit your name and email and be the first to know when you can pre-order Auto Load Next Post Pro and keep up to date with my developments plus a 10% discount.', 'auto-load-next-post' ) ); ?>
-		</p>
+				<p class="intro">
+					<?php echo wptexturize( esc_html__( 'Submit your name and email and be the first to know when you can pre-order Auto Load Next Post Pro and keep up to date with my developments plus a 10% discount.', 'auto-load-next-post' ) ); ?>
+				</p>
 
-		<div class="field">
-			<input type="email" name="EMAIL" value="" placeholder="<?php esc_html_e( 'Your Email Address', 'auto-load-next-post' ); ?>"/>
+				<div class="field">
+					<input type="email" name="EMAIL" value="" placeholder="<?php esc_html_e( 'Your Email Address', 'auto-load-next-post' ); ?>"/>
+				</div>
+
+				<div class="field">
+					<input type="text" name="FNAME" value="" placeholder="<?php esc_html_e( 'First Name', 'auto-load-next-post' ); ?>"/>
+				</div>
+
+				<div class="field">
+					<input type="text" name="LNAME" value="" placeholder="<?php esc_html_e( 'Last Name', 'auto-load-next-post' ); ?>"/>
+				</div>
+
+				<input type="hidden" name="group[35169][1]" value="1">
+
+				<div class="field submit-button">
+					<div style="position: absolute; left: -9999px;" aria-hidden="true"><input type="text" name="b_48ead612ad85b23fe2239c6e3_79e97b5275" tabindex="-1" value=""></div>
+					<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="<?php esc_html_e( 'Sign me up', 'auto-load-next-post' ); ?>"/>
+				</div>
+
+				<p class="promise">
+					<?php esc_html_e( 'I promise I will not use your email for anything else and you can unsubscribe with 1-click anytime.', 'auto-load-next-post' ); ?>
+				</p>
+
+			</form>
 		</div>
-
-		<div class="field">
-			<input type="text" name="FNAME" value="" placeholder="<?php esc_html_e( 'First Name', 'auto-load-next-post' ); ?>"/>
-		</div>
-
-		<div class="field">
-			<input type="text" name="LNAME" value="" placeholder="<?php esc_html_e( 'Last Name', 'auto-load-next-post' ); ?>"/>
-		</div>
-
-		<input type="hidden" name="group[35169][1]" value="1">
-
-		<div class="field submit-button">
-			<div style="position: absolute; left: -9999px;" aria-hidden="true"><input type="text" name="b_48ead612ad85b23fe2239c6e3_79e97b5275" tabindex="-1" value=""></div>
-			<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="<?php esc_html_e( 'Sign me up', 'auto-load-next-post' ); ?>"/>
-		</div>
-
-		<p class="promise">
-			<?php esc_html_e( 'I promise I will not use your email for anything else and you can unsubscribe with 1-click anytime.', 'auto-load-next-post' ); ?>
-		</p>
-	</form>
+	</div>
 
 	<div class="block credits">
-		<h4><?php esc_html_e( 'Created &amp; maintained by', 'auto-load-next-post' ); ?></h4>
-		<ul>
-			<li>
-				<a href="https://profiles.wordpress.org/sebd86" target="_blank">
-					<img src="https://secure.gravatar.com/avatar/c3f9be587ccc8656bad714cb945f70a4?size=32" alt="Sébastien Dumont" width="32" height="32">
-					<span>Sébastien Dumont</span>
-				</a>
-			</li>
-		</ul>
+		<h3><?php esc_html_e( 'Created &amp; maintained by', 'auto-load-next-post' ); ?></h3>
+		<div class="inner-block">
+			<ul>
+				<li>
+					<a href="https://profiles.wordpress.org/sebd86" target="_blank">
+						<img src="https://secure.gravatar.com/avatar/c3f9be587ccc8656bad714cb945f70a4?size=32" alt="Sébastien Dumont" width="32" height="32">
+						<span>Sébastien Dumont</span>
+					</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
