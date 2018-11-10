@@ -3,6 +3,7 @@
  * Admin View: Welcome Notice.
  *
  * @since    1.5.0
+ * @version  1.5.4
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -26,11 +27,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php echo sprintf( __( 'Thank you for activating %1$s! If you\'re a first time user, welcome! You\'re well on your way to increasing your pageviews.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?>
 				<?php
 				// If the theme has not added support then encourage the user to see the documentation.
-				if ( !is_alnp_supported() ) {
+				if ( ! is_alnp_supported() ) {
 					$query = array(
 						'autofocus[panel]'   => 'alnp',
 						'autofocus[section]' => 'auto_load_next_post_theme_selectors',
-						'url'                => ALNP_Customizer::alnp_get_random_page_permalink(),
+						'url'                => alnp_get_random_page_permalink(),
 						'return'             => admin_url( 'options-general.php?page=auto-load-next-post-settings' ),
 					);
 					$customizer_link = add_query_arg( $query, admin_url( 'customize.php' ) );

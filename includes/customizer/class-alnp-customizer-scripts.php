@@ -67,7 +67,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer_Scripts' ) ) {
 						 * but we are not viewing a single post.
 						 */
 						if ( isExpanded && !is_page_single ) {
-							wp.customize.previewer.previewUrl.set( '<?php echo esc_js( Auto_Load_Next_Post_Customizer::alnp_get_random_page_permalink() ); ?>' );
+							wp.customize.previewer.previewUrl.set( '<?php echo esc_js( alnp_get_random_page_permalink() ); ?>' );
 						}
 
 					} );
