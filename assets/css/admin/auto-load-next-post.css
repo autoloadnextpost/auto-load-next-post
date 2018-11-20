@@ -158,6 +158,10 @@ nav .nav-tab:first-child {
   width: 74%;
 }
 
+body.folded .wrap #mainform {
+  width: 78%;
+}
+
 @media screen and (max-width: 1052px) {
   .wrap #mainform {
     width: 100%;
@@ -367,7 +371,7 @@ nav .nav-tab:first-child {
 }
 
 /* Footer */
-#wpfooter {
+body.settings_page_auto-load-next-post-settings #wpfooter {
   background-color: #fff;
   border-top: 1px solid #ccc;
   position: fixed;
