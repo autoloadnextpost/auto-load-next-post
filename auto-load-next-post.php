@@ -24,8 +24,6 @@
  * Main Auto Load Next Post Class
  *
  * The main instance of the plugin.
- *
- * @version 1.5.0
  */
 if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
@@ -127,7 +125,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * Setup Constants
 		 *
 		 * @since   1.4.3
-		 * @version 1.5.0
+		 * @version 1.5.5
 		 * @access  private
 		 */
 		private function setup_constants() {
@@ -146,6 +144,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
 			$this->define('AUTO_LOAD_NEXT_POST_SCRIPT_MODE', $suffix);
 			$this->define('AUTO_LOAD_NEXT_POST_DEBUG_MODE', $debug_suffix);
+
+			$this->define('AUTO_LOAD_NEXT_POST_STORE_URL', 'https://autoloadnextpost.com/');
+			$this->define('AUTO_LOAD_NEXT_POST_SUPPORT_URL', 'https://wordpress.org/support/plugin/auto-load-next-post');
+			$this->define('AUTO_LOAD_NEXT_POST_REVIEW_URL', 'https://wordpress.org/plugins/auto-load-next-post/#reviews');
 		} // END setup_constants()
 
 		/**
@@ -161,10 +163,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 				define( $name, $value );
 			}
 		} // END define()
-
-		/*-----------------------------------------------------------------------------------*/
-		/*  Load Files                                                                       */
-		/*-----------------------------------------------------------------------------------*/
 
 		/**
 		 * Include required core files used in admin and on the frontend.
@@ -246,10 +244,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			}
 		} // END alnp_include_theme_support()
 
-		/*-----------------------------------------------------------------------------------*/
-		/*  Localization                                                                     */
-		/*-----------------------------------------------------------------------------------*/
-
 		/**
 		 * Make the plugin translation ready.
 		 *
@@ -302,10 +296,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 				) );
 			} // END if is_singular() && get_post_type()
 		} // END alnp_enqueue_scripts()
-
-		/*-----------------------------------------------------------------------------------*/
-		/*  Helper Functions                                                                 */
-		/*-----------------------------------------------------------------------------------*/
 
 		/**
 		 * Checks if we are using the theme customizer.

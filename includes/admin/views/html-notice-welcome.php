@@ -3,7 +3,7 @@
  * Admin View: Welcome Notice.
  *
  * @since    1.5.0
- * @version  1.5.4
+ * @version  1.5.5
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -44,8 +44,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="auto-load-next-post-documentation">
 			<?php
 			// If the theme has not added support then display button to documentation.
-			if ( !is_alnp_supported() ) {
-				printf( '<a href="%1$s" class="button button-primary auto-load-next-post-documentation-button" target="_blank">%2$s</a>', esc_url( 'https://autoloadnextpost.com/documentation/?utm_source=plugin&utm_medium=link&utm_campaign=welcome-notice' ), esc_html__( 'Documentation', 'auto-load-next-post' ) );
+			if ( ! is_alnp_supported() ) {
+				printf( '<a href="%1$s" class="button button-primary auto-load-next-post-documentation-button" target="_blank">%2$s</a>', esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'documentation/?utm_source=plugin&utm_medium=link&utm_campaign=welcome-notice' ), esc_html__( 'Documentation', 'auto-load-next-post' ) );
 			}
 			?>
 			<a href="<?php echo esc_url( add_query_arg( 'hide_auto_load_next_post_welcome_notice', 'true' ) ); ?>" class="no-thanks"><?php echo esc_html__( 'Dismiss Notice', 'auto-load-next-post' ); ?></a>

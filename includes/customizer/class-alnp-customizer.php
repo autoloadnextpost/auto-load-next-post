@@ -223,7 +223,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				'auto_load_next_post_theme_selectors' => array(
 					'capability'  => 'edit_theme_options',
 					'title'       => esc_html__( 'Theme Selectors', 'auto-load-next-post' ),
-					'description' => sprintf( __( 'Set the theme selectors below according to the theme. %1$sHow to find my theme selectors?%2$s', 'auto-load-next-post' ), '<a href="' . esc_url( 'https://autoloadnextpost.com/documentation/find-theme-selectors/?utm_source=wpcustomizer&utm_campaign=plugin-settings-theme-selectors' ) . '" target="_blank">', '</a>' ),
+					'description' => sprintf( __( 'Set the theme selectors below according to the theme. %1$sHow to find my theme selectors?%2$s', 'auto-load-next-post' ), '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'documentation/find-theme-selectors/?utm_source=wpcustomizer&utm_campaign=plugin-settings-theme-selectors' ) . '" target="_blank">', '</a>' ),
 				),
 				'auto_load_next_post_misc' => array(
 					'capability'  => 'edit_theme_options',

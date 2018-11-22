@@ -1,6 +1,6 @@
 <div class="alnp-sidebar">
 
-	<a class="alnp-banner" href="https://autoloadnextpost.com/?utm_source=plugin&utm_medium=alnp-banner&utm_campaign=alnp-settings-page"></a>
+	<a class="alnp-banner" href="<?php echo AUTO_LOAD_NEXT_POST_STORE_URL; ?>?utm_source=plugin&utm_medium=alnp-banner&utm_campaign=alnp-settings-page"></a>
 
 	<div class="alnp-upgrade-details">
 		<h1><?php esc_html_e( 'Pro Coming Soon', 'auto-load-next-post' ); ?></h1>
@@ -21,7 +21,7 @@
 		</ul>
 
 		<p>
-			<a href="https://autoloadnextpost.com/pro/?utm_source=plugin&utm_medium=link&utm_campaign=alnp-settings-page"><?php esc_html_e( 'Visit autoloadnextpost.com &rarr;', 'auto-load-next-post' ); ?></a>
+			<a href="<?php echo AUTO_LOAD_NEXT_POST_STORE_URL; ?>pro/?utm_source=plugin&utm_medium=link&utm_campaign=alnp-settings-page"><?php esc_html_e( 'Visit autoloadnextpost.com &rarr;', 'auto-load-next-post' ); ?></a>
 		</p>
 
 	</div>

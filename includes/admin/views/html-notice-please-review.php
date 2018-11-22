@@ -3,7 +3,7 @@
  * Admin View: Plugin Review Notice.
  *
  * @since    1.0.0
- * @version  1.4.10
+ * @version  1.5.5
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -31,7 +31,7 @@ $time = auto_load_next_post_seconds_to_words( time() - $install_date );
 		</div>
 
 		<div class="auto-load-next-post-review-now">
-			<?php printf( '<a href="%1$s" class="button button-primary auto-load-next-post-review-button" target="_blank">%2$s</a>', esc_url( 'https://wordpress.org/support/plugin/auto-load-next-post/reviews?rate=5#new-post' ), esc_html__( 'Leave a Review', 'auto-load-next-post' ) ); ?>
+			<?php printf( '<a href="%1$s" class="button button-primary auto-load-next-post-review-button" target="_blank">%2$s</a>', esc_url( AUTO_LOAD_NEXT_POST_REVIEW_URL . '?rate=5#new-post' ), esc_html__( 'Leave a Review', 'auto-load-next-post' ) ); ?>
 			<a href="<?php echo esc_url( add_query_arg( 'hide_auto_load_next_post_review_notice', 'true' ) ); ?>" class="no-thanks"><?php echo esc_html__( 'No thank you / I already have', 'auto-load-next-post' ); ?></a>
 		</div>
 	</div>
