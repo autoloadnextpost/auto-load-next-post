@@ -1,3 +1,9 @@
+# 1.5.4 (10th November 2018)
+* Fixed: Welcome notice. A class was not defined to return `alnp_get_random_page_permalink` function for unsuported themes.
+* Moved: `alnp_get_random_page_permalink` function to core functions so it is globally used instead.
+* Added: An if condition to check each global function if `function_exists`
+* Updated: The **uninstall.php** file to also remove user interactions saved in the **usermeta** table.
+
 # 1.5.3 (15th September 2018)
 * Corrected: Meta name for when locking the JavaScript in the footer is set via theme support.
 

@@ -64,13 +64,13 @@ if ( !class_exists( 'Auto_Load_Next_Post_Pro_Preview_Controller' ) ) {
 			</ul>
 
 			<p>
-				<?php printf( esc_html__( 'Find out more about %1$s%2$s%3$s.', 'auto-load-next-post'), '<a target="_blank" href="' . esc_url( 'https://autoloadnextpost.com/pro/?utm_source=wpcustomizer&utm_campaign=plugin-settings-pro-preview' ) . '">', esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ), '</a>' ); ?>
+				<?php printf( esc_html__( 'Find out more about %1$s%2$s%3$s.', 'auto-load-next-post'), '<a target="_blank" href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'pro/?utm_source=wpcustomizer&utm_campaign=plugin-settings-pro-preview' ) . '">', esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ), '</a>' ); ?>
 			</p>
 
 			<span class="customize-control-title"><?php printf( esc_html__( 'Add-ons for %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></span>
 
 			<p>
-				<?php printf( esc_html__( 'Add-ons available provide additional support or options for %1$s. %2$sCheck out the add-ons%3$s to see what is available.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a target="_blank" href="' . esc_url( 'https://autoloadnextpost.com/add-ons/?utm_source=wpcustomizer&utm_campaign=plugin-settings-pro-preview' ) . '">', '</a>' ); ?>
+				<?php printf( esc_html__( 'Add-ons available provide additional support or options for %1$s. %2$sCheck out the add-ons%3$s to see what is available.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a target="_blank" href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'add-ons/?utm_source=wpcustomizer&utm_campaign=plugin-settings-pro-preview' ) . '">', '</a>' ); ?>
 			</p>
 
 			<span class="customize-control-title"><?php printf( esc_html__( 'Enjoying %s?', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></span>

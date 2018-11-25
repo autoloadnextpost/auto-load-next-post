@@ -1,10 +1,6 @@
 /**
  * CSS for Auto Load Next Post settings page and notifications.
  */
-#wpfooter .wrap {
-	display: block;
-	margin: 3px 0 3px 0 !important;
-}
 .wrap.auto-load-next-post.support input[type="button"].button-primary,
 .wrap.auto-load-next-post.support input[type="submit"].button-primary,
 .wrap.auto-load-next-post.support input[type="button"].button-secondary,
@@ -46,7 +42,6 @@ nav .nav-tab:first-child {
 	display: inline-block;
 }
 .button.auto-load-next-post-reload:after {
-	speak: none;
 	font-weight: 400;
 	font-variant: normal;
 	text-transform: none;
@@ -163,6 +158,10 @@ nav .nav-tab:first-child {
   width: 74%;
 }
 
+body.folded .wrap #mainform {
+  width: 78%;
+}
+
 @media screen and (max-width: 1052px) {
   .wrap #mainform {
     width: 100%;
@@ -181,8 +180,20 @@ nav .nav-tab:first-child {
 }
 
 .alnp-sidebar .block {
-  padding: 20px;
-  border: 1px solid #ccc
+  background-color: #fff;
+  margin-bottom: 2em;
+}
+
+.alnp-sidebar .block .inner-block {
+  padding: 10px 20px;
+}
+
+.alnp-sidebar .block h3 {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 14px 20px;
+  margin: 0;
+  text-transform: none;
 }
 
 .alnp-sidebar .subscribe {
@@ -193,7 +204,6 @@ nav .nav-tab:first-child {
   padding: 0;
   margin: 0;
   margin-bottom: 0.5em;
-  color: #666;
   font-size: 20px;
   line-height: 1.2em;
   float: none
@@ -239,7 +249,8 @@ nav .nav-tab:first-child {
   margin-bottom: 0.3em
 }
 
-.alnp-sidebar .subscribe .field input[type=text], .alnp-sidebar .subscribe .field input[type=email] {
+.alnp-sidebar .subscribe .field input[type=text], 
+.alnp-sidebar .subscribe .field input[type=email] {
   width: 100%
 }
 
@@ -321,6 +332,7 @@ nav .nav-tab:first-child {
   color: #333;
   font-size: 13px;
   margin: 0;
+  margin-bottom: 2em;
   display: block;
   text-decoration: none
 }
@@ -356,4 +368,11 @@ nav .nav-tab:first-child {
   margin-top: 0;
   margin-left: 16px;
   list-style-type: disc
+}
+
+/* Footer */
+body.settings_page_auto-load-next-post-settings #wpfooter {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  position: fixed;
 }

@@ -342,4 +342,4 @@ jQuery( document ).ready( function($) {
 
 	} // END auto_load_next_post()
 
-})
+});

@@ -3,7 +3,7 @@
  * Admin View: Trying Beta Notice.
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.5.5
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 
 		<div class="auto-load-next-post-send-feedback">
-			<?php printf( '<a href="%1$s" class="button button-primary auto-load-next-post-feedback-button" target="_blank">%2$s</a>', esc_url( 'https://autoloadnextpost.com/contact/' ), esc_html__( 'Give Feedback', 'auto-load-next-post' ) ); ?>
+			<?php printf( '<a href="%1$s" class="button button-primary auto-load-next-post-feedback-button" target="_blank">%2$s</a>', esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'contact/' ), esc_html__( 'Give Feedback', 'auto-load-next-post' ) ); ?>
 			<a href="<?php echo esc_url( add_query_arg( 'hide_auto_load_next_post_beta_notice', 'true' ) ); ?>" class="no-thanks"><?php echo esc_html__( 'Ask me again in 7 days', 'auto-load-next-post' ); ?></a>
 		</div>
 	</div>
