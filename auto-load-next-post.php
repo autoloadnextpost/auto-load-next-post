@@ -140,18 +140,18 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @access  private
 		 */
 		private function setup_constants() {
-			$this->define( 'AUTO_LOAD_NEXT_POST_VERSION', self::$version );
-			$this->define( 'AUTO_LOAD_NEXT_POST_FILE', __FILE__ );
-			$this->define( 'AUTO_LOAD_NEXT_POST_SLUG', 'auto-load-next-post' );
+			$this->define('AUTO_LOAD_NEXT_POST_VERSION', self::$version);
+			$this->define('AUTO_LOAD_NEXT_POST_FILE', __FILE__);
+			$this->define('AUTO_LOAD_NEXT_POST_SLUG', 'auto-load-next-post');
 
-			$this->define( 'AUTO_LOAD_NEXT_POST_URL_PATH', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
-			$this->define( 'AUTO_LOAD_NEXT_POST_FILE_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
-			$this->define( 'AUTO_LOAD_NEXT_POST_TEMPLATE_PATH', 'auto-load-next-post/' );
+			$this->define('AUTO_LOAD_NEXT_POST_URL_PATH', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
+			$this->define('AUTO_LOAD_NEXT_POST_FILE_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
+			$this->define('AUTO_LOAD_NEXT_POST_TEMPLATE_PATH', 'auto-load-next-post/');
 
-			$this->define( 'AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE', '4.4' );
+			$this->define('AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE', '4.4');
 
-			$suffix       = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-			$debug_suffix = defined( 'ALNP_DEV_DEBUG' ) && ALNP_DEV_DEBUG ? '.dev' : '';
+			$suffix       = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+			$debug_suffix = defined('ALNP_DEV_DEBUG') && ALNP_DEV_DEBUG ? '.dev' : '';
 
 			$this->define('AUTO_LOAD_NEXT_POST_SCRIPT_MODE', $suffix);
 			$this->define('AUTO_LOAD_NEXT_POST_DEBUG_MODE', $debug_suffix);
