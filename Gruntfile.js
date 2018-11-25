@@ -13,8 +13,8 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: 'assets/css/admin',
 					src: [
-						'auto-load-next-post.css',
-						'!auto-load-next-post.min.css'
+						'*.css',
+						'!*.min.css'
 					],
 					dest: 'assets/css/admin',
 					ext: '.min.css'
@@ -83,7 +83,6 @@ module.exports = function(grunt) {
 					exclude: [
 						'releases',
 						'node_modules',
-						'wp-update-php'
 					]
 				}
 			}
@@ -114,7 +113,6 @@ module.exports = function(grunt) {
 					'*.php',
 					'**/*.php', // Include all files
 					'!node_modules/**', // Exclude node_modules/
-					'!wp-update-php/**'
 				],
 				expand: true
 			},
