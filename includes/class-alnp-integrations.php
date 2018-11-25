@@ -4,7 +4,7 @@
  *
  * Loads Integrations into Auto Load Next Post.
  *
- * @version  1.5.0
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Classes
  * @package  Auto Load Next Post/Classes/Integrations

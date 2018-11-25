@@ -3,7 +3,7 @@
  * Auto Load Next Post Settings Page
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Settings
@@ -39,7 +39,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.4.10
-		 * @version 1.5.0
+		 * @version 1.6.0
 		 */
 		public function __construct() {
 			add_filter( 'auto_load_next_post_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
@@ -113,7 +113,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 		 * Get sections.
 		 *
 		 * @access public
-		 * @since  1.5.0
+		 * @since  1.6.0
 		 * @return array
 		 */
 		public function get_sections() {
@@ -124,7 +124,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 		 * Output sections.
 		 *
 		 * @access public
-		 * @since  1.5.0
+		 * @since  1.6.0
 		 * @global $current_section
 		 */
 		public function output_sections() {
@@ -164,7 +164,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.6.0
 		 * @global  $current_section
 		 */
 		public function save() {
