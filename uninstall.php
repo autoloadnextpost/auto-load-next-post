@@ -3,7 +3,7 @@
  * Uninstall Auto Load Next Post.
  *
  * @since    1.0.0
- * @version  1.4.10
+ * @version  1.5.4
  * @author   Sébastien Dumont
  * @category Core
  * @package  Auto Load Next Post
@@ -22,6 +22,9 @@ if ( ! is_multisite() ) {
 	if ( ! empty( $uninstall ) ) {
 		// Delete options
 		$wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE 'auto_load_next_post_%'");
+
+		// Delete user interactions
+		$wpdb->query("DELETE FROM $wpdb->usermeta WHERE meta_key LIKE 'auto_load_next_post_%'");
 	}
 }
 

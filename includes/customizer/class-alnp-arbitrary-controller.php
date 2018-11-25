@@ -27,13 +27,6 @@ if ( !class_exists( 'Auto_Load_Next_Post_Arbitrary_Control' ) ) {
 	class Auto_Load_Next_Post_Arbitrary_Control extends WP_Customize_Control {
 
 		/**
-		 * The description var
-		 *
-		 * @var string $description the control description.
-		 */
-		public $description = '';
-
-		/**
 		 * Renter the control
 		 *
 		 * @return void
@@ -46,13 +39,12 @@ if ( !class_exists( 'Auto_Load_Next_Post_Arbitrary_Control' ) ) {
 					break;
 
 				case 'heading':
-					echo '<span class="customize-control-title">' . esc_html( $this->label ) . '</span>';
+					echo '<span class="customize-control-title">' . $this->label . '</span>';
 					break;
 
 				case 'divider':
 					echo '<hr style="margin: 1em 0;" />';
 					break;
-				}
 			}
 		} // END render_content()
 

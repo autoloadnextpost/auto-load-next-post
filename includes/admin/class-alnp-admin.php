@@ -3,7 +3,7 @@
  * Auto Load Next Post - Admin.
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.5.5
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin
@@ -234,10 +234,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 			if ( current_user_can( 'manage_options' ) ) {
 				// Checks if Auto Load Next Post Pro has been installed.
 				if ( ! is_alnp_pro_version_installed() ) {
-					$plugin_action_links['go-pro'] = '<a href="' . esc_url( 'https://autoloadnextpost.com/pro/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" target="_blank" style="color:green; font-weight:bold;">' . __( 'Upgrade to Pro', 'auto-load-next-post' ) . '</a>';
+					$plugin_action_links['go-pro'] = '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'pro/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" aria-label="' . esc_attr__( 'Sign up for Auto Load Next Post Pro', 'auto-load-next-post' ) . '" target="_blank" style="color:green; font-weight:bold;">' . __( 'Sign up for Pro', 'auto-load-next-post' ) . '</a>';
 				}
 
-				$plugin_action_links['settings'] = '<a href="' . admin_url( 'options-general.php?page=auto-load-next-post-settings' ) . '">' . __( 'Settings', 'auto-load-next-post' ) . '</a>';
+				$plugin_action_links['settings'] = '<a href="' . admin_url( 'options-general.php?page=auto-load-next-post-settings' ) . '" aria-label="' . esc_attr__( 'View Auto Load Next Post settings', 'auto-load-next-post' ) . '">' . __( 'Settings', 'auto-load-next-post' ) . '</a>';
 
 				return array_merge( $plugin_action_links, $links );
 			}
@@ -258,12 +258,12 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 */
 		public function plugin_row_meta( $links, $file, $data ) {
 			if ( $file == plugin_basename( AUTO_LOAD_NEXT_POST_FILE ) ) {
-				$links[ 1 ] = sprintf( __( 'Developed By %s', 'auto-load-next-post' ), '<a href="' . $data[ 'AuthorURI' ] . '">' . $data[ 'Author' ] . '</a>' );
+				$links[ 1 ] = sprintf( __( 'Developed By %s', 'auto-load-next-post' ), '<a href="' . $data[ 'AuthorURI' ] . '" aria-label="' . esc_attr__( 'View the developers site', 'auto-load-next-post' ) . '">' . $data[ 'Author' ] . '</a>' );
 
 				$row_meta = array(
-					'docs' => '<a href="' . esc_url( 'https://autoloadnextpost.com/documentation/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" target="_blank">' . __( 'Documentation', 'auto-load-next-post' ) . '</a>',
-					'community' => '<a href="' . esc_url( 'https://wordpress.org/support/plugin/auto-load-next-post' ) . '" target="_blank">' . __( 'Community Support', 'auto-load-next-post' ) . '</a>',
-					'theme-support' => '<a href="' . esc_url( 'https://autoloadnextpost.com/product/theme-support/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" target="_blank">' . __( 'Theme Support', 'auto-load-next-post' ) . '</a>',
+					'docs' => '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'documentation/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" aria-label="' . esc_attr__( 'View Auto Load Next Post documentation', 'auto-load-next-post' ) . '" target="_blank">' . esc_attr__( 'Documentation', 'auto-load-next-post' ) . '</a>',
+					'community' => '<a href="' . esc_url( 'https://wordpress.org/support/plugin/auto-load-next-post' ) . '" aria-label="' . esc_attr__( 'Get support from the community', 'auto-load-next-post' ). '" target="_blank">' . esc_attr__( 'Community Support', 'auto-load-next-post' ) . '</a>',
+					'theme-support' => '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'product/theme-support/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" attr-label="' . esc_attr__( 'Get theme support', 'auto-load-next-post' ) . '" target="_blank">' . esc_attr__( 'Theme Support', 'auto-load-next-post' ) . '</a>',
 				);
 
 				$links = array_merge( $links, $row_meta );
@@ -291,7 +291,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 					/* translators: 1: Auto Load Next Post 2:: five stars */
 					__( 'If you like %1$s, please leave a %2$s rating. A huge thank you in advance!', 'auto-load-next-post' ),
 					sprintf( '<strong>%1$s</strong>', esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
-					'<a href="https://wordpress.org/support/plugin/auto-load-next-post/reviews?rate=5#new-post" target="_blank" data-rated="' . esc_attr__( 'Thanks :)', 'auto-load-next-post' ) . '">&#9733;&#9733;&#9733;&#9733;&#9733;</a>'
+					'<a href="' . AUTO_LOAD_NEXT_POST_REVIEW_URL . '?rate=5#new-post" target="_blank" data-rated="' . esc_attr__( 'Thanks :)', 'auto-load-next-post' ) . '">&#9733;&#9733;&#9733;&#9733;&#9733;</a>'
 				);
 			}
 
