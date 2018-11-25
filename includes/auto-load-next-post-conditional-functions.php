@@ -6,7 +6,7 @@
  * theme support and if user agent is a bot.
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Core
  * @package  Auto Load Next Post/Core/Functions
@@ -260,7 +260,7 @@ if ( ! function_exists( 'alnp_check_monster_insights' ) ) {
 	/**
 	 * Check if either Monster Insights Lite or Pro is installed.
 	 *
-	 * @since 1.5.0
+	 * @since 1.6.0
 	 * @return string
 	 */
 	function alnp_check_monster_insights() {
