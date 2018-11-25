@@ -3,8 +3,8 @@ Contributors: autoloadnextpost, sebd86
 Donate link: https://www.buymeacoffee.com/sebastien
 Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scroll, infinite scrolling, post scrolling, pagination, scroll, post history, browsing history, navigation
 Requires PHP: 5.6+
-Requires at least: 4.4
-Tested up to: 4.9.8
+Requires at least: 4.7
+Tested up to: 5.0.0
 Stable tag: 1.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -198,6 +198,15 @@ It does. Just make sure that you activate the plugin on the site you want it use
 4. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
+= 1.5.5 : 26th November 2018 =
+* Added: Screen reader support for links missing them.
+* Checked: Compatibility with WordPress 5.0
+* Fixed: Missing semicolon at the end of the JavaScript and minified with correction.
+* Fixed: WP dashboard footer is only styled on the ALNP settings page.
+* Updated: CSS assets did not fully minify properly since last CSS update.
+* Updated: POT file for translations.
+* Updated: Code cleanup.
+
 = 1.5.4 : 10th November 2018 =
 * Fixed: Welcome notice. A class was not defined to return `alnp_get_random_page_permalink` function for unsuported themes.
 * Moved: `alnp_get_random_page_permalink` function to core functions so it is globally used instead.
