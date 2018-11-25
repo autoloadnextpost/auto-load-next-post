@@ -6,7 +6,7 @@
  * and helpful information for the users.
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.5.5
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Help
@@ -37,7 +37,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.5.5
 		 */
 		public function add_help_tabs() {
 			$screen = get_current_screen();
