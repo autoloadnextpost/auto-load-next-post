@@ -1,8 +1,11 @@
 # 1.5.5 (26th November 2018)
 * Added: Screen reader support for links missing them.
+* Added: Support for Sydney theme out of the box.
 * Checked: Compatibility with WordPress 5.0
 * Fixed: Missing semicolon at the end of the JavaScript and minified with correction.
 * Fixed: WP dashboard footer is only styled on the ALNP settings page.
+* Improved: Managing themes supported so future themes can be added out of the box.
+* Renamed: All theme classe files for all default WordPress themes to match theme slug.
 * Updated: CSS assets did not fully minify properly since last CSS update.
 * Updated: POT file for translations.
 * Updated: Code cleanup.

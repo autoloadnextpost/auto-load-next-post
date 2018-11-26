@@ -169,17 +169,18 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.5.5
 		 * @return  void
 		 */
 		public function includes() {
 			include_once( dirname( __FILE__ ) . '/includes/class-alnp-autoloader.php' ); // Autoloader.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-conditional-functions.php' ); // Conditional functions.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-formatting-functions.php' ); // Formatting functions.
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-themes-supported.php' ); // Handles all supported themes out of the box.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-core-functions.php' ); // Contains core functions for the front/back end.
 
 			// Include theme support.
-			$this->alnp_include_theme_support();
+			alnp_include_theme_support();
 
 			// Customizer.
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer.php' );
@@ -193,56 +194,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			// Install.
 			require_once( dirname( __FILE__ ) . '/includes/class-alnp-install.php' );
 		} // END includes()
-
-		/**
-		 * Include classes for theme support.
-		 *
-		 * @access public
-		 * @since  1.5.0
-		 */
-		public function alnp_include_theme_support() {
-			if ( is_alnp_active_theme( array( 'make', 'understrap', 'storefront', 'twentyseventeen', 'twentysixteen', 'twentyfifteen', 'twentyfourteen', 'twentythirteen', 'twentytwelve', 'twentyeleven', 'twentyten' ) ) ) {
-
-				switch ( get_template() ) {
-					case 'twentyten':
-						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-ten.php' );
-						break;
-					case 'twentyeleven':
-						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-eleven.php' );
-						break;
-					case 'twentytwelve':
-						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-twelve.php' );
-						break;
-					case 'twentythirteen':
-						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-thirteen.php' );
-						break;
-					case 'twentyfourteen':
-						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-fourteen.php' );
-						break;
-					case 'twentyfifteen':
-						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-fifteen.php' );
-						break;
-					case 'twentysixteen':
-						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-sixteen.php' );
-						break;
-					case 'twentyseventeen':
-						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-twenty-seventeen.php' );
-						break;
-					case 'storefront':
-						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-storefront.php' );
-						break;
-					case 'understrap':
-						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-understrap.php' );
-						break;
-					case 'make':
-						include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-make.php' );
-						break;
-				} // END switch()
-
-				include_once( dirname( __FILE__ ) . '/includes/theme-support/class-alnp-theme-support.php' );
-
-			}
-		} // END alnp_include_theme_support()
 
 		/**
 		 * Make the plugin translation ready.
