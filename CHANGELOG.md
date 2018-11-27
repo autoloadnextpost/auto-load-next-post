@@ -1,6 +1,7 @@
-# 1.5.5 (26th November 2018)
+# 1.5.5 (27th November 2018)
 * Added: Screen reader support for links missing them.
 * Added: Support for Sydney theme out of the box.
+* Added: Support for the new default theme Twenty Nineteen ready for WP v5.0 release.
 * Checked: Compatibility with WordPress 5.0
 * Fixed: Missing semicolon at the end of the JavaScript and minified with correction.
 * Fixed: WP dashboard footer is only styled on the ALNP settings page.

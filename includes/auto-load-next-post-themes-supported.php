@@ -21,7 +21,7 @@ function alnp_themes_supported() {
 		'make', 
 		'sydney', 
 		'storefront', 
-		'twentyten',
+		'twentyten', 
 		'twentyeleven', 
 		'twentytwelve', 
 		'twentythirteen', 
@@ -29,6 +29,7 @@ function alnp_themes_supported() {
 		'twentyfifteen', 
 		'twentysixteen', 
 		'twentyseventeen', 
+		'twentynineteen', 
 		'understrap', 
 	);
 } // END alnp_themes_supported()
