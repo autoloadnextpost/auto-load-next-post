@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Auto Load Next Post\n"
 "Report-Msgid-Bugs-To: https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/"
 "issues\n"
-"POT-Creation-Date: 2018-11-25 20:10+0100\n"
+"POT-Creation-Date: 2018-11-28 17:25+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -68,8 +68,8 @@ msgstr ""
 #: includes/admin/class-alnp-admin.php:164
 #: includes/admin/class-alnp-admin.php:293
 #: includes/admin/class-alnp-admin.php:315
-#: includes/admin/settings/class-alnp-settings-events.php:63
-#: includes/admin/settings/class-alnp-settings-misc.php:101
+#: includes/admin/settings/class-alnp-settings-events.php:64
+#: includes/admin/settings/class-alnp-settings-misc.php:102
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:100
 #: includes/admin/views/html-notice-is-supported.php:18
 #: includes/admin/views/html-notice-no-theme-selectors.php:19
@@ -230,8 +230,8 @@ msgid "For more information:"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:98
-#: template/theme-support/twenty-eleven/content-alnp.php:73
-#: template/theme-support/twenty-ten/content-alnp.php:47
+#: template/theme-support/twentyeleven/content-alnp.php:73
+#: template/theme-support/twentyten/content-alnp.php:47
 #, php-format
 msgid "About %s"
 msgstr ""
@@ -322,12 +322,12 @@ msgstr ""
 msgid "%s Version"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:28
+#: includes/admin/settings/class-alnp-settings-events.php:29
 #: includes/customizer/class-alnp-customizer.php:235
 msgid "Events"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:63
+#: includes/admin/settings/class-alnp-settings-events.php:64
 #: includes/customizer/class-alnp-customizer.php:236
 #, php-format
 msgid ""
@@ -335,86 +335,86 @@ msgid ""
 "native events. Separate each event like so: %2$s"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:68
+#: includes/admin/settings/class-alnp-settings-events.php:69
 #: includes/customizer/class-alnp-customizer.php:401
 msgid "Post loaded"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:69
+#: includes/admin/settings/class-alnp-settings-events.php:70
 #: includes/customizer/class-alnp-customizer.php:402
 msgid "Events listed here will be triggered after a new post has loaded."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:78
+#: includes/admin/settings/class-alnp-settings-events.php:79
 #: includes/customizer/class-alnp-customizer.php:409
 msgid "Entering a Post"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:79
+#: includes/admin/settings/class-alnp-settings-events.php:80
 #: includes/customizer/class-alnp-customizer.php:410
 msgid "Events listed here will be triggered when entering a post."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:32
+#: includes/admin/settings/class-alnp-settings-misc.php:33
 msgid "Misc"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:101
+#: includes/admin/settings/class-alnp-settings-misc.php:102
 #, php-format
 msgid ""
 "Here you set if you want to track pageviews, remove comments and load %s "
 "javascript in the footer."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:106
+#: includes/admin/settings/class-alnp-settings-misc.php:107
 #: includes/customizer/class-alnp-customizer.php:377
 msgid "Remove Comments"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:107
+#: includes/admin/settings/class-alnp-settings-misc.php:108
 #: includes/customizer/class-alnp-customizer.php:378
 msgid ""
 "Enable to remove comments when each post loads including the initial post."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:114
+#: includes/admin/settings/class-alnp-settings-misc.php:115
 #: includes/customizer/class-alnp-customizer.php:385
 msgid "Update Google Analytics"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:115
+#: includes/admin/settings/class-alnp-settings-misc.php:116
 #: includes/customizer/class-alnp-customizer.php:386
 msgid ""
 "Enable to track each post the visitor is reading. This will count as a "
 "pageview. You must already have Google Analytics setup."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:122
+#: includes/admin/settings/class-alnp-settings-misc.php:123
 #: includes/customizer/class-alnp-customizer.php:393
 msgid "JavaScript in Footer?"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:123
+#: includes/admin/settings/class-alnp-settings-misc.php:124
 msgid ""
 "Enable to load Auto Load Next Post in the footer instead of the header. Can "
 "be useful to optimize your site or if the current theme requires it."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:130
+#: includes/admin/settings/class-alnp-settings-misc.php:131
 msgid "Reset all data?"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:131
+#: includes/admin/settings/class-alnp-settings-misc.php:132
 msgid ""
 "Press the reset button to clear all settings for this plugin and re-install "
 "the default settings."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:138
+#: includes/admin/settings/class-alnp-settings-misc.php:139
 msgid "Remove all data on uninstall?"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:139
+#: includes/admin/settings/class-alnp-settings-misc.php:140
 msgid ""
 "If enabled, all settings for this plugin will all be deleted when "
 "uninstalling via Plugins > Delete."
@@ -697,8 +697,8 @@ msgid "Dismiss Notice"
 msgstr ""
 
 #: includes/auto-load-next-post-core-functions.php:94
-#: includes/theme-support/class-alnp-twenty-twelve.php:51
-#: template/theme-support/twenty-ten/content-alnp.php:67
+#: includes/theme-support/class-alnp-twentytwelve.php:51
+#: template/theme-support/twentyten/content-alnp.php:67
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
@@ -868,26 +868,28 @@ msgid ""
 "Why not leave me a review on %1$sWordPress.org%2$s?  I'd really appreciate it!"
 msgstr ""
 
-#: includes/theme-support/class-alnp-twenty-eleven.php:53
-#: includes/theme-support/class-alnp-twenty-twelve.php:50
+#: includes/theme-support/class-alnp-twentyeleven.php:53
+#: includes/theme-support/class-alnp-twentytwelve.php:50
 msgid "Post navigation"
 msgstr ""
 
-#: includes/theme-support/class-alnp-twenty-eleven.php:54
+#: includes/theme-support/class-alnp-twentyeleven.php:54
 msgid "<span class=\"meta-nav\">&larr;</span> Previous"
 msgstr ""
 
-#: template/theme-support/twenty-eleven/content-alnp.php:35
-#: template/theme-support/twenty-ten/content-alnp.php:32
+#: template/theme-support/twentyeleven/content-alnp.php:35
+#: template/theme-support/twentynineteen/content-page.php:14
+#: template/theme-support/twentynineteen/content-single.php:14
+#: template/theme-support/twentyten/content-alnp.php:32
 msgid "Pages:"
 msgstr ""
 
-#: template/theme-support/twenty-eleven/content-alnp.php:41
-#: template/theme-support/twenty-eleven/content-alnp.php:44
+#: template/theme-support/twentyeleven/content-alnp.php:41
+#: template/theme-support/twentyeleven/content-alnp.php:44
 msgid ", "
 msgstr ""
 
-#: template/theme-support/twenty-eleven/content-alnp.php:46
+#: template/theme-support/twentyeleven/content-alnp.php:46
 #, php-format
 msgid ""
 "This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</a>. "
@@ -895,24 +897,29 @@ msgid ""
 "\">permalink</a>."
 msgstr ""
 
-#: template/theme-support/twenty-eleven/content-alnp.php:48
+#: template/theme-support/twentyeleven/content-alnp.php:48
 #, php-format
 msgid ""
 "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
 "href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 
-#: template/theme-support/twenty-eleven/content-alnp.php:50
+#: template/theme-support/twentyeleven/content-alnp.php:50
 #, php-format
 msgid ""
 "This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href="
 "\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 
-#: template/theme-support/twenty-eleven/content-alnp.php:77
-#: template/theme-support/twenty-ten/content-alnp.php:51
+#: template/theme-support/twentyeleven/content-alnp.php:77
+#: template/theme-support/twentyten/content-alnp.php:51
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: template/theme-support/twentynineteen/content-page.php:28
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

@@ -11,7 +11,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'twentynineteen' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'auto-load-next-post' ),
 				'after'  => '</div>',
 			)
 		);
