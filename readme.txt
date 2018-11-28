@@ -198,15 +198,16 @@ It does. Just make sure that you activate the plugin on the site you want it use
 4. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
-= 1.5.5 : 27th November 2018 =
+= 1.5.5 : 28th November 2018 =
 * Added: Screen reader support for links missing them.
+* Added: WordPress UX for the help tab sucks so I added a button to the settings page that will help users find the help.
 * Added: Support for Sydney theme out of the box.
 * Added: Support for the new default theme Twenty Nineteen ready for WP v5.0 release.
 * Checked: Compatibility with WordPress 5.0
 * Fixed: Missing semicolon at the end of the JavaScript and minified with correction.
 * Fixed: WP dashboard footer is only styled on the ALNP settings page.
 * Improved: Managing themes supported so future themes can be added out of the box.
-* Renamed: All theme classe files for all default WordPress themes to match theme slug.
+* Renamed: All theme class files and folders for all default WordPress themes to match theme slug.
 * Updated: CSS assets did not fully minify properly since last CSS update.
 * Updated: POT file for translations.
 * Updated: Code cleanup.
