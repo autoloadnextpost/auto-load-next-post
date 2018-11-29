@@ -3,7 +3,11 @@
 		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
 	</header>
 
-	<?php twentynineteen_post_thumbnail(); ?>
+	<figure class="post-thumbnail">
+		<div class="post-thumbnail-inner">
+			<?php the_post_thumbnail( 'post-thumbnail' ); ?>
+		</div>
+	</figure>
 
 	<div class="entry-content">
 		<?php

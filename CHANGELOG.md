@@ -1,3 +1,6 @@
+# 1.5.6 (29th November 2018)
+* Corrected: Twenty Nineteen support for the featured image was missing an inner wrapper to provide the correct styling.
+
 # 1.5.5 (28th November 2018)
 * Added: Screen reader support for links missing them.
 * Added: WordPress UX for the help tab sucks so I added a button to the settings page that will help users find the help.

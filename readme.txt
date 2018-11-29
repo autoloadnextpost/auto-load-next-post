@@ -5,7 +5,7 @@ Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scr
 Requires PHP: 5.6+
 Requires at least: 4.7
 Tested up to: 5.0.0
-Stable tag: 1.5.5
+Stable tag: 1.5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -198,6 +198,9 @@ It does. Just make sure that you activate the plugin on the site you want it use
 4. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
+= 1.5.6 : 29th November 2018 =
+* Corrected: Twenty Nineteen support for the featured image was missing an inner wrapper to provide the correct styling.
+
 = 1.5.5 : 28th November 2018 =
 * Added: Screen reader support for links missing them.
 * Added: WordPress UX for the help tab sucks so I added a button to the settings page that will help users find the help.
