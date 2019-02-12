@@ -1,10 +1,10 @@
 <?php
 /**
- * Auto Load Next Post Theme Support: Twenty Ten
+ * Auto Load Next Post Theme Support: Sydney
  *
- * Applies support for WordPress Twenty Ten Theme.
+ * Applies support for aThemes Sydney Theme.
  *
- * @since    1.5.0
+ * @since    1.5.5
  * @author   Sébastien Dumont
  * @category Theme Support
  * @package  Auto Load Next Post/Theme Support
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * ALNP_Twenty_Ten class.
+ * ALNP_Sydney class.
  */
-class ALNP_Twenty_Ten {
+class ALNP_Sydney {
 
 	/**
 	 * Initlize Theme.
@@ -28,23 +28,9 @@ class ALNP_Twenty_Ten {
 	 * @static
 	 */
 	public static function init() {
-		// Filters the repeater template location.
-		add_filter( 'alnp_template_redirect', array( __CLASS__, 'alnp_twentyten_template_redirect' ) );
-
 		// Add theme support and preset the theme selectors.
 		add_action( 'after_setup_theme', array( __CLASS__, 'add_theme_support' ) );
 	} // END init()
-
-	/**
-	 * Filters the location of the repeater template.
-	 *
-	 * @access public
-	 * @static
-	 * @return string
-	 */
-	public static function alnp_twentyten_template_redirect() {
-		return AUTO_LOAD_NEXT_POST_FILE_PATH . '/template/theme-support/twenty-ten/content-alnp.php';
-	} // END alnp_twentyten_template_redirect()
 
 	/**
 	 * Add theme support by providing the theme selectors
@@ -55,9 +41,9 @@ class ALNP_Twenty_Ten {
 	 */
 	public static function add_theme_support() {
 		add_theme_support( 'auto-load-next-post', array(
-			'content_container'    => '#content',
+			'content_container'    => 'main.post-wrap',
 			'title_selector'       => 'h1.entry-title',
-			'navigation_container' => '#nav-below',
+			'navigation_container' => 'nav.post-navigation',
 			'comments_container'   => 'div#comments',
 			'load_js_in_footer'    => 'no',
 			'lock_js_in_footer'    => 'no',
@@ -66,4 +52,4 @@ class ALNP_Twenty_Ten {
 
 } // END class
 
-ALNP_Twenty_Ten::init();
+ALNP_Sydney::init();

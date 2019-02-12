@@ -64,7 +64,7 @@ class ALNP_Twenty_Eleven {
 	 * @return string
 	 */
 	public static function alnp_twentyeleven_template_redirect() {
-		return AUTO_LOAD_NEXT_POST_FILE_PATH . '/template/theme-support/twenty-eleven/content-alnp.php';
+		return AUTO_LOAD_NEXT_POST_FILE_PATH . '/template/theme-support/twentyeleven/content-alnp.php';
 	} // END alnp_twentyeleven_template_redirect()
 
 	/**

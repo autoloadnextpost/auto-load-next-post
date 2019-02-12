@@ -159,7 +159,7 @@ nav .nav-tab:first-child {
 }
 
 body.folded .wrap #mainform {
-  width: 78%;
+  width: 75%;
 }
 
 @media screen and (max-width: 1052px) {
@@ -375,4 +375,100 @@ body.settings_page_auto-load-next-post-settings #wpfooter {
   background-color: #fff;
   border-top: 1px solid #ccc;
   position: fixed;
+}
+
+/* Help Button */
+.need-help {
+  background: #fff;
+  display: inline-flex;
+  border: 0px none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  line-height: inherit;
+  margin: 0;
+  margin-top: 1em;
+  padding: 0.8em;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  overflow: visible;
+  cursor: pointer;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+@media screen and (max-width: 782px) {
+  .need-help {
+    display: none;
+  }
+}
+
+.need-help.hide {
+  opacity: 0.5;
+}
+
+.need-help .sonar-dot {
+  margin-right: 6px;
+}
+
+/* Sonar Dot */
+.sonar-dot {
+  background: #008AFF;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  -moz-animation: 1.8s cubic-bezier(.46,.03,.52,.96) infinite pulse;
+  -o-animation: 1.8s cubic-bezier(.46,.03,.52,.96) infinite pulse;
+  -webkit-animation: 1.8s cubic-bezier(.46,.03,.52,.96) infinite pulse;
+          animation: 1.8s cubic-bezier(.46,.03,.52,.96) infinite pulse;
+  box-shadow: 0 0 0;
+  display: inline-block;
+}
+
+.sonar-dot.small {
+  width: 8px;
+  height: 8px;
+}
+
+.sonar-dot.large {
+  width: 16px;
+  height: 16px;
+}
+
+.sonar-dot.faster {
+  -moz-animation-duration: 1.2s;
+  -o-animation-duration: 1.2s;
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
+}
+
+.sonar-dot.slower {
+  -moz-animation-duration: 2.4s;
+  -o-animation-duration: 2.4s;
+  -webkit-animation-duration: 2.4s;
+  animation-duration: 2.4s;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(86, 164, 240, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 24px rgba(86, 164, 240, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(86, 164, 240, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 24px rgba(86, 164, 240, 0);
+  }
 }

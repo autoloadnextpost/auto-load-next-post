@@ -3,7 +3,7 @@
  * Auto Load Next Post Settings - Misc
  *
  * @since    1.5.0
- * @version  1.5.3
+ * @version  1.5.5
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Settings
@@ -24,8 +24,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		/**
 		 * Constructor.
 		 *
-		 * @access public
-		 * @since  1.5.0
+		 * @access  public
+		 * @since   1.5.0
+		 * @version 1.5.5
 		 */
 		public function __construct() {
 			$this->id    = 'misc';
@@ -33,8 +34,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 
 			parent::__construct();
 
-			add_filter( 'auto_load_next_post_' . $this->id . '_settings', array( __CLASS__, 'lock_js_in_footer' ), 0, 1 );
-			add_action( 'auto_load_next_post_sections_' . $this->id, array( __CLASS__, 'no_comment_selector_set' ), 10 );
+			add_filter( 'auto_load_next_post_mist_settings', array( __CLASS__, 'lock_js_in_footer' ), 0, 1 );
+			add_action( 'auto_load_next_post_sections_misc', array( __CLASS__, 'no_comment_selector_set' ), 10 );
 		} // END __construct()
 
 		/**

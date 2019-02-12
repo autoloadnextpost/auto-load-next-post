@@ -1,3 +1,20 @@
+# 1.5.6 (29th November 2018)
+* Corrected: Twenty Nineteen support for the featured image was missing an inner wrapper to provide the correct styling.
+
+# 1.5.5 (28th November 2018)
+* Added: Screen reader support for links missing them.
+* Added: WordPress UX for the help tab sucks so I added a button to the settings page that will help users find the help.
+* Added: Support for Sydney theme out of the box.
+* Added: Support for the new default theme Twenty Nineteen ready for WP v5.0 release.
+* Checked: Compatibility with WordPress 5.0
+* Fixed: Missing semicolon at the end of the JavaScript and minified with correction.
+* Fixed: WP dashboard footer is only styled on the ALNP settings page.
+* Improved: Managing themes supported so future themes can be added out of the box.
+* Renamed: All theme class files and folders for all default WordPress themes to match theme slug.
+* Updated: CSS assets did not fully minify properly since last CSS update.
+* Updated: POT file for translations.
+* Updated: Code cleanup.
+
 # 1.5.4 (10th November 2018)
 * Fixed: Welcome notice. A class was not defined to return `alnp_get_random_page_permalink` function for unsuported themes.
 * Moved: `alnp_get_random_page_permalink` function to core functions so it is globally used instead.
@@ -47,7 +64,7 @@
 * Removed: Template location filter from the repeater template as it has been moved for better support.
 * Removed: PHP version check.
 * Removed: JavaScript library "chosen".
-* Updated: POT file for translation.
+* Updated: POT file for translations.
 * Updated: Repeater template due to improvements with this release.
 
 # 1.4.13 (20th August 2018)
@@ -82,7 +99,7 @@
 * Updated: Template to include support for other post types in preparation for Auto Load Next Post Pro.
 * Updated: Settings page to display the theme selectors descriptions rather than using tips.
 * Updated: The help tab on the settings page.
-* Updated: POT file.
+* Updated: POT file for translations.
 * Updated: Documentation links in the plugin.
 * Updated: Documentation links in readme.txt
 * Updated: FAQ's in readme.txt
@@ -91,7 +108,7 @@
 * Added: Support for Twenty Sixteen.
 * Updated: Admin notice for contribution.
 * Updated: Admin settings field labels and help tips.
-* Updated: POT file.
+* Updated: POT file for translations.
 
 # 1.4.8 (25th December 2016)
 * Added: Support for child-themes so they too can also use the plugin. Thanks to [lwesolowski](https://github.com/lwesolowski)
@@ -116,7 +133,7 @@
 * Removed: The support section on the plugins page as the help tab has been improved.
 * Updated: The admin help sections on the plugins page.
 * Updated: The admin footer on the plugins page.
-* Updated: The POT file.
+* Updated: The POT file for translations.
 * Updated: The readme.txt file.
 * Updated: Gruntfile.js file.
 * Updated: package.json file.
@@ -133,7 +150,7 @@
 * Added two additional help tabs on the plugin settings page.
 * Updated the F.A.Q's.
 * Updated the uninstall.php file.
-* Updated the POT file.
+* Updated the POT file for translations.
 * Fixed undefined issue with Google Analytics.
 * Removed all console.log and console.error in the Javascript.
 * Tested up to WordPress 4.4.2

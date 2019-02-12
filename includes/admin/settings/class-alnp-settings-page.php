@@ -43,8 +43,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 		 */
 		public function __construct() {
 			add_filter( 'auto_load_next_post_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
+			add_action( 'auto_load_next_post_settings_' . $this->id, array( $this, 'need_help' ), 0 );
 			add_action( 'auto_load_next_post_sections_' . $this->id, array( $this, 'output_sections' ) );
-			add_action( 'auto_load_next_post_settings_' . $this->id, array( $this, 'output' ) );
+			add_action( 'auto_load_next_post_settings_' . $this->id, array( $this, 'output' ), 10 );
 			add_action( 'auto_load_next_post_settings_save_' . $this->id, array( $this, 'save' ) );
 		}
 
@@ -178,6 +179,27 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 				do_action( 'auto_load_next_post_update_options_' . $this->id . '_' . $current_section );
 			}
 		} // END save()
+
+		/**
+		 * Displays a button above the settings header to toggle the help panel.
+		 * 
+		 * The help tab does not show for theme selectors if the theme is already supported.
+		 * 
+		 * @access public
+		 * @static
+		 * @since  1.5.5
+		 * @global $current_tab
+		 */
+		public function need_help() {
+			global $current_tab;
+
+			// If theme is already supported then don't show help button for theme selectors.
+			if ( is_alnp_supported() && $current_tab == 'theme-selectors' ) {
+				return;
+			}
+
+			echo '<a href="#" class="need-help trigger-help" data-tab="' . $current_tab . '"><span class="sonar-dot"></span> ' . esc_html( 'Need Help?', 'auto-load-next-post' ) . '</a>';
+		} // END need_help()
 
 	} // END class
 
