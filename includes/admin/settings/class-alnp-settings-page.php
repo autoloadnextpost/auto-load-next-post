@@ -198,6 +198,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 				return;
 			}
 
+			// Don't show help button for integrations.
+			if ( $current_tab == 'integrations' ) {
+				return;
+			}
+
 			echo '<a href="#" class="need-help trigger-help" data-tab="' . $current_tab . '"><span class="sonar-dot"></span> ' . esc_html( 'Need Help?', 'auto-load-next-post' ) . '</a>';
 		} // END need_help()
 
