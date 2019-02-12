@@ -9,14 +9,14 @@
  * Text Domain: auto-load-next-post
  * Domain Path: /languages/
  *
- * Copyright: © 2018 Sébastien Dumont, (mailme@sebastiendumont.com)
+ * Copyright: © 2019 Sébastien Dumont, (mailme@sebastiendumont.com)
  *
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
  * @package   Auto Load Next Post
  * @author    Sébastien Dumont
- * @copyright Copyright © 2018, Sébastien Dumont
+ * @copyright Copyright © 2019, Sébastien Dumont
  * @license   GNU General Public License v3.0 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
