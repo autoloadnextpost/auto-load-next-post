@@ -67,6 +67,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 
 			include_once( dirname( __FILE__ ) . '/class-alnp-integrations.php' ); // Integrations.
 			include_once( dirname( __FILE__ ) . '/class-alnp-extensions.php'); // Extensions.
+			include_once( dirname( __FILE__ ) . '/class-alnp-videos.php'); // Videos.
 		} // END includes()
 
 		/**
