@@ -327,7 +327,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		} // END update_footer()
 
 		/**
-		 * Displays 
+		 * Displays the top of the sidebar.
 		 * 
 		 * @access public
 		 * @since  1.6.0
