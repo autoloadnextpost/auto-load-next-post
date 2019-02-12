@@ -9,10 +9,10 @@
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AutoLoadNextPost/Auto-Load-Next-Post"
+    "url": "https://github.com/autoloadnextpost/auto-load-next-post"
   },
   "bugs": {
-    "url": "https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues"
+    "url": "https://github.com/autoloadnextpost/auto-load-next-post/issues"
   },
   "dependencies": {},
   "devDependencies": {

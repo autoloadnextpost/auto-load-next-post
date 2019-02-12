@@ -13,7 +13,7 @@ Welcome to the [Auto Load Next Post](https://autoloadnextpost.com/?utm_medium=au
 
 If you are not a developer, please use the [Auto Load Next Post plugin page](https://wordpress.org/plugins/auto-load-next-post/) to download the latest release from WordPress.org.
 
-Want to contribute to the project? Then please read the [contribute guidelines](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) clearly.
+Want to contribute to the project? Then please read the [contribute guidelines](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md) clearly.
 
 
 ## What is Auto Load Next Post? 🔔
@@ -43,37 +43,35 @@ You can find documenation available at: https://autoloadnextpost.com/documenatio
 #### Installation 💽
 
 You may:
-1. Clone the GitHub repository: `https://github.com/AutoLoadNextPost/Auto-Load-Next-Post.git`, or..
-2. [Download the latest release](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/releases) from the GitHub repository, or..
+1. Clone the GitHub repository: `https://github.com/autoloadnextpost/auto-load-next-post.git`, or..
+2. [Download the latest release](https://github.com/autoloadnextpost/auto-load-next-post/releases) from the GitHub repository, or..
 3. Download the plugin from the [WordPress repository](https://wordpress.org/plugins/auto-load-next-post/).
 4. Go to **WordPress Admin > Plugins > Add New**.
 5. Click **Upload Plugin** at the top.
 6. **Choose File** and select the `.zip` file you downloaded in **Step 1,2 or 3**.
 7. Click **Install Now** and **Activate** the {plugin/extension}.
 
-> If you also want to test out beta releases, you can [download the beta tester](https://github.com/AutoLoadNextPost/alnp-beta-tester/archive/master.zip) plugin which will replace your installed version of Auto Load Next Post with the latest tagged pre-release on GitHub.
+> If you also want to test out beta releases, you can [download the beta tester](https://github.com/autoloadnextpost/alnp-beta-tester/archive/master.zip) plugin which will replace your installed version of Auto Load Next Post with the latest tagged pre-release on GitHub.
 
 
 #### Note to Beginners
 Auto Load Next Post is a plugin for self-hosted WordPress sites. This means you will need to [switch from WordPress.com to WordPress.org](http://www.wpbeginner.com/wp-tutorials/how-to-properly-move-your-blog-from-wordpress-com-to-wordpress-org/) if you want to use this plugin on your WordPress site.
 
 
-## Found a Bug? 🐛
-If you find a bug within Auto Load Next Post, please [report the issue](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues?state=open) by creating a ticket on the GitHub repository where I can deal with it more appropriately. Please ensure that you read the [guidelines for contributing](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) prior to submitting your report. To help me solve the issue, please be as descriptive as possible.
+If you find a bug within Auto Load Next Post, please [report the issue](https://github.com/autoloadnextpost/auto-load-next-post/issues?state=open) by creating a ticket on the GitHub repository where I can deal with it more appropriately. Please ensure that you read the [guidelines for contributing](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md) prior to submitting your report. To help me solve the issue, please be as descriptive as possible.
 
 
 ## Support ⭐
 Need help? This is a developer's portal for Auto Load Next Post and should not be used for general support. Please visit the [support forum on WordPress.org](https://wordpress.org/support/plugin/auto-load-next-post) if you need help.
 
 
-## Contributions 👍
-Anyone is welcome to contribute to Auto Load Next Post. If you have a patch, or stumbled upon an issue with Auto Load Next Post, please read the [guidelines for contributing](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md) to this repository.
+Anyone is welcome to contribute to Auto Load Next Post. If you have a patch, or stumbled upon an issue with Auto Load Next Post, please read the [guidelines for contributing](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md) to this repository.
 
 There are various ways you can contribute:
 
-1. Raise an [Issue](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues) on GitHub
+1. Raise an [Issue](https://github.com/autoloadnextpost/auto-load-next-post/issues) on GitHub
 2. Send a pull request with your bug fixes and/or new features
-3. Provide feedback and suggestions on [enhancements](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues?direction=desc&labels=Enhancement&page=1&sort=created&state=open)
+3. Provide feedback and suggestions on [enhancements](https://github.com/autoloadnextpost/auto-load-next-post/issues?direction=desc&labels=Enhancement&page=1&sort=created&state=open)
 
 
 ## Translation Support 👅

@@ -47,7 +47,7 @@ Intrigued? _I bet you are._ Once you try Auto Load Next Post, your pageviews wil
 
 = Built with developers in mind =
 
-Extendable and open source — Auto Load Next Post is created with developers in mind. There are opportunities for developers at all levels to contribute. [Click here to contribute](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md).
+Extendable and open source — Auto Load Next Post is created with developers in mind. There are opportunities for developers at all levels to contribute. [Click here to contribute](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md).
 
 Need to trigger something during each post load? [See the JavaScript triggers available](https://autoloadnextpost.com/documentation/javascript-triggers/) in the documentation for details. 3rd-party supported also.
 
@@ -267,7 +267,7 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Updated: POT file for translation.
 * Updated: Repeater template due to improvements with this release.
 
-[See changelog for all versions](https://raw.githubusercontent.com/AutoLoadNextPost/Auto-Load-Next-Post/master/CHANGELOG.md).
+[See changelog for all versions](https://raw.githubusercontent.com/autoloadnextpost/auto-load-next-post/master/CHANGELOG.md).
 
 == Upgrade Notice ==
 Developer Warning: Please install version 1.5.4 or above. Version 1.5.0 to 1.5.3 had some issues that were not picked up straight away.

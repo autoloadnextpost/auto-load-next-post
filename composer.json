@@ -1,7 +1,7 @@
 {
-	"name": "AutoLoadNextPost/Auto-Load-Next-Post",
+	"name": "autoloadnextpost/auto-load-next-post",
 	"type": "wordpress-plugin",
-	"homepage": "https://github.com/AutoLoadNextPost/Auto-Load-Next-Post",
+	"homepage": "https://github.com/autoloadnextpost/auto-load-next-post",
 	"license": "GPL-3.0-only",
 	"description": "Increase the pageviews on your WordPress site as readers continue reading posts infinitely scrolling down the page.",
 	"keywords": ["plugin", "AJAX", "ajax load posts", "ajax pagination", "ajax posts", "infinite posts", "infinite scroll", "infinite scrolling", "post scrolling", "post history", "browsing history", "post navigation"],

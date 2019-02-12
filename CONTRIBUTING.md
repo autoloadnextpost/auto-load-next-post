@@ -12,14 +12,14 @@ If you need help setting up the plugin I do offer [theme support](https://autolo
 
 ### Reporting Issues
 
-Reporting issues is a great way to became a contributor as it doesn't require technical skills. In fact you don't even need to know a programming language or to be able to check the code itself, you just need to make sure that everything works as expected and [submit an issue report](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues/new) if you spot a bug. Sound like something you're up for? Go for it!
+Reporting issues is a great way to became a contributor as it doesn't require technical skills. In fact you don't even need to know a programming language or to be able to check the code itself, you just need to make sure that everything works as expected and [submit an issue report](https://github.com/autoloadnextpost/Auto-Load-Next-Post/issues/new) if you spot a bug. Sound like something you're up for? Go for it!
 
 #### How To Submit An Issue Report
 
 If something isn't working, congratulations you've found a bug! Help me fix it by submitting an issue report:
 
 * Make sure you have a [GitHub account](https://github.com/signup/free)
-* Search the [Existing Issues](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues) to be sure that the one you've noticed isn't already there.
+* Search the [Existing Issues](https://github.com/autoloadnextpost/Auto-Load-Next-Post/issues) to be sure that the one you've noticed isn't already there.
 * Submit a report for your issue by:
   * Clearly describing the issue (including steps to reproduce it if it's a bug).
   * Make sure you fill in the earliest version that you know has the issue.
@@ -30,7 +30,7 @@ Making changes help improve Auto Load Next Post. You will need some technical sk
 
 If you think something could be improved and you're able to do so, make your changes and submit a Pull Request. I'll be pleased to get it :)
 
-If you are making JavaScript changes for the frontend then please [edit the developer version](https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/blob/master/assets/js/frontend/auto-load-next-post.dev.js) "auto-load-next-post.dev.js" of the Javascript. To test with the developer version you need to make sure that you have **ALNP_DEV_DEBUG** set as true in your *wp-config.php* file.
+If you are making JavaScript changes for the frontend then please [edit the developer version](https://github.com/autoloadnextpost/Auto-Load-Next-Post/blob/master/assets/js/frontend/auto-load-next-post.dev.js) "auto-load-next-post.dev.js" of the Javascript. To test with the developer version you need to make sure that you have **ALNP_DEV_DEBUG** set as true in your *wp-config.php* file.
 
 ### How to submit a PR
 * Fork the repository on GitHub.
