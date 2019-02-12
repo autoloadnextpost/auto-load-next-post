@@ -34,7 +34,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 
 			parent::__construct();
 
-			add_filter( 'auto_load_next_post_mist_settings', array( __CLASS__, 'lock_js_in_footer' ), 0, 1 );
+			add_filter( 'auto_load_next_post_misc_settings', array( __CLASS__, 'lock_js_in_footer' ), 0, 1 );
 			add_action( 'auto_load_next_post_sections_misc', array( __CLASS__, 'no_comment_selector_set' ), 10 );
 		} // END __construct()
 
