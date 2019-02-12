@@ -1,3 +1,9 @@
+# 1.6.0 (2019)
+* NEW: Integration support.
+* NEW: Extension Installer for quick installion for any extensions hosted on WordPress.org provided by Darren Cooney's [WordPress Plugin Installer](https://github.com/dcooney/wordpress-plugin-installer).
+* Improved: Admin settings sidebar in preparation for ALNP Pro, add-ons, extensions and other integrations.
+* Dev: `auto_load_next_post_settings_end` now passes to parameters. `$current_tab` and `$tabs`
+
 # 1.5.6 (29th November 2018)
 * Corrected: Twenty Nineteen support for the featured image was missing an inner wrapper to provide the correct styling.
 
