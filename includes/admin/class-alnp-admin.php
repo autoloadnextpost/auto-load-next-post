@@ -65,7 +65,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 				include( dirname( __FILE__ ) . '/class-alnp-admin-help.php' ); // Plugin Help Tab
 			}
 
-			include_once( dirname( __FILE__ ) . '/class-alnp-integrations.php' ); // Integrations.
 			include_once( dirname( __FILE__ ) . '/class-alnp-extensions.php'); // Extensions.
 		} // END includes()
 

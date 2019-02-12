@@ -64,7 +64,6 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-theme-selectors.php');
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-misc.php');
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-events.php');
-				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-integrations.php');
 
 				self::$settings = apply_filters( 'auto_load_next_post_get_settings_pages', $settings );
 			}
@@ -167,7 +166,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 
 			// Only include settings output if the current tab requires it.
 			if ( ! in_array( $current_tab, $no_settings_req ) ) {
-			include( dirname( __FILE__ ) . '/views/html-admin-settings.php' );
+				include( dirname( __FILE__ ) . '/views/html-admin-settings.php' );
 			}
 
 			do_action( 'auto_load_next_post_settings_end', $current_tab, $tabs );
