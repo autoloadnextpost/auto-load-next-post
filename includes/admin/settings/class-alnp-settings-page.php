@@ -3,7 +3,7 @@
  * Auto Load Next Post Settings Page
  *
  * @since    1.0.0
- * @version  1.5.5
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Settings
@@ -24,7 +24,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 		 * @access protected
 		 * @var    string $id
 		 */
-		protected $id    = '';
+		protected $id = '';
 
 		/**
 		 * Setting page label.
@@ -39,11 +39,12 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.4.10
-		 * @version 1.5.5
+		 * @version 1.6.0
 		 */
 		public function __construct() {
 			add_filter( 'auto_load_next_post_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
 			add_action( 'auto_load_next_post_settings_' . $this->id, array( $this, 'need_help' ), 0 );
+			add_action( 'auto_load_next_post_sections_' . $this->id, array( $this, 'output_sections' ) );
 			add_action( 'auto_load_next_post_settings_' . $this->id, array( $this, 'output' ), 10 );
 			add_action( 'auto_load_next_post_settings_save_' . $this->id, array( $this, 'save' ) );
 		}
@@ -110,6 +111,44 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 		} // END get_settings()
 
 		/**
+		 * Get sections.
+		 *
+		 * @access public
+		 * @since  1.6.0
+		 * @return array
+		 */
+		public function get_sections() {
+			return array();
+		} // END get_sections()
+
+		/**
+		 * Output sections.
+		 *
+		 * @access public
+		 * @since  1.6.0
+		 * @global $current_section
+		 */
+		public function output_sections() {
+			global $current_section;
+
+			$sections = $this->get_sections();
+
+			if ( empty( $sections ) || 1 === sizeof( $sections ) ) {
+				return;
+			}
+
+			echo '<ul class="subsubsub">';
+
+			$array_keys = array_keys( $sections );
+
+			foreach ( $sections as $id => $label ) {
+				echo '<li><a href="' . admin_url( 'options-general.php?page=auto-load-next-post-settings&tab=' . $this->id . '&section=' . sanitize_title( $id ) ) . '" class="' . ( $current_section == $id ? 'current' : '' ) . '">' . $label . '</a> ' . ( end( $array_keys ) == $id ? '' : '|' ) . ' </li>';
+			}
+
+			echo '</ul><br class="clear" />';
+		} // END output_sections()
+
+		/**
 		 * Output the settings.
 		 *
 		 * @access public
@@ -124,16 +163,21 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 		/**
 		 * Save settings.
 		 *
-		 * @access public
-		 * @since  1.0.0
-		 * @global $current_tab
+		 * @access  public
+		 * @since   1.0.0
+		 * @version 1.6.0
+		 * @global  $current_section
 		 */
 		public function save() {
-			global $current_tab;
+			global $current_section;
 
 			$settings = $this->get_settings();
 
-			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings, $current_tab );
+			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings );
+
+			if ( $current_section ) {
+				do_action( 'auto_load_next_post_update_options_' . $this->id . '_' . $current_section );
+			}
 		} // END save()
 
 		/**

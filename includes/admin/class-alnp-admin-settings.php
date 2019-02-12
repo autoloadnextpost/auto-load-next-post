@@ -64,6 +64,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-theme-selectors.php');
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-misc.php');
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-events.php');
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-integrations.php');
 
 				self::$settings = apply_filters( 'auto_load_next_post_get_settings_pages', $settings );
 			}
@@ -147,7 +148,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.4.10
+		 * @version 1.6.0
 		 * @filter  auto_load_next_post_settings_tabs_array
 		 * @global  string $current_section
 		 * @global  string $current_tab
@@ -161,7 +162,15 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 			// Get tabs for the settings page
 			$tabs = apply_filters( 'auto_load_next_post_settings_tabs_array', array() );
 
+			// These tabs do not require settings output.
+			$no_settings_req = array( 'extensions', 'videos' );
+
+			// Only include settings output if the current tab requires it.
+			if ( ! in_array( $current_tab, $no_settings_req ) ) {
 			include( dirname( __FILE__ ) . '/views/html-admin-settings.php' );
+			}
+
+			do_action( 'auto_load_next_post_settings_end', $current_tab, $tabs );
 		} // END output()
 
 		/**
