@@ -1,45 +1,37 @@
 === WordPress Infinite Scroll by Auto Load Next Post ===
 Contributors: autoloadnextpost, sebd86
-Donate link: https://www.buymeacoffee.com/sebastien
-Tags: AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scroll, infinite scrolling, post scrolling, pagination, scroll, post history, browsing history, navigation
-Requires PHP: 5.6+
+Donate link: https://sebdumont.xyz/donate/
+Tags: infinite scroll, infinite scrolling, scroll, infinite, endless scroll, pagination, ajax pagination, ajax, ajax posts, ajax load more, browsing history, navigation
+Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.0.0
 Stable tag: 1.5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Increase the pageviews on your site and reduce bounce rates as readers continue reading your posts infinitely scrolling down the page.
+Increase pageviews while your readers continue to infinitely scroll down your content.
 
 == Description ==
 
-You have great content. That's great but you shouldn't have to work twice as hard to get the pageviews you want. While Auto Load Next Post is not the only infinite scrolling plugin out there it is the first that is designed to work and match the theme you are using and track the content that is viewed and not the excerpts in your post archives like other plugins out there. All of your posts content!
+You have great content. That's great but you shouldn't have to work twice as hard to get the pageviews you want. While Auto Load Next Post is not the only infinite scrolling plugin out there it is the first that is designed to work and match with your theme and track the content that is being viewed, NOT the excerpts from your post archives like other plugins out there. All of your posts content!
 
 **Auto Load Next Post templating experience is the best in class - _by a long shot_.**
 
-Don't take my word for it. [Read what Rich Tabor](https://wordpress.org/support/topic/best-in-class-35/) (Author of [ThemeBeans](https://themebeans.com/?utm_source=wp-plugin-repo&utm_medium=link)) had to say in his review.
+Don't just take my word for it. [Read what Rich Tabor](https://wordpress.org/support/topic/best-in-class-35/) (Author of [ThemeBeans](https://themebeans.com/?utm_source=wordpressorg&utm_medium=wp.org)) had to say in his review.
 
 = What is Auto Load Next Post? =
 
-Auto Load Next Post is a WordPress plugin developed to increase your pageviews by engaging the site viewers to keep reading your content rather than increasing your bounce rate.
+[Auto Load Next Post](https://autoloadnextpost.com/?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=readme&utm_content=auto-load-next-post) is a WordPress plugin developed to increase your pageviews by engaging the site viewers to keep reading your content rather than increasing your bounce rate.
 
-It simply automatically loads the next post on your blog once the user has reached the bottom of the initial post the viewer is reading and repeats the process as the user reads your content until there are no more posts to load.
+It simply automatically loads the next post on your blog once the viewer has reached the bottom of the initial post they are reading and repeats the process as they read your content until there are no more posts to load.
 
-= How does it work? =
-
-A post navigation at the end of the post is used to identify and find the previous post URL for the next post to load. Once the previous post has been found it loads that post by inserting the content via a customizable repeater template and places the content underneath the parent post within the post container.
-
-JavaScript detects when you are reading the next post and updates your browser URL address bar and page title to that post. Should you refresh the browser, the post you are currently reading would load as the new initial post.
-
-All previous posts of the blog are still retained in your browser history and to top it off, you can track each post read the same way a single post is tracked as a pageview using Google Analytics.
-
-= Note to Beginners =
+= Note to New Users =
 
 Auto Load Next Post is a plugin _designed_ for self-hosted WordPress sites. This means you will need to [switch from WordPress.com to WordPress.org](http://www.wpbeginner.com/wp-tutorials/how-to-properly-move-your-blog-from-wordpress-com-to-wordpress-org/) if you want to use this plugin on your WordPress site.
 
-= Demo Site =
+= See for yourself =
 
-Want to see how it works? [Go to the demo site](https://demo.autoloadnextpost.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=demo-link) and view any single post. Scroll down and see the plugin in action.
+Want to see how it works? [Go to the demo site](https://demo.autoloadnextpost.com/?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=demo-link&utm_content=auto-load-next-post) and view any single post. Scroll down and see the plugin in action.
 
 = Increase Your PageViews Today =
 
@@ -47,45 +39,52 @@ Intrigued? _I bet you are._ Once you try Auto Load Next Post, your pageviews wil
 
 = Built with developers in mind =
 
-Extendable and open source — Auto Load Next Post is created with developers in mind. There are opportunities for developers at all levels to contribute. [Click here to contribute](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md).
+Extendable and open source — Auto Load Next Post is created with theme and plugin developers in mind. If you're intersted to jump in the project, there are opportunities for developers at all levels to get involved. [Contribute to Auto Load Next Post on GitHub](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md) and join the party. 🎉
 
 Need to trigger something during each post load? [See the JavaScript triggers available](https://autoloadnextpost.com/documentation/javascript-triggers/) in the documentation for details. 3rd-party supported also.
-
-Want to provide feedback or discuss plugins to be supported, features to be added, integrations and provide suggestions for Auto Load Next Post for future releases. Come [join the Slack channel](https://launchpass.com/autoloadnextpost).
 
 = Free Add-ons =
 
 WordPress.org is home to some great add-ons for Auto Load Next Post, including:
 - [Facebook Pixel Tracking](https://wordpress.org/plugins/alnp-facebook-pixel-tracking/)
 
-Keen to see them all? Search WordPress.org for ‘Auto Load Next Post’ to dive in.
+Keen to see them all? View all add-ons for [Auto Load Next Post](https://wordpress.org/plugins/tags/auto-load-next-post/).
 
-> Have a free add-on for Auto Load Next Post? [Let me know about it](https://autoloadnextpost.com/contact/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=have-addon-to-share-link).
+> Have a free add-on for Auto Load Next Post? [Let me know about it](https://autoloadnextpost.com/contact/?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=have-addon-to-share-link).
 
-> #### Auto Load Next Post Pro
-> Want more? _I bet you do._ A premium extension is currently in development with some of the most highly requested features. Here are just a few:<br />
->
-> - Page and Media Attachment Support<br />
-> - Custom Post Type Support<br />
-> - Paginated Posts Supported<br />
-> - Exclude Post Formats<br />
-> - Limit Posts per Session<br />
-> - Query Posts by Category or Tag<br />
-> - Exclude User Roles and Specific Users<br />
->
-> On top of that you also get:
-> - Email Support<br />
-> - and many more features and add-ons to follow.
->
-> [More information](https://autoloadnextpost.com/pro/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
+= Auto Load Next Post Pro =
+
+Want more? _I bet you do._ A premium extension is currently in development with some of the most highly requested features.<br />
+
+* Page and Media Attachment Support<br />
+* Custom Post Type Support<br />
+* Paginated Posts Supported<br />
+* Exclude Post Formats<br />
+* Limit Posts per Session<br />
+* Query Posts by Category, Tag, Related or Custom Query<br />
+* Exclude User Roles and Specific Users<br />
+* Pre-Query Posts Ready to Load<br />
+* Toggle Comments to Hide or Show<br />
+* Multilingual Support for WPML and Polylang<br />
+
+On top of that you also get:
+* Email Support<br />
+* and many more features and add-ons to follow.
+
+[Find out more](https://autoloadnextpost.com/pro/?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=after-features-info-link) | [Sign up to be notified >>](http://eepurl.com/bvLz2H)
+
+= Get started today =
 
 This plugin is created and maintained by [Sébastien Dumont](https://sebastiendumont.com).
 
 **More information**
 
-- [Visit Auto Load Next Post website](https://autoloadnextpost.com/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=more-info-link) to learn more.
-- [View Documentation](https://autoloadnextpost.com/documentation/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=more-info-link) for guides and code snippets.
-- If you're a developer yourself, follow or contribute to the [Auto Load Next Post plugin on GitHub](https://github.com/AutoLoadNextPost/auto-load-next-post)
+* [Visit the Auto Load Next Post website](https://autoloadnextpost.com/?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=readme).
+* [View the documentation](https://github.com/autoloadnextpost/alnp-documentation) for detailed guides and code snippets.
+* [Subscribe to updates](http://eepurl.com/bvLz2H)
+* [Follow on Twitter](https://twitter.com/autoloadnxtpost)
+* [Like us on Facebook](https://www.facebook.com/autoloadnextpost/)
+* [GitHub](https://github.com/autoloadnextpost/auto-load-next-post)
 
 == Installation ==
 
@@ -110,21 +109,25 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 == Frequently Asked Questions ==
 
+= How does it work technically? =
+
+When a viewer reaches near the end of the article, the post navigation at the end of the post is used to identify and find the next post to load. It loads that post by inserting the content via a customizable repeater template and places the content underneath the parent post within the post container. This is done via Ajax.
+
+It also detects what the viewer is reading and updates the browser URL address bar and page title to that post. Should the reader refresh the browser, the post they are currently reading would load as the new initial post.
+
+All previous posts of the blog are still retained in the browser history and to top it off, each post read can be tracked as a pageview using Google Analytics.
+
 = Is Auto Load Next Post free? =
 
 Yes! Auto Load Next Post's core features are and always will be free.
 
 = Will Auto Load Next Post work with my theme? =
 
-Yes, Auto Load Next Post will work with any theme but may require some configuration for it to understand your theme. Please see the [documentation](https://autoloadnextpost.com/documentation/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link) for help or read further down to see if your question has already been answered.
+Yes, Auto Load Next Post will work with any theme but may require some configuration for it to understand your theme. Please see the [documentation](https://github.com/autoloadnextpost/alnp-documentation?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=faq-link) for help or read further down to see if your question has already been answered.
 
 = Is Auto Load Next Post translatable? =
 
-Yes! Auto Load Next Post is deployed with full translation and localization support via the 'auto-load-next-post' text-domain. [How to translate?](https://autoloadnextpost.com/documentation/can-i-install-auto-load-next-post-language/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link)
-
-= Where can I request new features and add-ons? =
-
-You can vote on and request new features and add-ons on the [public roadmap](https://trello.com/c/OcC1oDGE/1-submitting-new-ideas).
+Yes! Auto Load Next Post is deployed with full translation and localization support via the 'auto-load-next-post' text-domain. [How to translate?](https://autoloadnextpost.com/documentation/can-i-install-auto-load-next-post-language/?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=faq-link)
 
 = Where can I find the settings for this plugin? =
 
@@ -132,15 +135,7 @@ Go to **Settings -> Auto Load Next Post**. There you will find the options to ch
 
 = Is overriding the repeater template file required? =
 
-No. This was put in place to support themes that have coded their template files differently from [WordPress theme code standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards). For example, the [Genesis Framework](https://autoloadnextpost.com/product/genesis-framework-support/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link) displays content via many action hooks instead so for this case overriding the template is a required.
-
-= How can I override the repeater template file? =
-
-You first need to create a new folder in your active theme directory called **auto-load-next-post** like so: **wp-content/themes/your-theme-name/auto-load-next-post/** and copy the repeater template file **content-alnp.php** from the plugin template folder into that new folder.
-
-Now you can modify it to match how your theme’s content is loaded for a single post. This will be the repeater template the plugin will use to load posts with from now on.
-
-> PHP knowledge will be required.
+No. This was put in place to support themes that have coded their template files differently from [WordPress theme code standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards). For example, the [Genesis Framework](https://autoloadnextpost.com/product/genesis-framework-support/?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=faq-link) displays content via many action hooks instead so for this case overriding the template is a required.
 
 = Can I use JetPack Social Links and Like Button? =
 
@@ -152,9 +147,7 @@ This is not possible but it would also drive away the purpose of this plugin if 
 
 = Can I load content before and after the next post has loaded? =
 
-Yes, you can. In the repeater template, there are [action hooks](https://autoloadnextpost.com/documentation/action-hooks/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link) that you can use.
-
-I have also prepared a [plugin demonstrating](https://github.com/AutoLoadNextPost/alnp-action-hooks-demonstration) the action hooks used when called. Simply download and install the plugin to see where you can place content.
+Yes, you can. In the default repeater template, there are [action hooks](https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/action-hooks.md?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=faq-link) available that you can use.
 
 = After the first post has loaded, all I get is the same post over and over again. Why is that? =
 
@@ -164,13 +157,13 @@ You need to place it inside the loop. If that is not the case then you have not 
 
 = Does the plugin detect my theme and insert the theme selectors for me? =
 
-If the theme author has added support for Auto Load Next Post and has set the theme selectors then yes, it will set the theme selectors for you. If not supported then it does not. You may follow this guide to help you [find your theme selectors](https://autoloadnextpost.com/documentation/find-theme-selectors/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link).
+If the theme author has added support for Auto Load Next Post and has set the theme selectors then yes, it will set the theme selectors for you. If not supported then it does not. You may follow this guide to help you [find your theme selectors](https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/theme-selectors.md?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=faq-link).
 
 = My theme does not work with the plugin, what do I do? =
 
 Check that you have a post navigation at the end of your post. If one does exists then you may need to copy and modify the repeater template file **content-alnp.php** in order to support your theme.
 
-Not all themes are coded the same way so some alterations will be needed to match the theme. If you need help with this then I can provide [theme support](https://autoloadnextpost.com/product/theme-support/?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=faq-link) on request.
+Not all themes are coded the same way so some alterations will be needed to match the theme. If you need help with this then I can provide [theme support](https://autoloadnextpost.com/product/theme-support/?utm_source=wordpressorg&utm_medium=wp.org&utm_campaign=faq-link) on request.
 
 = What is the post order? =
 
