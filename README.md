@@ -54,7 +54,7 @@ You may:
 4. Go to **WordPress Admin > Plugins > Add New**.
 5. Click **Upload Plugin** at the top.
 6. **Choose File** and select the `.zip` file you downloaded in **Step 1,2 or 3**.
-7. Click **Install Now** and **Activate** the {plugin/extension}.
+7. Click **Install Now** and **Activate** the Auto Load Next Post.
 
 > If you also want to test out beta releases, you can [download the beta tester](https://github.com/autoloadnextpost/alnp-beta-tester/archive/master.zip) plugin which will replace your installed version of Auto Load Next Post with the latest tagged pre-release on GitHub.
 
