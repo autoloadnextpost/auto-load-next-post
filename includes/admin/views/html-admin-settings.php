@@ -3,7 +3,7 @@
  * Admin View: Settings
  *
  * @since    1.0.0
- * @version  1.6.0
+ * @version  1.5.5
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -48,9 +48,17 @@ if ( ! $tab_exists ) {
 		</p>
 	</form>
 
-	<div class="alnp-sidebar">
 	<?php
-	do_action( 'auto_load_next_post_sidebar', $current_tab );
+	// Checks if Auto Load Next Post Pro is installed before displaying sidebar.
+	if ( ! is_alnp_pro_version_installed() ) {
+		include_once( dirname( __FILE__ ) . '/html-admin-sidebar.php' );
+	}
+	else {
+		echo '<div class="alnp-sidebar">';
+		do_action( 'auto_load_next_post_after_settings' );
+		// Use this hook to display after settings for a specific tab.
+		do_action( 'auto_load_next_post_after_settings_' . $current_tab );
+		echo '</div>';
+	}
 	?>
-	</div>
 </div>
