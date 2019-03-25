@@ -4,8 +4,8 @@ Donate link: https://sebdumont.xyz/donate/
 Tags: infinite scroll, infinite scrolling, scroll, infinite, endless scroll, pagination, ajax pagination, ajax, ajax posts, ajax load more, browsing history, navigation
 Requires PHP: 5.6
 Requires at least: 4.7
-Tested up to: 5.0.0
-Stable tag: 1.5.6
+Tested up to: 5.1.1
+Stable tag: 1.5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -194,73 +194,7 @@ It does. Just make sure that you activate the plugin on the site you want it use
 = 1.5.6 : 29th November 2018 =
 * Corrected: Twenty Nineteen support for the featured image was missing an inner wrapper to provide the correct styling.
 
-= 1.5.5 : 28th November 2018 =
-* Added: Screen reader support for links missing them.
-* Added: WordPress UX for the help tab sucks so I added a button to the settings page that will help users find the help.
-* Added: Support for Sydney theme out of the box.
-* Added: Support for the new default theme Twenty Nineteen ready for WP v5.0 release.
-* Checked: Compatibility with WordPress 5.0
-* Fixed: Missing semicolon at the end of the JavaScript and minified with correction.
-* Fixed: WP dashboard footer is only styled on the ALNP settings page.
-* Improved: Managing themes supported so future themes can be added out of the box.
-* Renamed: All theme class files and folders for all default WordPress themes to match theme slug.
-* Updated: CSS assets did not fully minify properly since last CSS update.
-* Updated: POT file for translations.
-* Updated: Code cleanup.
-
-= 1.5.4 : 10th November 2018 =
-* Fixed: Welcome notice. A class was not defined to return `alnp_get_random_page_permalink` function for unsuported themes.
-* Moved: `alnp_get_random_page_permalink` function to core functions so it is globally used instead.
-* Added: An if condition to check each global function if `function_exists`
-* Updated: The **uninstall.php** file to also remove user interactions saved in the **usermeta** table.
-
-= 1.5.3 : 15th September 2018 =
-* Corrected: Meta name for when locking the JavaScript in the footer is set via theme support.
-
-= 1.5.2 : 14th September 2018 =
-* Reverted: The JavaScript from not requiring the document to be ready due to JS minification breaking it.
-
-= 1.5.1 : 14th September 2018 =
-* Fixed: No such file for including the admin settings when setting default options due to a file rename.
-
-= 1.5.0 : 14th September 2018 =
-* NEW: All settings are available in the theme customizer.
-* NEW: Option to load the JavaScript in the footer.
-* NEW: Support for themes that require Auto Load Next Post to load in the footer.
-* NEW: Added trigger event support for third-party plugins thanks to Stelios Patsatzis.
-* NEW: Support for theme Make, Storefront and Understrap.
-* NEW: Privacy policy guide content.
-* NEW: Beta notice if trying out beta releases. Explains how you can provide feedback and can be dismissed for 7 days.
-* NEW: Welcome notice to users who install Auto Load Next Post for the first time.
-* Added: A check to see if JetPack is active.
-* Added: A check in the JavaScript to prevent it from loading if a user is requesting to post a comment. - Initial post only.
-* Added: A filter for the repeater template location so theme or plugin developers can move it to another location should they need to.
-* Added: A user agent checker to see if the request was made from a known bot.
-* Added: Detection of plugin support. If supported, set the theme selectors for the currently active theme even when the theme has changed.
-* Added: Admin notice to tell the user the theme supports Auto Load Next Post. Only shows once.
-* Added: Admin notice to tell the user the theme selectors have already been set by the current theme if that theme supports Auto Load Next Post.
-* Added: Admin notice under "Theme Selectors" settings only if all three or one of the required theme selectors is not set.
-* Added: Admin notice under the "Misc" settings only if remove comments was enabled but the comments container selector was not set.
-* Added: A sidebar to the settings page to promote Auto Load Next Post Pro and allow users to sign up.
-* Added: Select2 to replace previous JavaScript library "chosen" for better support and performance.
-* Changed: Rewrite endpoint to be more distinct for Auto Load Next Post and prevent any conflicts.
-* Changed: Settings have been separated into Theme Selectors and Miscellaneous settings.
-* Changed: The JavaScript now does not require the document to be ready. This is especially helpful if you have enabled the JavaScript to load in the footer.
-* Fixed: The trigger to override the post URL.
-* Fixed: Install date to a timestamp for those who have previously installed Auto Load Next Post so when you see the review notice, it does not say it's been 48 years since you installed because that is just crazy. LOL :laughing:
-* Improved: Theme support and all default WordPress themes are supported out of the box. (Twenty Ten to Twenty Seventeen)
-* Improved: Moved flushing rewrite rules so it only runs once during installation or updating Auto Load Next Post.
-* Improved: Admin setting fields and added placeholder support.
-* Improved: Inline PHPdocs
-* Renamed: Repeater template from content-partial.php to content-alnp.php
-* Removed: Admin notice for the theme has not declared support.
-* Removed: Template location filter from the repeater template as it has been moved for better support.
-* Removed: PHP version check.
-* Removed: JavaScript library "chosen".
-* Updated: POT file for translation.
-* Updated: Repeater template due to improvements with this release.
-
-[See changelog for all versions](https://raw.githubusercontent.com/autoloadnextpost/auto-load-next-post/master/CHANGELOG.md).
+[View the full changelog here](https://raw.githubusercontent.com/autoloadnextpost/auto-load-next-post/master/CHANGELOG.md).
 
 == Upgrade Notice ==
 Developer Warning: Please install version 1.5.4 or above. Version 1.5.0 to 1.5.3 had some issues that were not picked up straight away.

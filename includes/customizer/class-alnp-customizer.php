@@ -303,7 +303,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 					'transport'         => 'postMessage',
 					'type'              => 'option',
 				),
-				'auto_load_next_post_js_footer' => array(
+				'auto_load_next_post_load_js_in_footer' => array(
 					'capability'        => 'edit_theme_options',
 					'default'           => $settings['alnp_js_footer'],
 					'transport'         => 'postMessage',
@@ -393,7 +393,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 					'label'       => esc_html__( 'JavaScript in Footer?', 'auto-load-next-post' ),
 					'description' => esc_html__( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site.', 'auto-load-next-post' ),
 					'section'     => 'auto_load_next_post_misc',
-					'settings'    => 'auto_load_next_post_google_analytics',
+					'settings'    => 'auto_load_next_post_load_js_in_footer',
 					'type'        => 'checkbox',
 				),
 				'alnp_on_load_event' => array(
@@ -478,7 +478,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				'alnp_comments_container'     => get_option( 'auto_load_next_post_comments_container' ),
 				'alnp_remove_comments'        => get_option( 'auto_load_next_post_remove_comments' ),
 				'alnp_google_analytics'       => get_option( 'auto_load_next_post_google_analytics' ),
-				'alnp_js_footer'              => get_option( 'auto_load_next_post_js_footer' ),
+				'alnp_js_footer'              => get_option( 'auto_load_next_post_load_js_in_footer' ),
 				'alnp_on_load_event'          => get_option( 'auto_load_next_post_on_load_event' ),
 				'alnp_on_entering_event'      => get_option( 'auto_load_next_post_on_entering_event' ),
 			);

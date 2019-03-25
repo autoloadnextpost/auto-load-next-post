@@ -6,7 +6,11 @@
 3. Lists must have one space above after heading
 -->
 
-# 1.5.6 - 29th November 2018
+# 1.5.7 - 25th March 2019
+
+* Corrected: Meta name used to determin if the JavaScript should load in the footer.
+
+## 1.5.6 - 29th November 2018
 
 * Corrected: Twenty Nineteen support for the featured image was missing an inner wrapper to provide the correct styling.
 

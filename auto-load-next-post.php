@@ -5,7 +5,7 @@
  * Description: Increase your pageviews on your site as readers continue reading your posts scrolling down the page.
  * Author:      Sébastien Dumont
  * Author URI:  https://sebastiendumont.com
- * Version:     1.5.6
+ * Version:     1.5.7
  * Text Domain: auto-load-next-post
  * Domain Path: /languages/
  *
@@ -45,7 +45,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @static
 		 * @since  1.5.0
 		 */
-		public static $version = '1.5.6';
+		public static $version = '1.5.7';
 
 		/**
 		 * Main Auto Load Next Post Instance
@@ -221,7 +221,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			// Load the Javascript if found as a singluar post and the user is not a bot.
 			if ( !alnp_is_bot() && is_singular() && get_post_type() == 'post' ) {
 				// This helps the plugin decide to load the JavaScript in the footer or not.
-				$load_in_footer = get_option( 'auto_load_next_post_js_footer' );
+				$load_in_footer = get_option( 'auto_load_next_post_load_js_in_footer' );
 
 				$this->load_file( 'auto-load-next-post-scrollspy', '/assets/js/libs/scrollspy.min.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION, $load_in_footer );
 
