@@ -191,10 +191,13 @@ It does. Just make sure that you activate the plugin on the site you want it use
 4. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
-= 1.5.6 : 29th November 2018 =
-* Corrected: Twenty Nineteen support for the featured image was missing an inner wrapper to provide the correct styling.
+
+= 1.5.7 - 25th March 2019 =
+
+* Corrected: Meta name used to determin if the JavaScript should load in the footer.
 
 [View the full changelog here](https://raw.githubusercontent.com/autoloadnextpost/auto-load-next-post/master/CHANGELOG.md).
 
 == Upgrade Notice ==
+
 Developer Warning: Please install version 1.5.4 or above. Version 1.5.0 to 1.5.3 had some issues that were not picked up straight away.
