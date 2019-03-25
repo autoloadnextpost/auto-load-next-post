@@ -7,11 +7,11 @@ PLUGIN_SLUG="auto-load-next-post"
 GITHUB_REPO_OWNER="seb86"
 
 # GITHUB Repository name
-GITHUB_REPO_NAME="Auto-Load-Next-Post"
+GITHUB_REPO_NAME="auto-load-next-post"
 
 set -e
 clear
-
+ 
 # ASK INFO
 echo "-------------------------------------------------------"
 echo "  Github to WordPress.org Auto Load Next Post Release  "
@@ -35,7 +35,7 @@ ROOT_PATH=""
 TEMP_GITHUB_REPO=${PLUGIN_SLUG}"-git"
 TEMP_SVN_REPO=${PLUGIN_SLUG}"-svn"
 SVN_REPO="https://plugins.svn.wordpress.org/"${PLUGIN_SLUG}"/"
-GIT_REPO="https://github.com/"${GITHUB_REPO_OWNER}"/"${GITHUB_REPO_NAME}".git"
+GIT_REPO="git@github.com:"${GITHUB_REPO_OWNER}"/"${GITHUB_REPO_NAME}".git"
 
 echo "-------------------------------------------------------"
 echo "Did you tag a beta or a release candidate last?"
@@ -72,7 +72,9 @@ fi
 clear
 
 # CLONE GIT DIR
+echo "---------------------------------------------------------------------"
 echo "Cloning GIT repository from GitHub.com"
+echo "---------------------------------------------------------------------"
 git clone --progress $GIT_REPO $TEMP_GITHUB_REPO || { echo "Unable to clone repo."; exit 1; }
 
 # MOVE INTO GIT DIR
@@ -83,26 +85,32 @@ clear
 echo "Fetching remote tags to update locally."
 git fetch --tags
 
-# LIST BRANCHES
 clear
-git fetch origin
-echo "-------------------------------------------------------"
-echo "Which branch do you wish to release?"
+
+# List Branches
+echo "---------------------------------------------------------------------"
 git branch -r || { echo "Unable to list branches."; exit 1; }
-echo ""
-read -p "origin/" BRANCH
+echo "---------------------------------------------------------------------"
+read -p "Which branch do you wish to release? /" BRANCH
 
 # Switch Branch
-echo ""
-echo "Switching to branch"
-git checkout ${BRANCH} || { echo "Unable to checkout branch."; exit 1; }
+echo "---------------------------------------------------------------------"
+echo "Switching to branch "${BRANCH}
 
-echo ""
-read -p "Press [ENTER] to deploy branch "${BRANCH}
+# IF BRANCH WAS LEFT EMPTY THEN FETCH "master" BY DEFAULT
+if [[ -z ${BRANCH} ]]; then
+	BRANCH=master
+else
+	git checkout ${BRANCH} || { echo "Unable to checkout branch."; exit 1; }
+fi;
+
+echo "---------------------------------------------------------------------"
+read -p "Press [ENTER] to remove unwanted files before release."
 
 # REMOVE UNWANTED FILES & FOLDERS
-echo ""
-echo "Removing unwanted files"
+echo "---------------------------------------------------------------------"
+echo "Removing unwanted files..."
+echo "---------------------------------------------------------------------"
 rm -Rf .wordpress-org
 rm -Rf .git
 rm -Rf .github
@@ -125,17 +133,22 @@ rm -f *.md
 rm -f *.png
 rm -f *.sh
 
+clear
+
+echo "---------------------------------------------------------------------"
+read -p "READY! Press [ENTER] to deploy branch "${BRANCH}
+
 # MOVE INTO SVN DIR
 cd "../"$TEMP_SVN_REPO
 
 # UPDATE SVN
-echo ""
+echo "---------------------------------------------------------------------"
 echo "Updating SVN"
 svn update || { echo "Unable to update SVN."; exit 1; }
 
 # DELETE TRUNK
-echo ""
-echo "Replacing trunk"
+echo "---------------------------------------------------------------------"
+echo "Replacing TRUNK folder"
 rm -Rf trunk/
 
 # COPY GIT DIR TO TRUNK
@@ -153,8 +166,8 @@ for MISSING_PATH in $MISSING_PATHS; do
 done
 
 # COPY TRUNK TO TAGS/$VERSION
-echo ""
-echo "Copying trunk to new tag"
+echo "---------------------------------------------------------------------"
+echo "Copying TRUNK to new tag"
 svn copy trunk tags/${VERSION} || { echo "Unable to create tag."; exit 1; }
 
 # DO SVN COMMIT
@@ -163,38 +176,39 @@ echo "Show SVN status"
 svn status
 
 # PROMPT USER
-echo ""
+echo "---------------------------------------------------------------------"
 read -p "Press [ENTER] to commit release "${VERSION}" to WordPress.org AND GitHub."
-echo ""
+echo "---------------------------------------------------------------------"
 
 # CREATE THE GITHUB RELEASE
 echo "Creating release on GITHUB repository."
 cd "$GITPATH"
 
-echo ""
+echo "---------------------------------------------------------------------"
 echo "Tagging new version in git"
 git tag -a "v${VERSION}" -m "Tagging version v${VERSION}"
 
-echo ""
+echo "---------------------------------------------------------------------"
 echo "Pushing latest commit to origin, with tags"
 git push origin master
 git push origin master --tags
 
 # DEPLOY
-echo ""
+echo "---------------------------------------------------------------------"
 echo "Committing to WordPress.org... this may take a while..."
 svn commit -m "Releasing "${VERSION}"" || { echo "Unable to commit."; exit 1; }
 
 # REMOVE THE TEMP DIRS
-echo ""
+echo "---------------------------------------------------------------------"
 echo "Cleaning Up..."
+echo "---------------------------------------------------------------------"
 cd "../"
 rm -Rf $ROOT_PATH$TEMP_GITHUB_REPO
 rm -Rf $ROOT_PATH$TEMP_SVN_REPO
 
 # DONE
-echo ""
+echo "---------------------------------------------------------------------"
 echo "Release Done."
-echo ""
+echo "---------------------------------------------------------------------"
 read -p "Press [ENTER] to close program."
 clear
