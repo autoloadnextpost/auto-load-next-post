@@ -3,7 +3,7 @@
  * Auto Load Next Post - Admin.
  *
  * @since    1.0.0
- * @version  1.5.5
+ * @version  1.5.7
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin
@@ -24,7 +24,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.4.10
+		 * @version 1.5.7
 		 */
 		public function __construct() {
 			// Include classes.
@@ -40,10 +40,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 			// Add settings page.
 			add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
 
-			// Filters
+			// Filters plugin row and admin footer.
 			add_filter( 'plugin_action_links_' . plugin_basename( AUTO_LOAD_NEXT_POST_FILE ), array( $this, 'plugin_action_links' ) );
 			add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta'), 10, 3 );
-			add_filter( 'admin_footer_text', array( $this, 'admin_footer_text' ) );
+			add_filter( 'admin_footer_text', array( $this, 'admin_footer_text' ), 15, 1 );
 			add_filter( 'update_footer', array( $this, 'update_footer'), 15 );
 		} // END __construct()
 
@@ -279,8 +279,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.4.10
-		 * @param   string $text
+		 * @version 1.5.7
+		 * @param   string $text text to be rendered in the footer.
 		 * @return  string $text
 		 */
 		public function admin_footer_text( $text ) {
@@ -288,11 +288,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 
 			if ( isset( $current_screen->id ) && $current_screen->id == 'settings_page_auto-load-next-post-settings' ) {
 				// Rating and Review
-				return sprintf(
+				$text = sprintf(
 					/* translators: 1: Auto Load Next Post 2:: five stars */
 					__( 'If you like %1$s, please leave a %2$s rating. A huge thank you in advance!', 'auto-load-next-post' ),
 					sprintf( '<strong>%1$s</strong>', esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
-					'<a href="' . AUTO_LOAD_NEXT_POST_REVIEW_URL . '?rate=5#new-post" target="_blank" data-rated="' . esc_attr__( 'Thanks :)', 'auto-load-next-post' ) . '">&#9733;&#9733;&#9733;&#9733;&#9733;</a>'
+					'<a href="' . AUTO_LOAD_NEXT_POST_REVIEW_URL . '?rate=5#new-post" target="_blank" aria-label="' . esc_attr__( 'five star', 'auto-load-next-post' ) . '" data-rated="' . esc_attr__( 'Thanks :)', 'auto-load-next-post' ) . '">&#9733;&#9733;&#9733;&#9733;&#9733;</a>'
 				);
 			}
 
