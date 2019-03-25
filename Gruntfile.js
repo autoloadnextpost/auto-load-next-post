@@ -79,6 +79,7 @@ module.exports = function(grunt) {
 					exclude: [
 						'releases',
 						'node_modules',
+						'vendor'
 					],
 					mainFile: '<%= pkg.name %>.php',                          // Main project file.
 					potComments: '# Copyright (c) {{year}} Sébastien Dumont', // The copyright at the beginning of the POT file.
@@ -122,6 +123,7 @@ module.exports = function(grunt) {
 					'*.php',
 					'**/*.php', // Include all files
 					'!node_modules/**', // Exclude node_modules/
+					'!vendor/**', // Exclude vendor files
 				],
 				expand: true
 			},
