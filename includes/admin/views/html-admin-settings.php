@@ -3,7 +3,7 @@
  * Admin View: Settings
  *
  * @since    1.0.0
- * @version  1.5.5
+ * @version  1.5.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -55,9 +55,12 @@ if ( ! $tab_exists ) {
 	}
 	else {
 		echo '<div class="alnp-sidebar">';
+
 		do_action( 'auto_load_next_post_after_settings' );
+
 		// Use this hook to display after settings for a specific tab.
 		do_action( 'auto_load_next_post_after_settings_' . $current_tab );
+
 		echo '</div>';
 	}
 	?>
