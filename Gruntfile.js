@@ -86,7 +86,7 @@ module.exports = function(grunt) {
 					potHeaders: {
 						'poedit': true,                                       // Includes common Poedit headers.
 						'x-poedit-keywordslist': true,                        // Include a list of all possible gettext functions.
-						'Report-Msgid-Bugs-To': 'https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues',
+						'Report-Msgid-Bugs-To': 'https://github.com/autoloadnextpost/auto-load-next-post/issues',
 						'language-team': 'Sébastien Dumont <mailme@sebastiendumont.com>',
 						'language': 'en_US'
 					},

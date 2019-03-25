@@ -6,7 +6,7 @@
  * and helpful information for the users.
  *
  * @since    1.0.0
- * @version  1.5.5
+ * @version  1.5.7
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Help
@@ -79,8 +79,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 				'title'   => esc_html__( 'Found a bug?', 'auto-load-next-post' ),
 				'content' =>
 					'<h2>' . esc_html__( 'Found a bug?', 'auto-load-next-post' ) . '</h2>' .
-					'<p>' . sprintf( __( 'If you find a bug within %1$s, please %2$sreport the issue%4$s by creating a ticket on the GitHub repository where I can deal with it more appropriately. Please ensure that you have read the %3$sguidelines to contributing%4$s prior to submitting your report. To help me solve the issue, please be as descriptive as possible.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a href="https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues?state=open" target="_blank">', '<a href="https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/blob/master/CONTRIBUTING.md" target="_blank">', '</a>' ) . '</p>' .
-					'<p><a href="https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/issues?state=open" class="button button-primary" target="_blank">' . esc_html__( 'Report an Issue', 'auto-load-next-post' ) . '</a></p>'
+					'<p>' . sprintf( __( 'If you find a bug within %1$s, please %2$sreport the issue%4$s by creating a ticket on the GitHub repository where I can deal with it more appropriately. Please ensure that you have read the %3$sguidelines to contributing%4$s prior to submitting your report. To help me solve the issue, please be as descriptive as possible.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a href="https://github.com/autoloadnextpost/auto-load-next-post/issues?state=open" target="_blank">', '<a href="https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md" target="_blank">', '</a>' ) . '</p>' .
+					'<p><a href="https://github.com/autoloadnextpost/auto-load-next-post/issues?state=open" class="button button-primary" target="_blank">' . esc_html__( 'Report an Issue', 'auto-load-next-post' ) . '</a></p>'
 			) );
 
 			$screen->add_help_tab(array(
@@ -97,7 +97,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 				'<p><strong>' . esc_html__( 'For more information:', 'auto-load-next-post' ) . '</strong></p>' .
 				'<p><a href="' . AUTO_LOAD_NEXT_POST_STORE_URL . 'about/?utm_source=wpadmin&utm_campaign=plugin-settings-help-tab" target="_blank">' . sprintf( esc_html__( 'About %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '</a></p>' .
 				'<p><a href="https://wordpress.org/plugins/auto-load-next-post/" target="_blank">' . esc_html__( 'WordPress.org Project', 'auto-load-next-post' ) . '</a></p>' .
-				'<p><a href="https://github.com/AutoLoadNextPost/Auto-Load-Next-Post/" target="_blank">' . esc_html__( 'GitHub Project', 'auto-load-next-post' ) . '</a></p>'
+				'<p><a href="https://github.com/autoloadnextpost/auto-load-next-post/" target="_blank">' . esc_html__( 'GitHub Project', 'auto-load-next-post' ) . '</a></p>'
 			);
 
 		} // END add_help_tabs()
