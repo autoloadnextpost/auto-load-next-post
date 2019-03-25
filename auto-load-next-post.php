@@ -215,13 +215,13 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.5.0
+		 * @version 1.5.7
 		 */
 		public function alnp_enqueue_scripts() {
 			// Load the Javascript if found as a singluar post and the user is not a bot.
 			if ( !alnp_is_bot() && is_singular() && get_post_type() == 'post' ) {
-				// This helps the plugin decide to load the JavaScript in the footer or not.
-				$load_in_footer = get_option( 'auto_load_next_post_load_js_in_footer' );
+				// This checks to see if the JavaScript should load in the footer or not.
+				$load_in_footer = alnp_load_js_in_footer();
 
 				$this->load_file( 'auto-load-next-post-scrollspy', '/assets/js/libs/scrollspy.min.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION, $load_in_footer );
 

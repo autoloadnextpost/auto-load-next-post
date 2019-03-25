@@ -5,7 +5,7 @@
  * General core functions available for both the front-end and admin.
  *
  * @since    1.0.0
- * @version  1.5.4
+ * @version  1.5.7
  * @author   Sébastien Dumont
  * @category Core
  * @package  Auto Load Next Post/Core/Functions
@@ -127,4 +127,22 @@ if ( ! function_exists( 'alnp_get_random_page_permalink' ) ) {
 			return false;
 		}
 	} // END alnp_get_random_page_permalink()
+}
+
+/**
+ * This helps the plugin decide to load the JavaScript in the footer or not.
+ * 
+ * @since 1.5.7
+ * @return boolean
+ */
+if ( ! function_exists( 'alnp_load_js_in_footer' ) ) {
+	function alnp_load_js_in_footer() {
+		$load_in_footer = get_option( 'auto_load_next_post_load_js_in_footer', false );
+
+		if ( isset( $load_in_footer ) && $load_in_footer == 'yes' ) {
+			return true;
+		}
+
+		return false;
+	}
 }
