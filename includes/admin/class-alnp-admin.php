@@ -305,7 +305,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.4.10
+		 * @version 1.5.7
 		 * @param   string $text
 		 * @return  string $text
 		 */
@@ -313,7 +313,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 			$screen = get_current_screen();
 
 			if ( $screen->id == 'settings_page_auto-load-next-post-settings' ) {
-				return '<p class="alignright">' . sprintf( __( '%s Version', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . ' ' . esc_attr( AUTO_LOAD_NEXT_POST_VERSION ) . '</p>';
+				return sprintf( __( '%s Version', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . ' ' . esc_attr( AUTO_LOAD_NEXT_POST_VERSION );
 			}
 
 			return $text;
