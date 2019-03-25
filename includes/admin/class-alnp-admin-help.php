@@ -37,7 +37,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.5
+		 * @version 1.5.7
 		 */
 		public function add_help_tabs() {
 			$screen = get_current_screen();
@@ -68,10 +68,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 				'title'   => esc_html__( 'Help & Support', 'auto-load-next-post' ),
 				'content' =>
 					'<h2>' . esc_html__( 'Help & Support', 'auto-load-next-post' ) . '</h2>' .
-					'<p>' . sprintf( __( 'Should you need help understanding, using, or extending %1$s, please %2$sread the documentation%3$s. You will find snippets, tutorials and much more.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a href="' . AUTO_LOAD_NEXT_POST_STORE_URL . 'documentation/?utm_source=wpadmin&utm_campaign=plugin-settings-help-tab" target="_blank">', '</a>' ) . '</p>' .
-					'<p>' . sprintf( __( 'For further assistance with %1$s you can use the %2$scommunity forum%3$s.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a href="'. AUTO_LOAD_NEXT_POST_SUPPORT_URL . '" target="_blank">', '</a>' ) . '</p> ' .
+					'<p>' . sprintf( __( 'Should you need help understanding, using, or extending %1$s, please %2$sread the documentation%3$s. You will find snippets, tutorials and much more.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a href="' . AUTO_LOAD_NEXT_POST_STORE_URL . 'documentation/?utm_source=wpadmin&utm_campaign=plugin-settings-help-tab" aria-label="' . esc_attr__( 'View Auto Load Next Post documentation', 'auto-load-next-post' ) . '" target="_blank">', '</a>' ) . '</p>' .
+					'<p>' . sprintf( __( 'For further assistance with %1$s you can use the %2$scommunity forum%3$s.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a href="'. AUTO_LOAD_NEXT_POST_SUPPORT_URL . '"aria-label="' . esc_attr__( 'Get support from the community', 'auto-load-next-post' ). '" target="_blank">', '</a>' ) . '</p> ' .
 					'<p>' . sprintf( __( '%1$s is in need of translations. Is the plugin not translated in your language or do you spot errors with the current translations? Helping out is easy! Head over to the project on WordPress.org and click %2$sTranslate %1$s%3$s.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a href="https://translate.wordpress.org/projects/wp-plugins/auto-load-next-post" target="_blank">', '</a>' ) . '</p>' .
-					'<p><a href="' . AUTO_LOAD_NEXT_POST_STORE_URL . 'documentation/?utm_source=wpadmin&utm_campaign=plugin-settings-help-tab" class="button button-primary" target="_blank">' . esc_html__( 'Documentation', 'auto-load-next-post' ) . '</a> <a href="'. AUTO_LOAD_NEXT_POST_SUPPORT_URL . '" class="button button-secondary" target="_blank">' . esc_html__( 'Community Forum', 'auto-load-next-post' ) . '</a> <a href="' . AUTO_LOAD_NEXT_POST_STORE_URL . 'f-a-q/?utm_source=wpadmin&utm_campaign=plugin-settings-help-tab" class="button button-secondary" target="_blank">' . esc_html__( 'Frequently Asked Questions', 'auto-load-next-post' ) . '</a> <a href="https://translate.wordpress.org/projects/wp-plugins/auto-load-next-post" class="button button-secondary" target="_blank">' . sprintf( esc_html__( 'Translate %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '</a></p>'
+					'<p><a href="' . AUTO_LOAD_NEXT_POST_STORE_URL . 'documentation/?utm_source=wpadmin&utm_campaign=plugin-settings-help-tab" class="button button-primary" aria-label="' . esc_attr__( 'View Auto Load Next Post documentation', 'auto-load-next-post' ) . '" target="_blank">' . esc_html__( 'Documentation', 'auto-load-next-post' ) . '</a> <a href="'. AUTO_LOAD_NEXT_POST_SUPPORT_URL . '" class="button button-secondary" aria-label="' . esc_attr__( 'Get support from the community', 'auto-load-next-post' ). '" target="_blank">' . esc_html__( 'Community Forum', 'auto-load-next-post' ) . '</a> <a href="' . AUTO_LOAD_NEXT_POST_STORE_URL . 'f-a-q/?utm_source=wpadmin&utm_campaign=plugin-settings-help-tab" class="button button-secondary" target="_blank">' . esc_html__( 'Frequently Asked Questions', 'auto-load-next-post' ) . '</a> <a href="https://translate.wordpress.org/projects/wp-plugins/auto-load-next-post" class="button button-secondary" target="_blank">' . sprintf( esc_html__( 'Translate %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '</a></p>'
 			) );
 
 			$screen->add_help_tab( array(
@@ -88,9 +88,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 				'title'   => esc_html__( 'Feedback', 'auto-load-next-post' ),
 				'content' =>
 					'<h2>' . esc_html__( 'Feedback', 'auto-load-next-post' ) . '</h2>' .
-					'<p>' . esc_html__( 'Your feedback is very important to me. Please consider leaving a review on WordPress.org or complete a simple survey.', 'auto-load-next-post' ) . '</p>' .
-					'<p>' . sprintf( __( 'If %1$s has worked out for you well and you like it, please consider %2$smaking a donation%3$s.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a href="https://www.buymeacoffee.com/sebastien" target="_blank">', '</a>' ) . '</p>'.
-					'<p><a href="' . AUTO_LOAD_NEXT_POST_REVIEW_URL . '?filter=5#postform" class="button button-primary" target="_blank">' . esc_html__( 'Submit a Review', 'auto-load-next-post' ) . '</a> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzxlvnXRBIw8gqI7Z2O-HzYtncpGjDkLjlaeZLVsfrR61FNA/viewform?usp=sf_link" class="button button-secondary" target="_blank">' . esc_html__( 'Complete a Simple Survey', 'auto-load-next-post' ) . '</a> <a href="https://www.buymeacoffee.com/sebastien" class="button button-secondary" target="_blank">' . esc_html__( 'Make a Donation', 'auto-load-next-post' ) . '</a></p>'
+					'<p>' . esc_html__( 'Your feedback is very important to me so please consider leaving a review on WordPress.org', 'auto-load-next-post' ) . '</p>' .
+					'<p>' . sprintf( __( 'If %1$s has worked out for you well and you like it, please either consider %2$smaking a donation%3$s or signing up to be on the list for %1$s Pro.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a href="https://sebdumont.xyz/donate/" target="_blank">', '</a>' ) . '</p>'.
+					'<p><a href="' . AUTO_LOAD_NEXT_POST_REVIEW_URL . '?filter=5#postform" class="button button-primary" target="_blank" aria-label="' . esc_attr( __( 'Review Auto Load Next Post on WordPress.org', 'auto-load-next-post' ) ) . '">' . esc_html__( 'Leave a Review', 'auto-load-next-post' ) . '</a> <a href="https://sebdumont.xyz/donate/" class="button button-secondary" target="_blank">' . esc_html__( 'Make a Donation', 'auto-load-next-post' ) . '</a></p>'
 			) );
 
 			$screen->set_help_sidebar(
