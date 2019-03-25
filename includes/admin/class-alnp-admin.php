@@ -250,7 +250,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.5.7
 		 * @param   array  $links Plugin Row Meta
 		 * @param   string $file  Plugin Base file
 		 * @param   array  $data  Plugin Information
@@ -264,6 +264,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 					'docs' => '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'documentation/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" aria-label="' . esc_attr__( 'View Auto Load Next Post documentation', 'auto-load-next-post' ) . '" target="_blank">' . esc_attr__( 'Documentation', 'auto-load-next-post' ) . '</a>',
 					'community' => '<a href="' . esc_url( 'https://wordpress.org/support/plugin/auto-load-next-post' ) . '" aria-label="' . esc_attr__( 'Get support from the community', 'auto-load-next-post' ). '" target="_blank">' . esc_attr__( 'Community Support', 'auto-load-next-post' ) . '</a>',
 					'theme-support' => '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'product/theme-support/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" attr-label="' . esc_attr__( 'Get theme support', 'auto-load-next-post' ) . '" target="_blank">' . esc_attr__( 'Theme Support', 'auto-load-next-post' ) . '</a>',
+					'review' => '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_REVIEW_URL ) . '" aria-label="' . esc_attr( __( 'Review Auto Load Next Post on WordPress.org', 'auto-load-next-post' ) ) . '" target="_blank">' . __( 'Leave a Review', 'auto-load-next-post' ) . '</a>',
 				);
 
 				$links = array_merge( $links, $row_meta );
