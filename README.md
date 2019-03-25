@@ -71,7 +71,7 @@ If you find a bug within Auto Load Next Post, please [report the issue](https://
 Need help? This is a developer's portal for Auto Load Next Post and should not be used for general support. Please visit the [support forum on WordPress.org](https://wordpress.org/support/plugin/auto-load-next-post) if you need help.
 
 
-## 👍 Contributions
+## 🦄 Contributions
 Anyone is welcome to contribute to Auto Load Next Post. If you have a patch, or stumbled upon an issue with Auto Load Next Post, please read the [guidelines for contributing](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md) to this repository.
 
 There are various ways you can contribute:
@@ -93,6 +93,33 @@ Auto Load Next Post is in need of translations. Is the plugin not translated in 
 The libraries above are used with the plugin.
 
 
+## 👍 Contribute
+
+If you or your company use Auto Load Next Post or appreciate the work I’m doing in open source, please consider supporting me directly so I can continue maintaining it and keep evolving the project.
+
+You'll be helping to ensure I can spend the time not just fixing bugs, adding features or releasing new versions but also keeping the project afloat. Any contribution you make is a big help and is greatly appreciated.
+
+Please also consider starring ✨ and sharing 👍 the project repository! This helps the project getting known and grow with the community. 🙏
+
+I accept one-time donations and monthly via [BuyMeACoffee.com](https://www.buymeacoffee.com/sebastien)
+- [My PayPal](https://www.paypal.me/codebreaker)
+- [BuyMeACoffee.com](https://www.buymeacoffee.com/sebastien)
+- Bitcoin (BTC): `3L4cU7VJsXBFckstfJdP2moaNhTHzVDkKQ`
+- Ethereum (ETH): `0xc6a3C18cf11f5307bFa11F8BCBD51F355b6431cB`
+- Litecoin (LTC): `MNNy3xBK8sM8t1YUA2iAwdi9wRvZp9yRoi`
+
+
 ##### License
 
 Auto Load Next Post is released under [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.html).
+
+
+##### Credits
+
+Auto Load Next Post is developed and maintained by [Sébastien Dumont](https://sebastiendumont.com/about/).
+
+---
+
+<p align="center">
+	<img src="https://raw.githubusercontent.com/seb86/my-open-source-readme-template/master/a-sebastien-dumont-production.png" width="353">
+</p>
