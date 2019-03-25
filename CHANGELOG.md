@@ -66,7 +66,7 @@
 * NEW: Added admin notice under "Theme Selectors" settings only if all three or one of the required theme selectors is not set.
 * NEW: Added admin notice under the "Misc" settings only if remove comments was enabled but the comments container selector was not set.
 * NEW: Added a sidebar to the settings page to promote Auto Load Next Post Pro and allow users to sign up.
-* NEW: Added Select2 to replace previous JavaScript library _chosen_ for better support and performance.
+* NEW: Added [Select2](https://github.com/select2/select2) to replace previous JavaScript library _chosen_ for better support and performance.
 * Fixed: The trigger to override the post URL.
 * Fixed: Install date to a timestamp for those who have previously installed Auto Load Next Post so when you see the review notice, it does not say it's been 48 years since you installed because that is just crazy. LOL :laughing:
 * Tweaked: Changed the rewrite endpoint to be more distinct for Auto Load Next Post and prevent any conflicts.
