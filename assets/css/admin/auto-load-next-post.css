@@ -88,7 +88,8 @@ nav .nav-tab:first-child {
 	width: 60px;
 }
 .notice.auto-load-next-post-notice .auto-load-next-post-notice-icon img {
-	width: 64px;
+  font-size: 0px;
+  width: 64px;
 }
 .notice.auto-load-next-post-notice .auto-load-next-post-notice-content {
 	padding: 0 40px 0 20px;
