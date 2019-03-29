@@ -88,6 +88,12 @@ var article_container   = 'article';
 	// Remove Comments.
 	if ( remove_comments === 'yes' ) {
 		$( comments_container ).remove();
+
+		// Remove Disqus comments if found.
+		if ( $( '#disqus_thread' ).length > 0 ) {
+			$( '#disqus_thread' ).remove();
+		}
+
 		if ( $( comments_container ).length <= 0 ) {
 			console.log( 'Comments have been removed' );
 		}
@@ -395,6 +401,12 @@ var article_container   = 'article';
 			// Remove Comments.
 			if ( remove_comments === 'yes' ) {
 				$( comments_container ).remove();
+
+				// Remove Disqus comments if found.
+				if ( $( '#disqus_thread' ).length > 0 ) {
+					$( '#disqus_thread' ).remove();
+				}
+		
 				if ( $( comments_container ).length <= 0 ) {
 					console.log( 'Comments Removed' );
 				}
