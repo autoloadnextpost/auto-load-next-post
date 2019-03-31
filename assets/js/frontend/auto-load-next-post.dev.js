@@ -65,173 +65,173 @@ var version             = auto_load_next_post_params.alnp_version,
 	// This function runs the Auto Load Next Post script.
 	function run_alnp() {
 		if ( $( 'article' ).length <= 0 ) {
-		console.log( 'HTML5 semantics for article has not been found. Setting compatible HTML semantic.' );
-		article_container = 'div';
-	}
-
-	if ( is_customizer == 'yes' ) {
-		console.log( 'You are previewing with the customizer.' );
-	}
-
-	console.log( 'Auto Load Next Post is version: ' + version );
-
-	// Don't do anything if post was loaded looking for comments.
-	if ( orig_curr_url.indexOf( '#comments' ) > -1 || orig_curr_url.match(/#comment-*([0-9]+)/) ) {
-		console.log( 'Auto Load Next Post is disabled while requested to view comments.' );
-		return;
-	}
-
-	// Don't do anything if post was loaded to post a comment.
-	if ( orig_curr_url.indexOf( '#respond' ) > -1 ) {
-		console.log( 'Auto Load Next Post is disabled while requested to respond and post a comment.' );
-		return;
-	}
-
-	// Add a post divider.
-	$( content_container ).prepend( '<hr style="height:0px;margin:0px;padding:0px;border:none;" data-powered-by="alnp" data-initial-post="true" data-title="' + post_title + '" data-url="' + orig_curr_url + '"/>' );
-
-	// Mark the first article as the initial post.
-	$( content_container ).find( article_container ).attr( 'data-initial-post', true );
-
-	// Find the post ID of the initial loaded article.
-	var initial_post_id = $( content_container ).find( article_container ).attr( 'id' );
-
-	// Apply post ID to the first post divider if found.
-	if ( typeof initial_post_id !== 'undefined' && initial_post_id.length > 0 ) {
-		initial_post_id = initial_post_id.replace( 'post-', '' ); // Make sure that only the post ID remains.
-		console.log( 'Initial Post ID: ' + initial_post_id );
-		$( content_container ).find( 'article[data-initial-post]' ).prev().attr( 'data-post-id', initial_post_id );
-	}
-
-	console.log( 'Post URL: ' + post_url );
-
-	console.log( 'Post Count: ' + post_count );
-
-	// Remove Comments.
-	if ( remove_comments === 'yes' ) {
-		$( comments_container ).remove();
-
-		// Remove Disqus comments if found.
-		if ( $( '#disqus_thread' ).length > 0 ) {
-			$( '#disqus_thread' ).remove();
+			console.log( 'HTML5 semantics for article has not been found. Setting compatible HTML semantic.' );
+			article_container = 'div';
 		}
 
-		if ( $( comments_container ).length <= 0 ) {
-			console.log( 'Comments have been removed' );
-		}
-	}
-
-	// Initialise scrollSpy
-	scrollspy();
-
-	$( 'body' ).on( 'alnp-enter', function( e ) {
-		console.log( 'Entering new post' );
-	});
-
-	$( 'body' ).on( 'alnp-leaving', function( e ) {
-		console.log( 'Leaving post' );
-	});
-
-	/**
-	 * Track pageviews with Google Analytics.
-	 *
-	 * It will first detect if Google Analytics is installed before
-	 * attempting to send a pageview.
-	 *
-	 * The tracker detects both classic and universal tracking methods.
-	 *
-	 * Also supports Google Analytics by Monster Insights should it be used.
-	 */
-	$( 'body' ).on( 'alnp-post-changed', function( e, post_title, post_url, post_id, post_count, stop_reading ) {
-		if ( track_pageviews != 'yes' ) {
-			return;
-		}
-
-		// If we are previewing in the customizer then dont track.
 		if ( is_customizer == 'yes' ) {
-			console.log( 'Google Analytics tracking is disabled when previewing in the customizer.' );
+			console.log( 'You are previewing with the customizer.' );
+		}
+
+		console.log( 'Auto Load Next Post is version: ' + version );
+
+		// Don't do anything if post was loaded looking for comments.
+		if ( orig_curr_url.indexOf( '#comments' ) > -1 || orig_curr_url.match(/#comment-*([0-9]+)/) ) {
+			console.log( 'Auto Load Next Post is disabled while requested to view comments.' );
 			return;
 		}
 
-		console.log( 'Google Analytics tracking is enabled' );
-
-		if ( typeof _gaq === 'undefined' && typeof ga === 'undefined' && typeof __gaTracker === 'undefined' ) {
-			console.error( 'Google Analytics was not found installed on your site!' );
+		// Don't do anything if post was loaded to post a comment.
+		if ( orig_curr_url.indexOf( '#respond' ) > -1 ) {
+			console.log( 'Auto Load Next Post is disabled while requested to respond and post a comment.' );
 			return;
 		}
 
-		console.log( 'Post URL before clean: ' + post_url );
+		// Add a post divider.
+		$( content_container ).prepend( '<hr style="height:0px;margin:0px;padding:0px;border:none;" data-powered-by="alnp" data-initial-post="true" data-title="' + post_title + '" data-url="' + orig_curr_url + '"/>' );
 
-		// Clean Post URL before tracking.
-		post_url = post_url.replace(/https?:\/\/[^\/]+/i, '');
+		// Mark the first article as the initial post.
+		$( content_container ).find( article_container ).attr( 'data-initial-post', true );
 
-		console.log( 'Post URL after clean: ' + post_url );
+		// Find the post ID of the initial loaded article.
+		var initial_post_id = $( content_container ).find( article_container ).attr( 'id' );
 
-		// This uses Google's classic Google Analytics tracking method.
-		if ( typeof _gaq !== 'undefined' && _gaq !== null ) {
-			console.log( 'Google Analytics is installed but you are using a classic version. Recommend upgrading!' );
-			_gaq.push(['_trackPageview', post_url]);
+		// Apply post ID to the first post divider if found.
+		if ( typeof initial_post_id !== 'undefined' && initial_post_id.length > 0 ) {
+			initial_post_id = initial_post_id.replace( 'post-', '' ); // Make sure that only the post ID remains.
+			console.log( 'Initial Post ID: ' + initial_post_id );
+			$( content_container ).find( 'article[data-initial-post]' ).prev().attr( 'data-post-id', initial_post_id );
 		}
 
-		// This uses Google Analytics Universal Analytics tracking method.
-		if ( typeof ga !== 'undefined' && ga !== null ) {
-			console.log( 'Google Analytics Universal Analytics is installed. Yahoo!' );
-			ga( 'send', 'pageview', post_url );
-		}
+		console.log( 'Post URL: ' + post_url );
 
-		// This uses Monster Insights method of tracking Google Analytics.
-		if ( typeof __gaTracker !== 'undefined' && __gaTracker !== null ) {
-			console.log( 'Google Analytics by MonsterInsights is installed. Awesome!' );
-			__gaTracker( 'send', 'pageview', post_url );
-		}
-	});
+		console.log( 'Post Count: ' + post_count );
 
-	// If the browser back button is pressed or the user scrolled up then change history state.
-	$( 'body' ).on( 'mousewheel', function( e ) {
-		scroll_up = e.originalEvent.wheelDelta > 0;
-	});
+		// Remove Comments.
+		if ( remove_comments === 'yes' ) {
+			$( comments_container ).remove();
 
-	// Update the History ONLY if we are NOT in the customizer.
-	if ( ! is_customizer ) {
-		// Note: We are using statechange instead of popstate
-		History.Adapter.bind( window, 'statechange', function() {
-			var state = History.getState(); // Note: We are using History.getState() instead of event.state
-
-			console.log(state);
-
-			// If they returned back to the first post, then when you click the back button go to the url from which they came.
-			if ( scroll_up ) {
-				var states = History.savedStates;
-				var prev_state_index = states.length - 2;
-				var prev_state = states[prev_state_index];
-
-				console.log( 'Previous URL: ', prev_state.url );
-
-				if ( prev_state.url === orig_curr_url ) {
-					window.location = document.referrer;
-					return;
-				}
+			// Remove Disqus comments if found.
+			if ( $( '#disqus_thread' ).length > 0 ) {
+				$( '#disqus_thread' ).remove();
 			}
 
-			// If the previous URL does not match the current URL then go back.
-			if ( state.url != curr_url ) {
-				var previous_post = $( 'hr[data-url="' + state.url + '"]' ).next( article_container ).find( post_title_selector );
+			if ( $( comments_container ).length <= 0 ) {
+				console.log( 'Comments have been removed' );
+			}
+		}
 
-				// Is there a previous post?
-				if ( previous_post.length > 0 ) {
-					var previous_post_title = previous_post[0].dataset.title;
-					console.log( 'Previous Post: ' + previous_post_title );
+		// Initialise scrollSpy
+		scrollspy();
 
-					History.pushState(null, previous_post_title, state.url);
+		$( 'body' ).on( 'alnp-enter', function( e ) {
+			console.log( 'Entering new post' );
+		});
 
-					// Scroll to the top of the previous article.
-					$( 'html, body' ).animate({ scrollTop: (previous_post.offset().top - 100) }, 1000, function() {
-						$( 'body' ).trigger( 'alnp-previous-post', [ previous_post ] );
-					});
-				}
+		$( 'body' ).on( 'alnp-leaving', function( e ) {
+			console.log( 'Leaving post' );
+		});
+
+		/**
+		 * Track pageviews with Google Analytics.
+		 *
+		 * It will first detect if Google Analytics is installed before
+		 * attempting to send a pageview.
+		 *
+		 * The tracker detects both classic and universal tracking methods.
+		 *
+		 * Also supports Google Analytics by Monster Insights should it be used.
+		 */
+		$( 'body' ).on( 'alnp-post-changed', function( e, post_title, post_url, post_id, post_count, stop_reading ) {
+			if ( track_pageviews != 'yes' ) {
+				return;
+			}
+
+			// If we are previewing in the customizer then dont track.
+			if ( is_customizer == 'yes' ) {
+				console.log( 'Google Analytics tracking is disabled when previewing in the customizer.' );
+				return;
+			}
+
+			console.log( 'Google Analytics tracking is enabled' );
+
+			if ( typeof _gaq === 'undefined' && typeof ga === 'undefined' && typeof __gaTracker === 'undefined' ) {
+				console.error( 'Google Analytics was not found installed on your site!' );
+				return;
+			}
+
+			console.log( 'Post URL before clean: ' + post_url );
+
+			// Clean Post URL before tracking.
+			post_url = post_url.replace(/https?:\/\/[^\/]+/i, '');
+
+			console.log( 'Post URL after clean: ' + post_url );
+
+			// This uses Google's classic Google Analytics tracking method.
+			if ( typeof _gaq !== 'undefined' && _gaq !== null ) {
+				console.log( 'Google Analytics is installed but you are using a classic version. Recommend upgrading!' );
+				_gaq.push(['_trackPageview', post_url]);
+			}
+
+			// This uses Google Analytics Universal Analytics tracking method.
+			if ( typeof ga !== 'undefined' && ga !== null ) {
+				console.log( 'Google Analytics Universal Analytics is installed. Yahoo!' );
+				ga( 'send', 'pageview', post_url );
+			}
+
+			// This uses Monster Insights method of tracking Google Analytics.
+			if ( typeof __gaTracker !== 'undefined' && __gaTracker !== null ) {
+				console.log( 'Google Analytics by MonsterInsights is installed. Awesome!' );
+				__gaTracker( 'send', 'pageview', post_url );
 			}
 		});
-	}
+
+		// If the browser back button is pressed or the user scrolled up then change history state.
+		$( 'body' ).on( 'mousewheel', function( e ) {
+			scroll_up = e.originalEvent.wheelDelta > 0;
+		});
+
+		// Update the History ONLY if we are NOT in the customizer.
+		if ( ! is_customizer ) {
+			// Note: We are using statechange instead of popstate
+			History.Adapter.bind( window, 'statechange', function() {
+				var state = History.getState(); // Note: We are using History.getState() instead of event.state
+
+				console.log(state);
+
+				// If they returned back to the first post, then when you click the back button go to the url from which they came.
+				if ( scroll_up ) {
+					var states = History.savedStates;
+					var prev_state_index = states.length - 2;
+					var prev_state = states[prev_state_index];
+
+					console.log( 'Previous URL: ', prev_state.url );
+
+					if ( prev_state.url === orig_curr_url ) {
+						window.location = document.referrer;
+						return;
+					}
+				}
+
+				// If the previous URL does not match the current URL then go back.
+				if ( state.url != curr_url ) {
+					var previous_post = $( 'hr[data-url="' + state.url + '"]' ).next( article_container ).find( post_title_selector );
+
+					// Is there a previous post?
+					if ( previous_post.length > 0 ) {
+						var previous_post_title = previous_post[0].dataset.title;
+						console.log( 'Previous Post: ' + previous_post_title );
+
+						History.pushState(null, previous_post_title, state.url);
+
+						// Scroll to the top of the previous article.
+						$( 'html, body' ).animate({ scrollTop: (previous_post.offset().top - 100) }, 1000, function() {
+							$( 'body' ).trigger( 'alnp-previous-post', [ previous_post ] );
+						});
+					}
+				}
+			});
+		}
 	} // END run_alnp()
 
 	/**
