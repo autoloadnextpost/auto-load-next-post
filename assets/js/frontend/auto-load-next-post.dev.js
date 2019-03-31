@@ -1,23 +1,24 @@
 // Variables
-var version             = auto_load_next_post_params.alnp_version;
-var content_container   = auto_load_next_post_params.alnp_content_container;
-var post_title_selector = auto_load_next_post_params.alnp_title_selector;
-var nav_container       = auto_load_next_post_params.alnp_navigation_container;
-var comments_container  = auto_load_next_post_params.alnp_comments_container;
-var remove_comments     = auto_load_next_post_params.alnp_remove_comments;
-var track_pageviews     = auto_load_next_post_params.alnp_google_analytics;
-var is_customizer       = auto_load_next_post_params.alnp_is_customizer;
-var event_on_load       = auto_load_next_post_params.alnp_event_on_load;
-var event_on_entering   = auto_load_next_post_params.alnp_event_on_entering;
-var post_title          = window.document.title;
-var curr_url            = window.location.href;
-var orig_curr_url       = window.location.href;
-var post_count          = 0;
-var post_url            = curr_url;
-var overridden_post_url = '';
-var stop_reading        = false;
-var scroll_up           = false;
-var article_container   = 'article';
+var version             = auto_load_next_post_params.alnp_version,
+	content_container   = auto_load_next_post_params.alnp_content_container,
+	post_title_selector = auto_load_next_post_params.alnp_title_selector,
+	nav_container       = auto_load_next_post_params.alnp_navigation_container,
+	comments_container  = auto_load_next_post_params.alnp_comments_container,
+	remove_comments     = auto_load_next_post_params.alnp_remove_comments,
+	track_pageviews     = auto_load_next_post_params.alnp_google_analytics,
+	is_customizer       = auto_load_next_post_params.alnp_is_customizer,
+	event_on_load       = auto_load_next_post_params.alnp_event_on_load,
+	event_on_entering   = auto_load_next_post_params.alnp_event_on_entering,
+	post_title          = window.document.title,
+	curr_url            = window.location.href,
+	orig_curr_url       = window.location.href,
+	post_count          = 0,
+	post_url            = curr_url
+	overridden_post_url = '',
+	stop_reading        = false,
+	scroll_up           = false,
+	article_container   = 'article',
+	ready               = auto_load_next_post_params.alnp_load_in_footer;
 
 (function($) {
 
