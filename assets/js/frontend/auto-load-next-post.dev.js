@@ -335,6 +335,12 @@ var version             = auto_load_next_post_params.alnp_version,
 			console.log( 'Post is not overridden!' );
 		}
 
+		// This helps prevent causing an undefined URL.
+		if ( $( nav_container ).length <= 0 ) {
+			console.log( 'Post navigation container was not found!' );
+			return;
+		}
+
 		// Grab the url for the next post in the post navigation.
 		post_url = $( nav_container ).find( 'a[rel="prev"]').attr( 'href' );
 
