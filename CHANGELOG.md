@@ -9,6 +9,7 @@
 # 1.5.7 - 25th March 2019
 
 * Corrected: Meta name used to determin if the JavaScript should load in the footer.
+* Tweaked: Congratulations admin notification. Issue #154
 
 ## 1.5.6 - 29th November 2018
 
@@ -17,7 +18,7 @@
 ## 1.5.5 - 28th November 2018
 
 * NEW: The WordPress UX for the help tab sucks so I added a custom button to the settings page that will help users find help.
-* NEW: Added support for Sydney theme out of the box.
+* NEW: Added support for the Sydney theme.
 * NEW: Added support for the new default theme Twenty Nineteen ready for WP v5.0 release.
 * NEW: Added screen reader support for links missing them.
 * Checked: Compatibility with WordPress 5.0
@@ -34,7 +35,7 @@
 * Fixed: Welcome notice. A class was not defined to return `alnp_get_random_page_permalink()` function for unsuported themes.
 * Tweaked: Moved `alnp_get_random_page_permalink()` function to core functions so it is globally used instead.
 * Tweaked: Added an if condition to check each global function if `function_exists`
-* Updated: The **uninstall.php** file to also remove user interactions saved in the **usermeta** table.
+* Updated: The `uninstall.php` file to also remove user interactions saved in the **usermeta** table.
 
 ## 1.5.3 - 15th September 2018
 
@@ -63,8 +64,8 @@
 * NEW: Added a user agent checker to see if the request was made from a known bot. This prevents SEO indexing issues.
 * NEW: Added admin notice to tell the user the theme supports Auto Load Next Post. Only shows once.
 * NEW: Added admin notice to tell the user the theme selectors have already been set by the current theme if that theme supports Auto Load Next Post.
-* NEW: Added admin notice under "Theme Selectors" settings only if all three or one of the required theme selectors is not set.
-* NEW: Added admin notice under the "Misc" settings only if remove comments was enabled but the comments container selector was not set.
+* NEW: Added admin notice under **Theme Selectors** settings only if all three or one of the required theme selectors is not set.
+* NEW: Added admin notice under the **Misc** settings only if remove comments was enabled but the comments container selector was not set.
 * NEW: Added a sidebar to the settings page to promote Auto Load Next Post Pro and allow users to sign up.
 * NEW: Added [Select2](https://github.com/select2/select2) to replace previous JavaScript library _chosen_ for better support and performance.
 * Fixed: The trigger to override the post URL.
@@ -101,7 +102,7 @@
 
 ## 1.4.10 - 21st April 2018
 
-* NEW: Added Storefront theme to the list of themes that work out of the box.
+* NEW: Added support for the Storefront theme.
 * NEW: Added two new action hooks in the template to support post types in preparation for Auto Load Next Post Pro. - [See action hooks in the documentation for details.](https://autoloadnextpost.com/documentation/action-hooks/)
 * Changed: Two action hooks in the template to be inconsistent with the new action hooks for post types. - [See action hooks in the documentation for details.](https://autoloadnextpost.com/documentation/action-hooks/)
 * Changed: PHP minimum requirement to version 5.6
@@ -151,8 +152,8 @@
 * Improved: The JavaScript now identifies the post ID of each post including the initial post on load.
 * Improved: The JavaScript to remove the comments on load instead if requested.
 * Improved: The default template `content-partial.php`.
-* Removed: The post navigation from the template "content-partial.php" file and applied it via an action hook instead.
-* Removed: The comments from the template "content-partial.php" file and applied it via an action hook instead.
+* Removed: The post navigation from the template `content-partial.php` file and applied it via an action hook instead.
+* Removed: The comments from the template `content-partial.php` file and applied it via an action hook instead.
 * Removed: History state on the initial post load. Not required.
 * Removed: All languages except the POT file from the plugin as they will now be downloaded from WordPress.org
 * Removed: The support section on the plugins page as the help tab has been improved.
@@ -225,7 +226,7 @@
 
 ## 1.4.1 - 13th June 2015
 
-* NEW: Added action hooks in template file 'content-partial.php' - See the [documentation for a list of hooks](https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/action-hooks.md).
+* NEW: Added action hooks in template file `content-partial.php` - See the [documentation for a list of hooks](https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/action-hooks.md).
 * Tweaked: Removed an error from the admin side when debug is enabled.
 
 ## 1.3.2 - 20th May 2015
