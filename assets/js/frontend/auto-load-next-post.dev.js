@@ -27,8 +27,14 @@ var version             = auto_load_next_post_params.alnp_version,
 		return false;
 	}
 
-	// Ensure the main required selectors are set before continuing.
-	if ( content_container.length < 0 ) {
+	/**
+	 * Ensure the main required selectors are set before continuing.
+	 *
+	 * 1. Content Container
+	 * 2. Post Title
+	 * 3. Post Navigation
+	 */
+	if ( content_container.length <= 0 ) {
 		console.error( 'Auto Load Next Post requires that you set the content container selector.' );
 		return false;
 	}
