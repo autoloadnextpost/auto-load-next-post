@@ -49,7 +49,22 @@ var version             = auto_load_next_post_params.alnp_version,
 		return false;
 	}
 
-	if ( $( 'article' ).length == 0 ) {
+	// Do we load right away or wait until the page has finished loading?
+	if ( ready == false ) {
+		// Run Auto Load Next Post once the document is ready.
+		$( document ).ready(function () {
+			run_alnp();
+		});
+	}
+
+	// Run Auto Load Next Post.
+	if ( ready ) {
+		run_alnp();
+	}
+
+	// This function runs the Auto Load Next Post script.
+	function run_alnp() {
+		if ( $( 'article' ).length <= 0 ) {
 		console.log( 'HTML5 semantics for article has not been found. Setting compatible HTML semantic.' );
 		article_container = 'div';
 	}
@@ -217,6 +232,7 @@ var version             = auto_load_next_post_params.alnp_version,
 			}
 		});
 	}
+	} // END run_alnp()
 
 	/**
 	 * ScrollSpy.
