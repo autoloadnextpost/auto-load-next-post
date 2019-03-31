@@ -244,6 +244,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 					'alnp_event_on_load'        => get_option( 'auto_load_next_post_on_load_event' ),
 					'alnp_event_on_entering'    => get_option( 'auto_load_next_post_on_entering_event' ),
 					'alnp_is_customizer'        => $this->is_alnp_using_customizer(),
+					'alnp_load_in_footer'       => $load_in_footer
 				) );
 			} // END if is_singular() && get_post_type()
 		} // END alnp_enqueue_scripts()
