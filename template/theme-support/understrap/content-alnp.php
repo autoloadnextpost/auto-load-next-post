@@ -1,6 +1,6 @@
 <?php
 /**
-* The repeater template for displaying a post when called for Understrap.
+ * The repeater template for displaying a post when called for Understrap.
  *
  * @author  Sébastien Dumont
  * @package Auto Load Next Post/Templates/Theme Support
