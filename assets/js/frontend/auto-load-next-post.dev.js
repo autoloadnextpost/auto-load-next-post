@@ -39,12 +39,12 @@ var version             = auto_load_next_post_params.alnp_version,
 		return false;
 	}
 
-	if ( post_title_selector.length < 0 ) {
+	if ( post_title_selector.length <= 0 ) {
 		console.error( 'Auto Load Next Post requires that you set the post title selector.' );
 		return false;
 	}
 
-	if ( nav_container.length < 0 ) {
+	if ( nav_container.length <= 0 ) {
 		console.error( 'Auto Load Next Post requires that you set the post navigation container selector.' );
 		return false;
 	}
