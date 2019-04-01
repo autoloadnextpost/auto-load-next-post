@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 					},
 					dead_code: true
 				},
-				banner: '/*! <%= pkg.title %> <%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM") %> */\n'
+				banner: '/*! <%= pkg.title %> v<%= pkg.version %> <%= grunt.template.today("dddd dS mmmm yyyy HH:MM:ss TT Z") %> */'
 			},
 			build: {
 				files: [{
