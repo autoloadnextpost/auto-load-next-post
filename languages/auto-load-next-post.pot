@@ -1,10 +1,10 @@
 # # Copyright (c) {2019} Sébastien Dumont
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Load Next Post 1.5.7\n"
+"Project-Id-Version: Auto Load Next Post 1.5.8\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/autoloadnextpost/auto-load-next-post/issues\n"
-"POT-Creation-Date: 2019-03-25 15:13:53+00:00\n"
+"POT-Creation-Date: 2019-04-01 15:47:04+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -271,15 +271,15 @@ msgid "If you like %1$s, please leave a %2$s rating. A huge thank you in advance
 msgstr ""
 
 #: includes/admin/class-alnp-admin.php:295
+msgid "five star"
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:295
 msgid "Thanks :)"
 msgstr ""
 
 #: includes/admin/class-alnp-admin.php:316
 msgid "%s Version"
-msgstr ""
-
-#: includes/admin/class-alnp-extensions.php:38
-msgid "Extensions"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:29
@@ -414,11 +414,6 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: includes/admin/views/html-admin-sidebar-credits.php:18
-#: includes/admin/views/html-admin-sidebar.php:82
-msgid "Created &amp; maintained by"
-msgstr ""
-
 #: includes/admin/views/html-admin-sidebar.php:22
 msgid "Pro Coming Soon"
 msgstr ""
@@ -522,6 +517,10 @@ msgid ""
 "unsubscribe with 1-click anytime."
 msgstr ""
 
+#: includes/admin/views/html-admin-sidebar.php:82
+msgid "Created &amp; maintained by"
+msgstr ""
+
 #: includes/admin/views/html-notice-is-supported.php:18
 msgid ""
 "This theme supports %s. No need to change the theme selectors as they have "
@@ -576,7 +575,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/views/html-notice-theme-ready.php:27
-msgid "Thank you for installing >%1$s!"
+msgid "Thank you for installing %1$s!"
 msgstr ""
 
 #: includes/admin/views/html-notice-theme-ready.php:28
