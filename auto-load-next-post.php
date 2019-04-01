@@ -125,7 +125,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * Setup Constants
 		 *
 		 * @since   1.4.3
-		 * @version 1.5.8
+		 * @version 1.5.5
 		 * @access  private
 		 */
 		private function setup_constants() {
@@ -140,7 +140,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			$this->define('AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE', '4.4');
 
 			$suffix       = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
-			$debug_suffix = defined('ALNP_DEV_DEBUG') && ALNP_DEV_DEBUG ? '' : '.dev';
+			$debug_suffix = defined('ALNP_DEV_DEBUG') && ALNP_DEV_DEBUG ? '.dev' : '';
 
 			$this->define('AUTO_LOAD_NEXT_POST_SCRIPT_MODE', $suffix);
 			$this->define('AUTO_LOAD_NEXT_POST_DEBUG_MODE', $debug_suffix);
