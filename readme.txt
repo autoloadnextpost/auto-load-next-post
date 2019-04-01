@@ -1,7 +1,7 @@
 === WordPress Infinite Scroll by Auto Load Next Post ===
 Contributors: autoloadnextpost, sebd86
 Donate link: https://sebdumont.xyz/donate/
-Tags: infinite scroll, infinite scrolling, scroll, infinite, endless scroll, pagination, ajax pagination, ajax, ajax posts, ajax load more, browsing history, navigation
+Tags: infinite scroll, infinite scrolling, scroll, infinite
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.1.1
@@ -192,9 +192,13 @@ It does. Just make sure that you activate the plugin on the site you want it use
 
 == Changelog ==
 
-= 1.5.7 - 25th March 2019 =
+= 1.5.8 - 1st April 2019 =
 
-* Corrected: Meta name used to determin if the JavaScript should load in the footer.
+* NEW: Added support for OceanWP theme.
+* Corrected: Typo in Congratulations admin notification.
+* Tweaked: Improved loading of Auto Load Next Post if set in the footer.
+* Tweaked: Disqus comments is also removed if **Remove Comments** is enabled.
+* Tweaked: The plugins JavaScript will stop running if user scrolls to quickly. Solves [issue #156](https://github.com/autoloadnextpost/auto-load-next-post/issues/156)
 
 [View the full changelog here](https://raw.githubusercontent.com/autoloadnextpost/auto-load-next-post/master/CHANGELOG.md).
 
