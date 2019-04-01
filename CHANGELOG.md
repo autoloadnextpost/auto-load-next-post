@@ -12,12 +12,12 @@
 * Corrected: Typo in Congratulations admin notification.
 * Tweaked: Improved loading of Auto Load Next Post if set in the footer.
 * Tweaked: Disqus comments is also removed if **Remove Comments** is enabled.
-* Tweaked: The plugins JavaScript will stop running if user scrolls to quickly. Solves issue #156
+* Tweaked: The plugins JavaScript will stop running if user scrolls to quickly. Solves issue [#156](https://github.com/autoloadnextpost/auto-load-next-post/issues/156)
 
 ## 1.5.7 - 25th March 2019
 
 * Corrected: Meta name used to determin if the JavaScript should load in the footer.
-* Tweaked: Congratulations admin notification. Issue #154
+* Tweaked: Congratulations admin notification. Issue [#154](https://github.com/autoloadnextpost/auto-load-next-post/issues/154)
 
 ## 1.5.6 - 29th November 2018
 
