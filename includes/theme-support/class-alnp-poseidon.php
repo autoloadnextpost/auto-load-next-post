@@ -31,9 +31,25 @@ class ALNP_Poseidon {
 		// Add theme support and preset the theme selectors.
 		add_action( 'after_setup_theme', array( __CLASS__, 'add_theme_support' ) );
 
+		// Display the post thumbnail before the content.
+		add_action( 'alnp_load_before_content', array( __CLASS__, 'the_post_thumbnail' ), 10 );
+
 		// Filters the repeater template location.
 		add_filter( 'alnp_template_location', array( __CLASS__, 'alnp_poseidon_template_location' ) );
 	} // END init()
+
+	/**
+	 * Display the post thumbnail before the content if the 
+	 * theme is set to display them only in the header.
+	 *
+	 * @access public
+	 * @static
+	 */
+	public static function the_post_thumbnail() {
+		if ( is_single() && has_post_thumbnail() && 'header' == $theme_options['post_layout_single'] ) {
+			the_post_thumbnail();
+		}
+	} // END the_post_thumbnail()
 
 	/**
 	 * Filters the template location for get_template_part().
