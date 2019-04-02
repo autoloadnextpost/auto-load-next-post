@@ -6,13 +6,18 @@
 3. Lists must have one space above after heading
 -->
 
-# 1.5.8 - 1st April 2019
+# 1.5.9 - 2nd April 2019
 
-* NEW: Added support for OceanWP theme.
+* NEW: Added support for [Poseidon](https://wordpress.org/themes/poseidon/) theme.
+
+## 1.5.8 - 1st April 2019
+
+* NEW: Added support for [OceanWP](https://wordpress.org/themes/oceanwp/) theme.
 * Corrected: Typo in Congratulations admin notification.
 * Tweaked: Improved loading of Auto Load Next Post if set in the footer.
 * Tweaked: Disqus comments is also removed if **Remove Comments** is enabled.
 * Tweaked: The plugins JavaScript will stop running if user scrolls to quickly. Solves issue [#156](https://github.com/autoloadnextpost/auto-load-next-post/issues/156)
+* Updated: POT file for translations.
 
 ## 1.5.7 - 25th March 2019
 
@@ -26,7 +31,7 @@
 ## 1.5.5 - 28th November 2018
 
 * NEW: The WordPress UX for the help tab sucks so I added a custom button to the settings page that will help users find help.
-* NEW: Added support for the Sydney theme.
+* NEW: Added support for the [Sydney](https://wordpress.org/themes/sydney/) theme.
 * NEW: Added support for the new default theme Twenty Nineteen ready for WP v5.0 release.
 * NEW: Added screen reader support for links missing them.
 * Checked: Compatibility with WordPress 5.0
@@ -63,7 +68,7 @@
 * NEW: Option to load the JavaScript in the footer.
 * NEW: Support for themes that require Auto Load Next Post to load in the footer.
 * NEW: Added trigger event support for third-party plugins thanks to Stelios Patsatzis.
-* NEW: Support for theme Make, Storefront and Understrap.
+* NEW: Support for theme [Make](https://wordpress.org/themes/make/) and [Understrap](https://wordpress.org/themes/understrap/).
 * NEW: Privacy policy guide content.
 * NEW: Beta notice if trying out beta releases. Explains how you can provide feedback and can be dismissed for 7 days.
 * NEW: Welcome notice to users who install Auto Load Next Post for the first time.
@@ -110,7 +115,7 @@
 
 ## 1.4.10 - 21st April 2018
 
-* NEW: Added support for the Storefront theme.
+* NEW: Added support for the [Storefront](https://wordpress.org/themes/storefront/) theme.
 * NEW: Added two new action hooks in the template to support post types in preparation for Auto Load Next Post Pro. - [See action hooks in the documentation for details.](https://autoloadnextpost.com/documentation/action-hooks/)
 * Changed: Two action hooks in the template to be inconsistent with the new action hooks for post types. - [See action hooks in the documentation for details.](https://autoloadnextpost.com/documentation/action-hooks/)
 * Changed: PHP minimum requirement to version 5.6
