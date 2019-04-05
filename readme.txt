@@ -192,6 +192,13 @@ It does. Just make sure that you activate the plugin on the site you want it use
 
 == Changelog ==
 
+= 1.5.10 - 5th April 2019 =
+
+* NEW: Added 3rd Party support for the [WP Rocket](https://wp-rocket.me) plugin. Excludes Auto Load Next Post scripts from JS minification.
+* Corrected: Added missing [Poseidon](https://wordpress.org/themes/poseidon/) theme options used to determin if post thumbnails should show in repeater template.
+* Tweaked: Theme selectors admin notification should the active theme be supported via a plugin.
+* Tweaked: `uninstall.php` file.
+
 = 1.5.9 - 2nd April 2019 =
 
 * NEW: Added support for [Poseidon](https://wordpress.org/themes/poseidon/) theme.
