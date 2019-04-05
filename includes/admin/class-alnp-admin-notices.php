@@ -109,16 +109,24 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.5.0
+		 * @version 1.5.10
 		 * @global  $current_user
 		 */
 		public function add_notices() {
 			global $current_user;
 
-			$template = get_option('template');
+			$template = get_option( 'template' );
 
-			// Checks if the theme supports Auto Load Next Post.
+			// Checks if the theme supports Auto Load Next Post and not provided via a plugin.
 			if ( is_alnp_supported() ) {
+				$plugin_supported = alnp_get_theme_support( 'plugin_support' );
+
+				// Return if theme is supported via plugin.
+				if ( ! empty( $plugin_supported ) && $plugin_supported == 'yes' ) {
+					update_option( 'auto_load_next_post_theme_supported', $template );
+					return false;
+				}
+
 				// If supported theme does not match active theme then show notice.
 				if ( get_option( 'auto_load_next_post_theme_supported' ) !== $template ) {
 					add_action( 'admin_notices', array( $this, 'theme_ready_notice' ) );
