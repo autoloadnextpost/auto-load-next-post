@@ -30,35 +30,52 @@ if ( ! function_exists( 'auto_load_next_post_template_redirect' ) ) {
 	function auto_load_next_post_template_redirect() {
 		global $wp_query;
 
-		// If this is not a request for alnp or a singular object then bail
-		if ( ! isset( $wp_query->query_vars['alnp'] ) || ! is_singular() ) {
+		// Return empty if requested to view the endpoint on any of these conditions.
+		if (
+			is_home() ||
+			is_front_page() ||
+			is_archive() ||
+			is_author() ||
+			is_date() ||
+			is_search() ||
+			is_tax()
+		) {
 			return;
 		}
 
 		/**
-		 * Load the template file from the theme (child or parent) if one exists.
-		 * If theme does not have a template file for Auto Load Next Post,
-		 * the plugin will load a default template.
+		 * Load the repeater template if the custom query variable is set 
+		 * and we are viewing a singular post/page.
 		 */
-		$child_path    = get_stylesheet_directory() . '/' . AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
-		$template_path = get_template_directory() . '/' . AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
-		$default_path  = AUTO_LOAD_NEXT_POST_FILE_PATH;
+		if ( isset( $wp_query->query_vars['alnp'] ) && is_singular() ) {
+			/**
+			 * Locates the repeater template before loading.
+			 * 
+			 * First checks to see if either the (child or parent) theme 
+			 * has a repeater template first before deciding to load the 
+			 * default repeater template file within Auto Load Next Post.
+			 */
+			$child_path    = get_stylesheet_directory() . '/' . AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
+			$template_path = get_template_directory() . '/' . AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
+			$default_path  = AUTO_LOAD_NEXT_POST_FILE_PATH;
 
-		if ( file_exists( $child_path . 'content-alnp.php' ) ) {
-			$template_redirect = $child_path . 'content-alnp.php';
+			if ( file_exists( $child_path . 'content-alnp.php' ) ) {
+				$template_redirect = $child_path . 'content-alnp.php';
+			}
+			else if( file_exists( $template_path . 'content-alnp.php' ) ) {
+				$template_redirect = $template_path . 'content-alnp.php';
+			}
+			else if( file_exists( $default_path . '/template/content-alnp.php' ) ) {
+				$template_redirect = $default_path . '/template/content-alnp.php';
+			}
+
+			$template_redirect = apply_filters( 'alnp_template_redirect', $template_redirect );
+
+			// Includes the repeater template file.
+			include( $template_redirect );
+
+			exit;
 		}
-		else if( file_exists( $template_path . 'content-alnp.php') ) {
-			$template_redirect = $template_path . 'content-alnp.php';
-		}
-		else if( file_exists( $default_path . '/template/content-alnp.php' ) ) {
-			$template_redirect = $default_path . '/template/content-alnp.php';
-		}
-
-		$template_redirect = apply_filters( 'alnp_template_redirect', $template_redirect );
-
-		include( $template_redirect );
-
-		exit;
 	} // END auto_load_next_post_template_redirect()
 }
 add_action( 'template_redirect', 'auto_load_next_post_template_redirect' );
@@ -132,7 +149,7 @@ if ( ! function_exists( 'alnp_get_random_page_permalink' ) ) {
 /**
  * This helps the plugin decide to load the JavaScript in the footer or not.
  * 
- * @since 1.5.7
+ * @since  1.5.7
  * @return boolean
  */
 if ( ! function_exists( 'alnp_load_js_in_footer' ) ) {
