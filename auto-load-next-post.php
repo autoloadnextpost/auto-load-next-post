@@ -5,7 +5,7 @@
  * Description: Increase your pageviews on your site as readers continue reading your posts scrolling down the page.
  * Author:      Sébastien Dumont
  * Author URI:  https://sebastiendumont.com
- * Version:     1.5.9
+ * Version:     1.5.10
  * Text Domain: auto-load-next-post
  * Domain Path: /languages/
  *
@@ -45,7 +45,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @static
 		 * @since  1.5.0
 		 */
-		public static $version = '1.5.9';
+		public static $version = '1.5.10';
 
 		/**
 		 * Main Auto Load Next Post Instance
@@ -125,7 +125,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * Setup Constants
 		 *
 		 * @since   1.4.3
-		 * @version 1.5.5
+		 * @version 1.5.10
 		 * @access  private
 		 */
 		private function setup_constants() {
@@ -136,6 +136,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			$this->define('AUTO_LOAD_NEXT_POST_URL_PATH', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
 			$this->define('AUTO_LOAD_NEXT_POST_FILE_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 			$this->define('AUTO_LOAD_NEXT_POST_TEMPLATE_PATH', 'auto-load-next-post/');
+			$this->define('AUTO_LOAD_NEXT_POST_3RD_PARTY', AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/3rd-party/');
 
 			$this->define('AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE', '4.4');
 
@@ -169,7 +170,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.5
+		 * @version 1.5.10
 		 * @return  void
 		 */
 		public function includes() {
@@ -181,6 +182,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
 			// Include theme support.
 			alnp_include_theme_support();
+
+			// 3rd Party support.
+			include_once( dirname( __FILE__ ) . '/includes/3rd-party/3rd-party.php' );
 
 			// Customizer.
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer.php' );
