@@ -6,7 +6,14 @@
 3. Lists must have one space above after heading
 -->
 
-# 1.5.9 - 2nd April 2019
+# 1.5.10 - 5th April 2019
+
+* NEW: Added 3rd Party support for the [WP Rocket](https://wp-rocket.me) plugin. Excludes Auto Load Next Post scripts from JS minification.
+* Corrected: Added missing Poseidon theme options used to determin if post thumbnails should show in repeater template.
+* Tweaked: Theme selectors admin notification should the active theme be supported via a plugin.
+* Tweaked: `uninstall.php` file.
+
+## 1.5.9 - 2nd April 2019
 
 * NEW: Added support for [Poseidon](https://wordpress.org/themes/poseidon/) theme.
 
