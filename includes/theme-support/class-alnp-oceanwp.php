@@ -59,7 +59,7 @@ class ALNP_OceanWP {
 	 */
 	public static function alnp_oceanwp_template_location() {
 		return 'partials/single/';
-	} // alnp_oceanwp_template_location()
+	} // END alnp_oceanwp_template_location()
 
 	/**
 	 * Add theme support by providing the theme selectors
