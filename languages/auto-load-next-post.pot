@@ -1,10 +1,10 @@
 # # Copyright (c) {2019} Sébastien Dumont
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Load Next Post 1.5.9\n"
+"Project-Id-Version: Auto Load Next Post 1.5.10\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/autoloadnextpost/auto-load-next-post/issues\n"
-"POT-Creation-Date: 2019-04-02 12:21:49+00:00\n"
+"POT-Creation-Date: 2019-04-04 20:30:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +35,7 @@ msgstr ""
 #: includes/admin/class-alnp-admin-help.php:51
 #: includes/admin/class-alnp-admin-help.php:53
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:31
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:98
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:105
 #: includes/customizer/class-alnp-customizer.php:225
 msgid "Theme Selectors"
 msgstr ""
@@ -70,23 +70,23 @@ msgid "Default Theme Selectors"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:59
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:105
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:112
 #: includes/customizer/class-alnp-customizer.php:345
 msgid "Content Container"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:60
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:116
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:123
 msgid "Post Title"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:61
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:126
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:133
 msgid "Post Navigation"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:62
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:136
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:143
 #: includes/customizer/class-alnp-customizer.php:369
 msgid "Comments Container"
 msgstr ""
@@ -377,34 +377,34 @@ msgid ""
 "uninstalling via Plugins > Delete."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:100
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:107
 msgid ""
 "Here you set the theme selectors below according to your active theme. All "
 "are required for %s to work."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:106
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:113
 #: includes/customizer/class-alnp-customizer.php:346
 msgid "The primary container where the post content is loaded in. Default: %s"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:109
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:116
 msgid "Required"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:117
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:124
 #: includes/customizer/class-alnp-customizer.php:354
 msgid ""
 "Used to identify which article the user is reading and track should Google "
 "Analytics or other analytics be enabled. Default: %s"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:127
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:134
 #: includes/customizer/class-alnp-customizer.php:362
 msgid "Used to identify which post to load next if any. Default: %s"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-theme-selectors.php:137
+#: includes/admin/settings/class-alnp-settings-theme-selectors.php:144
 msgid ""
 "Used to remove comments if enabled under %1$sMisc%2$s settings. Default: "
 "%3$s"
@@ -566,6 +566,12 @@ msgstr ""
 
 #: includes/admin/views/html-notice-please-review.php:35
 msgid "No thank you / I already have"
+msgstr ""
+
+#: includes/admin/views/html-notice-plugin-supported.php:20
+msgid ""
+"%s theme is supported via a plugin. Do <strong>NOT</strong> change the "
+"theme selectors."
 msgstr ""
 
 #: includes/admin/views/html-notice-requirement-wp.php:19
