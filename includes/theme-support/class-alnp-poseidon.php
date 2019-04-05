@@ -5,6 +5,7 @@
  * Applies support for Poseidon Theme.
  *
  * @since    1.5.9
+ * @version  1.5.10
  * @author   Sébastien Dumont
  * @category Theme Support
  * @package  Auto Load Next Post/Theme Support
@@ -42,10 +43,15 @@ class ALNP_Poseidon {
 	 * Display the post thumbnail before the content if the 
 	 * theme is set to display them only in the header.
 	 *
-	 * @access public
+	 * @access  public
 	 * @static
+	 * @since   1.5.9
+	 * @version 1.5.10
 	 */
 	public static function the_post_thumbnail() {
+		// Get theme options from database.
+		$theme_options = poseidon_theme_options();
+
 		if ( is_single() && has_post_thumbnail() && 'header' == $theme_options['post_layout_single'] ) {
 			the_post_thumbnail();
 		}
