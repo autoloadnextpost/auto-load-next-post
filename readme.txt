@@ -5,7 +5,7 @@ Tags: infinite scroll, infinite scrolling, scroll, infinite
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.1.1
-Stable tag: 1.5.9
+Stable tag: 1.5.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -205,7 +205,7 @@ It does. Just make sure that you activate the plugin on the site you want it use
 * Tweaked: The plugins JavaScript will stop running if user scrolls to quickly. Solves [issue #156](https://github.com/autoloadnextpost/auto-load-next-post/issues/156)
 * Updated: POT file for translations.
 
-[View the full changelog here](https://raw.githubusercontent.com/autoloadnextpost/auto-load-next-post/master/CHANGELOG.md).
+[View the full changelog here](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CHANGELOG.md).
 
 == Upgrade Notice ==
 
