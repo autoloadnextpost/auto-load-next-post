@@ -8,6 +8,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/AutoLoadNextPost/Auto-Load-Next-Post.svg?style=flat)](https://github.com/autoloadnextpost/auto-load-next-post/network)
 [![Build Status](https://scrutinizer-ci.com/g/AutoLoadNextPost/Auto-Load-Next-Post/badges/build.png?b=master)](https://scrutinizer-ci.com/g/AutoLoadNextPost/Auto-Load-Next-Post/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/AutoLoadNextPost/Auto-Load-Next-Post/badges/quality-score.png)](https://scrutinizer-ci.com/g/AutoLoadNextPost/Auto-Load-Next-Post/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/824b3c18b70e473191445d54db607845)](https://www.codacy.com/app/mailme/Auto-Load-Next-Post?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=autoloadnextpost/auto-load-next-post&amp;utm_campaign=Badge_Grade)
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Increase%20your%20page%20views%20on%20your%20WordPress%20site%20as%20visitors%20continue%20reading%20articles%20scrolling%20down%20the%20page.%20—&url=https://autoloadnextpost.com/&via=autoloadnxtpost&hashtags=WordPress)
 
 <p align="center">
