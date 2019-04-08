@@ -99,7 +99,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 
 			if ( $user_hidden_notice ) {
 				// Redirect to the plugins page.
-				wp_safe_redirect( admin_url( 'plugins.php' ) ); exit;
+				wp_safe_redirect( admin_url( 'plugins.php' ) );
+				exit;
 			}
 		} // END dont_bug_me()
 

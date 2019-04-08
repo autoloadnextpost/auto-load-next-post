@@ -19,8 +19,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 
 	class Auto_Load_Next_Post_Settings_Misc_Tab extends Auto_Load_Next_Post_Settings_Page {
 
-		private $customizer_url;
-
 		/**
 		 * Constructor.
 		 *
@@ -69,7 +67,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		public static function lock_js_in_footer( $settings ) {
 			$js_locked_in_footer = get_option( 'auto_load_next_post_lock_js_in_footer' );
 
-			if ( !empty( $js_locked_in_footer ) && $js_locked_in_footer == 'yes' ) {
+			if ( ! empty( $js_locked_in_footer ) && $js_locked_in_footer == 'yes' ) {
 				// Setting key to look for.
 				$key = 'load_js_in_footer';
 
@@ -150,28 +148,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 				)
 			); // End misc settings
 		} // END get_settings()
-
-		/**
-		 * Add button for setting type.
-		 *
-		 * @since 1.5.0
-		 * @param mixed $settings
-		 */
-		public function customize_button( $settings ) {
-			?>
-			<tr valign="top">
-				<th scope="row" class="titledesc"><?php echo $settings['title'];?></th>
-				<td class="forminp forminp-<?php echo sanitize_title( $settings['type'] ) ?>">
-					<a href="<?php echo $settings['link']; ?>" class="button-secondary <?php echo esc_attr( $settings['class'] ); ?>">
-						<?php echo $settings['button_text']; ?>
-					</a>
-					<span class="description"><?php echo $settings['desc'];?></span>
-				</td>
-			</tr>
-			<?php
-
-			return true;
-		} // END customizer_button()
 
 		/**
 		 * Output the settings.

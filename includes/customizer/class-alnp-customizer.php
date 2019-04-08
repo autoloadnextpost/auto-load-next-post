@@ -328,12 +328,9 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		 * Get Customizer controls for Auto Load Next Post.
 		 *
 		 * @since  1.5.0
-		 * @global int $blog_id
 		 * @return array
 		 */
 		public function alnp_get_customizer_controls() {
-			global $blog_id;
-
 			/**
 			 * Filter Customizer controls for Auto Load Next Post.
 			 *
