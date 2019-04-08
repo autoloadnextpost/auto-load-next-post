@@ -66,7 +66,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 *
 		 * @access public
 		 * @since  1.5.0
-		 * @global $wp_scripts
 		 */
 		public function admin_styles() {
 			$screen    = get_current_screen();

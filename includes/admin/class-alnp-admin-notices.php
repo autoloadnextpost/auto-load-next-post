@@ -112,6 +112,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		 * @since   1.3.2
 		 * @version 1.5.10
 		 * @global  $current_user
+		 * @return  void|bool
 		 */
 		public function add_notices() {
 			global $current_user;
