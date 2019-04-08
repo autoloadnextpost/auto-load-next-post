@@ -3,7 +3,7 @@
  * Auto Load Next Post - Admin.
  *
  * @since    1.0.0
- * @version  1.5.7
+ * @version  1.5.11
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin
@@ -24,7 +24,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.7
+		 * @version 1.5.11
 		 */
 		public function __construct() {
 			// Include classes.
@@ -50,8 +50,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		/**
 		 * Include any classes we need within admin.
 		 *
-		 * @access public
-		 * @since  1.0.0
+		 * @access  public
+		 * @since   1.0.0
+		 * @version 1.5.11
 		 */
 		public function includes() {
 			include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' ); // Plugin Notices

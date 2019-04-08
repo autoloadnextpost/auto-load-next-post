@@ -3,7 +3,7 @@
  * Admin View: Settings
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.5.11
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views

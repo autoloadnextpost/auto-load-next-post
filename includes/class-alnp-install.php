@@ -3,7 +3,7 @@
  * Auto Load Next Post - Installation related functions and actions.
  *
  * @since    1.0.0
- * @version  1.5.1
+ * @version  1.5.11
  * @author   Sébastien Dumont
  * @category Classes
  * @package  Auto Load Next Post/Classes/Install
@@ -50,9 +50,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 *
 		 * This check is done on all requests and runs if the versions do not match.
 		 *
-		 * @access public
+		 * @access  public
 		 * @static
-		 * @since  1.4.10
+		 * @since   1.4.10
+		 * @version 1.5.11
 		 */
 		public static function check_version() {
 			if ( ! defined( 'IFRAME_REQUEST' ) && version_compare( self::$current_version, AUTO_LOAD_NEXT_POST_VERSION, '<' ) && current_user_can( 'install_plugins' ) ) {

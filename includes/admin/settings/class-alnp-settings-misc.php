@@ -3,7 +3,7 @@
  * Auto Load Next Post Settings - Misc
  *
  * @since    1.5.0
- * @version  1.5.5
+ * @version  1.5.11
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Settings
@@ -88,9 +88,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @access public
-		 * @since  1.5.0
-		 * @return array
+		 * @access  public
+		 * @since   1.5.0
+		 * @version 1.5.11
+		 * @return  array
 		 */
 		public function get_settings() {
 			return apply_filters(
