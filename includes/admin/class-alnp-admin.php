@@ -3,7 +3,7 @@
  * Auto Load Next Post - Admin.
  *
  * @since    1.0.0
- * @version  1.5.7
+ * @version  1.5.11
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin
@@ -24,11 +24,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.7
+		 * @version 1.5.11
 		 */
 		public function __construct() {
 			// Include classes.
-			add_action( 'admin_init', array( $this, 'includes' ), 10 );
+			self::includes();
 
 			// Register scripts and styles for settings page.
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_styles' ), 10 );
@@ -50,13 +50,15 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		/**
 		 * Include any classes we need within admin.
 		 *
-		 * @access public
-		 * @since  1.0.0
+		 * @access  public
+		 * @since   1.0.0
+		 * @version 1.5.11
 		 */
 		public function includes() {
+			include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' ); // Plugin Notices
+
 			// Classes we only need if the ajax is not-ajax
-			if ( ! auto_load_next_post_is_ajax() ) {
-				include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' ); // Plugin Notices
+			if ( apply_filters( 'auto_load_next_post_enable_admin_help_tab', true ) ) {
 				include( dirname( __FILE__ ) . '/class-alnp-admin-help.php' ); // Plugin Help Tab
 			}
 		} // END includes()

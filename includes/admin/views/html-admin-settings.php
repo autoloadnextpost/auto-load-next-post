@@ -3,7 +3,7 @@
  * Admin View: Settings
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.5.11
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -35,7 +35,12 @@ if ( ! $tab_exists ) {
 		<nav class="nav-tab-wrapper">
 			<?php
 				foreach ( $tabs as $slug => $label ) {
-					echo '<a href="' . esc_html( admin_url( 'options-general.php?page=auto-load-next-post-settings&tab=' . esc_attr( $slug ) ) ) . '" class="nav-tab ' . ( $current_tab === $slug ? 'nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
+					$url = add_query_arg( array(
+						'page' => 'auto-load-next-post-settings',
+						'tab'  => esc_attr( $slug ),
+					), admin_url( 'options-general.php' ) );
+
+					echo '<a href="' . esc_html( $url ) . '" class="nav-tab ' . ( $current_tab === $slug ? 'nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
 				}
 
 				do_action( 'auto_load_next_post_settings_tabs' );
