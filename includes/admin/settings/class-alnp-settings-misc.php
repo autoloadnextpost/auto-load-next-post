@@ -133,7 +133,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 						'desc'    => esc_html__( 'Press the reset button to clear all settings for this plugin and re-initialize.', 'auto-load-next-post' ),
 						'id'      => 'auto_load_next_post_reset_data',
 						'value'   => esc_html__( 'Reset', 'auto-load-next-post' ),
-						'url'     => add_query_arg( array( 'page' => 'auto-load-next-post-settings', 'tab' => esc_attr( $this->id ), 'reset' => 'yes' ), admin_url( 'options-general.php' ) ),
+						'url'     => add_query_arg( array( 'page' => 'auto-load-next-post-settings', 'tab' => esc_attr( $this->id ), 'reset-alnp' => 'yes' ), admin_url( 'options-general.php' ) ),
 						'type'    => 'button'
 					),
 

@@ -238,7 +238,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 * @global object $wpdb 
 		 */
 		public static function reset_alnp() {
-			if ( current_user_can( 'install_plugins' ) && isset( $_GET['reset'] ) && $_GET['reset'] == 'yes' ) {
+			if ( current_user_can( 'install_plugins' ) && isset( $_GET['reset-alnp'] ) && $_GET['reset-alnp'] == 'yes' ) {
 				global $wpdb;
 
 				// Make sure it is only a single site we are resetting.
