@@ -28,7 +28,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 */
 		public function __construct() {
 			// Include classes.
-			add_action( 'admin_init', array( $this, 'includes' ), 10 );
+			self::includes();
 
 			// Register scripts and styles for settings page.
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_styles' ), 10 );
