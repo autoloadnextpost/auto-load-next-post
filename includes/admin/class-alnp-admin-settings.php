@@ -149,8 +149,6 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @since   1.0.0
 		 * @version 1.4.10
 		 * @filter  auto_load_next_post_settings_tabs_array
-		 * @global  string $current_section
-		 * @global  string $current_tab
 		 * @return  void
 		 */
 		public static function output() {
