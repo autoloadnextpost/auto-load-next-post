@@ -39,7 +39,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			// Resets Auto Load Next Post settings when requested.
 			add_action( 'init', array( __CLASS__, 'reset_alnp' ), 0 );
 
+			// Checks version of Auto Load Next Post and install/update if needed.
 			add_action( 'init', array( __CLASS__, 'check_version' ), 5 );
+
+			// Adds rewrite endpoint.
+			add_action( 'init', array( __CLASS__, 'add_rewrite_endpoint' ), 10 );
 
 			// Get plugin version.
 			self::$current_version = get_option( 'auto_load_next_post_version' );
