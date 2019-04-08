@@ -128,7 +128,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			// Notices should only show on the main dashboard and on the plugins screen.
 			if ( ! in_array( $screen_id, alnp_get_admin_screens() ) ) {
 				return false;
-      }
+			}
 
 			// Is admin welcome notice hidden?
 			$hide_welcome_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_welcome_notice', true );
