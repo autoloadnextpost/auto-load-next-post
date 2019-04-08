@@ -54,6 +54,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 * @since  1.0.0
 		 */
 		public function includes() {
+			include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' ); // Plugin Notices
+
 			// Classes we only need if the ajax is not-ajax
 			if ( ! auto_load_next_post_is_ajax() ) {
 				include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' ); // Plugin Notices
