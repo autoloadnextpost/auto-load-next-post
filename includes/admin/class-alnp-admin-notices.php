@@ -99,7 +99,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 
 			if ( $user_hidden_notice ) {
 				// Redirect to the plugins page.
-				wp_safe_redirect( admin_url( 'plugins.php' ) ); exit;
+				wp_safe_redirect( admin_url( 'plugins.php' ) );
+				exit;
 			}
 		} // END dont_bug_me()
 
@@ -111,9 +112,23 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		 * @since   1.3.2
 		 * @version 1.5.11
 		 * @global  $current_user
+		 * @return  void|bool
 		 */
 		public function add_notices() {
 			global $current_user;
+
+			// If the current user can not install plugins then return nothing!
+			if ( ! current_user_can( 'install_plugins' ) ) {
+				return false;
+			}
+
+			$screen    = get_current_screen();
+			$screen_id = $screen ? $screen->id : '';
+
+			// Notices should only show on the main dashboard and on the plugins screen.
+			if ( ! in_array( $screen_id, alnp_get_admin_screens() ) ) {
+				return false;
+			}
 
 			// Is admin welcome notice hidden?
 			$hide_welcome_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_welcome_notice', true );

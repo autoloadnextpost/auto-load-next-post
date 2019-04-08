@@ -282,11 +282,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @param   array   $support   Optional, for requiring other javascripts for the source file you are calling.
 		 * @param   string  $version   Optional, can match the version of the plugin or version of the source file.
 		 * @param   bool    $footer Optional, can set the JavaScript to load in the footer instead.
-		 * @global  string  $wp_version
 		 */
 		public static function load_file( $name, $file_path, $is_script = false, $support = array(), $version = '', $footer = false ) {
-			global $wp_version;
-
 			$url = AUTO_LOAD_NEXT_POST_URL_PATH . $file_path; // URL to the file.
 
 			if ( file_exists( AUTO_LOAD_NEXT_POST_FILE_PATH . $file_path ) ) {

@@ -68,17 +68,14 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 *
 		 * @access public
 		 * @since  1.5.0
-		 * @global $wp_scripts
 		 */
 		public function admin_styles() {
-			global $wp_scripts;
-
 			$screen    = get_current_screen();
 			$screen_id = $screen ? $screen->id : '';
 
 			Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/css/admin/auto-load-next-post' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
 
-			if ( $screen->id == 'settings_page_auto-load-next-post-settings' ) {
+			if ( $screen_id == 'settings_page_auto-load-next-post-settings' ) {
 				// Select2 - Make sure that we remove other registered Select2 to prevent styling issues.
 				if ( wp_script_is( 'select2', 'registered' ) ) {
 					wp_dequeue_style( 'select2' );

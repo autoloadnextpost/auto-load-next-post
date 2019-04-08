@@ -149,17 +149,10 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @since   1.0.0
 		 * @version 1.4.10
 		 * @filter  auto_load_next_post_settings_tabs_array
-		 * @global  string $current_section
-		 * @global  string $current_tab
 		 * @return  void
 		 */
 		public static function output() {
-			global $current_section, $current_tab;
-
 			do_action( 'auto_load_next_post_settings_start' );
-
-			// Get tabs for the settings page
-			$tabs = apply_filters( 'auto_load_next_post_settings_tabs_array', array() );
 
 			include( dirname( __FILE__ ) . '/views/html-admin-settings.php' );
 		} // END output()
