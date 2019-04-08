@@ -259,7 +259,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @access public
 		 * @since  1.5.0
 		 * @static
-		 * @return string|boolean
+		 * @return string|false
 		 */
 		public static function is_alnp_using_customizer() {
 			if ( is_customize_preview() ) {
