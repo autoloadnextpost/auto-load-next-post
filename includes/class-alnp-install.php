@@ -53,7 +53,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 * @since  1.4.10
 		 */
 		public static function check_version() {
-			if ( ! defined( 'IFRAME_REQUEST' ) && version_compare( self::$current_version, AUTO_LOAD_NEXT_POST_VERSION, '<' ) ) {
+			if ( ! defined( 'IFRAME_REQUEST' ) && version_compare( self::$current_version, AUTO_LOAD_NEXT_POST_VERSION, '<' ) && current_user_can( 'install_plugins' ) ) {
 				self::install();
 				do_action( 'auto_load_next_post_updated' );
 			}
