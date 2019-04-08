@@ -494,6 +494,22 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 						}
 						break;
 
+					case 'button':
+						if ( isset( $value['url'] ) && ! empty( $value['url'] ) ) {
+					?>
+						<tr valign="top">
+							<th scope="row" class="titledesc"><?php echo $value['title'];?></th>
+							<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
+								<a href="<?php echo $value['url']; ?>" class="button-secondary <?php echo esc_attr( $value['class'] ); ?>">
+									<?php echo $value['value']; ?>
+								</a>
+								<?php echo $description; ?>
+							</td>
+						</tr>
+						<?php
+						}
+						break;
+
 					// Default: run an action
 					default:
 						do_action( 'auto_load_next_post_admin_field_' . $value['type'], $value );
