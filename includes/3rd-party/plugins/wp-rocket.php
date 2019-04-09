@@ -18,5 +18,6 @@ if ( defined( 'WP_ROCKET_VERSION' ) ) :
 
 		return $excluded_js;
 	}
-	add_filter( 'rocket_exclude_js', 'rocket_exclude_js_disqus' );
+	add_filter( 'rocket_exclude_js', 'rocket_exclude_js_alnp' );
+
 endif;
