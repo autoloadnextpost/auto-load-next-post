@@ -7,7 +7,7 @@ if ( defined( 'WP_ROCKET_VERSION' ) ) :
 	 *
 	 * @since  1.5.10
 	 * @param  Array $excluded_js An array of JS handles enqueued in WordPress.
-	 * @return Array the updated array of handles.
+	 * @return Array $excluded_js the updated array of handles.
 	 */
 	function rocket_exclude_js_alnp( $excluded_js ) {
 		$excluded_js[] = str_replace( home_url(), '', plugins_url( '/auto-load-next-post/assets/js/frontend/auto-load-next-post.js' ) );
@@ -25,7 +25,7 @@ if ( defined( 'WP_ROCKET_VERSION' ) ) :
 	 *
 	 * @since  1.5.11
 	 * @param  Array $exclude_defer_js Array of JS filepaths to be excluded.
-	 * @return Array the updated array of defer JS
+	 * @return Array $exclude_defer_js the updated array of defer JS
 	 */
 	function rocket_exclude_defer_js_alnp( $exclude_defer_js ) {
 		$exclude_defer_js[] = rocket_clean_exclude_file( AUTO_LOAD_NEXT_POST_URL_PATH . '/assets/js/frontend/auto-load-next-post.js' );
