@@ -20,4 +20,20 @@ if ( defined( 'WP_ROCKET_VERSION' ) ) :
 	}
 	add_filter( 'rocket_exclude_js', 'rocket_exclude_js_alnp' );
 
+	/**
+	 * Excludes Auto Load Next Post JS files from defer JS
+	 *
+	 * @since  1.5.11
+	 * @param  Array $exclude_defer_js Array of JS filepaths to be excluded.
+	 * @return Array the updated array of defer JS
+	 */
+	function rocket_exclude_defer_js_alnp( $exclude_defer_js ) {
+		$exclude_defer_js[] = rocket_clean_exclude_file( AUTO_LOAD_NEXT_POST_URL_PATH . '/assets/js/frontend/auto-load-next-post.js' );
+		$exclude_defer_js[] = rocket_clean_exclude_file( AUTO_LOAD_NEXT_POST_URL_PATH . '/assets/js/frontend/auto-load-next-post.min.js' );
+		$exclude_defer_js[] = rocket_clean_exclude_file( AUTO_LOAD_NEXT_POST_URL_PATH . '/assets/js/frontend/auto-load-next-post.dev.js' );
+
+		return $exclude_defer_js;
+	}
+	add_filter( 'rocket_exclude_defer_js', 'rocket_exclude_defer_js_alnp' );
+
 endif;
