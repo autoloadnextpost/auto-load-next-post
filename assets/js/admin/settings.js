@@ -1,92 +1,106 @@
 /* global alnp_settings_params */
 ( function( $, params ) {
-	$( function() {
+	var changed = false,
+		panel   = $('#' + $('#screen-meta-links').find('.show-settings').attr('aria-controls') );
 
-		// Edit prompt
-		$( function() {
-			var changed = false;
+	$('input, number, email, textarea, select, checkbox, radio').change( function() {
+		changed = true;
+	});
 
-			$('input, number, email, textarea, select, checkbox, radio').change( function() {
-				changed = true;
+	// Navigation tab - If clicked and any input had changed then warn the user they will lose those changes if they continue.
+	$('.nav-tab-wrapper a').click( function() {
+		if ( changed ) {
+			window.onbeforeunload = function() {
+				return params.i18n_nav_warning;
+			};
+		} else {
+			window.onbeforeunload = '';
+		}
+	});
+
+	// Clears any warnings previously set
+	$('.submit :input').click( function(	) {
+		window.onbeforeunload = '';
+	});
+
+	// Reset button - If pressed will warn the user that all settings will be reset if they continue.
+	$('a.reset-settings').click( function() {
+		window.onbeforeunload = function() {
+			return params.i18n_reset_warning;
+		};
+	});
+
+	// Select all button
+	$('.auto-load-next-post').on('click', '.select_all', function() {
+		$(this).closest('td').find('select option').attr('selected', 'selected');
+		$(this).closest('td').find('select').trigger('change');
+		return false;
+	});
+
+	// Select none button
+	$('.auto-load-next-post').on('click', '.select_none', function() {
+		$(this).closest('td').find('select option').removeAttr('selected');
+		$(this).closest('td').find('select').trigger('change');
+		return false;
+	});
+
+	// Select2 enhanced select fields
+	$('.alnp-enhanced-select').select2({
+		dir: params.is_rtl,
+		minimumResultsForSearch: Infinity,
+		placeholder: function() {
+			$(this).data('placeholder');
+		}
+	});
+
+	$('.alnp-enhanced-multiselect').select2({
+		dir: params.is_rtl,
+		multiple: true,
+		placeholder: function() {
+			$(this).data('placeholder');
+		}
+	});
+
+	// Triggers the WordPress help screen to open.
+	$('.trigger-help').click( function(e) {
+		e.preventDefault();
+
+		//var panel = $('#' + $('#screen-meta-links').find('.show-settings').attr('aria-controls') );
+
+		if ( !panel.length )
+			return;
+
+		if ( panel.is(':visible') ) {
+			panel.slideUp('fast', function() {
+				panel.parent().next().find('button').removeClass( 'screen-meta-active' ).attr( 'aria-expanded', false );
+				panel.parent().hide();
 			});
 
-			$('.nav-tab-wrapper a').click( function() {
-				if ( changed ) {
-					window.onbeforeunload = function() {
-						return params.i18n_nav_warning;
-					};
-				} else {
-					window.onbeforeunload = '';
-				}
+			$(document).trigger('screen:options:close');
+
+			$('.need-help').removeClass('hide');
+		}
+		else {
+			panel.parent().show();
+
+			panel.slideDown('fast', function() {
+				panel.focus();
+				panel.parent().next().find('button').addClass( 'screen-meta-active' ).attr( 'aria-expanded', true );
 			});
 
-			$('.submit :input').click( function() {
-				window.onbeforeunload = '';
-			});
-		});
+			$(document).trigger('screen:options:open');
 
-		// Select all button
-		$('.auto-load-next-post').on('click', '.select_all', function() {
-			$(this).closest('td').find('select option').attr('selected', 'selected');
-			$(this).closest('td').find('select').trigger('change');
-			return false;
-		});
+			$('.need-help').addClass('hide');
+		}
+	});
 
-		// Select none button
-		$('.auto-load-next-post').on('click', '.select_none', function() {
-			$(this).closest('td').find('select option').removeAttr('selected');
-			$(this).closest('td').find('select').trigger('change');
-			return false;
-		});
+	// Hides the help button if the screen panel was opened normally.
+	$(document).on('screen:options:open', function() {
+		$('.need-help').addClass('hide');
+	});
 
-		// Select2 enhanced select fields
-		$('.alnp-enhanced-select').select2({
-			dir: params.is_rtl,
-			minimumResultsForSearch: Infinity,
-			placeholder: function() {
-				$(this).data('placeholder');
-			}
-		});
-
-		$('.alnp-enhanced-multiselect').select2({
-			dir: params.is_rtl,
-			multiple: true,
-			placeholder: function() {
-				$(this).data('placeholder');
-			}
-		});
-
-		$('.trigger-help').click( function(e) {
-			e.preventDefault();
-
-			var panel = $('#' + $('#screen-meta-links').find('.show-settings').attr('aria-controls') );
-
-			if ( !panel.length )
-				return;
-
-			if ( panel.is(':visible') ) {
-				panel.slideUp('fast', function() {
-					panel.parent().next().find('button').removeClass( 'screen-meta-active' ).attr( 'aria-expanded', false );
-					panel.parent().hide();
-				});
-
-				$(document).trigger('screen:options:close');
-
-				$('.need-help').removeClass('hide');
-			}
-			else {
-				panel.parent().show();
-
-				panel.slideDown('fast', function() {
-					panel.focus();
-					panel.parent().next().find('button').addClass( 'screen-meta-active' ).attr( 'aria-expanded', true );
-				});
-
-				$(document).trigger('screen:options:open');
-
-				$('.need-help').addClass('hide');
-			}
-		});
-
+	// Un-hide the help button if the screen panel was closed normally.
+	$(document).on('screen:options:close', function() {
+		$('.need-help').removeClass('hide');
 	});
 })( jQuery, alnp_settings_params );
