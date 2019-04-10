@@ -159,6 +159,7 @@ if ( ! function_exists( 'alnp_get_admin_screens' ) ) {
 		$show_on_screens = array(
 			'dashboard',
 			'plugins',
+			'themes',
 			'settings_page_auto-load-next-post-settings'
 		);
 
