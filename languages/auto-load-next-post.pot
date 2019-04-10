@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Auto Load Next Post 1.5.11\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/autoloadnextpost/auto-load-next-post/issues\n"
-"POT-Creation-Date: 2019-04-08 20:25:24+00:00\n"
+"POT-Creation-Date: 2019-04-10 05:18:48+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,7 +71,7 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:59
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:112
-#: includes/customizer/class-alnp-customizer.php:345
+#: includes/customizer/class-alnp-customizer.php:342
 msgid "Content Container"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:62
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:143
-#: includes/customizer/class-alnp-customizer.php:369
+#: includes/customizer/class-alnp-customizer.php:366
 msgid "Comments Container"
 msgstr ""
 
@@ -105,7 +105,7 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:71
 #: includes/admin/class-alnp-admin-help.php:74
-#: includes/admin/class-alnp-admin.php:266
+#: includes/admin/class-alnp-admin.php:264
 msgid "View Auto Load Next Post documentation"
 msgstr ""
 
@@ -115,7 +115,7 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:72
 #: includes/admin/class-alnp-admin-help.php:74
-#: includes/admin/class-alnp-admin.php:267
+#: includes/admin/class-alnp-admin.php:265
 msgid "Get support from the community"
 msgstr ""
 
@@ -128,7 +128,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:74
-#: includes/admin/class-alnp-admin.php:266
+#: includes/admin/class-alnp-admin.php:264
 #: includes/admin/views/html-notice-welcome.php:48
 msgid "Documentation"
 msgstr ""
@@ -181,12 +181,12 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:93
-#: includes/admin/class-alnp-admin.php:269
+#: includes/admin/class-alnp-admin.php:267
 msgid "Review Auto Load Next Post on WordPress.org"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:93
-#: includes/admin/class-alnp-admin.php:269
+#: includes/admin/class-alnp-admin.php:267
 #: includes/admin/views/html-notice-please-review.php:34
 msgid "Leave a Review"
 msgstr ""
@@ -217,68 +217,74 @@ msgstr ""
 msgid "Your settings have been saved."
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:119
+#: includes/admin/class-alnp-admin.php:116
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:149
+#: includes/admin/class-alnp-admin.php:117
+msgid ""
+"This will reset all settings back to default and re-initialize %s. Are you "
+"sure?"
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:147
 msgid "%s does not collect, store or share any personal data."
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:165
+#: includes/admin/class-alnp-admin.php:163
 msgid "%s Settings"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:239
+#: includes/admin/class-alnp-admin.php:237
 msgid "Sign up for Auto Load Next Post Pro"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:239
+#: includes/admin/class-alnp-admin.php:237
 msgid "Sign up for Pro"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:242
+#: includes/admin/class-alnp-admin.php:240
 msgid "View Auto Load Next Post settings"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:242
+#: includes/admin/class-alnp-admin.php:240
 msgid "Settings"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:263
+#: includes/admin/class-alnp-admin.php:261
 msgid "Developed By %s"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:263
+#: includes/admin/class-alnp-admin.php:261
 msgid "View the developers site"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:267
+#: includes/admin/class-alnp-admin.php:265
 msgid "Community Support"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:268
+#: includes/admin/class-alnp-admin.php:266
 msgid "Get theme support"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:268
+#: includes/admin/class-alnp-admin.php:266
 msgid "Theme Support"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:295
+#: includes/admin/class-alnp-admin.php:293
 #. translators: 1: Auto Load Next Post 2:: five stars
 msgid "If you like %1$s, please leave a %2$s rating. A huge thank you in advance!"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:297
+#: includes/admin/class-alnp-admin.php:295
 msgid "five star"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:297
+#: includes/admin/class-alnp-admin.php:295
 msgid "Thanks :)"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:318
+#: includes/admin/class-alnp-admin.php:316
 msgid "%s Version"
 msgstr ""
 
@@ -295,87 +301,87 @@ msgid ""
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:69
-#: includes/customizer/class-alnp-customizer.php:401
+#: includes/customizer/class-alnp-customizer.php:398
 msgid "Post loaded"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:70
-#: includes/customizer/class-alnp-customizer.php:402
+#: includes/customizer/class-alnp-customizer.php:399
 msgid "Events listed here will be triggered after a new post has loaded."
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:79
-#: includes/customizer/class-alnp-customizer.php:409
+#: includes/customizer/class-alnp-customizer.php:406
 msgid "Entering a Post"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:80
-#: includes/customizer/class-alnp-customizer.php:410
+#: includes/customizer/class-alnp-customizer.php:407
 msgid "Events listed here will be triggered when entering a post."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:33
+#: includes/admin/settings/class-alnp-settings-misc.php:31
 msgid "Misc"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:103
+#: includes/admin/settings/class-alnp-settings-misc.php:101
 msgid ""
 "Here you set if you want to track pageviews, remove comments and load %s "
 "javascript in the footer."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:108
-#: includes/customizer/class-alnp-customizer.php:377
+#: includes/admin/settings/class-alnp-settings-misc.php:106
+#: includes/customizer/class-alnp-customizer.php:374
 msgid "Remove Comments"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:109
-#: includes/customizer/class-alnp-customizer.php:378
+#: includes/admin/settings/class-alnp-settings-misc.php:107
+#: includes/customizer/class-alnp-customizer.php:375
 msgid "Enable to remove comments when each post loads including the initial post."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:116
-#: includes/customizer/class-alnp-customizer.php:385
+#: includes/admin/settings/class-alnp-settings-misc.php:114
+#: includes/customizer/class-alnp-customizer.php:382
 msgid "Update Google Analytics"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:117
-#: includes/customizer/class-alnp-customizer.php:386
+#: includes/admin/settings/class-alnp-settings-misc.php:115
+#: includes/customizer/class-alnp-customizer.php:383
 msgid ""
 "Enable to track each post the visitor is reading. This will count as a "
 "pageview. You must already have Google Analytics setup."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:124
-#: includes/customizer/class-alnp-customizer.php:393
+#: includes/admin/settings/class-alnp-settings-misc.php:122
+#: includes/customizer/class-alnp-customizer.php:390
 msgid "JavaScript in Footer?"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:125
+#: includes/admin/settings/class-alnp-settings-misc.php:123
 msgid ""
 "Enable to load Auto Load Next Post in the footer instead of the header. Can "
 "be useful to optimize your site or if the current theme requires it."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:132
+#: includes/admin/settings/class-alnp-settings-misc.php:130
 msgid "Reset all data?"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:133
+#: includes/admin/settings/class-alnp-settings-misc.php:131
 msgid ""
 "Press the reset button to clear all settings for this plugin and "
 "re-initialize."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:135
+#: includes/admin/settings/class-alnp-settings-misc.php:134
 msgid "Reset"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:141
+#: includes/admin/settings/class-alnp-settings-misc.php:140
 msgid "Remove all data on uninstall?"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:142
+#: includes/admin/settings/class-alnp-settings-misc.php:141
 msgid ""
 "If enabled, all settings for this plugin will all be deleted when "
 "uninstalling via Plugins > Delete."
@@ -388,7 +394,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:113
-#: includes/customizer/class-alnp-customizer.php:346
+#: includes/customizer/class-alnp-customizer.php:343
 msgid "The primary container where the post content is loaded in. Default: %s"
 msgstr ""
 
@@ -397,14 +403,14 @@ msgid "Required"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:124
-#: includes/customizer/class-alnp-customizer.php:354
+#: includes/customizer/class-alnp-customizer.php:351
 msgid ""
 "Used to identify which article the user is reading and track should Google "
 "Analytics or other analytics be enabled. Default: %s"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:134
-#: includes/customizer/class-alnp-customizer.php:362
+#: includes/customizer/class-alnp-customizer.php:359
 msgid "Used to identify which post to load next if any. Default: %s"
 msgstr ""
 
@@ -414,7 +420,7 @@ msgid ""
 "%3$s"
 msgstr ""
 
-#: includes/admin/views/html-admin-settings.php:51
+#: includes/admin/views/html-admin-settings.php:58
 msgid "Save Changes"
 msgstr ""
 
@@ -600,11 +606,9 @@ msgstr ""
 
 #: includes/admin/views/html-notice-trying-beta.php:26
 msgid ""
-"If you have any questions about the beta or if you have any feedback at "
-"all, let me know. Any little bit you're willing to share helps. You can "
-"%1$sjoin the Slack channel%2$s to provide feedback, discuss features to be "
-"added and integrations to support. Or you can just give feedback the old "
-"fashion way pressing the big button on the side."
+"If you have any questions about the beta or if you have any feedback at all "
+"including features to be added or integrations to support, please let me "
+"know. Any little bit you're willing to share helps."
 msgstr ""
 
 #: includes/admin/views/html-notice-trying-beta.php:30
@@ -726,39 +730,39 @@ msgid ""
 "%s javascript in the footer."
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:353
+#: includes/customizer/class-alnp-customizer.php:350
 msgid "Post Title Selector"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:361
+#: includes/customizer/class-alnp-customizer.php:358
 msgid "Post Navigation Container"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:370
+#: includes/customizer/class-alnp-customizer.php:367
 msgid ""
 "Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> "
 "settings. Default: %3$s"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:394
+#: includes/customizer/class-alnp-customizer.php:391
 msgid ""
 "Enable to load Auto Load Next Post in the footer instead of the header. Can "
 "be useful to optimize your site."
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:428
+#: includes/customizer/class-alnp-customizer.php:425
 msgid ""
 "The content container selector is empty. Will not know where to load posts "
 "without it."
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:444
+#: includes/customizer/class-alnp-customizer.php:441
 msgid ""
 "The post title selector is empty. Will not be able to identify which "
 "article the user is reading."
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:460
+#: includes/customizer/class-alnp-customizer.php:457
 msgid ""
 "The post navigation container selector is empty. Required so ALNP can look "
 "up the next post to load."

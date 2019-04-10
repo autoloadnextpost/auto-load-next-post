@@ -3,7 +3,7 @@
  * Display notices in the WordPress admin.
  *
  * @since    1.3.2
- * @version  1.5.0
+ * @version  1.5.11
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Notices
@@ -34,7 +34,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.5.0
+		 * @version 1.5.11
 		 */
 		public function __construct() {
 			self::$install_date = get_site_option( 'auto_load_next_post_install_date', time() );
@@ -46,19 +46,25 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			add_action( 'admin_init', array( $this, 'dont_bug_me' ), 15 );
 
 			// Display other admin notices when required. All are dismissable.
-			add_action( 'admin_init', array( $this, 'add_notices' ), 0 );
+			add_action( 'admin_print_styles', array( $this, 'add_notices' ), 0 );
 		} // END __construct()
 
 		/**
 		 * Checks that the WordPress version meets the plugin requirement.
 		 *
-		 * @access public
-		 * @since  1.0.0
-		 * @global string $wp_version
-		 * @return bool
+		 * @access  public
+		 * @since   1.0.0
+		 * @version 1.5.11
+		 * @global  string $wp_version
+		 * @return  bool
 		 */
 		public function check_wp() {
 			global $wp_version;
+
+			// If the current user can not install plugins then return nothing!
+			if ( ! current_user_can( 'install_plugins' ) ) {
+				return false;
+			}
 
 			if ( ! version_compare( $wp_version, AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE, '>=' ) ) {
 				add_action( 'admin_notices', array( $this, 'requirement_wp_notice' ) );
@@ -134,9 +140,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			$hide_welcome_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_welcome_notice', true );
 
 			// Check if we need to display the welcome notice.
-			if ( current_user_can( 'install_plugins' ) && empty( $hide_welcome_notice ) ) {
+			if ( empty( $hide_welcome_notice ) ) {
 				// If the user has just installed the plugin for the first time then welcome the user.
-				if ( ( intval( time() - strtotime( self::$install_date ) ) / WEEK_IN_SECONDS ) % 52 <= 2 ) {
+				if ( ( intval( time() - self::$install_date ) / WEEK_IN_SECONDS ) % 52 <= 2 ) {
 					add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
 				}
 			}
@@ -145,7 +151,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			$hide_review_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_review_notice', true );
 
 			// Check if we need to display the review plugin notice.
-			if ( current_user_can( 'install_plugins' ) && empty( $hide_review_notice ) ) {
+			if ( empty( $hide_review_notice ) ) {
 				// If it has been a week or more since activating the plugin then display the review notice.
 				if ( ( intval( time() - self::$install_date ) ) > WEEK_IN_SECONDS ) {
 					add_action( 'admin_notices', array( $this, 'plugin_review_notice' ) );

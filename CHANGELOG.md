@@ -6,7 +6,18 @@
 3. Lists must have one space above after heading
 -->
 
-# 1.5.10 - 5th April 2019
+# 1.5.11 - 10th April 2019
+
+* NEW: Excluded JS files from defer for the [WP Rocket](https://wp-rocket.me) plugin.
+* Dev Feature: Reset button added to the Misc settings to allow users to remove all settings and re-initialize the plugin.
+* Fixed: Incorrect function name used when applying filter for [WP Rocket](https://wp-rocket.me) plugin.
+* Tweaked: Admin notices to only appear on the Dashboard, the Plugins page and Auto Load Next Post settings page.
+* Tweaked: Admin notices have been re-ordered to allow correct flow of display.
+* Tweaked: Improved Admin JavaScript and added a confirmation for when the reset button is pressed. 
+* Tweaked: Code clean up to remove functions or inline documentation that is no longer needed or used.
+* Updated: POT file for translations.
+
+## 1.5.10 - 5th April 2019
 
 * NEW: Added 3rd Party support for the [WP Rocket](https://wp-rocket.me) plugin. Excludes Auto Load Next Post scripts from JS minification.
 * Corrected: Added missing Poseidon theme options used to determin if post thumbnails should show in repeater template.

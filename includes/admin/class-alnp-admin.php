@@ -87,11 +87,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		} // END admin_styles()
 
 		/**
-		 * Registers and enqueue javascripts.
+		 * Registers and enqueue JavaScript for Auto Load Next Post settings page.
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.5.11
 		 */
 		public function admin_scripts() {
 			$screen    = get_current_screen();
@@ -110,10 +110,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 				// Load plugin settings.
 				Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/js/admin/settings' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( 'jquery' ), AUTO_LOAD_NEXT_POST_VERSION, true );
 
-				// Variables for Admin JavaScripts
+				// Variables for Admin JavaScript.
 				wp_localize_script( AUTO_LOAD_NEXT_POST_SLUG . '_admin', 'alnp_settings_params', array(
-					'is_rtl'           => is_rtl() ? 'rtl' : 'ltr',
-					'i18n_nav_warning' => esc_html__( 'The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post' ),
+					'is_rtl'             => is_rtl() ? 'rtl' : 'ltr',
+					'i18n_nav_warning'   => esc_html__( 'The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post' ),
+					'i18n_reset_warning' => sprintf( esc_html__( 'This will reset all settings back to default and re-initialize %s. Are you sure?', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 				) );
 			}
 		} // END admin_scripts()
