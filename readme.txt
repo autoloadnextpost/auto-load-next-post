@@ -35,7 +35,7 @@ Want to see how it works? [Go to the demo site](https://demo.autoloadnextpost.co
 
 = Increase Your PageViews Today =
 
-Intrigued? _I bet you are._ Once you try Auto Load Next Post, your pageviews will increase 💹 and you will not want to go back. **Guaranteed.**
+Intrigued? _I bet you are._ Once you try Auto Load Next Post, your pageviews will increase 📈 and you will not want to go back. **Guaranteed.**
 
 ## Built with developers in mind
 
