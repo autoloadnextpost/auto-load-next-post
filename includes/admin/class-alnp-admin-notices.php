@@ -3,7 +3,7 @@
  * Display notices in the WordPress admin.
  *
  * @since    1.3.2
- * @version  1.5.0
+ * @version  1.5.11
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Notices
@@ -34,7 +34,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.5.0
+		 * @version 1.5.11
 		 */
 		public function __construct() {
 			self::$install_date = get_site_option( 'auto_load_next_post_install_date', time() );
@@ -52,10 +52,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		/**
 		 * Checks that the WordPress version meets the plugin requirement.
 		 *
-		 * @access public
-		 * @since  1.0.0
-		 * @global string $wp_version
-		 * @return bool
+		 * @access  public
+		 * @since   1.0.0
+		 * @version 1.5.11
+		 * @global  string $wp_version
+		 * @return  bool
 		 */
 		public function check_wp() {
 			global $wp_version;
