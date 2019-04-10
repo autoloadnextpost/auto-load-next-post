@@ -139,7 +139,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			$hide_welcome_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_welcome_notice', true );
 
 			// Check if we need to display the welcome notice.
-			if ( current_user_can( 'install_plugins' ) && empty( $hide_welcome_notice ) ) {
+			if ( empty( $hide_welcome_notice ) ) {
 				// If the user has just installed the plugin for the first time then welcome the user.
 				if ( ( intval( time() - strtotime( self::$install_date ) ) / WEEK_IN_SECONDS ) % 52 <= 2 ) {
 					add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
@@ -150,7 +150,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			$hide_review_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_review_notice', true );
 
 			// Check if we need to display the review plugin notice.
-			if ( current_user_can( 'install_plugins' ) && empty( $hide_review_notice ) ) {
+			if ( empty( $hide_review_notice ) ) {
 				// If it has been a week or more since activating the plugin then display the review notice.
 				if ( ( intval( time() - self::$install_date ) ) > WEEK_IN_SECONDS ) {
 					add_action( 'admin_notices', array( $this, 'plugin_review_notice' ) );
