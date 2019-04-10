@@ -141,7 +141,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			// Check if we need to display the welcome notice.
 			if ( empty( $hide_welcome_notice ) ) {
 				// If the user has just installed the plugin for the first time then welcome the user.
-				if ( ( intval( time() - strtotime( self::$install_date ) ) / WEEK_IN_SECONDS ) % 52 <= 2 ) {
+				if ( ( intval( time() - self::$install_date ) / WEEK_IN_SECONDS ) % 52 <= 2 ) {
 					add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
 				}
 			}
