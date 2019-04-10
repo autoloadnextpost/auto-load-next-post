@@ -46,7 +46,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			add_action( 'admin_init', array( $this, 'dont_bug_me' ), 15 );
 
 			// Display other admin notices when required. All are dismissable.
-			add_action( 'admin_init', array( $this, 'add_notices' ), 0 );
+			add_action( 'admin_print_styles', array( $this, 'add_notices' ), 0 );
 		} // END __construct()
 
 		/**
