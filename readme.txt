@@ -41,7 +41,7 @@ Intrigued? _I bet you are._ Once you try Auto Load Next Post, your pageviews wil
 
 Extendable and open source — Auto Load Next Post is created with theme and plugin developers in mind. If you're intersted to jump in the project, there are opportunities for developers at all levels to get involved. [Contribute to Auto Load Next Post on GitHub](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md) and join the party. 🎉
 
-Need to trigger something during each post load? [See the JavaScript triggers available](https://autoloadnextpost.com/documentation/javascript-triggers/) in the documentation for details. 3rd-party supported also.
+Need to trigger something during each post load? [See the JavaScript triggers available](https://autoloadnextpost.com/documentation/javascript-triggers/) in the documentation for details.
 
 ## Track Your PageViews
 
@@ -51,7 +51,7 @@ If you have Google Analytics added to your site then you can track your pageview
 
 Auto Load Next Post is completly customizable to help match to your theme. Should you need to completly override the repeater template for your theme you can do just that. Follow [the guide in the documentation](https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/repeater-template.md#repeater-template) for more details.
 
-## 3rd Party Supported
+## 3rd Party Support
 
 Auto Load Next Post has started to support 3rd Party plugins 🎉 starting with [WP Rocket](https://wp-rocket.me) and more will be added over time.
 
