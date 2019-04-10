@@ -60,6 +60,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		public function check_wp() {
 			global $wp_version;
 
+			// If the current user can not install plugins then return nothing!
+			if ( ! current_user_can( 'install_plugins' ) ) {
+				return false;
+			}
+
 			if ( ! version_compare( $wp_version, AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE, '>=' ) ) {
 				add_action( 'admin_notices', array( $this, 'requirement_wp_notice' ) );
 				return false;
