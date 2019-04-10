@@ -92,7 +92,7 @@ nav .nav-tab:first-child {
   width: 64px;
 }
 .notice.auto-load-next-post-notice .auto-load-next-post-notice-content {
-	padding: 0 40px 0 20px;
+	padding: 0 6% 0 20px;
 }
 .notice.auto-load-next-post-notice p {
 	padding: 0;
@@ -104,6 +104,7 @@ nav .nav-tab:first-child {
 .notice.auto-load-next-post-notice .auto-load-next-post-review-now,
 .notice.auto-load-next-post-notice .auto-load-next-post-send-feedback,
 .notice.auto-load-next-post-notice .auto-load-next-post-documentation {
+  float: right;
 	text-align: center;
 }
 .notice.auto-load-next-post-notice .auto-load-next-post-review-now .auto-load-next-post-review-button,
