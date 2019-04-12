@@ -156,13 +156,103 @@ if ( ! function_exists( 'alnp_load_js_in_footer' ) ) {
  */
 if ( ! function_exists( 'alnp_get_admin_screens' ) ) {
 	function alnp_get_admin_screens() {
-		$show_on_screens = array(
+		return array(
 			'dashboard',
 			'plugins',
 			'themes',
 			'settings_page_auto-load-next-post-settings'
 		);
-
-		return $show_on_screens;
 	}
+}
+
+/**
+ * Gets a list of locations as to where the content for the theme is located.
+ * The list is in the order to look for the templates that store the content.
+ *
+ * @since  *.*.*
+ * @return array
+ */
+if ( ! function_exists( 'alnp_get_locations' ) ) {
+	function alnp_get_locations() {
+		return array(
+			'', // Parent theme folder
+			'components',
+			'components/post',
+			'components/page',
+			'templates',
+			'template-parts',
+			'template-parts/post',
+			'template-parts/page',
+			'partials',
+			'loop-templates'
+		);
+	}
+}
+
+/**
+ * Gets a list of templates to look for.
+ *
+ * @since  *.*.*
+ * @return array
+ */
+if ( ! function_exists( 'alnp_get_templates' ) ) {
+	function alnp_get_templates( $post_type, $post_format ) {
+		return array(
+			alnp_template_location() . 'content-' . $post_type . '.php',
+			alnp_template_location() . 'content-single.php',
+			alnp_template_location() . 'content.php',
+			alnp_template_location() . 'format-' . $post_format . '.php',
+			alnp_template_location() . 'content' . $post_format . '.php'
+		);
+	}
+}
+
+/**
+ * Scans through the active theme to look for the content to load.
+ * If the content is not found then the fallback will be used.
+ *
+ * @since *.*.*
+ */
+if ( ! function_exists( 'alnp_load_content' ) ) {
+	function alnp_load_content( $post_type, $post_format ) {
+		// Possible locations where the content files are found.
+		$locations = alnp_get_locations();
+
+		// Templates to look for based on the post that is loaded.
+		$templates = alnp_get_templates( $post_type, $post_format );
+
+		$content_found = false;
+
+		// Scanning all possible locations.
+		foreach( $locations as $location ) {
+			// Scanning all possible templates within the locations.
+			foreach( $templates as $template ) {
+				// If a template has been found then load it.
+				if ( locate_template( $location . $template ) != '' && $content_found != true ) {
+					$load_content  = $location . $template;
+					$content_found = true;
+				}
+			}
+		}
+
+		$content_found = apply_filters( 'alnp_content_found', $content_found );
+
+		// If content is found then load the template part.
+		if ( $content_found ) {
+			locate_template( $load_content, true, false );
+		}
+		else {
+			do_action( 'alnp_load_content', $post_type, $post_format );
+		}
+	}
+}
+
+if ( ! function_exists( 'alnp_load_fallback_content' ) ) {
+	/**
+	 * Load fallback should no content file be found.
+	 */
+	function alnp_load_fallback_content( $post_type, $post_format ) {
+		get_template_part( 'template/content' );
+	}
+	add_action( 'alnp_load_content', 'alnp_load_fallback_content', 2, 10 );
 }

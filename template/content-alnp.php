@@ -13,7 +13,7 @@
  * @author  Sébastien Dumont
  * @package Auto Load Next Post/Templates
  * @license GPL-2.0+
- * @version 1.5.0
+ * @version 1.6.0
  */
 
 if ( have_posts() ) :
@@ -37,29 +37,8 @@ if ( have_posts() ) :
 		// Load content before the post content for a specific post type.
 		do_action( 'alnp_load_before_content_post_type_' . $post_type );
 
-		if ( false === $post_format ) {
-			/*
-			 * Include the Post-Type-specific template for the content.
-			 * content-___.php (where ___ is the Post Type name).
-			 */
-			if ( locate_template( alnp_template_location() . 'content-' . $post_type . '.php') != '' ) {
-				get_template_part( alnp_template_location() . 'content', $post_type );
-			} else {
-				// If no specific post type found then fallback to standard content.php file.
-				get_template_part( alnp_template_location() . 'content' );
-			}
-		} else {
-			/*
-			 * Include the Post-Format-specific template for the content.
-			 * called format-___.php (where ___ is the Post Format name).
-			 */
-			if ( locate_template( alnp_template_location() . 'format-' . $post_format . '.php' ) != '' ) {
-				get_template_part( alnp_template_location() . 'format', $post_format );
-			} else {
-				// If no format-{post-format}.php file found then fallback to content-{post-format}.php
-				get_template_part( alnp_template_location() . 'content', $post_format );
-			}
-		}
+		// Loads the content.
+		alnp_load_content( $post_type, $post_format );
 
 		// Load content after the post content for a specific post type.
 		do_action( 'alnp_load_after_content_post_type_' . $post_type );
