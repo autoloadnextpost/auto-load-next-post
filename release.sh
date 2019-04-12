@@ -4,7 +4,7 @@
 PLUGIN_SLUG="auto-load-next-post"
 
 # GITHUB user who owns the repo
-GITHUB_REPO_OWNER="seb86"
+GITHUB_REPO_OWNER="autoloadnextpost"
 
 # GITHUB Repository name
 GITHUB_REPO_NAME="auto-load-next-post"
@@ -201,7 +201,6 @@ svn commit -m "Releasing "${VERSION}"" || { echo "Unable to commit."; exit 1; }
 # REMOVE THE TEMP DIRS
 echo "---------------------------------------------------------------------"
 echo "Cleaning Up..."
-echo "---------------------------------------------------------------------"
 cd "../"
 rm -Rf $ROOT_PATH$TEMP_GITHUB_REPO
 rm -Rf $ROOT_PATH$TEMP_SVN_REPO

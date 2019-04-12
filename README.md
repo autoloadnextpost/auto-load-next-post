@@ -34,7 +34,7 @@ It simply automatically loads the next post on your blog once the user has reach
 * Reduce page load by hiding the post comments
 * Track pageviews with Google Analytics. ***Requires Google Analytics to be applied on your site first for this to work.***
 * Developer friendly
-* Works even for child-themes
+* Works with any theme or framework, even child-themes
 * WordPress Network / Multisite Supported
 
 Want more? See [what is coming soon with Auto Load Next Post Pro](https://autoloadnextpost.com/pro/).
