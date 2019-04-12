@@ -39,9 +39,9 @@ if ( have_posts() ) :
 	// Load content after the loop.
 	do_action( 'alnp_load_after_loop' );
 
-	else :
+else :
 
-		// Load content if there are no more posts.
-		do_action( 'alnp_no_more_posts' );
+	// Load content if there are no more posts.
+	do_action( 'alnp_no_more_posts' );
 
-	endif; // END if have_posts()
+endif; // END if have_posts()

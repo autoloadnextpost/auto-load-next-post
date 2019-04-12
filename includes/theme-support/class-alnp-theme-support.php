@@ -46,7 +46,9 @@ class ALNP_Theme_Support {
 				// Preferred implementation, where theme provides an array of options
 				if ( isset( $theme_support[0] ) && is_array( $theme_support[0] ) ) {
 					foreach( $theme_support[0] as $key => $value ) {
-						if ( ! empty( $value ) ) update_option( 'auto_load_next_post_' . $key, $value );
+						if ( ! empty( $value ) ) {
+							update_option( 'auto_load_next_post_' . $key, $value );
+						}
 					}
 				}
 			}
