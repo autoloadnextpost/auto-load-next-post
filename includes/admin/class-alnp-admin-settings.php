@@ -148,15 +148,15 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @static
 		 * @since   1.0.0
 		 * @version 1.6.0
-		 * @filter  auto_load_next_post_settings_tabs_array
+		 * @global  $current_tab
 		 * @return  void
 		 */
 		public static function output() {
-      global $current_tab;
+			global $current_tab;
 
-      do_action( 'auto_load_next_post_settings_start' );
+			do_action( 'auto_load_next_post_settings_start' );
 
-			// These tabs do not require settings output.
+			// These tabs do not require a settings output.
 			$no_settings_req = array( 'extensions', 'videos' );
 
 			// Only include settings output if the current tab requires it.
