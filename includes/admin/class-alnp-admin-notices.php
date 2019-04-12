@@ -180,8 +180,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 					add_action( 'admin_notices', array( $this, 'theme_ready_notice' ) );
 					update_option( 'auto_load_next_post_theme_supported', $template );
 				}
-			}
-			else {
+			} else {
 				// If theme not supported then delete option.
 				delete_option( 'auto_load_next_post_theme_supported' );
 			}

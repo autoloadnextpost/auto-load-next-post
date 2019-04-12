@@ -94,16 +94,13 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @access  public
 		 * @since   1.0.0
 		 * @version 1.5.0
-		 * @return  Auto_Load_Next_Post
 		 */
 		public function __construct() {
 			$this->setup_constants();
 			$this->includes();
 			$this->init_hooks();
 
-			/**
-			 * Auto Load Next Post is fully loaded.
-			 */
+			// Auto Load Next Post is fully loaded.
 			do_action( 'auto_load_next_post_loaded' );
 		} // END __construct()
 
