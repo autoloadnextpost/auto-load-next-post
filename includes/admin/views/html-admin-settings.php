@@ -8,12 +8,19 @@
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
  * @license  GPL-2.0+
+ * @global   string $current_section
+ * @global   string $current_tab
  */
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+global $current_section, $current_tab;
+
+// Get tabs for the settings page
+$tabs = apply_filters( 'auto_load_next_post_settings_tabs_array', array() );
 
 $tab_exists        = isset( $tabs[ $current_tab ] ) || has_action( 'auto_load_next_post_sections_' . $current_tab ) || has_action( 'auto_load_next_post_settings_' . $current_tab ) || has_action( 'auto_load_next_post_settings_tabs_' . $current_tab );
 $current_tab_label = isset( $tabs[ $current_tab ] ) ? $tabs[ $current_tab ] : '';
@@ -28,7 +35,12 @@ if ( ! $tab_exists ) {
 		<nav class="nav-tab-wrapper">
 			<?php
 				foreach ( $tabs as $slug => $label ) {
-					echo '<a href="' . esc_html( admin_url( 'options-general.php?page=auto-load-next-post-settings&tab=' . esc_attr( $slug ) ) ) . '" class="nav-tab ' . ( $current_tab === $slug ? 'nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
+					$url = add_query_arg( array(
+						'page' => 'auto-load-next-post-settings',
+						'tab'  => esc_attr( $slug ),
+					), admin_url( 'options-general.php' ) );
+
+					echo '<a href="' . esc_html( $url ) . '" class="nav-tab ' . ( $current_tab === $slug ? 'nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
 				}
 
 				do_action( 'auto_load_next_post_settings_tabs' );

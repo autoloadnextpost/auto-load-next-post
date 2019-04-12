@@ -5,7 +5,7 @@
  * Description: Increase your pageviews on your site as readers continue reading your posts scrolling down the page.
  * Author:      Sébastien Dumont
  * Author URI:  https://sebastiendumont.com
- * Version:     1.5.7
+ * Version:     1.5.11
  * Text Domain: auto-load-next-post
  * Domain Path: /languages/
  *
@@ -45,7 +45,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @static
 		 * @since  1.5.0
 		 */
-		public static $version = '1.5.7';
+		public static $version = '1.5.11';
 
 		/**
 		 * Main Auto Load Next Post Instance
@@ -125,7 +125,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * Setup Constants
 		 *
 		 * @since   1.4.3
-		 * @version 1.5.5
+		 * @version 1.5.10
 		 * @access  private
 		 */
 		private function setup_constants() {
@@ -136,6 +136,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			$this->define('AUTO_LOAD_NEXT_POST_URL_PATH', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
 			$this->define('AUTO_LOAD_NEXT_POST_FILE_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 			$this->define('AUTO_LOAD_NEXT_POST_TEMPLATE_PATH', 'auto-load-next-post/');
+			$this->define('AUTO_LOAD_NEXT_POST_3RD_PARTY', AUTO_LOAD_NEXT_POST_FILE_PATH . '/includes/3rd-party/');
 
 			$this->define('AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE', '4.4');
 
@@ -169,7 +170,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.5
+		 * @version 1.5.10
 		 * @return  void
 		 */
 		public function includes() {
@@ -181,6 +182,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
 			// Include theme support.
 			alnp_include_theme_support();
+
+			// 3rd Party support.
+			include_once( dirname( __FILE__ ) . '/includes/3rd-party/3rd-party.php' );
 
 			// Customizer.
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer.php' );
@@ -215,7 +219,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.5.7
+		 * @version 1.5.8
 		 */
 		public function alnp_enqueue_scripts() {
 			// Load the Javascript if found as a singluar post and the user is not a bot.
@@ -244,6 +248,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 					'alnp_event_on_load'        => get_option( 'auto_load_next_post_on_load_event' ),
 					'alnp_event_on_entering'    => get_option( 'auto_load_next_post_on_entering_event' ),
 					'alnp_is_customizer'        => $this->is_alnp_using_customizer(),
+					'alnp_load_in_footer'       => $load_in_footer
 				) );
 			} // END if is_singular() && get_post_type()
 		} // END alnp_enqueue_scripts()
@@ -254,7 +259,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @access public
 		 * @since  1.5.0
 		 * @static
-		 * @return string|boolean
+		 * @return string|false
 		 */
 		public static function is_alnp_using_customizer() {
 			if ( is_customize_preview() ) {
@@ -277,11 +282,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @param   array   $support   Optional, for requiring other javascripts for the source file you are calling.
 		 * @param   string  $version   Optional, can match the version of the plugin or version of the source file.
 		 * @param   bool    $footer Optional, can set the JavaScript to load in the footer instead.
-		 * @global  string  $wp_version
 		 */
 		public static function load_file( $name, $file_path, $is_script = false, $support = array(), $version = '', $footer = false ) {
-			global $wp_version;
-
 			$url = AUTO_LOAD_NEXT_POST_URL_PATH . $file_path; // URL to the file.
 
 			if ( file_exists( AUTO_LOAD_NEXT_POST_FILE_PATH . $file_path ) ) {

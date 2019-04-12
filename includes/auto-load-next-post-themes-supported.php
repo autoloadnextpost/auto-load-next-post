@@ -5,6 +5,7 @@
  * Handles all supported themes out of the box.
  *
  * @since    1.5.5
+ * @version  1.5.9
  * @author   Sébastien Dumont
  * @category Core
  * @package  Auto Load Next Post/Core/Functions
@@ -16,28 +17,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Lists the supported themes.
+ *
+ * @since   1.5.5
+ * @version 1.5.9
+ * @return  array
+ */
 function alnp_themes_supported() {
 	return array( 
-		'make', 
-		'sydney', 
-		'storefront', 
-		'twentyten', 
-		'twentyeleven', 
-		'twentytwelve', 
-		'twentythirteen', 
-		'twentyfourteen', 
-		'twentyfifteen', 
-		'twentysixteen', 
-		'twentyseventeen', 
-		'twentynineteen', 
-		'understrap', 
+		'make',
+		'oceanwp',
+		'poseidon',
+		'sydney',
+		'storefront',
+		'twentyten',
+		'twentyeleven',
+		'twentytwelve',
+		'twentythirteen',
+		'twentyfourteen',
+		'twentyfifteen',
+		'twentysixteen',
+		'twentyseventeen',
+		'twentynineteen',
+		'understrap',
 	);
 } // END alnp_themes_supported()
 
 /**
  * Include classes for theme support.
  *
- * @access  public
  * @since   1.5.0
  * @version 1.5.5
  */

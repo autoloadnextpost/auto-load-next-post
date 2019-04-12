@@ -28,7 +28,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 */
 		public function __construct() {
 			// Include classes.
-			add_action( 'admin_init', array( $this, 'includes' ), 10 );
+			self::includes();
 
 			// Register scripts and styles for settings page.
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_styles' ), 10 );
@@ -60,9 +60,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 * @version 1.6.0
 		 */
 		public function includes() {
+			include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' ); // Plugin Notices
+
 			// Classes we only need if the ajax is not-ajax
-			if ( ! auto_load_next_post_is_ajax() ) {
-				include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' ); // Plugin Notices
+			if ( apply_filters( 'auto_load_next_post_enable_admin_help_tab', true ) ) {
 				include( dirname( __FILE__ ) . '/class-alnp-admin-help.php' ); // Plugin Help Tab
 			}
 
@@ -74,17 +75,14 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		 *
 		 * @access public
 		 * @since  1.5.0
-		 * @global $wp_scripts
 		 */
 		public function admin_styles() {
-			global $wp_scripts;
-
 			$screen    = get_current_screen();
 			$screen_id = $screen ? $screen->id : '';
 
 			Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/css/admin/auto-load-next-post' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
 
-			if ( $screen->id == 'settings_page_auto-load-next-post-settings' ) {
+			if ( $screen_id == 'settings_page_auto-load-next-post-settings' ) {
 				// Select2 - Make sure that we remove other registered Select2 to prevent styling issues.
 				if ( wp_script_is( 'select2', 'registered' ) ) {
 					wp_dequeue_style( 'select2' );
@@ -96,11 +94,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		} // END admin_styles()
 
 		/**
-		 * Registers and enqueue javascripts.
+		 * Registers and enqueue JavaScript for Auto Load Next Post settings page.
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.5.11
 		 */
 		public function admin_scripts() {
 			$screen    = get_current_screen();
@@ -119,10 +117,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 				// Load plugin settings.
 				Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/js/admin/settings' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( 'jquery' ), AUTO_LOAD_NEXT_POST_VERSION, true );
 
-				// Variables for Admin JavaScripts
+				// Variables for Admin JavaScript.
 				wp_localize_script( AUTO_LOAD_NEXT_POST_SLUG . '_admin', 'alnp_settings_params', array(
-					'is_rtl'           => is_rtl() ? 'rtl' : 'ltr',
-					'i18n_nav_warning' => esc_html__( 'The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post' ),
+					'is_rtl'             => is_rtl() ? 'rtl' : 'ltr',
+					'i18n_nav_warning'   => esc_html__( 'The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post' ),
+					'i18n_reset_warning' => sprintf( esc_html__( 'This will reset all settings back to default and re-initialize %s. Are you sure?', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 				) );
 			}
 		} // END admin_scripts()

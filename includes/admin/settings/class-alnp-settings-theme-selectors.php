@@ -41,11 +41,18 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Theme_Selectors_Tab' ) ) {
 		 *
 		 * @access public
 		 * @static
-		 * @since  1.5.0
+		 * @since  1.5.10
 		 */
 		public static function is_theme_supported() {
 			if ( is_alnp_supported() ) {
-				include( dirname( AUTO_LOAD_NEXT_POST_FILE ) . '/includes/admin/views/html-notice-is-supported.php' );
+				$plugin_supported = alnp_get_theme_support( 'plugin_support' );
+
+				// Is the theme supported by theme or plugin?
+				if ( ! empty( $plugin_supported ) && $plugin_supported == 'yes' ) {
+					include( dirname( AUTO_LOAD_NEXT_POST_FILE ) . '/includes/admin/views/html-notice-plugin-supported.php' );
+				} else {
+					include( dirname( AUTO_LOAD_NEXT_POST_FILE ) . '/includes/admin/views/html-notice-is-supported.php' );
+				}
 			}
 		} // END is_theme_supported()
 

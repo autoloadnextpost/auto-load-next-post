@@ -149,17 +149,12 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @since   1.0.0
 		 * @version 1.6.0
 		 * @filter  auto_load_next_post_settings_tabs_array
-		 * @global  string $current_section
-		 * @global  string $current_tab
 		 * @return  void
 		 */
 		public static function output() {
-			global $current_section, $current_tab;
+      global $current_tab;
 
-			do_action( 'auto_load_next_post_settings_start' );
-
-			// Get tabs for the settings page
-			$tabs = apply_filters( 'auto_load_next_post_settings_tabs_array', array() );
+      do_action( 'auto_load_next_post_settings_start' );
 
 			// These tabs do not require settings output.
 			$no_settings_req = array( 'extensions', 'videos' );
@@ -499,6 +494,22 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 							?>
 								</fieldset>
 							<?php
+						}
+						break;
+
+					case 'button':
+						if ( isset( $value['url'] ) && ! empty( $value['url'] ) ) {
+					?>
+						<tr valign="top">
+							<th scope="row" class="titledesc"><?php echo $value['title'];?></th>
+							<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
+								<a href="<?php echo $value['url']; ?>" class="button-secondary <?php echo esc_attr( $value['class'] ); ?>">
+									<?php echo $value['value']; ?>
+								</a>
+								<?php echo $description; ?>
+							</td>
+						</tr>
+						<?php
 						}
 						break;
 

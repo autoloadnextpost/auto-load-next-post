@@ -3,7 +3,7 @@
  * Display notices in the WordPress admin.
  *
  * @since    1.3.2
- * @version  1.5.0
+ * @version  1.5.11
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Notices
@@ -34,7 +34,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.5.0
+		 * @version 1.5.11
 		 */
 		public function __construct() {
 			self::$install_date = get_site_option( 'auto_load_next_post_install_date', time() );
@@ -46,19 +46,25 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			add_action( 'admin_init', array( $this, 'dont_bug_me' ), 15 );
 
 			// Display other admin notices when required. All are dismissable.
-			add_action( 'admin_notices', array( $this, 'add_notices' ), 0 );
+			add_action( 'admin_print_styles', array( $this, 'add_notices' ), 0 );
 		} // END __construct()
 
 		/**
 		 * Checks that the WordPress version meets the plugin requirement.
 		 *
-		 * @access public
-		 * @since  1.0.0
-		 * @global string $wp_version
-		 * @return bool
+		 * @access  public
+		 * @since   1.0.0
+		 * @version 1.5.11
+		 * @global  string $wp_version
+		 * @return  bool
 		 */
 		public function check_wp() {
 			global $wp_version;
+
+			// If the current user can not install plugins then return nothing!
+			if ( ! current_user_can( 'install_plugins' ) ) {
+				return false;
+			}
 
 			if ( ! version_compare( $wp_version, AUTO_LOAD_NEXT_POST_WP_VERSION_REQUIRE, '>=' ) ) {
 				add_action( 'admin_notices', array( $this, 'requirement_wp_notice' ) );
@@ -99,7 +105,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 
 			if ( $user_hidden_notice ) {
 				// Redirect to the plugins page.
-				wp_safe_redirect( admin_url( 'plugins.php' ) ); exit;
+				wp_safe_redirect( admin_url( 'plugins.php' ) );
+				exit;
 			}
 		} // END dont_bug_me()
 
@@ -109,16 +116,65 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.5.0
+		 * @version 1.5.11
 		 * @global  $current_user
+		 * @return  void|bool
 		 */
 		public function add_notices() {
 			global $current_user;
 
-			$template = get_option('template');
+			// If the current user can not install plugins then return nothing!
+			if ( ! current_user_can( 'install_plugins' ) ) {
+				return false;
+			}
 
-			// Checks if the theme supports Auto Load Next Post.
+			$screen    = get_current_screen();
+			$screen_id = $screen ? $screen->id : '';
+
+			// Notices should only show on the main dashboard and on the plugins screen.
+			if ( ! in_array( $screen_id, alnp_get_admin_screens() ) ) {
+				return false;
+			}
+
+			// Is admin welcome notice hidden?
+			$hide_welcome_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_welcome_notice', true );
+
+			// Check if we need to display the welcome notice.
+			if ( empty( $hide_welcome_notice ) ) {
+				// If the user has just installed the plugin for the first time then welcome the user.
+				if ( ( intval( time() - self::$install_date ) / WEEK_IN_SECONDS ) % 52 <= 2 ) {
+					add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
+				}
+			}
+
+			// Is admin review notice hidden?
+			$hide_review_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_review_notice', true );
+
+			// Check if we need to display the review plugin notice.
+			if ( empty( $hide_review_notice ) ) {
+				// If it has been a week or more since activating the plugin then display the review notice.
+				if ( ( intval( time() - self::$install_date ) ) > WEEK_IN_SECONDS ) {
+					add_action( 'admin_notices', array( $this, 'plugin_review_notice' ) );
+				}
+			}
+
+			// Is this version of Auto Load Next Post a beta release?
+			if ( is_alnp_beta() && empty( get_transient( 'alnp_beta_notice_hidden' ) ) ) {
+				add_action( 'admin_notices', array( $this, 'beta_notice' ) );
+			}
+
+			$template = get_option( 'template' );
+
+			// Checks if the theme supports Auto Load Next Post and not provided via a plugin.
 			if ( is_alnp_supported() ) {
+				$plugin_supported = alnp_get_theme_support( 'plugin_support' );
+
+				// Return if theme is supported via plugin.
+				if ( ! empty( $plugin_supported ) && $plugin_supported == 'yes' ) {
+					update_option( 'auto_load_next_post_theme_supported', $template );
+					return false;
+				}
+
 				// If supported theme does not match active theme then show notice.
 				if ( get_option( 'auto_load_next_post_theme_supported' ) !== $template ) {
 					add_action( 'admin_notices', array( $this, 'theme_ready_notice' ) );
@@ -128,33 +184,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			else {
 				// If theme not supported then delete option.
 				delete_option( 'auto_load_next_post_theme_supported' );
-			}
-
-			// Is admin review notice hidden?
-			$hide_review_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_review_notice', true );
-
-			// Check if we need to display the review plugin notice.
-			if ( current_user_can( 'install_plugins' ) && empty( $hide_review_notice ) ) {
-				// If it has been a week or more since activating the plugin then display the review notice.
-				if ( ( intval( time() - self::$install_date ) ) > WEEK_IN_SECONDS ) {
-					add_action( 'admin_notices', array( $this, 'plugin_review_notice' ) );
-				}
-			}
-
-			// Is admin welcome notice hidden?
-			$hide_welcome_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_welcome_notice', true );
-
-			// Check if we need to display the welcome notice.
-			if ( current_user_can( 'install_plugins' ) && empty( $hide_welcome_notice ) ) {
-				// If the user has just installed the plugin for the first time then welcome the user.
-				if ( ( intval( time() - strtotime( self::$install_date ) ) / WEEK_IN_SECONDS ) % 52 <= 2 ) {
-					add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
-				}
-			}
-
-			// Is this version of Auto Load Next Post a beta release?
-			if ( is_alnp_beta() && empty( get_transient( 'alnp_beta_notice_hidden' ) ) ) {
-				add_action( 'admin_notices', array( $this, 'beta_notice' ) );
 			}
 		} // END add_notices()
 
