@@ -47,9 +47,9 @@ if ( ! function_exists( 'auto_load_next_post_template_redirect' ) ) {
 
 		if ( file_exists( $child_path . 'content-alnp.php' ) ) {
 			$template_redirect = $child_path . 'content-alnp.php';
-		} else if( file_exists( $template_path . 'content-alnp.php') ) {
+		} else if ( file_exists( $template_path . 'content-alnp.php' ) ) {
 			$template_redirect = $template_path . 'content-alnp.php';
-		} else if( file_exists( $default_path . '/template/content-alnp.php' ) ) {
+		} else if ( file_exists( $default_path . '/template/content-alnp.php' ) ) {
 			$template_redirect = $default_path . '/template/content-alnp.php';
 		}
 
