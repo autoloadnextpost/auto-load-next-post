@@ -64,8 +64,7 @@ if ( ! $tab_exists ) {
 	// Checks if Auto Load Next Post Pro is installed before displaying sidebar.
 	if ( ! is_alnp_pro_version_installed() ) {
 		include_once( dirname( __FILE__ ) . '/html-admin-sidebar.php' );
-	}
-	else {
+	} else {
 		echo '<div class="alnp-sidebar">';
 
 		do_action( 'auto_load_next_post_after_settings' );
