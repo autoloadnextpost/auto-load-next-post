@@ -156,13 +156,11 @@ if ( ! function_exists( 'alnp_load_js_in_footer' ) ) {
  */
 if ( ! function_exists( 'alnp_get_admin_screens' ) ) {
 	function alnp_get_admin_screens() {
-		$show_on_screens = array(
+		return array(
 			'dashboard',
 			'plugins',
 			'themes',
 			'settings_page_auto-load-next-post-settings'
 		);
-
-		return $show_on_screens;
 	}
 }
