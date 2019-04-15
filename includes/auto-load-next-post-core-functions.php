@@ -5,7 +5,7 @@
  * General core functions available for both the front-end and admin.
  *
  * @since    1.0.0
- * @version  1.5.7
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Core
  * @package  Auto Load Next Post/Core/Functions
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * the template redirect to retrieve only the post content.
  *
  * @since   1.0.0
- * @version 1.5.4
+ * @version 1.6.0
  * @global  WP_Query $wp_query - The object information defining the current request and determines what type of query it's dealing with. See https://codex.wordpress.org/Class_Reference/WP_Query
  */
 if ( ! function_exists( 'auto_load_next_post_template_redirect' ) ) {
@@ -166,7 +166,7 @@ if ( ! function_exists( 'alnp_get_admin_screens' ) ) {
  * Gets a list of locations as to where the content for the theme is located.
  * The list is in the order to look for the templates that store the content.
  *
- * @since  *.*.*
+ * @since  1.6.0
  * @return array
  */
 if ( ! function_exists( 'alnp_get_locations' ) ) {
@@ -189,7 +189,7 @@ if ( ! function_exists( 'alnp_get_locations' ) ) {
 /**
  * Gets a list of templates to look for.
  *
- * @since  *.*.*
+ * @since  1.6.0
  * @return array
  */
 if ( ! function_exists( 'alnp_get_templates' ) ) {
@@ -208,7 +208,7 @@ if ( ! function_exists( 'alnp_get_templates' ) ) {
  * Scans through the active theme to look for the content to load.
  * If the content is not found then the fallback will be used.
  *
- * @since *.*.*
+ * @since 1.6.0
  */
 if ( ! function_exists( 'alnp_load_content' ) ) {
 	function alnp_load_content( $post_type, $post_format ) {
@@ -244,10 +244,11 @@ if ( ! function_exists( 'alnp_load_content' ) ) {
 	}
 }
 
-if ( ! function_exists( 'alnp_load_fallback_content' ) ) {
-	/**
-	 * Load fallback should no content file be found.
-	 */
+/**
+ * Load fallback template should no content file be found.
+ *
+ * @since 1.6.0
+ */
 if ( ! function_exists( 'alnp_load_fallback_content' ) ) {
 	function alnp_load_fallback_content( $post_type ) {
 		get_template_part( AUTO_LOAD_NEXT_POST_FILE_PATH . '/templates/content/content', $post_type );
@@ -258,7 +259,7 @@ if ( ! function_exists( 'alnp_load_fallback_content' ) ) {
 /**
  * Adds the plugin version to the header.
  *
- * @since *.*.*
+ * @since 1.6.0
  */
 if ( ! function_exists( 'alnp_meta_version' ) ) {
 	function alnp_meta_version() {
