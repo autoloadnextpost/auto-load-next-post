@@ -253,3 +253,15 @@ if ( ! function_exists( 'alnp_load_fallback_content' ) ) {
 	}
 	add_action( 'alnp_load_content', 'alnp_load_fallback_content', 2, 10 );
 }
+
+/**
+ * Adds the plugin version to the header.
+ *
+ * @since *.*.*
+ */
+if ( ! function_exists( 'alnp_meta_version' ) ) {
+	function alnp_meta_version() {
+		echo '<meta name="generator" content="Auto Load Next Post ' . esc_attr( AUTO_LOAD_NEXT_POST_VERSION ) . '" />' . "\n";
+	}
+	add_action( 'wp_head', 'alnp_meta_version' );
+}
