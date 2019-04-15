@@ -49,8 +49,8 @@ if ( ! function_exists( 'auto_load_next_post_template_redirect' ) ) {
 		else if( file_exists( $template_path . 'content-alnp.php') ) {
 			$template_redirect = $template_path . 'content-alnp.php';
 		}
-		else if( file_exists( $default_path . '/template/content-alnp.php' ) ) {
-			$template_redirect = $default_path . '/template/content-alnp.php';
+		else if( file_exists( $default_path . '/templates/content-alnp.php' ) ) {
+			$template_redirect = $default_path . '/templates/content-alnp.php';
 		}
 
 		$template_redirect = apply_filters( 'alnp_template_redirect', $template_redirect );
