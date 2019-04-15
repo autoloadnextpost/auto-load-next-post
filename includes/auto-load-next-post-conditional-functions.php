@@ -67,7 +67,6 @@ if ( ! function_exists( 'is_alnp_pro_version_installed' ) ) {
 	/**
 	 * Detects if Auto Load Next Post Pro is installed.
 	 *
-	 * @access public
 	 * @since  1.4.10
 	 * @return boolean
 	 */
@@ -103,7 +102,7 @@ if ( ! function_exists( 'is_alnp_active_theme' ) ) {
 	 * See if theme/s is activate or not.
 	 *
 	 * @since 1.5.0
-	 * @param string|array $theme Theme name or array of theme names to check.
+	 * @param  string|array $theme Theme name or array of theme names to check.
 	 * @return boolean
 	 */
 	function is_alnp_active_theme( $theme ) {

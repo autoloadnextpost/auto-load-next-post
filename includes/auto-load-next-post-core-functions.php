@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * When the 'alnp' endpoint is used on a singular post it forces
  * the template redirect to retrieve only the post content.
  *
- * @access  public
  * @since   1.0.0
  * @version 1.5.4
  * @global  WP_Query $wp_query - The object information defining the current request and determines what type of query it's dealing with. See https://codex.wordpress.org/Class_Reference/WP_Query
@@ -66,7 +65,6 @@ add_action( 'template_redirect', 'auto_load_next_post_template_redirect' );
 /**
  * Adds the comments template after the post content.
  *
- * @access  public
  * @since   1.4.8
  * @version 1.5.4
  */
@@ -83,7 +81,6 @@ add_action( 'alnp_load_after_content', 'auto_load_next_post_comments', 1, 5 );
 /**
  * Adds the post navigation for the previous link only after the post content.
  *
- * @access  public
  * @since   1.4.8
  * @version 1.5.4
  */
@@ -132,7 +129,7 @@ if ( ! function_exists( 'alnp_get_random_page_permalink' ) ) {
 /**
  * This helps the plugin decide to load the JavaScript in the footer or not.
  * 
- * @since 1.5.7
+ * @since  1.5.7
  * @return boolean
  */
 if ( ! function_exists( 'alnp_load_js_in_footer' ) ) {
