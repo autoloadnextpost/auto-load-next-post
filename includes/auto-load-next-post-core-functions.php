@@ -239,7 +239,7 @@ if ( ! function_exists( 'alnp_load_content' ) ) {
 			locate_template( $load_content, true, false );
 		}
 		else {
-			do_action( 'alnp_load_content', $post_type, $post_format );
+			do_action( 'alnp_load_content', $post_type );
 		}
 	}
 }
@@ -248,10 +248,11 @@ if ( ! function_exists( 'alnp_load_fallback_content' ) ) {
 	/**
 	 * Load fallback should no content file be found.
 	 */
-	function alnp_load_fallback_content( $post_type, $post_format ) {
-		get_template_part( 'template/content' );
+if ( ! function_exists( 'alnp_load_fallback_content' ) ) {
+	function alnp_load_fallback_content( $post_type ) {
+		get_template_part( AUTO_LOAD_NEXT_POST_FILE_PATH . '/templates/content/content', $post_type );
 	}
-	add_action( 'alnp_load_content', 'alnp_load_fallback_content', 2, 10 );
+	add_action( 'alnp_load_content', 'alnp_load_fallback_content', 1, 10 );
 }
 
 /**
