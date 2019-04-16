@@ -5,7 +5,7 @@
  * Description: Increase your pageviews on your site as readers continue reading your posts scrolling down the page.
  * Author:      Sébastien Dumont
  * Author URI:  https://sebastiendumont.com
- * Version:     1.5.11
+ * Version:     1.5.12
  * Text Domain: auto-load-next-post
  * Domain Path: /languages/
  *
@@ -45,7 +45,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @static
 		 * @since  1.5.0
 		 */
-		public static $version = '1.5.11';
+		public static $version = '1.5.12';
 
 		/**
 		 * Main Auto Load Next Post Instance
@@ -122,7 +122,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * Setup Constants
 		 *
 		 * @since   1.4.3
-		 * @version 1.5.10
+		 * @version 1.5.12
 		 * @access  private
 		 */
 		private function setup_constants() {
