@@ -254,3 +254,29 @@ if ( ! function_exists( 'alnp_check_jetpack' ) ) {
 		return $is_active;
 	}
 }
+
+if ( ! function_exists( 'alnp_airplane_mode_enabled' ) ) {
+	/**
+	 * Check the current status of Airplane Mode.
+	 *
+	 * @since  1.6.0
+	 * @return bool True if status is 'on'; false if not.
+	 */
+	function alnp_airplane_mode_enabled() {
+		// Bail if CLI.
+		if ( defined( 'WP_CLI' ) and WP_CLI ) {
+			return false;
+		}
+
+		// Pull our status from the options table.
+		$option = get_site_option( 'airplane-mode' );
+
+		// Backup check for regular options table.
+		if ( false === $option ) {
+			$option = get_option( 'airplane-mode' );
+		}
+
+		// Return the option flag.
+		return 'on' === $option;
+	}
+}
