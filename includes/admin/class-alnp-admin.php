@@ -80,6 +80,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			$screen    = get_current_screen();
 			$screen_id = $screen ? $screen->id : '';
 
+			if ( $screen_id == 'settings_page_auto-load-next-post-settings' ) {
 			Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/css/admin/auto-load-next-post' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
 
 			if ( $screen_id == 'settings_page_auto-load-next-post-settings' ) {
