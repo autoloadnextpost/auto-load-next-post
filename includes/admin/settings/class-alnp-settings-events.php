@@ -56,7 +56,7 @@ if ( ! class_exists( 'ALNP_Settings_Events_Tab' ) ) {
 		 */
 		public function get_settings() {
 			return apply_filters(
-				'auto_load_next_post_event_settings', array(
+				'alnp_event_settings', array(
 
 					array(
 						'title' => $this->label,

@@ -66,7 +66,7 @@ if ( ! class_exists('ALNP_Admin_Settings' ) ) {
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-events.php' );
 				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-misc.php' );
 
-				self::$settings = apply_filters( 'auto_load_next_post_get_settings_pages', $settings );
+				self::$settings = apply_filters( 'alnp_get_settings_pages', $settings );
 			}
 
 			return self::$settings;
@@ -158,7 +158,7 @@ if ( ! class_exists('ALNP_Admin_Settings' ) ) {
 			do_action( 'auto_load_next_post_settings_start' );
 
 			// Get tabs for the settings page.
-			$tabs = apply_filters( 'auto_load_next_post_settings_tabs_array', array() );
+			$tabs = apply_filters( 'alnp_settings_tabs_array', array() );
 
 			// These tabs do not require a settings output.
 			$no_settings_req = array( 'extensions', 'videos' );

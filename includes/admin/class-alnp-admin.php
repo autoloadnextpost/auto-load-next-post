@@ -63,7 +63,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' ); // Plugin Notices
 
 			// Classes we only need if the ajax is not-ajax
-			if ( apply_filters( 'auto_load_next_post_enable_admin_help_tab', true ) ) {
+			if ( apply_filters( 'alnp_enable_admin_help_tab', true ) ) {
 				include( dirname( __FILE__ ) . '/class-alnp-admin-help.php' ); // Plugin Help Tab
 			}
 
@@ -198,7 +198,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			$current_section = empty( $_REQUEST['section'] ) ? '' : sanitize_title( wp_unslash( $_REQUEST['section'] ) );
 
 			// Save settings if data has been posted.
-			if ( apply_filters( '' !== $current_section ? "auto_load_next_post_save_settings_{$current_tab}_{$current_section}" : "auto_load_next_post_save_settings_{$current_tab}", ! empty( $_POST ) ) ) {
+			if ( apply_filters( '' !== $current_section ? "alnp_save_settings_{$current_tab}_{$current_section}" : "alnp_save_settings_{$current_tab}", ! empty( $_POST ) ) ) {
 				ALNP_Admin_Settings::save();
 			}
 

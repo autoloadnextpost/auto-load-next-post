@@ -93,7 +93,7 @@ if ( ! class_exists( 'ALNP_Settings_Misc_Tab' ) ) {
 		 */
 		public function get_settings() {
 			return apply_filters(
-				'auto_load_next_post_misc_settings', array(
+				'alnp_misc_settings', array(
 
 					'title' => array(
 						'title' => $this->label,

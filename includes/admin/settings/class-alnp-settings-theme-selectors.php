@@ -99,7 +99,7 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors_Tab' ) ) {
 			global $blog_id;
 
 			return apply_filters(
-				'auto_load_next_post_theme_selectors_settings', array(
+				'alnp_selectors_settings', array(
 
 					array(
 						'title' => esc_html__( 'Theme Selectors', 'auto-load-next-post' ),

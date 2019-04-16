@@ -219,7 +219,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 			 *
 			 * @param array $sections Customizer sections to add.
 			 */
-			return apply_filters( 'auto_load_next_post_get_customizer_sections', array(
+			return apply_filters( 'alnp_get_customizer_sections', array(
 				'auto_load_next_post_theme_selectors' => array(
 					'capability'  => 'edit_theme_options',
 					'title'       => esc_html__( 'Theme Selectors', 'auto-load-next-post' ),
@@ -252,7 +252,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 			 *
 			 * @param array $settings Customizer settings to add.
 			 */
-			return apply_filters( 'auto_load_next_post_get_customizer_settings', array(
+			return apply_filters( 'alnp_get_customizer_settings', array(
 				'auto_load_next_post_content_container' => array(
 					'capability'        => 'edit_theme_options',
 					'default'           => $settings['alnp_content_container'],
@@ -336,7 +336,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 			 *
 			 * @param array $controls Customizer controls to add.
 			 */
-			return apply_filters( 'auto_load_next_post_get_customizer_controls', array(
+			return apply_filters( 'alnp_get_customizer_controls', array(
 				'alnp_content_container' => array(
 					'class'       => 'WP_Customize_Control',
 					'label'       => esc_html__( 'Content Container', 'auto-load-next-post' ),
