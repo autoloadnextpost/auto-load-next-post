@@ -46,7 +46,7 @@ if ( ! class_exists( 'ALNP_Extensions' ) ) {
 
 			include_once( AUTO_LOAD_NEXT_POST_FILE_PATH . '/vendor/connekt-plugin-installer/class-connekt-plugin-installer.php'); // Plugin Installer
 
-			add_filter( 'auto_load_next_post_settings_tabs_array', array( $this, 'add_extensions_page' ), 99 );
+			add_filter( 'alnp_settings_tabs_array', array( $this, 'add_extensions_page' ), 99 );
 			add_action( 'auto_load_next_post_settings_end', array( $this, 'output' ), 10, 2 );
 		} // END __construct()
 
