@@ -14,9 +14,9 @@ if ( ! defined('ABSPATH') ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
+if ( ! class_exists( 'ALNP_Settings_Page' ) ) {
 
-	abstract class Auto_Load_Next_Post_Settings_Page {
+	abstract class ALNP_Settings_Page {
 
 		/**
 		 * Setting page id.
@@ -157,7 +157,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 		public function output() {
 			$settings = $this->get_settings();
 
-			Auto_Load_Next_Post_Admin_Settings::output_fields( $settings );
+			ALNP_Admin_Settings::output_fields( $settings );
 		} // END output()
 
 		/**
@@ -173,7 +173,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Page' ) ) {
 
 			$settings = $this->get_settings();
 
-			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings );
+			ALNP_Admin_Settings::save_fields( $settings );
 
 			if ( $current_section ) {
 				do_action( 'auto_load_next_post_update_options_' . $this->id . '_' . $current_section );

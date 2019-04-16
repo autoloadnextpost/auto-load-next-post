@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
+if ( ! class_exists('ALNP_Admin_Settings' ) ) {
 
-	class Auto_Load_Next_Post_Admin_Settings {
+	class ALNP_Admin_Settings {
 
 		/**
 		 * Setting pages.
@@ -52,7 +52,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.6.0
 		 * @return  $settings
 		 */
 		public static function get_settings_pages() {
@@ -61,9 +61,10 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 
 				include_once( dirname( __FILE__ ) . '/settings/class-alnp-settings-page.php' );
 
-				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-theme-selectors.php');
-				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-misc.php');
-				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-events.php');
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-theme-selectors.php' );
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-templates.php' );
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-events.php' );
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-misc.php' );
 
 				self::$settings = apply_filters( 'auto_load_next_post_get_settings_pages', $settings );
 			}

@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
+if ( ! class_exists( 'ALNP_Install' ) ) {
 
-	class Auto_Load_Next_Post_Install {
+	class ALNP_Install {
 
 		/**
 		 * Plugin version.
@@ -198,7 +198,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			// Include settings so that we can run through defaults
 			include_once( dirname( __FILE__ ) . '/admin/class-alnp-admin-settings.php' );
 
-			$settings = Auto_Load_Next_Post_Admin_Settings::get_settings_pages();
+			$settings = ALNP_Admin_Settings::get_settings_pages();
 
 			foreach ( $settings as $section ) {
 				foreach ( $section->get_settings() as $value ) {
@@ -282,4 +282,4 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 
 } // END if class exists.
 
-return new Auto_Load_Next_Post_Install();
+return new ALNP_Install();

@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
+if ( !class_exists( 'ALNP_Customizer' ) ) {
 
-	class Auto_Load_Next_Post_Customizer {
+	class ALNP_Customizer {
 
 		/**
 		 * Constructor.
@@ -115,7 +115,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				'type'    => 'theme_mod',
 			) );
 
-			$wp_customize->add_control( new Auto_Load_Next_Post_Display_Video_Controller( $wp_customize, 'alnp_video_theme_selectors', array(
+			$wp_customize->add_control( new ALNP_Display_Video_Controller( $wp_customize, 'alnp_video_theme_selectors', array(
 				'label'    => __( 'Video: How to find your theme selectors', 'auto-load-next-post' ),
 				'section'  => 'auto_load_next_post_theme_selectors',
 				'settings' => 'alnp_video_theme_selectors',
@@ -146,7 +146,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 					'default' => null,
 				) );
 
-				$wp_customize->add_control( new Auto_Load_Next_Post_Pro_Preview_Controller( $wp_customize, 'alnp_pro_preview', array(
+				$wp_customize->add_control( new ALNP_Pro_Preview_Controller( $wp_customize, 'alnp_pro_preview', array(
 					'label'    => __( 'Looking for more options?', 'auto-load-next-post' ),
 					'section'  => 'alnp_pro_preview',
 					'settings' => 'alnp_pro_preview',
@@ -509,4 +509,4 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 
 } // END if class
 
-new Auto_Load_Next_Post_Customizer();
+new ALNP_Customizer();

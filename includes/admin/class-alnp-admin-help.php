@@ -18,9 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
+if ( ! class_exists( 'ALNP_Admin_Help' ) ) {
 
-	class Auto_Load_Next_Post_Admin_Help {
+	class ALNP_Admin_Help {
 
 		/**
 		 * Constructor
@@ -102,8 +102,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 
 		} // END add_help_tabs()
 
-	} // END Auto_Load_Next_Post_Admin_Help class.
+	} // END ALNP_Admin_Help class.
 
 } // END if class exists.
 
-return new Auto_Load_Next_Post_Admin_Help();
+return new ALNP_Admin_Help();

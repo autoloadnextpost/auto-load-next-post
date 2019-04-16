@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
+if ( ! class_exists( 'ALNP_Admin' ) ) {
 
-	class Auto_Load_Next_Post_Admin {
+	class ALNP_Admin {
 
 		/**
 		 * Constructor
@@ -191,7 +191,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 			// Include settings pages.
 			include_once( dirname( __FILE__ ) . '/class-alnp-admin-settings.php' );
 
-			Auto_Load_Next_Post_Admin_Settings::get_settings_pages();
+			ALNP_Admin_Settings::get_settings_pages();
 
 			// Get current tab/section.
 			$current_tab     = empty( $_GET['tab'] ) ? 'theme-selectors' : sanitize_title( wp_unslash( $_GET['tab'] ) );
@@ -199,16 +199,16 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 
 			// Save settings if data has been posted.
 			if ( apply_filters( '' !== $current_section ? "auto_load_next_post_save_settings_{$current_tab}_{$current_section}" : "auto_load_next_post_save_settings_{$current_tab}", ! empty( $_POST ) ) ) {
-				Auto_Load_Next_Post_Admin_Settings::save();
+				ALNP_Admin_Settings::save();
 			}
 
 			// Add any posted messages.
 			if ( ! empty( $_GET['auto_load_next_post_error'] ) ) {
-				Auto_Load_Next_Post_Admin_Settings::add_error( wp_kses_post( wp_unslash( $_GET['auto_load_next_post_error'] ) ) );
+				ALNP_Admin_Settings::add_error( wp_kses_post( wp_unslash( $_GET['auto_load_next_post_error'] ) ) );
 			}
 
 			if ( ! empty( $_GET['auto_load_next_post_message'] ) ) {
-				Auto_Load_Next_Post_Admin_Settings::add_message( wp_kses_post( wp_unslash( $_GET['auto_load_next_post_message'] ) ) );
+				ALNP_Admin_Settings::add_message( wp_kses_post( wp_unslash( $_GET['auto_load_next_post_message'] ) ) );
 			}
 
 			do_action( 'auto_load_next_post_settings_page_init' );
@@ -223,7 +223,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 		public function settings_page() {
 			include_once( dirname( __FILE__ ) . '/class-alnp-admin-settings.php' );
 
-			Auto_Load_Next_Post_Admin_Settings::output();
+			ALNP_Admin_Settings::output();
 		} // END settings_page()
 
 		/**
@@ -367,4 +367,4 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin' ) ) {
 
 } // END if class exists
 
-return new Auto_Load_Next_Post_Admin();
+return new ALNP_Admin();

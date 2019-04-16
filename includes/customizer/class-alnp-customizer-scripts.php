@@ -14,10 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Exit if Auto_Load_Next_Post_Customizer_Scripts class already exists.
-if ( !class_exists( 'Auto_Load_Next_Post_Customizer_Scripts' ) ) {
+// Exit if ALNP_Customizer_Scripts class already exists.
+if ( !class_exists( 'ALNP_Customizer_Scripts' ) ) {
 
-	class Auto_Load_Next_Post_Customizer_Scripts {
+	class ALNP_Customizer_Scripts {
 
 		/**
 		 * Constructor.
@@ -81,4 +81,4 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer_Scripts' ) ) {
 
 } // END if class exists.
 
-new Auto_Load_Next_Post_Customizer_Scripts();
+new ALNP_Customizer_Scripts();

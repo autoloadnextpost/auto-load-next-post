@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Theme_Selectors_Tab' ) ) {
+if ( ! class_exists( 'ALNP_Settings_Theme_Selectors_Tab' ) ) {
 
-	class Auto_Load_Next_Post_Settings_Theme_Selectors_Tab extends Auto_Load_Next_Post_Settings_Page {
+	class ALNP_Settings_Theme_Selectors_Tab extends ALNP_Settings_Page {
 
 		/**
 		 * Constructor.
@@ -165,7 +165,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Theme_Selectors_Tab' ) ) {
 		public function output() {
 			$settings = $this->get_settings();
 
-			Auto_Load_Next_Post_Admin_Settings::output_fields( $settings );
+			ALNP_Admin_Settings::output_fields( $settings );
 		} // END output()
 
 		/**
@@ -178,11 +178,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Theme_Selectors_Tab' ) ) {
 		public function save() {
 			$settings = $this->get_settings();
 
-			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings );
+			ALNP_Admin_Settings::save_fields( $settings );
 		} // END save()
 
 	} // END class
 
 } // END if class exists
 
-return new Auto_Load_Next_Post_Settings_Theme_Selectors_Tab();
+return new ALNP_Settings_Theme_Selectors_Tab();

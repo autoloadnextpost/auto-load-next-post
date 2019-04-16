@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
+if ( ! class_exists( 'ALNP_Admin_Notices' ) ) {
 
-	class Auto_Load_Next_Post_Admin_Notices {
+	class ALNP_Admin_Notices {
 
 		/**
 		 * Activation date.
@@ -244,4 +244,4 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 
 } // END if class exists.
 
-return new Auto_Load_Next_Post_Admin_Notices();
+return new ALNP_Admin_Notices();

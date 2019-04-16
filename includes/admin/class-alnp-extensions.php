@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Extensions' ) ) {
+if ( ! class_exists( 'ALNP_Extensions' ) ) {
 
-	class Auto_Load_Next_Post_Extensions {
+	class ALNP_Extensions {
 
 		/**
 		 * Extensions Var
@@ -101,4 +101,4 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Extensions' ) ) {
 
 } // END if class
 
-return new Auto_Load_Next_Post_Extensions();
+return new ALNP_Extensions();
