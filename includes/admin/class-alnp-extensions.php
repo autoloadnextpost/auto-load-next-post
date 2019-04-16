@@ -92,7 +92,8 @@ if ( ! class_exists( 'ALNP_Extensions' ) ) {
 			</div>
 
 			<?php
-			if ( class_exists( 'Connekt_Plugin_Installer' ) ) {
+			// Load the class if it exists and Airplane Mode is disabled.
+			if ( class_exists( 'Connekt_Plugin_Installer' ) && ! alnp_airplane_mode_enabled() ) {
 				Connekt_Plugin_Installer::init( self::$extensions );
 			}
 		} // END output()
