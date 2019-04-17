@@ -167,8 +167,23 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 * @version 1.4.10
 		 */
 		public function admin_menu() {
+			$current_tab = ! empty( $_GET['tab'] ) ? sanitize_title( wp_unslash( $_GET['tab'] ) ) : '';
+			$title = '';
+
+			switch( $current_tab ) {
+				case 'getting-started':
+					$title = sprintf( esc_attr__( 'Getting Started with %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) );
+					break;
+				case 'extensions':
+					$title = sprintf( esc_attr__( '%s | Extensions', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) );
+					break;
+				default:
+					$title = sprintf( esc_attr__( '%s Settings', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) );
+					break;
+			}
+
 			$settings_page = add_options_page(
-				sprintf( __( '%s Settings', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+				$title,
 				esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ),
 				'manage_options',
 				'auto-load-next-post',
