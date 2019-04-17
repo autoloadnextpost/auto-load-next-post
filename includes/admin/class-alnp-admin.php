@@ -232,7 +232,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.4.10
+		 * @version 1.6.0
 		 * @param   array $links
 		 * @return  array $links
 		 */
@@ -240,12 +240,8 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			$plugin_action_links = array();
 
 			if ( current_user_can( 'manage_options' ) ) {
-				// Checks if Auto Load Next Post Pro has been installed.
-				if ( ! is_alnp_pro_version_installed() ) {
-					$plugin_action_links['go-pro'] = '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'pro/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" aria-label="' . esc_attr__( 'Sign up for Auto Load Next Post Pro', 'auto-load-next-post' ) . '" target="_blank" style="color:green; font-weight:bold;">' . __( 'Sign up for Pro', 'auto-load-next-post' ) . '</a>';
-				}
-
-				$plugin_action_links['settings'] = '<a href="' . admin_url( 'options-general.php?page=auto-load-next-post' ) . '" aria-label="' . esc_attr__( 'View Auto Load Next Post settings', 'auto-load-next-post' ) . '">' . __( 'Settings', 'auto-load-next-post' ) . '</a>';
+				$plugin_action_links['getting-started'] = '<a href="' . admin_url( 'options-general.php?page=auto-load-next-post&tab=getting-started' ) . '" aria-label="' . sprintf( esc_attr__( 'Getting Started with %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '">' . esc_attr__( 'Getting Started', 'auto-load-next-post' ) . '</a>';
+				$plugin_action_links['settings'] = '<a href="' . admin_url( 'options-general.php?page=auto-load-next-post' ) . '" aria-label="' . sprintf( esc_attr__( 'View %s settings', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '">' . esc_attr__( 'Settings', 'auto-load-next-post' ) . '</a>';
 
 				return array_merge( $plugin_action_links, $links );
 			}
@@ -258,7 +254,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.7
+		 * @version 1.6.0
 		 * @param   array  $links Plugin Row Meta
 		 * @param   string $file  Plugin Base file
 		 * @param   array  $data  Plugin Information
@@ -269,12 +265,17 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 				$links[ 1 ] = sprintf( __( 'Developed By %s', 'auto-load-next-post' ), '<a href="' . $data[ 'AuthorURI' ] . '" aria-label="' . esc_attr__( 'View the developers site', 'auto-load-next-post' ) . '">' . $data[ 'Author' ] . '</a>' );
 
 				$row_meta = array(
-					'docs' => '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'documentation/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" aria-label="' . esc_attr__( 'View Auto Load Next Post documentation', 'auto-load-next-post' ) . '" target="_blank">' . esc_attr__( 'Documentation', 'auto-load-next-post' ) . '</a>',
+					'docs' => '<a href="' . esc_url( 'https://github.com/autoloadnextpost/alnp-documentation/tree/master/en_US#the-manual' ) . '" aria-label="' . sprintf( esc_attr__( 'View %s documentation', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '" target="_blank">' . esc_attr__( 'Documentation', 'auto-load-next-post' ) . '</a>',
 					'community' => '<a href="' . esc_url( 'https://wordpress.org/support/plugin/auto-load-next-post' ) . '" aria-label="' . esc_attr__( 'Get support from the community', 'auto-load-next-post' ). '" target="_blank">' . esc_attr__( 'Community Support', 'auto-load-next-post' ) . '</a>',
 					'theme-support' => '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'product/theme-support/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" attr-label="' . esc_attr__( 'Get theme support', 'auto-load-next-post' ) . '" target="_blank">' . esc_attr__( 'Theme Support', 'auto-load-next-post' ) . '</a>',
-					'review' => '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_REVIEW_URL ) . '" aria-label="' . esc_attr( __( 'Review Auto Load Next Post on WordPress.org', 'auto-load-next-post' ) ) . '" target="_blank">' . __( 'Leave a Review', 'auto-load-next-post' ) . '</a>',
+					'review' => '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_REVIEW_URL ) . '" aria-label="' . sprintf( esc_attr__( 'Review %s on WordPress.org', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '" target="_blank">' . esc_attr__( 'Leave a Review', 'auto-load-next-post' ) . '</a>',
 				);
 
+				// Checks if Auto Load Next Post Pro has been installed.
+				if ( ! is_alnp_pro_version_installed() ) {
+					$row_meta['pro'] = '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'pro/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" aria-label="' . sprintf( esc_attr__( 'Sign up for %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ) ) . '" target="_blank" style="color:green; font-weight:bold;">' . esc_attr__( 'Pro Coming Soon', 'auto-load-next-post' ) . '</a>';
+				}
+				
 				$links = array_merge( $links, $row_meta );
 			}
 
