@@ -40,10 +40,6 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			// Add settings page.
 			add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
 
-			// Filters admin footer.
-			add_filter( 'admin_footer_text', array( $this, 'admin_footer_text' ), 15, 1 );
-			add_filter( 'update_footer', array( $this, 'update_footer'), 15 );
-
 			// Add sidebar
 			add_action( 'auto_load_next_post_sidebar', array( $this, 'sidebar_top' ), 0 );
 			add_action( 'auto_load_next_post_sidebar', array( $this, 'upgrade_details' ), 1 );
@@ -67,6 +63,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			}
 
 			include_once( dirname( __FILE__ ) . '/class-alnp-extensions.php'); // Extensions.
+			include( dirname( __FILE__ ) . '/class-alnp-admin-footer.php' ); // Admin Footer
 		} // END includes()
 
 		/**
@@ -240,52 +237,6 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 
 			ALNP_Admin_Settings::output();
 		} // END settings_page()
-
-		/**
-		 * Filters the admin footer text by placing simply thank you to those who
-		 * like and review the plugin on WordPress.org.
-		 *
-		 * @access  public
-		 * @since   1.0.0
-		 * @version 1.5.7
-		 * @param   string $text text to be rendered in the footer.
-		 * @return  string $text
-		 */
-		public function admin_footer_text( $text ) {
-			$current_screen = get_current_screen();
-
-			if ( $screen_id == 'settings_page_auto-load-next-post' ) {
-				// Rating and Review
-				$text = sprintf(
-					/* translators: 1: Auto Load Next Post 2:: five stars */
-					__( 'If you like %1$s, please leave a %2$s rating. A huge thank you in advance!', 'auto-load-next-post' ),
-					sprintf( '<strong>%1$s</strong>', esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
-					'<a href="' . AUTO_LOAD_NEXT_POST_REVIEW_URL . '?rate=5#new-post" target="_blank" aria-label="' . esc_attr__( 'five star', 'auto-load-next-post' ) . '" data-rated="' . esc_attr__( 'Thanks :)', 'auto-load-next-post' ) . '">&#9733;&#9733;&#9733;&#9733;&#9733;</a>'
-				);
-			}
-
-			return $text;
-		} // END admin_footer_text()
-
-		/**
-		 * Filters the update footer by placing the version of the plugin
-		 * when viewing any of the plugins pages.
-		 *
-		 * @access  public
-		 * @since   1.0.0
-		 * @version 1.5.7
-		 * @param   string $text
-		 * @return  string $text
-		 */
-		public function update_footer( $text ) {
-			$screen = get_current_screen();
-
-			if ( $screen_id == 'settings_page_auto-load-next-post' ) {
-				return sprintf( __( '%s Version', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . ' ' . esc_attr( AUTO_LOAD_NEXT_POST_VERSION );
-			}
-
-			return $text;
-		} // END update_footer()
 
 		/**
 		 * Displays the top of the sidebar.
