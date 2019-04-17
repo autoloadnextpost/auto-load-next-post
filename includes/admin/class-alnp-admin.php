@@ -80,7 +80,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			$screen    = get_current_screen();
 			$screen_id = $screen ? $screen->id : '';
 
-			if ( $screen_id == 'settings_page_auto-load-next-post-settings' ) {
+			if ( $screen_id == 'settings_page_auto-load-next-post' ) {
 			Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/css/admin/auto-load-next-post' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
 
 			if ( $screen_id == 'settings_page_auto-load-next-post-settings' ) {
@@ -105,7 +105,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			$screen    = get_current_screen();
 			$screen_id = $screen ? $screen->id : '';
 
-			if ( $screen->id == 'settings_page_auto-load-next-post-settings' ) {
+			if ( $screen_id == 'settings_page_auto-load-next-post' ) {
 				// Select2 - Make sure that we remove other registered Select2 to prevent plugin conflict issues.
 				if ( wp_script_is( 'select2', 'registered' ) ) {
 					wp_dequeue_script( 'select2' );
@@ -295,7 +295,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		public function admin_footer_text( $text ) {
 			$current_screen = get_current_screen();
 
-			if ( isset( $current_screen->id ) && $current_screen->id == 'settings_page_auto-load-next-post-settings' ) {
+			if ( $screen_id == 'settings_page_auto-load-next-post' ) {
 				// Rating and Review
 				$text = sprintf(
 					/* translators: 1: Auto Load Next Post 2:: five stars */
@@ -321,7 +321,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		public function update_footer( $text ) {
 			$screen = get_current_screen();
 
-			if ( $screen->id == 'settings_page_auto-load-next-post-settings' ) {
+			if ( $screen_id == 'settings_page_auto-load-next-post' ) {
 				return sprintf( __( '%s Version', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . ' ' . esc_attr( AUTO_LOAD_NEXT_POST_VERSION );
 			}
 

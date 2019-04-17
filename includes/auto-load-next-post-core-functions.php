@@ -148,8 +148,9 @@ if ( ! function_exists( 'alnp_load_js_in_footer' ) ) {
  * These are the only screens Auto Load Next Post will focus 
  * on displaying notices or equeue scripts/styles.
  *
- * @since  1.5.11
- * @return array
+ * @since   1.5.11
+ * @version 1.6.0
+ * @return  array
  */
 if ( ! function_exists( 'alnp_get_admin_screens' ) ) {
 	function alnp_get_admin_screens() {
@@ -157,7 +158,7 @@ if ( ! function_exists( 'alnp_get_admin_screens' ) ) {
 			'dashboard',
 			'plugins',
 			'themes',
-			'settings_page_auto-load-next-post-settings'
+			'settings_page_auto-load-next-post'
 		);
 	}
 }

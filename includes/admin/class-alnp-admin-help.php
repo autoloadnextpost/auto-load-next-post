@@ -42,7 +42,7 @@ if ( ! class_exists( 'ALNP_Admin_Help' ) ) {
 		public function add_help_tabs() {
 			$screen = get_current_screen();
 
-			if (	$screen->id != 'settings_page_auto-load-next-post-settings') {
+			if ( $screen->id != 'settings_page_auto-load-next-post' ) {
 				return;
 			}
 
