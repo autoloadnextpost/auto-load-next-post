@@ -142,7 +142,13 @@ if ( ! class_exists( 'ALNP_Settings_Page' ) ) {
 			$array_keys = array_keys( $sections );
 
 			foreach ( $sections as $id => $label ) {
-				echo '<li><a href="' . admin_url( 'options-general.php?page=auto-load-next-post-settings&tab=' . $this->id . '&section=' . sanitize_title( $id ) ) . '" class="' . ( $current_section == $id ? 'current' : '' ) . '">' . $label . '</a> ' . ( end( $array_keys ) == $id ? '' : '|' ) . ' </li>';
+				$url = add_query_arg( array(
+					'page'    => 'auto-load-next-post',
+					'tab'     => $this->id,
+					'section' => sanitize_title( $id ),
+				), admin_url( 'options-general.php' ) );
+
+				echo '<li><a href="' . $url . '" class="' . ( $current_section == $id ? 'current' : '' ) . '">' . $label . '</a> ' . ( end( $array_keys ) == $id ? '' : '|' ) . ' </li>';
 			}
 
 			echo '</ul><br class="clear" />';
