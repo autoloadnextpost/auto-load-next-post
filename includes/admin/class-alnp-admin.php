@@ -99,7 +99,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.11
+		 * @version 1.6.0
 		 */
 		public function admin_scripts() {
 			$screen    = get_current_screen();
@@ -131,8 +131,8 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 * Add a message in the WP Privacy Policy Guide page.
 		 *
 		 * @access public
-		 * @since  1.5.0
 		 * @static
+		 * @since  1.5.0
 		 */
 		public static function add_privacy_policy_guide_content() {
 			if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
@@ -144,8 +144,8 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 * Message to add in the WP Privacy Policy Guide page.
 		 *
 		 * @access protected
-		 * @since  1.5.0
 		 * @static
+		 * @since  1.5.0
 		 * @return string
 		 */
 		protected static function get_privacy_policy_guide_message() {
@@ -164,7 +164,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.4.10
+		 * @version 1.6.0
 		 */
 		public function admin_menu() {
 			$current_tab = ! empty( $_GET['tab'] ) ? sanitize_title( wp_unslash( $_GET['tab'] ) ) : '';
