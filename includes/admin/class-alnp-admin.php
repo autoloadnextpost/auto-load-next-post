@@ -30,13 +30,6 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			// Include classes.
 			self::includes();
 
-			// Register scripts and styles for settings page.
-			add_action( 'admin_enqueue_scripts', array( $this, 'admin_styles' ), 10 );
-			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ), 10 );
-
-			// Add a message in the WP Privacy Policy Guide page.
-			add_action( 'admin_init', array( $this, 'add_privacy_policy_guide_content' ) );
-
 			// Add settings page.
 			add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
 		} // END __construct()
@@ -49,107 +42,21 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 * @version 1.6.0
 		 */
 		public function includes() {
-			include( dirname( __FILE__ ) . '/class-alnp-action-links.php' ); // Action Links
-			include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' ); // Plugin Notices
+			include( dirname( __FILE__ ) . '/class-alnp-action-links.php' );        // Action Links
+			include( dirname( __FILE__ ) . '/class-alnp-admin-assets.php' );        // Admin Assets
+			include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' );       // Plugin Notices
 
-			// Classes we only need if the ajax is not-ajax
 			if ( apply_filters( 'alnp_enable_admin_help_tab', true ) ) {
-				include( dirname( __FILE__ ) . '/class-alnp-admin-help.php' ); // Plugin Help Tab
+				include( dirname( __FILE__ ) . '/class-alnp-admin-help.php' );      // Plugin Help Tab
 			}
 
-			include_once( dirname( __FILE__ ) . '/class-alnp-extensions.php'); // Extensions.
-			include( dirname( __FILE__ ) . '/class-alnp-sidebar.php' ); // Sidebar
-			include( dirname( __FILE__ ) . '/class-alnp-admin-footer.php' ); // Admin Footer
+			include_once( dirname( __FILE__ ) . '/class-alnp-getting-started.php'); // Getting Started.
+			include_once( dirname( __FILE__ ) . '/class-alnp-extensions.php');      // Extensions.
+
+			include( dirname( __FILE__ ) . '/class-alnp-sidebar.php' );             // Sidebar
+			include( dirname( __FILE__ ) . '/class-alnp-admin-footer.php' );        // Admin Footer
+			include( dirname( __FILE__ ) . '/class-alnp-privacy.php' );             // Plugin Privacy
 		} // END includes()
-
-		/**
-		 * Register and enqueue stylesheets.
-		 *
-		 * @access public
-		 * @since  1.5.0
-		 */
-		public function admin_styles() {
-			$screen    = get_current_screen();
-			$screen_id = $screen ? $screen->id : '';
-
-			if ( $screen_id == 'settings_page_auto-load-next-post' ) {
-			Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/css/admin/auto-load-next-post' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
-
-			if ( $screen_id == 'settings_page_auto-load-next-post-settings' ) {
-				// Select2 - Make sure that we remove other registered Select2 to prevent styling issues.
-				if ( wp_script_is( 'select2', 'registered' ) ) {
-					wp_dequeue_style( 'select2' );
-					wp_deregister_style( 'select2' );
-				}
-
-				Auto_Load_Next_Post::load_file( 'select2', '/assets/css/libs/select2' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
-			}
-		} // END admin_styles()
-
-		/**
-		 * Registers and enqueue JavaScript for Auto Load Next Post settings page.
-		 *
-		 * @access  public
-		 * @since   1.0.0
-		 * @version 1.6.0
-		 */
-		public function admin_scripts() {
-			$screen    = get_current_screen();
-			$screen_id = $screen ? $screen->id : '';
-
-			if ( $screen_id == 'settings_page_auto-load-next-post' ) {
-				// Select2 - Make sure that we remove other registered Select2 to prevent plugin conflict issues.
-				if ( wp_script_is( 'select2', 'registered' ) ) {
-					wp_dequeue_script( 'select2' );
-					wp_deregister_script( 'select2' );
-				}
-
-				// Load Select2
-				Auto_Load_Next_Post::load_file( 'select2', '/assets/js/libs/select2' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( 'jquery' ), '4.0.5', true );
-
-				// Load plugin settings.
-				Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/js/admin/settings' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( 'jquery' ), AUTO_LOAD_NEXT_POST_VERSION, true );
-
-				// Variables for Admin JavaScript.
-				wp_localize_script( AUTO_LOAD_NEXT_POST_SLUG . '_admin', 'alnp_settings_params', array(
-					'is_rtl'             => is_rtl() ? 'rtl' : 'ltr',
-					'i18n_nav_warning'   => esc_html__( 'The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post' ),
-					'i18n_reset_warning' => sprintf( esc_html__( 'This will reset all settings back to default and re-initialize %s. Are you sure?', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
-				) );
-			}
-		} // END admin_scripts()
-
-		/**
-		 * Add a message in the WP Privacy Policy Guide page.
-		 *
-		 * @access public
-		 * @static
-		 * @since  1.5.0
-		 */
-		public static function add_privacy_policy_guide_content() {
-			if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
-				wp_add_privacy_policy_content( esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), self::get_privacy_policy_guide_message() );
-			}
-		} // END add_privacy_policy_guide_content()
-
-		/**
-		 * Message to add in the WP Privacy Policy Guide page.
-		 *
-		 * @access protected
-		 * @static
-		 * @since  1.5.0
-		 * @return string
-		 */
-		protected static function get_privacy_policy_guide_message() {
-			$content = '
-				<div contenteditable="false">' .
-					'<p class="wp-policy-help">' .
-						sprintf( __( '%s does not collect, store or share any personal data.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) .
-					'</p>' .
-				'</div>';
-
-			return $content;
-		} // END get_privacy_policy_guide_message()
 
 		/**
 		 * Add Auto Load Next Post to the settings menu.
