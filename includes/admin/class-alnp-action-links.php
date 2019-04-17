@@ -4,8 +4,7 @@
  *
  * Adds links to Auto Load Next Post on the plugins page.
  *
- * @since    1.0.0
- * @version  1.6.0
+ * @since    1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin
@@ -24,9 +23,7 @@ if ( ! class_exists( 'ALNP_Action_Links' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @access  public
-		 * @since   1.0.0
-		 * @version 1.6.0
+		 * @access public
 		 */
 		public function __construct() {
 			add_filter( 'plugin_action_links_' . plugin_basename( AUTO_LOAD_NEXT_POST_FILE ), array( $this, 'plugin_action_links' ) );
@@ -36,11 +33,9 @@ if ( ! class_exists( 'ALNP_Action_Links' ) ) {
 		/**
 		 * Plugin action links.
 		 *
-		 * @access  public
-		 * @since   1.0.0
-		 * @version 1.6.0
-		 * @param   array $links An array of plugin links.
-		 * @return  array $links
+		 * @access public
+		 * @param  array $links An array of plugin links.
+		 * @return array $links
 		 */
 		public function plugin_action_links( $links ) {
 			if ( current_user_can( 'manage_options' ) ) {
@@ -58,13 +53,11 @@ if ( ! class_exists( 'ALNP_Action_Links' ) ) {
 		/**
 		 * Plugin row meta links
 		 *
-		 * @access  public
-		 * @since   1.0.0
-		 * @version 1.6.0
-		 * @param   array  $metadata An array of the plugin's metadata.
-		 * @param   string $file     Path to the plugin file.
-		 * @param   array  $data     Plugin Information
-		 * @return  array  $metadata
+		 * @access public
+		 * @param  array  $metadata An array of the plugin's metadata.
+		 * @param  string $file     Path to the plugin file.
+		 * @param  array  $data     Plugin Information
+		 * @return array  $metadata
 		 */
 		public function plugin_row_meta( $metadata, $file, $data ) {
 			if ( $file == plugin_basename( AUTO_LOAD_NEXT_POST_FILE ) ) {
