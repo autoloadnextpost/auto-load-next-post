@@ -39,11 +39,6 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 
 			// Add settings page.
 			add_action( 'admin_menu', array( $this, 'admin_menu' ), 9 );
-
-			// Add sidebar
-			add_action( 'auto_load_next_post_sidebar', array( $this, 'sidebar_top' ), 0 );
-			add_action( 'auto_load_next_post_sidebar', array( $this, 'upgrade_details' ), 1 );
-			add_action( 'auto_load_next_post_sidebar', array( $this, 'sidebar_bottom' ), 999 );
 		} // END __construct()
 
 		/**
@@ -63,6 +58,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			}
 
 			include_once( dirname( __FILE__ ) . '/class-alnp-extensions.php'); // Extensions.
+			include( dirname( __FILE__ ) . '/class-alnp-sidebar.php' ); // Sidebar
 			include( dirname( __FILE__ ) . '/class-alnp-admin-footer.php' ); // Admin Footer
 		} // END includes()
 
@@ -237,43 +233,6 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 
 			ALNP_Admin_Settings::output();
 		} // END settings_page()
-
-		/**
-		 * Displays the top of the sidebar.
-		 * 
-		 * @access public
-		 * @since  1.6.0
-		 */
-		public function sidebar_top() {
-			include_once( dirname( __FILE__ ) . '/views/html-admin-sidebar-logo.php' );
-
-			do_action( 'auto_load_next_post_sidebar_top' );
-		} // END sidebar_top()
-
-		/**
-		 * Checks if Auto Load Next Post Pro is installed before 
-		 * displaying upgrade details in the sidebar.
-		 *
-		 * @access public
-		 * @since  1.6.0
-		 */
-		public function upgrade_details() {
-			if ( ! is_alnp_pro_version_installed() ) {
-				include_once( dirname( __FILE__ ) . '/views/html-admin-sidebar.php' );
-			}
-		} // END upgrade_details()
-
-		/**
-		 * Displays plugin credits at the bottom of the sidebar.
-		 * 
-		 * @access public
-		 * @since  1.6.0
-		 */
-		public function sidebar_bottom() {
-			do_action( 'auto_load_next_post_sidebar_bottom' );
-
-			include_once( dirname( __FILE__ ) . '/views/html-admin-sidebar-credits.php' );
-		} // END sidebar_bottom()
 
 	} // END class
 
