@@ -23,7 +23,7 @@ $tab_exists        = isset( $tabs[ $current_tab ] ) || has_action( 'auto_load_ne
 $current_tab_label = isset( $tabs[ $current_tab ] ) ? $tabs[ $current_tab ] : '';
 
 if ( ! $tab_exists ) {
-	wp_safe_redirect( admin_url( 'options-general.php?page=auto-load-next-post-settings' ) );
+	wp_safe_redirect( admin_url( 'options-general.php?page=auto-load-next-post' ) );
 	exit;
 }
 ?>
@@ -33,7 +33,7 @@ if ( ! $tab_exists ) {
 			<?php
 				foreach ( $tabs as $slug => $label ) {
 					$url = add_query_arg( array(
-						'page' => 'auto-load-next-post-settings',
+						'page' => 'auto-load-next-post',
 						'tab'  => esc_attr( $slug ),
 					), admin_url( 'options-general.php' ) );
 

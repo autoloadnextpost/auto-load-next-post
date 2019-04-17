@@ -171,7 +171,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 				sprintf( __( '%s Settings', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 				esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ),
 				'manage_options',
-				'auto-load-next-post-settings',
+				'auto-load-next-post',
 				array( $this, 'settings_page' )
 			);
 
@@ -245,7 +245,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 					$plugin_action_links['go-pro'] = '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'pro/?utm_source=plugin&utm_medium=link&utm_campaign=plugins-page' ) . '" aria-label="' . esc_attr__( 'Sign up for Auto Load Next Post Pro', 'auto-load-next-post' ) . '" target="_blank" style="color:green; font-weight:bold;">' . __( 'Sign up for Pro', 'auto-load-next-post' ) . '</a>';
 				}
 
-				$plugin_action_links['settings'] = '<a href="' . admin_url( 'options-general.php?page=auto-load-next-post-settings' ) . '" aria-label="' . esc_attr__( 'View Auto Load Next Post settings', 'auto-load-next-post' ) . '">' . __( 'Settings', 'auto-load-next-post' ) . '</a>';
+				$plugin_action_links['settings'] = '<a href="' . admin_url( 'options-general.php?page=auto-load-next-post' ) . '" aria-label="' . esc_attr__( 'View Auto Load Next Post settings', 'auto-load-next-post' ) . '">' . __( 'Settings', 'auto-load-next-post' ) . '</a>';
 
 				return array_merge( $plugin_action_links, $links );
 			}
