@@ -145,7 +145,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
 			$this->define('AUTO_LOAD_NEXT_POST_STORE_URL', 'https://autoloadnextpost.com/');
 			$this->define('AUTO_LOAD_NEXT_POST_SUPPORT_URL', 'https://wordpress.org/support/plugin/auto-load-next-post');
-			$this->define('AUTO_LOAD_NEXT_POST_REVIEW_URL', 'https://wordpress.org/support/plugin/auto-load-next-post/reviews/?rate=5#new-post');
+			$this->define('AUTO_LOAD_NEXT_POST_REVIEW_URL', 'https://wordpress.org/support/plugin/auto-load-next-post/reviews/');
 		} // END setup_constants()
 
 		/**
