@@ -196,8 +196,9 @@ if ( ! function_exists( 'alnp_get_locations' ) ) {
 if ( ! function_exists( 'alnp_get_templates' ) ) {
 	function alnp_get_templates( $post_type, $post_format ) {
 		return array(
-			alnp_template_location() . 'content-' . $post_type . '.php',
 			alnp_template_location() . 'content-single.php',
+			alnp_template_location() . 'content-post.php',
+			alnp_template_location() . 'content-' . $post_type . '.php',
 			alnp_template_location() . 'content.php',
 			alnp_template_location() . 'format-' . $post_format . '.php',
 			alnp_template_location() . 'content' . $post_format . '.php'
