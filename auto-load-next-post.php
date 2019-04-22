@@ -144,8 +144,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			$this->define('AUTO_LOAD_NEXT_POST_DEBUG_MODE', $debug_suffix);
 
 			$this->define('AUTO_LOAD_NEXT_POST_STORE_URL', 'https://autoloadnextpost.com/');
+			$this->define('AUTO_LOAD_NEXT_POST_PLUGIN_URL', 'https://wordpress.org/plugins/auto-load-next-post/');
 			$this->define('AUTO_LOAD_NEXT_POST_SUPPORT_URL', 'https://wordpress.org/support/plugin/auto-load-next-post');
 			$this->define('AUTO_LOAD_NEXT_POST_REVIEW_URL', 'https://wordpress.org/support/plugin/auto-load-next-post/reviews/');
+			$this->define('AUTO_LOAD_NEXT_POST_DOCUMENTATION_URL', 'https://github.com/autoloadnextpost/alnp-documentation/tree/master/en_US#the-manual');
 		} // END setup_constants()
 
 		/**
