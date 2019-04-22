@@ -13,7 +13,7 @@
  * @author  Sébastien Dumont
  * @package Auto Load Next Post/Templates
  * @license GPL-2.0+
- * @version 1.5.0
+ * @version 1.5.12
  */
 
 if ( have_posts() ) :
@@ -44,6 +44,9 @@ if ( have_posts() ) :
 			 */
 			if ( locate_template( alnp_template_location() . 'content-' . $post_type . '.php') != '' ) {
 				get_template_part( alnp_template_location() . 'content', $post_type );
+			} else if ( locate_template( alnp_template_location() . 'content-post.php') != '' ) {
+				// If not looking for other post types and content-post.php is found.
+				get_template_part( alnp_template_location() . 'content', 'post' );
 			} else {
 				// If no specific post type found then fallback to standard content.php file.
 				get_template_part( alnp_template_location() . 'content' );
