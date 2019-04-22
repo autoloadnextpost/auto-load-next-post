@@ -379,6 +379,16 @@ body.settings_page_auto-load-next-post-settings #wpfooter {
   position: fixed;
 }
 
+/* Help Section */
+h3.alnp-default-theme-selectors {
+  font-size: 1.2em;
+}
+
+ul.alnp-default-theme-selectors li {
+  list-style-type: none;
+  margin-left: 0;
+}
+
 /* Help Button */
 .need-help {
   background: #fff;
