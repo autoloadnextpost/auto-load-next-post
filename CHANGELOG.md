@@ -6,7 +6,15 @@
 3. Lists must have one space above after heading
 -->
 
-# 1.5.11 - 10th April 2019
+# 1.5.12 - 23rd April 2019
+
+* Tweaked: Repeater template now looks for `content-post.php` should `content-single.php` not exist before fallback to `content.php`.
+* Tweaked: Help tab copy and links on the plugin settings page.
+* Tweaked: Need help button now opens the help panel for the settings in view if one exists.
+* Updated: Review link.
+* Updated: POT file for translations.
+
+## 1.5.11 - 10th April 2019
 
 * NEW: Excluded JS files from defer for the [WP Rocket](https://wp-rocket.me) plugin.
 * Dev Feature: Reset button added to the Misc settings to allow users to remove all settings and re-initialize the plugin.
