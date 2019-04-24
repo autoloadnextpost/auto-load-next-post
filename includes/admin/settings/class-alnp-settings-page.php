@@ -144,7 +144,7 @@ if ( ! class_exists( 'ALNP_Settings_Page' ) ) {
 			foreach ( $sections as $id => $label ) {
 				$url = add_query_arg( array(
 					'page'    => 'auto-load-next-post',
-					'tab'     => $this->id,
+					'view'    => $this->id,
 					'section' => sanitize_title( $id ),
 				), admin_url( 'options-general.php' ) );
 

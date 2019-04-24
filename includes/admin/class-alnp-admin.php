@@ -66,10 +66,10 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 * @version 1.6.0
 		 */
 		public function admin_menu() {
-			$current_tab = ! empty( $_GET['tab'] ) ? sanitize_title( wp_unslash( $_GET['tab'] ) ) : '';
+			$current_view = ! empty( $_GET['view'] ) ? sanitize_title( wp_unslash( $_GET['view'] ) ) : '';
 			$title = '';
 
-			switch( $current_tab ) {
+			switch( $current_view ) {
 				case 'getting-started':
 					$title = sprintf( esc_attr__( 'Getting Started with %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) );
 					break;
@@ -95,10 +95,11 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		/**
 		 * Loads settings.
 		 *
-		 * @access public
-		 * @since  1.0.0
-		 * @global string $current_tab
-		 * @global string $current_section
+		 * @access  public
+		 * @since   1.0.0
+		 * @version 1.6.0
+		 * @global  string $current_tab
+		 * @global  string $current_section
 		 */
 		public function settings_page_init() {
 			global $current_tab, $current_section;
@@ -108,8 +109,8 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 
 			ALNP_Admin_Settings::get_settings_pages();
 
-			// Get current tab/section.
-			$current_tab     = empty( $_GET['tab'] ) ? 'theme-selectors' : sanitize_title( wp_unslash( $_GET['tab'] ) );
+			// Get current view/section.
+			$current_tab     = empty( $_GET['view'] ) ? 'theme-selectors' : sanitize_title( wp_unslash( $_GET['view'] ) );
 			$current_section = empty( $_REQUEST['section'] ) ? '' : sanitize_title( wp_unslash( $_REQUEST['section'] ) );
 
 			// Save settings if data has been posted.

@@ -34,7 +34,7 @@ if ( ! $tab_exists ) {
 				foreach ( $tabs as $slug => $label ) {
 					$url = add_query_arg( array(
 						'page' => 'auto-load-next-post',
-						'tab'  => esc_attr( $slug ),
+						'view' => esc_attr( $slug ),
 					), admin_url( 'options-general.php' ) );
 
 					echo '<a href="' . esc_html( $url ) . '" class="nav-tab ' . ( $current_tab === $slug ? 'nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';

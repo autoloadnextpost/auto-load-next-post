@@ -132,7 +132,7 @@ if ( ! class_exists( 'ALNP_Settings_Misc_Tab' ) ) {
 						'id'      => 'auto_load_next_post_reset_data',
 						'class'   => 'reset-settings',
 						'value'   => esc_html__( 'Reset', 'auto-load-next-post' ),
-						'url'     => add_query_arg( array( 'page' => 'auto-load-next-post-settings', 'tab' => esc_attr( $this->id ), 'reset-alnp' => 'yes' ), admin_url( 'options-general.php' ) ),
+						'url'     => add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => esc_attr( $this->id ), 'reset-alnp' => 'yes' ), admin_url( 'options-general.php' ) ),
 						'type'    => 'button'
 					),
 

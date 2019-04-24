@@ -141,7 +141,7 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors_Tab' ) ) {
 
 					array(
 						'title'    => esc_html__( 'Comments Container', 'auto-load-next-post' ),
-						'desc'     => sprintf( __( 'Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s', 'auto-load-next-post' ), '<strong><a href="' . get_admin_url( $blog_id, 'options-general.php?page=auto-load-next-post-settings&tab=misc' ) . '">', '</a></strong>', '<code>div#comments</code>' ),
+						'desc'     => sprintf( __( 'Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s', 'auto-load-next-post' ), '<strong><a href="' . get_admin_url( $blog_id, 'options-general.php?page=auto-load-next-post&view=misc' ) . '">', '</a></strong>', '<code>div#comments</code>' ),
 						'id'       => 'auto_load_next_post_comments_container',
 						'default'  => 'div#comments',
 						'type'     => 'text',
