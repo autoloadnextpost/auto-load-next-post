@@ -250,6 +250,8 @@ if ( ! class_exists('ALNP_Admin_Settings' ) ) {
 				if ( ! isset( $value['placeholder'] ) ) {
 					$value['placeholder'] = '';
 				}
+
+				$value['readonly'] = '';
 				if ( isset( $value['readonly'] ) && $value['readonly'] == 'yes' ) {
 					$value['readonly'] = 'readonly';
 				}
