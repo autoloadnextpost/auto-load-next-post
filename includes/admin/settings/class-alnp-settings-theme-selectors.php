@@ -24,7 +24,7 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.4.10
+		 * @version 1.6.0
 		 */
 		public function __construct() {
 			$this->id    = 'theme-selectors';
@@ -32,8 +32,8 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 
 			parent::__construct();
 
-			add_action( 'auto_load_next_post_sections_theme-selectors', array( __CLASS__, 'is_theme_supported' ), 10 );
-			add_action( 'auto_load_next_post_sections_theme-selectors', array( __CLASS__, 'no_theme_selectors_set' ), 10 );
+			add_action( 'auto_load_next_post_settings_theme-selectors', array( __CLASS__, 'is_theme_supported' ), 0 );
+			add_action( 'auto_load_next_post_settings_theme-selectors', array( __CLASS__, 'no_theme_selectors_set' ), 0 );
 		} // END __construct()
 
 		/**
