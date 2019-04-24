@@ -49,17 +49,25 @@ if ( ! class_exists( 'ALNP_Settings_Templates_Tab' ) ) {
 			$settings[] = array(
 				'title' => esc_html__( 'Template Locations', 'alnp-templates' ),
 				'type'  => 'title',
-				'desc'  => sprintf( __( 'Set the template locations for each post type if they are located in their own template folder. Otherwise just enter the template location for %1$sPosts%2$s. This overrides the %3$s filter.', 'alnp-templates' ), '<strong>', '</strong>', '<code>alnp_template_location</code>' ),
+				'desc'  => sprintf( __( 'Set the template locations for each post type if they are located in their own template folder. Otherwise just enter the template location for %1$sPosts%2$s.', 'alnp-templates' ), '<strong>', '</strong>' ),
 				'id'    => 'template_locations'
 			);
 
 			foreach( self::get_post_types() as $post_type ) {
+				$readonly = 'no';
+
+				// Checks if the filter has been used already and disable posts only if true.
+				if ( has_filter( 'alnp_template_location' ) && strtolower( $post_type ) == 'post' ) {
+					$readonly = 'yes';
+				}
+
 				$settings[] = array(
 					'title'       => ucfirst( $post_type ),
 					'desc'        => sprintf( __( 'Enter the folder location where the theme template for %s are stored.', 'alnp-templates' ), $post_type ),
-					'id'          => 'auto_load_next_post_template_location_' . $post_type,
+					'id'          => 'auto_load_next_post_template_location_' . strtolower( $post_type ),
 					'default'     => '',
 					'placeholder' => 'template-parts/',
+					'readonly'    => $readonly,
 					'type'        => 'text',
 					'css'         => 'min-width:300px;',
 					'autoload'    => false
