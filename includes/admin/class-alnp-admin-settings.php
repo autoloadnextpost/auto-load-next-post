@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists('ALNP_Admin_Settings' ) ) {
+if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 
 	class ALNP_Admin_Settings {
 
