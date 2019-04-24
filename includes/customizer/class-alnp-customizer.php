@@ -165,8 +165,12 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		public function alnp_remove_widgets_panel( $components ) {
 			if ( $this->alnp_is_customizer() ) {
 				foreach( $components as $key => $component ) {
-					if ( $component == 'widgets' ) unset( $components[ 'widgets' ] );
-					if ( $component == 'nav_menus' ) unset( $components[ 'nav_menus' ] );
+					if ( $component == 'widgets' ) {
+						unset( $components[ 'widgets' ] );
+					}
+					if ( $component == 'nav_menus' ) {
+						unset( $components[ 'nav_menus' ] );
+					}
 				}
 			}
 
@@ -497,8 +501,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 				return false;
 			} elseif ( is_home() ) {
 				return true;
-			}
-			elseif ( is_singular( apply_filters( 'alnp_customizer_posts_ready', array( 'post' ) ) ) ) {
+			} elseif ( is_singular( apply_filters( 'alnp_customizer_posts_ready', array( 'post' ) ) ) ) {
 				return true;
 			}
 

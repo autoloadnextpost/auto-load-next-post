@@ -39,18 +39,17 @@ if ( ! function_exists( 'auto_load_next_post_template_redirect' ) ) {
 		 * If theme does not have a template file for Auto Load Next Post,
 		 * the plugin will load a default template.
 		 */
-		$child_path    = get_stylesheet_directory() . '/' . AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
-		$template_path = get_template_directory() . '/' . AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
-		$default_path  = AUTO_LOAD_NEXT_POST_FILE_PATH;
+		$child_path        = get_stylesheet_directory() . '/' . AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
+		$template_path     = get_template_directory() . '/' . AUTO_LOAD_NEXT_POST_TEMPLATE_PATH;
+		$default_path      = AUTO_LOAD_NEXT_POST_FILE_PATH;
+		$template_redirect = '';
 
 		if ( file_exists( $child_path . 'content-alnp.php' ) ) {
 			$template_redirect = $child_path . 'content-alnp.php';
-		}
-		else if( file_exists( $template_path . 'content-alnp.php') ) {
+		} else if ( file_exists( $template_path . 'content-alnp.php' ) ) {
 			$template_redirect = $template_path . 'content-alnp.php';
-		}
-		else if( file_exists( $default_path . '/templates/content-alnp.php' ) ) {
-			$template_redirect = $default_path . '/templates/content-alnp.php';
+		} else if ( file_exists( $default_path . '/template/content-alnp.php' ) ) {
+			$template_redirect = $default_path . '/template/content-alnp.php';
 		}
 
 		$template_redirect = apply_filters( 'alnp_template_redirect', $template_redirect );
@@ -119,8 +118,7 @@ if ( ! function_exists( 'alnp_get_random_page_permalink' ) ) {
 
 				return get_permalink( $id );
 			endwhile;
-		}
-		else {
+		} else {
 			return false;
 		}
 	} // END alnp_get_random_page_permalink()

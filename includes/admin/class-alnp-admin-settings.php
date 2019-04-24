@@ -261,6 +261,8 @@ if ( ! class_exists('ALNP_Admin_Settings' ) ) {
 				}
 
 				// Description handling
+				$description = '';
+
 				if ( ! empty( $value['desc'] ) ) {
 					$description = $value['desc'];
 				}

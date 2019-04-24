@@ -12,6 +12,7 @@
 
 <!-- Mark completed items with an [x] -->
 
+- [ ] I have searched the [documentation](https://github.com/autoloadnextpost/alnp-documentation/tree/master/en_US#the-manual) for answers and cannot find a solution.
 - [ ] I have searched for similar issues in both open and closed tickets and cannot find a duplicate.
 - [ ] The issue still exists against the latest `master` branch of Auto Load Next Post on Github (this is **not** the same version as on WordPress.org!)
 - [ ] I have attempted to find the simplest possible steps to reproduce the issue.
@@ -52,6 +53,6 @@ I was expecting to see...
 <details>
 ```
 Install Simple System Status: https://wordpress.org/plugins/simple-system-status/
-Then copy and paste the system status report from **Tools > Simply System Status** in WordPress admin here.
+Then copy and paste the system status report from **Tools > Simple System Status** in WordPress admin here.
 ```
 </details>

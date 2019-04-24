@@ -1,7 +1,10 @@
 /* global alnp_settings_params */
 ( function( $, params ) {
-	var changed = false,
-		panel   = $('#' + $('#screen-meta-links').find('.show-settings').attr('aria-controls') );
+	var changed       = false,
+		need_help     = $('.need-help').data('tab'),
+		help_tabs     = $('.contextual-help-tabs'),
+		help_contents = $('.contextual-help-tabs-wrap'),
+		panel         = $('#' + $('#screen-meta-links').find('.show-settings').attr('aria-controls') );
 
 	$('input, number, email, textarea, select, checkbox, radio').change( function() {
 		changed = true;
@@ -65,14 +68,12 @@
 	$('.trigger-help').click( function(e) {
 		e.preventDefault();
 
-		//var panel = $('#' + $('#screen-meta-links').find('.show-settings').attr('aria-controls') );
-
 		if ( !panel.length )
 			return;
 
 		if ( panel.is(':visible') ) {
 			panel.slideUp('fast', function() {
-				panel.parent().next().find('button').removeClass( 'screen-meta-active' ).attr( 'aria-expanded', false );
+				panel.parent().next().find('button').removeClass('screen-meta-active').attr('aria-expanded', false);
 				panel.parent().hide();
 			});
 
@@ -83,9 +84,20 @@
 		else {
 			panel.parent().show();
 
+			need_help = need_help.replace('-', '_');
+
+			// If a help tab for the settings in view exists display content.
+			if ( help_tabs.find('#tab-link-auto_load_next_post_' + need_help + '_tab').length > 0 ) {
+				help_tabs.find('li').removeClass('active');
+				help_contents.find('div').removeClass('active');
+
+				help_tabs.find('#tab-link-auto_load_next_post_' + need_help + '_tab').addClass('active').show();
+				help_contents.find('#tab-panel-auto_load_next_post_' + need_help + '_tab').addClass('active').show();
+			}
+
 			panel.slideDown('fast', function() {
 				panel.focus();
-				panel.parent().next().find('button').addClass( 'screen-meta-active' ).attr( 'aria-expanded', true );
+				panel.parent().next().find('button').addClass('screen-meta-active').attr('aria-expanded', true);
 			});
 
 			$(document).trigger('screen:options:open');
