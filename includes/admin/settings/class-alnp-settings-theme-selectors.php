@@ -99,62 +99,91 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors_Tab' ) ) {
 		public function get_settings() {
 			global $blog_id;
 
-			return apply_filters(
-				'alnp_selectors_settings', array(
+			$settings = array();
 
-					array(
-						'title' => esc_html__( 'Theme Selectors', 'auto-load-next-post' ),
-						'type'  => 'title',
-						'desc'  => sprintf( esc_html__( 'Here you set the theme selectors below according to your active theme. All are required for %s to work.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
-						'id'    => 'theme_selectors_options'
-					),
+			$settings[] = array(
+				'title' => esc_html__( 'Theme Selectors', 'auto-load-next-post' ),
+				'type'  => 'title',
+				'desc'  => sprintf( esc_html__( 'Here you set the theme selectors below according to your active theme. All are required for %s to work.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+				'id'    => 'theme_selectors_options'
+			);
 
-					array(
-						'title'       => esc_html__( 'Content Container', 'auto-load-next-post' ),
-						'desc'        => sprintf( __( 'The primary container where the post content is loaded in. Default: %s', 'auto-load-next-post' ), '<code>main.site-main</code>' ),
-						'id'          => 'auto_load_next_post_content_container',
-						'default'     => 'main.site-main',
-						'placeholder' => esc_html__( 'Required', 'auto-load-next-post' ),
-						'type'        => 'text',
-						'css'         => 'min-width:300px;',
-						'autoload'    => false
-					),
+			$container_readonly = 'no';
+			$post_title_readonly = 'no';
+			$post_navigation_readonly = 'no';
+			$comments_container_readonly = 'no';
 
-					array(
-						'title'    => esc_html__( 'Post Title', 'auto-load-next-post' ),
-						'desc'     => sprintf( __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Default: %s', 'auto-load-next-post' ), '<code>h1.entry-title</code>' ),
-						'id'       => 'auto_load_next_post_title_selector',
-						'default'  => 'h1.entry-title',
-						'type'     => 'text',
-						'css'      => 'min-width:300px;',
-						'autoload' => false
-					),
+			// Checks if the Content Container selector has been set by theme support.
+			if ( ! empty( alnp_get_theme_support( 'content_container' ) ) ) {
+				$container_readonly = 'yes';
+			}
 
-					array(
-						'title'    => esc_html__( 'Post Navigation', 'auto-load-next-post' ),
-						'desc'     => sprintf( __( 'Used to identify which post to load next if any. Default: %s', 'auto-load-next-post' ), '<code>nav.post-navigation</code>' ),
-						'id'       => 'auto_load_next_post_navigation_container',
-						'default'  => 'nav.post-navigation',
-						'type'     => 'text',
-						'css'      => 'min-width:300px;',
-						'autoload' => false
-					),
+			$settings[] = array(
+				'title'       => esc_html__( 'Content Container', 'auto-load-next-post' ),
+				'desc'        => sprintf( __( 'The primary container where the post content is loaded in. Default: %s', 'auto-load-next-post' ), '<code>main.site-main</code>' ),
+				'id'          => 'auto_load_next_post_content_container',
+				'default'     => 'main.site-main',
+				'placeholder' => esc_html__( 'Required', 'auto-load-next-post' ),
+				'readonly'    => $container_readonly,
+				'type'        => 'text',
+				'css'         => 'min-width:300px;',
+				'autoload'    => false
+			);
 
-					array(
-						'title'    => esc_html__( 'Comments Container', 'auto-load-next-post' ),
-						'desc'     => sprintf( __( 'Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s', 'auto-load-next-post' ), '<strong><a href="' . add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'misc' ), get_admin_url( $blog_id, 'options-general.php' ) ) . '">', '</a></strong>', '<code>div#comments</code>' ),
-						'id'       => 'auto_load_next_post_comments_container',
-						'default'  => 'div#comments',
-						'type'     => 'text',
-						'css'      => 'min-width:300px;',
-						'autoload' => false
-					),
+			// Checks if the Post Title selector has been set by theme support.
+			if ( ! empty( alnp_get_theme_support( 'title_selector' ) ) ) {
+				$post_title_readonly = 'yes';
+			}
 
-					array(
-						'type' => 'sectionend',
-						'id'   => 'theme_selectors_options'
-					),
-			) ); // End theme selectors settings
+			$settings[] = array(
+				'title'    => esc_html__( 'Post Title', 'auto-load-next-post' ),
+				'desc'     => sprintf( __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Default: %s', 'auto-load-next-post' ), '<code>h1.entry-title</code>' ),
+				'id'       => 'auto_load_next_post_title_selector',
+				'default'  => 'h1.entry-title',
+				'readonly' => $post_title_readonly,
+				'type'     => 'text',
+				'css'      => 'min-width:300px;',
+				'autoload' => false
+			);
+
+			// Checks if the Post Navigation selector has been set by theme support.
+			if ( ! empty( alnp_get_theme_support( 'navigation_container' ) ) ) {
+				$post_navigation_readonly = 'yes';
+			}
+
+			$settings[] = array(
+				'title'    => esc_html__( 'Post Navigation', 'auto-load-next-post' ),
+				'desc'     => sprintf( __( 'Used to identify which post to load next if any. Default: %s', 'auto-load-next-post' ), '<code>nav.post-navigation</code>' ),
+				'id'       => 'auto_load_next_post_navigation_container',
+				'default'  => 'nav.post-navigation',
+				'readonly' => $post_navigation_readonly,
+				'type'     => 'text',
+				'css'      => 'min-width:300px;',
+				'autoload' => false
+			);
+
+			// Checks if the Comments Container selector has been set by theme support.
+			if ( ! empty( alnp_get_theme_support( 'comments_container' ) ) ) {
+				$comments_container_readonly = 'yes';
+			}
+
+			$settings[] = array(
+				'title'    => esc_html__( 'Comments Container', 'auto-load-next-post' ),
+				'desc'     => sprintf( __( 'Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s', 'auto-load-next-post' ), '<strong><a href="' . add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'misc' ), get_admin_url( $blog_id, 'options-general.php' ) ) . '">', '</a></strong>', '<code>div#comments</code>' ),
+				'id'       => 'auto_load_next_post_comments_container',
+				'default'  => 'div#comments',
+				'readonly' => $comments_container_readonly,
+				'type'     => 'text',
+				'css'      => 'min-width:300px;',
+				'autoload' => false
+			);
+
+			$settings[] = array(
+				'type' => 'sectionend',
+				'id'   => 'theme_selectors_options'
+			);
+
+			return apply_filters( 'alnp_selectors_settings', $settings );
 		} // END get_settings()
 
 		/**
