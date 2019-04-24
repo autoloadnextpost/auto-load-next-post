@@ -1,6 +1,6 @@
 <?php
 /**
- * Auto Load Next Post Settings - Templates Tab
+ * Auto Load Next Post Settings - Templates
  *
  * @version  1.6.0
  * @author   Sébastien Dumont
@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'ALNP_Settings_Templates_Tab' ) ) {
+if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 
-	class ALNP_Settings_Templates_Tab extends ALNP_Settings_Page {
+	class ALNP_Settings_Templates extends ALNP_Settings_Page {
 
 		/**
 		 * Constructor.
@@ -141,4 +141,4 @@ if ( ! class_exists( 'ALNP_Settings_Templates_Tab' ) ) {
 
 } // END if class exists
 
-return new ALNP_Settings_Templates_Tab();
+return new ALNP_Settings_Templates();

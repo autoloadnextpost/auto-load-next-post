@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'ALNP_Settings_Events_Tab' ) ) {
+if ( ! class_exists( 'ALNP_Settings_Events' ) ) {
 
-	class ALNP_Settings_Events_Tab extends ALNP_Settings_Page {
+	class ALNP_Settings_Events extends ALNP_Settings_Page {
 
 		/**
 		 * Constructor.
@@ -118,4 +118,4 @@ if ( ! class_exists( 'ALNP_Settings_Events_Tab' ) ) {
 
 } // END if class exists
 
-return new ALNP_Settings_Events_Tab();
+return new ALNP_Settings_Events();
