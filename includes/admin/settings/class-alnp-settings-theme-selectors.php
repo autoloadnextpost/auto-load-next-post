@@ -3,7 +3,7 @@
  * Auto Load Next Post Settings - Theme Selectors
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Settings
@@ -90,10 +90,11 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors_Tab' ) ) {
 		/**
 		 * Get settings array.
 		 *
-		 * @access public
-		 * @since  1.0.0
-		 * @global int $blog_id
-		 * @return array
+		 * @access  public
+		 * @since   1.0.0
+		 * @version 1.6.0
+		 * @global  int $blog_id
+		 * @return  array
 		 */
 		public function get_settings() {
 			global $blog_id;
@@ -141,7 +142,7 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors_Tab' ) ) {
 
 					array(
 						'title'    => esc_html__( 'Comments Container', 'auto-load-next-post' ),
-						'desc'     => sprintf( __( 'Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s', 'auto-load-next-post' ), '<strong><a href="' . get_admin_url( $blog_id, 'options-general.php?page=auto-load-next-post&view=misc' ) . '">', '</a></strong>', '<code>div#comments</code>' ),
+						'desc'     => sprintf( __( 'Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s', 'auto-load-next-post' ), '<strong><a href="' . add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'misc' ), get_admin_url( $blog_id, 'options-general.php' ) ) . '">', '</a></strong>', '<code>div#comments</code>' ),
 						'id'       => 'auto_load_next_post_comments_container',
 						'default'  => 'div#comments',
 						'type'     => 'text',

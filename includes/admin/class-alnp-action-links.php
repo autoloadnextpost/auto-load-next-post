@@ -40,8 +40,8 @@ if ( ! class_exists( 'ALNP_Action_Links' ) ) {
 		public function plugin_action_links( $links ) {
 			if ( current_user_can( 'manage_options' ) ) {
 				$action_links = array(
-					'getting-started' => '<a href="' . admin_url( 'options-general.php?page=auto-load-next-post&view=getting-started' ) . '" aria-label="' . sprintf( esc_attr__( 'Getting Started with %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '">' . esc_attr__( 'Getting Started', 'auto-load-next-post' ) . '</a>',
-					'settings'        => '<a href="' . admin_url( 'options-general.php?page=auto-load-next-post' ) . '" aria-label="' . sprintf( esc_attr__( 'View %s settings', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '">' . esc_attr__( 'Settings', 'auto-load-next-post' ) . '</a>'
+					'getting-started' => '<a href="' . add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'getting-started' ), admin_url( 'options-general.php' ) ) . '" aria-label="' . sprintf( esc_attr__( 'Getting Started with %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '">' . esc_attr__( 'Getting Started', 'auto-load-next-post' ) . '</a>',
+					'settings'        => '<a href="' . add_query_arg( array( 'page' => 'auto-load-next-post' ), admin_url( 'options-general.php' ) ) . '" aria-label="' . sprintf( esc_attr__( 'View %s settings', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '">' . esc_attr__( 'Settings', 'auto-load-next-post' ) . '</a>'
 				);
 
 				return array_merge( $action_links, $links );
