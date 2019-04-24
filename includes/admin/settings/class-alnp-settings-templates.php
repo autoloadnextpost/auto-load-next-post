@@ -25,7 +25,7 @@ if ( ! class_exists( 'ALNP_Settings_Templates_Tab' ) ) {
 		 */
 		public function __construct() {
 			$this->id    = 'templates';
-			$this->label = esc_html__( 'Templates', 'alnp-templates' );
+			$this->label = esc_html__( 'Templates', 'auto-load-next-post' );
 
 			parent::__construct();
 		} // END __construct()
@@ -42,7 +42,7 @@ if ( ! class_exists( 'ALNP_Settings_Templates_Tab' ) ) {
 			$settings[] = array(
 				'title' => $this->label,
 				'type'  => 'title',
-				'desc'  => esc_html__( 'WordPress Themes manage templates in many different ways that is unknowable for Auto Load Next Post to detect. To help with that, this extension provides a compatible repeater template which will ignore your themes templates to allow the content to be displayed without any coding knowledge. Theme templates can be either found in the parent folder of the theme or in a template folder. Depending on how many post types the theme supports you may find that the theme has categorized the templates in their own folder.', 'alnp-templates' ),
+				'desc'  => sprintf( __( 'This helps fine tune %1$s to locate your theme templates in order to display content in the same style as your theme. Set the template location for each post type if they are located in their own template folder. Otherwise just enter the template location for %2$sPosts%3$s.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<strong>', '</strong>' ),
 				'id'    => 'templates_options'
 			);
 
@@ -63,7 +63,7 @@ if ( ! class_exists( 'ALNP_Settings_Templates_Tab' ) ) {
 
 				$settings[] = array(
 					'title'       => ucfirst( $post_type ),
-					'desc'        => sprintf( __( 'Enter the folder location where the theme template for %s are stored.', 'alnp-templates' ), $post_type ),
+					'desc'        => sprintf( __( 'Enter the folder location where the theme template for %s are stored.', 'auto-load-next-post' ), $post_type ),
 					'id'          => 'auto_load_next_post_template_location_' . strtolower( $post_type ),
 					'default'     => '',
 					'placeholder' => 'template-parts/',
