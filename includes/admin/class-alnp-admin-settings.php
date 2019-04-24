@@ -251,10 +251,7 @@ if ( ! class_exists('ALNP_Admin_Settings' ) ) {
 					$value['placeholder'] = '';
 				}
 
-				$value['readonly'] = '';
-				if ( isset( $value['readonly'] ) && $value['readonly'] == 'yes' ) {
-					$value['readonly'] = 'readonly';
-				}
+				$value['readonly'] = isset( $value['readonly'] ) && $value['readonly'] == 'yes' ? 'readonly' : '';
 
 				// Custom attribute handling
 				$custom_attributes = array();
