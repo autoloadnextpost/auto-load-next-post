@@ -3,7 +3,7 @@
  * Auto Load Next Post Settings - Events
  *
  * @since    1.5.0
- * @version  1.5.5
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Settings
@@ -30,7 +30,7 @@ if ( ! class_exists( 'ALNP_Settings_Events' ) ) {
 
 			parent::__construct();
 
-			add_action( 'auto_load_next_post_settings_events', array( __CLASS__, 'is_jetpack_lazy_images_active' ), 10 );
+			add_action( 'auto_load_next_post_settings_events', array( __CLASS__, 'is_jetpack_lazy_images_active' ), 0 );
 		} // END __construct()
 
 		/**
