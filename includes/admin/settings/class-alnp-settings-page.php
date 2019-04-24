@@ -43,8 +43,8 @@ if ( ! class_exists( 'ALNP_Settings_Page' ) ) {
 		 */
 		public function __construct() {
 			add_filter( 'alnp_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
-			add_action( 'auto_load_next_post_settings_' . $this->id, array( $this, 'need_help' ), 0 );
 			add_action( 'auto_load_next_post_sections_' . $this->id, array( $this, 'output_sections' ) );
+			add_action( 'auto_load_next_post_settings_' . $this->id, array( $this, 'need_help' ), 5 );
 			add_action( 'auto_load_next_post_settings_' . $this->id, array( $this, 'output' ), 10 );
 			add_action( 'auto_load_next_post_settings_save_' . $this->id, array( $this, 'save' ) );
 		}
