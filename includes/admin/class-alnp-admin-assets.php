@@ -41,7 +41,7 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 			$screen    = get_current_screen();
 			$screen_id = $screen ? $screen->id : '';
 
-			if ( $screen_id == 'settings_page_auto-load-next-post' ) {
+			if ( in_array( $screen_id, alnp_get_admin_screens() ) ) {
 				Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/css/admin/auto-load-next-post' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
 
 				Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_getting_started', '/assets/css/admin/getting-started' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
