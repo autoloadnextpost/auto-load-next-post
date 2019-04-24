@@ -123,19 +123,20 @@ if ( ! class_exists('ALNP_Admin_Settings' ) ) {
 		/**
 		 * Output messages and errors.
 		 *
-		 * @access public
+		 * @access  public
 		 * @static
-		 * @since  1.0.0
-		 * @return string
+		 * @since   1.0.0
+		 * @version 1.6.0
+		 * @return  string
 		 */
 		public static function show_messages() {
 			if ( count( self::$errors ) > 0 ) {
 				foreach ( self::$errors as $error ) {
-					echo '<div id="message" class="error inline"><p><strong>' . esc_html( $error ) . '</strong></p></div>';
+					echo '<div class="notice notice-error"><p><strong>' . esc_html( $error ) . '</strong></p></div>';
 				}
 			} elseif ( count( self::$messages ) > 0 ) {
 				foreach ( self::$messages as $message ) {
-					echo '<div id="message" class="updated inline"><p><strong>' . esc_html( $message ) . '</strong></p></div>';
+					echo '<div class="notice notice-success"><p><strong>' . esc_html( $message ) . '</strong></p></div>';
 				}
 			}
 		} // END show_messages()
