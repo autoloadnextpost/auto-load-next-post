@@ -101,6 +101,23 @@ if ( ! class_exists( 'ALNP_Admin_Help' ) ) {
 			) );
 
 			$screen->add_help_tab( array(
+				'id'      => 'auto_load_next_post_templates_tab',
+				'title'   => __( 'Templates', 'auto-load-next-post' ),
+				'content' =>
+					'<h2>' . __( 'Templates', 'auto-load-next-post' ) . '</h2>' .
+
+					'<p>' . sprintf(
+						__( 'Every WordPress theme manages there %1$sTemplate Hierarchy%2$s in there own way. This makes it a little difficult for Auto Load Next Post to auto detect the appropriate template location. If the appropriate template was not detected then %3$s will use a fallback template in order to still display your sites content while your viewers scroll.
+						', 'auto-load-next-post' ), '<a href="https://developer.wordpress.org/themes/basics/template-hierarchy/" target="_blank">', '</a>',
+						esc_html__( 'Auto Load Next Post', 'auto-load-next-post' )
+					) . '</p>' .
+
+					'<p>' . sprintf( __( 'By providing an accurate location to your theme\'s template, %1$s will then use your theme\'s template instead and will display your content matching the theme\'s design.' , 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' )
+					) . '</p>'
+				)
+			);
+
+			$screen->add_help_tab( array(
 				'id'      => 'auto_load_next_post_bugs_tab',
 				'title'   => esc_html__( 'Found a bug?', 'auto-load-next-post' ),
 				'content' =>
