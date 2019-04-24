@@ -220,7 +220,7 @@ if ( ! class_exists('ALNP_Admin_Settings' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.6.0
 		 * @param   array $options Opens array to output
 		 */
 		public static function output_fields( $options ) {
@@ -249,6 +249,9 @@ if ( ! class_exists('ALNP_Admin_Settings' ) ) {
 				}
 				if ( ! isset( $value['placeholder'] ) ) {
 					$value['placeholder'] = '';
+				}
+				if ( isset( $value['readonly'] ) && $value['readonly'] == 'yes' ) {
+					$value['readonly'] = 'readonly';
 				}
 
 				// Custom attribute handling
@@ -330,6 +333,7 @@ if ( ! class_exists('ALNP_Admin_Settings' ) ) {
 									value="<?php echo esc_attr( $option_value ); ?>"
 									class="<?php echo esc_attr( $value['class'] ); ?>"
 									placeholder="<?php echo esc_attr( $value['placeholder'] ); ?>"
+									<?php echo esc_attr( $value['readonly'] ); ?>
 									<?php echo implode(' ', $custom_attributes ); ?>
 								/><?php echo $description; ?>
 							</td>
