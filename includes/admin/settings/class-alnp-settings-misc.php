@@ -3,7 +3,7 @@
  * Auto Load Next Post Settings - Misc
  *
  * @since    1.5.0
- * @version  1.5.11
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Settings
@@ -33,7 +33,7 @@ if ( ! class_exists( 'ALNP_Settings_Misc' ) ) {
 			parent::__construct();
 
 			add_filter( 'auto_load_next_post_misc_settings', array( __CLASS__, 'lock_js_in_footer' ), 0, 1 );
-			add_action( 'auto_load_next_post_sections_misc', array( __CLASS__, 'no_comment_selector_set' ), 10 );
+			add_action( 'auto_load_next_post_settings_misc', array( __CLASS__, 'no_comment_selector_set' ), 0 );
 		} // END __construct()
 
 		/**
@@ -88,7 +88,7 @@ if ( ! class_exists( 'ALNP_Settings_Misc' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.5.0
-		 * @version 1.5.11
+		 * @version 1.6.0
 		 * @return  array
 		 */
 		public function get_settings() {
