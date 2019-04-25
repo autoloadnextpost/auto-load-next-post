@@ -127,14 +127,14 @@ if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 		 * Save settings.
 		 *
 		 * @access public
-		 * @global $current_tab
+		 * @global $current_view
 		 */
 		public function save() {
-			global $current_tab;
+			global $current_view;
 
 			$settings = $this->get_settings();
 
-			ALNP_Admin_Settings::save_fields( $settings, $current_tab );
+			ALNP_Admin_Settings::save_fields( $settings, $current_view );
 		} // END save()
 
 	} // END class

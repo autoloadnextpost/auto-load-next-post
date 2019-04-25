@@ -78,17 +78,17 @@ if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.4.10
-		 * @global  $current_tab
+		 * @version 1.6.0
+		 * @global  $current_view
 		 */
 		public static function save() {
-			global $current_tab;
+			global $current_view;
 
 			check_admin_referer( 'auto-load-next-post-settings' );
 
 			// Trigger actions
-			do_action( 'auto_load_next_post_settings_save_' . $current_tab );
-			do_action( 'auto_load_next_post_update_options_' . $current_tab );
+			do_action( 'auto_load_next_post_settings_save_' . $current_view );
+			do_action( 'auto_load_next_post_update_options_' . $current_view );
 			do_action( 'auto_load_next_post_update_options' );
 
 			self::add_message( __( 'Your settings have been saved.', 'auto-load-next-post' ) );
@@ -150,11 +150,11 @@ if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 		 * @static
 		 * @since   1.0.0
 		 * @version 1.6.0
-		 * @global  $current_tab
+		 * @global  $current_view
 		 * @return  void
 		 */
 		public static function output() {
-			global $current_tab;
+			global $current_view;
 
 			do_action( 'auto_load_next_post_settings_start' );
 
@@ -165,11 +165,11 @@ if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 			$no_settings_req = array( 'extensions', 'videos' );
 
 			// Only include settings output if the current tab requires it.
-			if ( ! in_array( $current_tab, $no_settings_req ) ) {
+			if ( ! in_array( $current_view, $no_settings_req ) ) {
 				include( dirname( __FILE__ ) . '/views/html-admin-settings.php' );
 			}
 
-			do_action( 'auto_load_next_post_settings_end', $current_tab, $tabs );
+			do_action( 'auto_load_next_post_settings_end', $current_view, $tabs );
 		} // END output()
 
 		/**

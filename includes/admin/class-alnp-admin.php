@@ -98,11 +98,11 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 * @access  public
 		 * @since   1.0.0
 		 * @version 1.6.0
-		 * @global  string $current_tab
+		 * @global  string $current_view
 		 * @global  string $current_section
 		 */
 		public function settings_page_init() {
-			global $current_tab, $current_section;
+			global $current_view, $current_section;
 
 			// Include settings pages.
 			include_once( dirname( __FILE__ ) . '/class-alnp-admin-settings.php' );
@@ -110,11 +110,11 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			ALNP_Admin_Settings::get_settings_pages();
 
 			// Get current view/section.
-			$current_tab     = empty( $_GET['view'] ) ? 'theme-selectors' : sanitize_title( wp_unslash( $_GET['view'] ) );
+			$current_view    = empty( $_GET['view'] ) ? 'theme-selectors' : sanitize_title( wp_unslash( $_GET['view'] ) );
 			$current_section = empty( $_REQUEST['section'] ) ? '' : sanitize_title( wp_unslash( $_REQUEST['section'] ) );
 
 			// Save settings if data has been posted.
-			if ( apply_filters( '' !== $current_section ? "alnp_save_settings_{$current_tab}_{$current_section}" : "alnp_save_settings_{$current_tab}", ! empty( $_POST ) ) ) {
+			if ( apply_filters( '' !== $current_section ? "alnp_save_settings_{$current_view}_{$current_section}" : "alnp_save_settings_{$current_view}", ! empty( $_POST ) ) ) {
 				ALNP_Admin_Settings::save();
 			}
 

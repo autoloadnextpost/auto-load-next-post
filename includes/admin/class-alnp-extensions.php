@@ -67,11 +67,11 @@ if ( ! class_exists( 'ALNP_Extensions' ) ) {
 		 * Output the extensions.
 		 * 
 		 * @access public
-		 * @param string $current_tab
+		 * @param string $current_view
 		 * @param array  $tabs
 		 */
-		public function output( $current_tab, $tabs ) {
-			if ( $current_tab !== 'extensions' ) {
+		public function output( $current_view, $tabs ) {
+			if ( $current_view !== 'extensions' ) {
 				return;
 			}
 
@@ -87,13 +87,13 @@ if ( ! class_exists( 'ALNP_Extensions' ) ) {
 							'view' => esc_attr( $slug ),
 						), admin_url( 'options-general.php' ) );
 	
-						echo '<a href="' . esc_html( $url ) . '" class="nav-tab ' . ( $current_tab === $slug ? 'nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
+						echo '<a href="' . esc_html( $url ) . '" class="nav-tab ' . ( $current_view === $slug ? 'nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
 					}
 
 					do_action( 'auto_load_next_post_settings_tabs' );
 					?>
 				</nav>
-				<h1 class="screen-reader-text"><?php echo esc_html( $current_tab_label ); ?></h1>
+				<h1 class="screen-reader-text"><?php echo esc_html( $current_label ); ?></h1>
 			</div>
 
 			<?php

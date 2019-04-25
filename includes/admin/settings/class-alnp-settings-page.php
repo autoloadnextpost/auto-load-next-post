@@ -172,7 +172,7 @@ if ( ! class_exists( 'ALNP_Settings_Page' ) ) {
 		 * @access  public
 		 * @since   1.0.0
 		 * @version 1.6.0
-		 * @global  $current_tab
+		 * @global  $current_section
 		 */
 		public function save() {
 			global $current_section;
@@ -189,22 +189,23 @@ if ( ! class_exists( 'ALNP_Settings_Page' ) ) {
 		/**
 		 * Displays a button above the settings header to toggle the help panel.
 		 * 
-		 * The help tab does not show for theme selectors if the theme is already supported.
+		 * The help button does not show for theme selectors if the theme is already supported.
 		 * 
-		 * @access public
+		 * @access  public
 		 * @static
-		 * @since  1.5.5
-		 * @global $current_tab
+		 * @since   1.5.5
+		 * @version 1.6.0
+		 * @global  $current_view
 		 */
 		public function need_help() {
-			global $current_tab;
+			global $current_view;
 
 			// If theme is already supported then don't show help button for theme selectors.
-			if ( is_alnp_supported() && $current_tab == 'theme-selectors' ) {
+			if ( is_alnp_supported() && $current_view == 'theme-selectors' ) {
 				return;
 			}
 
-			echo '<a href="#" class="need-help trigger-help" data-tab="' . $current_tab . '"><span class="sonar-dot"></span> ' . esc_html( 'Need Help?', 'auto-load-next-post' ) . '</a>';
+			echo '<a href="#" class="need-help trigger-help" data-tab="' . $current_view . '"><span class="sonar-dot"></span> ' . esc_html( 'Need Help?', 'auto-load-next-post' ) . '</a>';
 		} // END need_help()
 
 	} // END class
