@@ -75,8 +75,8 @@ if ( ! class_exists( 'ALNP_Extensions' ) ) {
 				return;
 			}
 
-			$tab_exists        = isset( $tabs[ $current_tab ] ) || has_action( 'auto_load_next_post_sections_' . $current_tab ) || has_action( 'auto_load_next_post_settings_' . $current_tab ) || has_action( 'auto_load_next_post_settings_tabs_' . $current_tab );
-			$current_tab_label = isset( $tabs[ $current_tab ] ) ? $tabs[ $current_tab ] : '';
+			$tab_exists    = isset( $tabs[ $current_view ] ) || has_action( 'auto_load_next_post_sections_' . $current_view ) || has_action( 'auto_load_next_post_settings_' . $current_view ) || has_action( 'auto_load_next_post_settings_tabs_' . $current_view );
+			$current_label = isset( $tabs[ $current_view ] ) ? $tabs[ $current_view ] : '';
 			?>
 			<div class="wrap auto-load-next-post">
 				<nav class="nav-tab-wrapper">
