@@ -178,6 +178,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-formatting-functions.php' ); // Formatting functions.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-themes-supported.php' ); // Handles all supported themes out of the box.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-core-functions.php' ); // Contains core functions for the front/back end.
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-template-functions.php' ); // Template Functions
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-template-hooks.php' ); // Template Hooks
 
 			// Include theme support.
 			alnp_include_theme_support();
@@ -191,7 +193,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
 			// Include admin class to handle all back-end functions.
 			if ( is_admin() ) {
-				include_once( dirname( __FILE__ ) . '/includes/admin/class-alnp-admin.php' ); // Admin section.
+				include_once( dirname( __FILE__ ) . '/includes/admin/class-alnp-admin.php' );
 			}
 
 			// Install.
