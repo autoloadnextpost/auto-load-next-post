@@ -1,6 +1,6 @@
 <?php
 /**
- * Auto Load Next Post: Conditional Functions
+ * Auto Load Next Post Conditional Functions
  *
  * Functions for determining the current query/page,
  * theme support and if user agent is a bot.
@@ -9,7 +9,7 @@
  * @version  1.5.0
  * @author   Sébastien Dumont
  * @category Core
- * @package  Auto Load Next Post/Core/Functions
+ * @package  Auto Load Next Post/Functions
  * @license  GPL-2.0+
  */
 
