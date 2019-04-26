@@ -162,7 +162,7 @@ if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 			$tabs = apply_filters( 'alnp_settings_tabs_array', array() );
 
 			// These tabs do not require a settings output.
-			$no_settings_req = array( 'extensions', 'videos' );
+			$no_settings_req = array( 'getting-started', 'extensions', 'videos' );
 
 			// Only include settings output if the current tab requires it.
 			if ( ! in_array( $current_view, $no_settings_req ) ) {
