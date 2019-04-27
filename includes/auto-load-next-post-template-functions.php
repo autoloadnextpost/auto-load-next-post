@@ -104,10 +104,11 @@ if ( ! function_exists( 'alnp_get_locations' ) ) {
 			'components',
 			'components/post',
 			'components/page',
-			'templates',
 			'template-parts',
+			'template-parts/content',
 			'template-parts/post',
 			'template-parts/page',
+			'templates',
 			'partials',
 			'loop-templates'
 		);
