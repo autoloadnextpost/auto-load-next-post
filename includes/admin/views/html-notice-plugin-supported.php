@@ -3,6 +3,7 @@
  * Admin View: Theme supported via a Plugin
  *
  * @since    1.5.10
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -17,5 +18,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 $active_theme = wp_get_theme();
 ?>
 <div class="notice notice-info">
-	<p><?php echo sprintf( __( '%s theme is supported via a plugin. Do <strong>NOT</strong> change the theme selectors.', 'auto-load-next-post' ), $active_theme->name ); ?></p>
+	<p><?php echo sprintf( __( 'Your active theme %s, is supported via a plugin. Changes to set theme selectors are disabled.', 'auto-load-next-post' ), $active_theme->name ); ?></p>
 </div>
