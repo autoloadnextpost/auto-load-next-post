@@ -30,6 +30,9 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 
 			// Register Stylesheet for Dark Mode if active.
 			add_action( 'doing_dark_mode', array( $this, 'do_dark_mode' ), 10 );
+
+			// Adds admin body classes.
+			add_filter( 'admin_body_class', array( $this, 'admin_body_class' ) );
 		} // END __construct()
 
 		/**
@@ -100,6 +103,33 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 				Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_dark_mode', '/assets/css/admin/dark-mode' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
 			}
 		} // END do_dark_mode()
+
+		/**
+		 * Adds admin body classes depending on what page of 
+		 * Auto Load Next Post the user is viewing.
+		 *
+		 * @access public
+		 * @since  1.6.0
+		 * @param  string $classes
+		 * @return string $classes
+		 */
+		public function admin_body_class( $classes ) {
+			$current_view = ! empty( $_GET['view'] ) ? sanitize_title( wp_unslash( $_GET['view'] ) ) : '';
+
+			switch( $current_view ) {
+				case 'getting-started':
+					$classes = ' alnp-getting-started ';
+					break;
+				case 'setup-wizard':
+					$classes = ' alnp-setup-wizard ';
+					break;
+				default:
+					$classes = '';
+					break;
+			}
+		 
+			return $classes;
+		}
 
 	} // END class
 
