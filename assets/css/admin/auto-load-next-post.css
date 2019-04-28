@@ -461,6 +461,11 @@ body.settings_page_auto-load-next-post #wpfooter {
   position: fixed;
 }
 
+body.alnp-getting-started #wpfooter,
+body.alnp-setup-wizard #wpfooter {
+  display: none;
+}
+
 /* Help Section */
 h3.alnp-default-theme-selectors {
   font-size: 1.2em;
