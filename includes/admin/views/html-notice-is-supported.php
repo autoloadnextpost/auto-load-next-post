@@ -18,5 +18,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 $active_theme = wp_get_theme();
 ?>
 <div class="notice notice-info">
-	<p><?php echo sprintf( __( 'Your active theme %1$s, supports %2$s. Changes to the set theme selectors are disabled.', 'auto-load-next-post' ), $active_theme->name, esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
+	<p><?php echo sprintf( __( 'Your active theme %1$s, supports %2$s. Changes to set theme selectors are disabled.', 'auto-load-next-post' ), $active_theme->name, esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
 </div>
