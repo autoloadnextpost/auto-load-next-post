@@ -455,7 +455,7 @@ body.folded .wrap #mainform {
 }
 
 /* Footer */
-body.settings_page_auto-load-next-post-settings #wpfooter {
+body.settings_page_auto-load-next-post #wpfooter {
   background-color: #fff;
   border-top: 1px solid #ccc;
   position: fixed;
