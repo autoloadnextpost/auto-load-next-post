@@ -264,6 +264,7 @@ body.folded .wrap #mainform {
 .alnp-sidebar .block {
   background-color: #fff;
   margin-bottom: 2em;
+  padding: 1em;
 }
 
 .alnp-sidebar .block .inner-block {
