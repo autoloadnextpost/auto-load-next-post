@@ -60,6 +60,19 @@ if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 				'id'    => 'templates_options'
 			);
 
+			$locate_single = alnp_get_template();
+
+			// Only show fallback support option if template location was found. May be required should theme structure fail.
+			if ( ! empty( $locate_single ) ) {
+				$settings[] = array(
+					'title'   => esc_html__( 'Use Fallback?', 'auto-load-next-post' ),
+					'desc'    => sprintf( __( 'Enabling this will force the use of fallback support should your active theme not have a great structure. %1$sSee help for more information%2$s.', 'auto-load-next-post' ), '<strong class="red">', '</strong>' ),
+					'id'      => 'auto_load_next_post_use_fallback',
+					'default' => 'no',
+					'type'    => 'checkbox'
+				);
+			}
+
 			foreach( self::get_post_types() as $post_type ) {
 				$readonly = 'no';
 
