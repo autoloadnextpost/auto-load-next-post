@@ -119,6 +119,8 @@ if ( ! function_exists( 'alnp_get_locations' ) ) {
  * Gets a list of templates to look for.
  *
  * @since  1.6.0
+ * @param  string $post_type
+ * @param  string $post_format
  * @return array
  */
 if ( ! function_exists( 'alnp_get_templates' ) ) {
@@ -132,9 +134,9 @@ if ( ! function_exists( 'alnp_get_templates' ) ) {
 
 		if ( ! empty( $post_format ) ) {
 			$get_formats = array(
-			alnp_template_location() . 'format-' . $post_format . '.php',
-			alnp_template_location() . 'content' . $post_format . '.php'
-		);
+				alnp_template_location() . 'format-' . $post_format . '.php',
+				alnp_template_location() . 'content' . $post_format . '.php'
+			);
 
 			return array_merge( $get_standard, $get_formats );
 		}
@@ -147,6 +149,8 @@ if ( ! function_exists( 'alnp_get_templates' ) ) {
  * Scans for the theme template depending on the post type requested and saves it.
  *
  * @since 1.6.0
+ * @param string $post_type
+ * @param string $post_format
  */
 if ( ! function_exists( 'alnp_scan_template' ) ) {
 	function alnp_scan_template( $post_type = 'single', $post_format = '' ) {
@@ -184,6 +188,8 @@ if ( ! function_exists( 'alnp_scan_template' ) ) {
  * Returns the template saved.
  *
  * @since  1.6.0
+ * @param  string $post_type
+ * @param  string $post_format
  * @return string $template
  */
 if ( ! function_exists( 'alnp_get_template' ) ) {
