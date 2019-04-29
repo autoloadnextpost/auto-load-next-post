@@ -5,7 +5,7 @@
  * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
- * @package  Auto Load Next Post: Templates/Admin/Settings
+ * @package  Auto Load Next Post/Admin/Settings
  * @license  GPL-2.0+
  */
 
@@ -28,7 +28,21 @@ if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 			$this->label = esc_html__( 'Templates', 'auto-load-next-post' );
 
 			parent::__construct();
+
+			add_action( 'auto_load_next_post_settings_templates', array( __CLASS__, 'template_location' ), 0 );
 		} // END __construct()
+
+		/**
+		 * Displays a notification to the user if the templates 
+		 * location was found and where or if the templates was 
+		 * not found.
+		 *
+		 * @access public
+		 * @static
+		 */
+		public static function template_location() {
+			include( dirname( AUTO_LOAD_NEXT_POST_FILE ) . '/includes/admin/views/html-notice-template-location.php' );
+		} // END template_location()
 
 		/**
 		 * Get settings array
