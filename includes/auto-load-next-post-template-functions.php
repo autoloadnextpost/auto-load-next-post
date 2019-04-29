@@ -122,15 +122,24 @@ if ( ! function_exists( 'alnp_get_locations' ) ) {
  * @return array
  */
 if ( ! function_exists( 'alnp_get_templates' ) ) {
-	function alnp_get_templates( $post_type, $post_format ) {
-		return array(
+	function alnp_get_templates( $post_type = 'single', $post_format = '' ) {
+		$get_standard = array(
 			alnp_template_location() . 'content-single.php',
 			alnp_template_location() . 'content-post.php',
 			alnp_template_location() . 'content-' . $post_type . '.php',
-			alnp_template_location() . 'content.php',
+			alnp_template_location() . 'content.php'
+		);
+
+		if ( ! empty( $post_format ) ) {
+			$get_formats = array(
 			alnp_template_location() . 'format-' . $post_format . '.php',
 			alnp_template_location() . 'content' . $post_format . '.php'
 		);
+
+			return array_merge( $get_standard, $get_formats );
+		}
+
+		return $get_standard;
 	} // END alnp_get_templates()
 }
 
