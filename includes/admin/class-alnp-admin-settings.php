@@ -291,7 +291,7 @@ if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 							echo wp_kses_post( wpautop( wptexturize( $value['desc'] ) ) );
 							echo '</div>';
 						}
-						echo '<table class="form-table">'."\n\n";
+						echo '<table class="alnp-table">'."\n\n";
 						if ( ! empty( $value['id'] ) ) {
 							do_action( 'auto_load_next_post_settings_' . sanitize_title( $value['id'] ) );
 						}
