@@ -79,10 +79,8 @@ if ( ! class_exists( 'ALNP_Admin_Help' ) ) {
 					) . '</p>' .
 
 					'<p>' . sprintf(
-						__( 'When %1$s is activated, default theme selectors are set for you. These theme selectors are the most commonly used in any WordPress theme. If they don’t work for your theme then you need to find the matching theme selectors. More information on %2$show to find your theme selectors%3$s.', 'auto-load-next-post' ),
-						esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ),
-						'<a href="' . esc_url( 'https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/theme-selectors.md#how-to-find-your-theme-selectors' ) . '">',
-						'</a>' 
+						__( 'When %1$s is activated, default theme selectors are set for you. These theme selectors are the most commonly used in any WordPress theme. If they don’t work for your theme then you need to find the matching theme selectors.', 'auto-load-next-post' ),
+						esc_html__( 'Auto Load Next Post', 'auto-load-next-post' )
 					) . '</p>' .
 
 					'<p>' . sprintf(
@@ -97,7 +95,9 @@ if ( ! class_exists( 'ALNP_Admin_Help' ) ) {
 						'<li><strong>' . esc_html__( 'Post Title', 'auto-load-next-post' ) . '</strong>' . ' <code>h1.entry-title</code></li>' .
 						'<li><strong>' . esc_html__( 'Post Navigation', 'auto-load-next-post' ) . '</strong>' . ' <code>nav.post-navigation</code></li>' .
 						'<li><strong>' . esc_html__( 'Comments Container', 'auto-load-next-post' ) . '</strong>' . ' <code>div#comments</code></li>' .
-					'</ul>'
+					'</ul>' .
+
+					'<p><a href="https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/theme-selectors.md#how-to-find-your-theme-selectors" class="button button-primary" target="_blank">' . esc_html__( 'How to find your theme selectors', 'auto-load-next-post' ) . '</a></p>'
 			) );
 
 			$screen->add_help_tab( array(
@@ -107,15 +107,15 @@ if ( ! class_exists( 'ALNP_Admin_Help' ) ) {
 					'<h2>' . __( 'Templates', 'auto-load-next-post' ) . '</h2>' .
 
 					'<p>' . sprintf(
-						__( 'Every WordPress theme manages there %1$sTemplate Hierarchy%2$s in there own way. This makes it a little difficult for Auto Load Next Post to auto detect the appropriate template location. If the appropriate template was not detected then %3$s will use a fallback template in order to still display your sites content while your viewers scroll.
-						', 'auto-load-next-post' ), '<a href="https://developer.wordpress.org/themes/basics/template-hierarchy/" target="_blank">', '</a>',
+						__( 'Every WordPress theme manages there %1$sTemplate Hierarchy%2$s in there own way. This makes it a little difficult for Auto Load Next Post to auto detect the appropriate template location. If the appropriate template was not detected then %3$s will automatically use a fallback template in order to display your sites content while your viewers scroll.', 'auto-load-next-post' ), '<a href="https://developer.wordpress.org/themes/basics/template-hierarchy/" target="_blank">', '</a>',
 						esc_html__( 'Auto Load Next Post', 'auto-load-next-post' )
 					) . '</p>' .
 
 					'<p>' . sprintf( __( 'By providing an accurate location to your theme\'s template, %1$s will then use your theme\'s template instead and will display your content matching the theme\'s design.' , 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' )
-					) . '</p>'
-				)
-			);
+					) . '</p>' .
+
+					'<p><a href="https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/content-and-structure.md" class="button button-primary" target="_blank">' . esc_html__( 'Content and Structure', 'auto-load-next-post' ) . '</a></p>'
+			) );
 
 			$screen->add_help_tab( array(
 				'id'      => 'auto_load_next_post_bugs_tab',
