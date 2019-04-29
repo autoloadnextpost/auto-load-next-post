@@ -143,6 +143,17 @@ if ( ! class_exists( 'ALNP_Admin_Help' ) ) {
 					'<p><a href="' . esc_url( AUTO_LOAD_NEXT_POST_REVIEW_URL ) . '" class="button button-primary" target="_blank" aria-label="' . esc_attr( __( 'Review Auto Load Next Post on WordPress.org', 'auto-load-next-post' ) ) . '">' . esc_html__( 'Leave a Review', 'auto-load-next-post' ) . '</a> <a href="https://sebdumont.xyz/donate/" class="button button-secondary" target="_blank">' . esc_html__( 'Support the Developer', 'auto-load-next-post' ) . '</a></p>'
 			) );
 
+			$screen->add_help_tab( array(
+				'id'      => 'auto_load_next_post_wizard_tab',
+				'title'   => esc_html__( 'Setup Wizard', 'auto-load-next-post' ),
+				'content' =>
+					'<h2>' . esc_html__( 'Setup Wizard', 'auto-load-next-post' ) . '</h2>' .
+
+					'<p>' . sprintf( esc_html__( 'If you need to access the setup wizard again, please click on the button below. %1$sNote:%2$s Setup wizard is designed for themes that have not declared support for %3$s.', 'auto-load-next-post' ), '<strong class="red">', '</strong>', esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '</p>' .
+
+					'<p><a href="' . add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'setup-wizard', 'force-setup' => 'yes' ), admin_url( 'options-general.php' ) ) . '" class="button-primary" aria-label="' . sprintf( esc_attr__( 'View %s setup wizard', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '">' . esc_html__( 'Setup Wizard', 'auto-load-next-post' ) . '</a></p>'
+			) );
+
 			$screen->set_help_sidebar(
 				'<p><strong>' . esc_html__( 'For more information:', 'auto-load-next-post' ) . '</strong></p>' .
 

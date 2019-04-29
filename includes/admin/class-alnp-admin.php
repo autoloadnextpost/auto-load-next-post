@@ -51,6 +51,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			}
 
 			include_once( dirname( __FILE__ ) . '/class-alnp-getting-started.php'); // Getting Started.
+			include_once( dirname( __FILE__ ) . '/class-alnp-setup-wizard.php');    // Setup Wizard.
 			include_once( dirname( __FILE__ ) . '/class-alnp-extensions.php');      // Extensions.
 
 			include( dirname( __FILE__ ) . '/class-alnp-sidebar.php' );             // Sidebar
@@ -72,6 +73,9 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			switch( $current_view ) {
 				case 'getting-started':
 					$title = sprintf( esc_attr__( 'Getting Started with %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) );
+					break;
+				case 'setup-wizard':
+					$title = sprintf( esc_attr__( 'Setup Wizard for %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) );
 					break;
 				case 'extensions':
 					$title = sprintf( esc_attr__( '%s | Extensions', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) );
