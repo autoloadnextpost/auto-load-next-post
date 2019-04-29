@@ -21,14 +21,14 @@ If you are not a developer, please use the [Auto Load Next Post plugin page](htt
 
 Want to contribute to the project? Then please read the [contribute guidelines](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md) clearly.
 
-
 ## 🔔 What is Auto Load Next Post?
+
 Auto Load Next Post is a WordPress plugin developed to increase your pageviews by engaging the site viewers to keep reading your content rather than increasing your bounce rate.
 
 It simply automatically loads the next post on your blog once the user has reached the bottom of the initial post the viewer is reading and repeats the process as the user reads your content until there are no more posts to load.
 
-
 ## ✅ Features
+
 * Customizable repeater template
 * jQuery event triggers plus 3rd-party support
 * Reduce page load by hiding the post comments
@@ -39,16 +39,18 @@ It simply automatically loads the next post on your blog once the user has reach
 
 Want more? See [what is coming soon with Auto Load Next Post Pro](https://autoloadnextpost.com/pro/).
 
-
 ## 📘 Guide
 
 #### 📖 Documentation
-You can find documenation available at: https://github.com/autoloadnextpost/alnp-documentation
 
+Documentation for Auto Load Next Post is available at: <https://github.com/autoloadnextpost/alnp-documentation>
+
+> If you would like to help translate the documentation in another language then all you have to do is follow the [contribution instructions](https://github.com/autoloadnextpost/alnp-documentation#-contributing-to-the-documentation).
 
 #### 💽 Installation
 
 You may:
+
 1. Clone the GitHub repository: `https://github.com/autoloadnextpost/auto-load-next-post.git`, or..
 2. [Download the latest release](https://github.com/autoloadnextpost/auto-load-next-post/releases) from the GitHub repository, or..
 3. Download the plugin from the [WordPress repository](https://wordpress.org/plugins/auto-load-next-post/).
@@ -59,20 +61,20 @@ You may:
 
 > If you also want to test out beta releases, you can [download the beta tester](https://github.com/autoloadnextpost/alnp-beta-tester/archive/master.zip) plugin which will replace your installed version of Auto Load Next Post with the latest tagged pre-release on GitHub.
 
-
 #### Note to Beginners
+
 Auto Load Next Post is a plugin for self-hosted WordPress sites. This means you will need to [switch from WordPress.com to WordPress.org](http://www.wpbeginner.com/wp-tutorials/how-to-properly-move-your-blog-from-wordpress-com-to-wordpress-org/) if you want to use this plugin on your WordPress site.
 
-
 ## 🐛 Found a Bug?
+
 If you find a bug within Auto Load Next Post, please [report the issue](https://github.com/autoloadnextpost/auto-load-next-post/issues?state=open) by creating a ticket on the GitHub repository where I can deal with it more appropriately. Please ensure that you read the [guidelines for contributing](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md) prior to submitting your report. To help me solve the issue, please be as descriptive as possible.
 
-
 ## ⭐ Support
+
 Need help? This is a developer's portal for Auto Load Next Post and should not be used for general support. Please visit the [support forum on WordPress.org](https://wordpress.org/support/plugin/auto-load-next-post) if you need help.
 
-
 ## 🦄 Contributions
+
 Anyone is welcome to contribute to Auto Load Next Post. If you have a patch, or stumbled upon an issue with Auto Load Next Post, please read the [guidelines for contributing](https://github.com/autoloadnextpost/auto-load-next-post/blob/master/CONTRIBUTING.md) to this repository.
 
 There are various ways you can contribute:
@@ -81,18 +83,17 @@ There are various ways you can contribute:
 2. Send a pull request with your bug fixes and/or new features
 3. Provide feedback and suggestions on [enhancements](https://github.com/autoloadnextpost/auto-load-next-post/issues?direction=desc&labels=Enhancement&page=1&sort=created&state=open)
 
-
 ## 👅 Translation Support
+
 Auto Load Next Post is in need of translations. Is the plugin not translated in your language or do you spot errors with the current translations? Helping out is easy! [Translate Auto Load Next Post](https://translate.wordpress.org/projects/wp-plugins/auto-load-next-post).
 
-
 #### 📚 Libraries Used
-- [select2](https://github.com/select2/select2)
-- [jQuery.history](https://github.com/browserstate/history.js)
-- [scrollspy](https://github.com/thesmart/jquery-scrollspy)
+
+* [select2](https://github.com/select2/select2)
+* [jQuery.history](https://github.com/browserstate/history.js)
+* [scrollspy](https://github.com/thesmart/jquery-scrollspy)
 
 The libraries above are used with the plugin.
-
 
 ## 👍 Contribute
 
@@ -103,17 +104,16 @@ You'll be helping to ensure I can spend the time not just fixing bugs, adding fe
 Please also consider starring ✨ and sharing 👍 the project repository! This helps the project getting known and grow with the community. 🙏
 
 I accept one-time donations and monthly via [BuyMeACoffee.com](https://www.buymeacoffee.com/sebastien)
-- [My PayPal](https://www.paypal.me/codebreaker)
-- [BuyMeACoffee.com](https://www.buymeacoffee.com/sebastien)
-- Bitcoin (BTC): `3L4cU7VJsXBFckstfJdP2moaNhTHzVDkKQ`
-- Ethereum (ETH): `0xc6a3C18cf11f5307bFa11F8BCBD51F355b6431cB`
-- Litecoin (LTC): `MNNy3xBK8sM8t1YUA2iAwdi9wRvZp9yRoi`
 
+* [My PayPal](https://www.paypal.me/codebreaker)
+* [BuyMeACoffee.com](https://www.buymeacoffee.com/sebastien)
+* Bitcoin (BTC): `3L4cU7VJsXBFckstfJdP2moaNhTHzVDkKQ`
+* Ethereum (ETH): `0xc6a3C18cf11f5307bFa11F8BCBD51F355b6431cB`
+* Litecoin (LTC): `MNNy3xBK8sM8t1YUA2iAwdi9wRvZp9yRoi`
 
 ##### License
 
 Auto Load Next Post is released under [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.html).
-
 
 ##### Credits
 
@@ -122,5 +122,5 @@ Auto Load Next Post is developed and maintained by [Sébastien Dumont](https://s
 ---
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/seb86/my-open-source-readme-template/master/a-sebastien-dumont-production.png" width="353">
+    <img src="https://raw.githubusercontent.com/seb86/my-open-source-readme-template/master/a-sebastien-dumont-production.png" width="353">
 </p>
