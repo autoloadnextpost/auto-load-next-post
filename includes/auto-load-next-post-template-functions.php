@@ -159,9 +159,9 @@ if ( ! function_exists( 'alnp_scan_template' ) ) {
 
 					// Save template found.
 					if ( ! empty( $post_format ) ) {
-						add_site_option( 'auto_load_next_post_template_single_' . $post_format, $save_location );
+						add_option( 'auto_load_next_post_template_single_' . $post_format, $save_location );
 					} else {
-						add_site_option( 'auto_load_next_post_template_' . $post_type, $save_location );
+						add_option( 'auto_load_next_post_template_' . $post_type, $save_location );
 					}
 
 					$content_found = true;
@@ -180,9 +180,9 @@ if ( ! function_exists( 'alnp_scan_template' ) ) {
 if ( ! function_exists( 'alnp_get_template' ) ) {
 	function alnp_get_template( $post_type = 'single', $post_format = '' ) {
 		if ( ! empty( $post_format ) ) {
-			$template = get_site_option( 'auto_load_next_post_template_single_' . $post_format );
+			$template = get_option( 'auto_load_next_post_template_single_' . $post_format );
 		} else {
-			$template = get_site_option( 'auto_load_next_post_template_' . $post_type );
+			$template = get_option( 'auto_load_next_post_template_' . $post_type );
 		}
 
 		return $template;
@@ -227,10 +227,14 @@ if ( ! function_exists( 'alnp_load_content' ) ) {
 			}
 		}
 
+		// Can be overridden.
 		$content_found = apply_filters( 'alnp_content_found', $content_found );
 
+		// Check if the user has forced the use of the fallback template.
+		$use_fallback = get_option( 'auto_load_next_post_use_fallback' );
+
 		// If content is found then load the template part.
-		if ( $content_found ) {
+		if ( $content_found && empty( $use_fallback ) ) {
 			locate_template( $load_content, true, false );
 		}
 		else {
