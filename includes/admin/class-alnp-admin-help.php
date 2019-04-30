@@ -47,6 +47,12 @@ if ( ! class_exists( 'ALNP_Admin_Help' ) ) {
 				return;
 			}
 
+			$current_view = ! empty( $_GET['view'] ) ? sanitize_title( wp_unslash( $_GET['view'] ) ) : '';
+
+			if ( in_array( $current_view, array( 'getting-started', 'setup-wizard' ) ) ) {
+				return;
+			}
+
 			$screen->add_help_tab( array(
 				'id'      => 'auto_load_next_post_support_tab',
 				'title'   => esc_html__( 'Help & Support', 'auto-load-next-post' ),
