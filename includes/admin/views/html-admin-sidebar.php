@@ -14,23 +14,29 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+// Get Current User Details
+$current_user = wp_get_current_user();
+$user_email   = $current_user->user_email;
+$first_name   = $current_user->first_name;
+$last_name    = $current_user->last_name;
 ?>
 <div class="alnp-upgrade-details">
 	<h1><?php esc_html_e( 'Pro Coming Soon', 'auto-load-next-post' ); ?></h1>
 
 	<ul>
-		<li><?php echo wptexturize( esc_html__( 'Load the Next Post or Next Post with same Category or New Posts or Related Posts or by Custom Query', 'auto-load-next-post' ) ); ?></li>
-		<li><?php echo wptexturize( esc_html__( 'Page and Media Attachment Support', 'auto-load-next-post' ) ); ?></li>
-		<li><?php echo wptexturize( esc_html__( 'Custom Post Type Support', 'auto-load-next-post' ) ); ?></li>
-		<li><?php echo wptexturize( esc_html__( 'Paginated Posts Supported', 'auto-load-next-post' ) ); ?></li>
-		<li><?php echo wptexturize( esc_html__( 'Exclude Post Formats', 'auto-load-next-post' ) ); ?></li>
-		<li><?php echo wptexturize( esc_html__( 'Limit Posts per Session', 'auto-load-next-post' ) ); ?></li>
-		<li><?php echo wptexturize( esc_html__( 'Query Posts by Category and Tag', 'auto-load-next-post' ) ); ?></li>
-		<li><?php echo wptexturize( esc_html__( 'Exclude User Roles and Specific Users', 'auto-load-next-post' ) ); ?></li>
-		<li><?php echo wptexturize( esc_html__( 'Pre-Query Posts Ready to Load', 'auto-load-next-post' ) ); ?></li>
-		<li><?php echo wptexturize( esc_html__( 'Hide Comments and Show by Toggle Button', 'auto-load-next-post' ) ); ?></li>
-		<li><?php echo wptexturize( sprintf( esc_html__( 'Multilingual Support for %1$s and %2$s', 'auto-load-next-post' ), 'WPML', 'Polylang' ) ); ?></li>
-		<li><?php echo wptexturize( esc_html__( 'Email Support', 'auto-load-next-post' ) ); ?></li>
+		<li><?php echo esc_html__( 'Load the Next Post or Next Post with same Category or New Posts or Related Posts or by Custom Query', 'auto-load-next-post' ); ?></li>
+		<li><?php echo esc_html__( 'Page and Media Attachment Support', 'auto-load-next-post' ); ?></li>
+		<li><?php echo esc_html__( 'Custom Post Type Support', 'auto-load-next-post' ); ?></li>
+		<li><?php echo esc_html__( 'Paginated Posts Supported', 'auto-load-next-post' ); ?></li>
+		<li><?php echo esc_html__( 'Exclude Post Formats', 'auto-load-next-post' ); ?></li>
+		<li><?php echo esc_html__( 'Limit Posts per Session', 'auto-load-next-post' ); ?></li>
+		<li><?php echo esc_html__( 'Query Posts by Category and Tag', 'auto-load-next-post' ); ?></li>
+		<li><?php echo esc_html__( 'Exclude User Roles and Specific Users', 'auto-load-next-post' ); ?></li>
+		<li><?php echo esc_html__( 'Pre-Query Posts Ready to Load', 'auto-load-next-post' ); ?></li>
+		<li><?php echo esc_html__( 'Hide Comments and Show by Toggle Button', 'auto-load-next-post' ); ?></li>
+		<li><?php echo sprintf( esc_html__( 'Multilingual Support for %1$s and %2$s', 'auto-load-next-post' ), 'WPML', 'Polylang' ); ?></li>
+		<li><?php echo esc_html__( 'Email Support', 'auto-load-next-post' ); ?></li>
 	</ul>
 
 	<p>
@@ -43,19 +49,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<h2><?php esc_html_e( 'Sign up to pre-order first', 'auto-load-next-post' ); ?></h2>
 
 	<p class="intro">
-		<?php echo wptexturize( esc_html__( 'Submit your name and email and be the first to know when you can pre-order Auto Load Next Post Pro and keep up to date with my developments plus a 10% discount.', 'auto-load-next-post' ) ); ?>
+		<?php echo sprintf( __( 'Submit your name and email and be the first to know when you can pre-order %1$s and keep up to date with my developments plus a %2$s discount.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ), '10%' ); ?>
 	</p>
 
 	<div class="field">
-		<input type="email" name="EMAIL" value="" placeholder="<?php esc_html_e( 'Your Email Address', 'auto-load-next-post' ); ?>"/>
+		<input type="email" name="EMAIL" value="<?php echo $user_email; ?>" placeholder="<?php esc_html_e( 'Your Email Address', 'auto-load-next-post' ); ?>"/>
 	</div>
 
 	<div class="field">
-		<input type="text" name="FNAME" value="" placeholder="<?php esc_html_e( 'First Name', 'auto-load-next-post' ); ?>"/>
+		<input type="text" name="FNAME" value="<?php echo $first_name; ?>" placeholder="<?php esc_html_e( 'First Name', 'auto-load-next-post' ); ?>"/>
 	</div>
 
 	<div class="field">
-		<input type="text" name="LNAME" value="" placeholder="<?php esc_html_e( 'Last Name', 'auto-load-next-post' ); ?>"/>
+		<input type="text" name="LNAME" value="<?php echo $last_name; ?>" placeholder="<?php esc_html_e( 'Last Name', 'auto-load-next-post' ); ?>"/>
 	</div>
 
 	<input type="hidden" name="group[35169][1]" value="1">
