@@ -174,6 +174,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 */
 		public function includes() {
 			include_once( dirname( __FILE__ ) . '/includes/class-alnp-autoloader.php' ); // Autoloader.
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-deprecated-functions.php' ); // Deprecated functions.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-conditional-functions.php' ); // Conditional functions.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-formatting-functions.php' ); // Formatting functions.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-themes-supported.php' ); // Handles all supported themes out of the box.
