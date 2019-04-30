@@ -19,42 +19,6 @@ nav .nav-tab:first-child {
 	margin-top:10px;
 }
 
-.wrap.auto-load-next-post.auto-load-next-post-status .submit.debug-report {
-	margin: 0;
-	padding: 0;
-}
-
-/*.button.auto-load-next-post-reload {
-	display: block;
-	text-indent: -9999px;
-	position: relative;
-	height: 1em;
-	width: 1em;
-	padding: 0;
-	-webkit-border-radius: 100%;
-	border-radius: 100%;
-	height: 24px;
-	width: 24px !important;
-	display: inline-block;
-}
-
-.button.auto-load-next-post-reload:after {
-	font-weight: 400;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing:antialiased;
-	margin: 0;
-	text-indent: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	line-height: 22px;
-}*/
-
 /* Settings Table */
 .auto-load-next-post table.alnp-table fieldset {
 	margin-top: 4px;
