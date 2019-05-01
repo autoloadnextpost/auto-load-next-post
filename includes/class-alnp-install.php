@@ -60,6 +60,11 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 		 * @version 1.5.11
 		 */
 		public static function check_version() {
+			// Check if we are not already running this routine.
+			if ( 'yes' === get_transient( 'alnp_resetting' ) ) {
+				return;
+			}
+
 			if ( ! defined( 'IFRAME_REQUEST' ) && version_compare( self::$current_version, AUTO_LOAD_NEXT_POST_VERSION, '<' ) && current_user_can( 'install_plugins' ) ) {
 				self::install();
 				do_action( 'auto_load_next_post_updated' );
@@ -246,6 +251,9 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 			if ( current_user_can( 'install_plugins' ) && isset( $_GET['reset-alnp'] ) && $_GET['reset-alnp'] == 'yes' ) {
 				global $wpdb;
 
+				// If we made it till here nothing is running yet, lets set the transient now for five minutes.
+				set_transient( 'alnp_resetting', 'yes', MINUTE_IN_SECONDS * 5 );
+	
 				// Make sure it is only a single site we are resetting.
 				if ( ! is_multisite() ) {
 					// Delete options
