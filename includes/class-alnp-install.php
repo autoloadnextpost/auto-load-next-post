@@ -3,7 +3,7 @@
  * Auto Load Next Post - Installation related functions and actions.
  *
  * @since    1.0.0
- * @version  1.5.11
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Classes
  * @package  Auto Load Next Post/Classes/Install
@@ -24,16 +24,17 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 		 *
 		 * @access private
 		 * @static
-		 * @since 1.4.10
-		 * @var string
+		 * @since  1.4.10
+		 * @var    string
 		 */
 		private static $current_version;
 
 		/**
 		 * Constructor.
 		 *
-		 * @since  1.0.0
-		 * @access public
+		 * @since   1.0.0
+		 * @version 1.6.0
+		 * @access  public
 		 */
 		public function __construct() {
 			// Resets Auto Load Next Post settings when requested.
@@ -60,7 +61,7 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.4.10
-		 * @version 1.5.11
+		 * @version 1.6.0
 		 */
 		public static function check_version() {
 			// Check if we are not already running this routine.
