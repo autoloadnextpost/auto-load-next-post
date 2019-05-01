@@ -108,6 +108,27 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 				'id'    => 'theme_selectors_options'
 			);
 
+			// Provide the theme customizer option if theme is not already supported.
+			if ( ! is_alnp_supported() ) {
+				$query = array(
+					'autofocus[panel]'   => 'alnp',
+					'autofocus[section]' => 'auto_load_next_post_theme_selectors',
+					'url'                => alnp_get_random_page_permalink(),
+					'return'             => add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'theme-selectors' ), admin_url( 'options-general.php' ) ),
+				);
+				$customizer_link = add_query_arg( $query, admin_url( 'customize.php' ) );
+
+				$settings[] = array(
+					'title'   => esc_html__( 'Theme Customizer', 'auto-load-next-post' ),
+					'desc'    => esc_html__( 'Use the theme customizer to enter the theme selectors while you inspect the theme.', 'auto-load-next-post' ),
+					'id'      => 'auto_load_next_post_customizer',
+					'value'   => esc_html__( 'Open Theme Customizer', 'auto-load-next-post' ),
+					'url'     => $customizer_link,
+					'type'    => 'button'
+				);
+			}
+
+			// Defines input field status
 			$container_readonly = 'no';
 			$post_title_readonly = 'no';
 			$post_navigation_readonly = 'no';
