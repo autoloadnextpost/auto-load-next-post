@@ -45,6 +45,9 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 			// Adds rewrite endpoint.
 			add_action( 'init', array( __CLASS__, 'add_rewrite_endpoint' ), 10 );
 
+			// Redirect to Getting Started page once installed.
+			add_action( 'auto_load_next_post_updated', array( __CLASS__, 'redirect_getting_started') );
+
 			// Get plugin version.
 			self::$current_version = get_option( 'auto_load_next_post_version' );
 		} // END __construct()
@@ -287,6 +290,20 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 			}
 		} // END reset_alnp()
 
+		/**
+		 * Redirects to the Getting Started page when called.
+		 *
+		 * @access public
+		 * @static
+		 * @since  1.6.0
+		 */
+		public static function redirect_getting_started() {
+			wp_safe_redirect( add_query_arg( array(
+				'page' => 'auto-load-next-post',
+				'view' => 'getting-started'
+			), admin_url( 'options-general.php' ) ) );
+			exit;
+		} // END redirect_getting_started()
 	} // END class.
 
 } // END if class exists.
