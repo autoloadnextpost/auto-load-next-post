@@ -236,10 +236,11 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 		/**
 		 * Resets all Auto Load Next Post settings.
 		 *
-		 * @access public
+		 * @access  public
 		 * @static
-		 * @since  1.5.11
-		 * @global object $wpdb 
+		 * @since   1.5.11
+		 * @version 1.6.0
+		 * @global  object $wpdb 
 		 */
 		public static function reset_alnp() {
 			if ( current_user_can( 'install_plugins' ) && isset( $_GET['reset-alnp'] ) && $_GET['reset-alnp'] == 'yes' ) {
@@ -271,7 +272,7 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 				self::install();
 
 				wp_safe_redirect( add_query_arg( array(
-					'page'  => 'auto-load-next-post-settings',
+					'page'  => 'auto-load-next-post',
 					'reset' => 'done'
 				), admin_url( 'options-general.php' ) ) );
 				exit;
