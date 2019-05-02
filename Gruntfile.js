@@ -1,11 +1,47 @@
 module.exports = function(grunt) {
 	'use strict';
 
+	var sass = require( 'node-sass' );
+
 	require('load-grunt-tasks')(grunt);
 
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+
+		// SASS to CSS
+		sass: {
+			options: {
+				implementation: sass,
+				sourcemap: 'none'
+			},
+			dist: {
+				files: {
+					'assets/css/admin/<%= pkg.name %>.css' : 'assets/scss/admin.scss'
+				}
+			}
+		},
+
+		// Post CSS
+		postcss: {
+			options: {
+				//map: false,
+				processors: [
+					require('autoprefixer')({
+						browsers: [
+							'> 0.1%',
+							'ie 8',
+							'ie 9'
+						]
+					})
+				]
+			},
+			dist: {
+				src: [
+					'assets/css/admin/*.css'
+				]
+			}
+		},
 
 		// Minify CSS
 		cssmin: {
@@ -38,18 +74,56 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true, // Enable dynamic expansion.
 					src: [
+						// Admin
+						'assets/js/admin/*.js',
+						'!assets/js/admin/*.min.js',
+
+						// Customizer
+						'assets/js/customizer/*.js',
+						'!assets/js/customizer/*.min.js',
+
+						// Frontend
 						'assets/js/frontend/*.js',
 						'!assets/js/frontend/*.min.js',
 						'!assets/js/frontend/*.dev.js',
-						'assets/js/admin/*.js',
-						'!assets/js/admin/*.min.js'
 					],
 					ext: '.min.js', // Dest filepaths will have this extension.
 				}]
 			}
 		},
 
-		// Check for Javascript errors
+		// Watch for changes made in SASS or JavaScript.
+		watch: {
+			css: {
+				files: [
+					'assets/scss/*.scss',
+					'assets/scss/admin/*.scss',
+				],
+				tasks: ['sass', 'postcss']
+			},
+			js: {
+				files: [
+					// Admin
+					'assets/js/admin/*.js',
+					'!assets/js/admin/*.min.js',
+
+					// Customizer
+					'assets/js/customizer/*.js',
+					'!assets/js/frontend/*.min.js',
+
+					// Frontend
+					'assets/js/frontend/*.js',
+					'!assets/js/frontend/*.min.js',
+				],
+				tasks: [
+					'jshint',
+					'uglify'
+				]
+			}
+		},
+
+		// Check for Javascript errors with "grunt-contrib-jshint"
+		// Reports provided by "jshint-stylish"
 		jshint: {
 			options: {
 				reporter: require('jshint-stylish'),
@@ -62,11 +136,28 @@ module.exports = function(grunt) {
 				'-W020': true, // Read only - error when assigning EO_SCRIPT_DEBUG a value.
 			},
 			all: [
+				// Admin
+				'assets/js/admin/*.js',
+				'!assets/js/admin/*.min.js',
+
+				// Customizer
+				'assets/js/customizer/*.js',
+				'!assets/js/customizer/*.min.js',
+
+				// Frontend
 				'assets/js/frontend/*.js',
 				'!assets/js/frontend/*.min.js',
-				'assets/js/frontend/*.dev.js',
-				'assets/js/admin/*.js',
-				'!assets/js/admin/*.min.js'
+				'assets/js/frontend/*.dev.js'
+			]
+		},
+
+		// Check for Sass errors with "stylelint"
+		stylelint: {
+			options: {
+				configFile: '.stylelintrc'
+			},
+			all: [
+				'assets/scss/**/*.scss',
 			]
 		},
 
@@ -185,6 +276,9 @@ module.exports = function(grunt) {
 					'!node_modules/**',
 					'!.DS_Store',
 					'!npm-debug.log',
+					'!assets/sass/**',
+					'!assets/**/*.scss',
+					'!*.scss',
 					'!*.json',
 					'!*.md',
 					'!*.sh',
@@ -225,11 +319,11 @@ module.exports = function(grunt) {
 	// Set the default grunt command to run test cases.
 	grunt.registerTask( 'default', [ 'test' ] );
 
-	// Checks for errors with the javascript and text domain.
-	grunt.registerTask( 'test', [ 'jshint', 'checktextdomain' ]);
+	// Checks for errors with the javascript, sass and for any text domain issues.
+	grunt.registerTask( 'test', [ 'jshint', 'stylelint', 'checktextdomain' ]);
 
 	// Updates version, minify css and javascript and finaly runs i18n tasks.
-	grunt.registerTask( 'dev', [ 'replace', 'cssmin', 'newer:uglify', 'makepot' ]);
+	grunt.registerTask( 'dev', [ 'replace', 'sass', 'postcss', 'cssmin', 'uglify', 'makepot' ]);
 
 	/**
 	 * Run i18n related tasks.
