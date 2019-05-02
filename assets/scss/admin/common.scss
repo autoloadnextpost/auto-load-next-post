@@ -1,0 +1,157 @@
+.auto-load-next-post {
+	a.help-tip {
+		font-size: 0.7em;
+	}
+
+	a:hover {
+		color: #2ea2cc;
+	}
+
+	.bold {
+		font-weight: 700;
+	}
+
+	code {
+		cursor: pointer;
+	}
+
+	.small {
+		font-size: 70%;
+	}
+
+	.red {
+		color: $red !important;
+	}
+
+	.container {
+		background-color: $white;
+		border: 1px solid $lightgrey;
+		box-shadow: 0 2px 30px $shadow;
+		-webkit-box-shadow: 0 2px 30px $shadow;
+		color: $black;
+		margin: 20px auto 80px;
+		max-width: 692px;
+		text-align: left;
+		width: calc(100% - 20px);
+
+		.content {
+			padding: 40px;
+
+			.logo {
+				background-color: $alnp;
+				margin: -40px -40px 30px;
+				text-align: center;
+			}
+
+			h1 {
+				color: #23282d;
+				font-size: 1.7em;
+				font-weight: 700;
+				line-height: 1.48;
+				margin-bottom: 28px;
+				margin-top: 0;
+			}
+
+			p {
+				color: #333;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 1.6;
+				margin-bottom: 20px;
+			}
+
+			ul {
+				list-style: disc;
+			}
+
+			li {
+				margin-left: 12px;
+			}
+
+			a.button.button-large {
+				font-size: 24px;
+				line-height: 54px;
+				height: 60px;
+				padding: 0 20px;
+			}
+		}
+	}
+}
+
+/* Footer */
+body.settings_page_auto-load-next-post #wpfooter {
+	background-color: $white;
+	border-top: 1px solid #ccc;
+	position: fixed;
+}
+
+body.alnp-getting-started #wpfooter,
+body.alnp-setup-wizard #wpfooter {
+	display: none;
+}
+
+/* Help Section */
+h3.alnp-default-theme-selectors {
+	font-size: 1.2em;
+}
+
+ul.alnp-default-theme-selectors li {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+/* Sonar Dot - Added leading zero for animations */
+.sonar-dot {
+	background: $blue;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	-moz-animation: 1.8s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite pulse;
+	-o-animation: 1.8s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite pulse;
+	-webkit-animation: 1.8s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite pulse;
+	animation: 1.8s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite pulse;
+	box-shadow: 0 0 0;
+	display: inline-block;
+}
+
+.sonar-dot.small {
+	width: 8px;
+	height: 8px;
+}
+
+.sonar-dot.large {
+	width: 16px;
+	height: 16px;
+}
+
+.sonar-dot.faster {
+	-moz-animation-duration: 1.2s;
+	-o-animation-duration: 1.2s;
+	-webkit-animation-duration: 1.2s;
+	animation-duration: 1.2s;
+}
+
+.sonar-dot.slower {
+	-moz-animation-duration: 2.4s;
+	-o-animation-duration: 2.4s;
+	-webkit-animation-duration: 2.4s;
+	animation-duration: 2.4s;
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(86, 164, 240, 0.4);
+	}
+	100% {
+		box-shadow: 0 0 0 24px rgba(86, 164, 240, 0);
+	}
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(86, 164, 240, 0.4);
+	}
+	100% {
+		box-shadow: 0 0 0 24px rgba(86, 164, 240, 0);
+	}
+}

@@ -1,0 +1,344 @@
+/* Navigation */
+nav.nav-tab-wrapper span {
+	float: left;
+	line-height: initial;
+	font-size: 1.3em;
+	margin-right: 6px;
+}
+
+nav .nav-tab:first-child {
+	margin-left: 10px;
+}
+
+.wrap.auto-load-next-post-div.updated, 
+.wrap.auto-load-next-post-div.error {
+	margin-top: 10px;
+}
+
+/* Settings Table */
+.auto-load-next-post table.alnp-table fieldset {
+	margin-top: 4px;
+}
+
+table.alnp-table {
+	background: $white;
+	border: 1px solid $lightgrey;
+	border-spacing: 0;
+	box-shadow: 0 1px 1px $shadow;
+	clear: both;
+	margin: 0;
+	margin-bottom: 1em;
+	width: 100%;
+	word-wrap: break-word;
+}
+
+table.alnp-table p,
+table.alnp-table p.description {
+	margin: 4px 0;
+	color: #444;
+}
+
+table.alnp-table tr:nth-child( 2n ) td, 
+table.alnp-table tr:nth-child( 2n ) th {
+	background: #fcfcfc;
+}
+
+table.alnp-table td,
+table.alnp-table th {
+	color: #555;
+	font-size: 1.1em;
+	font-weight: 400;
+	padding: 1.2em;
+}
+
+table.alnp-table td, 
+table.alnp-table td ol, 
+table.alnp-table td p, 
+table.alnp-table td ul {
+	font-size: 13px;
+	line-height: 1.5em;
+}
+
+table.alnp-table td {
+	vertical-align: top;
+}
+
+table.alnp-table th {
+	font-weight: 600;
+}
+
+table.alnp-table td label, 
+table.alnp-table th label {
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+table.alnp-table tfoot td, 
+table.alnp-table th, 
+table.alnp-table thead td {
+	text-align: left;
+	line-height: 1.3em;
+	font-size: 14px;
+}
+
+/* Settings Form */
+.wrap #mainform {
+	float: left;
+	position: relative;
+	width: 74%;
+}
+
+body.folded .wrap #mainform {
+	width: 75%;
+}
+
+@media screen and (max-width: 1052px) {
+	.wrap #mainform {
+		width: 100%;
+	}
+}
+
+/* Sidebar */
+.alnp-sidebar {
+	float: right;
+	position: relative;
+	top: 24px;
+	margin-left: 1%;
+	margin-right: 0;
+	max-width: 360px;
+	width: 24%;
+}
+
+.alnp-sidebar .block {
+	background-color: $white;
+	margin-bottom: 2em;
+	padding: 1em;
+}
+
+.alnp-sidebar .block .inner-block {
+	padding: 10px 20px;
+}
+
+.alnp-sidebar .block h3 {
+	background-color: $white;
+	border-bottom: 1px solid #ddd;
+	padding: 14px 20px;
+	margin: 0;
+	text-transform: none;
+}
+
+.alnp-sidebar .subscribe {
+	border-top: none;
+}
+
+.alnp-sidebar .subscribe h2 {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 0.5em;
+	font-size: 20px;
+	line-height: 1.2em;
+	float: none;
+}
+
+.alnp-sidebar .subscribe h3 {
+	font-size: 16px;
+	margin: 0;
+}
+
+.alnp-sidebar .subscribe p {
+	margin: 0;
+}
+
+.alnp-sidebar .subscribe .intro {
+	margin-bottom: 1em;
+	line-height: 1.4;
+}
+
+.alnp-sidebar .subscribe li {
+	line-height: 1.4;
+}
+
+.alnp-sidebar .subscribe .links {
+	margin-bottom: 2em;
+}
+
+.alnp-sidebar .subscribe .links a {
+	text-decoration: none;
+}
+
+.alnp-sidebar .subscribe .promise {
+	color: #999;
+	font-size: 12px;
+	line-height: 1.4em;
+}
+
+.alnp-sidebar .subscribe .field {
+	margin-bottom: 0.5em;
+}
+
+.alnp-sidebar .subscribe .field p {
+	margin-bottom: 0.3em;
+}
+
+.alnp-sidebar .subscribe .field input[type=text], 
+.alnp-sidebar .subscribe .field input[type=email] {
+	width: 100%;
+}
+
+.alnp-sidebar .subscribe .field.submit-button {
+	margin-bottom: 1em;
+}
+
+.alnp-sidebar .credits {
+	border-top: 0;
+}
+
+.alnp-sidebar .credits h4 {
+	font-size: 16px;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.alnp-sidebar .credits ul {
+	margin: 0;
+}
+
+.alnp-sidebar .credits li {
+	overflow: hidden;
+}
+
+.alnp-sidebar .credits li:last-child {
+	margin-bottom: 0;
+}
+
+.alnp-sidebar .credits img {
+	float: left;
+	margin-right: 10px;
+}
+
+.alnp-sidebar .credits span {
+	float: left;
+	display: block;
+	line-height: 32px;
+}
+
+.alnp-sidebar .credits a {
+	display: block;
+	text-decoration: none;
+	color: #444;
+	font-size: 16px;
+	text-align: center;
+}
+
+.alnp-sidebar .credits a:hover {
+	color: #888;
+}
+
+@media screen and (max-width: 1052px) {
+
+	.alnp-sidebar {
+		float: none;
+		clear: both;
+		width: 360px;
+		margin: 0 auto 2em;
+	}
+
+}
+
+/* Banner */
+.alnp-banner {
+	max-width: 360px;
+	width: 100%;
+	height: 60px;
+	display: 'block';
+	background-color: $alnp;
+	background: $alnp url('../../images/banner.png') center center no-repeat;
+}
+
+.alnp-banner:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.wrap .alnp-upgrade-details {
+	background-color: $alnp;
+	padding: 10px 20px 20px;
+	color: #333;
+	font-size: 13px;
+	margin: 0;
+	margin-bottom: 2em;
+	display: block;
+	text-decoration: none;
+}
+
+.wrap .alnp-upgrade-details h1 {
+	font-size: 28px;
+	color: $white;
+	margin: 0 0 15px;
+	padding: 0;
+	text-decoration: none;
+	font-weight: 400;
+	line-height: 1;
+}
+
+.wrap .alnp-upgrade-details p {
+	margin: 0;
+}
+
+.wrap .alnp-upgrade-details a {
+	color: #dd3333;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 16px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.wrap .alnp-upgrade-details a:hover {
+	color: $white;
+}
+
+.wrap .alnp-upgrade-details ul {
+	margin-top: 0;
+	margin-left: 16px;
+	list-style-type: disc;
+}
+
+/* Help Button */
+.need-help {
+	background: $white;
+	display: inline-flex;
+	border-radius: 4px;
+	box-sizing: border-box;
+	line-height: inherit;
+	margin: 0;
+	margin-top: 1em;
+	padding: 0.8em;
+	-moz-box-align: center;
+	align-items: center;
+	-moz-box-pack: center;
+	justify-content: center;
+	vertical-align: middle;
+	text-transform: uppercase;
+	overflow: visible;
+	cursor: pointer;
+	-webkit-transition: opacity 0.4s ease-in-out;
+	-moz-transition: opacity 0.4s ease-in-out;
+	-ms-transition: opacity 0.4s ease-in-out;
+	-o-transition: opacity 0.4s ease-in-out;
+	transition: opacity 0.4s ease-in-out;
+}
+
+@media screen and (max-width: 782px) {
+	.need-help {
+		display: none;
+	}
+}
+
+.need-help.hide {
+	opacity: 0.5;
+}
+
+.need-help .sonar-dot {
+	margin-right: 6px;
+}
