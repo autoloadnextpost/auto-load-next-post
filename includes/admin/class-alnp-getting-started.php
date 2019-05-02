@@ -71,13 +71,15 @@ if ( ! class_exists( 'ALNP_Getting_Started' ) ) {
 						<?php
 						} else {
 						?>
-							<p><?php echo sprintf( __( 'To help you setup %1$s, run the %2$s or %3$s if you are wanting to add support for %1$s to your theme.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), esc_html__( 'Setup Wizard', 'auto-load-next-post' ), esc_html__( 'View Documentation', 'auto-load-next-post' ) ); ?></p>
+							<p><?php echo sprintf( __( 'To help you setup %1$s, run the %2$s or %3$s if you are developing a theme and want to add support for %1$s.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), esc_html__( 'Setup Wizard', 'auto-load-next-post' ), esc_html__( 'View Documentation', 'auto-load-next-post' ) ); ?></p>
 
-							<p>
+							<p style="text-align: center;">
 								<a class="button button-primary button-large" href="<?php echo add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'setup-wizard' ), admin_url( 'options-general.php' ) ); ?>"><?php _e( 'Setup Wizard', 'auto-load-next-post' ); ?></a>
 								<a class="button button-large" href="<?php echo AUTO_LOAD_NEXT_POST_DOCUMENTATION_URL; ?>"><?php _e( 'View Documentation', 'auto-load-next-post' ); ?></a>
 							</p>
-						<?php
+
+							<hr>
+							<?php
 						}
 
 						/**
