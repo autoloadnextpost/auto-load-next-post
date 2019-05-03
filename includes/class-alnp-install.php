@@ -299,10 +299,25 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 		 * @since  1.6.0
 		 */
 		public static function redirect_getting_started() {
-			wp_safe_redirect( add_query_arg( array(
+			$getting_started = add_query_arg( array(
 				'page' => 'auto-load-next-post',
 				'view' => 'getting-started'
-			), admin_url( 'options-general.php' ) ) );
+			), admin_url( 'options-general.php' ) );
+
+			/**
+			 * Should Auto Load Next Post be installed via WP-CLI,
+			 * display a link to the Getting Started page.
+			 */
+			if ( defined( 'WP_CLI' ) && WP_CLI ) {
+				WP_CLI::log(
+					WP_CLI::colorize(
+						'%y' . sprintf( '🎉 %1$s %2$s', __( 'Get started with %3$s here:', 'auto-load-next-post' ), $getting_started, esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '%n'
+					)
+				);
+				return;
+			}
+	
+			wp_safe_redirect( $getting_started );
 			exit;
 		} // END redirect_getting_started()
 	} // END class.
