@@ -10,78 +10,78 @@
 	-webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
 	-moz-box-shadow   : inset 0 -1px 1px rgba(255, 255, 255, 0.3);
 	box-shadow        : inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+}
 
-	.meter > span {
-		display: block;
-		height: 100%;
-		-webkit-border-radius: 8px;
-		-moz-border-radius: 8px;
-		border-radius: 8px;
-		background-color: $green;
-		background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, $green), color-stop(1, #26b04a));
-		background-image: -moz-linear-gradient(center bottom, $green 37%, #26b04a) 69%;
-		-webkit-box-shadow: inset 0 2px 9px  rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
-		-moz-box-shadow: inset 0 2px 9px  rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
-		box-shadow: inset 0 2px 9px  rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
-		position: relative;
-		overflow: hidden;
-	}
+.meter > span {
+	display: block;
+	height: 100%;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background-color: $green;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, $green), color-stop(1, #26b04a));
+	background-image: -moz-linear-gradient(center bottom, $green 37%, #26b04a) 69%;
+	-webkit-box-shadow: inset 0 2px 9px  rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: inset 0 2px 9px  rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+	box-shadow: inset 0 2px 9px  rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+	position: relative;
+	overflow: hidden;
+}
 
-	.meter > span::after, 
-	.animate > span > span {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, rgba(255, 255, 255, 0.2)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.75, rgba(255, 255, 255, 0.2)), color-stop(0.75, transparent), to(transparent) );
-		background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent );
-		background-size: 50px 50px;
-		-webkit-background-size: 50px 50px;
-		-moz-background-size: 50px 50px;
-		-webkit-border-radius: 8px;
-		-moz-border-radius: 8px;
-		border-radius: 8px;
-		overflow: hidden;
-	}
+.meter > span::after, 
+.animate > span > span {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, rgba(255, 255, 255, 0.2)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.75, rgba(255, 255, 255, 0.2)), color-stop(0.75, transparent), to(transparent) );
+	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent );
+	background-size: 50px 50px;
+	-webkit-background-size: 50px 50px;
+	-moz-background-size: 50px 50px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	overflow: hidden;
+}
 
-	.animate > span > span {
-		animation: move 2s linear infinite;
-		-webkit-animation: move 2s linear infinite;
-	}
+.animate > span > span {
+	animation: move 2s linear infinite;
+	-webkit-animation: move 2s linear infinite;
+}
 
-	.animate > span::after {
-		display: none;
-	}
+.animate > span::after {
+	display: none;
+}
 
-	.blue > span {
-		background-color: #658ef1;
-		background-image: -moz-linear-gradient(top, #658ef1, #657ff1);
-		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #658ef1), color-stop(1, #657ff1));
-		background-image: -webkit-linear-gradient(#658ef1, #657ff1);
-	}
+.blue > span {
+	background-color: #658ef1;
+	background-image: -moz-linear-gradient(top, #658ef1, #657ff1);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #658ef1), color-stop(1, #657ff1));
+	background-image: -webkit-linear-gradient(#658ef1, #657ff1);
+}
 
-	.orange > span {
-		background-color: #f1a165;
-		background-image: -moz-linear-gradient(top, #f1a165, #f36d0a);
-		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f1a165), color-stop(1, #f36d0a));
-		background-image: -webkit-linear-gradient(#f1a165, #f36d0a);
-	}
+.orange > span {
+	background-color: #f1a165;
+	background-image: -moz-linear-gradient(top, #f1a165, #f36d0a);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f1a165), color-stop(1, #f36d0a));
+	background-image: -webkit-linear-gradient(#f1a165, #f36d0a);
+}
 
-	.red > span {
-		background-color: #f0a3a3;
-		background-image: -moz-linear-gradient(top, #f0a3a3, #f42323);
-		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0a3a3), color-stop(1, #f42323));
-		background-image: -webkit-linear-gradient(#f0a3a3, #f42323);
-	}
+.red > span {
+	background-color: #f0a3a3;
+	background-image: -moz-linear-gradient(top, #f0a3a3, #f42323);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0a3a3), color-stop(1, #f42323));
+	background-image: -webkit-linear-gradient(#f0a3a3, #f42323);
+}
 
-	.yellow > span {
-		background-color: $yellow;
-		background-image: -moz-linear-gradient(top, $yellow, #f0dd30);
-		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $yellow), color-stop(1, #f0dd30));
-		background-image: -webkit-linear-gradient($yellow, #f0dd30);
-	}
+.yellow > span {
+	background-color: $yellow;
+	background-image: -moz-linear-gradient(top, $yellow, #f0dd30);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $yellow), color-stop(1, #f0dd30));
+	background-image: -webkit-linear-gradient($yellow, #f0dd30);
 }
 
 @keyframes move {
