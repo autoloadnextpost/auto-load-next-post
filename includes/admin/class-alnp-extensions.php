@@ -67,40 +67,29 @@ if ( ! class_exists( 'ALNP_Extensions' ) ) {
 		 * Output the extensions.
 		 * 
 		 * @access public
-		 * @param string $current_view
-		 * @param array  $tabs
+		 * @param  string $current_view
+		 * @param  array  $tabs
 		 */
 		public function output( $current_view, $tabs ) {
 			if ( $current_view !== 'extensions' ) {
 				return;
 			}
-
-			$tab_exists    = isset( $tabs[ $current_view ] ) || has_action( 'auto_load_next_post_sections_' . $current_view ) || has_action( 'auto_load_next_post_settings_' . $current_view ) || has_action( 'auto_load_next_post_settings_tabs_' . $current_view );
-			$current_label = isset( $tabs[ $current_view ] ) ? $tabs[ $current_view ] : '';
 			?>
 			<div class="wrap auto-load-next-post">
-				<nav class="nav-tab-wrapper">
-					<?php
-					foreach ( $tabs as $slug => $label ) {
-						$url = add_query_arg( array(
-							'page' => 'auto-load-next-post',
-							'view' => esc_attr( $slug ),
-						), admin_url( 'options-general.php' ) );
-	
-						echo '<a href="' . esc_html( $url ) . '" class="nav-tab ' . ( $current_view === $slug ? 'nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
-					}
+				<?php
+				// Include settings tabs.
+				include_once( dirname( __FILE__ ) . '/views/html-admin-tabs.php' );
+				?>
+				<h1 class="screen-reader-text"><?php echo esc_html( $this->label ); ?></h1>
 
-					do_action( 'auto_load_next_post_settings_tabs' );
-					?>
-				</nav>
-				<h1 class="screen-reader-text"><?php echo esc_html( $current_label ); ?></h1>
+				<?php
+				// Load the class if it exists and Airplane Mode is disabled.
+				if ( class_exists( 'Connekt_Plugin_Installer' ) && ! alnp_airplane_mode_enabled() ) {
+					Connekt_Plugin_Installer::init( self::$extensions );
+				}
+				?>
 			</div>
-
 			<?php
-			// Load the class if it exists and Airplane Mode is disabled.
-			if ( class_exists( 'Connekt_Plugin_Installer' ) && ! alnp_airplane_mode_enabled() ) {
-				Connekt_Plugin_Installer::init( self::$extensions );
-			}
 		} // END output()
 
 	} // END class
