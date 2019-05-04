@@ -29,21 +29,12 @@ if ( ! $tab_exists ) {
 ?>
 <div class="wrap auto-load-next-post">
 	<form method="post" id="mainform" action="" enctype="multipart/form-data">
-		<nav class="nav-tab-wrapper">
-			<?php
-				foreach ( $tabs as $slug => $label ) {
-					$url = add_query_arg( array(
-						'page' => 'auto-load-next-post',
-						'view' => esc_attr( $slug ),
-					), admin_url( 'options-general.php' ) );
+		<?php
+		// Include settings tabs.
+		include_once( dirname( __FILE__ ) . '/html-admin-tabs.php' ); ?>
 
-					echo '<a href="' . esc_html( $url ) . '" class="nav-tab ' . ( $current_view === $slug ? 'nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
-				}
-
-				do_action( 'auto_load_next_post_settings_tabs' );
-			?>
-		</nav>
 		<h1 class="screen-reader-text"><?php echo esc_html( $current_label ); ?></h1>
+
 		<?php
 		do_action( 'auto_load_next_post_sections_' . $current_view );
 
