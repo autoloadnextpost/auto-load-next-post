@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'view' => esc_attr( $slug ),
 		), admin_url( 'options-general.php' ) );
 
-		echo '<a href="' . apply_filters( 'alnp_settings_tab_url', esc_html( $url ), $slug ) . '" class="nav-tab ' . ( $current_view === $slug ? 'nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
+		echo '<a href="' . apply_filters( 'alnp_settings_tab_url', esc_html( $url ), $slug ) . '" class="nav-tab ' . ( $current_view === $slug ? 'nav-tab-active' : '' ) . '" data-tab="' . $slug . '">' . esc_html( $label ) . '</a>';
 	}
 
 	do_action( 'auto_load_next_post_settings_tabs' );
