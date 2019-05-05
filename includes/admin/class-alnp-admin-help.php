@@ -157,7 +157,7 @@ if ( ! class_exists( 'ALNP_Admin_Help' ) ) {
 
 					'<p>' . sprintf( esc_html__( 'If you need to access the setup wizard again, please click on the button below. %1$sNote:%2$s Setup wizard is designed for themes that have not declared support for %3$s.', 'auto-load-next-post' ), '<strong class="red">', '</strong>', esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '</p>' .
 
-					'<p><a href="' . add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'setup-wizard', 'force-setup' => 'yes' ), admin_url( 'options-general.php' ) ) . '" class="button-primary" aria-label="' . sprintf( esc_attr__( 'View %s setup wizard', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '">' . esc_html__( 'Setup Wizard', 'auto-load-next-post' ) . '</a></p>'
+					'<p><a href="' . add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'setup-wizard', 'force-setup' => 'yes' ), admin_url( 'options-general.php' ) ) . '" class="button button-primary" aria-label="' . sprintf( esc_attr__( 'View %s setup wizard', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '">' . esc_html__( 'Setup Wizard', 'auto-load-next-post' ) . '</a></p>'
 			) );
 
 			$screen->set_help_sidebar(
