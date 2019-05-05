@@ -4,33 +4,133 @@
 		need_help     = $('.need-help').data('tab'),
 		help_tabs     = $('.contextual-help-tabs'),
 		help_contents = $('.contextual-help-tabs-wrap'),
-		panel         = $('#' + $('#screen-meta-links').find('.show-settings').attr('aria-controls') );
+		panel         = $('#' + $('#screen-meta-links').find('.show-settings').attr('aria-controls') ),
+		rtl           = params.is_rtl;
+
+	if ( rtl == 'rtl' ) {
+		rtl = true;
+	} else {
+		rtl = false;
+	}
 
 	$('input, number, email, textarea, select, checkbox, radio').change( function() {
 		changed = true;
 	});
 
 	// Navigation tab - If clicked and any input had changed then warn the user they will lose those changes if they continue.
-	$('.nav-tab-wrapper a').click( function() {
-		if ( changed ) {
-			window.onbeforeunload = function() {
-				return params.i18n_nav_warning;
-			};
-		} else {
-			window.onbeforeunload = '';
+	$('.nav-tab-wrapper a').click( function(e) {
+		var clicked_url = $(this).attr('href');
+
+		if ( changed && clicked_url !== '#' ) {
+			e.preventDefault();
+
+			$.confirm({
+				icon: 'dashicons dashicons-warning',
+				title: params.i18n_warning,
+				content: params.i18n_nav_warning,
+				rtl: rtl,
+				type: 'red',
+				buttons: {
+					warning: {
+						text: params.i18n_continue,
+						keys: ['y', 'enter'],
+						btnClass: 'btn-red',
+						action: function(){
+							location.href = clicked_url;
+						}
+					},
+					close: {
+						keys: ['n', 'esc'],
+						action: function () {
+							$.dialog({
+								title: params.i18n_save,
+								content: params.i18n_save_recommendation,
+								type: 'blue',
+								draggable: false,
+								boxWidth: '500px',
+								useBootstrap: false,
+							})
+						}
+					},
+				},
+				draggable: false,
+				boxWidth: '500px',
+				useBootstrap: false,
+			});
 		}
 	});
 
 	// Clears any warnings previously set
-	$('.submit :input').click( function(	) {
-		window.onbeforeunload = '';
+	$('.submit :input').click( function() {
+		changed = false;
 	});
 
 	// Reset button - If pressed will warn the user that all settings will be reset if they continue.
-	$('a.reset-settings').click( function() {
-		window.onbeforeunload = function() {
-			return params.i18n_reset_warning;
-		};
+	$('a.reset-settings').click( function(e) {
+		var clicked_url = $(this).attr('href');
+
+		e.preventDefault();
+
+		$.confirm({
+			icon: 'dashicons dashicons-warning',
+			title: params.i18n_warning,
+			content: params.i18n_reset_warning,
+			rtl: rtl,
+			type: 'red',
+			buttons: {
+				warning: {
+					text: params.i18n_continue,
+					keys: ['y', 'enter'],
+					btnClass: 'btn-red',
+					action: function(){
+						location.href = clicked_url;
+					}
+				},
+				close: {
+					keys: ['n', 'esc'],
+					action: function () {
+						// Do nothing!
+					}
+				},
+			},
+			draggable: false,
+			boxWidth: '500px',
+			useBootstrap: false,
+		});
+	});
+
+	// Setup Wizard button - If pressed will warn the user that the wizard will override settings if they continue.
+	$('#tab-panel-auto_load_next_post_wizard_tab a.button').click( function(e) {
+		var clicked_url = $(this).attr('href');
+
+		e.preventDefault();
+
+		$.confirm({
+			icon: 'dashicons dashicons-warning',
+			title: params.i18n_warning,
+			content: params.i18n_setup_wizard_warning,
+			rtl: rtl,
+			type: 'red',
+			buttons: {
+				warning: {
+					text: params.i18n_continue,
+					keys: ['y', 'enter'],
+					btnClass: 'btn-red',
+					action: function(){
+						location.href = clicked_url;
+					}
+				},
+				close: {
+					keys: ['n', 'esc'],
+					action: function () {
+						// Do nothing!
+					}
+				},
+			},
+			draggable: false,
+			boxWidth: '500px',
+			useBootstrap: false,
+		});
 	});
 
 	// Select all button

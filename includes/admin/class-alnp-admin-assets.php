@@ -90,20 +90,31 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 						}
 
 						// Load Select2
-						Auto_Load_Next_Post::load_file( 'select2', '/assets/js/libs/select2' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( 'jquery' ), '4.0.5', true );
+
+						// Load jQuery Confirm
+						Auto_Load_Next_Post::load_file( 'jquery-confirm', '/assets/css/libs/jquery-confirm.min.css' );
+						Auto_Load_Next_Post::load_file( 'jquery-confirm', '/assets/js/libs/jquery-confirm.min.js', true, array( 'jquery' ), '3.3.4', true );
+
+						Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_pro_preview', '/assets/js/admin/pro-preview' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( 'jquery', 'jquery-confirm' ), AUTO_LOAD_NEXT_POST_VERSION, true );
 
 						// Load plugin settings.
 						Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/js/admin/settings' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( 'jquery' ), AUTO_LOAD_NEXT_POST_VERSION, true );
 
 						// Variables for Admin JavaScript.
 						wp_localize_script( AUTO_LOAD_NEXT_POST_SLUG . '_admin', 'alnp_settings_params', array(
-							'is_rtl'             => is_rtl() ? 'rtl' : 'ltr',
-							'i18n_nav_warning'   => esc_html__( 'The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post' ),
-							'i18n_reset_warning' => sprintf( esc_html__( 'This will reset all settings back to default and re-initialize %s. Are you sure?', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+							'is_rtl'                    => is_rtl() ? 'rtl' : 'ltr',
+							'i18n_nav_warning'          => esc_html__( 'The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post' ),
+							'i18n_reset_warning'        => sprintf( esc_html__( 'This will reset all settings back to default and re-initialize %s. Are you sure?', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+							'i18n_setup_wizard_warning' => esc_html__( 'The setup wizard will override settings that you may already have working. Are you sure?', 'auto-load-next-post' ),
+							'i18n_coming_soon'          => esc_html__( 'Coming Soon', 'auto-load-next-post' ),
+							'i18n_continue'             => esc_html__( 'Continue', 'auto-load-next-post' ),
+							'i18n_save'                 => esc_html__( 'Save', 'auto-load-next-post' ),
+							'i18n_save_recommendation'  => sprintf( esc_html__( 'Press the %1$sSave Changes%2$s button to keep changes.', 'auto-load-next-post' ), '<strong>', '</strong>' ),
+							'i18n_warning'              => esc_html__( 'Warning', 'auto-load-next-post' ),
 						) );
+
 					break;
 				}
-	
 			}
 		} // END admin_scripts()
 
