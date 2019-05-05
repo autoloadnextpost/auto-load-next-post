@@ -49,7 +49,7 @@
 								draggable: false,
 								boxWidth: '500px',
 								useBootstrap: false,
-							})
+							});
 						}
 					},
 				},
