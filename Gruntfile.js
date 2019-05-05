@@ -114,6 +114,7 @@ module.exports = function(grunt) {
 					// Frontend
 					'assets/js/frontend/*.js',
 					'!assets/js/frontend/*.min.js',
+					'!assets/js/frontend/*.dev.js',
 				],
 				tasks: [
 					'jshint',
@@ -146,8 +147,8 @@ module.exports = function(grunt) {
 
 				// Frontend
 				'assets/js/frontend/*.js',
-				'!assets/js/frontend/*.min.js',
-				'assets/js/frontend/*.dev.js'
+				'assets/js/frontend/*.dev.js',
+				'!assets/js/frontend/*.min.js'
 			]
 		},
 
