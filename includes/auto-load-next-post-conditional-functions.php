@@ -85,7 +85,7 @@ if ( ! function_exists( 'is_alnp_active_theme' ) ) {
 	/**
 	 * See if theme/s is activate or not.
 	 *
-	 * @since 1.5.0
+	 * @since  1.5.0
 	 * @param  string|array $theme Theme name or array of theme names to check.
 	 * @return boolean
 	 */
