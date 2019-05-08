@@ -169,7 +169,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.10
+		 * @version 1.6.0
 		 * @return  void
 		 */
 		public function includes() {
@@ -191,6 +191,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			// Customizer.
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer.php' );
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer-scripts.php' );
+
+			// Ajax
+			include_once( dirname( __FILE__ ) . '/includes/class-alnp-ajax.php' );
 
 			// Include admin class to handle all back-end functions.
 			if ( is_admin() ) {
