@@ -101,16 +101,16 @@ if ( ! function_exists( 'alnp_get_locations' ) ) {
 	function alnp_get_locations() {
 		return array(
 			'', // Parent theme folder
-			'components',
-			'components/post',
-			'components/page',
-			'template-parts',
-			'template-parts/content',
-			'template-parts/post',
-			'template-parts/page',
-			'templates',
-			'partials',
-			'loop-templates'
+			'components/',
+			'components/post/',
+			'components/page/',
+			'template-parts/',
+			'template-parts/content/',
+			'template-parts/post/',
+			'template-parts/page/',
+			'templates/',
+			'partials/',
+			'loop-templates/'
 		);
 	} // END alnp_get_locations()
 }
