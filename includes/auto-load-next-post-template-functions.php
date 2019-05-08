@@ -205,6 +205,10 @@ if ( ! function_exists( 'alnp_get_template' ) ) {
 			$template = get_option( 'auto_load_next_post_template_' . $post_type );
 		}
 
+		if ( !$template ) {
+			return '';
+		}
+
 		return $template;
 	} // END alnp_get_template()
 }
