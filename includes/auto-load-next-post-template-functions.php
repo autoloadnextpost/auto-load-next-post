@@ -166,6 +166,11 @@ if ( ! function_exists( 'alnp_scan_template' ) ) {
 		foreach( $locations as $location ) {
 			// Scanning all possible templates within the locations.
 			foreach( $templates as $template ) {
+				// Remove forwardslash if location is the parent theme folder.
+				if ( empty( $location ) ) {
+					$location = str_replace('/', '', $location);
+				}
+
 				// If a template has been found then save it.
 				if ( locate_template( $location . $template ) != '' && $content_found != true ) {
 					$save_location = $location . $template;
