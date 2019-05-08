@@ -1,6 +1,6 @@
 .meter {
-	background: #ddd;
-	height: 16px;
+	background: $lightgrey;
+	height: 20px;
 	position: relative;
 	margin: 8px 0;
 	-moz-border-radius: 25px;
@@ -58,23 +58,23 @@
 
 .blue > span {
 	background-color: #658ef1;
-	background-image: -moz-linear-gradient(top, #658ef1, #657ff1);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #658ef1), color-stop(1, #657ff1));
-	background-image: -webkit-linear-gradient(#658ef1, #657ff1);
+	background-image: -moz-linear-gradient(top, #658ef1, $blue);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #658ef1), color-stop(1, $blue));
+	background-image: -webkit-linear-gradient(#658ef1, $blue);
 }
 
 .orange > span {
-	background-color: #f1a165;
-	background-image: -moz-linear-gradient(top, #f1a165, #f36d0a);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f1a165), color-stop(1, #f36d0a));
-	background-image: -webkit-linear-gradient(#f1a165, #f36d0a);
+	background-color: $lightorange;
+	background-image: -moz-linear-gradient(top, $lightorange, $orange);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $lightorange), color-stop(1, $orange));
+	background-image: -webkit-linear-gradient($lightorange, $orange);
 }
 
 .red > span {
-	background-color: #f0a3a3;
-	background-image: -moz-linear-gradient(top, #f0a3a3, #f42323);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0a3a3), color-stop(1, #f42323));
-	background-image: -webkit-linear-gradient(#f0a3a3, #f42323);
+	background-color: $lightred;
+	background-image: -moz-linear-gradient(top, $lightred, $red);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $lightred), color-stop(1, $red));
+	background-image: -webkit-linear-gradient($lightred, $red);
 }
 
 .yellow > span {
