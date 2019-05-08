@@ -177,9 +177,9 @@ if ( ! function_exists( 'alnp_scan_template' ) ) {
 
 					// Save template found.
 					if ( ! empty( $post_format ) ) {
-						add_option( 'auto_load_next_post_template_single_' . $post_format, $save_location );
+						update_option( 'auto_load_next_post_template_single_' . $post_format, $save_location );
 					} else {
-						add_option( 'auto_load_next_post_template_' . $post_type, $save_location );
+						update_option( 'auto_load_next_post_template_' . $post_type, $save_location );
 					}
 
 					$content_found = true;
