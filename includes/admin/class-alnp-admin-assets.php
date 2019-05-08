@@ -75,6 +75,10 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 
 			if ( $screen_id == 'settings_page_auto-load-next-post' ) {
 
+				// Load jQuery Confirm
+				Auto_Load_Next_Post::load_file( 'jquery-confirm', '/assets/css/libs/jquery-confirm.min.css' );
+				Auto_Load_Next_Post::load_file( 'jquery-confirm', '/assets/js/libs/jquery-confirm.min.js', true, array( 'jquery' ), '3.3.4', true );
+
 				$current_view = ! empty( $_GET['view'] ) ? sanitize_title( wp_unslash( $_GET['view'] ) ) : '';
 
 				switch( $current_view ) {
@@ -90,17 +94,21 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 						}
 
 						// Load Select2
+						Auto_Load_Next_Post::load_file( 'select2', '/assets/js/libs/select2.min.js', true, array( 'jquery' ), '4.0.5', true );
 
-						// Load jQuery Confirm
-						Auto_Load_Next_Post::load_file( 'jquery-confirm', '/assets/css/libs/jquery-confirm.min.css' );
-						Auto_Load_Next_Post::load_file( 'jquery-confirm', '/assets/js/libs/jquery-confirm.min.js', true, array( 'jquery' ), '3.3.4', true );
-
+						// Auto Load Next Post Preview.
 						Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_pro_preview', '/assets/js/admin/pro-preview' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( 'jquery', 'jquery-confirm' ), AUTO_LOAD_NEXT_POST_VERSION, true );
+
+						// Variables for Pro Preview JavaScript.
+						wp_localize_script( AUTO_LOAD_NEXT_POST_SLUG . '_pro_preview', 'alnp_pro_preview_params', array(
+							'is_rtl'           => is_rtl() ? true : false,
+							'i18n_coming_soon' => esc_html__( 'Coming Soon', 'auto-load-next-post' ),
+						) );
 
 						// Load plugin settings.
 						Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/js/admin/settings' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( 'jquery' ), AUTO_LOAD_NEXT_POST_VERSION, true );
 
-						// Variables for Admin JavaScript.
+						// Variables for Admin Settings JavaScript.
 						wp_localize_script( AUTO_LOAD_NEXT_POST_SLUG . '_admin', 'alnp_settings_params', array(
 							'is_rtl'                    => is_rtl() ? 'rtl' : 'ltr',
 							'i18n_nav_warning'          => esc_html__( 'The changes you made will be lost if you navigate away from this page.', 'auto-load-next-post' ),
