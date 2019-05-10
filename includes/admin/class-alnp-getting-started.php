@@ -71,7 +71,18 @@ if ( ! class_exists( 'ALNP_Getting_Started' ) ) {
 						<?php
 						} else {
 						?>
-							<p><?php echo sprintf( __( 'To help you setup %1$s, run the %2$s or %3$s if you are developing a theme and want to add support for %1$s.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), esc_html__( 'Setup Wizard', 'auto-load-next-post' ), esc_html__( 'View Documentation', 'auto-load-next-post' ) ); ?></p>
+							<p><?php echo sprintf( __( 'Run the %1$s to be ready in less than 5-minutes, setting up %2$s for the first time is easy. The wizard will scan your theme to process the installation.', 'auto-load-next-post' ), esc_html__( 'Setup Wizard', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
+
+							<p><?php echo sprintf( __( 'If you are developing a theme and want to add support for %1$s, view documentation for developer guides, snippets and more.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
+
+							<?php
+							/**
+							 * Display content if you have Auto Load Next Post Pro installed or not.
+							 */
+							if ( is_alnp_pro_version_installed() ) {
+								include( dirname( __FILE__ ) . '/views/html-getting-started-pro.php' );
+							}
+							?>
 
 							<p style="text-align: center;">
 								<a class="button button-primary button-large" href="<?php echo add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'setup-wizard' ), admin_url( 'options-general.php' ) ); ?>"><?php _e( 'Setup Wizard', 'auto-load-next-post' ); ?></a>
@@ -80,15 +91,6 @@ if ( ! class_exists( 'ALNP_Getting_Started' ) ) {
 
 							<hr>
 							<?php
-						}
-
-						/**
-						 * Display content depending on if you have Auto Load Next Post Pro installed or not.
-						 */
-						if ( ! is_alnp_pro_version_installed() ) {
-							include( dirname( __FILE__ ) . '/views/html-getting-started.php' );
-						} else {
-							include( dirname( __FILE__ ) . '/views/html-getting-started-pro.php' );
 						}
 						?>
 
