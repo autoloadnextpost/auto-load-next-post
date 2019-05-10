@@ -84,8 +84,25 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 				switch( $current_view ) {
 					case 'setup-wizard':
 						// Scanner.
-						Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_admin', '/assets/js/admin/scanner' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( 'jquery' ), AUTO_LOAD_NEXT_POST_VERSION, true );
-					break;
+						Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_scanner', '/assets/js/admin/scanner' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.js', true, array( 'jquery' ), AUTO_LOAD_NEXT_POST_VERSION, true );
+
+						// Variables for Scanner JavaScript.
+						wp_localize_script( AUTO_LOAD_NEXT_POST_SLUG . '_scanner', 'alnp_scanner_params', array(
+							'is_rtl'                      => is_rtl() ? true : false,
+							'ajax_url'                    => admin_url( 'admin-ajax.php', 'relative' ),
+							'random_page'                 => alnp_get_random_page_permalink(),
+							'i18n_searching'              => esc_html__( 'Searching...', 'auto-load-next-post' ),
+							'i18n_scanning_theme'         => esc_html__( 'Scanning Theme', 'auto-load-next-post' ),
+							'i18n_scanning_theme_content' => esc_html__( 'Currently scanning a post on your site for your theme selectors. Please wait...', 'auto-load-next-post' ),
+							'i18n_please_wait'            => esc_html__( 'Please Wait', 'auto-load-next-post' ),
+							'i18n_loading_post'           => esc_html__( 'Loading post...', 'auto-load-next-post' ),
+							'i18n_copied'                 => esc_html__( 'Copied', 'auto-load-next-post' ),
+							'i18n_copy_title'             => esc_html__( 'Click to copy theme selector', 'auto-load-next-post' ),
+							'i18n_post_nav_missing'       => esc_html__( 'Post Navigation Missing?', 'auto-load-next-post' ),
+							'i18n_error_post_nav'         => sprintf( esc_html__( '%1$s requires a theme with a post navigation in order to work and the setup wizard did not detect one. You may scan again to be sure. If you get the same results, %1$s may not recognise it.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						) );
+
+						break;
 					default:
 						// Select2 - Make sure that we remove other registered Select2 to prevent plugin conflict issues.
 						if ( wp_script_is( 'select2', 'registered' ) ) {
@@ -121,7 +138,7 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 							'i18n_warning'              => esc_html__( 'Warning', 'auto-load-next-post' ),
 						) );
 
-					break;
+						break;
 				}
 			}
 		} // END admin_scripts()
