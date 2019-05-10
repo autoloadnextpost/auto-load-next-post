@@ -134,14 +134,22 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 			$post_navigation_readonly = 'no';
 			$comments_container_readonly = 'no';
 
+			// Defines if we should show default selector.
+			$container_default = '';
+			$post_title_default = '';
+			$post_navigation_default = '';
+			$comments_container_default = '';
+
 			// Checks if the Content Container selector has been set by theme support.
 			if ( ! empty( alnp_get_theme_support( 'content_container' ) ) ) {
 				$container_readonly = 'yes';
+			} else {
+				$container_default = sprintf( __( 'Default: %s', 'auto-load-next-post' ), '<code>main.site-main</code>' );
 			}
 
 			$settings[] = array(
 				'title'       => esc_html__( 'Content Container', 'auto-load-next-post' ),
-				'desc'        => sprintf( __( 'The primary container where the post content is loaded in. Default: %s', 'auto-load-next-post' ), '<code>main.site-main</code>' ),
+				'desc'        => sprintf( __( 'The primary container where the post content is loaded in. %s', 'auto-load-next-post' ), $container_default ),
 				'id'          => 'auto_load_next_post_content_container',
 				'default'     => 'main.site-main',
 				'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'main.site-main' ),
@@ -154,9 +162,13 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 			// Checks if the Post Title selector has been set by theme support.
 			if ( ! empty( alnp_get_theme_support( 'title_selector' ) ) ) {
 				$post_title_readonly = 'yes';
+			} else {
+				$post_title_default = sprintf( __( 'Default: %s', 'auto-load-next-post' ), '<code>h1.entry-title</code>' );
 			}
 
 			$settings[] = array(
+				'title'       => esc_html__( 'Post Title', 'auto-load-next-post' ),
+				'desc'        => sprintf( __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. %s', 'auto-load-next-post' ), $post_title_default ),
 				'id'          => 'auto_load_next_post_title_selector',
 				'default'     => 'h1.entry-title',
 				'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'h1.entry-title' ),
@@ -167,9 +179,13 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 			// Checks if the Post Navigation selector has been set by theme support.
 			if ( ! empty( alnp_get_theme_support( 'navigation_container' ) ) ) {
 				$post_navigation_readonly = 'yes';
+			} else {
+				$post_navigation_default = sprintf( __( 'Default: %s', 'auto-load-next-post' ), '<code>nav.post-navigation</code>' );
 			}
 
 			$settings[] = array(
+				'title'       => esc_html__( 'Post Navigation', 'auto-load-next-post' ),
+				'desc'        => sprintf( __( 'Used to identify which post to load next if any. %s', 'auto-load-next-post' ), $post_navigation_default ),
 				'id'          => 'auto_load_next_post_navigation_container',
 				'default'     => 'nav.post-navigation',
 				'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'nav.post-navigation' ),
@@ -180,9 +196,13 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 			// Checks if the Comments Container selector has been set by theme support.
 			if ( ! empty( alnp_get_theme_support( 'comments_container' ) ) ) {
 				$comments_container_readonly = 'yes';
+			} else {
+				$comments_container_default = sprintf( __( 'Default: %s', 'auto-load-next-post' ), '<code>div#comments</code>' );
 			}
 
 			$settings[] = array(
+				'title'       => esc_html__( 'Comments Container', 'auto-load-next-post' ),
+				'desc'        => sprintf( __( 'Used to remove comments if enabled under %1$sMisc%2$s settings. %3$s', 'auto-load-next-post' ), '<strong><a href="' . add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'misc' ), get_admin_url( $blog_id, 'options-general.php' ) ) . '">', '</a></strong>', $comments_container_default ),
 				'id'          => 'auto_load_next_post_comments_container',
 				'default'     => 'div#comments',
 				'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'div#comments' ),
