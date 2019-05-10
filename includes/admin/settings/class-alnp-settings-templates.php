@@ -86,7 +86,7 @@ if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 					'desc'        => sprintf( __( 'Enter the folder location where the theme template for %s are stored.', 'auto-load-next-post' ), $post_type ),
 					'id'          => 'auto_load_next_post_template_location_' . strtolower( $post_type ),
 					'default'     => '',
-					'placeholder' => 'template-parts/',
+					'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'template-parts/' ),
 					'readonly'    => $readonly,
 					'type'        => 'text',
 					'css'         => 'min-width:300px;',

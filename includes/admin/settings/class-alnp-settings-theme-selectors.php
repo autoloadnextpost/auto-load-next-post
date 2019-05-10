@@ -144,7 +144,7 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 				'desc'        => sprintf( __( 'The primary container where the post content is loaded in. Default: %s', 'auto-load-next-post' ), '<code>main.site-main</code>' ),
 				'id'          => 'auto_load_next_post_content_container',
 				'default'     => 'main.site-main',
-				'placeholder' => esc_html__( 'Required', 'auto-load-next-post' ),
+				'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'main.site-main' ),
 				'readonly'    => $container_readonly,
 				'type'        => 'text',
 				'css'         => 'min-width:300px;',
@@ -157,14 +157,11 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 			}
 
 			$settings[] = array(
-				'title'    => esc_html__( 'Post Title', 'auto-load-next-post' ),
-				'desc'     => sprintf( __( 'Used to identify which article the user is reading and track should Google Analytics or other analytics be enabled. Default: %s', 'auto-load-next-post' ), '<code>h1.entry-title</code>' ),
-				'id'       => 'auto_load_next_post_title_selector',
-				'default'  => 'h1.entry-title',
-				'readonly' => $post_title_readonly,
-				'type'     => 'text',
-				'css'      => 'min-width:300px;',
-				'autoload' => false
+				'id'          => 'auto_load_next_post_title_selector',
+				'default'     => 'h1.entry-title',
+				'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'h1.entry-title' ),
+				'readonly'    => $post_title_readonly,
+				'type'        => 'text',
 			);
 
 			// Checks if the Post Navigation selector has been set by theme support.
@@ -173,14 +170,11 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 			}
 
 			$settings[] = array(
-				'title'    => esc_html__( 'Post Navigation', 'auto-load-next-post' ),
-				'desc'     => sprintf( __( 'Used to identify which post to load next if any. Default: %s', 'auto-load-next-post' ), '<code>nav.post-navigation</code>' ),
-				'id'       => 'auto_load_next_post_navigation_container',
-				'default'  => 'nav.post-navigation',
-				'readonly' => $post_navigation_readonly,
-				'type'     => 'text',
-				'css'      => 'min-width:300px;',
-				'autoload' => false
+				'id'          => 'auto_load_next_post_navigation_container',
+				'default'     => 'nav.post-navigation',
+				'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'nav.post-navigation' ),
+				'readonly'    => $post_navigation_readonly,
+				'type'        => 'text',
 			);
 
 			// Checks if the Comments Container selector has been set by theme support.
@@ -189,14 +183,13 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 			}
 
 			$settings[] = array(
-				'title'    => esc_html__( 'Comments Container', 'auto-load-next-post' ),
-				'desc'     => sprintf( __( 'Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s', 'auto-load-next-post' ), '<strong><a href="' . add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'misc' ), get_admin_url( $blog_id, 'options-general.php' ) ) . '">', '</a></strong>', '<code>div#comments</code>' ),
-				'id'       => 'auto_load_next_post_comments_container',
-				'default'  => 'div#comments',
-				'readonly' => $comments_container_readonly,
-				'type'     => 'text',
-				'css'      => 'min-width:300px;',
-				'autoload' => false
+				'id'          => 'auto_load_next_post_comments_container',
+				'default'     => 'div#comments',
+				'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'div#comments' ),
+				'readonly'    => $comments_container_readonly,
+				'type'        => 'text',
+				'css'         => 'min-width:300px;',
+				'autoload'    => false
 			);
 
 			$settings[] = array(
