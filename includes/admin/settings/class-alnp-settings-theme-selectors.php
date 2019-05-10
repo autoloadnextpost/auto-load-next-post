@@ -156,6 +156,7 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 				'readonly'    => $container_readonly,
 				'type'        => 'text',
 				'css'         => 'min-width:300px;',
+				'class'       => 'required',
 				'autoload'    => false
 			);
 
@@ -174,6 +175,9 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 				'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'h1.entry-title' ),
 				'readonly'    => $post_title_readonly,
 				'type'        => 'text',
+				'css'         => 'min-width:300px;',
+				'class'       => 'required',
+				'autoload'    => false
 			);
 
 			// Checks if the Post Navigation selector has been set by theme support.
@@ -191,6 +195,9 @@ if ( ! class_exists( 'ALNP_Settings_Theme_Selectors' ) ) {
 				'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'nav.post-navigation' ),
 				'readonly'    => $post_navigation_readonly,
 				'type'        => 'text',
+				'css'         => 'min-width:300px;',
+				'class'       => 'required',
+				'autoload'    => false
 			);
 
 			// Checks if the Comments Container selector has been set by theme support.
