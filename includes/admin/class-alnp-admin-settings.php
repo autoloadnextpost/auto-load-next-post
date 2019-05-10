@@ -324,7 +324,7 @@ if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 							<th scope="row" class="titledesc">
 								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
 							</th>
-							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
+							<td>
 								<input
 									name="<?php echo esc_attr( $value['id'] ); ?>"
 									id="<?php echo esc_attr( $value['id'] ); ?>"
@@ -348,7 +348,7 @@ if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 							<th scope="row" class="titledesc">
 								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
 							</th>
-							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
+							<td>
 								<?php echo $description; ?>
 
 								<textarea
@@ -373,7 +373,7 @@ if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 							<th scope="row" class="titledesc">
 								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
 							</th>
-							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
+							<td>
 								<select
 									name="<?php echo esc_attr( $value['id'] ); ?><?php echo ( 'multiselect' === $value['type'] ) ? '[]' : ''; ?>"
 									id="<?php echo esc_attr( $value['id'] ); ?>"
@@ -413,7 +413,7 @@ if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 							<th scope="row" class="titledesc">
 								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
 							</th>
-							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
+							<td>
 								<fieldset>
 									<?php echo $description; ?>
 									<ul>
@@ -466,7 +466,7 @@ if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 							?>
 								<tr valign="top" class="<?php echo esc_attr( implode( ' ', $visibility_class ) ); ?>">
 									<th scope="row" class="titledesc"><?php echo esc_html( $value['title'] ); ?></th>
-									<td class="forminp forminp-checkbox">
+									<td>
 										<fieldset>
 							<?php
 						} else {
@@ -512,7 +512,7 @@ if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 					?>
 						<tr valign="top">
 							<th scope="row" class="titledesc"><?php echo $value['title'];?></th>
-							<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
+							<td>
 								<a href="<?php echo $value['url']; ?>" class="button-secondary <?php echo esc_attr( $value['class'] ); ?>">
 									<?php echo $value['value']; ?>
 								</a>
