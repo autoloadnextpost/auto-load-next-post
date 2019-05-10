@@ -67,18 +67,19 @@ if ( ! class_exists( 'ALNP_AJAX' ) ) {
 				wp_die();
 			}
 
-			// Scan template and save location.
-			alnp_scan_template( $post_type );
+			// Scan directories and saves the location.
+			alnp_scan_directories( $post_type );
 
-			// Get template location.
-			$template = alnp_get_template( $post_type );
+			// Get directory location.
+			$directory = alnp_get_template_directory( $post_type );
 
-			// Return 'found' if template was saved.
-			if ( ! empty( $template ) || $template == null ) {
-				wp_send_json( 'found' );
+			// Return if directory was saved.
+			if ( ! empty( $directory ) || $directory == null ) {
+				wp_send_json( $directory );
+			} else {
+				wp_send_json( -1 );
 			}
 
-			wp_send_json( -1 );
 			wp_die();
 		} // END find_template_location()
 
