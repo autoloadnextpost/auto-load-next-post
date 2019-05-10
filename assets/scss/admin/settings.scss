@@ -33,6 +33,12 @@ table.alnp-table {
 		color: #444;
 	}
 
+	input.required {
+		&.invalid {
+			border-color: $red;
+		}
+	}
+
 	fieldset {
 		margin-top: 4px;
 	}
