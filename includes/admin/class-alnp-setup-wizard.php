@@ -142,10 +142,10 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 							 */
 							if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 							?>
-							<div class="debug-mode">
-								<p><strong><?php _e( 'Post scanned:', 'auto-load-next-post' ); ?></strong> <i><span class="post-tested">*</span></i></p>
+							<div class="theme-selectors debug-mode">
+								<p><strong class="red"><?php _e( 'Developers:', 'auto-load-next-post' ); ?></strong><?php echo sprintf( __( 'You have %1$sWP_DEBUG%2$s enabled so you can see the results for the theme selectors found below. If any selector was not found, an answer has been provided. You can copy and paste the selectors to the settings page should any of them were not set automatically for you.', 'auto-load-next-post' ), '<strong>', '</strong>' ); ?></p>
 
-								<p><?php echo sprintf( __( 'You have %1$sWP_DEBUG%2$s enabled so you can see the results for the theme selectors found below. If any selector was not found, an answer has been provided. You can copy and paste the selectors to the settings page should any of them were not set automatically for you.', 'auto-load-next-post' ), '<strong>', '</strong>' ); ?></p>
+								<p><strong><?php _e( 'Post scanned:', 'auto-load-next-post' ); ?></strong> <i><span class="post-tested">*</span></i></p>
 
 								<div class="selectors left">
 									<span class="bold"><?php _e( 'Selector', 'auto-load-next-post' ); ?></span>
