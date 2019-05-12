@@ -118,7 +118,7 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 								<strong class="red"><?php _e( 'Developers:', 'auto-load-next-post' ); ?></strong> <?php echo sprintf( __( 'You can %1$sapply a filter to set the template location%2$s with the found directory for your theme.', 'auto-load-next-post' ), '<a href="https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/filter-hooks.md#filter-alnp_template_location" target="_blank">', '</a>' ); ?>
 							</p>
 
-							<p><?php _e( 'Copy:', 'auto-load-next-post' ); ?> <i class="bold"><span class="location">*</span></i></p>
+							<p><?php _e( 'Copy:', 'auto-load-next-post' ); ?> <i class="bold copy"><span class="location">*</span></i></p>
 							<?php } ?>
 
 							<hr>
