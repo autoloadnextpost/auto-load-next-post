@@ -120,7 +120,7 @@ if ( ! class_exists( 'ALNP_Settings_Misc' ) ) {
 
 					'load_js_in_footer' => array(
 						'title'   => esc_html__( 'JavaScript in Footer?', 'auto-load-next-post' ),
-						'desc'    => esc_html__( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site or if the current theme requires it.', 'auto-load-next-post' ),
+						'desc'    => sprintf( esc_html__( 'Enable to load %s in the footer instead of the header. Can be useful to optimize your site or if the current theme requires it.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 						'id'      => 'auto_load_next_post_load_js_in_footer',
 						'default' => 'no',
 						'type'    => 'checkbox'
