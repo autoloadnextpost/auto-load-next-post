@@ -65,6 +65,25 @@ if ( ! function_exists( 'alnp_load_js_in_footer' ) ) {
 	} // END alnp_load_js_in_footer()
 }
 
+if ( ! function_exists( 'alnp_disable_on_mobile' ) ) {
+	/**
+	 * This helps the plugin decide to disable Auto Load Next Post 
+	 * from running on mobile devices.
+	 * 
+	 * @since  1.6.0
+	 * @return boolean
+	 */
+	function alnp_disable_on_mobile() {
+		$disable_mobile = get_option( 'auto_load_next_post_disable_on_mobile', false );
+
+		if ( isset( $disable_mobile ) && $disable_mobile == 'yes' ) {
+			return true;
+		}
+
+		return false;
+	} // END alnp_disable_on_mobile()
+}
+
 if ( ! function_exists( 'alnp_get_admin_screens' ) ) {
 /**
  * These are the only screens Auto Load Next Post will focus 

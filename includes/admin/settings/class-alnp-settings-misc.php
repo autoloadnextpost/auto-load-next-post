@@ -126,6 +126,14 @@ if ( ! class_exists( 'ALNP_Settings_Misc' ) ) {
 						'type'    => 'checkbox'
 					),
 
+					'disable_on_mobile' => array(
+						'title'   => esc_html__( 'Disable for Mobile?', 'auto-load-next-post' ),
+						'desc'    => sprintf( esc_html__( 'Enable to disable %s from running on mobile devices.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						'id'      => 'auto_load_next_post_disable_on_mobile',
+						'default' => 'no',
+						'type'    => 'checkbox'
+					),
+
 					'reset_data' => array(
 						'title' => esc_html__( 'Reset all data?', 'auto-load-next-post' ),
 						'desc'  => esc_html__( 'Press the reset button to clear all settings for this plugin and re-initialize.', 'auto-load-next-post' ),

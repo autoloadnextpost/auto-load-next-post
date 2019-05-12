@@ -237,6 +237,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 				// This checks to see if the JavaScript should load in the footer or not.
 				$load_in_footer = alnp_load_js_in_footer();
 
+				// This checks to see if we should disable Auto Load Next Post from running on mobile devices.
+				$disable_mobile = alnp_disable_on_mobile();
+
 				$this->load_file( 'auto-load-next-post-scrollspy', '/assets/js/libs/scrollspy.min.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION, $load_in_footer );
 
 				// Only load History.js when not in the customizer.
@@ -258,7 +261,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 					'alnp_event_on_load'        => get_option( 'auto_load_next_post_on_load_event' ),
 					'alnp_event_on_entering'    => get_option( 'auto_load_next_post_on_entering_event' ),
 					'alnp_is_customizer'        => $this->is_alnp_using_customizer(),
-					'alnp_load_in_footer'       => $load_in_footer
+					'alnp_load_in_footer'       => $load_in_footer,
+					'alnp_is_mobile'            => $this->is_mobile(),
+					'alnp_disable_mobile'       => $disable_mobile
 				) );
 			} // END if is_singular() && get_post_type()
 		} // END alnp_enqueue_scripts()
@@ -278,6 +283,22 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
 			return false;
 		} // END is_alnp_using_customizer()
+
+		/**
+		 * Check if the site is viewed on a mobile device.
+		 *
+		 * @access public
+		 * @since  1.6.0
+		 * @static
+		 * @return string|bool
+		 */
+		public static function is_mobile() {
+			if ( wp_is_mobile() ) {
+				return "yes";
+			}
+
+			return false;
+		} // END is_mobile()
 
 		/**
 		 * Helper function for registering and enqueueing scripts and styles.
