@@ -224,9 +224,14 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.5.8
+		 * @version 1.6.0
 		 */
 		public function alnp_enqueue_scripts() {
+			// Prevent enqueue scripts if feed, trackback or a preview of a post.
+			if ( is_feed() || is_trackback() || is_preview() ) {
+				return;
+			}
+
 			// Load the Javascript if found as a singluar post and the user is not a bot.
 			if ( !alnp_is_bot() && is_singular() && get_post_type() == 'post' ) {
 				// This checks to see if the JavaScript should load in the footer or not.
