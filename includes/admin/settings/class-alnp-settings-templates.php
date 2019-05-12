@@ -53,10 +53,16 @@ if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 		public function get_settings() {
 			$settings = array();
 
+			$description = sprintf( __( 'This helps fine tune %s to locate your theme templates directory in order to display content in the same style as your theme.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) );
+
+			if ( is_alnp_pro_version_installed() ) {
+				$description .= ' ' . sprintf( __( 'Set the location for each post type if they are located in their own template directory. Otherwise just enter the location for %1$sPosts%2$s.', 'auto-load-next-post' ), '<strong>', '</strong>' );
+			}
+
 			$settings[] = array(
 				'title' => $this->label,
 				'type'  => 'title',
-				'desc'  => sprintf( __( 'This helps fine tune %1$s to locate your theme templates in order to display content in the same style as your theme. Set the template location for each post type if they are located in their own template folder. Otherwise just enter the template location for %2$sPosts%3$s.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<strong>', '</strong>' ),
+				'desc'  => $description,
 				'id'    => 'templates_options'
 			);
 
