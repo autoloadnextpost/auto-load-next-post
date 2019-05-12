@@ -118,8 +118,14 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 
 						// Variables for Pro Preview JavaScript.
 						wp_localize_script( AUTO_LOAD_NEXT_POST_SLUG . '_pro_preview', 'alnp_pro_preview_params', array(
-							'is_rtl'           => is_rtl() ? true : false,
-							'i18n_coming_soon' => esc_html__( 'Coming Soon', 'auto-load-next-post' ),
+							'is_rtl'                    => is_rtl() ? true : false,
+							'i18n_coming_soon'          => esc_html__( 'Coming Soon', 'auto-load-next-post' ),
+							'i18n_coming_soon_content'  => sprintf( esc_html__( '%1$s%3$s%2$s coming soon with more features. Sign up in the sidebar to be notified!', 'auto-load-next-post' ), '<strong>', '</strong>', esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ) ),
+							'i18n_comments_content'     => sprintf( esc_html__( '%1$sComments:%2$s More control on how comments should interact when each post loads.', 'auto-load-next-post' ), '<strong>', '</strong>' ),
+							'i18n_load_scroll_content'  => sprintf( esc_html__( '%1$sLoad and Scroll:%2$s Choose what loads next, enable to load split posts, scroll transistion and scroll speed.', 'auto-load-next-post' ), '<strong>', '</strong>' ),
+							'i18n_restrictions_content' => sprintf( esc_html__( '%1$sRestrictions:%2$s Manage which post types Auto Load Next Post should load on, how many posts to load per session and which user roles and users are excluded from loading posts.', 'auto-load-next-post' ), '<strong>', '</strong>' ),
+							'i18n_query_content'        => sprintf( esc_html__( '%1$sQuery:%2$s Customise the query of posts before Auto Load Next Post loads them including excluded posts and post formats.', 'auto-load-next-post' ), '<strong>', '</strong>' ),
+							'i18n_license_content'      => esc_html__( 'License is managed here for support and remote plugin updates.', 'auto-load-next-post' )
 						) );
 
 						// Load plugin settings.

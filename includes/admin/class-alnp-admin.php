@@ -42,21 +42,25 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 * @version 1.6.0
 		 */
 		public function includes() {
-			include( dirname( __FILE__ ) . '/class-alnp-action-links.php' );        // Action Links
-			include( dirname( __FILE__ ) . '/class-alnp-admin-assets.php' );        // Admin Assets
-			include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' );       // Plugin Notices
+			include( dirname( __FILE__ ) . '/class-alnp-action-links.php' );              // Action Links
+			include( dirname( __FILE__ ) . '/class-alnp-admin-assets.php' );              // Admin Assets
+			include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' );             // Plugin Notices
 
 			if ( apply_filters( 'alnp_enable_admin_help_tab', true ) ) {
-				include( dirname( __FILE__ ) . '/class-alnp-admin-help.php' );      // Plugin Help Tab
+				include( dirname( __FILE__ ) . '/class-alnp-admin-help.php' );            // Plugin Help Tab
 			}
 
-			include_once( dirname( __FILE__ ) . '/class-alnp-getting-started.php'); // Getting Started.
-			include_once( dirname( __FILE__ ) . '/class-alnp-setup-wizard.php');    // Setup Wizard.
-			include_once( dirname( __FILE__ ) . '/class-alnp-extensions.php');      // Extensions.
+			include_once( dirname( __FILE__ ) . '/class-alnp-getting-started.php');       // Getting Started.
+			include_once( dirname( __FILE__ ) . '/class-alnp-setup-wizard.php');          // Setup Wizard.
+			include_once( dirname( __FILE__ ) . '/class-alnp-extensions.php');            // Extensions.
 
-			include( dirname( __FILE__ ) . '/class-alnp-sidebar.php' );             // Sidebar
-			include( dirname( __FILE__ ) . '/class-alnp-admin-footer.php' );        // Admin Footer
-			include( dirname( __FILE__ ) . '/class-alnp-privacy.php' );             // Plugin Privacy
+			if ( ! is_alnp_pro_version_installed() ) {
+				include_once( dirname( __FILE__ ) . '/class-alnp-admin-pro-preview.php'); // Pro Preview.
+			}
+
+			include( dirname( __FILE__ ) . '/class-alnp-sidebar.php' );                   // Sidebar
+			include( dirname( __FILE__ ) . '/class-alnp-admin-footer.php' );              // Admin Footer
+			include( dirname( __FILE__ ) . '/class-alnp-privacy.php' );                   // Plugin Privacy
 		} // END includes()
 
 		/**
