@@ -88,7 +88,7 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 
 							<p><?php _e( 'So let\'s get started.', 'auto-load-next-post' ); ?></p>
 
-							<p class="small red"><i><?php echo sprintf( esc_html__( 'Please note that the setup wizard is not full proof and some manual work maybe required depending on the results. If you have %1$sWP_DEBUG%2$s enabled then the results will be displayed to you.', 'auto-load-next-post' ), '<strong>', '</strong>' ); ?></i></p>
+							<p class="small red"><i><?php echo sprintf( esc_html__( 'Please note that the setup wizard is not full proof and some manual work maybe required depending on the results. If you have %1$sWP_DEBUG%2$s enabled then results on what was found will be displayed to you.', 'auto-load-next-post' ), '<strong>', '</strong>' ); ?></i></p>
 
 							<p style="text-align: center;">
 								<a class="button button-primary button-large scan-button" href="#" data-step="template-location"><?php _e( 'Start', 'auto-load-next-post' ); ?></a>
@@ -102,7 +102,7 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 						<div class="box template-location-results">
 							<h2><?php _e( 'Setup Wizard: Template Location', 'auto-load-next-post' ); ?></h2>
 
-							<p class="template-found"><?php printf( __( '%s has detected the template location and has set it for you. Please continue the wizard to scan for theme selectors.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
+							<p class="template-found"><?php printf( __( '%s has detected the template location and has set it for you. Please continue the wizard to scan for theme selectors next.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
 
 							<p class="no-template-found"><?php printf( __( 'Setup Wizard was not able to locate your template location for this theme. This is likely because the theme is using either a directory or filename that %s does not recognise.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
 
@@ -143,7 +143,7 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 							if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 							?>
 							<div class="theme-selectors debug-mode">
-								<p><?php echo sprintf( __( 'You have %1$sWP_DEBUG%2$s enabled so you can see the results for the theme selectors found below. If any selector was not found, an answer has been provided. You can copy and paste the selectors to the settings page should any of them were not set automatically for you.', 'auto-load-next-post' ), '<strong>', '</strong>' ); ?></p>
+								<p><?php _e( 'If any selector was not found, click on the help icon next to the result for more details.', 'auto-load-next-post' ); ?></p>
 
 								<p><strong><?php _e( 'Post scanned:', 'auto-load-next-post' ); ?></strong> <i><span class="post-tested">*</span></i></p>
 
@@ -180,12 +180,13 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 
 							<p class="no-post-navigation"><?php printf( __( 'No post navigation on the scanned post was detected. If this is incorrect, please %1$scontact me%2$s and let me know your site URL address.', 'auto-load-next-post' ), '<a href="https://autoloadnextpost.com/contact/" target="_blank">', '</a>' ); ?></p>
 
-							<p class="setup-complete"><?php printf( __( 'Congratulations, %s is now setup and ready.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
+							<p class="setup-complete"><?php printf( __( 'Congratulations, %s is now setup and ready. Further optional options are available via the settings page.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
 
 							<hr>
 
 							<p style="text-align: center;">
 								<button class="button button-large rescan"><?php _e( 'Scan Again?', 'auto-load-next-post' ); ?></button>
+								<a class="button button-primary button-large" href="<?php echo add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'misc' ), admin_url( 'options-general.php' ) ); ?>"><?php _e( 'View Settings', 'auto-load-next-post' ); ?></a>
 							</p>
 						</div><!-- .box.theme-selector-results -->
 						<?php } ?>
