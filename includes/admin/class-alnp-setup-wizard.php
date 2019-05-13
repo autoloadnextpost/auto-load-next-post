@@ -143,22 +143,22 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 							if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 							?>
 							<div class="theme-selectors debug-mode">
-								<p><strong class="red"><?php _e( 'Developers:', 'auto-load-next-post' ); ?></strong><?php echo sprintf( __( 'You have %1$sWP_DEBUG%2$s enabled so you can see the results for the theme selectors found below. If any selector was not found, an answer has been provided. You can copy and paste the selectors to the settings page should any of them were not set automatically for you.', 'auto-load-next-post' ), '<strong>', '</strong>' ); ?></p>
+								<p><?php echo sprintf( __( 'You have %1$sWP_DEBUG%2$s enabled so you can see the results for the theme selectors found below. If any selector was not found, an answer has been provided. You can copy and paste the selectors to the settings page should any of them were not set automatically for you.', 'auto-load-next-post' ), '<strong>', '</strong>' ); ?></p>
 
 								<p><strong><?php _e( 'Post scanned:', 'auto-load-next-post' ); ?></strong> <i><span class="post-tested">*</span></i></p>
 
 								<div class="selectors left">
 									<span class="bold"><?php _e( 'Selector', 'auto-load-next-post' ); ?></span>
-									<div class="container">
+									<div class="container pending">
 										<span class="selector"><?php _e( 'Content Container', 'auto-load-next-post' ); ?></span>
 									</div>
-									<div class="title">
+									<div class="title pending">
 										<span class="selector"><?php _e( 'Post Title', 'auto-load-next-post' ); ?></span>
 									</div>
-									<div class="navigation">
+									<div class="navigation pending">
 										<span class="selector"><?php _e( 'Post Navigation', 'auto-load-next-post' ); ?></span>
 									</div>
-									<div class="comments">
+									<div class="comments pending">
 										<span class="selector"><?php _e( 'Comments Container', 'auto-load-next-post' ); ?></span>
 									</div>
 								</div><!-- .selectors -->
@@ -171,12 +171,16 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 									<div class="comments"><span class="result">-</span></div>
 								</div><!-- .results-found -->
 
-								<p><?php echo sprintf( __( 'If you are a theme developer, checkout the %1$sadd theme support guide%2$s to apply these found theme selectors automatically when another user installs your theme with %3$s.', 'auto-load-next-post' ), '<a href="https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/add-theme-support.md#add-theme-support" target="_blank">', '</a>', esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
+								<p><strong class="red"><?php _e( 'Developers:', 'auto-load-next-post' ); ?></strong> <?php echo sprintf( __( 'Checkout the %1$sadd theme support guide%2$s to apply these found theme selectors automatically when another user installs your theme with %3$s.', 'auto-load-next-post' ), '<a href="https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/add-theme-support.md#add-theme-support" target="_blank">', '</a>', esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
 
 							</div><!-- .debug-mode -->
 							<?php } ?>
 
-							<p class="no-post-navigation"><?php printf( __( 'No post navigation on a single post was detected. If this is incorrect, please %1$scontact me%2$s and let me know your site URL address.', 'auto-load-next-post' ), '<a href="https://autoloadnextpost.com/contact/" target="_blank">', '</a>' ); ?></p>
+							<p class="theme-selectors-undetected"><?php printf( esc_html__( 'Setup Wizard was unable to detect some of the theme selectors. You can scan again just to be sure the wizard did not timeout but most likley you will have to manually set them yourself. %1$sFollow the theme selectors guide to find them%2$s.', 'auto-load-next-post' ), '<a href="https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/theme-selectors.md#how-to-find-your-theme-selectors" target="_blank">', '</a>' ); ?></p>
+
+							<p class="no-post-navigation"><?php printf( __( 'No post navigation on the scanned post was detected. If this is incorrect, please %1$scontact me%2$s and let me know your site URL address.', 'auto-load-next-post' ), '<a href="https://autoloadnextpost.com/contact/" target="_blank">', '</a>' ); ?></p>
+
+							<p class="setup-complete"><?php printf( __( 'Congratulations, %s is now setup and ready.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
 
 							<hr>
 
