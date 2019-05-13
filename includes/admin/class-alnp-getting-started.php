@@ -73,7 +73,9 @@ if ( ! class_exists( 'ALNP_Getting_Started' ) ) {
 						?>
 							<p><?php echo sprintf( __( 'Run the %1$s to be ready in less than 5-minutes, setting up %2$s for the first time is easy. The wizard will scan your theme to process the installation.', 'auto-load-next-post' ), esc_html__( 'Setup Wizard', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
 
-							<p><?php echo sprintf( __( 'If you are developing a theme and want to add support for %1$s, view documentation for developer guides, snippets and more.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
+							<p><strong class="red"><?php _e( 'Developers:', 'auto-load-next-post' ); ?></strong> <?php printf( __( 'Enable %1$sWP_DEBUG%2$s in your %3$swp-config.php%4$s file before running the %5$s to provide you results for each step once it has scanned your theme.', 'auto-load-next-post' ), '<strong>', '</strong>', '<code>', '</code>', esc_html__( 'Setup Wizard', 'auto-load-next-post' ) ); ?></p>
+
+							<p><?php echo sprintf( __( 'You can add support for %1$s for future users by viewing the documentation and developer guides, snippets and more.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
 
 							<?php
 							/**
