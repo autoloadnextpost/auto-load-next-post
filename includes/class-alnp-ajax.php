@@ -93,6 +93,12 @@ if ( ! class_exists( 'ALNP_AJAX' ) ) {
 		public static function get_container_selectors() {
 			$selectors = array(
 				'main.site-main',
+				'main#main',
+				'main.post-wrap',
+				'div#main',
+				'div.site-content',
+				'div#content',
+				'div.content-container'
 			);
 
 			wp_send_json( $selectors );
@@ -109,6 +115,10 @@ if ( ! class_exists( 'ALNP_AJAX' ) ) {
 		public static function get_title_selectors() {
 			$selectors = array(
 				'h1.entry-title',
+				'h1.post-title',
+				'h1.page-title',
+				'h1.title-single',
+				'h1'
 			);
 
 			wp_send_json( $selectors );
@@ -125,6 +135,13 @@ if ( ! class_exists( 'ALNP_AJAX' ) ) {
 		public static function get_post_navigation_selectors() {
 			$selectors = array(
 				'nav.post-navigation',
+				'nav.navigation-post',
+				'nav.navigation',
+				'div.navigation',
+				'nav#nav-below',
+				'#nav-single',
+				'div.next-prev',
+				'nav.prev-next-nav'
 			);
 
 			wp_send_json( $selectors );
@@ -141,6 +158,7 @@ if ( ! class_exists( 'ALNP_AJAX' ) ) {
 		public static function get_comment_selectors() {
 			$selectors = array(
 				'div#comments',
+				'section#comments'
 			);
 
 			wp_send_json( $selectors );
