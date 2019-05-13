@@ -30,58 +30,81 @@
 
 			.selectors {
 				float: left;
-				width: 42%;
+				width: 50%;
 
+				.container.found {
+					border: none;
+					box-shadow: none;
+					-webkit-box-shadow: none;
+				}
+
+				.pending::before,
 				.found::before,
 				.not-found::before {
-					display: inline-block;
-					color: $white;
-					padding: 0;
-					margin-right: 4px;
-					width: 22px;
-					height: 22px;
-					font-size: 16px;
 					border-radius:100%;
-					text-align: center;
+					color: $white;
+					display: inline-block;
+					font-family: dashicons;
+					font-size: 22px;
+					height: 22px;
+					margin-right: 4px;
+					padding: 1px;
 					position: relative;
+					text-align: center;
+					width: 22px;
 				}
 			
+				.pending::before {
+					background-color: $alnp;
+					content: "\f179";
+				}
+
 				.found::before {
-					content:'\2714';
 					background-color: $green;
+					content: "\f147";
 				}
 			
 				.not-found::before {
-					content:'\2716';
 					background-color: $red;
+					content: "\f335";
 				}
 			}
 
 			.results-available,
-			.no-post-navigation {
+			.theme-selectors-undetected,
+			.no-post-navigation,
+			.setup-complete {
 				display: none;
 			}
 
 			.results-found {
-				width: 58%;
+				width: 50%;
+
+				.container.found {
+					border: none;
+					box-shadow: none;
+					-webkit-box-shadow: none;
+				}
+
 			}
 
 			.selectors,
 			.results-found {
+				height: 140px;
 				position: relative;
 				overflow: hidden;
 			}
 
 			.selectors div,
 			.results-found div {
-				border-bottom: 1px solid $lightgrey;
 				margin: 0 0 6px;
 			}
 		}
-	}
 
-	div.debug-mode {
-		display: none;
+		.debug-mode {
+			display: none;
+		}
+	
 	}
 
 	@media screen and (min-width: 1200px) and (min-height: 1000px) {
@@ -106,18 +129,18 @@
 		}
 	}
 
-	/* Dark Mode */
-	@media (prefers-color-scheme: dark) {
-		.auto-load-next-post {
-			.box {
-				background-color: #1a1a1a;
-				border: 1px solid #00d573;
-			}
+}
 
-			a {
-				color: #00d573;
-			}
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+	.auto-load-next-post {
+		.box {
+			background-color: #1a1a1a;
+			border: 1px solid #00d573;
+		}
+
+		a {
+			color: #00d573;
 		}
 	}
-
 }

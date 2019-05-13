@@ -1,19 +1,20 @@
 /* global alnp_scanner_params */
 ( function( $, params ) {
 
-	var step              = '',
-		search_finished   = true,
-		saving_results    = false,
+	var step                 = '',
+		search_finished      = true,
+		saving_results       = false,
 		post,
 		jc,
-		rtl               = params.is_rtl,
-		request_url       = params.ajax_url,
-		template_location = '',
-		found_selectors   = 0,
-		content_container = '',
-		post_title        = '',
-		post_navigation   = '',
-		comment_container = '';
+		rtl                  = params.is_rtl,
+		request_url          = params.ajax_url,
+		template_location    = '',
+		found_selectors      = 0,
+		selectors_undetected = 0,
+		content_container    = '',
+		post_title           = '',
+		post_navigation      = '',
+		comment_container    = '';
 
 	if ( rtl == 'rtl' ) {
 		rtl = true;
@@ -208,35 +209,37 @@
 
 					// Check if element was found in post.
 					if ( element.length > 0 ) {
-						found_selectors = found_selectors+1;
-
-						if ( action == 'alnp_get_container_selectors' ) {
-							$('.selectors').find('.container').addClass('found');
+						if ( action == 'alnp_get_container_selectors' && content_container == '' ) {
+							$('.selectors').find('.container').removeClass('pending').addClass('found');
 							$('.results-found').find('.container').addClass('found');
 							$('.results-found').find('.container span.result').html('<code title="' + params.i18n_copy_title + '">' + selector + '</code>');
 							content_container = selector;
+							found_selectors = found_selectors+1;
 						}
 
-						if ( action == 'alnp_get_title_selectors' ) {
-							$('.selectors').find('.title').addClass('found');
+						if ( action == 'alnp_get_title_selectors' && post_title == '' ) {
+							$('.selectors').find('.title').removeClass('pending').addClass('found');
 							$('.results-found').find('.title').addClass('found');
 							$('.results-found').find('.title span.result').html('<code title="' + params.i18n_copy_title + '">' + selector + '</code>');
 							post_title = selector;
+							found_selectors = found_selectors+1;
 						}
 
-						if ( action == 'alnp_get_post_navigation_selectors' ) {
+						if ( action == 'alnp_get_post_navigation_selectors' && post_navigation == '' ) {
 							$('.results-available').fadeIn('fast');
-							$('.selectors').find('.navigation').addClass('found');
+							$('.selectors').find('.navigation').removeClass('pending').addClass('found');
 							$('.results-found').find('.navigation').addClass('found');
 							$('.results-found').find('.navigation span.result').html('<code title="' + params.i18n_copy_title + '">' + selector + '</code>');
 							post_navigation = selector;
+							found_selectors = found_selectors+1;
 						}
 
-						if ( action == 'alnp_get_comment_selectors' ) {
-							$('.selectors').find('.comments').addClass('found');
+						if ( action == 'alnp_get_comment_selectors' && comment_container == '' ) {
+							$('.selectors').find('.comments').removeClass('pending').addClass('found');
 							$('.results-found').find('.comments').addClass('found');
 							$('.results-found').find('.comments span.result').html('<code title="' + params.i18n_copy_title + '">' + selector + '</code>');
 							comment_container = selector;
+							found_selectors = found_selectors+1;
 						}
 
 						if ( found_selectors > 1 ) {
@@ -246,23 +249,27 @@
 						}
 					}
 					else {
-						if ( action == 'alnp_get_container_selectors' ) {
-							$('.results-found').find('.container').addClass('not-found');
+						if ( action == 'alnp_get_container_selectors' && content_container == '' ) {
+							$('.results-found').find('.container').removeClass('pending').addClass('not-found');
+							selectors_undetected = selectors_undetected+1;
 						}
 
-						if ( action == 'alnp_get_title_selectors' ) {
-							$('.results-found').find('.title').addClass('not-found');
+						if ( action == 'alnp_get_title_selectors' && post_title == '' ) {
+							$('.results-found').find('.title').removeClass('pending').addClass('not-found');
 							$('.results-found').find('.title span.result').html('Unable to detect a post title. <a href="https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/post-title.md" class="help-tip" target="_blank" title="Click to view documenation on post title" aria-label="View documenation on post title">?</a>');
+							selectors_undetected = selectors_undetected+1;
 						}
 
-						if ( action == 'alnp_get_post_navigation_selectors' ) {
+						if ( action == 'alnp_get_post_navigation_selectors' && post_navigation == '' ) {
 							$('.no-post-navigation').fadeIn('fast');
-							$('.results-found').find('.navigation').addClass('not-found');
+							$('.results-found').find('.navigation').removeClass('pending').addClass('not-found');
 							$('.results-found').find('.navigation span.result').html('Unable to detect a post navigation. <a href="https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/post-navigation.md" class="help-tip" target="_blank" title="Click to view documenation on post navigation" aria-label="View documenation on post navigation">?</a>');
+							selectors_undetected = selectors_undetected+1;
 						}
 
-						if ( action == 'alnp_get_comment_selectors' ) {
-							$('.results-found').find('.comments').addClass('not-found');
+						if ( action == 'alnp_get_comment_selectors' && comment_container == '' ) {
+							$('.results-found').find('.comments').removeClass('pending').addClass('not-found');
+							selectors_undetected = selectors_undetected+1;
 						}
 
 					}
@@ -300,6 +307,17 @@
 		// Search is finished?
 		if ( search_finished ) {
 			$('.theme-selectors.debug-mode').show(); // Show results if debug mode was enabled.
+
+			// Congratulate user.
+			if ( found_selectors == 4 && selectors_undetected == 0 ) {
+				$('.setup-complete').show();
+				$('.rescan').hide(); // Hide scan again button.
+			}
+
+			// Warn user some selectors where not detected.
+			if ( selectors_undetected > 1 ) {
+				$('.theme-selectors-undetected').show();
+			}
 
 			// Check if any dialogs are open.
 			if ( jc.isOpen() ) {
