@@ -98,7 +98,7 @@ if ( ! class_exists( 'ALNP_Settings_Misc' ) ) {
 					'title' => array(
 						'title' => $this->label,
 						'type'  => 'title',
-						'desc'  => sprintf( esc_html__( 'Here you set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						'desc'  => esc_html__( 'Further optional options can be found here should you want to use or need.', 'auto-load-next-post' ),
 						'id'    => 'misc_options'
 					),
 
