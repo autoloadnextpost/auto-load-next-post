@@ -9,6 +9,23 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		// Update developer dependencies
+		devUpdate: {
+			packages: {
+				options: {
+					packageJson: null,
+					packages: {
+						devDependencies: true,
+						dependencies: false
+					},
+					reportOnlyPkgs: [],
+					reportUpdated: false,
+					semver: true,
+					updateType: 'force'
+				}
+			}
+		},
+
 		// SASS to CSS
 		sass: {
 			options: {
@@ -45,6 +62,11 @@ module.exports = function(grunt) {
 
 		// Minify CSS
 		cssmin: {
+			options: {
+				processImport: false,
+				roundingPrecision: -1,
+				shorthandCompacting: false
+			},
 			target: {
 				files: [{
 					expand: true,
@@ -239,17 +261,12 @@ module.exports = function(grunt) {
 
 		// Bump version numbers (replace with version in package.json)
 		replace: {
-			Version: {
+			php: {
 				src: [
-					'readme.txt',
 					'<%= pkg.name %>.php'
 				],
 				overwrite: true,
 				replacements: [
-					{
-						from: /Stable tag:.*$/m,
-						to: "Stable tag: <%= pkg.version %>"
-					},
 					{
 						from: /Version:.*$/m,
 						to: "Version:     <%= pkg.version %>"
@@ -257,6 +274,20 @@ module.exports = function(grunt) {
 					{
 						from: /public static \$version = \'.*.'/m,
 						to: "public static $version = '<%= pkg.version %>'"
+					}
+				]
+			},
+			readme: {
+				src: [ 'readme.txt' ],
+				overwrite: true,
+				replacements: [
+					{
+						from: /Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
+						to: 'Stable tag:$1$2<%= pkg.version %>$3'
+					},
+					{
+						from: /Tested up to:(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
+						to: 'Tested up to:$1<%= pkg.tested_up_to %>'
 					}
 				]
 			}
@@ -270,16 +301,17 @@ module.exports = function(grunt) {
 					'!.*',
 					'!.*/**',
 					'!.htaccess',
+					'!wp-config.php',
 					'!Gruntfile.js',
 					'!releases/**',
 					'!auto-load-next-post-git/**',
 					'!auto-load-next-post-svn/**',
 					'!node_modules/**',
 					'!.DS_Store',
-					'!npm-debug.log',
-					'!assets/sass/**',
+					'!assets/scss/**',
 					'!assets/**/*.scss',
 					'!*.scss',
+					'!*.log',
 					'!*.json',
 					'!*.md',
 					'!*.sh',
@@ -289,7 +321,7 @@ module.exports = function(grunt) {
 					'!*.gif',
 					'!*.png'
 				],
-				dest: '<%= pkg.name %>',
+				dest: 'build/',
 				expand: true,
 				dot: true
 			}
@@ -314,17 +346,23 @@ module.exports = function(grunt) {
 		},
 
 		// Deletes the deployable plugin folder once zipped up.
-		clean: [ '<%= pkg.name %>' ]
+		clean: [ 'build/' ]
 	});
 
-	// Set the default grunt command to run test cases.
+	// Set the default Grunt command to run test task.
 	grunt.registerTask( 'default', [ 'test' ] );
+
+	// Checks for developer dependencie updates.
+	grunt.registerTask( 'check', [ 'devUpdate' ] );
 
 	// Checks for errors with the javascript, sass and for any text domain issues.
 	grunt.registerTask( 'test', [ 'jshint', 'stylelint', 'checktextdomain' ]);
 
-	// Updates version, minify css and javascript and finaly runs i18n tasks.
-	grunt.registerTask( 'dev', [ 'replace', 'sass', 'postcss', 'cssmin', 'uglify', 'makepot' ]);
+	// Build CSS, minify CSS and JavaScript and finaly runs i18n tasks.
+	grunt.registerTask( 'build', [ 'sass', 'postcss', 'cssmin', 'uglify', 'update-pot' ]);
+
+	// Update version of plugin.
+	grunt.registerTask( 'version', [ 'replace' ] );
 
 	/**
 	 * Run i18n related tasks.
