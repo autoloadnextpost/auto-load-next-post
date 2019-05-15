@@ -59,7 +59,7 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 						wp_deregister_style( 'select2' );
 					}
 
-					Auto_Load_Next_Post::load_file( 'select2', '/assets/css/libs/select2' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
+					Auto_Load_Next_Post::load_file( 'select2', '/assets/css/libs/select2.min.css' );
 				}
 			}
 		} // END admin_styles()
