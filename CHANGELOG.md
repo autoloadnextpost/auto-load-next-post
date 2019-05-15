@@ -10,19 +10,19 @@
 
 * NEW: Added a Setup Wizard to scan the theme you have active and identify your theme selectors and templates location.
 * NEW: Added a Getting Started page which introduces the user to the setup wizard.
-* NEW: Settings page now previews features coming in Auto Load Next Post Pro. #7174140
-* NEW: Added extensions page listing available extensions for the plugin thanks for the class provided by @dcooney.
-* NEW: Added validation for required settings. #761f7e9
-* NEW: Added button on theme selectors settings to open theme customizer if theme not supported. #1030d4b
-* NEW: Added option under **Misc** to disable Auto Load Next Post from running on mobile devices. #7bf0caa
+* NEW: Settings page now previews features coming in Auto Load Next Post Pro. [#7174140](https://github.com/autoloadnextpost/auto-load-next-post/commit/7174140)
+* NEW: Added extensions page listing available extensions for the plugin thanks for the class provided by [@dcooney](https://github.com/dcooney/).
+* NEW: Added validation for required settings. [#761f7e9](https://github.com/autoloadnextpost/auto-load-next-post/commit/761f7e9)
+* NEW: Added button on theme selectors settings to open theme customizer if theme not supported. [#1030d4b](https://github.com/autoloadnextpost/auto-load-next-post/commit/1030d4b)
+* NEW: Added option under **Misc** to disable Auto Load Next Post from running on mobile devices. [#7bf0caa](https://github.com/autoloadnextpost/auto-load-next-post/commit/7bf0caa)
 * NEW: Added Templates section for users to set the template location without the need of applying a filter. Filter was designed for theme developers.
-* NEW: jQuery-confirm.js is used to replace previous confirmation dialogs as they were not working in Firefox and is used to improve user experience both for the Settings page and the new Setup Wizard. #1fe1eec
-* Removed: Welcome notice as it has been replaced with the Getting Started page. #c3066bc
+* NEW: jQuery-confirm.js is used to replace previous confirmation dialogs as they were not working in Firefox and is used to improve user experience both for the Settings page and the new Setup Wizard. [#1fe1eec](https://github.com/autoloadnextpost/auto-load-next-post/commit/1fe1eec)
+* Removed: Welcome notice as it has been replaced with the Getting Started page. [#1fe1eec](https://github.com/autoloadnextpost/auto-load-next-post/commit/1fe1eec)
 * Improved: UI of the settings page.
 * Improved: Code base throughout the whole of the plugin.
-* Tweaked: Theme selector fields are set to read-only if theme is supported by the theme developer. #074b780
-* Tweaked: Made review notice more personal to the user. #4123372
-* Tweaked: Sign up form in sidebar now pre-fills with current logged in user for quicker sign up. #a70cfcb
+* Tweaked: Theme selector fields are set to read-only if theme is supported by the theme developer. [#074b780](https://github.com/autoloadnextpost/auto-load-next-post/commit/074b780)
+* Tweaked: Made review notice more personal to the user. [#4123372](https://github.com/autoloadnextpost/auto-load-next-post/commit/4123372)
+* Tweaked: Sign up form in sidebar now pre-fills with current logged in user for quicker sign up. [#a70cfcb](https://github.com/autoloadnextpost/auto-load-next-post/commit/a70cfcb)
 * Tweaked: Made translating the plugin easier by merging near identical strings.
 * Dev: All CSS has been converted into SCSS.
 * Dev: Grunt tasks have been improved for better development.
