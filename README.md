@@ -12,7 +12,7 @@
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Increase%20your%20page%20views%20on%20your%20WordPress%20site%20as%20visitors%20continue%20reading%20articles%20scrolling%20down%20the%20page.%20—&url=https://autoloadnextpost.com/&via=autoloadnxtpost&hashtags=WordPress)
 
 <p align="center">
-    <a href="https://autoloadnextpost.com?utm_medium=auto-load-next-post-documentation-github&utm_source=readme&utm_campaign=readme&utm_content=banner" target="_blank"><img src="https://ps.w.org/auto-load-next-post/assets/banner-772x250.png" alt="Auto Load Next Post, Infinite post scroll for WordPress"></a>
+    <a href="https://autoloadnextpost.com?utm_medium=auto-load-next-post-github&utm_source=readme&utm_campaign=readme&utm_content=banner" target="_blank"><img src="https://ps.w.org/auto-load-next-post/assets/banner-772x250.png" alt="Auto Load Next Post, Infinite post scroll for WordPress"></a>
 </p>
 
 Welcome to the [Auto Load Next Post](https://autoloadnextpost.com/?utm_medium=auto-load-next-post-github&utm_source=readme&utm_campaign=readme&utm_content=auto-load-next-post) repository on GitHub. Here you can browse the source code, look at [open issues](https://github.com/autoloadnextpost/auto-load-next-post/issues) and keep track of development. I recommend all developers to [follow the blog](https://autoloadnextpost.com/blog/?utm_medium=auto-load-next-post-github&utm_source=readme&utm_campaign=readme&utm_content=auto-load-next-post) to stay up to date about everything happening in the project or simply [view the public roadmap](https://trello.com/b/4X4hs4x7/auto-load-next-post-public-roadmap).
@@ -90,6 +90,7 @@ Auto Load Next Post is in need of translations. Is the plugin not translated in 
 #### 📚 Libraries Used
 
 * [select2](https://github.com/select2/select2)
+* [jQuery-Confirm](https://github.com/craftpip/jquery-confirm)
 * [jQuery.history](https://github.com/browserstate/history.js)
 * [scrollspy](https://github.com/thesmart/jquery-scrollspy)
 
