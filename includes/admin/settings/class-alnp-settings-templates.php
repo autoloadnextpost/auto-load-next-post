@@ -71,11 +71,12 @@ if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 			// Only show fallback support option if template location was found. May be required should theme structure fail.
 			if ( ! empty( $locate_single ) ) {
 				$settings[] = array(
-					'title'   => esc_html__( 'Use Fallback?', 'auto-load-next-post' ),
-					'desc'    => sprintf( __( 'Enabling this will force the use of fallback support should your active theme not have a great structure. %1$sSee help for more information%2$s.', 'auto-load-next-post' ), '<strong class="red">', '</strong>' ),
-					'id'      => 'auto_load_next_post_use_fallback',
-					'default' => 'no',
-					'type'    => 'checkbox'
+					'title'    => esc_html__( 'Use Fallback?', 'auto-load-next-post' ),
+					'desc'     => sprintf( __( 'Enabling this will force the use of fallback support should your active theme not have a great structure. %1$sSee help for more information%2$s.', 'auto-load-next-post' ), '<strong class="red">', '</strong>' ),
+					'id'       => 'auto_load_next_post_use_fallback',
+					'default'  => 'no',
+					'type'     => 'checkbox',
+					'autoload' => false
 				);
 			}
 
@@ -92,6 +93,7 @@ if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 				$settings[] = array(
 					'title'       => ucfirst( $post_type ),
 					'desc'        => sprintf( __( 'Enter the folder location where the theme template for %s are stored.', 'auto-load-next-post' ), $post_type ),
+					'id'          => 'auto_load_next_post_directory_' . strtolower( $post_type ),
 					'default'     => $default,
 					'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'template-parts/' ),
 					'readonly'    => $readonly,

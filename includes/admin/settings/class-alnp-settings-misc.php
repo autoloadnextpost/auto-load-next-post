@@ -103,35 +103,39 @@ if ( ! class_exists( 'ALNP_Settings_Misc' ) ) {
 					),
 
 					'remove_comments' => array(
-						'title'   => esc_html__( 'Remove Comments', 'auto-load-next-post' ),
-						'desc'    => esc_html__( 'Enable to remove comments when each post loads including the initial post.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_remove_comments',
-						'default' => 'yes',
-						'type'    => 'checkbox'
+						'title'    => esc_html__( 'Remove Comments', 'auto-load-next-post' ),
+						'desc'     => esc_html__( 'Enable to remove comments when each post loads including the initial post.', 'auto-load-next-post' ),
+						'id'       => 'auto_load_next_post_remove_comments',
+						'default'  => 'yes',
+						'type'     => 'checkbox',
+						'autoload' => false
 					),
 
 					'google_analytics' => array(
-						'title'   => esc_html__( 'Update Google Analytics', 'auto-load-next-post' ),
-						'desc'    => esc_html__( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_google_analytics',
-						'default' => 'no',
-						'type'    => 'checkbox'
+						'title'    => esc_html__( 'Update Google Analytics', 'auto-load-next-post' ),
+						'desc'     => esc_html__( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
+						'id'       => 'auto_load_next_post_google_analytics',
+						'default'  => 'no',
+						'type'     => 'checkbox',
+						'autoload' => false
 					),
 
 					'load_js_in_footer' => array(
-						'title'   => esc_html__( 'JavaScript in Footer?', 'auto-load-next-post' ),
-						'desc'    => sprintf( esc_html__( 'Enable to load %s in the footer instead of the header. Can be useful to optimize your site or if the current theme requires it.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
-						'id'      => 'auto_load_next_post_load_js_in_footer',
-						'default' => 'no',
-						'type'    => 'checkbox'
+						'title'    => esc_html__( 'JavaScript in Footer?', 'auto-load-next-post' ),
+						'desc'     => sprintf( esc_html__( 'Enable to load %s in the footer instead of the header. Can be useful to optimize your site or if the current theme requires it.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						'id'       => 'auto_load_next_post_load_js_in_footer',
+						'default'  => 'no',
+						'type'     => 'checkbox',
+						'autoload' => false
 					),
 
 					'disable_on_mobile' => array(
-						'title'   => esc_html__( 'Disable for Mobile?', 'auto-load-next-post' ),
-						'desc'    => sprintf( esc_html__( 'Enable to disable %s from running on mobile devices.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
-						'id'      => 'auto_load_next_post_disable_on_mobile',
-						'default' => 'no',
-						'type'    => 'checkbox'
+						'title'    => esc_html__( 'Disable for Mobile?', 'auto-load-next-post' ),
+						'desc'     => sprintf( esc_html__( 'Enable to disable %s from running on mobile devices.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						'id'       => 'auto_load_next_post_disable_on_mobile',
+						'default'  => 'no',
+						'type'     => 'checkbox',
+						'autoload' => false
 					),
 
 					'reset_data' => array(
@@ -145,11 +149,12 @@ if ( ! class_exists( 'ALNP_Settings_Misc' ) ) {
 					),
 
 					'uninstall' => array(
-						'title'   => esc_html__( 'Remove all data on uninstall?', 'auto-load-next-post' ),
-						'desc'    => esc_html__( 'If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_uninstall_data',
-						'default' => 'no',
-						'type'    => 'checkbox'
+						'title'    => esc_html__( 'Remove all data on uninstall?', 'auto-load-next-post' ),
+						'desc'     => esc_html__( 'If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete.', 'auto-load-next-post' ),
+						'id'       => 'auto_load_next_post_uninstall_data',
+						'default'  => 'no',
+						'type'     => 'checkbox',
+						'autoload' => false
 					),
 
 					'section_end' => array(
