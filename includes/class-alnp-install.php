@@ -20,16 +20,6 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 	class ALNP_Install {
 
 		/**
-		 * Plugin version.
-		 *
-		 * @access private
-		 * @static
-		 * @since  1.4.10
-		 * @var    string
-		 */
-		private static $current_version;
-
-		/**
 		 * Constructor.
 		 *
 		 * @since   1.0.0
@@ -48,9 +38,6 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 
 			// Redirect to Getting Started page once installed.
 			add_action( 'auto_load_next_post_updated', array( __CLASS__, 'redirect_getting_started') );
-
-			// Get plugin version.
-			self::$current_version = get_option( 'auto_load_next_post_version' );
 		} // END __construct()
 
 		/**
@@ -69,7 +56,7 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 				return;
 			}
 
-			if ( ! defined( 'IFRAME_REQUEST' ) && version_compare( self::$current_version, AUTO_LOAD_NEXT_POST_VERSION, '<' ) && current_user_can( 'install_plugins' ) ) {
+			if ( ! defined( 'IFRAME_REQUEST' ) && version_compare( get_option( 'auto_load_next_post_version' ), AUTO_LOAD_NEXT_POST_VERSION, '<' ) && current_user_can( 'install_plugins' ) ) {
 				self::install();
 				do_action( 'auto_load_next_post_updated' );
 			}
