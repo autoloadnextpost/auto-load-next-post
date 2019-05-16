@@ -124,7 +124,7 @@ if ( ! function_exists( 'alnp_get_locations' ) ) {
  * @return array
  */
 if ( ! function_exists( 'alnp_get_templates' ) ) {
-	function alnp_get_templates( $post_type = 'single', $post_format = '' ) {
+	function alnp_get_templates( $post_type = 'post', $post_format = '' ) {
 		$get_standard = array(
 			alnp_template_location() . 'content-single.php',
 			alnp_template_location() . 'content-post.php',
@@ -198,7 +198,7 @@ if ( ! function_exists( 'alnp_scan_template' ) ) {
  * @return string $template
  */
 if ( ! function_exists( 'alnp_get_template' ) ) {
-	function alnp_get_template( $post_type = 'single', $post_format = '' ) {
+	function alnp_get_template( $post_type = 'post', $post_format = '' ) {
 		if ( ! empty( $post_format ) ) {
 			$template = get_option( 'auto_load_next_post_template_single_' . $post_format );
 		} else {
