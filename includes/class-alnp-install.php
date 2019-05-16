@@ -81,7 +81,7 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.6.0
 		 */
 		public static function install() {
 			if ( ! is_blog_installed() ) {
@@ -93,8 +93,8 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 				return;
 			}
 
-			// If we made it till here nothing is running yet, lets set the transient now for five minutes.
-			set_transient( 'alnp_installing', 'yes', MINUTE_IN_SECONDS * 5 );
+			// If we made it till here nothing is running yet, lets set the transient now for two minutes.
+			set_transient( 'alnp_installing', 'yes', MINUTE_IN_SECONDS * 2 );
 			if ( ! defined( 'AUTO_LOAD_NEXT_POST_INSTALLING' ) ) {
 				define( 'AUTO_LOAD_NEXT_POST_INSTALLING', true );
 			}
@@ -186,7 +186,7 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 			$install_date = get_site_option( 'auto_load_next_post_install_date' );
 
 			// If ALNP was installed before but the install date was not converted to time then convert it.
-			if ( ! empty( $install_date ) && !intval( $install_date ) ) {
+			if ( ! empty( $install_date ) && ! intval( $install_date ) ) {
 				update_site_option( 'auto_load_next_post_install_date', strtotime( $install_date ) );
 			} else {
 				add_site_option( 'auto_load_next_post_install_date', time() );
@@ -255,8 +255,8 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 			if ( current_user_can( 'install_plugins' ) && isset( $_GET['reset-alnp'] ) && $_GET['reset-alnp'] == 'yes' ) {
 				global $wpdb;
 
-				// If we made it till here nothing is running yet, lets set the transient now for five minutes.
-				set_transient( 'alnp_resetting', 'yes', MINUTE_IN_SECONDS * 5 );
+				// If we made it till here nothing is running yet, lets set the transient now for two minutes.
+				set_transient( 'alnp_resetting', 'yes', MINUTE_IN_SECONDS * 2 );
 	
 				// Make sure it is only a single site we are resetting.
 				if ( ! is_multisite() ) {
