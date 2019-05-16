@@ -154,13 +154,13 @@ ul.alnp-default-theme-selectors li {
         width: 22px; }
       .auto-load-next-post .box.theme-selector-results .selectors .pending::before {
         background-color: #ffdb30;
-        content: "\f179"; }
+        content: '\f179'; }
       .auto-load-next-post .box.theme-selector-results .selectors .found::before {
         background-color: #4ab866;
-        content: "\f147"; }
+        content: '\f147'; }
       .auto-load-next-post .box.theme-selector-results .selectors .not-found::before {
         background-color: #c92c2c;
-        content: "\f335"; }
+        content: '\f335'; }
     .auto-load-next-post .box.theme-selector-results .results-available,
     .auto-load-next-post .box.theme-selector-results .theme-selectors-undetected,
     .auto-load-next-post .box.theme-selector-results .no-post-navigation,
