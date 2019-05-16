@@ -265,12 +265,6 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 
 					// Delete user interactions
 					$wpdb->query("DELETE FROM $wpdb->usermeta WHERE meta_key LIKE 'auto_load_next_post_%'");
-
-					// Delete Uninstall Data - Just to double check it has been removed.
-					delete_option( 'auto_load_next_post_uninstall_data' );
-
-					// Delete Install Date
-					delete_option( 'auto_load_next_post_install_date' );
 				}
 				else {
 					// Delete Uninstall Data
