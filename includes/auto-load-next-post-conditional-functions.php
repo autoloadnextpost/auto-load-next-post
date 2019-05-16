@@ -62,7 +62,7 @@ if ( ! function_exists( 'is_alnp_pro_version_installed' ) ) {
 		}
 
 		return in_array( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins ) || array_key_exists( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins );
-	}
+	} // END is_alnp_pro_version_installed()
 }
 
 if ( ! function_exists( 'is_alnp_beta' ) ) {
@@ -82,7 +82,7 @@ if ( ! function_exists( 'is_alnp_beta' ) ) {
 		}
 
 		return false;
-	}
+	} // END is_alnp_beta()
 }
 
 if ( ! function_exists( 'is_alnp_active_theme' ) ) {
@@ -95,7 +95,7 @@ if ( ! function_exists( 'is_alnp_active_theme' ) ) {
 	 */
 	function is_alnp_active_theme( $theme ) {
 		return is_array( $theme ) ? in_array( get_template(), $theme, true ) : get_template() === $theme;
-	}
+	} // END is_alnp_active_theme()
 }
 
 if ( ! function_exists( 'is_alnp_supported' ) ) {
@@ -113,7 +113,7 @@ if ( ! function_exists( 'is_alnp_supported' ) ) {
 		}
 
 		return true;
-	}
+	} // END is_alnp_supported()
 }
 
 if ( ! function_exists( 'alnp_get_theme_support' ) ) {
@@ -158,7 +158,7 @@ if ( ! function_exists( 'alnp_get_theme_support' ) ) {
 		}
 
 		return $theme_support;
-	}
+	} // END alnp_get_theme_support()
 }
 
 if ( ! function_exists( 'alnp_is_bot' ) ) {
@@ -172,7 +172,7 @@ if ( ! function_exists( 'alnp_is_bot' ) ) {
 		$is_bot = alnp_is_bot_user_agent( $_SERVER['HTTP_USER_AGENT'] );
 
 		return $is_bot;
-	}
+	} // END alnp_is_bot()
 }
 
 if ( ! function_exists( 'alnp_is_bot_user_agent' ) ) {
@@ -205,7 +205,7 @@ if ( ! function_exists( 'alnp_is_bot_user_agent' ) ) {
 		}
 
 		return false;
-	}
+	} // END alnp_is_bot_user_agent()
 }
 
 if ( ! function_exists( 'alnp_check_jetpack' ) ) {
@@ -221,7 +221,7 @@ if ( ! function_exists( 'alnp_check_jetpack' ) ) {
 		$is_active = $jetpack_active ? 'yes' : 'no';
 
 		return $is_active;
-	}
+	} // END alnp_check_jetpack()
 }
 
 if ( ! function_exists( 'alnp_airplane_mode_enabled' ) ) {
@@ -247,5 +247,5 @@ if ( ! function_exists( 'alnp_airplane_mode_enabled' ) ) {
 
 		// Return the option flag.
 		return 'on' === $option;
-	}
+	} // END alnp_airplane_mode_enabled()
 }
