@@ -80,18 +80,19 @@ if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 			}
 
 			foreach( self::get_post_types() as $post_type ) {
+				$default  = '';
 				$readonly = 'no';
 
 				// Checks if the filter has been used already and disable posts only if true.
 				if ( has_filter( 'alnp_template_location' ) && strtolower( $post_type ) == 'post' ) {
+					$default  = alnp_template_location();
 					$readonly = 'yes';
 				}
 
 				$settings[] = array(
 					'title'       => ucfirst( $post_type ),
 					'desc'        => sprintf( __( 'Enter the folder location where the theme template for %s are stored.', 'auto-load-next-post' ), $post_type ),
-					'id'          => 'auto_load_next_post_template_location_' . strtolower( $post_type ),
-					'default'     => '',
+					'default'     => $default,
 					'placeholder' => sprintf( esc_html__( 'e.g. %s', 'auto-load-next-post' ), 'template-parts/' ),
 					'readonly'    => $readonly,
 					'type'        => 'text',
