@@ -67,13 +67,17 @@ if ( ! function_exists( 'is_alnp_pro_version_installed' ) ) {
 
 if ( ! function_exists( 'is_alnp_beta' ) ) {
 	/**
-	 * Returns true if Auto Load Next Post is a beta release.
+	 * Returns true if Auto Load Next Post is a beta/pre-release.
 	 *
 	 * @since  1.5.0
+	 * @since  1.6.0
 	 * @return boolean
 	 */
 	function is_alnp_beta() {
-		if ( strpos( AUTO_LOAD_NEXT_POST_VERSION, 'beta' ) ) {
+		if ( 
+			strpos( AUTO_LOAD_NEXT_POST_VERSION, 'beta' ) ||
+			strpos( AUTO_LOAD_NEXT_POST_VERSION, 'rc' )
+		) {
 			return true;
 		}
 
