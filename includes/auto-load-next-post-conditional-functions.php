@@ -204,25 +204,6 @@ if ( ! function_exists( 'alnp_is_bot_user_agent' ) ) {
 	}
 }
 
-if ( ! function_exists( 'alnp_get_post_type' ) ) {
-	/**
-	 * Returns the post type.
-	 *
-	 * @since  1.4.12
-	 * @return string
-	 */
-	function alnp_get_post_type() {
-		$post_type = get_post_type();
-
-		// If the post type is a post then return single instead.
-		if ( $post_type == 'post' ) {
-			return 'single';
-		}
-
-		return $post_type;
-	}
-}
-
 if ( ! function_exists( 'alnp_check_jetpack' ) ) {
 	/**
 	 * Check if Jetpack is installed.
