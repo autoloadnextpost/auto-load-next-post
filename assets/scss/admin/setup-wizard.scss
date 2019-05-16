@@ -56,17 +56,17 @@
 			
 				.pending::before {
 					background-color: $alnp;
-					content: "\f179";
+					content: '\f179';
 				}
 
 				.found::before {
 					background-color: $green;
-					content: "\f147";
+					content: '\f147';
 				}
 			
 				.not-found::before {
 					background-color: $red;
-					content: "\f335";
+					content: '\f335';
 				}
 			}
 
