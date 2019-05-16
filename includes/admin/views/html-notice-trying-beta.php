@@ -3,7 +3,7 @@
  * Admin View: Trying Beta Notice.
  *
  * @since    1.0.0
- * @version  1.5.11
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -22,8 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 
 		<div class="auto-load-next-post-notice-content">
-			<h3><?php echo esc_html__( 'Thanks for trying out this beta!', 'auto-load-next-post' ); ?></h3>
-			<p><?php echo esc_html__( 'If you have any questions about the beta or if you have any feedback at all including features to be added or integrations to support, please let me know. Any little bit you\'re willing to share helps.', 'auto-load-next-post' ); ?></p>
+			<h3><?php echo esc_html__( 'Thanks for trying out this beta/pre-release!', 'auto-load-next-post' ); ?></h3>
+			<p><?php echo esc_html__( 'If you have any questions or any feedback at all, please let me know. Any little bit you\'re willing to share helps.', 'auto-load-next-post' ); ?></p>
 		</div>
 
 		<div class="auto-load-next-post-send-feedback">
