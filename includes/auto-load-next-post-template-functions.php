@@ -190,7 +190,7 @@ if ( ! function_exists( 'alnp_scan_template' ) ) {
 }
 
 /**
- * Returns the template saved.
+ * Returns the template file saved.
  *
  * @since  1.6.0
  * @param  string $post_type
@@ -200,9 +200,9 @@ if ( ! function_exists( 'alnp_scan_template' ) ) {
 if ( ! function_exists( 'alnp_get_template' ) ) {
 	function alnp_get_template( $post_type = 'post', $post_format = '' ) {
 		if ( ! empty( $post_format ) ) {
-			$template = get_option( 'auto_load_next_post_template_single_' . $post_format );
+			$template = get_option( 'auto_load_next_post_template_post_' . strtolower( $post_format ) );
 		} else {
-			$template = get_option( 'auto_load_next_post_template_' . $post_type );
+			$template = get_option( 'auto_load_next_post_template_' . strtolower( $post_type ) );
 		}
 
 		if ( !$template ) {
