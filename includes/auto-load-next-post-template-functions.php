@@ -231,12 +231,13 @@ if ( ! function_exists( 'alnp_load_content' ) ) {
 
 		$content_found = false;
 
-		// Check and return template if it was found already.
+		// Check and return directory and template if already found.
+		$found_directory = alnp_get_template( $post_type, $post_format );
 		$found_template = alnp_get_template( $post_type, $post_format );
 
-		if ( ! empty( $found_template ) ) {
+		if ( ! empty( $found_directory ) && ! empty( $found_template ) ) {
 			$content_found = true;
-			$load_content  = $found_template;
+			$load_content  = $found_directory . $found_template;
 		} else {
 			// Scanning all possible locations.
 			foreach( $locations as $location ) {
