@@ -55,6 +55,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				src: [
+					'!assets/css/admin/*.min.css',
 					'assets/css/admin/*.css'
 				]
 			}
@@ -262,9 +263,7 @@ module.exports = function(grunt) {
 		// Bump version numbers (replace with version in package.json)
 		replace: {
 			php: {
-				src: [
-					'<%= pkg.name %>.php'
-				],
+				src: [ '<%= pkg.name %>.php' ],
 				overwrite: true,
 				replacements: [
 					{
@@ -295,35 +294,30 @@ module.exports = function(grunt) {
 
 		// Copies the plugin to create deployable plugin.
 		copy: {
-			deploy: {
-				src: [
-					'**',
-					'!.*',
-					'!.*/**',
-					'!.htaccess',
-					'!wp-config.php',
-					'!Gruntfile.js',
-					'!releases/**',
-					'!auto-load-next-post-git/**',
-					'!auto-load-next-post-svn/**',
-					'!node_modules/**',
-					'!.DS_Store',
-					'!assets/scss/**',
-					'!assets/**/*.scss',
-					'!*.scss',
-					'!*.log',
-					'!*.json',
-					'!*.md',
-					'!*.sh',
-					'!*.zip',
-					'!*.jpg',
-					'!*.jpeg',
-					'!*.gif',
-					'!*.png'
-				],
-				dest: 'build/',
-				expand: true,
-				dot: true
+			build: {
+				files: [
+					{
+						expand: true,
+						src: [
+							'**',
+							'!.*',
+							'!**/*.{gif,jpg,jpeg,js,json,log,md,php,png,scss,sh,txt,xml,zip}',
+							'!.*/**',
+							'!.DS_Store',
+							'!.htaccess',
+							'!assets/scss/**',
+							'!assets/**/*.scss',
+							'!<%= pkg.name %>-git/**',
+							'!<%= pkg.name %>-svn/**',
+							'!node_modules/**',
+							'!releases/**',
+							'<%= pkg.name %>.php',
+							'readme.txt'
+						],
+						dest: 'build/',
+						dot: true
+					}
+				]
 			}
 		},
 
@@ -337,7 +331,7 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: './<%= pkg.name %>/',
+						cwd: './build/',
 						src: '**',
 						dest: '<%= pkg.name %>'
 					}
@@ -346,7 +340,9 @@ module.exports = function(grunt) {
 		},
 
 		// Deletes the deployable plugin folder once zipped up.
-		clean: [ 'build/' ]
+		clean: {
+			build: [ 'build/' ]
+		}
 	});
 
 	// Set the default Grunt command to run test task.
@@ -376,5 +372,5 @@ module.exports = function(grunt) {
 	 * Creates a deployable plugin zipped up ready to upload
 	 * and install on a WordPress installation.
 	 */
-	grunt.registerTask( 'zip', [ 'copy', 'compress', 'clean' ]);
+	grunt.registerTask( 'zip', [ 'copy:build', 'compress', 'clean:build' ]);
 };
