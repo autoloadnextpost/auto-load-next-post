@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$locate_single = alnp_get_template();
+$locate_single = alnp_get_template_directory();
 
 if ( empty( $locate_single ) ) {
 	$response = sprintf( __( '%1$s was unable to detect your theme templates. Currently using fallback support.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) );
