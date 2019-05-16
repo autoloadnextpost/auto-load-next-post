@@ -60,7 +60,7 @@ if ( ! class_exists( 'ALNP_AJAX' ) ) {
 		 * @return string|int
 		 */
 		public static function find_template_location() {
-			$post_type = isset( $_GET['post_type'] ) ? $_GET['post_type'] : 'single';
+			$post_type = isset( $_GET['post_type'] ) ? $_GET['post_type'] : 'post';
 
 			if ( empty( $post_type ) ) {
 				wp_send_json( -1 );
