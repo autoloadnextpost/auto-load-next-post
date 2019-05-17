@@ -40,8 +40,11 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 * @access  public
 		 * @since   1.0.0
 		 * @version 1.6.0
+		 * @global  string $wp_version - The version of WordPress
 		 */
 		public function includes() {
+			global $wp_version;
+
 			include( dirname( __FILE__ ) . '/class-alnp-admin-action-links.php' );        // Action Links
 			include( dirname( __FILE__ ) . '/class-alnp-admin-assets.php' );              // Admin Assets
 			include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' );             // Plugin Notices
@@ -61,6 +64,10 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 			include( dirname( __FILE__ ) . '/class-alnp-sidebar.php' );                   // Sidebar
 			include( dirname( __FILE__ ) . '/class-alnp-admin-footer.php' );              // Admin Footer
 			include( dirname( __FILE__ ) . '/class-alnp-privacy.php' );                   // Plugin Privacy
+
+			if ( version_compare( $wp_version, '5.2', '>=' ) ) {
+				include( dirname( __FILE__ ) . '/class-alnp-admin-site-health.php' );     // Site Health
+			}
 		} // END includes()
 
 		/**
