@@ -93,6 +93,12 @@ if ( ! class_exists( 'ALNP_Admin_Notices' ) ) {
 				$user_hidden_notice = true;
 			}
 
+			// If the user is allowed to install plugins and requested to hide the review notice then hide it for that user.
+			if ( ! empty( $_GET['hide_auto_load_next_post_setup_notice'] ) && current_user_can( 'install_plugins' ) ) {
+				add_user_meta( $current_user->ID, 'auto_load_next_post_hide_setup_notice', '1', true );
+				$user_hidden_notice = true;
+			}
+
 			// If the user is allowed to install plugins and requested to hide the beta notice then hide it for that user.
 			if ( ! empty( $_GET['hide_auto_load_next_post_beta_notice'] ) && current_user_can( 'install_plugins' ) ) {
 				set_transient( 'alnp_beta_notice_hidden', 'hidden', WEEK_IN_SECONDS );
