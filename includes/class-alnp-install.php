@@ -282,8 +282,7 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 		 */
 		public static function redirect_getting_started( $plugin ) {
 			// Prevent redirect if plugin name does not match.
-			wp_die( $plugin );
-			if ( $plugin !== AUTO_LOAD_NEXT_POST_FILE_PATH ) {
+			if ( $plugin !== plugin_basename( AUTO_LOAD_NEXT_POST_FILE ) ) {
 				return;
 			}
 
