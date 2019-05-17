@@ -36,6 +36,47 @@ if ( ! function_exists( 'alnp_get_post_type' ) ) {
 	}
 }
 
+if ( ! function_exists( 'alnp_get_post_types' ) ) {
+	/**
+	 * This returns a list of public registered post types.
+	 *
+	 * @since  1.6.0
+	 * @return array $post_types
+	 */
+	function alnp_get_post_types() {
+		$post_types = array(
+			'post' => 'Post'
+		);
+
+		// If Auto Load Next Post Pro is installed then return all public post types.
+		if ( is_alnp_pro_version_installed() ) {
+			$post_types = get_post_types( array( 'public' => true ), 'names' );
+		}
+
+		// Un-supported post types are unset.
+		$post_types = alnp_unset_unsupported_post_types( $post_types );
+
+		return $post_types;
+	} // END alnp_get_post_types()
+}
+
+if ( ! function_exists( 'alnp_unset_unsupported_post_types' ) ) {
+	/**
+	 * Unsets un-supported post types.
+	 *
+	 * @since  1.6.0
+	 * @return array $post_types
+	 */
+	function alnp_unset_unsupported_post_types( $post_types ) {
+		unset( $post_types['elementor_library'] );
+		unset( $post_types['tdb_templates'] );
+
+		$post_types = apply_filters( 'alnp_unset_unsupported_post_types', $post_types );
+
+		return $post_types;
+	} // END alnp_unset_unsupported_post_types()
+}
+
 if ( ! function_exists( 'alnp_get_random_page_permalink' ) ) {
 	/**
 	 * Returns the permalink of a random page

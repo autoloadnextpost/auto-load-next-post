@@ -80,7 +80,7 @@ if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 				);
 			}
 
-			foreach( self::get_post_types() as $post_type ) {
+			foreach( alnp_get_post_types() as $post_type ) {
 				$default  = '';
 				$readonly = 'no';
 
@@ -110,43 +110,6 @@ if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 
 			return $settings;
 		} // END get_settings()
-
-		/**
-		 * This returns a list of public registered post types.
-		 *
-		 * @access public
-		 * @return array $post_types
-		 */
-		public function get_post_types() {
-			$post_types = array(
-				'post' => 'Post'
-			);
-
-			// If Auto Load Next Post Pro is installed then return all public post types.
-			if ( is_alnp_pro_version_installed() ) {
-				$post_types = get_post_types( array( 'public' => true ), 'names' );
-			}
-
-			// Un-supported post types are unset.
-			$post_types = self::unset_unsupported_post_types( $post_types );
-
-			return $post_types;
-		} // END get_post_types()
-
-		/**
-		 * Unsets un-supported post types.
-		 *
-		 * @access public
-		 * @return array $post_types
-		 */
-		public function unset_unsupported_post_types( $post_types ) {
-			unset( $post_types['elementor_library'] );
-			unset( $post_types['tdb_templates'] );
-
-			$post_types = apply_filters( 'alnp_unset_unsupported_post_types', $post_types );
-
-			return $post_types;
-		} // END unset_unsupported_post_types()
 
 		/**
 		 * Output the settings.
