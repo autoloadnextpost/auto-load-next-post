@@ -36,8 +36,8 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 			// Adds rewrite endpoint.
 			add_action( 'init', array( __CLASS__, 'add_rewrite_endpoint' ), 10 );
 
-			// Redirect to Getting Started page once installed.
-			add_action( 'auto_load_next_post_updated', array( __CLASS__, 'redirect_getting_started') );
+			// Redirect to Getting Started page once activated.
+			add_action( 'activated_plugin', array( __CLASS__, 'redirect_getting_started') );
 		} // END __construct()
 
 		/**
@@ -273,13 +273,20 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 		} // END reset_alnp()
 
 		/**
-		 * Redirects to the Getting Started page when called.
+		 * Redirects to the Getting Started page upon plugin activation.
 		 *
 		 * @access public
 		 * @static
 		 * @since  1.6.0
+		 * @param  string $plugin The activate plugin name.
 		 */
-		public static function redirect_getting_started() {
+		public static function redirect_getting_started( $plugin ) {
+			// Prevent redirect if plugin name does not match.
+			wp_die( $plugin );
+			if ( $plugin !== AUTO_LOAD_NEXT_POST_FILE_PATH ) {
+				return;
+			}
+
 			$getting_started = add_query_arg( array(
 				'page' => 'auto-load-next-post',
 				'view' => 'getting-started'
@@ -297,7 +304,12 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 				);
 				return;
 			}
-	
+
+			// If activated on a Multisite, don't redirect.
+			if ( is_multisite() ) {
+				return;
+			}
+
 			wp_safe_redirect( $getting_started );
 			exit;
 		} // END redirect_getting_started()
