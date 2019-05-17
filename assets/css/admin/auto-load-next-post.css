@@ -549,12 +549,14 @@ body.folded .wrap #mainform {
 .notice.auto-load-next-post-notice h3 {
   margin: 0 0 5px; }
 
+.notice.auto-load-next-post-notice .auto-load-next-post-setup-wizard,
 .notice.auto-load-next-post-notice .auto-load-next-post-review-now,
 .notice.auto-load-next-post-notice .auto-load-next-post-send-feedback,
 .notice.auto-load-next-post-notice .auto-load-next-post-documentation {
   float: right;
   text-align: center; }
 
+.notice.auto-load-next-post-notice .auto-load-next-post-setup-wizard .auto-load-next-post-setup-button,
 .notice.auto-load-next-post-notice .auto-load-next-post-review-now .auto-load-next-post-review-button,
 .notice.auto-load-next-post-notice .auto-load-next-post-send-feedback .auto-load-next-post-feedback-button,
 .notice.auto-load-next-post-notice .auto-load-next-post-documentation .auto-load-next-post-documentation-button {
@@ -600,6 +602,7 @@ body.alnp-setup-wizard .notice {
     padding: 0; }
   .notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-notice-icon {
     display: none; }
+  .notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-setup-wizard,
   .notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-review-now,
   .notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-send-feedback,
   .notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-documentation {

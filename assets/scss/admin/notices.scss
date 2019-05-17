@@ -28,6 +28,7 @@
 			margin: 0 0 5px;
 		}
 
+		.auto-load-next-post-setup-wizard,
 		.auto-load-next-post-review-now,
 		.auto-load-next-post-send-feedback,
 		.auto-load-next-post-documentation {
@@ -35,6 +36,7 @@
 			text-align: center;
 		}
 
+		.auto-load-next-post-setup-wizard .auto-load-next-post-setup-button,
 		.auto-load-next-post-review-now .auto-load-next-post-review-button,
 		.auto-load-next-post-send-feedback .auto-load-next-post-feedback-button,
 		.auto-load-next-post-documentation .auto-load-next-post-documentation-button {
@@ -100,6 +102,7 @@ body.alnp-setup-wizard .notice {
 		display: none;
 	}
 
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-setup-wizard,
 	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-review-now,
 	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-send-feedback,
 	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-documentation {

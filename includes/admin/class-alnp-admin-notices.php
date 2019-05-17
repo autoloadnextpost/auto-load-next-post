@@ -93,6 +93,7 @@ if ( ! class_exists( 'ALNP_Admin_Notices' ) ) {
 				$user_hidden_notice = true;
 			}
 
+			// If the user is allowed to install plugins and requested to hide the beta notice then hide it for that user.
 			if ( ! empty( $_GET['hide_auto_load_next_post_beta_notice'] ) && current_user_can( 'install_plugins' ) ) {
 				set_transient( 'alnp_beta_notice_hidden', 'hidden', WEEK_IN_SECONDS );
 				$user_hidden_notice = true;
@@ -142,7 +143,16 @@ if ( ! class_exists( 'ALNP_Admin_Notices' ) ) {
 				}
 			}
 
-			// Is this version of Auto Load Next Post a beta release?
+			// Is admin setup wizard notice hidden?
+			$hide_setup_wizard_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_setup_notice', true );
+
+			// Check if we need to show setup wizard notice.
+			if ( empty( $hide_setup_wizard_notice ) && ! is_alnp_supported() ) {
+				// Notify users of the Setup Wizard.
+				add_action( 'admin_notices', array( $this, 'setup_wizard_notice' ) );
+			}
+
+			// Is this version of Auto Load Next Post a beta/pre-release?
 			if ( is_alnp_beta() && empty( get_transient( 'alnp_beta_notice_hidden' ) ) ) {
 				add_action( 'admin_notices', array( $this, 'beta_notice' ) );
 			}
@@ -189,6 +199,16 @@ if ( ! class_exists( 'ALNP_Admin_Notices' ) ) {
 		public function theme_ready_notice() {
 			include( dirname( __FILE__ ) . '/views/html-notice-theme-ready.php' );
 		} // END theme_ready_notice()
+
+		/**
+		 * Show setup wizard notice.
+		 *
+		 * @access public
+		 * @since  1.6.0
+		 */
+		public function setup_wizard_notice() {
+			include( dirname( __FILE__ ) . '/views/html-notice-setup-wizard.php' );
+		}
 
 		/**
 		 * Show the beta notice.
