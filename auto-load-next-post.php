@@ -233,7 +233,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			}
 
 			// Load the Javascript if found as a singluar post and the user is not a bot.
-			if ( !alnp_is_bot() && is_singular() && get_post_type() == 'post' ) {
+			if ( ! alnp_is_bot() && is_singular() && get_post_type() == 'post' ) {
 				// This checks to see if the JavaScript should load in the footer or not.
 				$load_in_footer = alnp_load_js_in_footer();
 
@@ -274,7 +274,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @access public
 		 * @since  1.5.0
 		 * @static
-		 * @return string|false
+		 * @return string|bool
 		 */
 		public static function is_alnp_using_customizer() {
 			if ( is_customize_preview() ) {

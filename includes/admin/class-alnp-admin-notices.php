@@ -55,7 +55,7 @@ if ( ! class_exists( 'ALNP_Admin_Notices' ) ) {
 		 * @access  public
 		 * @since   1.0.0
 		 * @version 1.5.11
-		 * @global  string $wp_version
+		 * @global  string $wp_version - The version of WordPress
 		 * @return  bool
 		 */
 		public function check_wp() {
