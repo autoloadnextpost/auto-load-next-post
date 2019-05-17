@@ -1,6 +1,6 @@
 <?php
 /**
- * Auto Load Next Post - Action Links.
+ * Auto Load Next Post - Admin Action Links.
  *
  * Adds links to Auto Load Next Post on the plugins page.
  *
@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'ALNP_Action_Links' ) ) {
+if ( ! class_exists( 'ALNP_Admin_Action_Links' ) ) {
 
-	class ALNP_Action_Links {
+	class ALNP_Admin_Action_Links {
 
 		/**
 		 * Constructor
@@ -96,4 +96,4 @@ if ( ! class_exists( 'ALNP_Action_Links' ) ) {
 
 } // END if class exists
 
-return new ALNP_Action_Links();
+return new ALNP_Admin_Action_Links();

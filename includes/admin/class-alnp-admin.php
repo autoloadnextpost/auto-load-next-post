@@ -42,7 +42,7 @@ if ( ! class_exists( 'ALNP_Admin' ) ) {
 		 * @version 1.6.0
 		 */
 		public function includes() {
-			include( dirname( __FILE__ ) . '/class-alnp-action-links.php' );              // Action Links
+			include( dirname( __FILE__ ) . '/class-alnp-admin-action-links.php' );        // Action Links
 			include( dirname( __FILE__ ) . '/class-alnp-admin-assets.php' );              // Admin Assets
 			include( dirname( __FILE__ ) . '/class-alnp-admin-notices.php' );             // Plugin Notices
 
