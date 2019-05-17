@@ -29,22 +29,8 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 			$this->id    = 'setup-wizard';
 			$this->label = esc_html__( 'Setup Wizard', 'auto-load-next-post' );
 
-			add_filter( 'alnp_settings_tabs_array', array( $this, 'add_setup_wizard_page' ), 0 );
 			add_action( 'auto_load_next_post_settings_end', array( $this, 'output' ), 10, 2 );
 		} // END __construct()
-
-		/**
-		 * Add the setup wizard page to the settings.
-		 *
-		 * @access public
-		 * @param  array $pages
-		 * @return array $pages
-		 */
-		public function add_setup_wizard_page( $pages ) {
-			$pages[$this->id] = $this->label;
-
-			return $pages;
-		} // END add_setup_wizard_page()
 
 		/**
 		 * Output the setup wizard.
