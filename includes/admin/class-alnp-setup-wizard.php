@@ -46,7 +46,7 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 			// Get active theme
 			$active_theme = wp_get_theme();
 			?>
-			<div class="wrap auto-load-next-post setup-wizard">
+			<div class="auto-load-next-post setup-wizard">
 
 				<div class="container">
 
@@ -181,7 +181,7 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 
 				</div><!-- .container -->
 
-			</div><!-- .wrap -->
+			</div><!-- .auto-load-next-post -->
 			<?php
 		} // END output()
 

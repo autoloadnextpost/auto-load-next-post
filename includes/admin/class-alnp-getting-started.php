@@ -46,7 +46,7 @@ if ( ! class_exists( 'ALNP_Getting_Started' ) ) {
 			// Get active theme
 			$active_theme = wp_get_theme();
 			?>
-			<div class="wrap auto-load-next-post getting-started">
+			<div class="auto-load-next-post getting-started">
 
 				<div class="container">
 
