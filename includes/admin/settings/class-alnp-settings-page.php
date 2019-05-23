@@ -205,7 +205,7 @@ if ( ! class_exists( 'ALNP_Settings_Page' ) ) {
 				return;
 			}
 
-			echo '<a href="#" class="need-help trigger-help" data-tab="' . $current_view . '"><span class="sonar-dot"></span> ' . esc_html( 'Need Help?', 'auto-load-next-post' ) . '</a>';
+			echo '<a href="#" class="need-help trigger-help" data-tab="' . $current_view . '"><span class="sonar-dot"></span> ' . esc_html__( 'Need Help?', 'auto-load-next-post' ) . '</a>';
 		} // END need_help()
 
 	} // END class
