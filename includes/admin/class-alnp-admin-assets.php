@@ -29,7 +29,7 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ), 10 );
 
 			// Register Stylesheet for Dark Mode if active.
-			add_action( 'doing_dark_mode', array( $this, 'do_dark_mode' ), 10 );
+			add_action( 'doing_dark_mode', array( $this, 'do_dark_mode' ), 99 );
 
 			// Adds admin body classes.
 			add_filter( 'admin_body_class', array( $this, 'admin_body_class' ) );
@@ -150,7 +150,7 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 		} // END admin_scripts()
 
 		/**
-		 * Adds support for displaying the settings page in DARK MODE.
+		 * Adds support for displaying plugin pages in DARK MODE.
 		 *
 		 * @access public
 		 */
@@ -159,7 +159,7 @@ if ( ! class_exists( 'ALNP_Admin_Assets' ) ) {
 			$screen_id = $screen ? $screen->id : '';
 
 			if ( $screen_id == 'settings_page_auto-load-next-post' ) {
-				Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_dark_mode', '/assets/css/admin/dark-mode' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
+				Auto_Load_Next_Post::load_file( AUTO_LOAD_NEXT_POST_SLUG . '_dark_mode', '/assets/css/admin/auto-load-next-post-dark-mode' . AUTO_LOAD_NEXT_POST_SCRIPT_MODE . '.css' );
 			}
 		} // END do_dark_mode()
 

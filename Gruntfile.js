@@ -34,7 +34,8 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'assets/css/admin/<%= pkg.name %>.css' : 'assets/scss/admin.scss'
+					'assets/css/admin/<%= pkg.name %>.css' : 'assets/scss/admin.scss',
+					'assets/css/admin/<%= pkg.name %>-dark-mode.css' : 'assets/scss/admin/dark-mode.scss'
 				}
 			}
 		},

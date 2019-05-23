@@ -111,6 +111,7 @@
 		body {
 			font-size: 300%;
 		}
+
 		.auto-load-next-post {
 			.box {
 				padding: 4% 10%;
@@ -122,6 +123,7 @@
 		body {
 			font-size: 350%;
 		}
+
 		.auto-load-next-post {
 			.box {
 				padding: 4% 10%;
@@ -129,18 +131,4 @@
 		}
 	}
 
-}
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-	.auto-load-next-post {
-		.box {
-			background-color: #1a1a1a;
-			border: 1px solid #00d573;
-		}
-
-		a {
-			color: #00d573;
-		}
-	}
 }
