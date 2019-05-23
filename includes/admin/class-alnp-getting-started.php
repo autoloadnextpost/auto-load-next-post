@@ -52,7 +52,7 @@ if ( ! class_exists( 'ALNP_Getting_Started' ) ) {
 
 					<div class="content">
 						<div class="logo">
-							<a href="https://autoloadnextpost.com/" target="_blank">
+							<a href="<?php echo AUTO_LOAD_NEXT_POST_STORE_URL; ?>" target="_blank">
 								<img src="<?php echo AUTO_LOAD_NEXT_POST_URL_PATH . '/assets/images/logo.png'; ?>" alt="<?php esc_html_e( 'Auto Load Next Post', 'auto-load-next-post' ); ?>" />
 							</a>
 						</div>
