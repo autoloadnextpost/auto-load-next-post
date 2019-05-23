@@ -1,18 +1,10 @@
 /* Navigation */
-nav.nav-tab-wrapper span {
-	float: left;
-	line-height: initial;
-	font-size: 1.3em;
-	margin-right: 6px;
-}
+nav.nav-tab-wrapper {
+	margin-bottom: 1em;
 
-nav .nav-tab:first-child {
-	margin-left: 10px;
+	a.nav-tab:first-child {
+		margin-left: 0;
 }
-
-.wrap.auto-load-next-post-div.updated, 
-.wrap.auto-load-next-post-div.error {
-	margin-top: 10px;
 }
 
 /* Settings Table */
