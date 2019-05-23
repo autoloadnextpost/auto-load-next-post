@@ -5,7 +5,7 @@
  * @author  Sébastien Dumont
  * @package Auto Load Next Post/Templates/Theme Support
  * @license GPL-2.0+
- * @version 1.5.0
+ * @version 1.6.0
  */
 
 if ( have_posts() ) :
