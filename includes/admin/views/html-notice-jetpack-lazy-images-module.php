@@ -16,5 +16,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <div class="notice jetpack-info">
-	<p><?php echo sprintf( esc_attr__( 'Lazy-loading for the Images module is enabled in %sJetPack%s. To trigger the lazy loading event apply %s to %s%s%s.', 'auto-load-next-post' ), '<a href="' . admin_url( 'admin.php?page=jetpack#/performance' ) . '">', '</a>', '<code>jetpack-lazy-images-load</code>', '<strong>', __( 'Entering a Post', 'auto-load-next-post'), '</strong>' ); ?></p>
+	<p><?php echo sprintf( esc_attr__( 'Lazy-loading for the Images module is enabled in %1$sJetPack%2$s. To trigger the lazy loading event apply %3$s to %4$s%5$s%6$s.', 'auto-load-next-post' ), '<a href="' . admin_url( 'admin.php?page=jetpack#/performance' ) . '">', '</a>', '<code>jetpack-lazy-images-load</code>', '<strong>', __( 'Entering a Post', 'auto-load-next-post'), '</strong>' ); ?></p>
 </div>

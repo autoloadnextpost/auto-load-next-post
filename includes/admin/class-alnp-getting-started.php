@@ -59,7 +59,7 @@ if ( ! class_exists( 'ALNP_Getting_Started' ) ) {
 
 						<h1><?php printf( __( 'Getting started with %s.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></h1>
 
-						<p><strong><?php echo esc_html__( 'Thanks for choosing Auto Load Next Post.', 'auto-load-next-post' ); ?></strong></p>
+						<p><strong><?php printf( __( 'Thanks for choosing %s.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></strong></p>
 
 						<p><?php echo esc_html__( 'Your well on your way to increasing your pageviews by engaging your site viewers to keep reading your content and reduce bounce rate.', 'auto-load-next-post' ); ?></p>
 
