@@ -4,7 +4,7 @@ nav.nav-tab-wrapper {
 
 	a.nav-tab:first-child {
 		margin-left: 0;
-}
+	}
 }
 
 /* Settings Table */
@@ -297,15 +297,15 @@ body.folded .wrap #mainform {
 /* Help Button */
 .need-help {
 	background: $white;
-	display: inline-flex;
 	border-radius: 4px;
 	box-sizing: border-box;
+	display: inline-flex;
 	line-height: inherit;
 	margin: 0;
-	margin-top: 1em;
+	/*margin-top: 1em;*/
 	padding: 0.8em;
-	-moz-box-align: center;
 	align-items: center;
+	-moz-box-align: center;
 	-moz-box-pack: center;
 	justify-content: center;
 	vertical-align: middle;
