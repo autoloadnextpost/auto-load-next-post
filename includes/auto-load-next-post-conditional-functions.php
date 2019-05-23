@@ -69,9 +69,9 @@ if ( ! function_exists( 'is_alnp_beta' ) ) {
 	/**
 	 * Returns true if Auto Load Next Post is a beta/pre-release.
 	 *
-	 * @since  1.5.0
-	 * @since  1.6.0
-	 * @return boolean
+	 * @since   1.5.0
+	 * @version 1.6.0
+	 * @return  boolean
 	 */
 	function is_alnp_beta() {
 		if ( 

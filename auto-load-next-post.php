@@ -121,9 +121,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		/**
 		 * Setup Constants
 		 *
+		 * @access  private
 		 * @since   1.4.3
 		 * @version 1.5.12
-		 * @access  private
 		 */
 		private function setup_constants() {
 			$this->define('AUTO_LOAD_NEXT_POST_VERSION', self::$version);
@@ -153,10 +153,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		/**
 		 * Define constant if not already set.
 		 *
-		 * @param  string $name
-		 * @param  string|bool $value
 		 * @access private
 		 * @since  1.4.3
+		 * @param  string $name
+		 * @param  string|bool $value
 		 */
 		private function define( $name, $value ) {
 			if ( ! defined( $name ) ) {
