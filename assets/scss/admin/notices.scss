@@ -80,7 +80,9 @@
 }
 
 body.alnp-getting-started .notice,
-body.alnp-setup-wizard .notice {
+body.alnp-setup-wizard .notice,
+body.alnp-getting-started .error,
+body.alnp-setup-wizard .error {
 	display: none;
 }
 
