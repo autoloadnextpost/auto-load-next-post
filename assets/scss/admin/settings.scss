@@ -113,6 +113,62 @@ body.folded .wrap #mainform {
 		margin: 0 auto 2em;
 	}
 
+	/* Banner */
+	.alnp-banner {
+		background-color: $alnp;
+		display: block;
+		padding: 10px;
+	}
+
+	.alnp-banner:focus {
+		box-shadow: none;
+		-webkit-box-shadow: none;
+	}
+
+	.alnp-upgrade-details {
+		background-color: $alnp;
+		color: #333;
+		display: block;
+		font-size: 13px;
+		margin: 0;
+		margin-bottom: 2em;
+		padding: 0px 20px 20px;
+		text-decoration: none;
+
+		h1 {
+			font-size: 28px;
+			color: $white;
+			margin: 0 0 15px;
+			padding: 0;
+			text-decoration: none;
+			font-weight: 400;
+			line-height: 1;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		a {
+			color: #dd3333;
+			font-weight: bold;
+			text-decoration: none;
+			font-size: 16px;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+
+		a:hover {
+			color: $white;
+		}
+
+		ul {
+			margin-top: 0;
+			margin-left: 16px;
+			list-style-type: disc;
+		}
+	}
+
 	.block {
 		background-color: $white;
 		margin-bottom: 2em;
@@ -239,61 +295,6 @@ body.folded .wrap #mainform {
 	}
 }
 
-/* Banner */
-.alnp-banner {
-	background-color: $alnp;
-	padding: 10px;
-}
-
-.alnp-banner:focus {
-	box-shadow: none;
-	-webkit-box-shadow: none;
-}
-
-.wrap .alnp-upgrade-details {
-	background-color: $alnp;
-	color: #333;
-	display: block;
-	font-size: 13px;
-	margin: 0;
-	margin-bottom: 2em;
-	padding: 0px 20px 20px;
-	text-decoration: none;
-	
-	h1 {
-		font-size: 28px;
-		color: $white;
-		margin: 0 0 15px;
-		padding: 0;
-		text-decoration: none;
-		font-weight: 400;
-		line-height: 1;
-	}
-
-	p {
-		margin: 0;
-	}
-
-	a {
-		color: #dd3333;
-		font-weight: bold;
-		text-decoration: none;
-		font-size: 16px;
-		-webkit-box-shadow: none;
-		box-shadow: none;
-	}
-
-	a:hover {
-		color: $white;
-	}
-
-	ul {
-		margin-top: 0;
-		margin-left: 16px;
-		list-style-type: disc;
-	}
-}
-
 /* Help Button */
 .need-help {
 	background: $white;
@@ -302,7 +303,6 @@ body.folded .wrap #mainform {
 	display: inline-flex;
 	line-height: inherit;
 	margin: 0;
-	/*margin-top: 1em;*/
 	padding: 0.8em;
 	align-items: center;
 	-moz-box-align: center;
