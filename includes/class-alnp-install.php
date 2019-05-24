@@ -95,6 +95,9 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 			// Sets ALNP to load in the footer if the current active theme requires it.
 			self::set_js_in_footer();
 
+			// Set the template directory if the current active theme requires it.
+			self::set_template_directory();
+
 			// Set activation date.
 			self::set_install_date();
 
@@ -150,6 +153,22 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 				if ( ! empty( $lock_js_in_footer ) && $lock_js_in_footer == 'yes' ) update_option( 'auto_load_next_post_lock_js_in_footer', $lock_js_in_footer );
 			}
 		} // END set_js_in_footer()
+
+		/**
+		 * Sets the template directory for the current active theme should it
+		 * support Auto Load Next Post and have the template directory specified.
+		 *
+		 * @access private
+		 * @static
+		 * @since  1.6.0
+		 */
+		private static function set_template_directory() {
+			if ( is_alnp_supported() ) {
+				$directory = alnp_get_theme_support( 'template_directory_post' );
+
+				if ( ! empty( $directory ) ) update_option( 'auto_load_next_post_directory_post', $directory );
+			}
+		} // END set_template_directory()
 
 		/**
 		 * Update plugin version to current.
