@@ -164,7 +164,7 @@ if ( ! class_exists( 'ALNP_Install' ) ) {
 		 */
 		private static function set_template_directory() {
 			if ( is_alnp_supported() ) {
-				$directory = alnp_get_theme_support( 'template_directory_post' );
+				$directory = alnp_get_theme_support( 'directory_post' );
 
 				if ( ! empty( $directory ) ) update_option( 'auto_load_next_post_directory_post', $directory );
 			}
