@@ -90,6 +90,12 @@ if ( ! class_exists( 'ALNP_Settings_Templates' ) ) {
 					$readonly = 'yes';
 				}
 
+				// Checks if theme support provided directory location for post and disable posts only if true.
+				else if ( ! empty( alnp_get_theme_support( 'directory_post' ) ) && strtolower( $post_type ) == 'post' ) {
+					$default  = alnp_get_theme_support( 'directory_post' );
+					$readonly = 'yes';
+				}
+
 				$settings[] = array(
 					'title'       => ucfirst( $post_type ),
 					'desc'        => sprintf( __( 'Enter the folder location where the theme template for %s are stored.', 'auto-load-next-post' ), $post_type ),
