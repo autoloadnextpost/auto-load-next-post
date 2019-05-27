@@ -204,6 +204,10 @@ It does. Just make sure that you activate the plugin on the site you want it use
 
 == Changelog ==
 
+= 1.5.13 - 27th May 2019 =
+
+* Tweaked: Upgrade warning notice in preparation for version 1.6.0 release.
+
 = 1.5.12 - 23rd April 2019 =
 
 * Tweaked: Repeater template now looks for `content-post.php` should `content-single.php` not exist before fallback to `content.php`.
