@@ -1,37 +1,21 @@
 <?php
 /**
- * Auto Load Next Post: Conditional Functions
+ * Auto Load Next Post Conditional Functions
  *
  * Functions for determining the current query/page,
  * theme support and if user agent is a bot.
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Core
- * @package  Auto Load Next Post/Core/Functions
+ * @package  Auto Load Next Post/Functions
  * @license  GPL-2.0+
  */
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}
-
-if ( ! function_exists( 'auto_load_next_post_is_ajax' ) ) {
-	/**
-	 * Returns true when the page is loaded via ajax.
-	 *
-	 * @since  1.0.0
-	 * @return bool
-	 */
-	function auto_load_next_post_is_ajax() {
-		if ( defined( 'DOING_AJAX' ) ) {
-			return true;
-		}
-
-		return( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest' ) ? true : false;
-	} // END auto_load_next_post_is_ajax
 }
 
 if ( ! function_exists( 'alnp_template_location' ) ) {
@@ -67,7 +51,6 @@ if ( ! function_exists( 'is_alnp_pro_version_installed' ) ) {
 	/**
 	 * Detects if Auto Load Next Post Pro is installed.
 	 *
-	 * @access public
 	 * @since  1.4.10
 	 * @return boolean
 	 */
@@ -79,36 +62,40 @@ if ( ! function_exists( 'is_alnp_pro_version_installed' ) ) {
 		}
 
 		return in_array( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins ) || array_key_exists( 'auto-load-next-post-pro/auto-load-next-post-pro.php', $active_plugins );
-	}
+	} // END is_alnp_pro_version_installed()
 }
 
 if ( ! function_exists( 'is_alnp_beta' ) ) {
 	/**
-	 * Returns true if Auto Load Next Post is a beta release.
+	 * Returns true if Auto Load Next Post is a beta/pre-release.
 	 *
-	 * @since  1.5.0
-	 * @return boolean
+	 * @since   1.5.0
+	 * @version 1.6.0
+	 * @return  boolean
 	 */
 	function is_alnp_beta() {
-		if ( strpos( AUTO_LOAD_NEXT_POST_VERSION, 'beta' ) ) {
+		if ( 
+			strpos( AUTO_LOAD_NEXT_POST_VERSION, 'beta' ) ||
+			strpos( AUTO_LOAD_NEXT_POST_VERSION, 'rc' )
+		) {
 			return true;
 		}
 
 		return false;
-	}
+	} // END is_alnp_beta()
 }
 
 if ( ! function_exists( 'is_alnp_active_theme' ) ) {
 	/**
 	 * See if theme/s is activate or not.
 	 *
-	 * @since 1.5.0
-	 * @param string|array $theme Theme name or array of theme names to check.
+	 * @since  1.5.0
+	 * @param  string|array $theme Theme name or array of theme names to check.
 	 * @return boolean
 	 */
 	function is_alnp_active_theme( $theme ) {
 		return is_array( $theme ) ? in_array( get_template(), $theme, true ) : get_template() === $theme;
-	}
+	} // END is_alnp_active_theme()
 }
 
 if ( ! function_exists( 'is_alnp_supported' ) ) {
@@ -126,7 +113,7 @@ if ( ! function_exists( 'is_alnp_supported' ) ) {
 		}
 
 		return true;
-	}
+	} // END is_alnp_supported()
 }
 
 if ( ! function_exists( 'alnp_get_theme_support' ) ) {
@@ -171,7 +158,7 @@ if ( ! function_exists( 'alnp_get_theme_support' ) ) {
 		}
 
 		return $theme_support;
-	}
+	} // END alnp_get_theme_support()
 }
 
 if ( ! function_exists( 'alnp_is_bot' ) ) {
@@ -185,7 +172,7 @@ if ( ! function_exists( 'alnp_is_bot' ) ) {
 		$is_bot = alnp_is_bot_user_agent( $_SERVER['HTTP_USER_AGENT'] );
 
 		return $is_bot;
-	}
+	} // END alnp_is_bot()
 }
 
 if ( ! function_exists( 'alnp_is_bot_user_agent' ) ) {
@@ -218,26 +205,7 @@ if ( ! function_exists( 'alnp_is_bot_user_agent' ) ) {
 		}
 
 		return false;
-	}
-}
-
-if ( ! function_exists( 'alnp_get_post_type' ) ) {
-	/**
-	 * Returns the post type.
-	 *
-	 * @since  1.4.12
-	 * @return string
-	 */
-	function alnp_get_post_type() {
-		$post_type = get_post_type();
-
-		// If the post type is a post then return single instead.
-		if ( $post_type == 'post' ) {
-			return 'single';
-		}
-
-		return $post_type;
-	}
+	} // END alnp_is_bot_user_agent()
 }
 
 if ( ! function_exists( 'alnp_check_jetpack' ) ) {
@@ -253,5 +221,31 @@ if ( ! function_exists( 'alnp_check_jetpack' ) ) {
 		$is_active = $jetpack_active ? 'yes' : 'no';
 
 		return $is_active;
-	}
+	} // END alnp_check_jetpack()
+}
+
+if ( ! function_exists( 'alnp_airplane_mode_enabled' ) ) {
+	/**
+	 * Check the current status of Airplane Mode.
+	 *
+	 * @since  1.6.0
+	 * @return bool True if status is 'on'; false if not.
+	 */
+	function alnp_airplane_mode_enabled() {
+		// Bail if CLI.
+		if ( defined( 'WP_CLI' ) and WP_CLI ) {
+			return false;
+		}
+
+		// Pull our status from the options table.
+		$option = get_site_option( 'airplane-mode' );
+
+		// Backup check for regular options table.
+		if ( false === $option ) {
+			$option = get_option( 'airplane-mode' );
+		}
+
+		// Return the option flag.
+		return 'on' === $option;
+	} // END alnp_airplane_mode_enabled()
 }

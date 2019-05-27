@@ -3,7 +3,7 @@
  * Auto Load Next Post Settings - Events
  *
  * @since    1.5.0
- * @version  1.5.5
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Settings
@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
+if ( ! class_exists( 'ALNP_Settings_Events' ) ) {
 
-	class Auto_Load_Next_Post_Settings_Events_Tab extends Auto_Load_Next_Post_Settings_Page {
+	class ALNP_Settings_Events extends ALNP_Settings_Page {
 
 		/**
 		 * Constructor.
@@ -30,7 +30,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 
 			parent::__construct();
 
-			add_action( 'auto_load_next_post_settings_events', array( __CLASS__, 'is_jetpack_lazy_images_active' ), 10 );
+			add_action( 'auto_load_next_post_settings_events', array( __CLASS__, 'is_jetpack_lazy_images_active' ), 0 );
 		} // END __construct()
 
 		/**
@@ -56,7 +56,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		 */
 		public function get_settings() {
 			return apply_filters(
-				'auto_load_next_post_event_settings', array(
+				'alnp_event_settings', array(
 
 					array(
 						'title' => $this->label,
@@ -100,7 +100,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		public function output() {
 			$settings = $this->get_settings();
 
-			Auto_Load_Next_Post_Admin_Settings::output_fields( $settings );
+			ALNP_Admin_Settings::output_fields( $settings );
 		} // END output()
 
 		/**
@@ -111,11 +111,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Events_Tab' ) ) {
 		public function save() {
 			$settings = $this->get_settings();
 
-			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings );
+			ALNP_Admin_Settings::save_fields( $settings );
 		} // END save()
 
 	} // END class
 
 } // END if class exists
 
-return new Auto_Load_Next_Post_Settings_Events_Tab();
+return new ALNP_Settings_Events();

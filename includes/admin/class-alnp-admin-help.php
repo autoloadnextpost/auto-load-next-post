@@ -6,7 +6,7 @@
  * and helpful information for the users.
  *
  * @since    1.0.0
- * @version  1.5.12
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Help
@@ -18,9 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
+if ( ! class_exists( 'ALNP_Admin_Help' ) ) {
 
-	class Auto_Load_Next_Post_Admin_Help {
+	class ALNP_Admin_Help {
 
 		/**
 		 * Constructor
@@ -37,13 +37,19 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.12
+		 * @version 1.6.0
 		 */
 		public function add_help_tabs() {
 			$screen    = get_current_screen();
 			$screen_id = $screen ? $screen->id : '';
 
-			if ( $screen_id != 'settings_page_auto-load-next-post-settings' ) {
+			if ( $screen_id != 'settings_page_auto-load-next-post' ) {
+				return;
+			}
+
+			$current_view = ! empty( $_GET['view'] ) ? sanitize_title( wp_unslash( $_GET['view'] ) ) : '';
+
+			if ( in_array( $current_view, array( 'getting-started', 'setup-wizard', 'extensions' ) ) ) {
 				return;
 			}
 
@@ -79,10 +85,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 					) . '</p>' .
 
 					'<p>' . sprintf(
-						__( 'When %1$s is activated, default theme selectors are set for you. These theme selectors are the most commonly used in any WordPress theme. If they don’t work for your theme then you need to find the matching theme selectors. More information on %2$show to find your theme selectors%3$s.', 'auto-load-next-post' ),
-						esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ),
-						'<a href="' . esc_url( 'https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/theme-selectors.md#how-to-find-your-theme-selectors' ) . '">',
-						'</a>' 
+						__( 'When %1$s is activated, default theme selectors are set for you. These theme selectors are the most commonly used in any WordPress theme. If they don’t work for your theme then you need to find the matching theme selectors.', 'auto-load-next-post' ),
+						esc_html__( 'Auto Load Next Post', 'auto-load-next-post' )
 					) . '</p>' .
 
 					'<p>' . sprintf(
@@ -97,7 +101,26 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 						'<li><strong>' . esc_html__( 'Post Title', 'auto-load-next-post' ) . '</strong>' . ' <code>h1.entry-title</code></li>' .
 						'<li><strong>' . esc_html__( 'Post Navigation', 'auto-load-next-post' ) . '</strong>' . ' <code>nav.post-navigation</code></li>' .
 						'<li><strong>' . esc_html__( 'Comments Container', 'auto-load-next-post' ) . '</strong>' . ' <code>div#comments</code></li>' .
-					'</ul>'
+					'</ul>' .
+
+					'<p><a href="https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/theme-selectors.md#how-to-find-your-theme-selectors" class="button button-primary" target="_blank">' . esc_html__( 'How to find your theme selectors', 'auto-load-next-post' ) . '</a></p>'
+			) );
+
+			$screen->add_help_tab( array(
+				'id'      => 'auto_load_next_post_templates_tab',
+				'title'   => __( 'Templates', 'auto-load-next-post' ),
+				'content' =>
+					'<h2>' . __( 'Templates', 'auto-load-next-post' ) . '</h2>' .
+
+					'<p>' . sprintf(
+						__( 'Every WordPress theme manages there %1$sTemplate Hierarchy%2$s in there own way. This makes it a little difficult for Auto Load Next Post to auto detect the appropriate template location. If the appropriate template was not detected then %3$s will automatically use a fallback template in order to display your sites content while your viewers scroll.', 'auto-load-next-post' ), '<a href="https://developer.wordpress.org/themes/basics/template-hierarchy/" target="_blank">', '</a>',
+						esc_html__( 'Auto Load Next Post', 'auto-load-next-post' )
+					) . '</p>' .
+
+					'<p>' . sprintf( __( 'By providing an accurate location to your theme\'s template, %1$s will then use your theme\'s template instead and will display your content matching the theme\'s design.' , 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' )
+					) . '</p>' .
+
+					'<p><a href="https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/content-and-structure.md" class="button button-primary" target="_blank">' . esc_html__( 'Content and Structure', 'auto-load-next-post' ) . '</a></p>'
 			) );
 
 			$screen->add_help_tab( array(
@@ -126,6 +149,17 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 					'<p><a href="' . esc_url( AUTO_LOAD_NEXT_POST_REVIEW_URL ) . '" class="button button-primary" target="_blank" aria-label="' . esc_attr( __( 'Review Auto Load Next Post on WordPress.org', 'auto-load-next-post' ) ) . '">' . esc_html__( 'Leave a Review', 'auto-load-next-post' ) . '</a> <a href="https://sebdumont.xyz/donate/" class="button button-secondary" target="_blank">' . esc_html__( 'Support the Developer', 'auto-load-next-post' ) . '</a></p>'
 			) );
 
+			$screen->add_help_tab( array(
+				'id'      => 'auto_load_next_post_wizard_tab',
+				'title'   => esc_html__( 'Setup Wizard', 'auto-load-next-post' ),
+				'content' =>
+					'<h2>' . esc_html__( 'Setup Wizard', 'auto-load-next-post' ) . '</h2>' .
+
+					'<p>' . sprintf( esc_html__( 'If you need to access the setup wizard again, please click on the button below. %1$sNote:%2$s Setup wizard is designed for themes that have not declared support for %3$s.', 'auto-load-next-post' ), '<strong class="red">', '</strong>', esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '</p>' .
+
+					'<p><a href="' . add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => 'setup-wizard', 'force-setup' => 'yes' ), admin_url( 'options-general.php' ) ) . '" class="button button-primary" aria-label="' . sprintf( esc_attr__( 'View %s setup wizard', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '">' . esc_html__( 'Setup Wizard', 'auto-load-next-post' ) . '</a></p>'
+			) );
+
 			$screen->set_help_sidebar(
 				'<p><strong>' . esc_html__( 'For more information:', 'auto-load-next-post' ) . '</strong></p>' .
 
@@ -138,8 +172,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Help' ) ) {
 
 		} // END add_help_tabs()
 
-	} // END Auto_Load_Next_Post_Admin_Help class.
+	} // END ALNP_Admin_Help class.
 
 } // END if class exists.
 
-return new Auto_Load_Next_Post_Admin_Help();
+return new ALNP_Admin_Help();

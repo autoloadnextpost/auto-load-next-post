@@ -3,7 +3,7 @@
  * Display notices in the WordPress admin.
  *
  * @since    1.3.2
- * @version  1.5.13
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Notices
@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
+if ( ! class_exists( 'ALNP_Admin_Notices' ) ) {
 
-	class Auto_Load_Next_Post_Admin_Notices {
+	class ALNP_Admin_Notices {
 
 		/**
 		 * Activation date.
@@ -55,7 +55,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		 * @access  public
 		 * @since   1.0.0
 		 * @version 1.5.11
-		 * @global  string $wp_version
+		 * @global  string $wp_version - The version of WordPress
 		 * @return  bool
 		 */
 		public function check_wp() {
@@ -77,9 +77,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		/**
 		 * Don't bug the user if they don't want to see any notices.
 		 *
-		 * @access public
-		 * @since  1.5.0
-		 * @global $current_user
+		 * @access  public
+		 * @since   1.5.0
+		 * @version 1.6.0
+		 * @global  $current_user
 		 */
 		public function dont_bug_me() {
 			global $current_user;
@@ -92,12 +93,13 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 				$user_hidden_notice = true;
 			}
 
-			// If the user is allowed to install plugins and requested to hide the welcome notice then hide it for that user.
-			if ( ! empty( $_GET['hide_auto_load_next_post_welcome_notice'] ) && current_user_can( 'install_plugins' ) ) {
-				add_user_meta( $current_user->ID, 'auto_load_next_post_hide_welcome_notice', '1', true );
+			// If the user is allowed to install plugins and requested to hide the review notice then hide it for that user.
+			if ( ! empty( $_GET['hide_auto_load_next_post_setup_notice'] ) && current_user_can( 'install_plugins' ) ) {
+				add_user_meta( $current_user->ID, 'auto_load_next_post_hide_setup_notice', '1', true );
 				$user_hidden_notice = true;
 			}
 
+			// If the user is allowed to install plugins and requested to hide the beta notice then hide it for that user.
 			if ( ! empty( $_GET['hide_auto_load_next_post_beta_notice'] ) && current_user_can( 'install_plugins' ) ) {
 				set_transient( 'alnp_beta_notice_hidden', 'hidden', WEEK_IN_SECONDS );
 				$user_hidden_notice = true;
@@ -116,7 +118,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.5.13
+		 * @version 1.6.0
 		 * @global  $current_user
 		 * @return  void|bool
 		 */
@@ -136,17 +138,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 				return false;
 			}
 
-			// Is admin welcome notice hidden?
-			$hide_welcome_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_welcome_notice', true );
-
-			// Check if we need to display the welcome notice.
-			if ( empty( $hide_welcome_notice ) ) {
-				// If the user has just installed the plugin for the first time then welcome the user.
-				if ( ( intval( time() - self::$install_date ) / WEEK_IN_SECONDS ) % 52 <= 2 ) {
-					add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
-				}
-			}
-
 			// Is admin review notice hidden?
 			$hide_review_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_review_notice', true );
 
@@ -158,7 +149,16 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 				}
 			}
 
-			// Is this version of Auto Load Next Post a beta release?
+			// Is admin setup wizard notice hidden?
+			$hide_setup_wizard_notice = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_setup_notice', true );
+
+			// Check if we need to show setup wizard notice.
+			if ( empty( $hide_setup_wizard_notice ) && ! is_alnp_supported() ) {
+				// Notify users of the Setup Wizard.
+				add_action( 'admin_notices', array( $this, 'setup_wizard_notice' ) );
+			}
+
+			// Is this version of Auto Load Next Post a beta/pre-release?
 			if ( is_alnp_beta() && empty( get_transient( 'alnp_beta_notice_hidden' ) ) ) {
 				add_action( 'admin_notices', array( $this, 'beta_notice' ) );
 			}
@@ -226,14 +226,14 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		} // END theme_ready_notice()
 
 		/**
-		 * Show the welcome notice.
+		 * Show setup wizard notice.
 		 *
 		 * @access public
-		 * @since  1.5.0
+		 * @since  1.6.0
 		 */
-		public function welcome_notice() {
-			include( dirname( __FILE__ ) . '/views/html-notice-welcome.php' );
-		} // END welcome_notice()
+		public function setup_wizard_notice() {
+			include( dirname( __FILE__ ) . '/views/html-notice-setup-wizard.php' );
+		}
 
 		/**
 		 * Show the beta notice.
@@ -262,4 +262,4 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 
 } // END if class exists.
 
-return new Auto_Load_Next_Post_Admin_Notices();
+return new ALNP_Admin_Notices();

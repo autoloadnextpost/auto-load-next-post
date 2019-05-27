@@ -121,9 +121,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		/**
 		 * Setup Constants
 		 *
+		 * @access  private
 		 * @since   1.4.3
 		 * @version 1.5.12
-		 * @access  private
 		 */
 		private function setup_constants() {
 			$this->define('AUTO_LOAD_NEXT_POST_VERSION', self::$version);
@@ -153,10 +153,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		/**
 		 * Define constant if not already set.
 		 *
-		 * @param  string $name
-		 * @param  string|bool $value
 		 * @access private
 		 * @since  1.4.3
+		 * @param  string $name
+		 * @param  string|bool $value
 		 */
 		private function define( $name, $value ) {
 			if ( ! defined( $name ) ) {
@@ -169,15 +169,18 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.0.0
-		 * @version 1.5.10
+		 * @version 1.6.0
 		 * @return  void
 		 */
 		public function includes() {
 			include_once( dirname( __FILE__ ) . '/includes/class-alnp-autoloader.php' ); // Autoloader.
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-deprecated-functions.php' ); // Deprecated functions.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-conditional-functions.php' ); // Conditional functions.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-formatting-functions.php' ); // Formatting functions.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-themes-supported.php' ); // Handles all supported themes out of the box.
 			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-core-functions.php' ); // Contains core functions for the front/back end.
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-template-functions.php' ); // Template Functions
+			include_once( dirname( __FILE__ ) . '/includes/auto-load-next-post-template-hooks.php' ); // Template Hooks
 
 			// Include theme support.
 			alnp_include_theme_support();
@@ -189,9 +192,12 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer.php' );
 			include_once( dirname( __FILE__ ) . '/includes/customizer/class-alnp-customizer-scripts.php' );
 
+			// Ajax
+			include_once( dirname( __FILE__ ) . '/includes/class-alnp-ajax.php' );
+
 			// Include admin class to handle all back-end functions.
 			if ( is_admin() ) {
-				include_once( dirname( __FILE__ ) . '/includes/admin/class-alnp-admin.php' ); // Admin section.
+				include_once( dirname( __FILE__ ) . '/includes/admin/class-alnp-admin.php' );
 			}
 
 			// Install.
@@ -218,13 +224,21 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.5.8
+		 * @version 1.6.0
 		 */
 		public function alnp_enqueue_scripts() {
+			// Prevent enqueue scripts if feed, trackback or a preview of a post.
+			if ( is_feed() || is_trackback() || is_preview() ) {
+				return;
+			}
+
 			// Load the Javascript if found as a singluar post and the user is not a bot.
-			if ( !alnp_is_bot() && is_singular() && get_post_type() == 'post' ) {
+			if ( ! alnp_is_bot() && is_singular() && get_post_type() == 'post' ) {
 				// This checks to see if the JavaScript should load in the footer or not.
 				$load_in_footer = alnp_load_js_in_footer();
+
+				// This checks to see if we should disable Auto Load Next Post from running on mobile devices.
+				$disable_mobile = alnp_disable_on_mobile();
 
 				$this->load_file( 'auto-load-next-post-scrollspy', '/assets/js/libs/scrollspy.min.js', true, array('jquery'), AUTO_LOAD_NEXT_POST_VERSION, $load_in_footer );
 
@@ -247,7 +261,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 					'alnp_event_on_load'        => get_option( 'auto_load_next_post_on_load_event' ),
 					'alnp_event_on_entering'    => get_option( 'auto_load_next_post_on_entering_event' ),
 					'alnp_is_customizer'        => $this->is_alnp_using_customizer(),
-					'alnp_load_in_footer'       => $load_in_footer
+					'alnp_load_in_footer'       => $load_in_footer,
+					'alnp_is_mobile'            => $this->is_mobile(),
+					'alnp_disable_mobile'       => $disable_mobile
 				) );
 			} // END if is_singular() && get_post_type()
 		} // END alnp_enqueue_scripts()
@@ -258,7 +274,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 		 * @access public
 		 * @since  1.5.0
 		 * @static
-		 * @return string|false
+		 * @return string|bool
 		 */
 		public static function is_alnp_using_customizer() {
 			if ( is_customize_preview() ) {
@@ -267,6 +283,22 @@ if ( ! class_exists( 'Auto_Load_Next_Post' ) ) {
 
 			return false;
 		} // END is_alnp_using_customizer()
+
+		/**
+		 * Check if the site is viewed on a mobile device.
+		 *
+		 * @access public
+		 * @since  1.6.0
+		 * @static
+		 * @return string|bool
+		 */
+		public static function is_mobile() {
+			if ( wp_is_mobile() ) {
+				return "yes";
+			}
+
+			return false;
+		} // END is_mobile()
 
 		/**
 		 * Helper function for registering and enqueueing scripts and styles.

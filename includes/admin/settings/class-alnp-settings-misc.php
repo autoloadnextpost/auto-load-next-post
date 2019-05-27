@@ -3,7 +3,7 @@
  * Auto Load Next Post Settings - Misc
  *
  * @since    1.5.0
- * @version  1.5.11
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Settings
@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
+if ( ! class_exists( 'ALNP_Settings_Misc' ) ) {
 
-	class Auto_Load_Next_Post_Settings_Misc_Tab extends Auto_Load_Next_Post_Settings_Page {
+	class ALNP_Settings_Misc extends ALNP_Settings_Page {
 
 		/**
 		 * Constructor.
@@ -33,7 +33,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 			parent::__construct();
 
 			add_filter( 'auto_load_next_post_misc_settings', array( __CLASS__, 'lock_js_in_footer' ), 0, 1 );
-			add_action( 'auto_load_next_post_sections_misc', array( __CLASS__, 'no_comment_selector_set' ), 10 );
+			add_action( 'auto_load_next_post_settings_misc', array( __CLASS__, 'no_comment_selector_set' ), 0 );
 		} // END __construct()
 
 		/**
@@ -88,60 +88,73 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.5.0
-		 * @version 1.5.11
+		 * @version 1.6.0
 		 * @return  array
 		 */
 		public function get_settings() {
 			return apply_filters(
-				'auto_load_next_post_misc_settings', array(
+				'alnp_misc_settings', array(
 
 					'title' => array(
 						'title' => $this->label,
 						'type'  => 'title',
-						'desc'  => sprintf( esc_html__( 'Here you set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						'desc'  => esc_html__( 'Further optional options can be found here should you want to use or need.', 'auto-load-next-post' ),
 						'id'    => 'misc_options'
 					),
 
 					'remove_comments' => array(
-						'title'   => esc_html__( 'Remove Comments', 'auto-load-next-post' ),
-						'desc'    => esc_html__( 'Enable to remove comments when each post loads including the initial post.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_remove_comments',
-						'default' => 'yes',
-						'type'    => 'checkbox'
+						'title'    => esc_html__( 'Remove Comments', 'auto-load-next-post' ),
+						'desc'     => esc_html__( 'Enable to remove comments when each post loads including the initial post.', 'auto-load-next-post' ),
+						'id'       => 'auto_load_next_post_remove_comments',
+						'default'  => 'yes',
+						'type'     => 'checkbox',
+						'autoload' => false
 					),
 
 					'google_analytics' => array(
-						'title'   => esc_html__( 'Update Google Analytics', 'auto-load-next-post' ),
-						'desc'    => esc_html__( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_google_analytics',
-						'default' => 'no',
-						'type'    => 'checkbox'
+						'title'    => esc_html__( 'Update Google Analytics', 'auto-load-next-post' ),
+						'desc'     => esc_html__( 'Enable to track each post the visitor is reading. This will count as a pageview. You must already have Google Analytics setup.', 'auto-load-next-post' ),
+						'id'       => 'auto_load_next_post_google_analytics',
+						'default'  => 'no',
+						'type'     => 'checkbox',
+						'autoload' => false
 					),
 
 					'load_js_in_footer' => array(
-						'title'   => esc_html__( 'JavaScript in Footer?', 'auto-load-next-post' ),
-						'desc'    => esc_html__( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site or if the current theme requires it.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_load_js_in_footer',
-						'default' => 'no',
-						'type'    => 'checkbox'
+						'title'    => esc_html__( 'JavaScript in Footer?', 'auto-load-next-post' ),
+						'desc'     => sprintf( esc_html__( 'Enable to load %s in the footer instead of the header. Can be useful to optimize your site or if the current theme requires it.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						'id'       => 'auto_load_next_post_load_js_in_footer',
+						'default'  => 'no',
+						'type'     => 'checkbox',
+						'autoload' => false
+					),
+
+					'disable_on_mobile' => array(
+						'title'    => esc_html__( 'Disable for Mobile?', 'auto-load-next-post' ),
+						'desc'     => sprintf( esc_html__( 'Enable to disable %s from running on mobile devices.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+						'id'       => 'auto_load_next_post_disable_on_mobile',
+						'default'  => 'no',
+						'type'     => 'checkbox',
+						'autoload' => false
 					),
 
 					'reset_data' => array(
-						'title'   => esc_html__( 'Reset all data?', 'auto-load-next-post' ),
-						'desc'    => esc_html__( 'Press the reset button to clear all settings for this plugin and re-initialize.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_reset_data',
-						'class'   => 'reset-settings',
-						'value'   => esc_html__( 'Reset', 'auto-load-next-post' ),
-						'url'     => add_query_arg( array( 'page' => 'auto-load-next-post-settings', 'tab' => esc_attr( $this->id ), 'reset-alnp' => 'yes' ), admin_url( 'options-general.php' ) ),
-						'type'    => 'button'
+						'title' => esc_html__( 'Reset all data?', 'auto-load-next-post' ),
+						'desc'  => esc_html__( 'Press the reset button to clear all settings for this plugin and re-initialize.', 'auto-load-next-post' ),
+						'id'    => 'auto_load_next_post_reset_data',
+						'class' => 'reset-settings',
+						'value' => esc_html__( 'Reset', 'auto-load-next-post' ),
+						'url'   => add_query_arg( array( 'page' => 'auto-load-next-post', 'view' => esc_attr( $this->id ), 'reset-alnp' => 'yes' ), admin_url( 'options-general.php' ) ),
+						'type'  => 'button'
 					),
 
 					'uninstall' => array(
-						'title'   => esc_html__( 'Remove all data on uninstall?', 'auto-load-next-post' ),
-						'desc'    => esc_html__( 'If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete.', 'auto-load-next-post' ),
-						'id'      => 'auto_load_next_post_uninstall_data',
-						'default' => 'no',
-						'type'    => 'checkbox'
+						'title'    => esc_html__( 'Remove all data on uninstall?', 'auto-load-next-post' ),
+						'desc'     => esc_html__( 'If enabled, all settings for this plugin will all be deleted when uninstalling via Plugins > Delete.', 'auto-load-next-post' ),
+						'id'       => 'auto_load_next_post_uninstall_data',
+						'default'  => 'no',
+						'type'     => 'checkbox',
+						'autoload' => false
 					),
 
 					'section_end' => array(
@@ -161,7 +174,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		public function output() {
 			$settings = $this->get_settings();
 
-			Auto_Load_Next_Post_Admin_Settings::output_fields( $settings );
+			ALNP_Admin_Settings::output_fields( $settings );
 		} // END output()
 
 		/**
@@ -173,11 +186,11 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Settings_Misc_Tab' ) ) {
 		public function save() {
 			$settings = $this->get_settings();
 
-			Auto_Load_Next_Post_Admin_Settings::save_fields( $settings );
+			ALNP_Admin_Settings::save_fields( $settings );
 		} // END save()
 
 	} // END class
 
 } // END if class exists
 
-return new Auto_Load_Next_Post_Settings_Misc_Tab();
+return new ALNP_Settings_Misc();

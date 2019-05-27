@@ -19,12 +19,12 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
-if ( !class_exists( 'Auto_Load_Next_Post_Arbitrary_Control' ) ) {
+if ( !class_exists( 'ALNP_Arbitrary_Control' ) ) {
 
 	/**
 	 * The 'alnp_arbitrary' for Auto Load Next Post Arbitrary control class.
 	 */
-	class Auto_Load_Next_Post_Arbitrary_Control extends WP_Customize_Control {
+	class ALNP_Arbitrary_Control extends WP_Customize_Control {
 
 		/**
 		 * Renter the control

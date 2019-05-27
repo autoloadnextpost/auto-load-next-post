@@ -1,14 +1,74 @@
 module.exports = function(grunt) {
 	'use strict';
 
+	var sass = require( 'node-sass' );
+
 	require('load-grunt-tasks')(grunt);
 
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		// Update developer dependencies
+		devUpdate: {
+			packages: {
+				options: {
+					packageJson: null,
+					packages: {
+						devDependencies: true,
+						dependencies: false
+					},
+					reportOnlyPkgs: [],
+					reportUpdated: false,
+					semver: true,
+					updateType: 'force'
+				}
+			}
+		},
+
+		// SASS to CSS
+		sass: {
+			options: {
+				implementation: sass,
+				sourcemap: 'none'
+			},
+			dist: {
+				files: {
+					'assets/css/admin/<%= pkg.name %>.css' : 'assets/scss/admin.scss',
+					'assets/css/admin/<%= pkg.name %>-dark-mode.css' : 'assets/scss/admin/dark-mode.scss'
+				}
+			}
+		},
+
+		// Post CSS
+		postcss: {
+			options: {
+				//map: false,
+				processors: [
+					require('autoprefixer')({
+						browsers: [
+							'> 0.1%',
+							'ie 8',
+							'ie 9'
+						]
+					})
+				]
+			},
+			dist: {
+				src: [
+					'!assets/css/admin/*.min.css',
+					'assets/css/admin/*.css'
+				]
+			}
+		},
+
 		// Minify CSS
 		cssmin: {
+			options: {
+				processImport: false,
+				roundingPrecision: -1,
+				shorthandCompacting: false
+			},
 			target: {
 				files: [{
 					expand: true,
@@ -38,18 +98,57 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true, // Enable dynamic expansion.
 					src: [
+						// Admin
+						'assets/js/admin/*.js',
+						'!assets/js/admin/*.min.js',
+
+						// Customizer
+						'assets/js/customizer/*.js',
+						'!assets/js/customizer/*.min.js',
+
+						// Frontend
 						'assets/js/frontend/*.js',
 						'!assets/js/frontend/*.min.js',
 						'!assets/js/frontend/*.dev.js',
-						'assets/js/admin/*.js',
-						'!assets/js/admin/*.min.js'
 					],
 					ext: '.min.js', // Dest filepaths will have this extension.
 				}]
 			}
 		},
 
-		// Check for Javascript errors
+		// Watch for changes made in SASS or JavaScript.
+		watch: {
+			css: {
+				files: [
+					'assets/scss/*.scss',
+					'assets/scss/admin/*.scss',
+				],
+				tasks: ['sass', 'postcss']
+			},
+			js: {
+				files: [
+					// Admin
+					'assets/js/admin/*.js',
+					'!assets/js/admin/*.min.js',
+
+					// Customizer
+					'assets/js/customizer/*.js',
+					'!assets/js/frontend/*.min.js',
+
+					// Frontend
+					'assets/js/frontend/*.js',
+					'!assets/js/frontend/*.min.js',
+					'!assets/js/frontend/*.dev.js',
+				],
+				tasks: [
+					'jshint',
+					'uglify'
+				]
+			}
+		},
+
+		// Check for Javascript errors with "grunt-contrib-jshint"
+		// Reports provided by "jshint-stylish"
 		jshint: {
 			options: {
 				reporter: require('jshint-stylish'),
@@ -62,11 +161,28 @@ module.exports = function(grunt) {
 				'-W020': true, // Read only - error when assigning EO_SCRIPT_DEBUG a value.
 			},
 			all: [
-				'assets/js/frontend/*.js',
-				'!assets/js/frontend/*.min.js',
-				'assets/js/frontend/*.dev.js',
+				// Admin
 				'assets/js/admin/*.js',
-				'!assets/js/admin/*.min.js'
+				'!assets/js/admin/*.min.js',
+
+				// Customizer
+				'assets/js/customizer/*.js',
+				'!assets/js/customizer/*.min.js',
+
+				// Frontend
+				'assets/js/frontend/*.js',
+				'assets/js/frontend/*.dev.js',
+				'!assets/js/frontend/*.min.js'
+			]
+		},
+
+		// Check for Sass errors with "stylelint"
+		stylelint: {
+			options: {
+				configFile: '.stylelintrc'
+			},
+			all: [
+				'assets/scss/**/*.scss',
 			]
 		},
 
@@ -147,17 +263,10 @@ module.exports = function(grunt) {
 
 		// Bump version numbers (replace with version in package.json)
 		replace: {
-			Version: {
-				src: [
-					'readme.txt',
-					'<%= pkg.name %>.php'
-				],
+			php: {
+				src: [ '<%= pkg.name %>.php' ],
 				overwrite: true,
 				replacements: [
-					{
-						from: /Stable tag:.*$/m,
-						to: "Stable tag: <%= pkg.version %>"
-					},
 					{
 						from: /Version:.*$/m,
 						to: "Version:     <%= pkg.version %>"
@@ -167,36 +276,49 @@ module.exports = function(grunt) {
 						to: "public static $version = '<%= pkg.version %>'"
 					}
 				]
+			},
+			readme: {
+				src: [ 'readme.txt' ],
+				overwrite: true,
+				replacements: [
+					{
+						from: /Stable tag:(\*\*|)(\s*?)[a-zA-Z0-9.-]+(\s*?)$/mi,
+						to: 'Stable tag:$1$2<%= pkg.version %>$3'
+					},
+					{
+						from: /Tested up to:(\s*?)[a-zA-Z0-9\.\-\+]+$/m,
+						to: 'Tested up to:$1<%= pkg.tested_up_to %>'
+					}
+				]
 			}
 		},
 
 		// Copies the plugin to create deployable plugin.
 		copy: {
-			deploy: {
-				src: [
-					'**',
-					'!.*',
-					'!.*/**',
-					'!.htaccess',
-					'!Gruntfile.js',
-					'!releases/**',
-					'!auto-load-next-post-git/**',
-					'!auto-load-next-post-svn/**',
-					'!node_modules/**',
-					'!.DS_Store',
-					'!npm-debug.log',
-					'!*.json',
-					'!*.md',
-					'!*.sh',
-					'!*.zip',
-					'!*.jpg',
-					'!*.jpeg',
-					'!*.gif',
-					'!*.png'
-				],
-				dest: '<%= pkg.name %>',
-				expand: true,
-				dot: true
+			build: {
+				files: [
+					{
+						expand: true,
+						src: [
+							'**',
+							'!.*',
+							'!**/*.{gif,jpg,jpeg,js,json,log,md,php,png,scss,sh,txt,xml,zip}',
+							'!.*/**',
+							'!.DS_Store',
+							'!.htaccess',
+							'!assets/scss/**',
+							'!assets/**/*.scss',
+							'!<%= pkg.name %>-git/**',
+							'!<%= pkg.name %>-svn/**',
+							'!node_modules/**',
+							'!releases/**',
+							'<%= pkg.name %>.php',
+							'readme.txt'
+						],
+						dest: 'build/',
+						dot: true
+					}
+				]
 			}
 		},
 
@@ -210,7 +332,7 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: './<%= pkg.name %>/',
+						cwd: './build/',
 						src: '**',
 						dest: '<%= pkg.name %>'
 					}
@@ -219,17 +341,25 @@ module.exports = function(grunt) {
 		},
 
 		// Deletes the deployable plugin folder once zipped up.
-		clean: [ '<%= pkg.name %>' ]
+		clean: {
+			build: [ 'build/' ]
+		}
 	});
 
-	// Set the default grunt command to run test cases.
+	// Set the default Grunt command to run test task.
 	grunt.registerTask( 'default', [ 'test' ] );
 
-	// Checks for errors with the javascript and text domain.
-	grunt.registerTask( 'test', [ 'jshint', 'checktextdomain' ]);
+	// Checks for developer dependencie updates.
+	grunt.registerTask( 'check', [ 'devUpdate' ] );
 
-	// Updates version, minify css and javascript and finaly runs i18n tasks.
-	grunt.registerTask( 'dev', [ 'replace', 'cssmin', 'newer:uglify', 'makepot' ]);
+	// Checks for errors with the javascript, sass and for any text domain issues.
+	grunt.registerTask( 'test', [ 'jshint', 'stylelint', 'checktextdomain' ]);
+
+	// Build CSS, minify CSS and JavaScript and finaly runs i18n tasks.
+	grunt.registerTask( 'build', [ 'sass', 'postcss', 'cssmin', 'uglify', 'update-pot' ]);
+
+	// Update version of plugin.
+	grunt.registerTask( 'version', [ 'replace' ] );
 
 	/**
 	 * Run i18n related tasks.
@@ -243,5 +373,5 @@ module.exports = function(grunt) {
 	 * Creates a deployable plugin zipped up ready to upload
 	 * and install on a WordPress installation.
 	 */
-	grunt.registerTask( 'zip', [ 'copy', 'compress', 'clean' ]);
+	grunt.registerTask( 'zip', [ 'copy:build', 'compress', 'clean:build' ]);
 };

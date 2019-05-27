@@ -15,16 +15,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Clean variables using sanitize_text_field. Arrays are cleaned recursively.
- * Non-scalar values are ignored.
- *
- * @since   1.0.0
- * @version 1.5.4
- * @param   string|array $var Data to sanitize.
- * @return  string|array *
- */
 if ( ! function_exists( 'auto_load_next_post_clean' ) ) {
+	/**
+	 * Clean variables using sanitize_text_field. Arrays are cleaned recursively.
+	 * Non-scalar values are ignored.
+	 *
+	 * @since   1.0.0
+	 * @version 1.5.4
+	 * @param   string|array $var Data to sanitize.
+	 * @return  string|array *
+	 */
 	function auto_load_next_post_clean( $var ) {
 		if ( is_array( $var ) ) {
 			return array_map( 'auto_load_next_post_clean', $var );
@@ -34,17 +34,17 @@ if ( ! function_exists( 'auto_load_next_post_clean' ) ) {
 	} // END auto_load_next_post_clean()
 }
 
-/**
- * Seconds to words.
- *
- * Forked from: https://github.com/thatplugincompany/login-designer/blob/master/includes/admin/class-login-designer-feedback.php
- *
- * @since   1.4.10
- * @version 1.5.4
- * @param   string $seconds Seconds in time.
- * @return  string
- */
 if ( ! function_exists( 'auto_load_next_post_seconds_to_words' ) ) {
+	/**
+	 * Seconds to words.
+	 *
+	 * Forked from: https://github.com/thatplugincompany/login-designer/blob/master/includes/admin/class-login-designer-feedback.php
+	 *
+	 * @since   1.4.10
+	 * @version 1.5.4
+	 * @param   string $seconds Seconds in time.
+	 * @return  string
+	 */
 	function auto_load_next_post_seconds_to_words( $seconds ) {
 		// Get the years.
 		$years = ( intval( $seconds ) / YEAR_IN_SECONDS ) % 100;

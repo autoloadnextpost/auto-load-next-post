@@ -3,7 +3,7 @@
  * Auto Load Next Post - Admin Settings Class.
  *
  * @since    1.0.0
- * @version  1.5.0
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Settings
@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
+if ( ! class_exists( 'ALNP_Admin_Settings' ) ) {
 
-	class Auto_Load_Next_Post_Admin_Settings {
+	class ALNP_Admin_Settings {
 
 		/**
 		 * Setting pages.
@@ -52,7 +52,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.6.0
 		 * @return  $settings
 		 */
 		public static function get_settings_pages() {
@@ -61,11 +61,12 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 
 				include_once( dirname( __FILE__ ) . '/settings/class-alnp-settings-page.php' );
 
-				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-theme-selectors.php');
-				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-misc.php');
-				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-events.php');
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-theme-selectors.php' );
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-templates.php' );
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-events.php' );
+				$settings[] = include( dirname( __FILE__ ) . '/settings/class-alnp-settings-misc.php' );
 
-				self::$settings = apply_filters( 'auto_load_next_post_get_settings_pages', $settings );
+				self::$settings = apply_filters( 'alnp_get_settings_pages', $settings );
 			}
 
 			return self::$settings;
@@ -77,17 +78,17 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.4.10
-		 * @global  $current_tab
+		 * @version 1.6.0
+		 * @global  $current_view
 		 */
 		public static function save() {
-			global $current_tab;
+			global $current_view;
 
 			check_admin_referer( 'auto-load-next-post-settings' );
 
 			// Trigger actions
-			do_action( 'auto_load_next_post_settings_save_' . $current_tab );
-			do_action( 'auto_load_next_post_update_options_' . $current_tab );
+			do_action( 'auto_load_next_post_settings_save_' . $current_view );
+			do_action( 'auto_load_next_post_update_options_' . $current_view );
 			do_action( 'auto_load_next_post_update_options' );
 
 			self::add_message( __( 'Your settings have been saved.', 'auto-load-next-post' ) );
@@ -122,19 +123,20 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		/**
 		 * Output messages and errors.
 		 *
-		 * @access public
+		 * @access  public
 		 * @static
-		 * @since  1.0.0
-		 * @return string
+		 * @since   1.0.0
+		 * @version 1.6.0
+		 * @return  string
 		 */
 		public static function show_messages() {
 			if ( count( self::$errors ) > 0 ) {
 				foreach ( self::$errors as $error ) {
-					echo '<div id="message" class="error inline"><p><strong>' . esc_html( $error ) . '</strong></p></div>';
+					echo '<div class="notice notice-error"><p><strong>' . esc_html( $error ) . '</strong></p></div>';
 				}
 			} elseif ( count( self::$messages ) > 0 ) {
 				foreach ( self::$messages as $message ) {
-					echo '<div id="message" class="updated inline"><p><strong>' . esc_html( $message ) . '</strong></p></div>';
+					echo '<div class="notice notice-success"><p><strong>' . esc_html( $message ) . '</strong></p></div>';
 				}
 			}
 		} // END show_messages()
@@ -147,14 +149,27 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.4.10
-		 * @filter  auto_load_next_post_settings_tabs_array
+		 * @version 1.6.0
+		 * @global  $current_view
 		 * @return  void
 		 */
 		public static function output() {
+			global $current_view;
+
 			do_action( 'auto_load_next_post_settings_start' );
 
-			include( dirname( __FILE__ ) . '/views/html-admin-settings.php' );
+			// Get tabs for the settings page.
+			$tabs = apply_filters( 'alnp_settings_tabs_array', array() );
+
+			// These tabs do not require a settings output.
+			$no_settings_req = array( 'getting-started', 'setup-wizard', 'extensions', 'videos' );
+
+			// Only include settings output if the current tab requires it.
+			if ( ! in_array( $current_view, $no_settings_req ) ) {
+				include( dirname( __FILE__ ) . '/views/html-admin-settings.php' );
+			}
+
+			do_action( 'auto_load_next_post_settings_end', $current_view, $tabs );
 		} // END output()
 
 		/**
@@ -206,7 +221,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.6.0
 		 * @param   array $options Opens array to output
 		 */
 		public static function output_fields( $options ) {
@@ -236,6 +251,8 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 				if ( ! isset( $value['placeholder'] ) ) {
 					$value['placeholder'] = '';
 				}
+
+				$value['readonly'] = isset( $value['readonly'] ) && $value['readonly'] == 'yes' ? 'readonly' : '';
 
 				// Custom attribute handling
 				$custom_attributes = array();
@@ -274,7 +291,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 							echo wp_kses_post( wpautop( wptexturize( $value['desc'] ) ) );
 							echo '</div>';
 						}
-						echo '<table class="form-table">'."\n\n";
+						echo '<table class="alnp-table">'."\n\n";
 						if ( ! empty( $value['id'] ) ) {
 							do_action( 'auto_load_next_post_settings_' . sanitize_title( $value['id'] ) );
 						}
@@ -307,7 +324,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 							<th scope="row" class="titledesc">
 								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
 							</th>
-							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
+							<td>
 								<input
 									name="<?php echo esc_attr( $value['id'] ); ?>"
 									id="<?php echo esc_attr( $value['id'] ); ?>"
@@ -316,6 +333,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 									value="<?php echo esc_attr( $option_value ); ?>"
 									class="<?php echo esc_attr( $value['class'] ); ?>"
 									placeholder="<?php echo esc_attr( $value['placeholder'] ); ?>"
+									<?php echo esc_attr( $value['readonly'] ); ?>
 									<?php echo implode(' ', $custom_attributes ); ?>
 								/><?php echo $description; ?>
 							</td>
@@ -330,7 +348,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 							<th scope="row" class="titledesc">
 								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
 							</th>
-							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
+							<td>
 								<?php echo $description; ?>
 
 								<textarea
@@ -355,7 +373,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 							<th scope="row" class="titledesc">
 								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
 							</th>
-							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
+							<td>
 								<select
 									name="<?php echo esc_attr( $value['id'] ); ?><?php echo ( 'multiselect' === $value['type'] ) ? '[]' : ''; ?>"
 									id="<?php echo esc_attr( $value['id'] ); ?>"
@@ -395,7 +413,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 							<th scope="row" class="titledesc">
 								<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['title'] ); ?></label>
 							</th>
-							<td class="forminp forminp-<?php echo esc_attr( sanitize_title( $value['type'] ) ); ?>">
+							<td>
 								<fieldset>
 									<?php echo $description; ?>
 									<ul>
@@ -448,7 +466,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 							?>
 								<tr valign="top" class="<?php echo esc_attr( implode( ' ', $visibility_class ) ); ?>">
 									<th scope="row" class="titledesc"><?php echo esc_html( $value['title'] ); ?></th>
-									<td class="forminp forminp-checkbox">
+									<td>
 										<fieldset>
 							<?php
 						} else {
@@ -494,7 +512,7 @@ if ( ! class_exists('Auto_Load_Next_Post_Admin_Settings' ) ) {
 					?>
 						<tr valign="top">
 							<th scope="row" class="titledesc"><?php echo $value['title'];?></th>
-							<td class="forminp forminp-<?php echo sanitize_title( $value['type'] ) ?>">
+							<td>
 								<a href="<?php echo $value['url']; ?>" class="button-secondary <?php echo esc_attr( $value['class'] ); ?>">
 									<?php echo $value['value']; ?>
 								</a>

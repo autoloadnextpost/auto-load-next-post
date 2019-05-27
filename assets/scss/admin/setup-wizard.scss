@@ -1,0 +1,134 @@
+.auto-load-next-post {
+
+	.box {
+		display: none;
+		opacity: 0;
+		transition: opacity 300ms;
+		-webkit-transition: all 0.6s ease-in-out;
+		-moz-transition: all 0.6s ease-in-out;
+		-o-transition: all 0.6s ease-in-out;
+		transition: all 0.6s ease-in-out;
+
+		&.show-box {
+			display: block;
+			opacity: 1;
+		}
+
+		&.template-location-results {
+			p.template-found,
+			p.no-template-found {
+				display: none;
+			}
+
+			a.button-doc {
+				display: none;
+			}
+		}
+
+		&.theme-selector-results {
+			text-align: left;
+
+			.selectors {
+				float: left;
+				width: 50%;
+
+				.container.found {
+					border: none;
+					box-shadow: none;
+					-webkit-box-shadow: none;
+				}
+
+				.pending::before,
+				.found::before,
+				.not-found::before {
+					border-radius:100%;
+					color: $white;
+					display: inline-block;
+					font-family: dashicons;
+					font-size: 22px;
+					height: 22px;
+					margin-right: 4px;
+					padding: 1px;
+					position: relative;
+					text-align: center;
+					width: 22px;
+				}
+			
+				.pending::before {
+					background-color: $alnp;
+					content: '\f179';
+				}
+
+				.found::before {
+					background-color: $green;
+					content: '\f147';
+				}
+			
+				.not-found::before {
+					background-color: $red;
+					content: '\f335';
+				}
+			}
+
+			.results-available,
+			.theme-selectors-undetected,
+			.no-post-navigation,
+			.setup-complete {
+				display: none;
+			}
+
+			.results-found {
+				width: 50%;
+
+				.container.found {
+					border: none;
+					box-shadow: none;
+					-webkit-box-shadow: none;
+				}
+
+			}
+
+			.selectors,
+			.results-found {
+				height: 140px;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.selectors div,
+			.results-found div {
+				margin: 0 0 6px;
+			}
+		}
+
+		.debug-mode {
+			display: none;
+		}
+	
+	}
+
+	@media screen and (min-width: 1200px) and (min-height: 1000px) {
+		body {
+			font-size: 300%;
+		}
+
+		.auto-load-next-post {
+			.box {
+				padding: 4% 10%;
+			}
+		}
+	}
+
+	@media screen and (min-width: 1800px) and (min-height: 1200px) {
+		body {
+			font-size: 350%;
+		}
+
+		.auto-load-next-post {
+			.box {
+				padding: 4% 10%;
+			}
+		}
+	}
+
+}

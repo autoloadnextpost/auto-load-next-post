@@ -24,6 +24,7 @@ wiki/
 node_modules/
 build/
 npm-debug.log
+.sass-cache/
 
 # Various other files and folders
 .wordpress-org/.svn/
