@@ -3,6 +3,7 @@
  * Admin View: Upgrade Warning Notice.
  *
  * @since    1.4.13
+ * @version  1.5.13
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post
@@ -14,6 +15,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="notice notice-error is-dismissible">
-	<p><?php echo sprintf( __( 'Warning! Version 1.5.0 of %1$s is coming soon and is a major update. Before updating, please test on a staging site. %2$sLearn more about the changes in version 1.5.0 &raquo;%3$s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), '<a href="https://autoloadnextpost.com/2018/05/28/whats-coming-in-v1-5-0-of-auto-load-next-post/" target="_blank">', '</a>' ); ?></p>
+<div class="notice notice-warning auto-load-next-post-notice is-dismissible">
+	<div class="auto-load-next-post-notice-inner">
+		<div class="auto-load-next-post-notice-icon">
+			<img src="https://ps.w.org/auto-load-next-post/assets/icon-256x256.png" alt="<?php echo esc_attr__( 'Auto Load Next Post WordPress Plugin', 'auto-load-next-post' ); ?>" />
+		</div>
+
+		<div class="auto-load-next-post-notice-content">
+			<h3><?php esc_html_e( 'Upgrade Warning!', 'auto-load-next-post' ); ?></h3>
+			<p><?php printf( __( 'Version %1$s1.6.0%2$s of %3$s is coming soon with new features and improvements. Before updating, please test the beta/pre-release on a staging site when it becomes available. Look forward to your feedback!', 'auto-load-next-post' ), '<strong>', '</strong>', esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
+		</div>
+
+		<div class="auto-load-next-post-send-feedback">
+			<?php printf( '<a href="%1$s" class="button button-primary auto-load-next-post-feedback-button" target="_blank">%2$s</a>', esc_url( 'https://autoloadnextpost.com/2019/05/24/whats-coming-in-v1-6-0/' ), esc_html__( 'Learn More', 'auto-load-next-post' ) ); ?>
+		</div>
+	</div>
 </div>

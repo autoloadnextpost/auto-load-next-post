@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: grunt-wp-i18n 1.0.3\n"
+"X-Generator: grunt-wp-i18n1.0.2\n"
 
 #: auto-load-next-post.php:77
 msgid "Cloning this object is forbidden."
@@ -1034,6 +1034,8 @@ msgstr ""
 #: includes/admin/views/html-notice-please-review.php:25
 #: includes/admin/views/html-notice-theme-ready.php:23
 #: includes/admin/views/html-notice-trying-beta.php:21
+#: includes/admin/views/html-notice-upgrade-warning.php:21
+#: includes/admin/views/html-notice-welcome.php:21
 msgid "Auto Load Next Post WordPress Plugin"
 msgstr ""
 
@@ -1104,11 +1106,19 @@ msgstr ""
 msgid "Ask me again in 7 days"
 msgstr ""
 
-#: includes/admin/views/html-notice-upgrade-warning.php:18
+#: includes/admin/views/html-notice-upgrade-warning.php:25
+msgid "Upgrade Warning!"
+msgstr ""
+
+#: includes/admin/views/html-notice-upgrade-warning.php:26
 msgid ""
-"Warning! Version 1.5.0 of %1$s is coming soon and is a major update. Before "
-"updating, please test on a staging site. %2$sLearn more about the changes "
-"in version 1.5.0 &raquo;%3$s"
+"Version %1$s1.6.0%2$s of %3$s is coming soon with new features and "
+"improvements. Before updating, please test the beta/pre-release on a "
+"staging site when it becomes available. Look forward to your feedback!"
+msgstr ""
+
+#: includes/admin/views/html-notice-upgrade-warning.php:30
+msgid "Learn More"
 msgstr ""
 
 #: includes/auto-load-next-post-deprecated-functions.php:29

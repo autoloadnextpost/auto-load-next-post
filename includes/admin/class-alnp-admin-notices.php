@@ -184,7 +184,26 @@ if ( ! class_exists( 'ALNP_Admin_Notices' ) ) {
 				// If theme not supported then delete option.
 				delete_option( 'auto_load_next_post_theme_supported' );
 			}
+
+			// Upgrade warning notice that will disappear once the new release is installed.
+			$upgrade_version = '1.6.0';
+
+			if ( version_compare( AUTO_LOAD_NEXT_POST_VERSION, $upgrade_version, '<' ) ) {
+				add_action( 'admin_notices', array( $this, 'upgrade_warning' ) );
+			}
 		} // END add_notices()
+
+		/**
+		 * Shows an upgrade warning notice if the installed version is less
+		 * than the new release coming soon.
+		 *
+		 * @access  public
+		 * @since   1.4.13
+		 * @version 1.5.13
+		 */
+		public function upgrade_warning() {
+			include_once( dirname( __FILE__ ) . '/views/html-notice-upgrade-warning.php' );
+		} // END upgrade_warning()
 
 		/**
 		 * Show the WordPress requirement notice.

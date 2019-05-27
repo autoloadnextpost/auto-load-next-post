@@ -5,7 +5,7 @@ Tags: infinite scroll, infinite scrolling, scroll, infinite
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.1.1
-Stable tag: 1.5.12
+Stable tag: 1.5.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -217,6 +217,10 @@ Yes you can. Go to the misc section of the settings page and enable "Disable for
 6. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
+
+= 1.5.13 - 27th May 2019 =
+
+* Tweaked: Upgrade warning notice in preparation for version 1.6.0 release.
 
 = 1.5.12 - 23rd April 2019 =
 

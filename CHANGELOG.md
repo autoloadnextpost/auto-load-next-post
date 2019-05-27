@@ -28,6 +28,10 @@
 * Dev: Grunt tasks have been improved for better development.
 * Dev: Auto Load Next Post can be installed via WP-CLI without redirect issues.
 
+## 1.5.13 - 27th May 2019
+
+* Tweaked: Upgrade warning notice in preparation for version 1.6.0 release.
+
 ## 1.5.12 - 23rd April 2019
 
 * Tweaked: Repeater template now looks for `content-post.php` should `content-single.php` not exist before fallback to `content.php`.
