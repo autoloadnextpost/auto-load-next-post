@@ -199,13 +199,22 @@ You can. All you have to do is simply install the [Facebook Pixel Tracking add-o
 
 It does. Just make sure that you activate the plugin on the site you want it used on and then make sure the selectors match the theme that site is using.
 
+= Browser history is not recording posts loaded in Internet Explorer, why? =
+
+Only in IE 10 and up support the use of browser history manipulation. Try using a newer version of IE.
+
+= Can I disable for mobile users? =
+
+Yes you can. Go to the misc section of the settings page and enable "Disable for Mobile?" and save.
+
 == Screenshots ==
 
-1. Setup Wizard introduced since version 1.6
+1. Setup Wizard introduced in version 1.6
 2. Plugin Settings: Theme Selectors, here is where we define the elements Auto Load Next Post will look for.
-3. Plugin Settings: Misc Settings, here you can enable Google Analytics tracking, remove comments and set the JavaScript to load in the footer of your website instead should you need to.
+3. Plugin Settings: Templates, here we define where the directory for the theme's templates are located.
 4. Plugin Settings: Events, here you can support custom triggers or 3rd-party plugins to trigger their own once a post has loaded or when the visitor is entering a post.
-5. Theme Customizer: The same settings can be applied via the theme customizer.
+5. Plugin Settings: Misc Settings, here you can enable Google Analytics tracking, remove comments and set the JavaScript to load in the footer of your website instead should you need to.
+6. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
 
