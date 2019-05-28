@@ -3,6 +3,7 @@
  * Auto Load Next Post: Theme Customizer
  *
  * @since    1.5.0
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Classes
  * @package  Auto Load Next Post/Classes/Customizer
@@ -249,9 +250,10 @@ if ( ! class_exists( 'ALNP_Customizer' ) ) {
 		/**
 		 * Get Customizer settings for Auto Load Next Post.
 		 *
-		 * @access public
-		 * @since  1.5.0
-		 * @return array
+		 * @access  public
+		 * @since   1.5.0
+		 * @version 1.6.0
+		 * @return  array
 		 */
 		public function alnp_get_customizer_settings() {
 			$settings = $this->alnp_get_settings();
@@ -320,6 +322,13 @@ if ( ! class_exists( 'ALNP_Customizer' ) ) {
 					'default'           => 'no',
 					'transport'         => 'refresh',
 					'type'              => 'option',
+				),
+				'auto_load_next_post_disable_on_mobile' => array(
+					'capability'        => 'edit_theme_options',
+					'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
+					'default'           => 'no',
+					'type'              => 'option',
+					'transport'         => 'refresh',
 				),
 				'auto_load_next_post_on_load_event' => array(
 					'capability'        => 'edit_theme_options',
@@ -405,6 +414,14 @@ if ( ! class_exists( 'ALNP_Customizer' ) ) {
 					'description' => esc_html__( 'Enable to load Auto Load Next Post in the footer instead of the header. Can be useful to optimize your site.', 'auto-load-next-post' ),
 					'section'     => 'auto_load_next_post_misc',
 					'settings'    => 'auto_load_next_post_load_js_in_footer',
+					'type'        => 'checkbox',
+				),
+				'alnp_disable_on_mobile' => array(
+					'class'       => 'WP_Customize_Control',
+					'label'       => esc_html__( 'Disable for Mobile?', 'auto-load-next-post' ),
+					'description' => sprintf( esc_html__( 'Enable to disable %s from running on mobile devices.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+					'section'     => 'auto_load_next_post_misc',
+					'settings'    => 'auto_load_next_post_disable_on_mobile',
 					'type'        => 'checkbox',
 				),
 				'alnp_on_load_event' => array(
@@ -495,6 +512,7 @@ if ( ! class_exists( 'ALNP_Customizer' ) ) {
 				'alnp_remove_comments'        => get_option( 'auto_load_next_post_remove_comments' ),
 				'alnp_google_analytics'       => get_option( 'auto_load_next_post_google_analytics' ),
 				'alnp_js_footer'              => get_option( 'auto_load_next_post_load_js_in_footer' ),
+				'alnp_disable_on_mobile'      => get_option( 'auto_load_next_post_disable_on_mobile' ),
 				'alnp_on_load_event'          => get_option( 'auto_load_next_post_on_load_event' ),
 				'alnp_on_entering_event'      => get_option( 'auto_load_next_post_on_entering_event' ),
 			);
