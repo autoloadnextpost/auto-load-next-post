@@ -188,7 +188,7 @@ if ( ! class_exists( 'ALNP_Admin_Notices' ) ) {
 			// Upgrade warning notice that will disappear once the new release is installed.
 			$upgrade_version = '1.6.0';
 
-			if ( version_compare( AUTO_LOAD_NEXT_POST_VERSION, $upgrade_version, '<' ) ) {
+			if ( ! is_alnp_beta() && version_compare( AUTO_LOAD_NEXT_POST_VERSION, $upgrade_version, '<' ) ) {
 				add_action( 'admin_notices', array( $this, 'upgrade_warning' ) );
 			}
 		} // END add_notices()
