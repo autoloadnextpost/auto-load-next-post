@@ -1,10 +1,10 @@
 # # Copyright (c) {2019} Sébastien Dumont
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Load Next Post 1.6.0\n"
+"Project-Id-Version: Auto Load Next Post 1.6.0-beta.1\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/autoloadnextpost/auto-load-next-post/issues\n"
-"POT-Creation-Date: 2019-05-13 17:59:22+00:00\n"
+"POT-Creation-Date: 2019-05-28 13:26:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: grunt-wp-i18n1.0.2\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
 
 #: auto-load-next-post.php:77
 msgid "Cloning this object is forbidden."
@@ -32,8 +32,8 @@ msgstr ""
 msgid "Unserializing instances of this class is forbidden."
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:43
-#: includes/admin/class-alnp-admin.php:79
+#: includes/admin/class-alnp-admin-action-links.php:43
+#: includes/admin/class-alnp-admin.php:86
 msgid "Getting Started with %s"
 msgstr ""
 
@@ -41,80 +41,79 @@ msgstr ""
 msgid "Auto Load Next Post"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:43
+#: includes/admin/class-alnp-admin-action-links.php:43
 #: includes/admin/class-alnp-getting-started.php:30
 msgid "Getting Started"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:44
-#: includes/admin/class-alnp-setup-wizard.php:81
+#: includes/admin/class-alnp-admin-action-links.php:44
+#: includes/admin/class-alnp-setup-wizard.php:67
 msgid "View %s settings"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:44
+#: includes/admin/class-alnp-admin-action-links.php:44
 msgid "Settings"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:64
+#: includes/admin/class-alnp-admin-action-links.php:64
 msgid "Developed By %s"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:64
+#: includes/admin/class-alnp-admin-action-links.php:64
 msgid "View the developers site"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:76
+#: includes/admin/class-alnp-admin-action-links.php:76
 msgid "View %s documentation"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:76
+#: includes/admin/class-alnp-admin-action-links.php:76
 #: includes/admin/class-alnp-admin-help.php:68
-#: includes/admin/class-alnp-setup-wizard.php:128
+#: includes/admin/class-alnp-setup-wizard.php:114
 msgid "Documentation"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:77
+#: includes/admin/class-alnp-admin-action-links.php:77
 #: includes/admin/class-alnp-admin-help.php:64
 #: includes/admin/class-alnp-admin-help.php:68
 msgid "Get support from the community"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:77
+#: includes/admin/class-alnp-admin-action-links.php:77
 msgid "Community Support"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:78
+#: includes/admin/class-alnp-admin-action-links.php:78
 msgid "Get theme support"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:78
+#: includes/admin/class-alnp-admin-action-links.php:78
 msgid "Theme Support"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:79
+#: includes/admin/class-alnp-admin-action-links.php:79
 msgid "Review %s on WordPress.org"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:79
+#: includes/admin/class-alnp-admin-action-links.php:79
 #: includes/admin/class-alnp-admin-help.php:149
 #: includes/admin/views/html-notice-please-review.php:34
 msgid "Leave a Review"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:86
+#: includes/admin/class-alnp-admin-action-links.php:86
 msgid "Sign up for %s"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:86
+#: includes/admin/class-alnp-admin-action-links.php:86
 #: includes/admin/class-alnp-admin-assets.php:123
 #: includes/admin/views/html-admin-sidebar.php:52
-#: includes/admin/views/html-getting-started-pro.php:21
 #: includes/customizer/class-alnp-pro-preview-controller.php:48
 #: includes/customizer/class-alnp-pro-preview-controller.php:67
 msgid "Auto Load Next Post Pro"
 msgstr ""
 
-#: includes/admin/class-alnp-action-links.php:86
+#: includes/admin/class-alnp-admin-action-links.php:86
 #: includes/admin/views/html-admin-sidebar.php:25
 msgid "Pro Coming Soon"
 msgstr ""
@@ -217,7 +216,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:141
-#: includes/admin/class-alnp-setup-wizard.php:127
+#: includes/admin/class-alnp-setup-wizard.php:113
 msgid "Continue"
 msgstr ""
 
@@ -332,26 +331,30 @@ msgid "Default Theme Selectors"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:100
-#: includes/admin/class-alnp-setup-wizard.php:153
+#: includes/admin/class-alnp-admin-site-health.php:45
+#: includes/admin/class-alnp-setup-wizard.php:140
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:151
 #: includes/customizer/class-alnp-customizer.php:346
 msgid "Content Container"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:101
-#: includes/admin/class-alnp-setup-wizard.php:156
+#: includes/admin/class-alnp-admin-site-health.php:50
+#: includes/admin/class-alnp-setup-wizard.php:143
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:171
 msgid "Post Title"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:102
-#: includes/admin/class-alnp-setup-wizard.php:159
+#: includes/admin/class-alnp-admin-site-health.php:55
+#: includes/admin/class-alnp-setup-wizard.php:146
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:191
 msgid "Post Navigation"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:103
-#: includes/admin/class-alnp-setup-wizard.php:162
+#: includes/admin/class-alnp-admin-site-health.php:60
+#: includes/admin/class-alnp-setup-wizard.php:149
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:211
 #: includes/customizer/class-alnp-customizer.php:370
 msgid "Comments Container"
@@ -499,15 +502,61 @@ msgstr ""
 msgid "Your settings have been saved."
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:82
+#: includes/admin/class-alnp-admin-site-health.php:67
+#: includes/admin/settings/class-alnp-settings-templates.php:74
+msgid "Use Fallback?"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-site-health.php:74
+#: includes/admin/settings/class-alnp-settings-misc.php:106
+#: includes/customizer/class-alnp-customizer.php:378
+msgid "Remove Comments"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-site-health.php:79
+#: includes/admin/settings/class-alnp-settings-misc.php:115
+#: includes/customizer/class-alnp-customizer.php:386
+msgid "Update Google Analytics"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-site-health.php:84
+#: includes/admin/settings/class-alnp-settings-misc.php:124
+#: includes/customizer/class-alnp-customizer.php:394
+msgid "JavaScript in Footer?"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-site-health.php:89
+#: includes/admin/settings/class-alnp-settings-misc.php:133
+msgid "Disable for Mobile?"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-site-health.php:94
+#: includes/admin/settings/class-alnp-settings-misc.php:152
+msgid "Remove all data on uninstall?"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-site-health.php:101
+#: includes/admin/settings/class-alnp-settings-events.php:69
+#: includes/customizer/class-alnp-customizer.php:402
+msgid "Post loaded"
+msgstr ""
+
+#: includes/admin/class-alnp-admin-site-health.php:106
+#: includes/admin/settings/class-alnp-settings-events.php:79
+#: includes/admin/views/html-notice-jetpack-lazy-images-module.php:19
+#: includes/customizer/class-alnp-customizer.php:410
+msgid "Entering a Post"
+msgstr ""
+
+#: includes/admin/class-alnp-admin.php:89
 msgid "Setup Wizard for %s"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:85
+#: includes/admin/class-alnp-admin.php:92
 msgid "%s | Extensions"
 msgstr ""
 
-#: includes/admin/class-alnp-admin.php:88
+#: includes/admin/class-alnp-admin.php:95
 msgid "%s Settings"
 msgstr ""
 
@@ -520,7 +569,7 @@ msgid "Getting started with %s."
 msgstr ""
 
 #: includes/admin/class-alnp-getting-started.php:62
-msgid "Thanks for choosing Auto Load Next Post."
+msgid "Thanks for choosing %s."
 msgstr ""
 
 #: includes/admin/class-alnp-getting-started.php:64
@@ -541,8 +590,8 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-getting-started.php:76
-#: includes/admin/class-alnp-setup-wizard.php:118
-#: includes/admin/class-alnp-setup-wizard.php:174
+#: includes/admin/class-alnp-setup-wizard.php:104
+#: includes/admin/class-alnp-setup-wizard.php:162
 msgid "Developers:"
 msgstr ""
 
@@ -583,22 +632,22 @@ msgstr ""
 msgid "%s does not collect, store or share any personal data."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:74
+#: includes/admin/class-alnp-setup-wizard.php:60
 msgid "Welcome to the Setup Wizard"
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:79
+#: includes/admin/class-alnp-setup-wizard.php:65
 msgid ""
 "Running the Setup Wizard is not required for your active theme %1$s as it "
 "already supports %2$s."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:81
-#: includes/admin/class-alnp-setup-wizard.php:189
+#: includes/admin/class-alnp-setup-wizard.php:67
+#: includes/admin/class-alnp-setup-wizard.php:177
 msgid "View Settings"
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:85
+#: includes/admin/class-alnp-setup-wizard.php:71
 msgid ""
 "The setup wizard will scan a random post on your site and identify your "
 "theme's selectors matching those that are known and used in many different "
@@ -606,87 +655,87 @@ msgid ""
 "theme content loops are stored."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:87
+#: includes/admin/class-alnp-setup-wizard.php:73
 msgid "Once found, they will be set for you once the scan is complete."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:89
+#: includes/admin/class-alnp-setup-wizard.php:75
 msgid "So let's get started."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:91
+#: includes/admin/class-alnp-setup-wizard.php:77
 msgid ""
 "Please note that the setup wizard is not full proof and some manual work "
 "maybe required depending on the results. If you have %1$sWP_DEBUG%2$s "
 "enabled then results on what was found will be displayed to you."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:94
+#: includes/admin/class-alnp-setup-wizard.php:80
 msgid "Start"
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:103
+#: includes/admin/class-alnp-setup-wizard.php:89
 msgid "Setup Wizard: Template Location"
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:105
+#: includes/admin/class-alnp-setup-wizard.php:91
 msgid ""
 "%s has detected the template location and has set it for you. Please "
 "continue the wizard to scan for theme selectors next."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:107
+#: includes/admin/class-alnp-setup-wizard.php:93
 msgid ""
 "Setup Wizard was not able to locate your template location for this theme. "
 "This is likely because the theme is using either a directory or filename "
 "that %s does not recognise."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:109
+#: includes/admin/class-alnp-setup-wizard.php:95
 msgid ""
 "A fallback template will be used instead. To fully support %s with this "
 "theme, view the repeater template override guide in the documentation."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:118
+#: includes/admin/class-alnp-setup-wizard.php:104
 msgid ""
 "You can %1$sapply a filter to set the template location%2$s with the found "
 "directory for your theme."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:121
+#: includes/admin/class-alnp-setup-wizard.php:107
 msgid "Copy:"
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:137
+#: includes/admin/class-alnp-setup-wizard.php:123
 msgid "Setup Wizard: Theme Selectors"
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:146
+#: includes/admin/class-alnp-setup-wizard.php:132
 msgid ""
 "If any selector was not found, click on the help icon next to the result "
 "for more details."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:148
+#: includes/admin/class-alnp-setup-wizard.php:134
 msgid "Post scanned:"
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:151
+#: includes/admin/class-alnp-setup-wizard.php:138
 msgid "Selector"
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:167
+#: includes/admin/class-alnp-setup-wizard.php:154
 msgid "Result"
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:174
+#: includes/admin/class-alnp-setup-wizard.php:162
 msgid ""
 "Checkout the %1$sadd theme support guide%2$s to apply these found theme "
 "selectors automatically when another user installs your theme with %3$s."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:179
+#: includes/admin/class-alnp-setup-wizard.php:167
 msgid ""
 "Setup Wizard was unable to detect some of the theme selectors. You can scan "
 "again just to be sure the wizard did not timeout but most likley you will "
@@ -694,19 +743,19 @@ msgid ""
 "find them%2$s."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:181
+#: includes/admin/class-alnp-setup-wizard.php:169
 msgid ""
 "No post navigation on the scanned post was detected. If this is incorrect, "
 "please %1$scontact me%2$s and let me know your site URL address."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:183
+#: includes/admin/class-alnp-setup-wizard.php:171
 msgid ""
 "Congratulations, %s is now setup and ready. Further optional options are "
 "available via the settings page."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:188
+#: includes/admin/class-alnp-setup-wizard.php:176
 msgid "Scan Again?"
 msgstr ""
 
@@ -722,20 +771,9 @@ msgid ""
 "%1$s native events. Separate each event like so: %2$s"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-events.php:69
-#: includes/customizer/class-alnp-customizer.php:402
-msgid "Post loaded"
-msgstr ""
-
 #: includes/admin/settings/class-alnp-settings-events.php:70
 #: includes/customizer/class-alnp-customizer.php:403
 msgid "Events listed here will be triggered after a new post has loaded."
-msgstr ""
-
-#: includes/admin/settings/class-alnp-settings-events.php:79
-#: includes/admin/views/html-notice-jetpack-lazy-images-module.php:19
-#: includes/customizer/class-alnp-customizer.php:410
-msgid "Entering a Post"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:80
@@ -751,69 +789,50 @@ msgstr ""
 msgid "Further optional options can be found here should you want to use or need."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:106
-#: includes/customizer/class-alnp-customizer.php:378
-msgid "Remove Comments"
-msgstr ""
-
 #: includes/admin/settings/class-alnp-settings-misc.php:107
 #: includes/customizer/class-alnp-customizer.php:379
 msgid "Enable to remove comments when each post loads including the initial post."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:114
-#: includes/customizer/class-alnp-customizer.php:386
-msgid "Update Google Analytics"
-msgstr ""
-
-#: includes/admin/settings/class-alnp-settings-misc.php:115
+#: includes/admin/settings/class-alnp-settings-misc.php:116
 #: includes/customizer/class-alnp-customizer.php:387
 msgid ""
 "Enable to track each post the visitor is reading. This will count as a "
 "pageview. You must already have Google Analytics setup."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:122
-#: includes/customizer/class-alnp-customizer.php:394
-msgid "JavaScript in Footer?"
-msgstr ""
-
-#: includes/admin/settings/class-alnp-settings-misc.php:123
+#: includes/admin/settings/class-alnp-settings-misc.php:125
 msgid ""
 "Enable to load %s in the footer instead of the header. Can be useful to "
 "optimize your site or if the current theme requires it."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:130
-msgid "Disable for Mobile?"
-msgstr ""
-
-#: includes/admin/settings/class-alnp-settings-misc.php:131
+#: includes/admin/settings/class-alnp-settings-misc.php:134
 msgid "Enable to disable %s from running on mobile devices."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:138
+#: includes/admin/settings/class-alnp-settings-misc.php:142
 msgid "Reset all data?"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:139
+#: includes/admin/settings/class-alnp-settings-misc.php:143
 msgid ""
 "Press the reset button to clear all settings for this plugin and "
 "re-initialize."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:142
+#: includes/admin/settings/class-alnp-settings-misc.php:146
 msgid "Reset"
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-misc.php:148
-msgid "Remove all data on uninstall?"
-msgstr ""
-
-#: includes/admin/settings/class-alnp-settings-misc.php:149
+#: includes/admin/settings/class-alnp-settings-misc.php:153
 msgid ""
 "If enabled, all settings for this plugin will all be deleted when "
 "uninstalling via Plugins > Delete."
+msgstr ""
+
+#: includes/admin/settings/class-alnp-settings-page.php:208
+msgid "Need Help?"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-templates.php:56
@@ -828,21 +847,17 @@ msgid ""
 "template directory. Otherwise just enter the location for %1$sPosts%2$s."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-templates.php:74
-msgid "Use Fallback?"
-msgstr ""
-
 #: includes/admin/settings/class-alnp-settings-templates.php:75
 msgid ""
 "Enabling this will force the use of fallback support should your active "
 "theme not have a great structure. %1$sSee help for more information%2$s."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-templates.php:92
+#: includes/admin/settings/class-alnp-settings-templates.php:101
 msgid "Enter the folder location where the theme template for %s are stored."
 msgstr ""
 
-#: includes/admin/settings/class-alnp-settings-templates.php:95
+#: includes/admin/settings/class-alnp-settings-templates.php:104
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:155
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:175
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:195
@@ -1001,10 +1016,6 @@ msgid ""
 "unsubscribe with 1-click anytime."
 msgstr ""
 
-#: includes/admin/views/html-getting-started-pro.php:20
-msgid "%1$s "
-msgstr ""
-
 #: includes/admin/views/html-notice-is-supported.php:21
 msgid ""
 "Your active theme %1$s, supports %2$s. Changes to set theme selectors are "
@@ -1013,15 +1024,15 @@ msgstr ""
 
 #: includes/admin/views/html-notice-jetpack-lazy-images-module.php:19
 msgid ""
-"Lazy-loading for the Images module is enabled in %sJetPack%s. To trigger "
-"the lazy loading event apply %s to %s%s%s."
+"Lazy-loading for the Images module is enabled in %1$sJetPack%2$s. To "
+"trigger the lazy loading event apply %3$s to %4$s%5$s%6$s."
 msgstr ""
 
 #: includes/admin/views/html-notice-no-comment-selector.php:19
 msgid ""
 "In order to remove comments we need to know what the comments container is. "
-"Please identify the comments container under <strong>Theme "
-"Selectors</strong>. %1$sHow to find my theme selectors?%2$s"
+"Please identify the comments container under %1$sTheme Selectors%2$s. "
+"%3$sHow to find my theme selectors?%4$s"
 msgstr ""
 
 #: includes/admin/views/html-notice-no-theme-selectors.php:19
@@ -1032,10 +1043,10 @@ msgid ""
 msgstr ""
 
 #: includes/admin/views/html-notice-please-review.php:25
+#: includes/admin/views/html-notice-setup-wizard.php:22
 #: includes/admin/views/html-notice-theme-ready.php:23
 #: includes/admin/views/html-notice-trying-beta.php:21
 #: includes/admin/views/html-notice-upgrade-warning.php:21
-#: includes/admin/views/html-notice-welcome.php:21
 msgid "Auto Load Next Post WordPress Plugin"
 msgstr ""
 
@@ -1061,14 +1072,32 @@ msgstr ""
 
 #: includes/admin/views/html-notice-requirement-wp.php:19
 msgid ""
-"Sorry, <strong>%s</strong> requires WordPress %s or higher. Please upgrade "
-"your WordPress setup."
+"Sorry, %1$s%3$s%2$s requires WordPress %4$s or higher. Please upgrade your "
+"WordPress setup."
+msgstr ""
+
+#: includes/admin/views/html-notice-setup-wizard.php:26
+msgid "Hi %s."
+msgstr ""
+
+#: includes/admin/views/html-notice-setup-wizard.php:27
+msgid ""
+"Try the Setup Wizard to help identify your theme selectors and template "
+"location. Once done %s will be ready!"
+msgstr ""
+
+#: includes/admin/views/html-notice-setup-wizard.php:31
+msgid "Run the Setup Wizard"
+msgstr ""
+
+#: includes/admin/views/html-notice-setup-wizard.php:32
+msgid "No need / I already have"
 msgstr ""
 
 #: includes/admin/views/html-notice-template-location.php:20
 msgid ""
-"%1$s was unable to detect your theme templates. Currently using fallback "
-"support."
+"%1$s has not detected your theme templates. Currently using fallback "
+"support. Try the new %2$sSetup Wizard%3$s to help."
 msgstr ""
 
 #: includes/admin/views/html-notice-template-location.php:22
@@ -1083,19 +1112,18 @@ msgstr ""
 
 #: includes/admin/views/html-notice-theme-ready.php:28
 msgid ""
-"We detected your theme <strong>%1$s</strong> already supports %2$s. "
-"Everything is already setup for you and is ready to increase your pageviews."
+"We detected your theme %1$s%3$s%2$s already supports %4$s. Everything is "
+"already setup for you and is ready to increase your pageviews."
 msgstr ""
 
 #: includes/admin/views/html-notice-trying-beta.php:25
-msgid "Thanks for trying out this beta!"
+msgid "Thanks for trying out this beta/pre-release!"
 msgstr ""
 
 #: includes/admin/views/html-notice-trying-beta.php:26
 msgid ""
-"If you have any questions about the beta or if you have any feedback at all "
-"including features to be added or integrations to support, please let me "
-"know. Any little bit you're willing to share helps."
+"If you have any questions or any feedback at all, please let me know. Any "
+"little bit you're willing to share helps."
 msgstr ""
 
 #: includes/admin/views/html-notice-trying-beta.php:30
@@ -1183,7 +1211,7 @@ msgstr ""
 msgid "a second"
 msgstr ""
 
-#: includes/class-alnp-install.php:314
+#: includes/class-alnp-install.php:320
 msgid "Get started with %3$s here:"
 msgstr ""
 
