@@ -302,20 +302,20 @@ if ( ! class_exists( 'ALNP_Customizer' ) ) {
 				),
 				'auto_load_next_post_remove_comments' => array(
 					'capability'        => 'edit_theme_options',
-					'default'           => $settings['alnp_remove_comments'],
-					'transport'         => 'postMessage',
+					'default'           => 'yes',
+					'transport'         => 'refresh',
 					'type'              => 'option',
 				),
 				'auto_load_next_post_google_analytics' => array(
 					'capability'        => 'edit_theme_options',
-					'default'           => $settings['alnp_google_analytics'],
-					'transport'         => 'postMessage',
+					'default'           => 'no',
+					'transport'         => 'refresh',
 					'type'              => 'option',
 				),
 				'auto_load_next_post_load_js_in_footer' => array(
 					'capability'        => 'edit_theme_options',
-					'default'           => $settings['alnp_js_footer'],
-					'transport'         => 'postMessage',
+					'default'           => 'no',
+					'transport'         => 'refresh',
 					'type'              => 'option',
 				),
 				'auto_load_next_post_on_load_event' => array(
