@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Auto Load Next Post 1.6.0-beta.1\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/autoloadnextpost/auto-load-next-post/issues\n"
-"POT-Creation-Date: 2019-05-28 13:26:40+00:00\n"
+"POT-Creation-Date: 2019-05-28 17:56:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -184,15 +184,15 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:126
 msgid ""
-"%1$sRestrictions:%2$s Manage which post types Auto Load Next Post should "
-"load on, how many posts to load per session and which user roles and users "
-"are excluded from loading posts."
+"%1$sRestrictions:%2$s Manage which post types %3$s should load on, how many "
+"posts to load per session and which user roles and users are excluded from "
+"loading posts."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:127
 msgid ""
-"%1$sQuery:%2$s Customise the query of posts before Auto Load Next Post "
-"loads them including excluded posts and post formats."
+"%1$sQuery:%2$s Customise the query of posts before %3$s loads them "
+"including excluded posts and post formats."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:128
@@ -294,7 +294,7 @@ msgstr ""
 #: includes/admin/class-alnp-admin-help.php:75
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:31
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:105
-#: includes/customizer/class-alnp-customizer.php:229
+#: includes/customizer/class-alnp-customizer.php:234
 msgid "Theme Selectors"
 msgstr ""
 
@@ -334,7 +334,7 @@ msgstr ""
 #: includes/admin/class-alnp-admin-site-health.php:45
 #: includes/admin/class-alnp-setup-wizard.php:140
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:151
-#: includes/customizer/class-alnp-customizer.php:346
+#: includes/customizer/class-alnp-customizer.php:365
 msgid "Content Container"
 msgstr ""
 
@@ -356,7 +356,7 @@ msgstr ""
 #: includes/admin/class-alnp-admin-site-health.php:60
 #: includes/admin/class-alnp-setup-wizard.php:149
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:211
-#: includes/customizer/class-alnp-customizer.php:370
+#: includes/customizer/class-alnp-customizer.php:389
 msgid "Comments Container"
 msgstr ""
 
@@ -373,10 +373,10 @@ msgstr ""
 #: includes/admin/class-alnp-admin-help.php:116
 msgid ""
 "Every WordPress theme manages there %1$sTemplate Hierarchy%2$s in there own "
-"way. This makes it a little difficult for Auto Load Next Post to auto "
-"detect the appropriate template location. If the appropriate template was "
-"not detected then %3$s will automatically use a fallback template in order "
-"to display your sites content while your viewers scroll."
+"way. This makes it a little difficult for %3$s to auto detect the "
+"appropriate template location. If the appropriate template was not detected "
+"then %3$s will automatically use a fallback template in order to display "
+"your sites content while your viewers scroll."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:120
@@ -509,24 +509,25 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-site-health.php:74
 #: includes/admin/settings/class-alnp-settings-misc.php:106
-#: includes/customizer/class-alnp-customizer.php:378
+#: includes/customizer/class-alnp-customizer.php:397
 msgid "Remove Comments"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-site-health.php:79
 #: includes/admin/settings/class-alnp-settings-misc.php:115
-#: includes/customizer/class-alnp-customizer.php:386
+#: includes/customizer/class-alnp-customizer.php:405
 msgid "Update Google Analytics"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-site-health.php:84
 #: includes/admin/settings/class-alnp-settings-misc.php:124
-#: includes/customizer/class-alnp-customizer.php:394
+#: includes/customizer/class-alnp-customizer.php:413
 msgid "JavaScript in Footer?"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-site-health.php:89
 #: includes/admin/settings/class-alnp-settings-misc.php:133
+#: includes/customizer/class-alnp-customizer.php:421
 msgid "Disable for Mobile?"
 msgstr ""
 
@@ -537,14 +538,14 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-site-health.php:101
 #: includes/admin/settings/class-alnp-settings-events.php:69
-#: includes/customizer/class-alnp-customizer.php:402
+#: includes/customizer/class-alnp-customizer.php:429
 msgid "Post loaded"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-site-health.php:106
 #: includes/admin/settings/class-alnp-settings-events.php:79
 #: includes/admin/views/html-notice-jetpack-lazy-images-module.php:19
-#: includes/customizer/class-alnp-customizer.php:410
+#: includes/customizer/class-alnp-customizer.php:437
 msgid "Entering a Post"
 msgstr ""
 
@@ -760,24 +761,24 @@ msgid "Scan Again?"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:29
-#: includes/customizer/class-alnp-customizer.php:239
+#: includes/customizer/class-alnp-customizer.php:244
 msgid "Events"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:64
-#: includes/customizer/class-alnp-customizer.php:240
+#: includes/customizer/class-alnp-customizer.php:245
 msgid ""
 "Below you can enter external JavaScript events to be triggered alongside "
 "%1$s native events. Separate each event like so: %2$s"
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:70
-#: includes/customizer/class-alnp-customizer.php:403
+#: includes/customizer/class-alnp-customizer.php:430
 msgid "Events listed here will be triggered after a new post has loaded."
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:80
-#: includes/customizer/class-alnp-customizer.php:411
+#: includes/customizer/class-alnp-customizer.php:438
 msgid "Events listed here will be triggered when entering a post."
 msgstr ""
 
@@ -790,12 +791,12 @@ msgid "Further optional options can be found here should you want to use or need
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-misc.php:107
-#: includes/customizer/class-alnp-customizer.php:379
+#: includes/customizer/class-alnp-customizer.php:398
 msgid "Enable to remove comments when each post loads including the initial post."
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-misc.php:116
-#: includes/customizer/class-alnp-customizer.php:387
+#: includes/customizer/class-alnp-customizer.php:406
 msgid ""
 "Enable to track each post the visitor is reading. This will count as a "
 "pageview. You must already have Google Analytics setup."
@@ -808,6 +809,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-misc.php:134
+#: includes/customizer/class-alnp-customizer.php:422
 msgid "Enable to disable %s from running on mobile devices."
 msgstr ""
 
@@ -1215,83 +1217,83 @@ msgstr ""
 msgid "Get started with %3$s here:"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:64
+#: includes/customizer/class-alnp-customizer.php:65
 msgid ""
-"Auto Load Next Post increases your pageviews by engaging the site viewers "
-"to keep reading your content rather than increasing your bounce rate."
+"%s increases your pageviews by engaging the site viewers to keep reading "
+"your content rather than increasing your bounce rate."
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:135
+#: includes/customizer/class-alnp-customizer.php:136
 msgid "More?"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:150
+#: includes/customizer/class-alnp-customizer.php:151
 msgid "Looking for more options?"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:230
+#: includes/customizer/class-alnp-customizer.php:235
 msgid ""
 "Set the theme selectors below according to the theme. %1$sHow to find my "
 "theme selectors?%2$s"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:234
+#: includes/customizer/class-alnp-customizer.php:239
 msgid "Misc Settings"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:235
+#: includes/customizer/class-alnp-customizer.php:240
 msgid ""
 "Here you can set if you want to track pageviews, remove comments and load "
-"%s javascript in the footer."
+"%s javascript in the footer and disable for mobile users."
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:347
+#: includes/customizer/class-alnp-customizer.php:366
 msgid "The primary container where the post content is loaded in. Default: %s"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:354
+#: includes/customizer/class-alnp-customizer.php:373
 msgid "Post Title Selector"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:355
+#: includes/customizer/class-alnp-customizer.php:374
 msgid ""
 "Used to identify which article the user is reading and track should Google "
 "Analytics or other analytics be enabled. Default: %s"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:362
+#: includes/customizer/class-alnp-customizer.php:381
 msgid "Post Navigation Container"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:363
+#: includes/customizer/class-alnp-customizer.php:382
 msgid "Used to identify which post to load next if any. Default: %s"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:371
+#: includes/customizer/class-alnp-customizer.php:390
 msgid ""
-"Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> "
-"settings. Default: %3$s"
+"Used to remove comments if enabled under %1$sMisc%2$s settings. Default: "
+"%3$s"
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:395
+#: includes/customizer/class-alnp-customizer.php:414
 msgid ""
 "Enable to load Auto Load Next Post in the footer instead of the header. Can "
 "be useful to optimize your site."
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:429
+#: includes/customizer/class-alnp-customizer.php:457
 msgid ""
 "The content container selector is empty. Will not know where to load posts "
 "without it."
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:445
+#: includes/customizer/class-alnp-customizer.php:474
 msgid ""
 "The post title selector is empty. Will not be able to identify which "
 "article the user is reading."
 msgstr ""
 
-#: includes/customizer/class-alnp-customizer.php:461
+#: includes/customizer/class-alnp-customizer.php:491
 msgid ""
 "The post navigation container selector is empty. Required so ALNP can look "
 "up the next post to load."
