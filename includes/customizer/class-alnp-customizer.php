@@ -302,18 +302,21 @@ if ( ! class_exists( 'ALNP_Customizer' ) ) {
 				),
 				'auto_load_next_post_remove_comments' => array(
 					'capability'        => 'edit_theme_options',
+					'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
 					'default'           => 'yes',
 					'transport'         => 'refresh',
 					'type'              => 'option',
 				),
 				'auto_load_next_post_google_analytics' => array(
 					'capability'        => 'edit_theme_options',
+					'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
 					'default'           => 'no',
 					'transport'         => 'refresh',
 					'type'              => 'option',
 				),
 				'auto_load_next_post_load_js_in_footer' => array(
 					'capability'        => 'edit_theme_options',
+					'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
 					'default'           => 'no',
 					'transport'         => 'refresh',
 					'type'              => 'option',
@@ -520,6 +523,18 @@ if ( ! class_exists( 'ALNP_Customizer' ) ) {
 
 			return true;
 		} // END is_page_alnp_ready()
+
+		/**
+		 * Sanitize the checkbox options.
+		 *
+		 * @access public
+		 * @since  1.6.0
+		 * @param  bool $input
+		 * @return string
+		 */
+		public function sanitize_checkbox( $input ) {
+			return ( $input === true ) ? 'yes' : 'no';
+		} // END sansitize_checkbox()
 
 	} // END Class
 
