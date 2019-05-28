@@ -14,15 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( !class_exists( 'ALNP_Customizer' ) ) {
+if ( ! class_exists( 'ALNP_Customizer' ) ) {
 
 	class ALNP_Customizer {
 
 		/**
 		 * Constructor.
 		 *
-		 * @since  1.5.0
 		 * @access public
+		 * @since  1.5.0
 		 */
 		public function __construct() {
 			add_action( 'customize_register', array( $this, 'alnp_init_customizer' ), 50 );
@@ -158,6 +158,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		/**
 		 * Removes the core 'Navigation Menu' and 'Widgets' panel from the Customizer.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @param  array $components Core Customizer components list.
 		 * @return array (Maybe) modified components list.
@@ -180,6 +181,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		/**
 		 * Remove any unwanted default conrols.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @global $wp_cutomize
 		 * @param  object $wp_customize
@@ -204,6 +206,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		/**
 		 * Are we looking at the Auto Load Next Post customizer?
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @return boolean
 		 */
@@ -214,6 +217,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		/**
 		 * Get Customizer sections for Auto Load Next Post.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @return array
 		 */
@@ -245,6 +249,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		/**
 		 * Get Customizer settings for Auto Load Next Post.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @return array
 		 */
@@ -331,8 +336,10 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		/**
 		 * Get Customizer controls for Auto Load Next Post.
 		 *
-		 * @since  1.5.0
-		 * @return array
+		 * @access  public
+		 * @since   1.5.0
+		 * @version 1.6.0
+		 * @return  array
 		 */
 		public function alnp_get_customizer_controls() {
 			/**
@@ -419,6 +426,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		/**
 		 * Validates the content container theme selector to not be empty.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @param  WP_Error $validity Validity.
 		 * @param  string   $value    Value, normally pre-sanitized.
@@ -435,6 +443,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		/**
 		 * Validates the post title theme selector to not be empty.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @param  WP_Error $validity Validity.
 		 * @param  string   $value    Value, normally pre-sanitized.
@@ -451,6 +460,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		/**
 		 * Validates the post navigation theme selector to not be empty.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @param  WP_Error $validity Validity.
 		 * @param  string   $value    Value, normally pre-sanitized.
@@ -467,8 +477,10 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		/**
 		 * Return Auto Load Next Post settings.
 		 *
-		 * @since  1.5.0
-		 * @return array $args
+		 * @access  public
+		 * @since   1.5.0
+		 * @version 1.6.0
+		 * @return  array $args
 		 */
 		public function alnp_get_settings() {
 			$args = array(
@@ -491,6 +503,7 @@ if ( !class_exists( 'ALNP_Customizer' ) ) {
 		 * Returns true or false if the page is ready for Auto Load Next Post
 		 * panel to show in the customizer.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @return boolean
 		 */
