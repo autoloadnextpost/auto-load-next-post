@@ -61,7 +61,7 @@ if ( ! class_exists( 'ALNP_Customizer' ) ) {
 				'alnp', array(
 					'title'           => esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ),
 					'capability'      => 'edit_theme_options',
-					'description'     => esc_html__( 'Auto Load Next Post increases your pageviews by engaging the site viewers to keep reading your content rather than increasing your bounce rate.', 'auto-load-next-post' ),
+					'description'     => sprintf( esc_html__( '%s increases your pageviews by engaging the site viewers to keep reading your content rather than increasing your bounce rate.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 					'priority'        => 160,
 					'active_callback' => array( $this, 'is_page_alnp_ready' )
 				)
@@ -236,7 +236,7 @@ if ( ! class_exists( 'ALNP_Customizer' ) ) {
 				'auto_load_next_post_misc' => array(
 					'capability'  => 'edit_theme_options',
 					'title'       => esc_html__( 'Misc Settings', 'auto-load-next-post' ),
-					'description' => sprintf( __( 'Here you can set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+					'description' => sprintf( __( 'Here you can set if you want to track pageviews, remove comments and load %s javascript in the footer and disable for mobile users.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 				),
 				'auto_load_next_post_events' => array(
 					'capability'  => 'edit_theme_options',
@@ -375,7 +375,7 @@ if ( ! class_exists( 'ALNP_Customizer' ) ) {
 				'alnp_comments_container' => array(
 					'class'       => 'WP_Customize_Control',
 					'label'       => esc_html__( 'Comments Container', 'auto-load-next-post' ),
-					'description' => sprintf( __( 'Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> settings. Default: %3$s', 'auto-load-next-post' ), '<a href="javascript:wp.customize.section( \'auto_load_next_post_misc\' ).focus();">', '</a>', '<code>div#comments</code>' ),
+					'description' => sprintf( __( 'Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s', 'auto-load-next-post' ), '<strong><a href="javascript:wp.customize.section( \'auto_load_next_post_misc\' ).focus();">', '</a></strong>', '<code>div#comments</code>' ),
 					'section'     => 'auto_load_next_post_theme_selectors',
 					'settings'    => 'auto_load_next_post_comments_container',
 					'type'        => 'text',
