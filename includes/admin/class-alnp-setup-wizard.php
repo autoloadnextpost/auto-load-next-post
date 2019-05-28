@@ -133,29 +133,33 @@ if ( ! class_exists( 'ALNP_Setup_Wizard' ) ) {
 
 								<p><strong><?php _e( 'Post scanned:', 'auto-load-next-post' ); ?></strong> <i><span class="post-tested">*</span></i></p>
 
-								<div class="selectors left">
-									<span class="bold"><?php _e( 'Selector', 'auto-load-next-post' ); ?></span>
-									<div class="container pending">
-										<span class="selector"><?php _e( 'Content Container', 'auto-load-next-post' ); ?></span>
-									</div>
-									<div class="title pending">
-										<span class="selector"><?php _e( 'Post Title', 'auto-load-next-post' ); ?></span>
-									</div>
-									<div class="navigation pending">
-										<span class="selector"><?php _e( 'Post Navigation', 'auto-load-next-post' ); ?></span>
-									</div>
-									<div class="comments pending">
-										<span class="selector"><?php _e( 'Comments Container', 'auto-load-next-post' ); ?></span>
-									</div>
-								</div><!-- .selectors -->
+								<div class="result-container">
+									<div class="selectors">
+										<p class="bold"><?php _e( 'Selector', 'auto-load-next-post' ); ?></p>
 
-								<div class="results-found right">
-									<span class="bold"><?php _e( 'Result', 'auto-load-next-post' ); ?></span>
-									<div class="container"><span class="result">-</span></div>
-									<div class="title"><span class="result">-</span></div>
-									<div class="navigation"><span class="result">-</span></div>
-									<div class="comments"><span class="result">-</span></div>
-								</div><!-- .results-found -->
+										<div class="container pending">
+											<span class="selector"><?php _e( 'Content Container', 'auto-load-next-post' ); ?></span>
+										</div>
+										<div class="title pending">
+											<span class="selector"><?php _e( 'Post Title', 'auto-load-next-post' ); ?></span>
+										</div>
+										<div class="navigation pending">
+											<span class="selector"><?php _e( 'Post Navigation', 'auto-load-next-post' ); ?></span>
+										</div>
+										<div class="comments pending">
+											<span class="selector"><?php _e( 'Comments Container', 'auto-load-next-post' ); ?></span>
+										</div>
+									</div><!-- .selectors -->
+
+									<div class="results-found">
+										<p class="bold"><?php _e( 'Result', 'auto-load-next-post' ); ?></p>
+
+										<div class="container"><span class="result">-</span></div>
+										<div class="title"><span class="result">-</span></div>
+										<div class="navigation"><span class="result">-</span></div>
+										<div class="comments"><span class="result">-</span></div>
+									</div><!-- .results-found -->
+								</div><!-- .result-container -->
 
 								<p><strong class="red"><?php _e( 'Developers:', 'auto-load-next-post' ); ?></strong> <?php echo sprintf( __( 'Checkout the %1$sadd theme support guide%2$s to apply these found theme selectors automatically when another user installs your theme with %3$s.', 'auto-load-next-post' ), '<a href="https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/add-theme-support.md#add-theme-support" target="_blank">', '</a>', esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ); ?></p>
 

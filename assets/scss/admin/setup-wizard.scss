@@ -28,45 +28,65 @@
 		&.theme-selector-results {
 			text-align: left;
 
-			.selectors {
-				float: left;
-				width: 50%;
+			.result-container {
+				clear: both;
+				display: block;
+				height: 120px;
 
-				.container.found {
-					border: none;
-					box-shadow: none;
-					-webkit-box-shadow: none;
-				}
+				.selectors,
+				.results-found {
+					width: 50%;
 
-				.pending::before,
-				.found::before,
-				.not-found::before {
-					border-radius:100%;
-					color: $white;
-					display: inline-block;
-					font-family: dashicons;
-					font-size: 22px;
-					height: 22px;
-					margin-right: 4px;
-					padding: 1px;
-					position: relative;
-					text-align: center;
-					width: 22px;
-				}
-			
-				.pending::before {
-					background-color: $alnp;
-					content: '\f179';
+					p {
+						margin: 0;
+					}
+
+					div {
+						padding: 0 0 0.5em;
+					}
+
 				}
 
-				.found::before {
-					background-color: $green;
-					content: '\f147';
-				}
-			
-				.not-found::before {
-					background-color: $red;
-					content: '\f335';
+				.selectors {
+					float: left;
+
+					.container.found {
+						border: none;
+						box-shadow: none;
+						-webkit-box-shadow: none;
+					}
+
+					.pending::before,
+					.found::before,
+					.not-found::before {
+						border-radius:100%;
+						color: $white;
+						display: block;
+						float: left;
+						font-family: dashicons;
+						font-size: 22px;
+						height: 22px;
+						margin-right: 4px;
+						padding: 1px;
+						position: relative;
+						text-align: center;
+						width: 22px;
+					}
+
+					.pending::before {
+						background-color: $alnp;
+						content: '\f179';
+					}
+
+					.found::before {
+						background-color: $green;
+						content: '\f147';
+					}
+
+					.not-found::before {
+						background-color: $red;
+						content: '\f335';
+					}
 				}
 			}
 
@@ -78,7 +98,7 @@
 			}
 
 			.results-found {
-				width: 50%;
+				float: right;
 
 				.container.found {
 					border: none;
@@ -90,8 +110,8 @@
 
 			.selectors,
 			.results-found {
-				height: 140px;
-				position: relative;
+				float: left;
+				margin-bottom: 1em;
 				overflow: hidden;
 			}
 
