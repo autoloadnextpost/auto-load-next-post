@@ -5,6 +5,7 @@ Tags: infinite scroll, infinite scrolling, scroll, infinite
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.2
+Stable tag: 1.6.0-beta.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -215,7 +216,7 @@ Yes you can. Go to the misc section of the settings page and enable "Disable for
 5. Plugin Settings: Misc Settings, here you can enable Google Analytics tracking, remove comments and set the JavaScript to load in the footer of your website instead should you need to.
 6. Extensions: All the available extensions will be shown here.
 7. Theme Customizer: The same settings can be applied via the theme customizer.
-
+ 
 == Changelog ==
 
 = 1.5.13 - 27th May 2019 =
