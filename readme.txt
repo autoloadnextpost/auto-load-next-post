@@ -4,8 +4,7 @@ Donate link: https://sebdumont.xyz/donate/
 Tags: infinite scroll, infinite scrolling, scroll, infinite
 Requires PHP: 5.6
 Requires at least: 4.7
-Tested up to: 5.1.1
-Stable tag: 1.5.13
+Tested up to: 5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -209,12 +208,13 @@ Yes you can. Go to the misc section of the settings page and enable "Disable for
 
 == Screenshots ==
 
-1. Setup Wizard introduced in version 1.6
+1. Setup Wizard
 2. Plugin Settings: Theme Selectors, here is where we define the elements Auto Load Next Post will look for.
 3. Plugin Settings: Templates, here we define where the directory for the theme's templates are located.
 4. Plugin Settings: Events, here you can support custom triggers or 3rd-party plugins to trigger their own once a post has loaded or when the visitor is entering a post.
 5. Plugin Settings: Misc Settings, here you can enable Google Analytics tracking, remove comments and set the JavaScript to load in the footer of your website instead should you need to.
-6. Theme Customizer: The same settings can be applied via the theme customizer.
+6. Extensions: All the available extensions will be shown here.
+7. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
 
