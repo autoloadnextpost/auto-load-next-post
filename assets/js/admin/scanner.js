@@ -291,7 +291,7 @@
 				return;
 			}
 
-				console.log( 'Setting: ' + setting + ' saved!' );
+			console.log( 'Setting: ' + setting + ' saved!' );
 		});
 	}
 	
