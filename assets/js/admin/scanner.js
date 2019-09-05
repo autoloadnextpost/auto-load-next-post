@@ -346,10 +346,10 @@
 		if ( saving_results ) {
 
 			if ( found_selectors > 0 ) {
-				if ( content_container ) save_setting( 'content_container', content_container );
-				if ( post_title ) save_setting( 'title_selector', post_title );
-				if ( post_navigation ) save_setting( 'navigation_container', post_navigation );
-				if ( comment_container ) save_setting( 'comments_container', comment_container );
+				if ( content_container != '' ) save_setting( 'content_container', content_container );
+				if ( post_title != '' ) save_setting( 'title_selector', post_title );
+				if ( post_navigation != '' ) save_setting( 'navigation_container', post_navigation );
+				if ( comment_container != '' ) save_setting( 'comments_container', comment_container );
 
 				// Check if any dialogs are open.
 				/*if ( jc.isOpen() ) {
