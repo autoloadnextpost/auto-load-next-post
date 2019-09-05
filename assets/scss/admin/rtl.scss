@@ -1,5 +1,29 @@
 body.rtl {
 
+	/* Setup Wizard */
+	.auto-load-next-post {
+
+		.box {
+	
+			&.theme-selector-results {
+	
+				.selectors {
+
+					.pending::before,
+					.found::before,
+					.not-found::before {
+						display: block;
+						float: left;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
 	/* Settings Form */
 	.wrap #mainform {
 		float: right;
