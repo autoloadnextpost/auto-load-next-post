@@ -83,7 +83,7 @@ if ( ! class_exists( 'ALNP_Admin_Action_Links' ) ) {
 				if ( ! is_alnp_pro_version_installed() ) {
 					$store_url = add_query_arg( $campaign_args, AUTO_LOAD_NEXT_POST_STORE_URL . 'pro/' );
 
-					$row_meta['pro'] = sprintf( '<a href="%1$s" aria-label="' . sprintf( esc_attr__( 'Sign up for %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ) ) . '" target="_blank" style="color: #39b54a; font-weight: 700;">%2$s</a>', esc_url( $store_url ), esc_attr__( 'Pro Coming Soon', 'auto-load-next-post' ) );
+					$row_meta['pro'] = sprintf( '<a href="%1$s" aria-label="' . sprintf( esc_attr__( 'Sign up for %s', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ) ) . '" target="_blank" style="color: #c00; font-weight: 700;">%2$s</a>', esc_url( $store_url ), esc_attr__( 'Pro Coming Soon', 'auto-load-next-post' ) );
 				}
 
 				$metadata = array_merge( $metadata, $row_meta );
