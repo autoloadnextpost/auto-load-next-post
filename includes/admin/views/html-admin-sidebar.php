@@ -49,7 +49,7 @@ $last_name    = $current_user->last_name;
 	<h2><?php esc_html_e( 'Sign up to pre-order first', 'auto-load-next-post' ); ?></h2>
 
 	<p class="intro">
-		<?php echo sprintf( __( 'Submit your name and email and be the first to know when you can pre-order %1$s and keep up to date with my developments plus a %2$s discount.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ), '10%' ); ?>
+		<?php echo sprintf( __( 'Submit your name and email and be the first to know when you can pre-order %1$s and keep up to date with my developments plus a %2$s discount.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post Pro', 'auto-load-next-post' ), '20%' ); ?>
 	</p>
 
 	<div class="field">
