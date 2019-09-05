@@ -242,11 +242,11 @@
 							found_selectors = found_selectors+1;
 						}
 
-						if ( found_selectors > 1 ) {
+						/*if ( found_selectors > 1 ) {
 							$('.found-selectors').text(found_selectors);
 						} else {
-							jc.setContentAppend( '<p><span class="found-selectors">' + found_selectors + '</span> selector found!' );
-						}
+							jc.setContentAppend( '<p><span class="found-selectors">' + found_selectors + '</span> selector found!</p>' );
+						}*/
 					}
 					else {
 						if ( action == 'alnp_get_container_selectors' && content_container == '' ) {
