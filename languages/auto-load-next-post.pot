@@ -1,10 +1,10 @@
-# # Copyright (c) {2019} Sébastien Dumont
+# # Copyright (c) 2019 Sébastien Dumont
 msgid ""
 msgstr ""
 "Project-Id-Version: Auto Load Next Post 1.6.0-beta.1\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/autoloadnextpost/auto-load-next-post/issues\n"
-"POT-Creation-Date: 2019-05-28 17:56:27+00:00\n"
+"POT-Creation-Date: 2019-09-05 20:51:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,10 +35,6 @@ msgstr ""
 #: includes/admin/class-alnp-admin-action-links.php:43
 #: includes/admin/class-alnp-admin.php:86
 msgid "Getting Started with %s"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Auto Load Next Post"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-action-links.php:43
@@ -332,7 +328,7 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:100
 #: includes/admin/class-alnp-admin-site-health.php:45
-#: includes/admin/class-alnp-setup-wizard.php:140
+#: includes/admin/class-alnp-setup-wizard.php:141
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:151
 #: includes/customizer/class-alnp-customizer.php:365
 msgid "Content Container"
@@ -340,21 +336,21 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:101
 #: includes/admin/class-alnp-admin-site-health.php:50
-#: includes/admin/class-alnp-setup-wizard.php:143
+#: includes/admin/class-alnp-setup-wizard.php:144
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:171
 msgid "Post Title"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:102
 #: includes/admin/class-alnp-admin-site-health.php:55
-#: includes/admin/class-alnp-setup-wizard.php:146
+#: includes/admin/class-alnp-setup-wizard.php:147
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:191
 msgid "Post Navigation"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:103
 #: includes/admin/class-alnp-admin-site-health.php:60
-#: includes/admin/class-alnp-setup-wizard.php:149
+#: includes/admin/class-alnp-setup-wizard.php:150
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:211
 #: includes/customizer/class-alnp-customizer.php:389
 msgid "Comments Container"
@@ -592,7 +588,7 @@ msgstr ""
 
 #: includes/admin/class-alnp-getting-started.php:76
 #: includes/admin/class-alnp-setup-wizard.php:104
-#: includes/admin/class-alnp-setup-wizard.php:162
+#: includes/admin/class-alnp-setup-wizard.php:164
 msgid "Developers:"
 msgstr ""
 
@@ -644,7 +640,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-setup-wizard.php:67
-#: includes/admin/class-alnp-setup-wizard.php:177
+#: includes/admin/class-alnp-setup-wizard.php:179
 msgid "View Settings"
 msgstr ""
 
@@ -726,17 +722,17 @@ msgstr ""
 msgid "Selector"
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:154
+#: includes/admin/class-alnp-setup-wizard.php:155
 msgid "Result"
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:162
+#: includes/admin/class-alnp-setup-wizard.php:164
 msgid ""
 "Checkout the %1$sadd theme support guide%2$s to apply these found theme "
 "selectors automatically when another user installs your theme with %3$s."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:167
+#: includes/admin/class-alnp-setup-wizard.php:169
 msgid ""
 "Setup Wizard was unable to detect some of the theme selectors. You can scan "
 "again just to be sure the wizard did not timeout but most likley you will "
@@ -744,19 +740,19 @@ msgid ""
 "find them%2$s."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:169
+#: includes/admin/class-alnp-setup-wizard.php:171
 msgid ""
 "No post navigation on the scanned post was detected. If this is incorrect, "
 "please %1$scontact me%2$s and let me know your site URL address."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:171
+#: includes/admin/class-alnp-setup-wizard.php:173
 msgid ""
 "Congratulations, %s is now setup and ready. Further optional options are "
 "available via the settings page."
 msgstr ""
 
-#: includes/admin/class-alnp-setup-wizard.php:176
+#: includes/admin/class-alnp-setup-wizard.php:178
 msgid "Scan Again?"
 msgstr ""
 
@@ -1379,24 +1375,6 @@ msgstr ""
 #: templates/theme-support/twentynineteen/content-page.php:32
 #. translators: %s: Name of current post. Only visible to screen readers
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "https://autoloadnextpost.com"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"Increase your pageviews on your site as readers continue reading your posts "
-"scrolling down the page."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Sébastien Dumont"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://sebastiendumont.com"
 msgstr ""
 
 #: includes/auto-load-next-post-template-functions.php:87
