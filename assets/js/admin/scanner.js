@@ -281,17 +281,17 @@
 
 	// Save setting
 	function save_setting( setting, value ) {
-		$.ajax({
-			method: "POST",
-			url: request_url + '?action=alnp_save_setting',
-			data: {
-				setting: setting,
-				value: value,
-			},
-			dataType: 'json',
-			success: function( data ) {
-				console.log( 'Setting: ' + setting + ' saved!' );
+		$.post( request_url, {
+			action: 'alnp_set_setting',
+			setting: setting,
+			value: value,
+		}).done( function( response ) {
+			if ( ! response ) {
+				console.log( 'No response!' );
+				return;
 			}
+
+				console.log( 'Setting: ' + setting + ' saved!' );
 		});
 	}
 	
