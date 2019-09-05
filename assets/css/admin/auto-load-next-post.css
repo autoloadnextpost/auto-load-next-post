@@ -130,52 +130,64 @@ ul.alnp-default-theme-selectors li {
     display: none; }
   .auto-load-next-post .box.theme-selector-results {
     text-align: left; }
-    .auto-load-next-post .box.theme-selector-results .selectors {
-      float: left;
-      width: 50%; }
-      .auto-load-next-post .box.theme-selector-results .selectors .container.found {
-        border: none;
-        box-shadow: none;
-        -webkit-box-shadow: none; }
-      .auto-load-next-post .box.theme-selector-results .selectors .pending::before,
-      .auto-load-next-post .box.theme-selector-results .selectors .found::before,
-      .auto-load-next-post .box.theme-selector-results .selectors .not-found::before {
-        border-radius: 100%;
-        color: #fff;
-        display: block;
-        float: left;
-        font-family: dashicons;
-        font-size: 22px;
-        height: 22px;
-        margin-right: 4px;
-        padding: 1px;
-        position: relative;
-        text-align: center;
-        width: 22px; }
-      .auto-load-next-post .box.theme-selector-results .selectors .pending::before {
-        background-color: #ffdb30;
-        content: '\f179'; }
-      .auto-load-next-post .box.theme-selector-results .selectors .found::before {
-        background-color: #4ab866;
-        content: '\f147'; }
-      .auto-load-next-post .box.theme-selector-results .selectors .not-found::before {
-        background-color: #c92c2c;
-        content: '\f335'; }
+    .auto-load-next-post .box.theme-selector-results .result-container {
+      clear: both;
+      display: block;
+      height: 120px; }
+      .auto-load-next-post .box.theme-selector-results .result-container .selectors,
+      .auto-load-next-post .box.theme-selector-results .result-container .results-found {
+        width: 50%; }
+        .auto-load-next-post .box.theme-selector-results .result-container .selectors p,
+        .auto-load-next-post .box.theme-selector-results .result-container .results-found p {
+          margin: 0; }
+        .auto-load-next-post .box.theme-selector-results .result-container .selectors div,
+        .auto-load-next-post .box.theme-selector-results .result-container .results-found div {
+          padding: 0 0 0.5em; }
+      .auto-load-next-post .box.theme-selector-results .result-container .selectors {
+        float: left; }
+        .auto-load-next-post .box.theme-selector-results .result-container .selectors .container.found {
+          border: none;
+          box-shadow: none;
+          -webkit-box-shadow: none; }
+        .auto-load-next-post .box.theme-selector-results .result-container .selectors .pending::before,
+        .auto-load-next-post .box.theme-selector-results .result-container .selectors .found::before,
+        .auto-load-next-post .box.theme-selector-results .result-container .selectors .not-found::before {
+          border-radius: 100%;
+          color: #fff;
+          display: block;
+          float: left;
+          font-family: dashicons;
+          font-size: 22px;
+          height: 22px;
+          margin-right: 4px;
+          padding: 1px;
+          position: relative;
+          text-align: center;
+          width: 22px; }
+        .auto-load-next-post .box.theme-selector-results .result-container .selectors .pending::before {
+          background-color: #ffdb30;
+          content: '\f179'; }
+        .auto-load-next-post .box.theme-selector-results .result-container .selectors .found::before {
+          background-color: #4ab866;
+          content: '\f147'; }
+        .auto-load-next-post .box.theme-selector-results .result-container .selectors .not-found::before {
+          background-color: #c92c2c;
+          content: '\f335'; }
     .auto-load-next-post .box.theme-selector-results .results-available,
     .auto-load-next-post .box.theme-selector-results .theme-selectors-undetected,
     .auto-load-next-post .box.theme-selector-results .no-post-navigation,
     .auto-load-next-post .box.theme-selector-results .setup-complete {
       display: none; }
     .auto-load-next-post .box.theme-selector-results .results-found {
-      width: 50%; }
+      float: right; }
       .auto-load-next-post .box.theme-selector-results .results-found .container.found {
         border: none;
         box-shadow: none;
         -webkit-box-shadow: none; }
     .auto-load-next-post .box.theme-selector-results .selectors,
     .auto-load-next-post .box.theme-selector-results .results-found {
-      height: 140px;
-      position: relative;
+      float: left;
+      margin-bottom: 1em;
       overflow: hidden; }
     .auto-load-next-post .box.theme-selector-results .selectors div,
     .auto-load-next-post .box.theme-selector-results .results-found div {
