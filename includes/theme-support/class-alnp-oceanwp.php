@@ -5,6 +5,7 @@
  * Applies support for OceanWP Theme.
  *
  * @since    1.5.8
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Theme Support
  * @package  Auto Load Next Post/Theme Support
@@ -35,7 +36,7 @@ class ALNP_OceanWP {
 		add_filter( 'alnp_template_redirect', array( __CLASS__, 'template_redirect' ) );
 
 		// Filters the repeater template location.
-		add_filter( 'alnp_template_location', array( __CLASS__, 'alnp_oceanwp_template_location' ) );
+		//add_filter( 'alnp_template_location', array( __CLASS__, 'alnp_oceanwp_template_location' ) );
 
 		// Remove Auto Load Next Post compatible post navigation.
 		remove_action( 'alnp_load_after_content', 'auto_load_next_post_navigation', 1, 10 );
@@ -76,6 +77,7 @@ class ALNP_OceanWP {
 			'comments_container'   => 'section#comments',
 			'load_js_in_footer'    => 'no',
 			'lock_js_in_footer'    => 'no',
+			'directory_post'       => 'partials/single/'
 		) );
 	} // END add_theme_support()
 

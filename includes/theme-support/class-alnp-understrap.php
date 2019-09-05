@@ -5,6 +5,7 @@
  * Applies support for Understrap Theme.
  *
  * @since    1.5.0
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Theme Support
  * @package  Auto Load Next Post/Theme Support
@@ -32,7 +33,7 @@ class ALNP_Understrap {
 		add_action( 'after_setup_theme', array( __CLASS__, 'add_theme_support' ) );
 
 		// Filters the repeater template location.
-		add_filter( 'alnp_template_location', array( __CLASS__, 'alnp_understrap_template_location' ) );
+		//add_filter( 'alnp_template_location', array( __CLASS__, 'alnp_understrap_template_location' ) );
 	} // END init()
 
 	/**
@@ -60,6 +61,7 @@ class ALNP_Understrap {
 			'comments_container'   => 'div#comments',
 			'load_js_in_footer'    => 'no',
 			'lock_js_in_footer'    => 'no',
+			'directory_post'       => 'loop-templates/'
 		) );
 	} // END add_theme_support()
 
