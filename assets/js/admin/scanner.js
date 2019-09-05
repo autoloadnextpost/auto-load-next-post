@@ -182,7 +182,7 @@
 						useBootstrap: false,
 					});
 
-					window.setTimeout(checkPendingRequest, 6000);
+					window.setTimeout(checkPendingRequest, 8000);
 
 					$('span.post-tested').text( params.random_page );
 
@@ -297,7 +297,7 @@
 	
 	function checkPendingRequest() {
 		if ( $.active > 0 ) {
-			window.setTimeout(checkPendingRequest, 6000);
+			window.setTimeout(checkPendingRequest, 8000);
 		}
 		else {
 			search_finished = true;
