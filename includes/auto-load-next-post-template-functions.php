@@ -265,7 +265,7 @@ if ( ! function_exists( 'alnp_find_template' ) ) {
 		// Templates to look for based on the post that is loaded.
 		$templates = alnp_get_templates( $post_type, $post_format );
 
-		$file = '';
+		$template = '';
 		$found = false;
 
 		// Scanning all possible templates within the set location.
@@ -277,12 +277,10 @@ if ( ! function_exists( 'alnp_find_template' ) ) {
 
 			// If a template has been found then return it.
 			if ( locate_template( $location . $template ) != '' && $found != true ) {
-				$file = $location . $template;
-
 				if ( ! empty( $post_format ) ) {
-					update_option( 'auto_load_next_post_template_post_' . strtolower( $post_format ), $file );
+					update_option( 'auto_load_next_post_template_post_' . strtolower( $post_format ), $template );
 				} else {
-					update_option( 'auto_load_next_post_template_' . strtolower( $post_type ), $file );
+					update_option( 'auto_load_next_post_template_' . strtolower( $post_type ), $template );
 				}
 		
 				$found = true;
@@ -290,7 +288,7 @@ if ( ! function_exists( 'alnp_find_template' ) ) {
 		}
 
 		return array(
-			'template' => $file,
+			'template' => $template,
 			'found'    => $found
 		);
 	} // END alnp_find_template()
