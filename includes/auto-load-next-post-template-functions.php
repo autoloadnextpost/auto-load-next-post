@@ -196,14 +196,19 @@ if ( ! function_exists( 'alnp_get_template_directory' ) ) {
 	 * @param  string $post_format
 	 * @return string $template
 	 */
-	function alnp_get_template_directory( $post_type = 'post', $post_format = '' ) {
+	function alnp_get_template_directory( $post_type = 'single', $post_format = '' ) {
+		// If post type is single replace it with post.
+		if ( $post_type == 'single') {
+			$post_type = 'post';
+		}
+
 		if ( ! empty( $post_format ) ) {
 			$template = get_option( 'auto_load_next_post_directory_post_' . $post_format );
 		} else {
 			$template = get_option( 'auto_load_next_post_directory_' . $post_type );
 		}
 
-		if ( !$template ) {
+		if ( empty( $template ) ) {
 			return '';
 		}
 
