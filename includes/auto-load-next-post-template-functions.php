@@ -124,7 +124,7 @@ if ( ! function_exists( 'alnp_get_templates' ) ) {
 	 * @param  string $post_format
 	 * @return array
 	 */
-	function alnp_get_templates( $post_type = 'post', $post_format = '' ) {
+	function alnp_get_templates( $post_type = 'single', $post_format = '' ) {
 		$get_standard = array(
 			'content-single.php',
 			'content-post.php',
@@ -225,14 +225,19 @@ if ( ! function_exists( 'alnp_get_template' ) ) {
 	 * @param  string $post_format
 	 * @return string $template
 	*/
-	function alnp_get_template( $post_type = 'post', $post_format = '' ) {
+	function alnp_get_template( $post_type = 'single', $post_format = '' ) {
+		// If post type is single replace it with post.
+		if ( $post_type == 'single') {
+			$post_type = 'post';
+		}
+
 		if ( ! empty( $post_format ) ) {
 			$template = get_option( 'auto_load_next_post_template_post_' . strtolower( $post_format ) );
 		} else {
 			$template = get_option( 'auto_load_next_post_template_' . strtolower( $post_type ) );
 		}
 
-		if ( !$template ) {
+		if ( empty( $template ) ) {
 			return '';
 		}
 
@@ -252,6 +257,11 @@ if ( ! function_exists( 'alnp_find_template' ) ) {
 	 * @return array
 	*/
 	function alnp_find_template( $location = '', $post_type, $post_format ) {
+		// If post type is single replace it with post.
+		if ( $post_type == 'single') {
+			$post_type = 'post';
+		}
+
 		// Templates to look for based on the post that is loaded.
 		$templates = alnp_get_templates( $post_type, $post_format );
 
