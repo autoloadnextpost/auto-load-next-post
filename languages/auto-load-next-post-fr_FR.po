@@ -1,46 +1,48 @@
-# # Copyright (c) 2019 Sébastien Dumont
+# # Copyright (c) {2019} Sébastien Dumont
 msgid ""
 msgstr ""
 "Project-Id-Version: Auto Load Next Post 1.6.0-beta.1\n"
-"Report-Msgid-Bugs-To: "
-"https://github.com/autoloadnextpost/auto-load-next-post/issues\n"
+"Report-Msgid-Bugs-To: https://github.com/autoloadnextpost/auto-load-next-"
+"post/issues\n"
 "POT-Creation-Date: 2019-09-05 20:51:15+00:00\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2019-09-05 22:59+0200\n"
+"Last-Translator: Sébastien Dumont <mailme@sebastiendumont.com>\n"
 "Language-Team: Sébastien Dumont <mailme@sebastiendumont.com>\n"
-"Language: en_US\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Country: United States\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: "
-"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
-"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-Bookmarks: \n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: grunt-wp-i18n 1.0.3\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: auto-load-next-post.php:77
+#, fuzzy
 msgid "Cloning this object is forbidden."
-msgstr ""
+msgstr "Clonage de cet objet est interdit."
 
 #: auto-load-next-post.php:88
+#, fuzzy
 msgid "Unserializing instances of this class is forbidden."
-msgstr ""
+msgstr "La désérialisation des instances de cette classe est interdite."
 
 #: includes/admin/class-alnp-admin-action-links.php:43
 #: includes/admin/class-alnp-admin.php:86
+#, fuzzy
 msgid "Getting Started with %s"
-msgstr ""
+msgstr "Pour commencer avec %s"
 
 #: includes/admin/class-alnp-admin-action-links.php:43
 #: includes/admin/class-alnp-getting-started.php:30
+#, fuzzy
 msgid "Getting Started"
-msgstr ""
+msgstr "Commencer"
 
 #: includes/admin/class-alnp-admin-action-links.php:44
 #: includes/admin/class-alnp-setup-wizard.php:67
@@ -48,8 +50,9 @@ msgid "View %s settings"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-action-links.php:44
+#, fuzzy
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 #: includes/admin/class-alnp-admin-action-links.php:64
 msgid "Developed By %s"
@@ -66,8 +69,9 @@ msgstr ""
 #: includes/admin/class-alnp-admin-action-links.php:76
 #: includes/admin/class-alnp-admin-help.php:68
 #: includes/admin/class-alnp-setup-wizard.php:114
+#, fuzzy
 msgid "Documentation"
-msgstr ""
+msgstr "Documentation"
 
 #: includes/admin/class-alnp-admin-action-links.php:77
 #: includes/admin/class-alnp-admin-help.php:64
@@ -76,16 +80,18 @@ msgid "Get support from the community"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-action-links.php:77
+#, fuzzy
 msgid "Community Support"
-msgstr ""
+msgstr "Support de communauté"
 
 #: includes/admin/class-alnp-admin-action-links.php:78
 msgid "Get theme support"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-action-links.php:78
+#, fuzzy
 msgid "Theme Support"
-msgstr ""
+msgstr "Support du thème"
 
 #: includes/admin/class-alnp-admin-action-links.php:79
 msgid "Review %s on WordPress.org"
@@ -94,12 +100,14 @@ msgstr ""
 #: includes/admin/class-alnp-admin-action-links.php:79
 #: includes/admin/class-alnp-admin-help.php:149
 #: includes/admin/views/html-notice-please-review.php:34
+#, fuzzy
 msgid "Leave a Review"
-msgstr ""
+msgstr "Laisser un avis"
 
 #: includes/admin/class-alnp-admin-action-links.php:86
+#, fuzzy
 msgid "Sign up for %s"
-msgstr ""
+msgstr "Créer un compte pour %s"
 
 #: includes/admin/class-alnp-admin-action-links.php:86
 #: includes/admin/class-alnp-admin-assets.php:123
@@ -115,8 +123,9 @@ msgid "Pro Coming Soon"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:94
+#, fuzzy
 msgid "Searching..."
-msgstr ""
+msgstr "Recherche en cours..."
 
 #: includes/admin/class-alnp-admin-assets.php:95
 msgid "Scanning Theme"
@@ -129,16 +138,18 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:97
+#, fuzzy
 msgid "Please Wait"
-msgstr ""
+msgstr "Veuillez patienter"
 
 #: includes/admin/class-alnp-admin-assets.php:98
 msgid "Loading post..."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:99
+#, fuzzy
 msgid "Copied"
-msgstr ""
+msgstr "Copié"
 
 #: includes/admin/class-alnp-admin-assets.php:100
 msgid "Click to copy theme selector"
@@ -157,8 +168,9 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:122
 #: includes/admin/class-alnp-admin-assets.php:140
+#, fuzzy
 msgid "Coming Soon"
-msgstr ""
+msgstr "Prochainement"
 
 #: includes/admin/class-alnp-admin-assets.php:123
 msgid ""
@@ -174,8 +186,8 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:125
 msgid ""
-"%1$sLoad and Scroll:%2$s Choose what loads next, enable to load split "
-"posts, scroll transistion and scroll speed."
+"%1$sLoad and Scroll:%2$s Choose what loads next, enable to load split posts, "
+"scroll transistion and scroll speed."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:126
@@ -187,8 +199,8 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:127
 msgid ""
-"%1$sQuery:%2$s Customise the query of posts before %3$s loads them "
-"including excluded posts and post formats."
+"%1$sQuery:%2$s Customise the query of posts before %3$s loads them including "
+"excluded posts and post formats."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:128
@@ -196,8 +208,9 @@ msgid "License is managed here for support and remote plugin updates."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:137
+#, fuzzy
 msgid "The changes you made will be lost if you navigate away from this page."
-msgstr ""
+msgstr "Les changements effectués seront perdus si vous quittez cette page."
 
 #: includes/admin/class-alnp-admin-assets.php:138
 msgid ""
@@ -213,24 +226,28 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:141
 #: includes/admin/class-alnp-setup-wizard.php:113
+#, fuzzy
 msgid "Continue"
-msgstr ""
+msgstr "Continuer"
 
 #: includes/admin/class-alnp-admin-assets.php:142
+#, fuzzy
 msgid "Save"
-msgstr ""
+msgstr "Sauvegarder"
 
 #: includes/admin/class-alnp-admin-assets.php:143
 msgid "Press the %1$sSave Changes%2$s button to keep changes."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-assets.php:144
+#, fuzzy
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
-#: includes/admin/class-alnp-admin-footer.php:48
 #. translators: 1: Auto Load Next Post 2:: five stars
-msgid "If you like %1$s, please leave a %2$s rating. A huge thank you in advance!"
+#: includes/admin/class-alnp-admin-footer.php:48
+msgid ""
+"If you like %1$s, please leave a %2$s rating. A huge thank you in advance!"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-footer.php:50
@@ -238,17 +255,20 @@ msgid "five star"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-footer.php:50
+#, fuzzy
 msgid "Thanks :)"
-msgstr ""
+msgstr "Merci :)"
 
 #: includes/admin/class-alnp-admin-footer.php:70
+#, fuzzy
 msgid "%s Version"
-msgstr ""
+msgstr "%s Version"
 
 #: includes/admin/class-alnp-admin-help.php:58
 #: includes/admin/class-alnp-admin-help.php:60
+#, fuzzy
 msgid "Help & Support"
-msgstr ""
+msgstr "Aide & Support"
 
 #: includes/admin/class-alnp-admin-help.php:62
 msgid ""
@@ -263,28 +283,32 @@ msgid "View Auto Load Next Post documentation"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:64
-msgid "For further assistance with %1$s you can use the %2$scommunity forum%3$s."
+msgid ""
+"For further assistance with %1$s you can use the %2$scommunity forum%3$s."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:66
 msgid ""
 "%1$s is in need of translations. Is the plugin not translated in your "
-"language or do you spot errors with the current translations? Helping out "
-"is easy! Head over to the project on WordPress.org and click %2$sTranslate "
-"%1$s%3$s."
+"language or do you spot errors with the current translations? Helping out is "
+"easy! Head over to the project on WordPress.org and click %2$sTranslate %1$s"
+"%3$s."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:68
+#, fuzzy
 msgid "Community Forum"
-msgstr ""
+msgstr "Forum communautaire"
 
 #: includes/admin/class-alnp-admin-help.php:68
+#, fuzzy
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "Questions fréquentes"
 
 #: includes/admin/class-alnp-admin-help.php:68
+#, fuzzy
 msgid "Translate %s"
-msgstr ""
+msgstr "Traduire %s"
 
 #: includes/admin/class-alnp-admin-help.php:73
 #: includes/admin/class-alnp-admin-help.php:75
@@ -310,10 +334,9 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:88
 msgid ""
-"When %1$s is activated, default theme selectors are set for you. These "
-"theme selectors are the most commonly used in any WordPress theme. If they "
-"don’t work for your theme then you need to find the matching theme "
-"selectors."
+"When %1$s is activated, default theme selectors are set for you. These theme "
+"selectors are the most commonly used in any WordPress theme. If they don’t "
+"work for your theme then you need to find the matching theme selectors."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:93
@@ -331,30 +354,34 @@ msgstr ""
 #: includes/admin/class-alnp-setup-wizard.php:141
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:151
 #: includes/customizer/class-alnp-customizer.php:365
+#, fuzzy
 msgid "Content Container"
-msgstr ""
+msgstr "Conteneur de contenu"
 
 #: includes/admin/class-alnp-admin-help.php:101
 #: includes/admin/class-alnp-admin-site-health.php:50
 #: includes/admin/class-alnp-setup-wizard.php:144
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:171
+#, fuzzy
 msgid "Post Title"
-msgstr ""
+msgstr "Titre de l'article"
 
 #: includes/admin/class-alnp-admin-help.php:102
 #: includes/admin/class-alnp-admin-site-health.php:55
 #: includes/admin/class-alnp-setup-wizard.php:147
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:191
+#, fuzzy
 msgid "Post Navigation"
-msgstr ""
+msgstr "Navigation des articles"
 
 #: includes/admin/class-alnp-admin-help.php:103
 #: includes/admin/class-alnp-admin-site-health.php:60
 #: includes/admin/class-alnp-setup-wizard.php:150
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:211
 #: includes/customizer/class-alnp-customizer.php:389
+#, fuzzy
 msgid "Comments Container"
-msgstr ""
+msgstr "Commentaires - Conteneur"
 
 #: includes/admin/class-alnp-admin-help.php:106
 msgid "How to find your theme selectors"
@@ -363,8 +390,9 @@ msgstr ""
 #: includes/admin/class-alnp-admin-help.php:111
 #: includes/admin/class-alnp-admin-help.php:113
 #: includes/admin/settings/class-alnp-settings-templates.php:28
+#, fuzzy
 msgid "Templates"
-msgstr ""
+msgstr "Modèles"
 
 #: includes/admin/class-alnp-admin-help.php:116
 msgid ""
@@ -378,8 +406,8 @@ msgstr ""
 #: includes/admin/class-alnp-admin-help.php:120
 msgid ""
 "By providing an accurate location to your theme's template, %1$s will then "
-"use your theme's template instead and will display your content matching "
-"the theme's design."
+"use your theme's template instead and will display your content matching the "
+"theme's design."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:123
@@ -388,8 +416,9 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:128
 #: includes/admin/class-alnp-admin-help.php:130
+#, fuzzy
 msgid "Found a bug?"
-msgstr ""
+msgstr "Bug trouvé?"
 
 #: includes/admin/class-alnp-admin-help.php:132
 msgid ""
@@ -400,18 +429,20 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:134
+#, fuzzy
 msgid "Report a bug"
-msgstr ""
+msgstr "Signaler un bug"
 
 #: includes/admin/class-alnp-admin-help.php:139
 #: includes/admin/class-alnp-admin-help.php:141
+#, fuzzy
 msgid "Contribute"
-msgstr ""
+msgstr "Contribuer"
 
 #: includes/admin/class-alnp-admin-help.php:143
 msgid ""
-"If you or your company use %1$s, please consider supporting me directly so "
-"I can continue maintaining it and keep evolving the project."
+"If you or your company use %1$s, please consider supporting me directly so I "
+"can continue maintaining it and keep evolving the project."
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:145
@@ -423,8 +454,8 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:147
 msgid ""
-"Your review of the plugin is also important as it will help others decide "
-"to use %s so please consider leaving a review on WordPress.org"
+"Your review of the plugin is also important as it will help others decide to "
+"use %s so please consider leaving a review on WordPress.org"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:149
@@ -442,8 +473,9 @@ msgstr ""
 #: includes/admin/class-alnp-getting-started.php:76
 #: includes/admin/class-alnp-getting-started.php:90
 #: includes/admin/class-alnp-setup-wizard.php:30
+#, fuzzy
 msgid "Setup Wizard"
-msgstr ""
+msgstr "Assistant d’installation"
 
 #: includes/admin/class-alnp-admin-help.php:158
 msgid ""
@@ -457,46 +489,54 @@ msgid "View %s setup wizard"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-help.php:164
+#, fuzzy
 msgid "For more information:"
-msgstr ""
+msgstr "Pour plus d'informations :"
 
 #: includes/admin/class-alnp-admin-help.php:166
 #: templates/theme-support/twentyeleven/content-alnp.php:73
 #: templates/theme-support/twentyten/content-alnp.php:47
+#, fuzzy
 msgid "About %s"
-msgstr ""
+msgstr "À propos de %s"
 
 #: includes/admin/class-alnp-admin-help.php:168
+#, fuzzy
 msgid "WordPress.org Project"
-msgstr ""
+msgstr "Projet WordPress.org"
 
 #: includes/admin/class-alnp-admin-help.php:170
 msgid "GitHub Project"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-pro-preview.php:42
+#, fuzzy
 msgid "Comments"
-msgstr ""
+msgstr "Commentaires"
 
 #: includes/admin/class-alnp-admin-pro-preview.php:43
 msgid "Load & Scroll"
 msgstr ""
 
 #: includes/admin/class-alnp-admin-pro-preview.php:44
+#, fuzzy
 msgid "Restrictions"
-msgstr ""
+msgstr "Restrictions"
 
 #: includes/admin/class-alnp-admin-pro-preview.php:45
+#, fuzzy
 msgid "Query"
-msgstr ""
+msgstr "Requête"
 
 #: includes/admin/class-alnp-admin-pro-preview.php:46
+#, fuzzy
 msgid "License"
-msgstr ""
+msgstr "Licence"
 
 #: includes/admin/class-alnp-admin-settings.php:94
+#, fuzzy
 msgid "Your settings have been saved."
-msgstr ""
+msgstr "Vos réglages ont été enregistrés."
 
 #: includes/admin/class-alnp-admin-site-health.php:67
 #: includes/admin/settings/class-alnp-settings-templates.php:74
@@ -529,8 +569,9 @@ msgstr ""
 
 #: includes/admin/class-alnp-admin-site-health.php:94
 #: includes/admin/settings/class-alnp-settings-misc.php:152
+#, fuzzy
 msgid "Remove all data on uninstall?"
-msgstr ""
+msgstr "Supprimer toutes les données lors de la désinstallation ?"
 
 #: includes/admin/class-alnp-admin-site-health.php:101
 #: includes/admin/settings/class-alnp-settings-events.php:69
@@ -554,12 +595,14 @@ msgid "%s | Extensions"
 msgstr ""
 
 #: includes/admin/class-alnp-admin.php:95
+#, fuzzy
 msgid "%s Settings"
-msgstr ""
+msgstr "Réglages %s"
 
 #: includes/admin/class-alnp-extensions.php:38
+#, fuzzy
 msgid "Extensions"
-msgstr ""
+msgstr "Extensions"
 
 #: includes/admin/class-alnp-getting-started.php:60
 msgid "Getting started with %s."
@@ -576,7 +619,8 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-getting-started.php:70
-msgid "Your active theme %1$s supports %2$s so everything is already setup for you."
+msgid ""
+"Your active theme %1$s supports %2$s so everything is already setup for you."
 msgstr ""
 
 #: includes/admin/class-alnp-getting-started.php:74
@@ -595,8 +639,7 @@ msgstr ""
 #: includes/admin/class-alnp-getting-started.php:76
 msgid ""
 "Enable %1$sWP_DEBUG%2$s in your %3$swp-config.php%4$s file before running "
-"the %5$s to provide you results for each step once it has scanned your "
-"theme."
+"the %5$s to provide you results for each step once it has scanned your theme."
 msgstr ""
 
 #: includes/admin/class-alnp-getting-started.php:78
@@ -606,24 +649,26 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-getting-started.php:91
+#, fuzzy
 msgid "View Documentation"
-msgstr ""
+msgstr "Voir la documentation"
 
-#: includes/admin/class-alnp-getting-started.php:101
 #. translators: 1: Opening <a> tag to the Auto Load Next Post Twitter account,
 #. 2: Opening <a> tag to the Auto Load Next Post Instagram account, 3: Opening
 #. <a> tag to the Auto Load Next Post contact page, 4: Opening <a> tag to the
 #. Auto Load Next Post newsletter, 5: Closing </a> tag
+#: includes/admin/class-alnp-getting-started.php:101
 msgid ""
 "If you have any questions or feedback, let me know on %1$sTwitter%5$s, "
-"%2$sInstagram%5$s or via the %3$sContact page%5$s. Also, %4$ssubscribe to "
-"my newsletter%5$s if you want to stay up to date with what's new and "
-"upcoming in Auto Load Next Post."
+"%2$sInstagram%5$s or via the %3$sContact page%5$s. Also, %4$ssubscribe to my "
+"newsletter%5$s if you want to stay up to date with what's new and upcoming "
+"in Auto Load Next Post."
 msgstr ""
 
 #: includes/admin/class-alnp-getting-started.php:105
+#, fuzzy
 msgid "Enjoy!"
-msgstr ""
+msgstr "Amusez-vous !"
 
 #: includes/admin/class-alnp-privacy.php:55
 msgid "%s does not collect, store or share any personal data."
@@ -641,8 +686,9 @@ msgstr ""
 
 #: includes/admin/class-alnp-setup-wizard.php:67
 #: includes/admin/class-alnp-setup-wizard.php:179
+#, fuzzy
 msgid "View Settings"
-msgstr ""
+msgstr "Options d'affichage"
 
 #: includes/admin/class-alnp-setup-wizard.php:71
 msgid ""
@@ -668,8 +714,9 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-alnp-setup-wizard.php:80
+#, fuzzy
 msgid "Start"
-msgstr ""
+msgstr "Début"
 
 #: includes/admin/class-alnp-setup-wizard.php:89
 msgid "Setup Wizard: Template Location"
@@ -710,8 +757,8 @@ msgstr ""
 
 #: includes/admin/class-alnp-setup-wizard.php:132
 msgid ""
-"If any selector was not found, click on the help icon next to the result "
-"for more details."
+"If any selector was not found, click on the help icon next to the result for "
+"more details."
 msgstr ""
 
 #: includes/admin/class-alnp-setup-wizard.php:134
@@ -719,12 +766,14 @@ msgid "Post scanned:"
 msgstr ""
 
 #: includes/admin/class-alnp-setup-wizard.php:138
+#, fuzzy
 msgid "Selector"
-msgstr ""
+msgstr "Sélecteur"
 
 #: includes/admin/class-alnp-setup-wizard.php:155
+#, fuzzy
 msgid "Result"
-msgstr ""
+msgstr "Résultat"
 
 #: includes/admin/class-alnp-setup-wizard.php:164
 msgid ""
@@ -758,8 +807,9 @@ msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-events.php:29
 #: includes/customizer/class-alnp-customizer.php:244
+#, fuzzy
 msgid "Events"
-msgstr ""
+msgstr "Événements"
 
 #: includes/admin/settings/class-alnp-settings-events.php:64
 #: includes/customizer/class-alnp-customizer.php:245
@@ -779,16 +829,19 @@ msgid "Events listed here will be triggered when entering a post."
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-misc.php:31
+#, fuzzy
 msgid "Misc"
-msgstr ""
+msgstr "Divers"
 
 #: includes/admin/settings/class-alnp-settings-misc.php:101
-msgid "Further optional options can be found here should you want to use or need."
+msgid ""
+"Further optional options can be found here should you want to use or need."
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-misc.php:107
 #: includes/customizer/class-alnp-customizer.php:398
-msgid "Enable to remove comments when each post loads including the initial post."
+msgid ""
+"Enable to remove comments when each post loads including the initial post."
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-misc.php:116
@@ -815,28 +868,33 @@ msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-misc.php:143
 msgid ""
-"Press the reset button to clear all settings for this plugin and "
-"re-initialize."
+"Press the reset button to clear all settings for this plugin and re-"
+"initialize."
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-misc.php:146
+#, fuzzy
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialiser"
 
 #: includes/admin/settings/class-alnp-settings-misc.php:153
+#, fuzzy
 msgid ""
 "If enabled, all settings for this plugin will all be deleted when "
 "uninstalling via Plugins > Delete."
 msgstr ""
+"Si activé, tous les paramètres de ce plugin seront supprimés lorsque vous "
+"désinstallerez via Plugins > Supprimer."
 
 #: includes/admin/settings/class-alnp-settings-page.php:208
+#, fuzzy
 msgid "Need Help?"
-msgstr ""
+msgstr "Besoin d’aide ?"
 
 #: includes/admin/settings/class-alnp-settings-templates.php:56
 msgid ""
-"This helps fine tune %s to locate your theme templates directory in order "
-"to display content in the same style as your theme."
+"This helps fine tune %s to locate your theme templates directory in order to "
+"display content in the same style as your theme."
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-templates.php:59
@@ -860,8 +918,9 @@ msgstr ""
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:175
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:195
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:215
+#, fuzzy
 msgid "e.g. %s"
-msgstr ""
+msgstr "ex. %s"
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:107
 msgid ""
@@ -870,8 +929,9 @@ msgid ""
 msgstr ""
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:122
+#, fuzzy
 msgid "Theme Customizer"
-msgstr ""
+msgstr "Personnalisation du thème"
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:123
 msgid ""
@@ -887,8 +947,9 @@ msgstr ""
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:167
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:187
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:207
+#, fuzzy
 msgid "Default: %s"
-msgstr ""
+msgstr "﻿Par défaut: %s"
 
 #: includes/admin/settings/class-alnp-settings-theme-selectors.php:152
 msgid "The primary container where the post content is loaded in. %s"
@@ -975,8 +1036,9 @@ msgstr ""
 
 #: includes/admin/views/html-admin-sidebar.php:39
 #: includes/customizer/class-alnp-pro-preview-controller.php:63
+#, fuzzy
 msgid "Email Support"
-msgstr ""
+msgstr "Envoyer un courriel au soutien technique"
 
 #: includes/admin/views/html-admin-sidebar.php:43
 msgid "Visit autoloadnextpost.com &rarr;"
@@ -993,16 +1055,19 @@ msgid ""
 msgstr ""
 
 #: includes/admin/views/html-admin-sidebar.php:56
+#, fuzzy
 msgid "Your Email Address"
-msgstr ""
+msgstr "Votre adresse email"
 
 #: includes/admin/views/html-admin-sidebar.php:60
+#, fuzzy
 msgid "First Name"
-msgstr ""
+msgstr "Prénom"
 
 #: includes/admin/views/html-admin-sidebar.php:64
+#, fuzzy
 msgid "Last Name"
-msgstr ""
+msgstr "Nom"
 
 #: includes/admin/views/html-admin-sidebar.php:71
 msgid "Sign me up"
@@ -1022,8 +1087,8 @@ msgstr ""
 
 #: includes/admin/views/html-notice-jetpack-lazy-images-module.php:19
 msgid ""
-"Lazy-loading for the Images module is enabled in %1$sJetPack%2$s. To "
-"trigger the lazy loading event apply %3$s to %4$s%5$s%6$s."
+"Lazy-loading for the Images module is enabled in %1$sJetPack%2$s. To trigger "
+"the lazy loading event apply %3$s to %4$s%5$s%6$s."
 msgstr ""
 
 #: includes/admin/views/html-notice-no-comment-selector.php:19
@@ -1054,8 +1119,8 @@ msgstr ""
 
 #: includes/admin/views/html-notice-please-review.php:30
 msgid ""
-"You have been using %1$s for %2$s now! Mind leaving a review and let me "
-"know know what you think of the plugin? I'd really appreciate it!"
+"You have been using %1$s for %2$s now! Mind leaving a review and let me know "
+"know what you think of the plugin? I'd really appreciate it!"
 msgstr ""
 
 #: includes/admin/views/html-notice-please-review.php:35
@@ -1085,8 +1150,9 @@ msgid ""
 msgstr ""
 
 #: includes/admin/views/html-notice-setup-wizard.php:31
+#, fuzzy
 msgid "Run the Setup Wizard"
-msgstr ""
+msgstr "Lancer l'assistant d'installation"
 
 #: includes/admin/views/html-notice-setup-wizard.php:32
 msgid "No need / I already have"
@@ -1125,28 +1191,29 @@ msgid ""
 msgstr ""
 
 #: includes/admin/views/html-notice-trying-beta.php:30
+#, fuzzy
 msgid "Give Feedback"
-msgstr ""
+msgstr "Donnez votre avis"
 
 #: includes/admin/views/html-notice-trying-beta.php:31
 msgid "Ask me again in 7 days"
 msgstr ""
 
 #: includes/admin/views/html-notice-upgrade-warning.php:25
-msgid "Update Coming!"
+msgid "Upgrade Warning!"
 msgstr ""
 
 #: includes/admin/views/html-notice-upgrade-warning.php:26
 msgid ""
-"Version %1$s1.6.0%2$s of %3$s is coming with new features and improvements. "
-"Before it is released I require your help to test with the themes you like "
-"to use and provide feedback. I do recommend you do so on a staging site. "
-"You will be helping me move the project forward. Thank you!"
+"Version %1$s1.6.0%2$s of %3$s is coming soon with new features and "
+"improvements. Before updating, please test the beta/pre-release on a staging "
+"site when it becomes available. Look forward to your feedback!"
 msgstr ""
 
 #: includes/admin/views/html-notice-upgrade-warning.php:30
+#, fuzzy
 msgid "Learn More"
-msgstr ""
+msgstr "En savoir plus"
 
 #: includes/auto-load-next-post-deprecated-functions.php:29
 msgid "The %1$s function is deprecated since version %2$s"
@@ -1156,59 +1223,70 @@ msgstr ""
 msgid "Replace with %s."
 msgstr ""
 
-#: includes/auto-load-next-post-formatting-functions.php:53
 #. translators: Number of years
+#: includes/auto-load-next-post-formatting-functions.php:53
+#, fuzzy
 msgid "%s years"
-msgstr ""
+msgstr "%s années"
 
 #: includes/auto-load-next-post-formatting-functions.php:55
+#, fuzzy
 msgid "a year"
-msgstr ""
+msgstr "une année"
 
-#: includes/auto-load-next-post-formatting-functions.php:62
 #. translators: Number of weeks
+#: includes/auto-load-next-post-formatting-functions.php:62
+#, fuzzy
 msgid "%s weeks"
-msgstr ""
+msgstr "%s semaines"
 
 #: includes/auto-load-next-post-formatting-functions.php:64
+#, fuzzy
 msgid "a week"
-msgstr ""
+msgstr "une semaine"
 
-#: includes/auto-load-next-post-formatting-functions.php:71
 #. translators: Number of days
+#: includes/auto-load-next-post-formatting-functions.php:71
+#, fuzzy
 msgid "%s days"
-msgstr ""
+msgstr "%s jours"
 
 #: includes/auto-load-next-post-formatting-functions.php:73
+#, fuzzy
 msgid "a day"
-msgstr ""
+msgstr "un jour"
 
-#: includes/auto-load-next-post-formatting-functions.php:80
 #. translators: Number of hours
+#: includes/auto-load-next-post-formatting-functions.php:80
+#, fuzzy
 msgid "%s hours"
-msgstr ""
+msgstr "%s heures"
 
 #: includes/auto-load-next-post-formatting-functions.php:82
 msgid "an hour"
-msgstr ""
+msgstr "une heure"
 
-#: includes/auto-load-next-post-formatting-functions.php:89
 #. translators: Number of minutes
+#: includes/auto-load-next-post-formatting-functions.php:89
+#, fuzzy
 msgid "%s minutes"
-msgstr ""
+msgstr "%s minutes"
 
 #: includes/auto-load-next-post-formatting-functions.php:91
+#, fuzzy
 msgid "a minute"
-msgstr ""
+msgstr "une minute"
 
-#: includes/auto-load-next-post-formatting-functions.php:98
 #. translators: Number of seconds
+#: includes/auto-load-next-post-formatting-functions.php:98
+#, fuzzy
 msgid "%s seconds"
-msgstr ""
+msgstr "%s secondes"
 
 #: includes/auto-load-next-post-formatting-functions.php:100
+#, fuzzy
 msgid "a second"
-msgstr ""
+msgstr "une seconde"
 
 #: includes/class-alnp-install.php:320
 msgid "Get started with %3$s here:"
@@ -1225,8 +1303,9 @@ msgid "More?"
 msgstr ""
 
 #: includes/customizer/class-alnp-customizer.php:151
+#, fuzzy
 msgid "Looking for more options?"
-msgstr ""
+msgstr "Vous cherchez d’autres options ?"
 
 #: includes/customizer/class-alnp-customizer.php:235
 msgid ""
@@ -1235,13 +1314,14 @@ msgid ""
 msgstr ""
 
 #: includes/customizer/class-alnp-customizer.php:239
+#, fuzzy
 msgid "Misc Settings"
-msgstr ""
+msgstr "Param&egrave;tres divers"
 
 #: includes/customizer/class-alnp-customizer.php:240
 msgid ""
-"Here you can set if you want to track pageviews, remove comments and load "
-"%s javascript in the footer and disable for mobile users."
+"Here you can set if you want to track pageviews, remove comments and load %s "
+"javascript in the footer and disable for mobile users."
 msgstr ""
 
 #: includes/customizer/class-alnp-customizer.php:366
@@ -1268,8 +1348,7 @@ msgstr ""
 
 #: includes/customizer/class-alnp-customizer.php:390
 msgid ""
-"Used to remove comments if enabled under %1$sMisc%2$s settings. Default: "
-"%3$s"
+"Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s"
 msgstr ""
 
 #: includes/customizer/class-alnp-customizer.php:414
@@ -1286,8 +1365,8 @@ msgstr ""
 
 #: includes/customizer/class-alnp-customizer.php:474
 msgid ""
-"The post title selector is empty. Will not be able to identify which "
-"article the user is reading."
+"The post title selector is empty. Will not be able to identify which article "
+"the user is reading."
 msgstr ""
 
 #: includes/customizer/class-alnp-customizer.php:491
@@ -1298,8 +1377,8 @@ msgstr ""
 
 #: includes/customizer/class-alnp-pro-preview-controller.php:48
 msgid ""
-"%1$s is coming soon and will come with more powerful features. Here are "
-"just a few of them you can look forward to."
+"%1$s is coming soon and will come with more powerful features. Here are just "
+"a few of them you can look forward to."
 msgstr ""
 
 #: includes/customizer/class-alnp-pro-preview-controller.php:67
@@ -1307,8 +1386,9 @@ msgid "Find out more about %1$s%2$s%3$s."
 msgstr ""
 
 #: includes/customizer/class-alnp-pro-preview-controller.php:70
+#, fuzzy
 msgid "Add-ons for %s"
-msgstr ""
+msgstr "Ajouts pour %s"
 
 #: includes/customizer/class-alnp-pro-preview-controller.php:73
 msgid ""
@@ -1317,8 +1397,9 @@ msgid ""
 msgstr ""
 
 #: includes/customizer/class-alnp-pro-preview-controller.php:76
+#, fuzzy
 msgid "Enjoying %s?"
-msgstr ""
+msgstr "Satisfait %s ?"
 
 #: includes/customizer/class-alnp-pro-preview-controller.php:80
 msgid ""
@@ -1328,59 +1409,85 @@ msgstr ""
 
 #: includes/theme-support/class-alnp-twentyeleven.php:53
 #: includes/theme-support/class-alnp-twentytwelve.php:50
+#, fuzzy
 msgid "Post navigation"
-msgstr ""
+msgstr "Navigation des articles"
 
 #: includes/theme-support/class-alnp-twentyeleven.php:54
+#, fuzzy
 msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span> Précédent"
 
 #: templates/content/content.php:32
 #: templates/theme-support/twentyeleven/content-alnp.php:35
 #: templates/theme-support/twentynineteen/content-page.php:18
 #: templates/theme-support/twentynineteen/content-single.php:18
 #: templates/theme-support/twentyten/content-alnp.php:32
+#, fuzzy
 msgid "Pages:"
-msgstr ""
+msgstr "Pages :"
 
+#. translators: used between list items, there is a space after the comma
 #: templates/theme-support/twentyeleven/content-alnp.php:41
 #: templates/theme-support/twentyeleven/content-alnp.php:44
-#. translators: used between list items, there is a space after the comma
+#, fuzzy
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: templates/theme-support/twentyeleven/content-alnp.php:46
+#, fuzzy
 msgid ""
 "This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</a>. "
-"Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" "
-"rel=\"bookmark\">permalink</a>."
+"Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">permalink</a>."
 msgstr ""
+"Cet article a été publié dans %1$s et marqué %2$s par <a href=\"%6$s\">%5$s</"
+"a>. Mettre <a href=\"%3$s\" title=\" le permalien %4$s\" rel=\"bookmark\"> "
+"en favori</a>."
 
 #: templates/theme-support/twentyeleven/content-alnp.php:48
+#, fuzzy
 msgid ""
 "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
 "href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
+"Cette article a été publié dans %1$s par <a href=\"%6$s\">%5$s</a>. Mettre "
+"<a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a> "
+"en favori."
 
 #: templates/theme-support/twentyeleven/content-alnp.php:50
+#, fuzzy
 msgid ""
-"This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
-"href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+"This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href="
+"\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
+"Cette entrée a été postée par <a href=\"%6$s\">%5$s</a>. Enregistrez le "
+"permalien <a href=\"%3$s\" title=\" en %4$s\" rel=\"bookmark\"></a>."
 
 #: templates/theme-support/twentyeleven/content-alnp.php:77
 #: templates/theme-support/twentyten/content-alnp.php:51
+#, fuzzy
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Voir tous les articles par %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: templates/theme-support/twentynineteen/content-page.php:32
 #. translators: %s: Name of current post. Only visible to screen readers
+#: templates/theme-support/twentynineteen/content-page.php:32
+#, fuzzy
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
+msgstr "Modifier <span class=\"screen-reader-text\">%s</span>"
 
 #: includes/auto-load-next-post-template-functions.php:87
 #: includes/theme-support/class-alnp-twentytwelve.php:51
 #: templates/theme-support/twentyten/content-alnp.php:67
+#, fuzzy
 msgctxt "Previous post link"
 msgid "&larr;"
-msgstr ""
+msgstr "&larr;"
+
+#, fuzzy
+#~ msgid "Auto Load Next Post"
+#~ msgstr "Chargement automatique du post suivant"
+
+#, fuzzy
+#~ msgid "Sébastien Dumont"
+#~ msgstr "Sébastien Dumont"

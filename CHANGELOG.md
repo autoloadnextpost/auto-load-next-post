@@ -28,6 +28,11 @@
 * Dev: Grunt tasks have been improved for better development.
 * Dev: Auto Load Next Post can be installed via WP-CLI without redirect issues.
 
+## 1.5.14 - 6th September 2019
+
+* Tweaked: Upgrade notice now version 1.6.0 is available for testing. Also can be dimissed properly.
+* Tweaked: All notices to load plugin icon to load from plugin not from WP.org
+
 ## 1.5.13 - 27th May 2019
 
 * Tweaked: Upgrade warning notice in preparation for version 1.6.0 release.

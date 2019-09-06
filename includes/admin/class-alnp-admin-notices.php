@@ -93,7 +93,13 @@ if ( ! class_exists( 'ALNP_Admin_Notices' ) ) {
 				$user_hidden_notice = true;
 			}
 
-			// If the user is allowed to install plugins and requested to hide the review notice then hide it for that user.
+			// If the user is allowed to install plugins and requested to hide the upgrade notice then hide it for that user.
+			if ( ! empty( $_GET['hide_auto_load_next_post_upgrade_notice'] ) && current_user_can( 'install_plugins' ) ) {
+				add_user_meta( $current_user->ID, 'auto_load_next_post_hide_upgrade_notice', '1', true );
+				$user_hidden_notice = true;
+			}
+
+			// If the user is allowed to install plugins and requested to hide the setup notice then hide it for that user.
 			if ( ! empty( $_GET['hide_auto_load_next_post_setup_notice'] ) && current_user_can( 'install_plugins' ) ) {
 				add_user_meta( $current_user->ID, 'auto_load_next_post_hide_setup_notice', '1', true );
 				$user_hidden_notice = true;
@@ -188,7 +194,9 @@ if ( ! class_exists( 'ALNP_Admin_Notices' ) ) {
 			// Upgrade warning notice that will disappear once the new release is installed.
 			$upgrade_version = '1.6.0';
 
-			if ( ! is_alnp_beta() && version_compare( AUTO_LOAD_NEXT_POST_VERSION, $upgrade_version, '<' ) ) {
+			$user_hidden_upgrade = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_upgrade_notice', '1' );
+
+			if ( ! is_alnp_beta() && version_compare( AUTO_LOAD_NEXT_POST_VERSION, $upgrade_version, '<' ) && empty( $user_hidden_upgrade ) ) {
 				add_action( 'admin_notices', array( $this, 'upgrade_warning' ) );
 			}
 		} // END add_notices()
