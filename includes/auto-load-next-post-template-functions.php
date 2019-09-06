@@ -250,6 +250,7 @@ if ( ! function_exists( 'alnp_find_template' ) ) {
 		// Templates to look for based on the post that is loaded.
 		$templates = alnp_get_templates( $post_type, $post_format );
 
+		$file = '';
 		$found = false;
 
 		// Scanning all possible templates within the set location.
