@@ -21,12 +21,12 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
-if ( !class_exists( 'Auto_Load_Next_Post_Display_Video_Controller' ) ) {
+if ( !class_exists( 'ALNP_Display_Video_Controller' ) ) {
 
 	/**
 	 * This class is for the display video control in the Customizer.
 	 */
-	class Auto_Load_Next_Post_Display_Video_Controller extends WP_Customize_Control {
+	class ALNP_Display_Video_Controller extends WP_Customize_Control {
 
 		/**
 		 * The type of customize control.

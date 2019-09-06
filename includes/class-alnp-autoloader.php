@@ -16,9 +16,9 @@
  	exit;
  }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Autoloader' ) ) {
+if ( ! class_exists( 'ALNP_Autoloader' ) ) {
 
-	class Auto_Load_Next_Post_Autoloader {
+	class ALNP_Autoloader {
 
 		/**
 		 * Path to the includes directory.
@@ -96,4 +96,4 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Autoloader' ) ) {
 
 } // END if class exists.
 
-new Auto_Load_Next_Post_Autoloader();
+new ALNP_Autoloader();

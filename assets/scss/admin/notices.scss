@@ -1,0 +1,120 @@
+.notice {
+	&.auto-load-next-post-notice {
+		padding: 20px;
+	}
+
+	&.jetpack-info {
+		border-left-color: #4ab866 !important;
+	}
+
+	&.auto-load-next-post-notice {
+		a.no-thanks {
+			display: block;
+			margin-top: 10px;
+			color: #72777c;
+			text-decoration: none;
+		}
+
+		a.no-thanks:hover {
+			color: #444;
+		}
+
+		p {
+			padding: 0;
+			margin: 0;
+		}
+
+		h3 {
+			margin: 0 0 5px;
+		}
+
+		.auto-load-next-post-setup-wizard,
+		.auto-load-next-post-review-now,
+		.auto-load-next-post-send-feedback,
+		.auto-load-next-post-documentation {
+			float: right;
+			text-align: center;
+		}
+
+		.auto-load-next-post-setup-wizard .auto-load-next-post-setup-button,
+		.auto-load-next-post-review-now .auto-load-next-post-review-button,
+		.auto-load-next-post-send-feedback .auto-load-next-post-feedback-button,
+		.auto-load-next-post-documentation .auto-load-next-post-documentation-button {
+			height: auto;
+			line-height: 20px;
+			padding: 6px 50px;
+		}
+
+		.auto-load-next-post-notice-inner {
+			display: table;
+			width: 100%;
+
+			.auto-load-next-post-notice-icon,
+			.auto-load-next-post-notice-content,
+			.auto-load-next-post-review-now,
+			.auto-load-next-post-send-feedback {
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+
+		.auto-load-next-post-notice-content {
+			padding: 0 6% 0 20px;
+		}
+	}
+
+	.auto-load-next-post-notice-icon {
+		color: #509ed2;
+		font-size: 50px;
+		width: 60px;
+
+		img {
+			font-size: 0;
+			width: 64px;
+		}
+	}
+}
+
+.rtl .notice.jetpack-info {
+	border-right-color: #4ab866 !important;
+}
+
+body.alnp-getting-started .notice,
+body.alnp-setup-wizard .notice,
+body.alnp-getting-started .error,
+body.alnp-setup-wizard .error {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner {
+		display: block;
+	}
+
+	.notice.auto-load-next-post-notice {
+		padding: 20px !important;
+	}
+
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-notice-content {
+		display: block;
+		padding: 0;
+	}
+
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-notice-icon {
+		display: none;
+	}
+
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-setup-wizard,
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-review-now,
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-send-feedback,
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .auto-load-next-post-documentation {
+		margin-top: 20px;
+		display: block;
+		text-align: left;
+	}
+
+	.notice.auto-load-next-post-notice .auto-load-next-post-notice-inner .no-thanks {
+		display: inline-block;
+		margin-left: 15px;
+	}
+}

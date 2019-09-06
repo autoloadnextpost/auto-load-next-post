@@ -26,8 +26,8 @@ $time = auto_load_next_post_seconds_to_words( time() - $install_date );
 		</div>
 
 		<div class="auto-load-next-post-notice-content">
-			<h3><?php echo esc_html__( 'Are you enjoying Auto Load Next Post?', 'auto-load-next-post' ); ?></h3>
-			<p><?php printf( esc_html__( 'You have been using %1$s for %2$s now! Mind leaving a quick review and let me know know what you think of the plugin? I\'d really appreciate it!', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), esc_html( $time ) ); ?></p>
+			<h3><?php printf( esc_html__( 'Hi %s, are you enjoying Auto Load Next Post?', 'auto-load-next-post' ), $current_user->display_name ); ?></h3>
+			<p><?php printf( esc_html__( 'You have been using %1$s for %2$s now! Mind leaving a review and let me know know what you think of the plugin? I\'d really appreciate it!', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ), esc_html( $time ) ); ?></p>
 		</div>
 
 		<div class="auto-load-next-post-review-now">

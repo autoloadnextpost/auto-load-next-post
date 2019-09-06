@@ -3,6 +3,7 @@
  * Auto Load Next Post: Theme Customizer
  *
  * @since    1.5.0
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Classes
  * @package  Auto Load Next Post/Classes/Customizer
@@ -14,15 +15,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
+if ( ! class_exists( 'ALNP_Customizer' ) ) {
 
-	class Auto_Load_Next_Post_Customizer {
+	class ALNP_Customizer {
 
 		/**
 		 * Constructor.
 		 *
-		 * @since  1.5.0
 		 * @access public
+		 * @since  1.5.0
 		 */
 		public function __construct() {
 			add_action( 'customize_register', array( $this, 'alnp_init_customizer' ), 50 );
@@ -61,7 +62,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				'alnp', array(
 					'title'           => esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ),
 					'capability'      => 'edit_theme_options',
-					'description'     => esc_html__( 'Auto Load Next Post increases your pageviews by engaging the site viewers to keep reading your content rather than increasing your bounce rate.', 'auto-load-next-post' ),
+					'description'     => sprintf( esc_html__( '%s increases your pageviews by engaging the site viewers to keep reading your content rather than increasing your bounce rate.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 					'priority'        => 160,
 					'active_callback' => array( $this, 'is_page_alnp_ready' )
 				)
@@ -115,7 +116,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				'type'    => 'theme_mod',
 			) );
 
-			$wp_customize->add_control( new Auto_Load_Next_Post_Display_Video_Controller( $wp_customize, 'alnp_video_theme_selectors', array(
+			$wp_customize->add_control( new ALNP_Display_Video_Controller( $wp_customize, 'alnp_video_theme_selectors', array(
 				'label'    => __( 'Video: How to find your theme selectors', 'auto-load-next-post' ),
 				'section'  => 'auto_load_next_post_theme_selectors',
 				'settings' => 'alnp_video_theme_selectors',
@@ -146,7 +147,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 					'default' => null,
 				) );
 
-				$wp_customize->add_control( new Auto_Load_Next_Post_Pro_Preview_Controller( $wp_customize, 'alnp_pro_preview', array(
+				$wp_customize->add_control( new ALNP_Pro_Preview_Controller( $wp_customize, 'alnp_pro_preview', array(
 					'label'    => __( 'Looking for more options?', 'auto-load-next-post' ),
 					'section'  => 'alnp_pro_preview',
 					'settings' => 'alnp_pro_preview',
@@ -158,6 +159,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		/**
 		 * Removes the core 'Navigation Menu' and 'Widgets' panel from the Customizer.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @param  array $components Core Customizer components list.
 		 * @return array (Maybe) modified components list.
@@ -180,6 +182,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		/**
 		 * Remove any unwanted default conrols.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @global $wp_cutomize
 		 * @param  object $wp_customize
@@ -204,6 +207,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		/**
 		 * Are we looking at the Auto Load Next Post customizer?
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @return boolean
 		 */
@@ -214,6 +218,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		/**
 		 * Get Customizer sections for Auto Load Next Post.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @return array
 		 */
@@ -223,16 +228,16 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 			 *
 			 * @param array $sections Customizer sections to add.
 			 */
-			return apply_filters( 'auto_load_next_post_get_customizer_sections', array(
+			return apply_filters( 'alnp_get_customizer_sections', array(
 				'auto_load_next_post_theme_selectors' => array(
 					'capability'  => 'edit_theme_options',
 					'title'       => esc_html__( 'Theme Selectors', 'auto-load-next-post' ),
-					'description' => sprintf( __( 'Set the theme selectors below according to the theme. %1$sHow to find my theme selectors?%2$s', 'auto-load-next-post' ), '<a href="' . esc_url( AUTO_LOAD_NEXT_POST_STORE_URL . 'documentation/find-theme-selectors/?utm_source=wpcustomizer&utm_campaign=plugin-settings-theme-selectors' ) . '" target="_blank">', '</a>' ),
+					'description' => sprintf( __( 'Set the theme selectors below according to the theme. %1$sHow to find my theme selectors?%2$s', 'auto-load-next-post' ), '<a href="' . esc_url( 'https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/theme-selectors.md#how-to-find-your-theme-selectors' ) . '" target="_blank">', '</a>' ),
 				),
 				'auto_load_next_post_misc' => array(
 					'capability'  => 'edit_theme_options',
 					'title'       => esc_html__( 'Misc Settings', 'auto-load-next-post' ),
-					'description' => sprintf( __( 'Here you can set if you want to track pageviews, remove comments and load %s javascript in the footer.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+					'description' => sprintf( __( 'Here you can set if you want to track pageviews, remove comments and load %s javascript in the footer and disable for mobile users.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
 				),
 				'auto_load_next_post_events' => array(
 					'capability'  => 'edit_theme_options',
@@ -245,8 +250,10 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		/**
 		 * Get Customizer settings for Auto Load Next Post.
 		 *
-		 * @since  1.5.0
-		 * @return array
+		 * @access  public
+		 * @since   1.5.0
+		 * @version 1.6.0
+		 * @return  array
 		 */
 		public function alnp_get_customizer_settings() {
 			$settings = $this->alnp_get_settings();
@@ -256,7 +263,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 			 *
 			 * @param array $settings Customizer settings to add.
 			 */
-			return apply_filters( 'auto_load_next_post_get_customizer_settings', array(
+			return apply_filters( 'alnp_get_customizer_settings', array(
 				'auto_load_next_post_content_container' => array(
 					'capability'        => 'edit_theme_options',
 					'default'           => $settings['alnp_content_container'],
@@ -297,21 +304,31 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				),
 				'auto_load_next_post_remove_comments' => array(
 					'capability'        => 'edit_theme_options',
-					'default'           => $settings['alnp_remove_comments'],
-					'transport'         => 'postMessage',
+					'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
+					'default'           => 'yes',
+					'transport'         => 'refresh',
 					'type'              => 'option',
 				),
 				'auto_load_next_post_google_analytics' => array(
 					'capability'        => 'edit_theme_options',
-					'default'           => $settings['alnp_google_analytics'],
-					'transport'         => 'postMessage',
+					'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
+					'default'           => 'no',
+					'transport'         => 'refresh',
 					'type'              => 'option',
 				),
 				'auto_load_next_post_load_js_in_footer' => array(
 					'capability'        => 'edit_theme_options',
-					'default'           => $settings['alnp_js_footer'],
-					'transport'         => 'postMessage',
+					'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
+					'default'           => 'no',
+					'transport'         => 'refresh',
 					'type'              => 'option',
+				),
+				'auto_load_next_post_disable_on_mobile' => array(
+					'capability'        => 'edit_theme_options',
+					'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
+					'default'           => 'no',
+					'type'              => 'option',
+					'transport'         => 'refresh',
 				),
 				'auto_load_next_post_on_load_event' => array(
 					'capability'        => 'edit_theme_options',
@@ -331,8 +348,10 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		/**
 		 * Get Customizer controls for Auto Load Next Post.
 		 *
-		 * @since  1.5.0
-		 * @return array
+		 * @access  public
+		 * @since   1.5.0
+		 * @version 1.6.0
+		 * @return  array
 		 */
 		public function alnp_get_customizer_controls() {
 			/**
@@ -340,7 +359,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 			 *
 			 * @param array $controls Customizer controls to add.
 			 */
-			return apply_filters( 'auto_load_next_post_get_customizer_controls', array(
+			return apply_filters( 'alnp_get_customizer_controls', array(
 				'alnp_content_container' => array(
 					'class'       => 'WP_Customize_Control',
 					'label'       => esc_html__( 'Content Container', 'auto-load-next-post' ),
@@ -368,7 +387,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				'alnp_comments_container' => array(
 					'class'       => 'WP_Customize_Control',
 					'label'       => esc_html__( 'Comments Container', 'auto-load-next-post' ),
-					'description' => sprintf( __( 'Used to remove comments if enabled under <strong>%1$sMisc%2$s</strong> settings. Default: %3$s', 'auto-load-next-post' ), '<a href="javascript:wp.customize.section( \'auto_load_next_post_misc\' ).focus();">', '</a>', '<code>div#comments</code>' ),
+					'description' => sprintf( __( 'Used to remove comments if enabled under %1$sMisc%2$s settings. Default: %3$s', 'auto-load-next-post' ), '<strong><a href="javascript:wp.customize.section( \'auto_load_next_post_misc\' ).focus();">', '</a></strong>', '<code>div#comments</code>' ),
 					'section'     => 'auto_load_next_post_theme_selectors',
 					'settings'    => 'auto_load_next_post_comments_container',
 					'type'        => 'text',
@@ -397,6 +416,14 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 					'settings'    => 'auto_load_next_post_load_js_in_footer',
 					'type'        => 'checkbox',
 				),
+				'alnp_disable_on_mobile' => array(
+					'class'       => 'WP_Customize_Control',
+					'label'       => esc_html__( 'Disable for Mobile?', 'auto-load-next-post' ),
+					'description' => sprintf( esc_html__( 'Enable to disable %s from running on mobile devices.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ),
+					'section'     => 'auto_load_next_post_misc',
+					'settings'    => 'auto_load_next_post_disable_on_mobile',
+					'type'        => 'checkbox',
+				),
 				'alnp_on_load_event' => array(
 					'class'       => 'WP_Customize_Control',
 					'label'       => esc_html__( 'Post loaded', 'auto-load-next-post' ),
@@ -419,6 +446,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		/**
 		 * Validates the content container theme selector to not be empty.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @param  WP_Error $validity Validity.
 		 * @param  string   $value    Value, normally pre-sanitized.
@@ -435,6 +463,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		/**
 		 * Validates the post title theme selector to not be empty.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @param  WP_Error $validity Validity.
 		 * @param  string   $value    Value, normally pre-sanitized.
@@ -451,6 +480,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		/**
 		 * Validates the post navigation theme selector to not be empty.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @param  WP_Error $validity Validity.
 		 * @param  string   $value    Value, normally pre-sanitized.
@@ -467,8 +497,10 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		/**
 		 * Return Auto Load Next Post settings.
 		 *
-		 * @since  1.5.0
-		 * @return array $args
+		 * @access  public
+		 * @since   1.5.0
+		 * @version 1.6.0
+		 * @return  array $args
 		 */
 		public function alnp_get_settings() {
 			$args = array(
@@ -480,6 +512,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 				'alnp_remove_comments'        => get_option( 'auto_load_next_post_remove_comments' ),
 				'alnp_google_analytics'       => get_option( 'auto_load_next_post_google_analytics' ),
 				'alnp_js_footer'              => get_option( 'auto_load_next_post_load_js_in_footer' ),
+				'alnp_disable_on_mobile'      => get_option( 'auto_load_next_post_disable_on_mobile' ),
 				'alnp_on_load_event'          => get_option( 'auto_load_next_post_on_load_event' ),
 				'alnp_on_entering_event'      => get_option( 'auto_load_next_post_on_entering_event' ),
 			);
@@ -491,6 +524,7 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 		 * Returns true or false if the page is ready for Auto Load Next Post
 		 * panel to show in the customizer.
 		 *
+		 * @access public
 		 * @since  1.5.0
 		 * @return boolean
 		 */
@@ -508,8 +542,20 @@ if ( !class_exists( 'Auto_Load_Next_Post_Customizer' ) ) {
 			return true;
 		} // END is_page_alnp_ready()
 
+		/**
+		 * Sanitize the checkbox options.
+		 *
+		 * @access public
+		 * @since  1.6.0
+		 * @param  bool $input
+		 * @return string
+		 */
+		public function sanitize_checkbox( $input ) {
+			return ( $input === true ) ? 'yes' : 'no';
+		} // END sansitize_checkbox()
+
 	} // END Class
 
 } // END if class
 
-new Auto_Load_Next_Post_Customizer();
+new ALNP_Customizer();

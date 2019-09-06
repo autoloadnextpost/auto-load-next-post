@@ -1,0 +1,31 @@
+# Done
+
+* Fix and improve beta tester - Requires testing once beta release is ready.
+* Finish template discovery and if found set it to show in settings page.
+* Set template directory via add_theme_support for all supported themes instead of filter.
+* Finish writing article for what's coming to 1.6
+
+
+# To Do
+
+* Apply new misc options to customizer.
+* Save results for theme selectors for setup wizard.
+* Create minor release to introduce what's coming in 1.6 and release.
+* Create a build tagged as a beta.
+* Install build on a empty WordPress installation.
+* Test 1: Activate as normal via plugins page.
+* Test 2: Deactivate and delete data in Database. Activate again via WP-CLI
+* Install on dev site online and test. Check for any PHP errors.
+* Write article for 1.6 beta ready for testing and release it. (Remind users to install beta tester)
+
+# Things to leave to last
+
+* Prepare documenation for add_theme_support improvements.
+* Apply dark mode support
+
+
+# Pro Issues
+
+* Apply changes made to the settings to re-enable them.
+* Fix array bug for sidebar.
+* Update link to documenation in sidebar.

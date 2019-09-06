@@ -5,7 +5,7 @@
  * Applies support for Poseidon Theme.
  *
  * @since    1.5.9
- * @version  1.5.10
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Theme Support
  * @package  Auto Load Next Post/Theme Support
@@ -36,7 +36,7 @@ class ALNP_Poseidon {
 		add_action( 'alnp_load_before_content', array( __CLASS__, 'the_post_thumbnail' ), 10 );
 
 		// Filters the repeater template location.
-		add_filter( 'alnp_template_location', array( __CLASS__, 'alnp_poseidon_template_location' ) );
+		//add_filter( 'alnp_template_location', array( __CLASS__, 'alnp_poseidon_template_location' ) );
 	} // END init()
 
 	/**
@@ -71,8 +71,10 @@ class ALNP_Poseidon {
 	 * Add theme support by providing the theme selectors
 	 * to be applied once the theme is activated.
 	 *
-	 * @access public
+	 * @access  public
 	 * @static
+	 * @since   1.5.9
+	 * @version 1.6.0
 	 */
 	public static function add_theme_support() {
 		add_theme_support( 'auto-load-next-post', array(
@@ -82,6 +84,7 @@ class ALNP_Poseidon {
 			'comments_container'   => 'div#comments',
 			'load_js_in_footer'    => 'no',
 			'lock_js_in_footer'    => 'no',
+			'directory_post'       => 'template-parts/'
 		) );
 	} // END add_theme_support()
 

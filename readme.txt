@@ -5,7 +5,7 @@ Tags: infinite scroll, infinite scrolling, scroll, infinite
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.2.3
-Stable tag: 1.5.14
+Stable tag: 1.6.0-beta.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,10 @@ Want to see how it works? [Go to the demo site](https://demo.autoloadnextpost.co
 = Increase Your PageViews Today =
 
 Intrigued? _I bet you are._ Once you try Auto Load Next Post, your pageviews will increase 📈 and you will not want to go back. **Guaranteed.**
+
+## 🌟 Setup Wizard for users in mind
+
+The setup wizard will scan a random post on your site and identify your theme's selectors matching those that are known and used in many different themes. It will also look for the directory within the theme for where the theme content loops are stored.
 
 ## Built with developers in mind
 
@@ -136,7 +140,7 @@ Yes! Auto Load Next Post's core features are and always will be free.
 
 = Will Auto Load Next Post work with my theme? =
 
-Yes, Auto Load Next Post will work with any theme but may require some configuration for it to understand your theme. Please see the [documentation](https://github.com/autoloadnextpost/alnp-documentation) for help or read further down to see if your question has already been answered.
+Yes, Auto Load Next Post will work with any theme but may require some manualy configuration for it to understand your theme. Please see the [documentation](https://github.com/autoloadnextpost/alnp-documentation) for help or read further down to see if your question has already been answered.
 
 = Is Auto Load Next Post translatable? =
 
@@ -170,7 +174,7 @@ You need to place it inside the loop. If that is not the case then you have not 
 
 = Does the plugin detect my theme and insert the theme selectors for me? =
 
-If the theme author has added support for Auto Load Next Post and has set the theme selectors then yes, it will set the theme selectors for you. If not supported then it does not. You may follow this guide to help you [find your theme selectors](https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/theme-selectors.md).
+If the theme author has added support for Auto Load Next Post and has set the theme selectors then yes, it will set the theme selectors for you. However, since version 1.6 a setup wizard was introduced to help identify theme selectors. If you are using a version prior to 1.6 then it does not set them. You may follow this guide to help you [find your theme selectors](https://github.com/autoloadnextpost/alnp-documentation/blob/master/en_US/theme-selectors.md).
 
 = My theme does not work with the plugin, what do I do? =
 
@@ -196,13 +200,24 @@ You can. All you have to do is simply install the [Facebook Pixel Tracking add-o
 
 It does. Just make sure that you activate the plugin on the site you want it used on and then make sure the selectors match the theme that site is using.
 
+= Browser history is not recording posts loaded in Internet Explorer, why? =
+
+Only in IE 10 and up support the use of browser history manipulation. Try using a newer version of IE.
+
+= Can I disable for mobile users? =
+
+Yes you can. Go to the misc section of the settings page and enable "Disable for Mobile?" and save.
+
 == Screenshots ==
 
-1. Plugin Settings: Theme Selectors, here is where we define the elements Auto Load Next Post will look for.
-2. Plugin Settings: Misc Settings, here you can enable Google Analytics tracking, remove comments and set the JavaScript to load in the footer of your website instead should you need to.
-3. Plugin Settings: Events, here you can support custom triggers or 3rd-party plugins to trigger their own once a post has loaded or when the visitor is entering a post.
-4. Theme Customizer: The same settings can be applied via the theme customizer.
-
+1. Setup Wizard
+2. Plugin Settings: Theme Selectors, here is where we define the elements Auto Load Next Post will look for.
+3. Plugin Settings: Templates, here we define where the directory for the theme's templates are located.
+4. Plugin Settings: Events, here you can support custom triggers or 3rd-party plugins to trigger their own once a post has loaded or when the visitor is entering a post.
+5. Plugin Settings: Misc Settings, here you can enable Google Analytics tracking, remove comments and set the JavaScript to load in the footer of your website instead should you need to.
+6. Extensions: All the available extensions will be shown here.
+7. Theme Customizer: The same settings can be applied via the theme customizer.
+ 
 == Changelog ==
 
 = 1.5.14 - 6th September 2019 =

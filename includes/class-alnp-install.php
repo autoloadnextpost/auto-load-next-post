@@ -3,7 +3,7 @@
  * Auto Load Next Post - Installation related functions and actions.
  *
  * @since    1.0.0
- * @version  1.5.11
+ * @version  1.6.0
  * @author   Sébastien Dumont
  * @category Classes
  * @package  Auto Load Next Post/Classes/Install
@@ -15,25 +15,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
+if ( ! class_exists( 'ALNP_Install' ) ) {
 
-	class Auto_Load_Next_Post_Install {
-
-		/**
-		 * Plugin version.
-		 *
-		 * @access private
-		 * @static
-		 * @since 1.4.10
-		 * @var string
-		 */
-		private static $current_version;
+	class ALNP_Install {
 
 		/**
 		 * Constructor.
 		 *
-		 * @since  1.0.0
-		 * @access public
+		 * @since   1.0.0
+		 * @version 1.6.0
+		 * @access  public
 		 */
 		public function __construct() {
 			// Resets Auto Load Next Post settings when requested.
@@ -45,8 +36,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			// Adds rewrite endpoint.
 			add_action( 'init', array( __CLASS__, 'add_rewrite_endpoint' ), 10 );
 
-			// Get plugin version.
-			self::$current_version = get_option( 'auto_load_next_post_version' );
+			// Redirect to Getting Started page once activated.
+			add_action( 'activated_plugin', array( __CLASS__, 'redirect_getting_started') );
 		} // END __construct()
 
 		/**
@@ -57,10 +48,15 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.4.10
-		 * @version 1.5.11
+		 * @version 1.6.0
 		 */
 		public static function check_version() {
-			if ( ! defined( 'IFRAME_REQUEST' ) && version_compare( self::$current_version, AUTO_LOAD_NEXT_POST_VERSION, '<' ) && current_user_can( 'install_plugins' ) ) {
+			// Check if we are not already running this routine.
+			if ( 'yes' === get_transient( 'alnp_resetting' ) ) {
+				return;
+			}
+
+			if ( ! defined( 'IFRAME_REQUEST' ) && version_compare( get_option( 'auto_load_next_post_version' ), AUTO_LOAD_NEXT_POST_VERSION, '<' ) && current_user_can( 'install_plugins' ) ) {
 				self::install();
 				do_action( 'auto_load_next_post_updated' );
 			}
@@ -72,7 +68,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		 * @access  public
 		 * @static
 		 * @since   1.0.0
-		 * @version 1.5.0
+		 * @version 1.6.0
 		 */
 		public static function install() {
 			if ( ! is_blog_installed() ) {
@@ -84,8 +80,8 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 				return;
 			}
 
-			// If we made it till here nothing is running yet, lets set the transient now for five minutes.
-			set_transient( 'alnp_installing', 'yes', MINUTE_IN_SECONDS * 5 );
+			// If we made it till here nothing is running yet, lets set the transient now for two minutes.
+			set_transient( 'alnp_installing', 'yes', MINUTE_IN_SECONDS * 2 );
 			if ( ! defined( 'AUTO_LOAD_NEXT_POST_INSTALLING' ) ) {
 				define( 'AUTO_LOAD_NEXT_POST_INSTALLING', true );
 			}
@@ -98,6 +94,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 
 			// Sets ALNP to load in the footer if the current active theme requires it.
 			self::set_js_in_footer();
+
+			// Set the template directory if the current active theme requires it.
+			self::set_template_directory();
 
 			// Set activation date.
 			self::set_install_date();
@@ -156,6 +155,22 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		} // END set_js_in_footer()
 
 		/**
+		 * Sets the template directory for the current active theme should it
+		 * support Auto Load Next Post and have the template directory specified.
+		 *
+		 * @access private
+		 * @static
+		 * @since  1.6.0
+		 */
+		private static function set_template_directory() {
+			if ( is_alnp_supported() ) {
+				$directory = alnp_get_theme_support( 'directory_post' );
+
+				if ( ! empty( $directory ) ) update_option( 'auto_load_next_post_directory_post', $directory );
+			}
+		} // END set_template_directory()
+
+		/**
 		 * Update plugin version to current.
 		 *
 		 * @access private
@@ -177,7 +192,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			$install_date = get_site_option( 'auto_load_next_post_install_date' );
 
 			// If ALNP was installed before but the install date was not converted to time then convert it.
-			if ( ! empty( $install_date ) && !intval( $install_date ) ) {
+			if ( ! empty( $install_date ) && ! intval( $install_date ) ) {
 				update_site_option( 'auto_load_next_post_install_date', strtotime( $install_date ) );
 			} else {
 				add_site_option( 'auto_load_next_post_install_date', time() );
@@ -198,7 +213,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 			// Include settings so that we can run through defaults
 			include_once( dirname( __FILE__ ) . '/admin/class-alnp-admin-settings.php' );
 
-			$settings = Auto_Load_Next_Post_Admin_Settings::get_settings_pages();
+			$settings = ALNP_Admin_Settings::get_settings_pages();
 
 			foreach ( $settings as $section ) {
 				foreach ( $section->get_settings() as $value ) {
@@ -236,15 +251,19 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 		/**
 		 * Resets all Auto Load Next Post settings.
 		 *
-		 * @access public
+		 * @access  public
 		 * @static
-		 * @since  1.5.11
-		 * @global object $wpdb 
+		 * @since   1.5.11
+		 * @version 1.6.0
+		 * @global  object $wpdb 
 		 */
 		public static function reset_alnp() {
 			if ( current_user_can( 'install_plugins' ) && isset( $_GET['reset-alnp'] ) && $_GET['reset-alnp'] == 'yes' ) {
 				global $wpdb;
 
+				// If we made it till here nothing is running yet, lets set the transient now for two minutes.
+				set_transient( 'alnp_resetting', 'yes', MINUTE_IN_SECONDS * 2 );
+	
 				// Make sure it is only a single site we are resetting.
 				if ( ! is_multisite() ) {
 					// Delete options
@@ -252,12 +271,6 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 
 					// Delete user interactions
 					$wpdb->query("DELETE FROM $wpdb->usermeta WHERE meta_key LIKE 'auto_load_next_post_%'");
-
-					// Delete Uninstall Data - Just to double check it has been removed.
-					delete_option( 'auto_load_next_post_uninstall_data' );
-
-					// Delete Install Date
-					delete_option( 'auto_load_next_post_install_date' );
 				}
 				else {
 					// Delete Uninstall Data
@@ -271,15 +284,55 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Install' ) ) {
 				self::install();
 
 				wp_safe_redirect( add_query_arg( array(
-					'page'  => 'auto-load-next-post-settings',
+					'page'  => 'auto-load-next-post',
 					'reset' => 'done'
 				), admin_url( 'options-general.php' ) ) );
 				exit;
 			}
 		} // END reset_alnp()
 
+		/**
+		 * Redirects to the Getting Started page upon plugin activation.
+		 *
+		 * @access public
+		 * @static
+		 * @since  1.6.0
+		 * @param  string $plugin The activate plugin name.
+		 */
+		public static function redirect_getting_started( $plugin ) {
+			// Prevent redirect if plugin name does not match.
+			if ( $plugin !== plugin_basename( AUTO_LOAD_NEXT_POST_FILE ) ) {
+				return;
+			}
+
+			$getting_started = add_query_arg( array(
+				'page' => 'auto-load-next-post',
+				'view' => 'getting-started'
+			), admin_url( 'options-general.php' ) );
+
+			/**
+			 * Should Auto Load Next Post be installed via WP-CLI,
+			 * display a link to the Getting Started page.
+			 */
+			if ( defined( 'WP_CLI' ) && WP_CLI ) {
+				WP_CLI::log(
+					WP_CLI::colorize(
+						'%y' . sprintf( '🎉 %1$s %2$s', __( 'Get started with %3$s here:', 'auto-load-next-post' ), $getting_started, esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) . '%n'
+					)
+				);
+				return;
+			}
+
+			// If activated on a Multisite, don't redirect.
+			if ( is_multisite() ) {
+				return;
+			}
+
+			wp_safe_redirect( $getting_started );
+			exit;
+		} // END redirect_getting_started()
 	} // END class.
 
 } // END if class exists.
 
-return new Auto_Load_Next_Post_Install();
+return new ALNP_Install();

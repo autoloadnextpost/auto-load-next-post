@@ -21,12 +21,12 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
-if ( !class_exists( 'Auto_Load_Next_Post_Pro_Preview_Controller' ) ) {
+if ( !class_exists( 'ALNP_Pro_Preview_Controller' ) ) {
 
 	/**
 	 * The 'alnp_pro_preview' for Auto Load Next Post Pro control class.
 	 */
-	class Auto_Load_Next_Post_Pro_Preview_Controller extends WP_Customize_Control {
+	class ALNP_Pro_Preview_Controller extends WP_Customize_Control {
 
 		/**
 		 * The type of customize control.

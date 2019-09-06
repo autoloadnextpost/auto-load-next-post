@@ -8,7 +8,7 @@
  * @version  1.5.9
  * @author   Sébastien Dumont
  * @category Core
- * @package  Auto Load Next Post/Core/Functions
+ * @package  Auto Load Next Post/Functions
  * @license  GPL-2.0+
  */
 

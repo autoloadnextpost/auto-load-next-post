@@ -7,23 +7,30 @@ var version             = auto_load_next_post_params.alnp_version,
     remove_comments     = auto_load_next_post_params.alnp_remove_comments,
     track_pageviews     = auto_load_next_post_params.alnp_google_analytics,
     is_customizer       = auto_load_next_post_params.alnp_is_customizer,
+    is_mobile           = auto_load_next_post_params.alnp_is_mobile,
     event_on_load       = auto_load_next_post_params.alnp_event_on_load,
     event_on_entering   = auto_load_next_post_params.alnp_event_on_entering,
     post_title          = window.document.title,
     curr_url            = window.location.href,
     orig_curr_url       = window.location.href,
     post_count          = 0,
-    post_url            = curr_url
+    post_url            = curr_url,
     overridden_post_url = '',
     stop_reading        = false,
     scroll_up           = false,
     article_container   = 'article',
-    ready               = auto_load_next_post_params.alnp_load_in_footer;
+    ready               = auto_load_next_post_params.alnp_load_in_footer,
+    disable_mobile      = auto_load_next_post_params.alnp_disable_mobile;
 
 (function($) {
 
 	// Ensure auto_load_next_post_params exists to continue.
 	if ( typeof auto_load_next_post_params === 'undefined' ) {
+		return false;
+	}
+
+	// Stop Auto Load Next Post from running if disabled for mobile devices.
+	if ( is_mobile == 'yes' && disable_mobile ) {
 		return false;
 	}
 

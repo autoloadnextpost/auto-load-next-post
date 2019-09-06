@@ -1,0 +1,337 @@
+/* Navigation */
+nav.nav-tab-wrapper {
+	margin-bottom: 1em;
+
+	a.nav-tab:first-child {
+		margin-left: 0;
+	}
+}
+
+/* Settings Table */
+table.alnp-table {
+	background: $white;
+	border: 1px solid $lightgrey;
+	border-spacing: 0;
+	box-shadow: 0 1px 1px $shadow;
+	clear: both;
+	margin: 0;
+	margin-bottom: 1em;
+	width: 100%;
+	word-wrap: break-word;
+
+	p,
+	p.description {
+		margin: 4px 0;
+		color: #444;
+	}
+
+	input.required {
+		&.invalid {
+			border-color: $red;
+		}
+	}
+
+	fieldset {
+		margin-top: 4px;
+	}
+
+	tr:nth-child( 2n ) td, 
+	tr:nth-child( 2n ) th {
+		background: #f9f9f9;
+	}
+
+	td,
+	th {
+		color: #555;
+		font-size: 1.1em;
+		font-weight: 400;
+		padding: 1.2em;
+	}
+
+	td, 
+	td ol, 
+	td p, 
+	td ul {
+		font-size: 13px;
+		line-height: 1.5em;
+	}
+
+	td {
+		vertical-align: top;
+	}
+
+	th {
+		font-weight: 600;
+	}
+
+	td label, 
+	th label {
+		display: block;
+		margin-bottom: 0.5em;
+	}
+
+	tfoot td, 
+	th, 
+	thead td {
+		text-align: left;
+		line-height: 1.3em;
+		font-size: 14px;
+	}
+}
+
+/* Settings Form */
+.wrap #mainform {
+	float: left;
+	position: relative;
+	width: 74%;
+}
+
+body.folded .wrap #mainform {
+	width: 75%;
+}
+
+@media screen and (max-width: 1052px) {
+	.wrap #mainform {
+		width: 100%;
+	}
+}
+
+/* Sidebar */
+.alnp-sidebar {
+	float: right;
+	position: relative;
+	top: 24px;
+	margin-left: 1%;
+	margin-right: 0;
+	max-width: 360px;
+	width: 24%;
+
+	@media screen and (max-width: 1052px) {
+		float: none;
+		clear: both;
+		width: 360px;
+		margin: 0 auto 2em;
+	}
+
+	/* Banner */
+	.alnp-banner {
+		background-color: $alnp;
+		display: block;
+		padding: 10px;
+	}
+
+	.alnp-banner:focus {
+		box-shadow: none;
+		-webkit-box-shadow: none;
+	}
+
+	.alnp-upgrade-details {
+		background-color: $alnp;
+		color: #333;
+		display: block;
+		font-size: 13px;
+		margin: 0;
+		margin-bottom: 2em;
+		padding: 0px 20px 20px;
+		text-decoration: none;
+
+		h1 {
+			font-size: 28px;
+			color: $white;
+			margin: 0 0 15px;
+			padding: 0;
+			text-decoration: none;
+			font-weight: 400;
+			line-height: 1;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		a {
+			color: #dd3333;
+			font-weight: bold;
+			text-decoration: none;
+			font-size: 16px;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+
+		a:hover {
+			color: $white;
+		}
+
+		ul {
+			margin-top: 0;
+			margin-left: 16px;
+			list-style-type: disc;
+		}
+	}
+
+	.block {
+		background-color: $white;
+		margin-bottom: 2em;
+		padding: 1em;
+
+		.inner-block {
+			padding: 10px 20px;
+		}
+
+		h3 {
+			background-color: $white;
+			border-bottom: 1px solid #ddd;
+			padding: 14px 20px;
+			margin: 0;
+			text-transform: none;
+		}
+	}
+
+	.subscribe {
+		border-top: none;
+
+		h2 {
+			padding: 0;
+			margin: 0;
+			margin-bottom: 0.5em;
+			font-size: 20px;
+			line-height: 1.2em;
+			float: none;
+		}
+
+		h3 {
+			font-size: 16px;
+			margin: 0;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		.intro {
+			margin-bottom: 1em;
+			line-height: 1.4;
+		}
+
+		li {
+			line-height: 1.4;
+		}
+
+		.links {
+			margin-bottom: 2em;
+
+			a {
+				text-decoration: none;
+			}
+		}
+
+		.promise {
+			color: #999;
+			font-size: 12px;
+			line-height: 1.4em;
+		}
+
+		.field {
+			margin-bottom: 0.5em;
+
+			p {
+				margin-bottom: 0.3em;
+			}
+
+			input[type=text], 
+			input[type=email] {
+				width: 100%;
+			}
+
+			&.submit-button {
+				margin-bottom: 1em;
+			}
+		}
+	}
+
+	.credits {
+		border-top: 0;
+
+		h4 {
+			font-size: 16px;
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+
+		ul {
+			margin: 0;
+		}
+
+		li {
+			overflow: hidden;
+		}
+
+		li:last-child {
+			margin-bottom: 0;
+		}
+
+		img {
+			float: left;
+			margin-right: 10px;
+		}
+
+		span {
+			float: left;
+			display: block;
+			line-height: 32px;
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			color: #444;
+			font-size: 16px;
+			text-align: center;
+		}
+
+		a:hover {
+			color: #888;
+		}
+	}
+}
+
+/* Help Button */
+.need-help {
+	background: $white;
+	border-radius: 4px;
+	box-sizing: border-box;
+	display: inline-flex;
+	line-height: inherit;
+	margin: 0;
+	padding: 0.8em;
+	align-items: center;
+	-moz-box-align: center;
+	-moz-box-pack: center;
+	justify-content: center;
+	vertical-align: middle;
+	text-transform: uppercase;
+	overflow: visible;
+	cursor: pointer;
+	-webkit-transition: opacity 0.4s ease-in-out;
+	-moz-transition: opacity 0.4s ease-in-out;
+	-ms-transition: opacity 0.4s ease-in-out;
+	-o-transition: opacity 0.4s ease-in-out;
+	transition: opacity 0.4s ease-in-out;
+
+	@media screen and (max-width: 782px) {
+		display: none;
+	}
+
+	&.hide {
+		opacity: 0.5;
+	}
+
+	.sonar-dot {
+		margin-right: 6px;
+	}
+}
+
+/* Extensions */
+.cnkt-plugin-installer {
+	margin-top: 2em;
+}

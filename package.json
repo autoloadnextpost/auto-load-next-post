@@ -1,37 +1,71 @@
 {
-  "title": "Auto Load Next Post",
-  "name": "auto-load-next-post",
-  "author": "AutoLoadNextPost",
-  "license": "GPL-2.0",
-  "version": "1.5.14",
-  "description": "Increase your pageviews on your site as readers continue reading your posts scrolling down the page.",
-  "homepage": "https://autoloadnextpost.com/",
-  "main": "Gruntfile.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/autoloadnextpost/auto-load-next-post"
-  },
-  "bugs": {
-    "url": "https://github.com/autoloadnextpost/auto-load-next-post/issues"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-checktextdomain": "~1.0.1",
-    "grunt-contrib-clean": "~2.0.0",
-    "grunt-contrib-compress": "^1.4.3",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "~3.0.0",
-    "grunt-contrib-jshint": "~2.1.0",
-    "grunt-contrib-uglify": "~4.0.1",
-    "grunt-newer": "~1.3.0",
-    "grunt-potomo": "~3.5.0",
-    "grunt-text-replace": "^0.4.0",
-    "grunt-wp-i18n": "~1.0.3",
-    "jshint-stylish": "~2.2.1",
-    "load-grunt-tasks": "~4.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+	"title": "Auto Load Next Post",
+	"name": "auto-load-next-post",
+	"author": "AutoLoadNextPost",
+	"license": "GPL-2.0",
+	"version": "1.6.0-beta.1",
+	"tested_up_to": "5.2",
+	"description": "Increase your pageviews on your site as readers continue reading your posts scrolling down the page.",
+	"homepage": "https://autoloadnextpost.com/",
+	"main": "Gruntfile.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/autoloadnextpost/auto-load-next-post"
+	},
+	"bugs": {
+		"url": "https://github.com/autoloadnextpost/auto-load-next-post/issues"
+	},
+	"scripts": {
+		"test": "grunt",
+		"watch": "grunt watch",
+		"build": "grunt build",
+		"version": "grunt version",
+		"update": "grunt update-pot",
+		"release": "grunt zip"
+	},
+	"devDependencies": {
+		"autoprefixer": "^9.5.1",
+		"grunt": "^1.0.4",
+		"grunt-checktextdomain": "~1.0.1",
+		"grunt-contrib-clean": "~2.0.0",
+		"grunt-contrib-compress": "^1.5.0",
+		"grunt-contrib-copy": "^1.0.0",
+		"grunt-contrib-cssmin": "~3.0.0",
+		"grunt-contrib-jshint": "~2.1.0",
+		"grunt-contrib-sass": "^1.0.0",
+		"grunt-contrib-uglify": "~4.0.1",
+		"grunt-contrib-watch": "^1.1.0",
+		"grunt-dev-update": "^2.3.0",
+		"grunt-newer": "~1.3.0",
+		"grunt-postcss": "^0.9.0",
+		"grunt-potomo": "~3.5.0",
+		"grunt-sass": "~3.0.2",
+		"grunt-stylelint": "~0.10.1",
+		"grunt-text-replace": "^0.4.0",
+		"grunt-wp-i18n": "~1.0.3",
+		"jshint-stylish": "~2.2.1",
+		"load-grunt-tasks": "~4.0.0",
+		"node-sass": "^4.12.0",
+		"prettier-stylelint": "^0.4.2",
+		"stylelint-config-prettier": "^3.1.0",
+		"stylelint-config-wordpress": "^13.1.0",
+		"stylelint-order": "^0.8.1"
+	},
+	"dependencies": {
+		"stylelint": "~9.10.1"
+	},
+	"stylelint": {
+		"extends": [
+			"stylelint-config-wordpress/scss",
+			"stylelint-config-prettier"
+		],
+		"plugins": [
+			"stylelint-order"
+		],
+		"rules": {
+			"at-rule-empty-line-before": null,
+			"no-descending-specificity": null,
+			"order/properties-alphabetical-order": true
+		}
+	}
 }
