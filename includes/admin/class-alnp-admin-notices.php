@@ -3,7 +3,7 @@
  * Display notices in the WordPress admin.
  *
  * @since    1.3.2
- * @version  1.5.13
+ * @version  1.5.14
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Notices
@@ -77,9 +77,10 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		/**
 		 * Don't bug the user if they don't want to see any notices.
 		 *
-		 * @access public
-		 * @since  1.5.0
-		 * @global $current_user
+		 * @access  public
+		 * @since   1.5.0
+		 * @version 1.5.14
+		 * @global  $current_user
 		 */
 		public function dont_bug_me() {
 			global $current_user;
@@ -89,6 +90,12 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			// If the user is allowed to install plugins and requested to hide the review notice then hide it for that user.
 			if ( ! empty( $_GET['hide_auto_load_next_post_review_notice'] ) && current_user_can( 'install_plugins' ) ) {
 				add_user_meta( $current_user->ID, 'auto_load_next_post_hide_review_notice', '1', true );
+				$user_hidden_notice = true;
+			}
+
+			// If the user is allowed to install plugins and requested to hide the upgrade notice then hide it for that user.
+			if ( ! empty( $_GET['hide_auto_load_next_post_upgrade_notice'] ) && current_user_can( 'install_plugins' ) ) {
+				add_user_meta( $current_user->ID, 'auto_load_next_post_hide_upgrade_notice', '1', true );
 				$user_hidden_notice = true;
 			}
 
@@ -116,7 +123,7 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 		 *
 		 * @access  public
 		 * @since   1.3.2
-		 * @version 1.5.13
+		 * @version 1.5.14
 		 * @global  $current_user
 		 * @return  void|bool
 		 */
@@ -188,7 +195,9 @@ if ( ! class_exists( 'Auto_Load_Next_Post_Admin_Notices' ) ) {
 			// Upgrade warning notice that will disappear once the new release is installed.
 			$upgrade_version = '1.6.0';
 
-			if ( version_compare( AUTO_LOAD_NEXT_POST_VERSION, $upgrade_version, '<' ) ) {
+			$user_hidden_upgrade = get_user_meta( $current_user->ID, 'auto_load_next_post_hide_upgrade_notice', '1' );
+
+			if ( version_compare( AUTO_LOAD_NEXT_POST_VERSION, $upgrade_version, '<' ) && empty( $user_hidden_upgrade ) ) {
 				add_action( 'admin_notices', array( $this, 'upgrade_warning' ) );
 			}
 		} // END add_notices()
