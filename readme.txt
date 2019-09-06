@@ -5,7 +5,7 @@ Tags: infinite scroll, infinite scrolling, scroll, infinite
 Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 5.2.3
-Stable tag: 1.5.13
+Stable tag: 1.5.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,7 +58,8 @@ Auto Load Next Post has started to support 3rd Party plugins 🎉 starting with 
 = Free Add-ons =
 
 WordPress.org is home to some great add-ons for Auto Load Next Post, including:
-- [Facebook Pixel Tracking](https://wordpress.org/plugins/alnp-facebook-pixel-tracking/)
+
+* [Facebook Pixel Tracking](https://wordpress.org/plugins/alnp-facebook-pixel-tracking/)
 
 Keen to see them all? View all add-ons for [Auto Load Next Post](https://wordpress.org/plugins/tags/auto-load-next-post/).
 
@@ -203,6 +204,11 @@ It does. Just make sure that you activate the plugin on the site you want it use
 4. Theme Customizer: The same settings can be applied via the theme customizer.
 
 == Changelog ==
+
+= 1.5.14 - 6th September 2019 =
+
+* Tweaked: Upgrade notice now version 1.6.0 is available for testing. Also can be dimissed properly.
+* Tweaked: All notices to load plugin icon to load from plugin not from WP.org
 
 = 1.5.13 - 27th May 2019 =
 
