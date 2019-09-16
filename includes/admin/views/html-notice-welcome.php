@@ -3,7 +3,7 @@
  * Admin View: Welcome Notice.
  *
  * @since    1.5.0
- * @version  1.5.5
+ * @version  1.5.14
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="notice notice-success auto-load-next-post-notice">
 	<div class="auto-load-next-post-notice-inner">
 		<div class="auto-load-next-post-notice-icon">
-			<img src="https://ps.w.org/auto-load-next-post/assets/icon-256x256.png" alt="<?php echo esc_attr__( 'Auto Load Next Post WordPress Plugin', 'auto-load-next-post' ); ?>" />
+			<img src="<?php echo AUTO_LOAD_NEXT_POST_URL_PATH . '/assets/images/icon-256x256.png'; ?>" alt="<?php echo esc_attr__( 'Auto Load Next Post WordPress Plugin', 'auto-load-next-post' ); ?>" />
 		</div>
 
 		<div class="auto-load-next-post-notice-content">

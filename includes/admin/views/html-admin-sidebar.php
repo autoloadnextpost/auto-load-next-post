@@ -3,6 +3,7 @@
  * Admin View: Sidebar - Upgrade Details
  *
  * @since    1.5.0
+ * @version  1.5.14
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post/Admin/Views
@@ -48,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<h2><?php esc_html_e( 'Sign up to pre-order first', 'auto-load-next-post' ); ?></h2>
 
 				<p class="intro">
-					<?php echo wptexturize( esc_html__( 'Submit your name and email and be the first to know when you can pre-order Auto Load Next Post Pro and keep up to date with my developments plus a 10% discount.', 'auto-load-next-post' ) ); ?>
+					<?php echo wptexturize( esc_html__( 'Submit your name and email and be the first to know when you can pre-order Auto Load Next Post Pro and keep up to date with my developments plus a 20% discount.', 'auto-load-next-post' ) ); ?>
 				</p>
 
 				<div class="field">

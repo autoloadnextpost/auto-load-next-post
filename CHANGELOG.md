@@ -6,13 +6,18 @@
 3. Lists must have one space above after heading
 -->
 
-# 1.5.13 - 27th May 2019
+# 1.5.14 - 16th September 2019
+
+* Tweaked: Upgrade notice now version 1.6.0 is available for testing. Also can be dismissed properly.
+* Tweaked: All notices to load plugin icon to load from plugin not from WP.org
+
+## 1.5.13 - 27th May 2019
 
 * Tweaked: Upgrade warning notice in preparation for version 1.6.0 release.
 
 ## 1.5.12 - 23rd April 2019
 
-* Tweaked: Repeater template now looks for `content-post.php` should `content-single.php` not exist before fallback to `content.php`.
+* Tweaked: Repeater template now looks for `content-post.php` should `content-single.php` not exist before fall-back to `content.php`.
 * Tweaked: Help tab copy and links on the plugin settings page.
 * Tweaked: Need help button now opens the help panel for the settings in view if one exists.
 * Updated: Review link.
@@ -32,7 +37,7 @@
 ## 1.5.10 - 5th April 2019
 
 * NEW: Added 3rd Party support for the [WP Rocket](https://wp-rocket.me) plugin. Excludes Auto Load Next Post scripts from JS minification.
-* Corrected: Added missing Poseidon theme options used to determin if post thumbnails should show in repeater template.
+* Corrected: Added missing Poseidon theme options used to determine if post thumbnails should show in repeater template.
 * Tweaked: Theme selectors admin notification should the active theme be supported via a plugin.
 * Tweaked: `uninstall.php` file.
 
@@ -51,7 +56,7 @@
 
 ## 1.5.7 - 25th March 2019
 
-* Corrected: Meta name used to determin if the JavaScript should load in the footer.
+* Corrected: Meta name used to determine if the JavaScript should load in the footer.
 * Tweaked: Congratulations admin notification. Issue [#154](https://github.com/autoloadnextpost/auto-load-next-post/issues/154)
 
 ## 1.5.6 - 29th November 2018
@@ -75,7 +80,7 @@
 
 ## 1.5.4 - 10th November 2018
 
-* Fixed: Welcome notice. A class was not defined to return `alnp_get_random_page_permalink()` function for unsuported themes.
+* Fixed: Welcome notice. A class was not defined to return `alnp_get_random_page_permalink()` function for unsupported themes.
 * Tweaked: Moved `alnp_get_random_page_permalink()` function to core functions so it is globally used instead.
 * Tweaked: Added an if condition to check each global function if `function_exists`
 * Updated: The `uninstall.php` file to also remove user interactions saved in the **usermeta** table.
@@ -114,7 +119,7 @@
 * Fixed: The trigger to override the post URL.
 * Fixed: Install date to a timestamp for those who have previously installed Auto Load Next Post so when you see the review notice, it does not say it's been 48 years since you installed because that is just crazy. LOL :laughing:
 * Tweaked: Changed the rewrite endpoint to be more distinct for Auto Load Next Post and prevent any conflicts.
-* Tweaked: Changed the settings page to separate **Theme Selectors** and **Miscellaneous** settings into their individual setions.
+* Tweaked: Changed the settings page to separate **Theme Selectors** and **Miscellaneous** settings into their individual sections.
 * Tweaked: Changed the JavaScript so it does not require the document to be ready. This is especially helpful if you have enabled the JavaScript to load in the footer.
 * Tweaked: Added a check to see if JetPack is active.
 * Tweaked: Added a check in the JavaScript to prevent it from loading if a user is requesting to post a comment. - Initial post only.
@@ -160,7 +165,7 @@
 * Tweaked: ScrollSpy now identifies the post divider via the new data attribute.
 * Tweaked: Hidden the post divider completely. Inline styling is used instead for better compatibility with themes.
 * Tweaked: Auto Load Next Post now does not run if the post URL has a hashtag for a specific comment on an initial load.
-* Tweaked: Improved the uninstallation of the plugin. Now refreshes the permalinks to remove custom rewrite permalink for the plugin.
+* Tweaked: Improved the un-installation of the plugin. Now refreshes the permalinks to remove custom rewrite permalink for the plugin.
 * Tweaked: Improved the code base in preparation for Auto Load Next Post Pro.
 * Updated: Template file header to provide clear information for overriding repeater template.
 * Updated: Template to include support for other post types in preparation for Auto Load Next Post Pro.
