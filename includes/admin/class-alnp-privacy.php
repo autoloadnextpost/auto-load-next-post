@@ -50,8 +50,8 @@ if ( ! class_exists( 'ALNP_Privacy' ) ) {
 		 */
 		protected static function get_privacy_policy_guide_message() {
 			$content = '
-				<div contenteditable="false">' .
-					'<p class="wp-policy-help">' .
+				<div class="wp-suggested-text">' .
+					'<p class="privacy-policy-tutorial">' .
 						sprintf( __( '%s does not collect, store or share any personal data.', 'auto-load-next-post' ), esc_html__( 'Auto Load Next Post', 'auto-load-next-post' ) ) .
 					'</p>' .
 				'</div>';
